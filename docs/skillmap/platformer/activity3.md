@@ -187,7 +187,7 @@ location on the tilemap!
 ---
 
 
-► Drag ``||variables: set [mySprite2] to sprite [ ] of kind [player]||``
+► Drag ``||variables(sprites): set [mySprite2] to sprite [ ] of kind [player]||``
 into the new loop.
 
 ► Click the **mySprite2** [__*variable*__](#varied "a label that holds the place for something that can change")
@@ -264,7 +264,7 @@ the **for element** loop.)
 to the bottom of the **for element** loop.
 
 ► Change the sprite variable to **myEnemy** and replace the  ``||scene: tilemap col [0] row [0]||``
-argument block with the ``||variables: value||`` argument from the header of the
+argument block with the ``||variables(noclick): value||`` argument from the header of the
 **for element** loop.
 
 
@@ -427,8 +427,8 @@ let's code that part first.
 
 ► Snap a ``||sprites: destroy [mySprite]  ⊕||`` block into the new event container.
 
-► Drag the ``||variables: otherSprite||`` argument from the **on sprite overlaps**
-event to replace the ``||variables: mySprite||`` variable inside the destroy block.
+► Drag the ``||variables(noclick): otherSprite||`` argument from the **on sprite overlaps**
+event to replace the ``||variables(noclick): mySprite||`` variable inside the destroy block.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {

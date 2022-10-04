@@ -35,9 +35,9 @@ To keep both the submarine and the laser from continuing after they collide, we 
 
 ► From ``||sprites:Sprites||``, drag **two** ``||sprites:destroy [mySprite]||`` blocks into the empty **on overlaps** container.
 
-► Grab the ``||variables:sprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||`` in the first ``||sprites:destroy [mySprite]||`` block.
+► Grab the ``||variables(noclick):sprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables(noclick):mySprite||`` in the first ``||sprites:destroy [mySprite]||`` block.
 
-► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||`` in the second ``||sprites:destroy [mySprite]||`` block.
+► Grab the ``||variables(noclick):otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables(noclick):mySprite||`` in the second ``||sprites:destroy [mySprite]||`` block.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 

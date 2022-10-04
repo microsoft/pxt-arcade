@@ -50,7 +50,7 @@ We're going to use a **Projectile** block here, even though our dynamite stays i
 ---
 
 - :paper plane: Drag <br/>
-``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` <br/>
+``||variables(sprites):set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` <br/>
 into the empty <br/>
 ``||controller:on [B] button [pressed]||`` <br/>
 container.
@@ -81,7 +81,7 @@ into **the end** of <br/>
 ``||controller:on [B] button [pressed]||`` <br/>
 container, then toggle **`<OFF>`** to **`<ON>`**.
 
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):projectile||``.
 
 - :mouse pointer: Click <br/>
 ``||sprites:auto destroy||`` <br/>
@@ -111,7 +111,7 @@ In this step, we'll choose **an animation** for our projectile to make it look l
 block to **the end** of <br/>
 ``||controller:on [B] button [pressed]||``.
 
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):projectile||``.
 
 
 ```blocks
@@ -196,7 +196,7 @@ into the empty <br/>
 ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` <br/>
 container.
 
-- :mouse pointer: To remove the wall at the location of overlap, drag the ``||variables:location||`` value block out of the <br/>
+- :mouse pointer: To remove the wall at the location of overlap, drag the ``||variables(noclick):location||`` value block out of the <br/>
 ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` <br/>
 title and drop it in to replace <br/>
 ``||scene:tilemap col [0] row [0]||``.
@@ -228,7 +228,7 @@ into **the end** of the <br/>
 ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` <br/>
 container.
 
-- :mouse pointer: To remove the tile at the location of overlap, drag the  ``||variables:location||`` value block out of the <br/>
+- :mouse pointer: To remove the tile at the location of overlap, drag the  ``||variables(noclick):location||`` value block out of the <br/>
 ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``    <br/>
 title and drop it in to replace <br/>
 ``||scene:tilemap col [0] row [0]||``.

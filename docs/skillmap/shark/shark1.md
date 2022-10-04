@@ -32,7 +32,7 @@ scene.setBackgroundColor(8)
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag ``||variables:set mySprite to sprite [ ] of kind [Player]||`` into **the bottom** of the ``||loops:on start|`` container.
+► From the ``||sprites:Sprites||`` category, drag ``||variables(sprites):set mySprite to sprite [ ] of kind [Player]||`` into **the bottom** of the ``||loops:on start|`` container.
 
 ► Click the grey box and toggle to **My Assets** to choose the **shark** [__*sprite*__](#sprote "2-D image that moves on the screen").
 
@@ -104,7 +104,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## step 8
 
-►  From ``||sprites:Sprites||`` drag ``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``.
+►  From ``||sprites:Sprites||`` drag ``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||`` into the empty  ``||controller:on [A] button [pressed]||``.
 
 ►  To send your lasers moving quickly toward the right side, change the ``||sprites:vx||`` (horizontal [__*velocity*__](#veloc "speed in a given direction")) value to **200**.
 

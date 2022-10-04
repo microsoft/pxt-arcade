@@ -29,7 +29,7 @@ Let's add an audience!
 ---
 
 - :paper plane: From ``||sprites:Sprites||`` drag <br/>
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
 and snap it into **the bottom** of the <br/>
 ``||loops:on start||`` container.
 
@@ -64,8 +64,8 @@ and snap it into **the end** of the <br/>
 ``||loops:on start||`` container.
 
 
-- :mouse pointer: Change ``||variables:mySprite||`` to
-``||variables:audience||``.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to
+``||variables(noclick):audience||``.
 
 - :mouse pointer: Change ``||sprites:x||`` to
 ``||sprites:bottom||``.
@@ -108,8 +108,8 @@ with each click** <br/>
 and snap it into **the bottom** of the <br/>
 ``||controller:on [A] button [pressed]||`` container.
 
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to
-``||variables:audience||`` so that the correct sprite is swapped during your clicks.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to
+``||variables(noclick):audience||`` so that the correct sprite is swapped during your clicks.
 
 - :paint brush: Click the grey square and toggle to **My Assets** and
 choose the other audience pose (called **clap2**.)
@@ -153,7 +153,7 @@ using the dropdown menu.
 ``||sprites: set [mySprite] image to [ ]||``<br/>
 block inside the empty container.
 
-- :mouse pointer:  Change the variable to ``||variables:audience||`` and click the empty grey square to choose the same
+- :mouse pointer:  Change the variable to ``||variables(noclick):audience||`` and click the empty grey square to choose the same
 **clap1** image that was used for the original sprite.
 
 ```blocks

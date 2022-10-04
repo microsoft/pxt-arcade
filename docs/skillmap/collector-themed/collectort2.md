@@ -58,7 +58,7 @@ and snap it into the empty
 container.
 
 - :mouse pointer:  To make sure that the correct projectile is destroyed, grab the
-``||variables:otherSprite||`` value from the title of  
+``||variables(noclick):otherSprite||`` value from the title of  
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``  
 and drop it into the
 ``||sprites:destroy [mySprite]||``  

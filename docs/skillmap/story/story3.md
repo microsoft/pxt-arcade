@@ -186,7 +186,7 @@ We can add these characters as [__*sprites*__](#sprotes "2-D images that moves o
 ---
 
 - :paper plane:  To add a character, look in the ``||sprites:Sprites||`` category for  
-``||variables: set [mySprite] to sprite [ ] of kind [Player]||``  
+``||variables(sprites): set [mySprite] to sprite [ ] of kind [Player]||``  
 and drag it into the bottom of the ``||loops:on start||`` container.
 
 - :mouse pointer:  Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.

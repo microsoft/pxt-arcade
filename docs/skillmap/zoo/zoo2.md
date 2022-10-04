@@ -12,7 +12,7 @@ Well, what's your favorite animal? Let's invite them over!
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``   
 into ``||loops:on start||``. 
 
 - :paint brush:  Click the grey box in the new block and draw your animal using the **image editor**!

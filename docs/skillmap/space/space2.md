@@ -32,7 +32,7 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 container into the workspace.
 
 - :paper plane: Snap
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 inside the new
 ``||controller:on [A] button pressed ||``
 container.
@@ -58,7 +58,7 @@ right corner. This is *not helpful* when your enemies are coming from above! Let
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with
+The ``||variables(sprites):set projectile to||`` block comes preloaded with
 values setting both the [__*vx*__](#whatVX "horizontal velocity")
 and [__*vy*__](#whatVY "vertical velocity") to 50.
 
@@ -99,7 +99,7 @@ and snap it in at **the end** of the
 ``||controller:on [A] button pressed ||``
 container.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you want the effects on your projectiles instead of on your ship.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||`` if you want the effects on your projectiles instead of on your ship.
 
 - :mouse pointer: Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!
 

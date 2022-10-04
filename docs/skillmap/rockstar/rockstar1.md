@@ -34,7 +34,7 @@ Our game character is called a [__*sprite*__](#sprote "2-D image that move on th
 ---
 
 - :paper plane: From the ``||sprites:Sprites||`` category, drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``  
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
