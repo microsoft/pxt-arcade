@@ -50,7 +50,7 @@ function reset_ball () {
 }
 let projectile: Sprite = null
 scene.setBackgroundImage(assets.image`wildWest1`)
-let myBall = thrown.create(assets.image`ball`, SpriteKind.Player)
+let myBall = ball.create(assets.image`ball`, SpriteKind.Player)
 myBall.setPosition(80, 90)
 myBall.setTrace()
 myBall.controlWithArrowKeys()
@@ -89,7 +89,7 @@ function reset_ball () {
 }
 let projectile: Sprite = null
 scene.setBackgroundImage(assets.image`wildWest1`)
-let myBall = thrown.create(assets.image`ball`, SpriteKind.Player)
+let myBall = ball.create(assets.image`ball`, SpriteKind.Player)
 myBall.setPosition(80, 90)
 myBall.setTrace()
 myBall.controlWithArrowKeys()
@@ -111,6 +111,7 @@ forever(function () {
 
 ```customts
 
+
 namespace SpriteKind {
     //% isKind
     export const Ball = SpriteKind.create()
@@ -127,8 +128,12 @@ enum winTypes {
     Lose,
     //% block="high score"
     Score,
+     //% block="seconds passed"
+    Seconds,
     //% block="multiplayer"
-    Multi
+    Multi,
+    //% block="custom"
+    Custom
 }
 
 enum speeds {
@@ -147,6 +152,17 @@ enum areas {
     Mid,
     //% block="bottom"
     Bottom
+}
+
+enum tracers {
+    //% block="full"
+    Full,
+    //% block="crosshair"
+    Cross,
+    //% block="arrow"
+    Arrow,
+    //% block="off"
+    Off
 }
 
 let textSprite: TextSprite = null
@@ -205,33 +221,71 @@ namespace info {
 
     }
 
-    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
+    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect, message?:string) {
 
         // Prep default variables for different win types
         let winnerNumber = 1;
-        let thisHigh = 0;
+        let thisBest = 0;
+        let newBest = false;
+        let bestScore = 0;
 
+
+        // Save number of seconds passed during game
+        const timeElapsed = game.runtime();
+
+        /*
         // Save all scores as relevant to the game.
-        //info.saveAllScores();
+        info.saveAllScores();
+        */
 
-        // collect the scores before popping the scenes
+        //Save player 1 score, no matter what
         const scoreInfo1 = info.player1.getState();
-        const scoreInfo2 = info.player2.getState();
-        const scoreInfo3 = info.player3.getState();
-        const scoreInfo4 = info.player4.getState();
-        const highScore = info.highScore();
-        const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
+        info.setScore(scoreInfo1.score);
+        thisBest = scoreInfo1.score;
 
-        // Find player with highest score
-        for (let i = 0; i < 4; i++) {
-            if (allScores[i] > thisHigh) {
-                thisHigh = allScores[i];
-                winnerNumber = i + 1;
+        // Save other player's scores if it matters
+        if (winStyle !== winTypes.Multi) {
+            // collect the scores before popping the scenes
+            const scoreInfo2 = info.player2.getState();
+            const scoreInfo3 = info.player3.getState();
+            const scoreInfo4 = info.player4.getState();
+            const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
+
+
+            // Find player with highest score in Multi
+            for (let i = 0; i < 4; i++) {
+                if (allScores[i] !== undefined && allScores[i] > thisBest) {
+                    thisBest = allScores[i];
+                    winnerNumber = i + 1;
+                }
             }
         }
-        // If highest score is higher than saved high, replace
-        if (thisHigh > highScore) {
-            info.saveHighScore();
+
+        //If not working in seconds, go with highest score
+        if (winStyle !== winTypes.Seconds) {
+            // If highest score is higher than saved high, replace
+            if (thisBest > bestScore) {
+                newBest = true;
+                bestScore = thisBest;
+                info.setScore(thisBest);
+                info.saveHighScore();
+            }
+
+        // If working in seconds, lower is better
+        } else {
+
+            // For this mode, overwrite score with time elapsed
+            thisBest = Math.floor(game.runtime() / 1000);  // Score doesn't seem to accept decimals
+            info.setScore(thisBest);
+
+
+            // Best time is least # of seconds in this mode
+            if (thisBest < bestScore || bestScore <= 0) {
+                newBest = true;
+                bestScore = thisBest;
+                settings.writeNumber("high-score", thisBest);
+            }
+
         }
 
 
@@ -247,7 +301,7 @@ namespace info {
 
         pause(400);
 
-        const overDialog = new GameOverDialog(true, thisHigh, highScore, winnerNumber, winStyle);
+        const overDialog = new GameOverDialog(true, thisBest, bestScore, newBest, winnerNumber, winStyle, timeElapsed, message);
         scene.createRenderable(scene.HUD_Z, target => {
             overDialog.update();
             target.drawTransparentImage(
@@ -268,9 +322,12 @@ namespace info {
         countdownInitialized = true;
 
         info.onCountdownEnd(function () {
+
+            //Handling manually to include number of seconds passed
+            /*
             if (winStyle == winTypes.Win) {
                 game.over(true, fanfare)
-            } else if (winStyle == winTypes.Lose) {
+            } else */ if (winStyle == winTypes.Lose) {
                 game.over(false, fanfare)
             } else {
                 newGameOver(winStyle, fanfare);
@@ -280,14 +337,17 @@ namespace info {
 
     export class GameOverDialog extends game.BaseDialog {
         protected cursorOn: boolean;
-        protected isNewHighScore: boolean;
+        protected isNewbestScore: boolean;
 
         constructor(
             protected win: boolean,
             protected score?: number,
-            protected highScore?: number,
+            protected bestScore?: number,
+            protected newbestScore?: boolean,
             protected winnerNum?: number,
-            protected winStyle?: winTypes
+            protected winStyle?: winTypes,
+            protected numSeconds?: number,
+            protected userText?: string
         ) {
             super(screen.width, 46, img`
         1 1 1
@@ -295,7 +355,10 @@ namespace info {
         1 1 1
         `);
             this.cursorOn = false;
-            this.isNewHighScore = this.score > this.highScore;
+
+            /* Since best time is lower, need to do this elsewhere
+            this.isNewbestScore = this.score > this.bestScore;
+            */
         }
 
         displayCursor() {
@@ -313,78 +376,80 @@ namespace info {
 
         drawTextCore() {
             const titleHeight = 8;
-            if (this.winStyle == winTypes.Multi) {
+
+            if (this.winStyle == winTypes.Win) {
+                this.image.printCenter(
+                    "You Win!",
+                    titleHeight,
+                    screen.isMono ? 1 : 5,
+                    image.font8
+                );
+            } else if (this.winStyle == winTypes.Multi) {
                 this.image.printCenter(
                     "Player " + this.winnerNum + " wins!",
                     titleHeight,
                     screen.isMono ? 1 : 5,
                     image.font8
                 );
-
-                if (this.score !== undefined) {
-                    const scoreHeight = 23;
-                    const highScoreHeight = 34;
-                    const scoreColor = screen.isMono ? 1 : 2;
-
+            } else if (this.winStyle == winTypes.Seconds) {
+                if (this.numSeconds !== undefined) {
                     this.image.printCenter(
-                        "Score:" + this.score,
-                        scoreHeight,
-                        scoreColor,
+                        "Finished in " + this.score + " seconds!",
+                        titleHeight,
+                        screen.isMono ? 1 : 5,
                         image.font8
                     );
-
-                    if (this.isNewHighScore) {
-                        this.image.printCenter(
-                            "New High Score!",
-                            highScoreHeight,
-                            scoreColor,
-                            image.font5
-                        );
-                    } else {
-                        this.image.printCenter(
-                            "HI:" + this.highScore,
-                            highScoreHeight,
-                            scoreColor,
-                            image.font8
-                        );
-                    }
                 }
-            }
-            else {
+            } else if (this.winStyle == winTypes.Custom) {
+                if (this.numSeconds !== undefined) {
+                    this.image.printCenter(
+                        this.userText,
+                        titleHeight,
+                        screen.isMono ? 1 : 5,
+                        image.font8
+                    );
+                    this.image.printCenter(
+                        "Finished in " + this.score + " seconds!",
+                        titleHeight+10,
+                        screen.isMono ? 1 : 2,
+                        image.font5
+                    );
+                }
+            } else {
                 this.image.printCenter(
                     "Great Job!",
                     titleHeight,
                     screen.isMono ? 1 : 5,
                     image.font8
                 );
+            }
 
-                if (this.score !== undefined) {
-                    const scoreHeight = 23;
-                    const highScoreHeight = 34;
-                    const scoreColor = screen.isMono ? 1 : 2;
+            if (this.score !== undefined) {
+                const scoreHeight = 23;
+                const bestScoreHeight = 34;
+                const scoreColor = screen.isMono ? 1 : 2;
 
+                this.image.printCenter(
+                    "Score:" + this.score,
+                    scoreHeight,
+                    scoreColor,
+                    image.font8
+                );
+
+                if (this.newbestScore == true) {
                     this.image.printCenter(
-                        "Score:" + this.score,
-                        scoreHeight,
+                        "New Best Score!",
+                        bestScoreHeight,
+                        scoreColor,
+                        image.font5
+                    );
+                } else {
+                    this.image.printCenter(
+                        "Best:" + this.bestScore,
+                        bestScoreHeight,
                         scoreColor,
                         image.font8
                     );
-
-                    if (this.isNewHighScore) {
-                        this.image.printCenter(
-                            "New High Score!",
-                            highScoreHeight,
-                            scoreColor,
-                            image.font5
-                        );
-                    } else {
-                        this.image.printCenter(
-                            "HI:" + this.highScore,
-                            highScoreHeight,
-                            scoreColor,
-                            image.font8
-                        );
-                    }
                 }
             }
         }
@@ -404,19 +469,34 @@ namespace game {
     //% inlineInputMode=inline
     export function onGameOverExpanded(winStyle: winTypes, winEffect?: effects.BackgroundEffect) {
         if (!winStyle)
-            winStyle = winTypes.Win;
+            winStyle = winTypes.Score;
         if (!winEffect && winStyle != winTypes.Lose) {
             winEffect = effects.confetti;
         }
         else { winEffect = effects.melt; }
 
-        if (winStyle == winTypes.Win) {
-            game.over(true, winEffect)
-        } else if (winStyle == winTypes.Lose) {
+        if (winStyle ==  winTypes.Lose) {
             game.over(false, winEffect)
         } else {
             info.newGameOver(winStyle, winEffect);
         }
+    }
+
+    /**
+     * Adds additional end game styles
+     */
+    //% color="#8854d0"
+    //% group=Gameplay
+    //% blockId=on_game_over_expanded
+    //% block="game over message $message || add effect $winEffect"
+    //% message.defl="Game Over"
+    //% winEffect.defl=effects.confetti
+    //% inlineInputMode=inline
+    export function customGameOverExpanded(message: string, winEffect?: effects.BackgroundEffect) {
+        if (!winEffect) {
+            winEffect = effects.confetti;
+        }
+            info.newGameOver(winTypes.Custom, winEffect, message);
     }
 }
 
@@ -425,7 +505,7 @@ namespace game {
 */
 //% weight=100 color=#6699CC icon="\uf140"
 //% groups='["Create", "Actions", "Properties"]'
-namespace thrown {
+namespace ball {
     /**
      * Creates a new throwable from an image and kind
      * @param img the image for the sprite
@@ -433,7 +513,7 @@ namespace thrown {
      * @param x optional initial x position, eg: 10
      * @param y optional initial y position, eg: 110
      */
-    //% blockId=throwCreate block="throw %img=screen_image_picker of kind %kind=spritekind || at x %x y %y"
+    //% blockId=throwCreate block="ball %img=screen_image_picker of kind %kind=spritekind || at x %x y %y"
     //% expandableArgumentMode=toggle
     //% inlineInputMode=inline
     //% blockSetVariable=myBall
@@ -442,9 +522,82 @@ namespace thrown {
     export function create(img: Image,
         kind: number,
         x: number = 10,
-        y: number = 110): Throw {
-        return new Throw(img, kind, x, y);
+        y: number = 110): Ball {
+        return new Ball(img, kind, x, y);
     }
+
+
+
+    /**
+   * Create a new ball with a given speed that starts from the location of another sprite.
+   * The sprite auto-destroys when it leaves the screen. You can modify position after it's created.
+   */
+    //% group="Projectiles"
+    //% blockId=spritescreateprojectileballfromsprite block="ball %img=screen_image_picker from %parentBall=variables_get(myBall)"
+    //% weight=99
+    //% blockSetVariable=projectile
+    //% inlineInputMode=inline
+    export function createProjectileBallFromSprite(img: Image, parentBall: Ball): Ball {
+        let vx = ball.xComponent(parentBall.angle, parentBall.pow);
+        let vy = ball.yComponent(parentBall.angle, parentBall.pow);
+        let ay = parentBall.gravity;
+        let ax = parentBall.wind;
+        let p = parentBall.pow;
+        return createProjectileBall(img, vx, vy, ax, ay, p, SpriteKind.Projectile, parentBall);
+    }
+
+    /**
+     * Create a new sprite with given speed, and place it at the edge of the screen so it moves towards the middle.
+     * The sprite auto-destroys when it leaves the screen. You can modify position after it's created.
+     */
+    //% group="Projectiles"
+    //% blockId=spritescreateprojectileball block="projectile %img=screen_image_picker vx %vx vy %vy of kind %kind=spritekind||from sprite %parentBall=variables_get(myBall)"
+    //% weight=99
+    //% blockSetVariable=throwBall
+    //% inlineInputMode=inline
+    //% expandableArgumentMode=toggle
+    export function createProjectileBall(img: Image, vx: number, vy: number, ax: number, ay: number, power:number, kind?: number, parentBall?: Ball) {
+        const s = ball.create(img, kind || SpriteKind.Projectile);
+        const sc = game.currentScene();
+
+        if (parentBall) {
+            s.setPosition(parentBall.x, parentBall.y);
+            s.vx = ball.xComponent(parentBall.angle, parentBall.pow);
+            s.vy = ball.yComponent(parentBall.angle, parentBall.pow);
+            s.ay = parentBall.gravity;
+            s.ax = parentBall.wind;
+            s.pow = parentBall.pow;
+        } else {
+            // put it at the edge of the screen so that it moves towards the middle
+            // If the scene has a tile map, place the sprite fully on the screen
+            const xOff = sc.tileMap ? -(s.width >> 1) : (s.width >> 1) - 1;
+            const yOff = sc.tileMap ? -(s.height >> 1) : (s.height >> 1) - 1;
+            const cam = game.currentScene().camera;
+
+            let initialX = cam.offsetX;
+            let initialY = cam.offsetY;
+
+            if (vx < 0) {
+                initialX += screen.width + xOff;
+            } else if (vx > 0) {
+                initialX += -xOff;
+            }
+
+            if (vy < 0) {
+                initialY += screen.height + yOff;
+            } else if (vy > 0) {
+                initialY += -yOff;
+            }
+
+            s.setPosition(initialX, initialY);
+        }
+
+        s.flags |= sprites.Flag.AutoDestroy | sprites.Flag.DestroyOnWall;
+
+        return s;
+    }
+
+
 
     /**
      * Convert degrees to radians
@@ -479,8 +632,8 @@ namespace thrown {
 /**
  * A throwable
  **/
-//% blockNamespace=thrown color="#6699CC" blockGap=8
-class Throw extends sprites.ExtendableSprite {
+//% blockNamespace=ball color="#6699CC" blockGap=8
+class Ball extends sprites.ExtendableSprite {
     private renderable: scene.Renderable;
 
     private controlKeys: boolean;
@@ -537,8 +690,8 @@ class Throw extends sprites.ExtendableSprite {
         this.wind = 0;
 
         this.renderable = scene.createRenderable(-0.5, (target, camera) => {
-            let xComp = thrown.xComponent(this.angle, this.pow);
-            let yComp = thrown.yComponent(this.angle, this.pow);
+            let xComp = ball.xComponent(this.angle, this.pow);
+            let yComp = ball.yComponent(this.angle, this.pow);
             let xOffset = camera.offsetX;
             let yOffset = camera.offsetY;
 
@@ -562,7 +715,7 @@ class Throw extends sprites.ExtendableSprite {
      * Gets the throwables's sprite
      */
     //% group="Properties"
-    //% blockId=throwSprite block="%throwable(myBall) sprite"
+    //% blockId=throwSprite block="%ball(myBall) sprite"
     //% weight=8
     get sprite(): Sprite {
         return this;
@@ -572,7 +725,7 @@ class Throw extends sprites.ExtendableSprite {
      * Set whether to show the trace for the estimated path
      * @param on whether to turn on or off this feature, eg: true
      */
-    //% blockId=setTrace block="trace %throwable(myBall) path estimate || %on=toggleOnOff"
+    //% blockId=setTrace block="trace %ball(myBall) path estimate || %on=toggleOnOff"
     //% weight=50
     //% group="Actions"
     public setTrace(on: boolean = true): void {
@@ -582,12 +735,12 @@ class Throw extends sprites.ExtendableSprite {
     /**
      * Throw the throwable with the current settings
      */
-    //% blockId=throwIt block="throw %throwable(myBall)"
+    //% blockId=throwIt block="ball %ball(myBall)"
     //% weight=50
     //% group="Actions"
     public throwIt(): void {
-        this.vx = thrown.xComponent(this.angle, this.pow);
-        this.vy = thrown.yComponent(this.angle, this.pow);
+        this.vx = ball.xComponent(this.angle, this.pow);
+        this.vy = ball.yComponent(this.angle, this.pow);
         this.ay = this.gravity;
         this.ax = this.wind;
     }
@@ -595,7 +748,7 @@ class Throw extends sprites.ExtendableSprite {
     /**
      * Stop the throwable at the current location
      */
-    //% blockId=stopIt block="stop %throwable(myBall)"
+    //% blockId=stopIt block="stop %ball(myBall)"
     //% weight=50
     //% group="Actions"
     public stopIt(): void {
@@ -610,7 +763,7 @@ class Throw extends sprites.ExtendableSprite {
      * to adjust the angle, and up and down to increase / decrease power
      * @param on whether to turn on or off this feature, eg: true
      */
-    //% blockId=controlKeys block="control %throwable(myBall) with arrow keys || %on=toggleOnOff"
+    //% blockId=controlKeys block="control %ball(myBall) with arrow keys || %on=toggleOnOff"
     //% weight=50
     //% group="Actions"
     public controlWithArrowKeys(on: boolean = true): void {
@@ -632,7 +785,7 @@ class Throw extends sprites.ExtendableSprite {
     /**
      * NO LONGER NECESSARY as this uses renderables now to draw onto the background.
      */
-    //% blockId=updateBackground block="change %throwable(myBall) background to image %img=background_image_picker"
+    //% blockId=updateBackground block="change %ball(myBall) background to image %img=background_image_picker"
     //% weight=15
     //% group="Properties"
     //% deprecated=true

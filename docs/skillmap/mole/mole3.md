@@ -148,7 +148,7 @@ You should also see the Whack-the-Mole label, and be able to hear a sound each t
 
 - :mouse pointer: At the bottom of the toolbox, click **Advanced** to show more categories.
 
-- :arrows-rotate: From the ``||animation: Animation||`` category, grab <br/>
+- :sync: From the ``||animation: Animation||`` category, grab <br/>
 
 ```block
 animation.runImageAnimation(

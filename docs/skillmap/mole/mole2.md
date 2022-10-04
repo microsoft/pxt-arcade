@@ -80,7 +80,7 @@ myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 We need to be able to move the hammer around the screen to chase the mole.
 
 
-- :controller: From the ``||controller: Controller||`` category, grab <br/>
+- :game: From the ``||controller: Controller||`` category, grab <br/>
 ```block
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 ```
