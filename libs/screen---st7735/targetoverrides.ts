@@ -27,16 +27,17 @@ namespace _screen_internal {
     function setupScreenStatusBar(barHeight: number): void { return }
 
     //% shim=TD_ID
-    function updateScreenSize(img: Image) {
-        const w = control.getConfigValue(DAL.CFG_ARCADE_SCREEN_WIDTH, 0)
-        const h = control.getConfigValue(DAL.CFG_ARCADE_SCREEN_HEIGHT, 0)
-        if (w && h)
-            img = image.create(w, h)
-        return img
+    function getScreenWidth(defl: number) {
+        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_WIDTH, defl)
+    }
+
+    //% shim=TD_ID
+    function getScreenHeight(defl: number) {
+        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_HEIGHT, defl)
     }
 
     export function createScreen() {
-        const img = updateScreenSize(image.create(160, 120));
+        const img = image.create(getScreenWidth(160), getScreenHeight(120));
         setupScreenStatusBar(8);
 
         const status = image.create(160, 8)
