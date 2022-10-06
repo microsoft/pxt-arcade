@@ -26,7 +26,7 @@ Can you remember what each block does?
 container into the workspace.
 
 - :paper plane:  Snap a new  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``  
 block inside it.
 
 - :mouse pointer:  Make sure to change the kind to ``||sprites:Food||``, then click on
@@ -126,7 +126,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 block out into the **end**
 of the ``||controller:on A button pressed||`` container.
 
-- :mouse pointer:  Change the first variable value to ``||variables:panda||``, then try your code on the game screen.
+- :mouse pointer:  Change the first variable value to ``||variables(noclick):panda||``, then try your code on the game screen.
 
 ```blocks
 let panda:Sprite = null;
@@ -184,7 +184,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 block from ``||sprites:Sprites||``
 and put it in the **on overlaps** container.
 
-- :mouse pointer:  Grab ``||variables:otherSprite||`` from the title of the **overlaps** container and drag it down to replace ``||variables:mySprite||`` in the **destroy** block.
+- :mouse pointer:  Grab ``||variables(noclick):otherSprite||`` from the title of the **overlaps** container and drag it down to replace ``||variables(noclick):mySprite||`` in the **destroy** block.
 
 ![An example of someone dragging the otherSprite variable out of the container and into the other block](static/skillmap/zoo/overlaps-food-sprite.gif "So that's how you do that!")
 

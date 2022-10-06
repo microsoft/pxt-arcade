@@ -7,16 +7,11 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
 ```codecard
 [
     {
-        "name": "Adafruit Joy Bonnet",
-        "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
-        "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
-        "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
+        "name": "Arcade cabinet",
+        "description": "Full size Arcade cabinet powered by a Raspberry Pi.",
+        "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg",
+        "url": "/hardware/raspberry-pi/wooden-cabinet",
         "variant": "hw---rpi"
-    },{
-        "name": "Shoebox Controller",
-        "description": "Turn a shoebox into a USB game controller for a PC.",
-        "imageUrl": "/static/hardware/shoebox.jpg",
-        "url": "/hardware/shoebox-controller"
     },
     {
         "name": "Cardboard Panel",
@@ -33,11 +28,17 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "variant": "hw---rpi"
     },
     {
-        "name": "Arcade cabinet",
-        "description": "Full size Arcade cabinet powered by a Raspberry Pi.",
-        "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg",
-        "url": "/hardware/raspberry-pi/wooden-cabinet",
+        "name": "Adafruit Joy Bonnet",
+        "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
+        "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
+        "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
         "variant": "hw---rpi"
+    },
+    {
+        "name": "Shoebox Controller",
+        "description": "Turn a shoebox into a USB game controller for a PC.",
+        "imageUrl": "/static/hardware/shoebox.jpg",
+        "url": "/hardware/shoebox-controller"
     }
 ]
 ```

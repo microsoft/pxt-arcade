@@ -31,7 +31,7 @@ Let's add a new kind of projectile, an ``||sprites:Enemy||``!
 loop container and drop it into an empty area of the workspace.
 
 - :paper plane:  From ``||sprites:Sprites||``, drag  
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``  
+``||variables(sprites):set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``  
 into the new  ``||loops:forever||`` loop container.
 
 ```blocks
@@ -72,7 +72,7 @@ We still have to set the vertical positions on the screen and add a pause to the
 ``||sprites:set [mySprite] [x] to [0]||``  
 and snap it in **below** the new projectile block.
 
-- :mouse pointer:  Change ``||variables:mySprite||`` to ``||variables:projectile2||`` and change **x** to **y**.
+- :mouse pointer:  Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile2||`` and change **x** to **y**.
 
 - :mouse pointer:  Replace **0** with ``||math:pick random [0] to [10]||``, then set the range to pick from **15** to **115**.
 
@@ -127,7 +127,7 @@ block and snap it just **ABOVE** the **pause** block in the enemy's
 
 - :mouse pointer:  In  
 ``||sprites:set [mySprite] kind to [Player]||``,   
-change ``||variables:mySprite||`` to ``||variables:projectile2||``   
+change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile2||``   
 and change ``||sprites:Player||`` to ``||sprites:Enemy||``.
 
 

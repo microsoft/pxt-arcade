@@ -403,7 +403,7 @@ scene.setBackgroundImage(img`
 
 💛 Let's add a heartfelt greeting 💛
 
-► From ``||sprites:Sprites||``, grab a ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and snap it into the end of the **on start** container in the workspace.
+► From ``||sprites:Sprites||``, grab a ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` block and snap it into the end of the **on start** container in the workspace.
 
 ► Get to the **My Assets** tab by clicking inside the grey sprite square and toggling the switch at the top.
 

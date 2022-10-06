@@ -34,7 +34,7 @@
                 "id": "google",
                 "name": "Google",
                 "icon": "/static/providers/google-logo.svg",
-                "identity": false,
+                "identity": true,
                 "redirect": true,
                 "order": 2
             }
@@ -376,7 +376,7 @@
                 "codalTarget": {
                     "name": "codal-nrf52833-dk",
                     "url": "https://github.com/mmoskal/codal-nrf52833-dk",
-                    "branch": "v1.1.4",
+                    "branch": "v2.0.2",
                     "type": "git"
                 },
                 "codalBinary": "NRF52840_DK",
@@ -604,7 +604,8 @@
         },
         "monacoFieldEditors": [
             "image-editor",
-            "tilemap-editor"
+            "tilemap-editor",
+            "soundeffect-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
@@ -618,7 +619,8 @@
             "tutorialBlocksDiff",
             "blocksErrorList",
             "identity",
-            "accessibleBlocks"
+            "accessibleBlocks",
+            "palettePicker"
         ],
         "blocksCollapsing": true,
         "errorList": true,

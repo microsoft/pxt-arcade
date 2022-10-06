@@ -67,12 +67,12 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 ---
 
 - :paper plane: Drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``
 to **the end** of the
 ``||loops:on start||`` container.
 
 - :paint brush: Click on the grey box in the middle of
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``,
+ ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``,
  then toggle to **My Assets** and choose the **Rocket**.
 
 

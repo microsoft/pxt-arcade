@@ -73,7 +73,7 @@ container.
 
 - :mouse pointer: Replace
 ``||scene:tilemap col [0] row [0]||``
-with the ``||variables:location||``
+with the ``||variables(noclick):location||``
 value from the top of the **Player overlaps cage** container.
 
 ![Share your location](/static/skillmap/turkey/turkey-location.gif "Grab the variable from the overlap container")
@@ -114,7 +114,7 @@ into **the end** of the
 container.
 
 - :mouse pointer: Click
-``||variables:mySprite2||``
+``||variables(noclick):mySprite2||``
 and rename the variable **turkey**.
 
 - :paint brush: Click the empty grey square and toggle to
@@ -153,12 +153,12 @@ into **the end** of the
 container.
 
 - :mouse pointer: Click
-``||variables:mySprite||``
-and select ``||variables:turkey||``.
+``||variables(noclick):mySprite||``
+and select ``||variables(noclick):turkey||``.
 
 - :mouse pointer: Replace
 ``||scene:tilemap col [0] row [0]||``
-with the ``||variables:location||``
+with the ``||variables(noclick):location||``
 value from the top of the **Player overlaps cage** container.
 
 
@@ -199,8 +199,8 @@ into **the end** of the
 container.
 
 - :mouse pointer: Click
-``||variables:myEnemy||``
-and change to ``||variables:turkey||``.
+``||variables(noclick):myEnemy||``
+and change to ``||variables(noclick):turkey||``.
 
 
 ```blocks

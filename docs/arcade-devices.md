@@ -14,17 +14,24 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
-        "name": "BrainPad Arcade",
-        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
-        "imageUrl": "/static/hardware/ghiarcade.jpg",
-        "url": "https://brainpad.com/arcade",
-        "variant": "hw---stm32f401"
-    },
-    {
         "name": "TinkerGen GameGo",
         "description": "A fun-sized console to play the games you code.",
         "imageUrl": "/static/hardware/gamego.jpg",
         "url": "https://www.tinkergen.com/gamego",
+        "variant": "hw---stm32f401"
+    },
+    {
+        "name": "Kitronik ARCADE",
+        "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
+        "imageUrl": "/static/hardware/kitronik.jpg",
+        "url": "https://www.kitronik.co.uk/arcade",
+        "variant": "hw---samd51"
+    },
+    {
+        "name": "Retro Arcade for Education",
+        "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
+        "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
+        "url": "https://www.elecfreaks.com/retro-arcade-for-education.html",
         "variant": "hw---stm32f401"
     },
     {
@@ -42,24 +49,17 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
-        "name": "Kitronik ARCADE",
-        "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
-        "imageUrl": "/static/hardware/kitronik.jpg",
-        "url": "https://www.kitronik.co.uk/arcade",
-        "variant": "hw---samd51"
+        "name": "BrainPad Arcade",
+        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
+        "imageUrl": "/static/hardware/ghiarcade.jpg",
+        "url": "https://brainpad.com/arcade",
+        "variant": "hw---stm32f401"
     },
     {
         "name": "Ovobot Xtron Pro",
         "description": "A programmable modular console to create games, design wearables and make creative projects.",
         "imageUrl": "/static/hardware/xtronpro.png",
         "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
-        "variant": "hw---stm32f401"
-    },
-    {
-        "name": "Retro Arcade for Education",
-        "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
-        "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
-        "url": "https://www.elecfreaks.com/retro-arcade-for-education.html",
         "variant": "hw---stm32f401"
     },
     {

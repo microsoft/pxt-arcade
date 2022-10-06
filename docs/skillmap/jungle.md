@@ -108,7 +108,6 @@
 * url: /static/skillmap/certificates/jungle-cert.pdf
 * position: 4 1
 * actions:
-    * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:

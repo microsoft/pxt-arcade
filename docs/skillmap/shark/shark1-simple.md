@@ -40,7 +40,7 @@ scene.setBackgroundColor(8)
 ---
 
 - :paper plane:  Drag  
-``||variables:set mySprite to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set mySprite to sprite [ ] of kind [Player]||``  
 into **the bottom** of the  
 ``||loops:on start|`` container.  
 

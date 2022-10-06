@@ -18,7 +18,7 @@ some flying star [__*projectiles*__](#projected "sprites that moves on their own
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, grab<br/>
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``<br/>
+``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``<br/>
 and drop it into **the end** of the<br/>
 ``||controller:on [A] button [pressed]||`` container
 already in the workspace.
@@ -46,7 +46,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 - :paint brush: Click the empty grey square and toggle to **My Assets**
 to select the star.
 
-- :mouse pointer: Click ``||variables: mySprite||`` and change it to ``||variables: audience||``.
+- :mouse pointer: Click ``||variables(noclick): mySprite||`` and change it to ``||variables(noclick): audience||``.
 
 
 ```blocks
@@ -78,7 +78,7 @@ Does a star come from the audience each time you press the (A) button?
 blocks.
 
 - :mouse pointer: Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the<br/>
-``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``<br/>
+``||variables(sprites):set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``<br/>
 block.
 
 - :mouse pointer: Add the second to the [__*vy*__](#whatVY "vertical velocity") argument.

@@ -26,8 +26,18 @@ namespace _screen_internal {
     //% shim=pxt::setupScreenStatusBar
     function setupScreenStatusBar(barHeight: number): void { return }
 
+    //% shim=TD_ID
+    function getScreenWidth(defl: number) {
+        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_WIDTH, defl)
+    }
+
+    //% shim=TD_ID
+    function getScreenHeight(defl: number) {
+        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_HEIGHT, defl)
+    }
+
     export function createScreen() {
-        const img = image.create(160, 120);
+        const img = image.create(getScreenWidth(160), getScreenHeight(120));
         setupScreenStatusBar(8);
 
         const status = image.create(160, 8)
