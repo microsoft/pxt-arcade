@@ -56,8 +56,8 @@ tiles.setTilemap(tilemap`level1`)
 
 ## 4. Take a Look!
 
-**Click the Game Window Tab (Above)** <br/>
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+**Check the Game Window** <br/>
+![Check the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 

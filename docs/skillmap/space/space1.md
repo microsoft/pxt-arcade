@@ -110,8 +110,8 @@ controller.moveSprite(mySprite)
 
 ## 6. Try It
 
-**Click the Game Window Tab (Above)**
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+**Check the Game Window**
+![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
