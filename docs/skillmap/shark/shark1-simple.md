@@ -57,10 +57,7 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 
 ## 4. Take a Look!
 
-**Check the Game Window**
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 Open the game window to take a look at the scene you've just set up.
 

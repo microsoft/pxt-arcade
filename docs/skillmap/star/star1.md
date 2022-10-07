@@ -145,9 +145,6 @@ mySprite.bottom = 115
 
 Switch over to the game window to see how your scene looks so far.
 
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
-
 You should see your character posing in the spotlight on stage.
 
 

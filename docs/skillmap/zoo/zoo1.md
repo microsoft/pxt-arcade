@@ -89,9 +89,6 @@ controller.moveSprite(mySprite)
 ## 4. Try It
 
 **Check the Game Window**  
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
 
 Try moving around the game screen!  Your zookeeper will move with the joypad or the arrow keys on your keyboard.
 

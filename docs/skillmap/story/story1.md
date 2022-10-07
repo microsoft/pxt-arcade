@@ -163,9 +163,6 @@ scene.setBackgroundImage(img`
 ## {Step 2.5}
 
 **Check the Game Window**  
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
 
 Do you see the background you chose?
 

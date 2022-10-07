@@ -111,9 +111,6 @@ controller.moveSprite(mySprite)
 ## 6. Try It
 
 **Check the Game Window**
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
 
 Try moving your ship around the game screen!  Your ship will move with the joypad, arrow keys, or **W A S D** keys.
 

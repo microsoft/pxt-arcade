@@ -83,10 +83,6 @@ controller.moveSprite(mySprite, 100, 0)
 
 **Check the Game Window**
 
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
-
 How do you like it?  Feel like making a few more changes?
 
 

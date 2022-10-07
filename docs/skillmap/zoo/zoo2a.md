@@ -196,9 +196,6 @@ mySprite.y = randint(10, 110)
 ## 6. Try It
 
 **Check the Game Window**  
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
 
 Watch your friend swim!
 

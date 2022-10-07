@@ -176,9 +176,6 @@ controller.moveSprite(mySprite, 100, 0)
 
 
 **Check the Game Window**<br/>
-![Go to the Game Window to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
 
 Try your game using the joypad or your keyboard.
 
