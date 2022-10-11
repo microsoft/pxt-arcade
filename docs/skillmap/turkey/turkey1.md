@@ -92,11 +92,7 @@ controller.moveSprite(mySprite, 100, 0)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
-
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 The turkey should move left when you click the left arrow and move right with the right arrow.
 

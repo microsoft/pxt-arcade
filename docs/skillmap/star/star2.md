@@ -87,7 +87,7 @@ let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 
 ## {Step 5}
 
-**Click the Game Window Tab (Above)**
+**Check the Game Window**
 
 ---
 
