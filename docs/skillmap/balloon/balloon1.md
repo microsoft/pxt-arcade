@@ -8,38 +8,12 @@
 
 
 
-## {2. Read Instructions}
-
-
-**🎡 Start with Instructions 🎡**
-
-This is the **instruction panel**. It has directions
-on what to do.
-
----
-
-Be on the lookout for extra info!
-
-
-~hint Click here to reveal hidden text 🕵🏽
-
-<br/>
-Look for clues like this when you read instructions.
-
-Each one gives extra info, tips, or tricks.
-
-hint~
-
-When you're done reading, click **Next** to move to the next instruction.
-
-
-
-
 ## {3. Your First Block}
 
 **Ready to start coding?**
 
 Let's make something happen using **EVENTS**!
+
 
 
 - :game: From the ``||controller: Controller||`` category **in the toolbox**, grab <br/>
