@@ -1,6 +1,6 @@
 # Whack-the-Mole
 * name: Whack-the-Mole
-* description: Create your own mole whacking carnival game.
+* description: Create your own mole whacking carnival game. Double-click the first level to start.
 * infoUrl: skillmap/educator-info/mole-map-info
 * bannerUrl: /static/skillmap/mole/mole3.gif
 * backgroundurl: https://raw.githubusercontent.com/clkantner/whack/master/skillmap2-final.gif
