@@ -17,7 +17,6 @@ Special thanks to MakeCode Forum User _SoftTalker_ for this submission.
 
 We need a place for the mole to hide.
 
-![An attention grabbing line](/static/skillmap/assets/attention.gif "This line is only here to get your attention")
 
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
 
@@ -25,7 +24,9 @@ We need a place for the mole to hide.
 scene.setBackgroundImage(img`.`)
 ```
 
-and snap it inside the empty ``||loops(noclick): on start||`` block already in the workspace.
+then snap it inside the empty <br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
 
 
 ~hint Click here to see how 🕵🏽
