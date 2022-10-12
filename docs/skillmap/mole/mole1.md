@@ -10,40 +10,14 @@ Special thanks to MakeCode Forum User _SoftTalker_ for this submission.
 
 
 
-## {2. Read Instructions}
-
-**🎡 Start with Instructions 🎡**
-
-This is the **instruction panel**. It has directions
-on what to do.
-
----
-
-Be on the lookout for extra info!
-
-
-~hint Click here to reveal hidden text 🕵🏽
-
-<br/>
-Look for clues like this when you read instructions.
-
-Each one gives extra info, tips, or tricks.
-
-hint~
-
-When you're done reading, click **Next** to move to the next instruction.
-
-
-
-
-
-
 
 ## {3. Your First Block}
 
 **Ready to start coding?**
 
 We need a place for the mole to hide.
+
+![An attention grabbing line](/static/skillmap/assets/attention.gif "This line is only here to get your attention")
 
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
 
@@ -82,7 +56,7 @@ scene.setBackgroundImage(img`.`)
 
 **Choose the grassy grid.**
 
-- :mouse pointer: Click the empty square inside the new block and switch to the **My Assets** library.<br/>
+- :mouse pointer: Click the empty square inside the background block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
 <br/>Choose the **grid** background.<br/>
 ![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
@@ -274,8 +248,7 @@ When you're ready, click **Done** to return to the skillmap so you can add a rub
 
 
 ```blockconfig.global
-scene.setBackgroundImage(assets.image`grid`)
-let myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+let myMole = sprites.create(img'.', SpriteKind.Enemy)
 
 game.onUpdateInterval(1000, function () {
 sprites.move_to_random_hole_on_grid(myMole)
