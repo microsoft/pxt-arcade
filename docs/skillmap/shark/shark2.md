@@ -43,9 +43,9 @@ game.onUpdateInterval(2100, function () {
 ## Step 4
 
 
-► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
+► From ``||sprites:Sprites||``, drag ``||variables(sprites): set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2100] ms||`` container.
 
-► To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myFood** and click **Ok**.
+► To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose ``||variables(noclick):Rename variable...||``. Enter **myFood** and click **Ok**.
 
 ► Change the kind from **Player** to **Food**.
 
@@ -61,7 +61,7 @@ game.onUpdateInterval(2100, function () {
 
 ## Step 5
 
-► Click the grey box inside ``||variables: set [myFood] to sprite [ ] of kind [Food]||`` and toggle to **My Assets** to choose the **food** fish, then click **Done**.
+► Click the grey box inside ``||variables(sprites): set [myFood] to sprite [ ] of kind [Food]||`` and toggle to **My Assets** to choose the **food** fish, then click **Done**.
 
 ```blocks
 game.onUpdateInterval(2100, function () {
@@ -83,7 +83,7 @@ It's time to tell the food sprites where to spawn.
 
 ► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2100] ms||``  container.
 
-► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
+► Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFood||``.
 
 ```blocks
 game.onUpdateInterval(2100, function () {
@@ -126,7 +126,7 @@ Get the fish swimming for a bigger challenge.
 
 ► From ``||sprites:Sprites||`` grab  ``||sprites:set [mySprite] [x] to [0]||``  and snap it in at **the bottom** of your ``||game:on game update every [2100] ms||`` container.
 
-► Change ``||variables:mySprite||`` to ``||variables:myFood||``.
+► Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFood||``.
 
 ► Change ``||sprites:x||`` to ``||sprites:vx (velocity x)||`` and make the value **-75** to get the fish moving from right to left.
 

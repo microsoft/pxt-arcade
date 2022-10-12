@@ -72,7 +72,7 @@ scene.setBackgroundImage(assets.image`stage`)
 
 **Switch to the game window**
 
-![Click the Game Window tab to see your scene. ](/static/skillmap/star/see-game.gif "Don't forget to look at your game!")
+![Go to the Game Window to see your scene. ](/static/skillmap/star/see-game.gif "Don't forget to look at your game!")
 
 
 Do you see the background you chose?
@@ -144,9 +144,6 @@ mySprite.bottom = 115
 **Check your game**<br/>
 
 Switch over to the game window to see how your scene looks so far.
-
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
 
 You should see your character posing in the spotlight on stage.
 

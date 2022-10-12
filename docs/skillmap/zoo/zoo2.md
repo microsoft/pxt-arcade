@@ -12,7 +12,7 @@ Well, what's your favorite animal? Let's invite them over!
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``   
 into ``||loops:on start||``. 
 
 - :paint brush:  Click the grey box in the new block and draw your animal using the **image editor**!
@@ -162,10 +162,7 @@ mySprite.setBounceOnWall(true)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**
 
 Watch your animal move around!
 

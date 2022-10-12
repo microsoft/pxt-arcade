@@ -56,10 +56,7 @@ tiles.setTilemap(tilemap`level1`)
 
 ## 4. Take a Look!
 
-**Click the Game Window Tab (Above)** <br/>
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window** <br/>
 
 Open the game window to take a look at the scene you've just set up.
 
@@ -79,7 +76,7 @@ for your aircraft that will fly around the screen.
 ---
 
 - :paper plane: Drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.

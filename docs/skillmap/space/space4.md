@@ -23,7 +23,7 @@ over (or down & over) to keep building.
 
 - :battery full: Take a peek into the new ``||statusbars:Status Bars||`` category.
 You'll find  
-``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.  
+``||variables(statiusbars):set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.  
 Drag one to the end of the   
 ``||loops:on start||`` container.
 
@@ -149,7 +149,7 @@ block at **the bottom** of the
 ``||game:on game update every [5000] ms||``  
 container.
 
-- :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+- :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFuel||``.
 
 
 ```blocks
@@ -195,7 +195,7 @@ Now we need to create a new **kind** of sprite for our **Fuel**!
 ``||sprites:set [mySprite] kind to [Player]||``  
 block into the bottom of the newest **on game update** container.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFuel||``.
 
 - :mouse pointer: Click ``||sprites:Player||`` to get the dropdown menu, then choose
 ``||sprites:Add a new kind...||`` and create the type **Gas**.
@@ -248,7 +248,7 @@ block and snap it in to your newest **overlaps** container.
 - :paper plane: Finally, make sure the used fuel disappears by snapping a  
 ``||sprites:destroy [mySprite] ➕||``  block
 into the bottom of the same **overlaps** container and replacing
-``||variables:mySprite||`` with ``||variables:otherSprite||``
+``||variables(noclick):mySprite||`` with ``||variables(noclick):otherSprite||``
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 

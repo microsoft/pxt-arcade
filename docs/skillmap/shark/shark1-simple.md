@@ -40,7 +40,7 @@ scene.setBackgroundColor(8)
 ---
 
 - :paper plane:  Drag  
-``||variables:set mySprite to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set mySprite to sprite [ ] of kind [Player]||``  
 into **the bottom** of the  
 ``||loops:on start|`` container.  
 
@@ -57,10 +57,7 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 
 ## 4. Take a Look!
 
-**Click the Game Window Tab (Above)**
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 Open the game window to take a look at the scene you've just set up.
 
