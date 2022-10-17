@@ -76,7 +76,6 @@ h2 {
 .addGameContent {
     display: flex;
     flex-direction: row;
-    /* align-items: left; */
     justify-content: space-around;
     width: 100%;
     margin-top: 5vw;
@@ -85,44 +84,38 @@ h2 {
 .addGame {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     width: 100vw;
     height: 100vh;
 }
 
-.mainMenuHighScoreHeader {
+.mainMenuHeader {
     font-weight: 400;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center;
+    font-size: 2.5rem;
     color: white;
-    flex: 3.6;
-    /* width: 75%; */
-    /* margin-right: -11em; */
 }
 
-/* .mainMenuTopBar {
+.mainMenuTopBar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;
-} */
+    width: 80vw;
+    margin-left: 25vw;
+}
 
-.buttonDiv {
+/* .topButtonDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: right;
     flex: 1;
-    /* width:25%; */
+    margin-top: -8vh;
     height: 100%;
-}
+} */
 
 .addGameButton {
-    width: 30em;
-    margin-right: 3em;
+    width: 20em;
     border-color: lightblue;
     background-color: transparent;
     font-family: inherit;
@@ -145,25 +138,26 @@ h2 {
     text-align: center;
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
-    margin-top: -68px;
-    height: 68px;
-    width: 662px;
-    left: 50%;
-    margin-left: -331px;
+    /* margin-top: -68px; */
+    height: 5vh;
+    width: 20vw;
+    left: 1.5%;
     bottom: 0;
     background: url("footer.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
 }
 
 .carouselWrap {
     width: 100%;
-    height: 500px;
+    height: 60vh;
     margin: 0 auto;
 }
 
 .gameTile {
     position: relative;
-    width: 554px;
-    height: 367px;
+    width: 50vw;
+    height: 50vh;
     background-size:100% 100%;
 }
 

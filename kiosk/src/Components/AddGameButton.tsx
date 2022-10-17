@@ -23,7 +23,7 @@ const AddGameButton: React.FC<IProps> = ({ kiosk, selected, content }) => {
     });
 
     return (
-        <div className="buttonDiv">
+        <div className="topButtonDiv">
             <button className="addGameButton" style={{backgroundColor: buttonColor}}>{content}</button>
         </div>
     )
