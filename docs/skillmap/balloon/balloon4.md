@@ -78,7 +78,7 @@ Follow the steps from previous levels to add a second player that reacts to the 
 
 - :lightbulb: Start by adding an <br/>
 ``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace, then add a point for **player 2** each time it's clicked.
+block to the workspace and also add a point for **player 2** each time it's clicked.
 
 
 ~hint Tell me more... 🕵🏽
