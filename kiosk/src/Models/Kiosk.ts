@@ -22,7 +22,7 @@ export class Kiosk {
     private readonly allScoresStateKey: string = "S/all-scores";
     private lockedGameId?: string;
     private launchedGame: string = "";
-    private builtGamesCache: Record<string, BuiltSimJSInfo> = { };
+    private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -75,7 +75,7 @@ export class Kiosk {
 
         window.addEventListener("message", (event) => {
             if (event.data?.js) {
-                let builtGame: BuiltSimJSInfo | void = this.getBuiltGame(this.launchedGame);
+                let builtGame: BuiltSimJSInfo | undefined = this.getBuiltGame(this.launchedGame);
                 if (!builtGame) {
                     this.addBuiltGame(this.launchedGame, event.data);
                 } else {
@@ -109,7 +109,7 @@ export class Kiosk {
                     break;
 
                 case "ready":
-                    let builtGame: BuiltSimJSInfo | void = this.getBuiltGame(this.launchedGame);
+                    let builtGame: BuiltSimJSInfo | undefined = this.getBuiltGame(this.launchedGame);
                     if (builtGame) {
                         this.sendBuiltGame(this.launchedGame);
                     }
@@ -186,7 +186,7 @@ export class Kiosk {
         this.siteElements.forEach(item => gamespace.appendChild(item));
     }
 
-    getBuiltGame(gameId: string): BuiltSimJSInfo | void {
+    getBuiltGame(gameId: string): BuiltSimJSInfo | undefined {
         const allBuiltGames = this.builtGamesCache;
         if (allBuiltGames[gameId]) {
             return allBuiltGames[gameId];
@@ -205,7 +205,7 @@ export class Kiosk {
     sendBuiltGame(gameId: string) {
         const builtGame = this.getBuiltGame(gameId);
         const simIframe = document.getElementsByTagName("iframe")[0] as HTMLIFrameElement;
-        simIframe?.contentWindow?.postMessage({ ...builtGame, "type": "kiosk"}, "*");
+        simIframe?.contentWindow?.postMessage({ ...builtGame, "type": "builtjs"}, "*");
     }
 
     launchGame(gameId: string, preventReturningToMenu = false): void {
@@ -221,7 +221,7 @@ export class Kiosk {
             gamespace.firstChild.remove();
         }
 
-        const playUrlBase = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1`
+        const playUrlBase = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1&autofocus=1`
         let playQueryParam = this.getBuiltGame(gameId) ? "&server=1" : "&sendBuilt=1";
 
         function createIFrame(src: string) {

@@ -1,5 +1,3 @@
-import { PxfObject } from "tls";
-
 export class BuiltSimJSInfo {
     constructor(
         public js: string,
