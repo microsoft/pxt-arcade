@@ -131,7 +131,7 @@ An important part is missing, though: the code that will fire the fireballs when
     * Create a ``||sprites:projectile||`` of a fireball with the origin set to ``||variables:mySprite||`` (along with some initial velocities)
     * Decrement ``||info:life||`` by 1
     * Increment ``||info:score||`` by 1
-3. Replace the ``||logic:if||`` statement from part 2 with a ``||loops:while||`` loop, so that the projectiles continue **until** the player runs out of life. Note that you will want to include a ``||loops:pause (1000) ms||`` block in the while loop to slow down execution."
+3. Replace the ``||logic:if||`` statement from part 2 with a ``||loops:while||`` loop, so that the projectiles continue **until** the player runs out of life. Note that you will want to include a ``||loops:pause (1000) ms||`` block in the ``||loops:while||`` loop to slow down execution."
 
 ### ~hint
 
