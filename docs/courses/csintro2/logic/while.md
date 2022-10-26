@@ -11,7 +11,7 @@ Using ``||loops:while||`` loops allows for actions and tasks that repeat until c
 
 [![Link to Video](/static/thumbnail_play_video.png)](https://aka.ms/40546a-logic-while)
 
-## Example #1a: Guessing Game
+## Example #1: Guessing Game #example-1
 
 1. Review the code below
 2. Create the sample code and run the code
@@ -34,6 +34,8 @@ Another way to think about this task is that we want the code that prompts the p
 
 ### ~hint
 
+#### "while" isn't "until"?
+
 In English, the difference between "until" *some condition* and "while" *some condition* is simply that they are opposites.
 
 Example: "We want to run this code until the player guesses it correctly" is the same as saying "we want to run this code while the player guesses it incorrectly".
@@ -42,7 +44,7 @@ Example: "We want to run this code until the player guesses it correctly" is the
 
 ## Student Task #1: Checking Math
 
-1. Start with the code from example #1
+1. Start with the code from [example #1](#example-1)
 2. Generate a second random value between 1 and 5, and store it in the variable ``||variables:secondValue||``
 3. Change the ``||game:splash||`` screen from "I'm thinking of a number between 1 and 5" to "Answer the question!"
 4. Compare the ``||variables:guess||`` to the result of `value + secondValue` instead of just `value`
@@ -129,13 +131,15 @@ An important part is missing, though: the code that will fire the fireballs when
     * Create a ``||sprites:projectile||`` of a fireball with the origin set to ``||variables:mySprite||`` (along with some initial velocities)
     * Decrement ``||info:life||`` by 1
     * Increment ``||info:score||`` by 1
-3. Replace the ``||logic:if||`` statement from part 2 with a ``||loops:while||`` loop, so that the projectiles continue **until** the player runs out of life.
+3. Replace the ``||logic:if||`` statement from part 2 with a ``||loops:while||`` loop, so that the projectiles continue **until** the player runs out of life. Note that you will want to include a ``||loops:pause (1000) ms||`` block in the while loop to slow down execution."
 
 ### ~hint
 
+#### Using a while or repeat loop?
+
 Why did we use a ``||loops:while||`` loop instead of a ``||loops:repeat||`` loop?
 
-The intention of the game is for the fires to keep being created until the game ends, once the player presses the A button.
+The intention of the game is to keep creating fires until the game ends, after the player initially presses the **A** button.
 
 A ``||loops:repeat||`` loop is intended to be used to repeat something a pre-determined number of times. Using a ``||loops:while||`` loop is very useful in this case to more accurately reflect what the developer intends (which will make the code more readable for a classmate or friend).
 
