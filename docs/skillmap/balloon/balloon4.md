@@ -78,7 +78,7 @@ Follow the steps from previous levels to add a second player that reacts to the 
 
 - :lightbulb: Start by adding an <br/>
 ``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace, then add a point for **player 2** each time it's clicked.
+block to the workspace and also add a point for **player 2** each time it's clicked.
 
 
 ~hint Tell me more... 🕵🏽
@@ -360,9 +360,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 Find a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
 
-💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
-``||info: start countdown [20] (s) and game over [high score]||``<br/>
-inside ``||loops(noclick): on start||`` and choose **Delete Blocks**._
+
 
 
 
@@ -387,6 +385,10 @@ block already in the workspace.
 
 
 hint~
+
+💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
+``||info: start countdown [20] (s) and game over [high score]||``<br/>
+inside ``||loops(noclick): on start||`` and choose **Delete Blocks**._
 
 ~hint Show me! 🕵🏽
 

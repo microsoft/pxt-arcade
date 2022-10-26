@@ -76,10 +76,7 @@ controller.moveSprite(mySprite)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 Jerry appears in the middle of a wall and gets completely lost when moving off screen!
 

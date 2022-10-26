@@ -292,11 +292,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **🕹️ Time to play 🕹️**
 
-Click the Game Window Tab (Above)
+Check the Game Window.
 
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
 
 Click the **Ⓐ** button to clear your splash screen message.
 Click it again to launch your effects!
