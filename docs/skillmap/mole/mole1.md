@@ -249,7 +249,7 @@ When you're ready, click **Done** to return to the skillmap so you can add a rub
 
 
 ```blockconfig.global
-let myMole = sprites.create(img'.', SpriteKind.Enemy)
+let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 
 game.onUpdateInterval(1000, function () {
 sprites.move_to_random_hole_on_grid(myMole)
