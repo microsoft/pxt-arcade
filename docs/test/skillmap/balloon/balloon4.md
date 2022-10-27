@@ -55,7 +55,8 @@ game.onGameOverExpanded(winTypes.Multi)
 
 ```
 
-If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
+If those steps don't solve your problem, click <br/>"Replace my code"<br/>
+ to replace the blocks in your workspace with new starter code.
 
 hint~
 
@@ -77,7 +78,7 @@ Follow the steps from previous levels to add a second player that reacts to the 
 
 - :lightbulb: Start by adding an <br/>
 ``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace, then add a point for **player 2** each time it's clicked.
+block to the workspace and also add a point for **player 2** each time it's clicked.
 
 
 ~hint Tell me more... 🕵🏽
@@ -93,7 +94,7 @@ hint~
 ~hint Show me... 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Add B](youtube:HtJt9nSHO-o?start=14&end=47)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=0&end=24)
 
 hint~
 
@@ -120,7 +121,7 @@ _(You'll also need to move player 1 to the left, and set player 2 further right.
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites): set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside at the **end** of the
 ``||loops(noclick): on start||``
 block already in your workspace.
@@ -141,7 +142,7 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Add Balloon](youtube:HtJt9nSHO-o?start=48&end=121)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=24&end=89)
 
 hint~
 
@@ -177,7 +178,7 @@ myBalloon2.setPosition(110, 93)
 ~hint Tell me more... 🕵🏽
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
+``||variables(sprites): set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
 and snap it inside at the **end** of the
 ``||loops(noclick): on start||``
 block already in your workspace.
@@ -195,14 +196,14 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Add Mouse](youtube:HtJt9nSHO-o?start=119&end=171)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=89&end=116)
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
 myMouse2.setImage(assets.image`mouse2-down`)
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
@@ -263,16 +264,16 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Move Mouse](youtube:HtJt9nSHO-o?start=171&end=235)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=127&end=172)
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
+myMouse2.setImage(assets.image`mouse2-down`)
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
         myMouse2.setImage(assets.image`mouse2-up`)
 })
@@ -303,10 +304,10 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 ~hint Tell me more... 🕵🏽
 
-- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
+- :arrows alternate vertical: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
 ``||scaling: change [myBalloon2] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
 and snap it into the <br/>
-``||controller: on [B] button [pressed]||`` <br/>
+``||controller(noclick): on [B] button [pressed]||`` <br/>
 block already in the workspace.
 
 
@@ -315,19 +316,19 @@ hint~
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Inflate](youtube:HtJt9nSHO-o?start=235&end=299)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=172&end=194)
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
+myMouse2.setImage(assets.image`mouse2-down`)
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player2.changeScoreBy(1)
-    myMouse2.setImage(img`.`)
+    myMouse2.setImage(assets.image`mouse2-down`)
     scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 ```
@@ -335,6 +336,8 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 #### ~ tutorialhint
 ```blocks
+    let myMouse2: Sprite = null
+
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player2.changeScoreBy(1)
     myMouse2.setImage(assets.image`mouse2-down`)
@@ -357,9 +360,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
 
 Find a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
 
-💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
-``||info: start countdown [20] (s) and game over [high score]||``<br/>
-inside ``||loops: on start||`` and choose **Delete Blocks**._
+
 
 
 
@@ -377,35 +378,55 @@ Last step!
 
 ~hint Tell me more... 🕵🏽
 
-- :up-down: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+- :arrows alternate vertical: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 ``||scene: add label [Burstin' Balloons] to [middle] of window || `` <br/>
-and snap it into the **top** of the ``||loops: on start||``
+and snap it into the **top** of the ``||loops(noclick): on start||``
 block already in the workspace.
 
 
 hint~
 
+💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
+``||info: start countdown [20] (s) and game over [high score]||``<br/>
+inside ``||loops(noclick): on start||`` and choose **Delete Blocks**._
+
 ~hint Show me! 🕵🏽
 
 
-![Balloon Bursting Carnival Final Level - Inflate](youtube:HtJt9nSHO-o?start=235&end=299)
+![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=212&end=250)
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
+myMouse2.setImage(assets.image`mouse2-down`)
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(img`.`)
+        myMouse2.setImage(assets.image`mouse2-up`)
 })
 ```
 
 
 #### ~ tutorialhint
-```block
+```blocks
+let myBalloon2: Sprite = null
+let myMouse: Sprite = null
+let myBalloon: Sprite = null
+let myMouse2: Sprite = null
+info.startCountdown(20)
+scene.setBackgroundColor(1)
+myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myBalloon.setPosition(50, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+myMouse.setPosition(50, 93)
+myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
+myBalloon2.setPosition(110, 93)
+myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
+myMouse2.setPosition(110, 93)
+//@highlight
 scene.add_label_to("Burstin' Balloons", areas.Mid)
 
 ```

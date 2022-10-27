@@ -1,4 +1,4 @@
-# Get Animated
+# Hammer Time
 ### @explicitHints true
 
 
@@ -6,10 +6,10 @@
 
 Your code from the last activity is already in the workspace.
 
-Let's make our game more professional by adding sound and animation.
+Let's use **SPRITES** and **EVENTS** to add a rubber hammer.
 
 
-![Whack-the-Mole](/static/skillmap/mole/mole3.gif "Let's add sound and an animation for the hammer." )
+![Whack-the-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
 
 
 
@@ -17,49 +17,220 @@ Let's make our game more professional by adding sound and animation.
 ## {2. Play Your Game}
 
 
-- :binoculars: Play the game you have so far.
+**Look at the game window.**
 
-Using the joypad (or the arrow keys on your keyboard) move the hammer around the screen and earn 1 point each time it overlaps the mole!
+- :binoculars: Look at your project in the game window to see what we're starting with.
+
+You should see a mole changing spots every second.
 
 
-~hint My game doesn't work ⚠️
-
----
-
-If your code isn't working and you can't figure out why, click
-<br/>"Replace my code"<br/>
-to replace the blocks in your workspace with new starter code.
-
-hint~
+💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
 
 
 
 
 
 
+## {3. Add the Hammer}
 
-## {3. Add the Label}
+Let's add another **SPRITE** for our rubber hammer.
 
-**Let’s add a label to the bottom our Whack-the-Mole game booth.**
-
-- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab
 
 ```block
-scene.add_label_to("Whack-the-Mole", areas.Bottom)
+let myHammer = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 and snap it inside and at the very **end** of the
 ``||loops(noclick): on start||``
 block container that's already in your workspace.
 
+- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
+![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
+<br/>to select the **hammer** sprite.<br/>
+![Choose the image that looks like a hammer.](/static/skillmap/mole/hammer.png "Select the rubber hammer from My Assets.")
+<br/>Then click **Done**.
+
+
+
 
 ~hint Show me how! 🕵🏽
 
-![Choose the hammer from My Assets](/static/skillmap/mole/add-label.gif "Change from the Editor to My Assets and select the hammer.")
+![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
 
 hint~
 
-💡 **Tip:** _Don't forget to look at your game to see what your new addition did!_
+
+
+
+#### ~ tutorialhint
+
+```blocks
+let myMole: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+//@highlight
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+```
+
+
+## {4. Move the Hammer}
+
+We need to be able to move the hammer around the screen to chase the mole.
+
+
+- :game: From the ``||controller: Controller||`` category, grab <br/>
+```block
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+```
+and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
+
+
+~hint Click here to see how 🕵🏽
+
+![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
+
+
+hint~
+
+
+
+
+
+#### ~ tutorialhint
+
+```blocks
+let myMole: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+//@highlight
+controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+```
+
+
+
+## {5. Check Your Game!}
+
+- :binoculars: Test your project in the game window to see how it works!
+
+Try using the on-screen joypad (or the arrow keys on your keyboard) to move the hammer around the screen.
+
+
+
+
+
+
+
+## {6. Add the Overlap}
+
+
+Did you notice that nothing happened when the hammer overlapped the mole?
+
+That's because we haven't created an **EVENT** for that yet!
+
+
+- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {  info.changeScoreBy(1) })
+```
+
+and drag it to an **empty** area of the workspace.
+
+
+~hint Show me how! 🕵🏽
+
+
+![Add an overlap block.](/static/skillmap/mole/add-overlap.gif "On sprite of kind Player overlaps otherSprite of kind Enemy")
+
+hint~
+
+
+
+
+#### ~ tutorialhint
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
+```
+
+
+
+
+## {7. Check Your Game Again!}
+
+
+- :binoculars: Play with your project in the game window!
+
+
+When your rubber hammer overlaps the mole, you should see points start to show up in the top-right corner.
+
+
+
+
+
+## {8. Too Many Points}
+
+Did you notice that the points added up really quickly when the rubber hammer stayed above the mole? Let's fix that.
+
+
+- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
+
+```block
+    sprites.move_to_random_hole_on_grid(myMole)
+```
+
+and snap it into **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block container already in the workspace.
+
+Now, when the rubber hammer overlaps the mole, the mole will quickly dash away!
+
+
+~hint Show me how! 🕵🏽
+
+![Move the mole.](/static/skillmap/mole/overlap-move.gif "Add another move myMole to random area block to the project")
+
+hint~
+
+
+
+
+#### ~ tutorialhint
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+//@highlight
+    sprites.move_to_random_hole_on_grid(myMole)
+})
+```
+
+
+
+
+## {9. Timer}
+
+Finally, let's add a timer to keep the game exciting.
+
+
+- :id card: From the ``||info: Info||`` category, grab <br/>
+
+```block
+info.startCountdownGame(15, winTypes.Score)
+```
+
+and snap it into **the end** of the <br/>
+``||loops(noclick): on start||`` <br/>
+block container already in the workspace.
+
+
+~hint Show me how! 🕵🏽
+
+![Add timer.](/static/skillmap/mole/countdown.gif "start countdown 15 (s) and game over high score")
+
+hint~
 
 
 
@@ -73,139 +244,23 @@ scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score)
 //@highlight
-scene.add_label_to("Whack-the-Mole", areas.Bottom)
-```
-
-
-## {4. Drop the Beat}
-
-**Add a sound when the rubber hammer overlaps the mole.**
-
-
-- :headphones: From the ``||music: Music||`` category, grab <br/>
-
-```block
-    music.baDing.play()
-```
-
-and snap it in at **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block already in the workspace.
-
-- :mouse pointer: Change ``||music(noclick): ba ding||`` to whatever sound brings you joy.
-
-
-~hint Click here to see how 🕵🏽
-
-![Look under Controller for the block](/static/skillmap/mole/add-music.gif "Drag out the controller block to use later.")
-
-
-hint~
-
-
-
-
-
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    let myMole: Sprite = null
-    let myHammer: Sprite = null
-    info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(myMole)
-    //@highlight
-music.knock.play()
-
-})
+info.startCountdownGame(15, winTypes.Score)
 ```
 
 
 
-## {5. Check Your Game!}
 
-- :binoculars: Test your game!
-
-The mole should hop between holes and you should be able to move the hammer with your arrow keys or the joypad.
-
-You should also see the Whack-the-Mole label, and be able to hear a sound each time the rubber hammer overlaps the mole.
-
----
-
-💡 _If you're not hearing anything in your game, you may need to **unmute** the game window using the speaker icon._
+## {10. Play your game!}
 
 
+- :binoculars: Play your game in the game window.
+
+You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
+
+**Can you get 15 points before the timer runs out?**
 
 
-
-
-
-
-## {6. Add Animation}
-
-
-**Finally, let's animate the rubber hammer each time it overlaps the mole.**
-
-- :mouse pointer: At the bottom of the toolbox, click **Advanced** to show more categories.
-
-- :sync: From the ``||animation: Animation||`` category, grab <br/>
-
-```block
-animation.runImageAnimation(
-myHammer,
-[img`
-    .
-    `],
-50,
-false
-)
-```
-
-and snap it in at **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block already in the workspace.
-
-- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **hammerAnimation** option and click **Done**.
-
-
-~hint Show me how! 🕵🏽
-
-
-![Add the sprite block.](/static/skillmap/mole/add-animation.gif "Add a sprite to your game.")
-
-hint~
-
-
-
-
-#### ~ tutorialhint
-
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    let myMole: Sprite = null
-    let myHammer: Sprite = null
-    info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(myMole)
-    music.knock.play()
-    //@highlight
-animation.runImageAnimation(
-myHammer,
-assets.animation`hammerAnimation`,
-50,
-false
-)
-})
-```
-
-
-## {7. Check Your Game Again!}
-
-
-
-- :binoculars: Play your game in the game window!
-
-When your rubber hammer overlaps the mole, points should show up in the top-right corner, a sound should play, and you should see the rubber hammer move back and forth.
-
-**How many times can you tag the mole in 15 seconds?**
 
 
 
@@ -215,25 +270,18 @@ When your rubber hammer overlaps the mole, points should show up in the top-righ
 
 ## {11. Finale}
 
-**🎡 Woohoo! 🎡**
+**🥳 You got it! 🥳**
 
-You've finished the single-player version of Whack-the-Mole!
+You have made a Whack-the-Mole game.
 
-When you're ready, click **Done** to return to the skillmap to turn it into a multiplayer game.
+When you're ready, click **Done** to return to the skillmap so you can add sound and animation to your game!
 
 
 
 
 
 ```blockconfig.global
-let myHammer: Sprite = null
-animation.runImageAnimation(
-myHammer,
-assets.animation`hammerAnimation`,
-50,
-false
-)
-myHammer = sprites.create(img`.`, SpriteKind.Player)
+let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
 ```
 
@@ -246,24 +294,15 @@ arcade-text=github:microsoft/arcade-text/
 
 ```template
 
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(myMole)
-
-})
 let myMole: Sprite = null
-let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score)
 
 game.onUpdateInterval(1000, function () {
     sprites.move_to_random_hole_on_grid(myMole)
 })
-
 ```
+
 
 
 
@@ -301,6 +340,25 @@ enum areas {
 let textSprite: TextSprite = null
 //let fanfare: effects.BackgroundEffect = undefined;
 //let winStyle = winTypes.Score
+
+
+
+namespace animation {
+    /**
+    * Prefills animation block with hammer items
+    */
+    //% color="#03aa74"
+    //% blockId=run-image-animation-hammer
+    //% block="animate $sprite=variables_get(myHammer) frames $frames=animation_editor interval (ms) $frameInterval=timePicker loop $loop=toggleOnOff"
+    //% frameInterval.defl=100
+    //% group="Animate"
+    //% weight=100
+    //% help=animation/run-image-animation-hammer
+    export function runImageAnimationHammer(sprite: Sprite, frames: Image[], frameInterval?: number, loop?: boolean) {
+        const anim = new ImageAnimation(sprite, frames, frameInterval || 100, !!loop);
+        anim.init();
+    }
+}
 
 
 
@@ -374,12 +432,12 @@ namespace info {
     //% color="#cf6a87"
     //% group=countdown
     //% blockId=start_countdown_game
-    //% block="start countdown $myTime (s) || and game over $winType effect $winEffect"
+    //% block="start countdown $myTime (s) and game over $winType || effect $winEffect"
     //% myTime.defl=15
     //% winType.defl=winTypes.Score
     //% winEffect.defl=effects.confetti
     //% inlineInputMode=inline
-    export function startCountdownGame(myTime: number, winType?: winTypes, winEffect?: effects.BackgroundEffect) {
+    export function startCountdownGame(myTime: number, winType: winTypes, winEffect?: effects.BackgroundEffect) {
         if (!winType)
             winType = winTypes.Win;
         if (!winEffect && winType != winTypes.Lose){

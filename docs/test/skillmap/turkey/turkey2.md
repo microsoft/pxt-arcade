@@ -12,7 +12,7 @@
 
 ## {2. Try It!}
 
-**First, check the game you have so far.**
+**First, check the game you have so far.**<br/>
 🕹️ 🕹️ 🕹️
 
 ---
@@ -24,7 +24,7 @@ from platform to platform using the A button (or the space bar.)
 
 ## {3. Rescue the Others}
 
-**Turkey to the rescue!**
+**Turkey to the rescue!**<br/>
 🦃 🦃 🦃
 
 When the player overlaps a **cage** tile, let's trigger some code.
@@ -57,6 +57,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
 **Look at your game window.**
 
 Guide your turkey to a cage.  What happens when the two overlap?
+
+Which block do you think causes your points to increase?
 
 
 
@@ -203,7 +205,7 @@ Keep following the instructions to find out how to get the little turkeys to fol
 ```block
 let freeTurkeys: Sprite = null
 
-freeTurkeys.follow(bigTurkey)
+freeTurkeys.follow(sprite)
 ```
 
 into **the end** of the <br/>
@@ -228,7 +230,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
     let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
     tiles.placeOnTile(freeTurkeys, location)
     //@highlight
-    freeTurkeys.follow(bigTurkey)
+    freeTurkeys.follow(sprite)
 })
 ```
 
@@ -253,7 +255,7 @@ let freeTurkeys: Sprite = null
 let bigTurkey = sprites.create(img`.`, SpriteKind.Player)
 
 tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
-tiles.placeOnTile(turkey, location)
+tiles.placeOnTile(freeTurkeys, location)
 
 scene.cameraFollowSprite(bigTurkey)
 controller.moveSprite(bigTurkey, 100, 0)
@@ -265,7 +267,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
     info.changeScoreBy(1)
 })
 tiles.setTileAt(location, assets.tile`transparency16`)
-freeTurkeys.follow(bigTurkey)
+freeTurkeys.follow(sprite)
 
 ```
 
