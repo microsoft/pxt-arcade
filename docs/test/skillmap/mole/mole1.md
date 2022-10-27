@@ -1,95 +1,74 @@
-# Hammer Time
+# Mole Hunt
 ### @explicitHints true
 
 
-## {Intro @showdialog}
+## Whack-the-Mole Intro @showdialog
 
-Your code from the last activity is already in the workspace.
+![whack-the-mole](azuremedia:eb645602-3355-4aa7-a756-0ea205b2ce80/Whack-the-Mole-Intro.ism)
 
-Let's use **SPRITES** and **EVENTS** to add a rubber hammer.
-
-
-![Whack-the-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
+Special thanks to MakeCode Forum User _SoftTalker_ for this submission.
 
 
 
 
-## {2. Play Your Game}
+## {3. Your First Block}
+
+**Ready to start coding?**
+
+We need a place for the mole to hide.
 
 
-**Look at the game window.**
-
-- :binoculars: Look at your project in the game window to see what we're starting with.
-
-You should see a mole changing spots every second.
-
-
-💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
-
-
-
-
-
-
-## {3. Add the Hammer}
-
-Let's add another **SPRITE** for our rubber hammer.
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab
+- :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
 
 ```block
-let myHammer = sprites.create(img`.`, SpriteKind.Player)
+scene.setBackgroundImage(img`.`)
 ```
 
-and snap it inside and at the very **end** of the
-``||loops(noclick): on start||``
-block container that's already in your workspace.
+then snap it inside the empty <br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
 
-- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
+
+~hint Click here to see how 🕵🏽
+
+
+- :lightbulb: The panel with the colorful category names is called the
+ **toolbox**. <br/>
+ Click ``||scene: Scene||`` to find the block you need.
+
+![Look under Scene for the block you need](/static/skillmap/mole/add-bg-block.gif "Drag out the background block to fill later.")
+
+
+hint~
+
+
+
+
+
+#### ~ tutorialhint
+
+
+```blocks
+scene.setBackgroundImage(img`.`)
+```
+
+
+## {4. Choose the grid}
+
+**Choose the grassy grid.**
+
+- :mouse pointer: Click the empty square inside the background block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
-<br/>to select the **hammer** sprite.<br/>
-![Choose the image that looks like a hammer.](/static/skillmap/mole/hammer.png "Select the rubber hammer from My Assets.")
+<br/>Choose the **grid** background.<br/>
+![Choose the background that looks like a grid full of holes.](/static/skillmap/mole/grid.png "Select the grid from My Assets.")
 <br/>Then click **Done**.
 
 
 
 
-~hint Show me how! 🕵🏽
-
-![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
-
-hint~
-
-
-
-
-#### ~ tutorialhint
-
-```blocks
-let myMole: Sprite = null
-let myHammer: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-```
-
-
-## {4. Move the Hammer}
-
-We need to be able to move the hammer around the screen to chase the mole.
-
-
-- :controller: From the ``||controller: Controller||`` category, grab <br/>
-```block
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-```
-and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
-
-
 ~hint Click here to see how 🕵🏽
 
-![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
-
+![Switch to My Assets to select the grid](/static/skillmap/mole/choose-bg.gif "Click the grassy grid background.")
 
 hint~
 
@@ -100,97 +79,60 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-let myMole: Sprite = null
-let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
 ```
-
 
 
 ## {5. Check Your Game!}
 
-Let's test the action in the bigger game window!
 
-- :binoculars: Test your project in the game window to see how it works!
+- :binoculars: Look at your project in the game window to see how it has changed!
 
-Try using the on-screen joypad or the arrow keys on your keyboard to move the hammer around the screen.
-
+You should see a green background with 9 holes where the moles can hide.
 
 
+~hint Click here to see how 🕵🏽
 
-
-
-
-## {6. Add the Overlap}
-
-
-Did you notice that nothing happened when the hammer overlapped the mole?
-
-That's because we haven't created an **EVENT** for that yet!
-
-
-- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {  info.changeScoreBy(1) })
-```
-
-and drag it to an **empty** area of the workspace.
-
-
-~hint Show me how! 🕵🏽
-
-
-![Add an overlap block.](/static/skillmap/mole/add-overlap.gif "On sprite of kind Player overlaps otherSprite of kind Enemy")
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
 hint~
 
 
 
 
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
-```
 
 
 
-
-## {7. Check Your Game Again!}
-
-
-- :binoculars: Play with your project in the game window!
+## {6. Add the Sprite}
 
 
-When your rubber hammer overlaps the mole, you should see points start to show up in the top-right corner.
+Now we'll add the mole **SPRITE** to our game.
 
+~hint What's a sprite? 💡
 
+In Arcade, each character or image that does something is called a **SPRITE**.
 
+Sprites have properties that you can use and change — things like scale, position, and lifespan are all properties of sprites.
 
+Our mole will be a sprite, too.
 
-## {8. Too Many Points}
+hint~
 
-Did you notice that the points added up really quickly when the rubber hammer stayed above the mole? Let's fix that.
+<br/>
 
-
-- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
+- :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab <br/>
 
 ```block
-    sprites.move_to_random_hole_on_grid(myMole)
+let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 ```
 
-and snap it into **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block container already in the workspace.
-
-Now, when the rubber hammer overlaps the mole, the mole will quickly dash away!
+and snap it inside at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
 ~hint Show me how! 🕵🏽
 
-![Move the mole.](/static/skillmap/mole/overlap-move.gif "Add another move myMole to random area block to the project")
+
+![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
 
 hint~
 
@@ -200,67 +142,94 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
+scene.setBackgroundImage(assets.image`grid`)
+//@highlight
+let myMole = sprites.create(img`.`, SpriteKind.Enemy)
+```
+
+
+
+## {7. Choose the Mole}
+
+
+- :mouse pointer: Click the empty square inside the new block and switch to the **My Assets** library.
+
+![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
+
+- :mouse pointer: Select the **mole** sprite <br/>
+![Choose the image that looks like a mole head.](/static/skillmap/mole/mole.png "Select the mole from My Assets.")
+and click **Done**.
+
+~hint Show me how! 🕵🏽
+
+![Choose the image that looks like a mole head.](/static/skillmap/mole/choose-mole.gif "Add a mole to your game.")
+
+
+hint~
+
+
+
+
+#### ~ tutorialhint
+
+```blocks
+scene.setBackgroundImage(assets.image`grid`)
+//@highlight
+let myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+```
+
+
+
+## {8. Make the Mole Move}
+
+Let's get the mole jumping from hole to hole every second.
+
+- :circle: From the ``||game: Game||`` category **in the toolbox**, grab <br/>
+```blocks
+game.onUpdateInterval(1000, function () {
+sprites.move_to_random_hole_on_grid(myMole)
+})
+```
+<br/>and drop it onto **an empty area** of the workspace.
+
+
+The is an **EVENT** block and it will cause the **ACTION** inside to happen each time a second passes.
+
+~hint Tell me about events! 💡
+
+---
+
+Events are things that might or might not happen while the code is running.  A player might press a button, a timer might run out, or one sprite might overlap with another.
+
+Each of those things is an event that you can assign a special action to in Arcade.
+
+hint~
+
+~hint Show me how! 🕵🏽
+
+![Add an on game update bundle.](/static/skillmap/mole/game-update.gif "This adds and event block with an action inside.")
+
+hint~
+
+
+
+
+#### ~ tutorialhint
+
+```blocks
+game.onUpdateInterval(1000, function () {
     sprites.move_to_random_hole_on_grid(myMole)
 })
 ```
 
 
 
-
-## {9. Timer}
-
-Finally, let's add a timer to keep the game exciting.
+## {10. Check Your Game!}
 
 
-- :id card: From the ``||info: Info||`` category, grab <br/>
+- :binoculars: Take a look at the game window to see your project!
 
-```block
-info.startCountdownGame(15, winTypes.Score)
-```
-
-and snap it into **the end** of the <br/>
-``||loops(noclick): on start||`` <br/>
-block container already in the workspace.
-
-
-~hint Show me how! 🕵🏽
-
-![Add timer.](/static/skillmap/mole/countdown.gif "start countdown 15 (s) and game over high score")
-
-hint~
-
-
-
-
-#### ~ tutorialhint
-
-```blocks
-let myMole: Sprite = null
-let myHammer: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score)
-```
-
-
-
-
-## {10. Play your game!}
-
-
-- :binoculars: Click the resize button next to the game window to see your project full-screen!
-
-You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
-
-**Can you get 15 points before the timer runs out?**
-
-
-
-
+You should see the mole changing spots every second.
 
 
 
@@ -268,19 +237,24 @@ You should get one point each time you overlap the mole with the rubber hammer, 
 
 ## {11. Finale}
 
-**🥳 You got it! 🥳**
+**🎉 Way to Go 🎉**
 
-You have made a Whack-the-Mole game.
+You have started your very own Whack-the-Mole game.
 
-When you're ready, click **Done** to return to the skillmap so you can add sound and animation to your game!
+When you're ready, click **Done** to return to the skillmap so you can add a rubber hammer!
+
 
 
 
 
 
 ```blockconfig.global
-let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
+let myMole = sprites.create(img'.', SpriteKind.Enemy)
+
+game.onUpdateInterval(1000, function () {
+sprites.move_to_random_hole_on_grid(myMole)
+})
+
 ```
 
 
@@ -288,20 +262,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 arcade-text=github:microsoft/arcade-text/
 ```
-
-
-```template
-
-let myMole: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-
-game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(myMole)
-})
-```
-
-
 
 
 ```customts
@@ -693,6 +653,7 @@ namespace simplified {
 }
 
 ```
+
 
 
 ```assetjson

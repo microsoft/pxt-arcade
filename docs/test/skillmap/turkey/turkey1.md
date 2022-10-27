@@ -272,7 +272,7 @@ Can you get your turkey to the top?
 ## Finale
 
 When you're finished playing your game, click **Done**
-to return to the main skillmap and continue to find out how to rescue more turkeys from their cages!
+to return to the main skillmap and continue to find out how to rescue your turkey friends from their cages!
 
 
 

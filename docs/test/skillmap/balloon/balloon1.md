@@ -4,34 +4,7 @@
 
 ## Burstin' Balloons Intro @showdialog
 
-![Balloon Bursting Carnival Intro](youtube:ttlam7rkh1U)
-
-
-
-## {2. Read Instructions}
-
-
-**🎡 Start with Instructions 🎡**
-
-This is the **instruction panel**. It has directions
-on what to do.
-
----
-
-Be on the lookout for extra info!
-
-
-~hint Click here to reveal hidden text 🕵🏽
-
-<br/>
-Look for clues like this when you read instructions.
-
-Each one gives extra info, tips, or tricks.
-
-hint~
-
-When you're done reading, click **Next** to move to the next instruction.
-
+![balloon intro](azuremedia:64101234-a394-4f89-98af-b4edfd11143a/BurstinBalloonsIntro.ism)
 
 
 
@@ -40,6 +13,7 @@ When you're done reading, click **Next** to move to the next instruction.
 **Ready to start coding?**
 
 Let's make something happen using **EVENTS**!
+
 
 
 - :game: From the ``||controller: Controller||`` category **in the toolbox**, grab <br/>
@@ -120,6 +94,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    //@highlight
     info.player1.changeScoreBy(1)
 })
 ```
@@ -136,13 +111,15 @@ Click the (A) button as fast as you can.  You can also use the **space bar** on 
 
 You should see the score go up with each click.
 
+
 ---
 
 Clicking the button is the **EVENT** that causes the score to go up!
 
 ~hint Click here to see how 🕵🏽
 
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
+
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
 hint~
 
@@ -176,12 +153,13 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
+    //@highlight
 info.startCountdownGame(20, winTypes.Score)
 ```
 
 
 
-## {3. Set the Scene}
+## {7. Set the Scene}
 
 **Now let's make it look nice**
 
@@ -202,6 +180,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
 info.startCountdownGame(20, winTypes.Score)
+    //@highlight
 scene.setBackgroundColor(1)
 ```
 
@@ -214,8 +193,7 @@ scene.setBackgroundColor(1)
 
 You have started your very own clicker game!
 
-Click the resize icon to try it in the bigger game window and see if you can get more than **40 points**.
-![Expand the game window](/static/skillmap/assets/big-game.gif "Click the resize button to expand the game window.")
+Can you get more than **40 points**?
 
 ---
 

@@ -31,7 +31,9 @@ Press the (A) button or **space bar** and watch the score go up!
 
 ---
 
-If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code.
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
 
 hint~
 
@@ -39,7 +41,7 @@ hint~
 
 
 
-## {4. Add Balloon}
+## {3. Add Balloon}
 
 Let's add a balloon **SPRITE**!
 
@@ -57,7 +59,7 @@ hint~
 
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
- ``||variables: set [myBalloon] to sprite [ ] of kind [Player]||`` <br/>
+ ``||variables(sprites): set [myBalloon] to sprite [ ] of kind [Player]||`` <br/>
 and snap it inside and at the very **end** of the
 ``||loops(noclick): on start||``
 block container that's already in your workspace.
@@ -82,11 +84,12 @@ hint~
 ```blocks
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
+    //@highlight
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 ```
 
 
-## {5. Move Balloon}
+## {4. Move Balloon}
 
 **Excellent!**
 
@@ -124,18 +127,19 @@ hint~
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+    //@highlight
 myBalloon.setPosition(80, 93)
 ```
 
 
 
 
-## {6. Blow Up Balloon}
+## {5. Blow Up Balloon}
 
 Now we need to make the balloon bigger each time the (A) button is pressed.
 
 
-- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
+- :arrows alternate vertical: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
  ``||scaling: change [myBalloon] scale by [1] pixels||`` <br/>
 and snap it into the **end** of the <br/>
 ``||controller(noclick): on [A] button [pressed]||`` <br/>
@@ -154,13 +158,14 @@ hint~
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player1.changeScoreBy(1)
-    scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+        //@highlight
+scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 ```
 
 
 
-## {7. Check Your Game!}
+## {6. Check Your Game!}
 
 **Try your game now!**
 
@@ -173,17 +178,17 @@ Press the (A) button (or **space bar**) as fast as you can.  You should see the 
 
 
 
-## {8. Add a Booth}
+## {7. Add a Booth}
 
 **Let's add a booth sprite!**
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
- ``||variables: set [myBooth] to sprite [ ] of kind [Booth]||`` <br/>
+ ``||variables(sprites): set [myBooth] to sprite [ ] of kind [Booth]||`` <br/>
 and snap it into the **end** of the
 ``||loops(noclick): on start||``
 block already in your workspace.
 
-- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
+- :mouse pointer: Click the empty square inside the block and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
 ![Choose the booth from My Assets](/static/skillmap/balloon/booth.png "It's important to use this booth until you've played with your game.")
 
 ~hint Show me how! 🕵🏽
@@ -207,13 +212,16 @@ let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 info.startCountdownGame(20, winTypes.Score)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myBalloon.setPosition(80, 93)
+
+    //@highlight
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 ```
 
 
 
 
-## {9. Win on Overlap}
+## {8. Win on Overlap}
 
 Let's make our game even more fun by adding a way to **"win"** when the balloon reaches the line!
 
@@ -245,7 +253,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSp
 
 
 
-## {10. Game Over Win}
+## {9. Game Over Win}
 
 - :circle: From the ``||game: Game||`` category in the toolbox, grab <br/>
 ``||game: game over [multiplayer]||`` <br/>
@@ -269,18 +277,19 @@ let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 #### ~ tutorialhint
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    //@highlight
 game.onGameOverExpanded(winTypes.Multi)
 })
 ```
 
 
-## {11. Play Your Game}
+## {10. Play Your Game}
 
 
 **Win your game!**
 
 
-Click the resize icon next to the game window to try your game in full-screen.
+Take a look at the game window.
 
 Press the (A) button or **space bar** as fast as you can. Can you get the balloon to reach the line before time runs out?
 
@@ -297,13 +306,13 @@ hint~
 
 
 
-## {12. Finale}
+## {11. Finale}
 
 **🎈 FANTASTIC 🎈**
 
 You have started your very own clicker game!
 
-When you're ready, click **Done** to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
+When you're ready, click **Done** to return to the skillmap and continue building your amazing <br/>**🎡 carnival game 🎡**!
 
 
 ```blockconfig.global
