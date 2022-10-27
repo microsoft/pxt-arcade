@@ -281,7 +281,7 @@ When you're ready, click **Done** to return to the skillmap so you can add sound
 
 
 ```blockconfig.global
-let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+let myHammer = sprites.create(img`.`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
 ```
 

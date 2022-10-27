@@ -203,11 +203,11 @@ hint~
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(assets.image`mouse2-down`)
+myMouse2.setImage(img`.`)
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(assets.image`mouse2-up`)
+        myMouse2.setImage(img`.`)
 })
 ```
 
@@ -271,11 +271,11 @@ hint~
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(assets.image`mouse2-down`)
+myMouse2.setImage(img`.`)
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(assets.image`mouse2-up`)
+        myMouse2.setImage(img`.`)
 })
 ```
 
@@ -323,12 +323,12 @@ hint~
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(assets.image`mouse2-down`)
+myMouse2.setImage(img`.`)
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player2.changeScoreBy(1)
-    myMouse2.setImage(assets.image`mouse2-down`)
+    myMouse2.setImage(img`.`)
     scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 ```
@@ -400,11 +400,11 @@ hint~
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(assets.image`balloon-2`, SpriteKind.Mouse)
+let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
 myMouse2.setPosition(110, 93)
-myMouse2.setImage(assets.image`mouse2-down`)
+myMouse2.setImage(img`.`)
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(assets.image`mouse2-up`)
+        myMouse2.setImage(img`.`)
 })
 ```
 

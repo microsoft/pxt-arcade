@@ -328,7 +328,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     music.knock.play()
         animation.runImageAnimation(
         myHammer,
-        assets.animation`hammerAnimation`,
+        [img`.`],
         50,
         false
         )

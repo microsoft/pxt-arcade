@@ -229,7 +229,7 @@ When you're ready, click **Done** to return to the skillmap to turn it into a mu
 let myHammer: Sprite = null
 animation.runImageAnimation(
 myHammer,
-assets.animation`hammerAnimation`,
+[img`.`],
 50,
 false
 )

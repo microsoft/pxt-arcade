@@ -229,11 +229,11 @@ When you're ready, click **Done** to return to the skillmap to claim your badge 
 let myHammer: Sprite = null
 animation.runImageAnimation(
 myHammer,
-assets.animation`hammerAnimation`,
+[img`.`],
 50,
 false
 )
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+myHammer = sprites.create(img`.`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
 ```
 
