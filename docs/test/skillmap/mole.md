@@ -47,7 +47,7 @@
 * type: tutorial
 * description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
-* next: mole-cert
+* next: mole4
 * url: /skillmap/mole/mole3
 * imageUrl: /static/skillmap/mole/mole3.gif
 * position: 1 1
