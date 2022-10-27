@@ -118,7 +118,8 @@
                 "preferred": true,
                 "tags": [ "Hardware" ]
             },
-            "code-ninjas-home-office/game-building-session-tutorials": {}
+            "code-ninjas-home-office/game-building-session-tutorials": {},
+            "microsoft/arcade-tutorial-extensions/carnival": {}
         },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
