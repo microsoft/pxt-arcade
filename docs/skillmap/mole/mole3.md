@@ -215,11 +215,11 @@ When your rubber hammer overlaps the mole, points should show up in the top-righ
 
 ## {11. Finale}
 
-**🎡 You've done it! 🎡**
+**🎡 Woohoo! 🎡**
 
-You've finished your Whack-the-Mole game!
+You've finished the single-player version of Whack-the-Mole!
 
-When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
+When you're ready, click **Done** to return to the skillmap to turn it into a multiplayer game.
 
 
 
@@ -229,11 +229,11 @@ When you're ready, click **Done** to return to the skillmap to claim your badge 
 let myHammer: Sprite = null
 animation.runImageAnimation(
 myHammer,
-assets.animation`hammerAnimation`,
+[img`.`],
 50,
 false
 )
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+myHammer = sprites.create(img`.`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
 ```
 

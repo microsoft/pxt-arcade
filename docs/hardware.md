@@ -59,7 +59,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "name": "Retro Arcade for Education",
         "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
         "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
-        "url": "https://www.elecfreaks.com/retro-arcade-for-education.html",
+        "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
         "variant": "hw---stm32f401"
     },
     {

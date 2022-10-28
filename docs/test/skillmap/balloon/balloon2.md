@@ -1,13 +1,16 @@
-# Two Player
+# Burst Your Balloon
 
 ### @explicitHints true
 
 
 ## {Intro @showdialog}
 
-This tutorial will help you turn your game into a two-player event!
+Your code from the last activity is already in the workspace.
 
-![Use what you've learned to add a second player](/static/skillmap/balloon/balloon4.gif "We can add a second mouse and balloon." )
+Let's turn our project into a game using **EVENTS** and **SPRITES**.
+
+
+![Click away](/static/skillmap/balloon/balloon2.gif "Let's add images to make our game more exciting." )
 
 
 
@@ -15,818 +18,334 @@ This tutorial will help you turn your game into a two-player event!
 ## {2. Play Your Game}
 
 
-**Play the game!**
+**Play the clicker game!**
 
-- :binoculars: Look at your project in the game window.
+Your timer should immediately start counting down from 20 seconds.
 
-Press the (A) button or **space bar** as fast as you can.  You should see a mouse pumping up a balloon that gets bigger and bigger until it crosses the line and wins the game.
+Press the (A) button or **space bar** and watch the score go up!
+
+
+
 
 ~hint My game doesn't work ⚠️
 
 ---
 
-If your code doesn't work, start by looking to see if you can figure out what is going wrong.  Make sure each block is in the correct event container.
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
 
+hint~
+
+
+
+
+
+## {3. Add Balloon}
+
+Let's add a balloon **SPRITE**!
+
+~hint What's a sprite? 💡
+
+---
+
+In Arcade, each character or image that does something is called a **SPRITE**.
+
+Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+
+Our balloon will be a sprite, too.
+
+hint~
+
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+ ``||variables(sprites): set [myBalloon] to sprite [ ] of kind [Player]||`` <br/>
+and snap it inside and at the very **end** of the
+``||loops(noclick): on start||``
+block container that's already in your workspace.
+
+- :mouse pointer: Click the empty square inside the block, and when the image editor opens, switch to **My Assets** to select the red balloon sprite.
+
+![Choose the red balloon from My Assets](/static/skillmap/balloon/red-balloon.png "Choose the item called balloon-1.")
+
+~hint Show me how! 🕵🏽
+
+![Choose the red balloon from My Assets](/static/skillmap/balloon/choose-sprite.gif "Change from the Editor to My Assets and select the red balloon.")
+
+hint~
+
+💡 _Don't forget to look at the game window to see how things are shaping up!_
+
+
+
+
+
+#### ~ tutorialhint
 ```blocks
-let myMouse: Sprite = null
-let myBalloon: Sprite = null
-info.startCountdownGame(20, winTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Score)
 scene.setBackgroundColor(1)
-myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-myBalloon.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(80, 93)
+    //@highlight
+let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+```
 
+
+## {4. Move Balloon}
+
+**Excellent!**
+
+Let's move the balloon down to give it room to grow.
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+``||sprites: set [myBalloon] position to x [80] y [93]||`` <br/>
+and snap it inside at the **end** of the
+``||loops(noclick): on start||``
+block already in your workspace.
+
+
+~hint Why use 80 and 93? 💡
+
+---
+
+The width of the screen is 160 pixels, so an **x** value of **80** will place the balloon in the middle of the screen from left to right.
+
+The **y** value of **93** will put the balloon near the bottom of the screen because the screen height is 120 pixels.
+
+These numbers were carefully selected to put the balloon in the right place for the next several steps...but you can also play around with the values to see what happens when you make them larger or smaller.
+
+hint~
+
+~hint Show me how! 🕵🏽
+
+![Choose the red balloon from My Assets](/static/skillmap/balloon/move-sprite.gif "Change from the Editor to My Assets and select the red balloon.")
+
+hint~
+
+
+
+#### ~ tutorialhint
+```blocks
+carnival.startCountdownGame(20, carnival.WinTypes.Score)
+scene.setBackgroundColor(1)
+let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+    //@highlight
+myBalloon.setPosition(80, 93)
+```
+
+
+
+
+## {5. Blow Up Balloon}
+
+Now we need to make the balloon bigger each time the (A) button is pressed.
+
+
+- :arrows alternate vertical: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
+ ``||scaling: change [myBalloon] scale by [1] pixels||`` <br/>
+and snap it into the **end** of the <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
+block already in the workspace.
+
+
+~hint Show me how! 🕵🏽
+
+![Snap the scale block in after the change score block.](/static/skillmap/balloon/scale.gif "This block will make your balloon grow as you press the A button.")
+
+hint~
+
+
+
+#### ~ tutorialhint
+```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player1.changeScoreBy(1)
-    scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    myMouse.setImage(assets.image`mouse1-down`)
+        //@highlight
+scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
+```
 
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse.setImage(assets.image`mouse1-up`)
-})
 
+
+## {6. Check Your Game!}
+
+**Try your game now!**
+
+- :binoculars: Look at your project in the game window!
+
+Press the (A) button (or **space bar**) as fast as you can.  You should see the balloon get bigger each time you click!
+
+
+
+
+
+
+## {7. Add a Booth}
+
+**Let's add a booth sprite!**
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+ ``||variables(sprites): set [myBooth] to sprite [ ] of kind [Booth]||`` <br/>
+and snap it into the **end** of the
+``||loops(noclick): on start||``
+block already in your workspace.
+
+- :mouse pointer: Click the empty square inside the block and when the image editor opens, switch to **My Assets** to select the **booth** sprite.
+![Choose the booth from My Assets](/static/skillmap/balloon/booth.png "It's important to use this booth until you've played with your game.")
+
+~hint Show me how! 🕵🏽
+
+![Choose the booth from My Assets](/static/skillmap/balloon/booth.gif "Change from the Editor to My Assets and select the booth.")
+
+hint~
+
+💡 _Don't forget to keep your eye on the game window to see how things are shaping up!_
+
+
+
+
+
+```blockconfig.local
+let myBooth = sprites.create(img`.`, SpriteKind.Booth)
+```
+
+#### ~ tutorialhint
+```blocks
+carnival.startCountdownGame(20, carnival.WinTypes.Score)
+scene.setBackgroundColor(1)
+let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myBalloon.setPosition(80, 93)
+
+    //@highlight
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+```
+
+
+
+
+## {8. Win on Overlap}
+
+Let's make our game even more fun by adding a way to **"win"** when the balloon reaches the line!
+
+To do this, we'll need another event.
+
+- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
+``||sprites: on [sprite] of kind [Player] overlaps||`` <br/>
+and drop it into an **empty area** in the workspace.
+
+
+~hint Show me how! 🕵🏽
+
+![Drop an `on overlap` event in the workspace](/static/skillmap/balloon/overlap.gif "Make sure to change the last kind to Booth.")
+
+hint~
+
+
+
+```blockconfig.local
+let myBooth = sprites.create(img`.`, SpriteKind.Booth)
+```
+
+#### ~ tutorialhint
+```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
-game.onGameOverExpanded(winTypes.Multi)
-})
-
-
-```
-
-If those steps don't solve your problem, click "Replace my code" to replace the blocks in your workspace with new starter code.
-
-hint~
-
-
-
-
-## {3. Add Second Player}
-
-Follow the steps from previous levels to add a second player that reacts to the (B) button!
-
-- :lightbulb: Can you figure out what to do by yourself?
-
-**Don't forget to try your game after each step!**
-
-
-
-
-## {4. Add a Second Button Event}
-
-- :lightbulb: Start by adding an <br/>
-``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace, then add a point for **player 2** each time it's clicked.
-
-
-~hint Tell me more... 🕵🏽
-
-- :paper plane: From the ``||controller: Controller||`` category in the toolbox, grab the<br/>
-``||controller(noclick): on [B] button [pressed]||`` <br/>
-bundle and drop it onto an empty area of your workspace.
-
-
-hint~
-
-
-~hint Show me... 🕵🏽
-
-
-![Balloon Bursting Carnival Final Level - Add B](youtube:HtJt9nSHO-o?start=14&end=47)
-
-hint~
-
-
-
-
-
-
-#### ~ tutorialhint
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
 })
 ```
 
 
-## {5. Add the Balloon}
-
-- :lightbulb: Can you figure out how to add the second balloon for the second player?
-
-_(You'll also need to move player 1 to the left, and set player 2 further right.)_
 
 
-~hint Tell me more... 🕵🏽
+## {9. Game Over Win}
 
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Select the image of the blue balloon.
-
-- :mouse pointer: Grab <br/>
-``||sprites: set [myBalloon2] position to x [110] y [93]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Change the positions for the original **myBalloon** and **myMouse** to each have an x value of **50**.
+- :circle: From the ``||carnival: Carnival||`` category in the toolbox, grab <br/>
+``||carnival: game over [multiplayer]||`` <br/>
+and snap it into the empty
+``||sprites(noclick): on overlaps||``
+container already in the workspace.
 
 
-hint~
+~hint Show me how! 🕵🏽
 
-~hint Show me! 🕵🏽
-
-
-![Balloon Bursting Carnival Final Level - Add Balloon](youtube:HtJt9nSHO-o?start=48&end=121)
-
-hint~
-
-
-
-
-
-#### ~ tutorialhint
-```blocks
-let myBalloon2: Sprite = null
-let myMouse: Sprite = null
-let myBalloon: Sprite = null
-info.startCountdown(20)
-scene.setBackgroundColor(1)
-myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-myBalloon.setPosition(50, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(50, 93)
-myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-myBalloon2.setPosition(110, 93)
-```
-
-
-
-
-
-## {6. Add the Mouse}
-
-- :lightbulb: Now it's time to add the second mouse in front of the second balloon.
-
-
-~hint Tell me more... 🕵🏽
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables: set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Select the **mouse2-up** image.
-
-- :mouse pointer: Grab <br/>
-``||sprites: set [myMouse2] position to x [110] y [93]||`` <br/>
-block and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-hint~
-
-~hint Show me! 🕵🏽
-
-
-![Balloon Bursting Carnival Final Level - Add Mouse](youtube:HtJt9nSHO-o?start=119&end=171)
+![Snap a game over block into the on overlap container](/static/skillmap/balloon/win.gif "Toggle the option to <WIN>")
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(assets.image`mouse2-down`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(assets.image`mouse2-up`)
-})
+let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 ```
 
 #### ~ tutorialhint
 ```blocks
-let myBalloon2: Sprite = null
-let myMouse: Sprite = null
-let myBalloon: Sprite = null
-let myMouse2: Sprite = null
-info.startCountdown(20)
-scene.setBackgroundColor(1)
-myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-myBalloon.setPosition(50, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(50, 93)
-myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-myBalloon2.setPosition(110, 93)
-myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
+    //@highlight
+carnival.onGameOverExpanded(carnival.WinTypes.Multi)
+})
 ```
 
 
+## {10. Play Your Game}
 
 
-## {7. Push Mouse 2}
-
-You're almost there!
-
-- :lightbulb: Make the second mouse look like it's pushing and releasing the handle when the (B) button is pushed and released.
-
-Don't forget to test your game using the (B) button in the **game window** or the **enter** key on the keyboard!
+**Win your game!**
 
 
-~hint Tell me more... 🕵🏽
+Take a look at the game window.
 
-- :game: From the ``||controller: Controller||`` category in the toolbox, grab the <br/>
-``||controller(noclick):on [B] button [Released]||``<br/>
-bundle and drop it into an empty area of the workspace.
+Press the (A) button or **space bar** as fast as you can. Can you get the balloon to reach the line before time runs out?
 
-- :mouse pointer: Click the empty box and choose **mouse2-up** from **My Assets**.
+~hint Why does this work? 💡
 
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab another <br/>
-``||sprites: set [myMouse2] image to [ ]||`` <br/>
-block and snap it into the <br/>
-``||controller(noclick): on [B] button [Pressed]||`` <br/>
-block already in your workspace.
+You added an event that watches for the Player (balloon) to overlap the Booth (any part of the booth image.)
 
-- :mouse pointer: Click the empty box and choose **mouse2-down** from **My Assets**.
+The line is part of the booth image, so when the balloon crosses the line, the overlap event triggers and runs
+``||game(noclick): game over [multiplayer]||``, allowing you to win the game!
 
-
-hint~
-
-~hint Show me! 🕵🏽
-
-
-![Balloon Bursting Carnival Final Level - Move Mouse](youtube:HtJt9nSHO-o?start=171&end=235)
+With this code, it takes 61 points to get to the line, so you must score 61 points before time runs out to win!
 
 hint~
 
 
 
-```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(assets.image`mouse2-up`)
-})
-```
+## {11. Finale}
 
+**🎈 FANTASTIC 🎈**
 
-#### ~ tutorialhint
-```blocks
-    let myMouse2: Sprite = null
+You have started your very own clicker game!
 
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(assets.image`mouse2-down`)
-})
-
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        let myMouse2: Sprite = null
-    myMouse2.setImage(assets.image`mouse2-up`)
-})
-```
-
-
-## {8. Inflate the Balloon}
-
-
-- :lightbulb: Time to make sure that the second balloon gets bigger with each step.
-
-
-~hint Tell me more... 🕵🏽
-
-- :up-down: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
-``||scaling: change [myBalloon2] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
-and snap it into the <br/>
-``||controller: on [B] button [pressed]||`` <br/>
-block already in the workspace.
-
-
-hint~
-
-~hint Show me! 🕵🏽
-
-
-![Balloon Bursting Carnival Final Level - Inflate](youtube:HtJt9nSHO-o?start=235&end=299)
-
-hint~
-
-
-
-```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(img`.`)
-    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-```
-
-
-#### ~ tutorialhint
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(assets.image`mouse2-down`)
-    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse2.setImage(assets.image`mouse2-up`)
-})
-```
-
-
-
-
-## {8. Play Your Game!}
-
-**Try your game!**
-
-- :binoculars: Look at your project in full-screen by clicking the **resize** button on the normal game window!
-
-Find a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
-
-💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
-``||info: start countdown [20] (s) and game over [high score]||``<br/>
-inside ``||loops: on start||`` and choose **Delete Blocks**._
-
-
-
-
-
-
-## {9. Add a Label}
-
-Last step!
-
-- :lightbulb: Add a label to the booth so everyone knows the name of the game!
-
-**Play your finished game a few times!  Who can get the best 2 out of three?**
-
-
-~hint Tell me more... 🕵🏽
-
-- :up-down: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
-``||scene: add label [Burstin' Balloons] to [middle] of window || `` <br/>
-and snap it into the **top** of the ``||loops: on start||``
-block already in the workspace.
-
-
-hint~
-
-~hint Show me! 🕵🏽
-
-
-![Balloon Bursting Carnival Final Level - Inflate](youtube:HtJt9nSHO-o?start=235&end=299)
-
-hint~
-
-
-
-```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(img`.`)
-})
-```
-
-
-#### ~ tutorialhint
-```block
-scene.add_label_to("Burstin' Balloons", areas.Mid)
-
-```
-
-
-
-## {10. Finale}
-
-**🥳 You've done it 🥳**
-
-You've finished the entire skillmap!
-
-When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
-
+When you're ready, click **Done** to return to the skillmap and continue building your amazing <br/>**🎡 carnival game 🎡**!
 
 
 ```blockconfig.global
-let myBalloon2: Sprite = null
-info.player2.changeScoreBy(1)
-info.startCountdownGame(20, winTypes.Score)
-myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+info.player1.changeScoreBy(1)
+carnival.startCountdownGame(20, carnival.WinTypes.Score)
+let myBalloon = sprites.create(img`.`, SpriteKind.Player)
 scene.setBackgroundColor(1)
-myBalloon2.setPosition(110, 93)
-scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+myBalloon.setPosition(80, 93)
+scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) { })
-game.onGameOverExpanded(winTypes.Multi)
-myMouse2.setImage(img`.`)
-
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-})
-
-scene.add_label_to("Burstin' Balloons", areas.Mid)
+carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 ```
 
 
+
 ```package
-arcade-text=github:microsoft/arcade-text/
 pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
 
 ```template
-
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.player1.changeScoreBy(1)
-    scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    myMouse.setImage(assets.image`mouse1-down`)
 })
 
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse.setImage(assets.image`mouse1-up`)
-})
 
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
-game.onGameOverExpanded(winTypes.Multi)
-})
-
-let myMouse: Sprite = null
-let myBalloon: Sprite = null
-info.startCountdownGame(20, winTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Score)
 scene.setBackgroundColor(1)
-myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-myBalloon.setPosition(80, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(80, 93)
 
 ```
 
-
-```ghost
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    myMouse2.setImage(assets.image`mouse2-down`)
-    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    info.player2.changeScoreBy(1)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    myMouse.setImage(assets.image`mouse1-down`)
-    scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-    info.player1.changeScoreBy(1)
-})
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse.setImage(assets.image`mouse1-up`)
-})
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse2.setImage(assets.image`mouse2-up`)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSprite) {
-    game.over(true)
-})
-let myMouse2: Sprite = null
-let myBalloon2: Sprite = null
-let myMouse: Sprite = null
-let myBalloon: Sprite = null
-scene.setBackgroundColor(1)
-let booth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
-myMouse.setPosition(50, 93)
-myMouse2.setPosition(110, 93)
-myBalloon.setPosition(50, 93)
-myBalloon2.setPosition(110, 93)
-    info.player2.changeScoreBy(1)
-scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-
-```
-
-
-
-```customts
-
-namespace SpriteKind {
-    //% isKind
-    export const Booth = SpriteKind.create()
-    //% isKind
-    export const Mouse = SpriteKind.create()
-}
-
-enum winTypes {
-    //% block="win game"
-    Win,
-    //% block="lose game"
-    Lose,
-    //% block="high score"
-    Score,
-    //% block="multiplayer"
-    Multi
-}
-
-enum speeds {
-    //% block="fast"
-    Fast,
-    //% block="medium"
-    Med,
-    //% block="slow"
-    Slow
-}
-
-enum areas {
-    //% block="top"
-    Top,
-    //% block="middle"
-    Mid,
-    //% block="bottom"
-    Bottom
-}
-
-let textSprite: TextSprite = null
-//let fanfare: effects.BackgroundEffect = undefined;
-//let winStyle = winTypes.Score
-
-
-
-namespace scene {
-    /**
-    * Adds text to the top, middle, or bottom
-    * of screen as defined by circuis games
-    */
-    //% color="#4b6584"
-    //% blockId=add_label_to
-    //% block="add label $myLabel to $myPosition of window || $myColor"
-    //% myLabel.defl="Whack-the-Mole"
-    //% myColor.shadow="colorindexpicker"
-    //% myColor.defl=4
-    //% myPosition.defl=areas.Bottom
-    //% inlineInputMode=inline
-    export function add_label_to(myLabel: string, myPosition: areas, myColor?:number) {
-        if (!myColor)
-            myColor = 4;
-
-        textSprite = textsprite.create(myLabel, 0, myColor)
-        if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
-        if (myPosition == areas.Mid) textSprite.setPosition(80, 50);
-        if (myPosition == areas.Top) textSprite.setPosition(80, 20);
-    }
-}
-
-
-namespace info {
-    let countdownInitialized = false;
-    /**
-     * Adds game end style to countdown
-     */
-    //% color="#cf6a87"
-    //% group=countdown
-    //% blockId=start_countdown_game
-    //% block="start countdown $myTime (s) and game over $winType || effect $winEffect"
-    //% myTime.defl=15
-    //% winType.defl=winTypes.Score
-    //% winEffect.defl=effects.confetti
-    //% inlineInputMode=inline
-    export function startCountdownGame(myTime: number, winType: winTypes, winEffect?: effects.BackgroundEffect) {
-        if (!winType)
-            winType = winTypes.Win;
-        if (!winEffect && winType != winTypes.Lose){
-            winEffect = effects.confetti;
-        }
-        else { winEffect = effects.melt;}
-        init(winType, winEffect);
-        info.startCountdown(myTime)
-
-    }
-
-    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
-
-        // Prep default variables for different win types
-        let winnerNumber = 1;
-        let thisHigh = 0;
-
-        // Save all scores as relevant to the game.
-        info.saveAllScores();
-
-        // collect the scores before popping the scenes
-        const scoreInfo1 = info.player1.getState();
-        const scoreInfo2 = info.player2.getState();
-        const scoreInfo3 = info.player3.getState();
-        const scoreInfo4 = info.player4.getState();
-        const highScore = info.highScore();
-        const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
-
-        // Find player with highest score
-        for (let i = 0; i < 4; i++) {
-            if (allScores[i] > thisHigh) {
-                thisHigh = allScores[i];
-                winnerNumber = i+1;
-            }
-        }
-        // If highest score is higher than saved high, replace
-        if (thisHigh > highScore){
-            info.saveHighScore(); }
-
-
-        // releasing memory and clear fibers. Do not add anything that releases the fiber until background is set below,
-        // or screen will be cleared on the new frame and will not appear as background in the game over screen.
-        game.popScene();
-        game.pushScene();
-        scene.setBackgroundImage(screen.clone());
-
-        music.powerUp.play();
-
-        fanfare.startScreenEffect();
-
-        pause(400);
-
-        const overDialog = new GameOverDialog(true, thisHigh, highScore, winnerNumber, winStyle);
-        scene.createRenderable(scene.HUD_Z, target => {
-            overDialog.update();
-            target.drawTransparentImage(
-                overDialog.image,
-                0,
-                (screen.height - overDialog.image.height) >> 1
-            );
-        });
-        pause(500); // wait for users to stop pressing keys
-        overDialog.displayCursor();
-        game.waitAnyButton();
-        control.reset();
-
-    }
-
-    function init(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
-        if (countdownInitialized) return;
-        countdownInitialized = true;
-
-        info.onCountdownEnd(function () {
-            if (winStyle == winTypes.Win) {
-                game.over(true, fanfare)
-            } else if (winStyle == winTypes.Lose) {
-                game.over(false, fanfare)
-            } else {
-                newGameOver(winStyle, fanfare);
-            }
-        })
-    }
-
-    export class GameOverDialog extends game.BaseDialog {
-        protected cursorOn: boolean;
-        protected isNewHighScore: boolean;
-
-        constructor(
-            protected win: boolean,
-            protected score?: number,
-            protected highScore?: number,
-            protected winnerNum?: number,
-            protected winStyle?: winTypes
-        ) {
-            super(screen.width, 46, img`
-        1 1 1
-        f f f
-        1 1 1
-        `);
-            this.cursorOn = false;
-            this.isNewHighScore = this.score > this.highScore;
-        }
-
-        displayCursor() {
-            this.cursorOn = true;
-        }
-
-        update() {
-            this.clearInterior();
-            this.drawTextCore();
-
-            if (this.cursorOn) {
-                this.drawCursorRow();
-            }
-        }
-
-        drawTextCore() {
-            const titleHeight = 8;
-            if (this.winStyle == winTypes.Multi){
-                this.image.printCenter(
-                    "Player " + this.winnerNum + " wins!",
-                    titleHeight,
-                    screen.isMono ? 1 : 5,
-                    image.font8
-                );
-
-                if (this.score !== undefined) {
-                    const scoreHeight = 23;
-                    const highScoreHeight = 34;
-                    const scoreColor = screen.isMono ? 1 : 2;
-
-                    this.image.printCenter(
-                        "Score:" + this.score,
-                        scoreHeight,
-                        scoreColor,
-                        image.font8
-                    );
-
-                    if (this.isNewHighScore) {
-                        this.image.printCenter(
-                            "New High Score!",
-                            highScoreHeight,
-                            scoreColor,
-                            image.font5
-                        );
-                    } else {
-                        this.image.printCenter(
-                            "HI:" + this.highScore,
-                            highScoreHeight,
-                            scoreColor,
-                            image.font8
-                        );
-                    }
-                }
-            }
-            else {
-                this.image.printCenter(
-                    "Great Job!",
-                    titleHeight,
-                    screen.isMono ? 1 : 5,
-                    image.font8
-                );
-
-                if (this.score !== undefined) {
-                    const scoreHeight = 23;
-                    const highScoreHeight = 34;
-                    const scoreColor = screen.isMono ? 1 : 2;
-
-                    this.image.printCenter(
-                        "Score:" + this.score,
-                        scoreHeight,
-                        scoreColor,
-                        image.font8
-                    );
-
-                    if (this.isNewHighScore) {
-                        this.image.printCenter(
-                            "New High Score!",
-                            highScoreHeight,
-                            scoreColor,
-                            image.font5
-                        );
-                    } else {
-                        this.image.printCenter(
-                            "HI:" + this.highScore,
-                            highScoreHeight,
-                            scoreColor,
-                            image.font8
-                        );
-                    }
-                }
-            }
-        }
-    }
-}
-
-namespace game {
-    /**
-     * Adds additional end game styles
-     */
-    //% color="#8854d0"
-    //% group=Gameplay
-    //% blockId=on_game_over_expanded
-    //% block="game over $winStyle || add effect $winEffect"
-    //% winType.defl=winTypes.Win
-    //% winEffect.defl=effects.confetti
-    //% inlineInputMode=inline
-    export function onGameOverExpanded(winStyle: winTypes, winEffect?: effects.BackgroundEffect) {
-        if (!winStyle)
-            winStyle = winTypes.Win;
-        if (!winEffect && winStyle != winTypes.Lose) {
-            winEffect = effects.confetti;
-        }
-        else { winEffect = effects.melt; }
-
-        if (winStyle == winTypes.Win) {
-            game.over(true, winEffect)
-        } else if (winStyle == winTypes.Lose) {
-            game.over(false, winEffect)
-        } else {
-            info.newGameOver(winStyle, winEffect);
-        }
-    }
-}
-
-```
 
 ```assetjson
 {
