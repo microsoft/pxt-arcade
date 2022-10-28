@@ -6,6 +6,7 @@ import MainMenu from './Components/MainMenu';
 import { KioskState } from './Models/KioskState';
 import EnterHighScore from './Components/EnterHighScore';
 import AddingGame from './Components/AddingGame';
+import ScanQR from './Components/ScanQR';
 
 const kioskSingleton: Kiosk = new Kiosk();
 kioskSingleton.initialize().catch(error => alert(error));
@@ -29,6 +30,8 @@ function App() {
         return (<EnterHighScore kiosk={kioskSingleton} />)
       case KioskState.AddingGame:
         return (<AddingGame kiosk={kioskSingleton} />)
+      case KioskState.ScanQR:
+        return (<ScanQR kiosk={kioskSingleton} />)
     }
 
   return (<div />)
@@ -37,8 +40,11 @@ function App() {
 function onHashChange() {
   const hash = window.location.hash;
   const match = /pub:((?:\d{5}-\d{5}-\d{5}-\d{5})|(?:_[a-zA-Z0-9]+))/.exec(hash);
+  const addGame = /add-game:((?:[a-zA-Z0-9]{6}))/.exec(hash);
   if (match) {
     kioskSingleton.launchGame(match[1], true);
+  } else if (addGame){
+    kioskSingleton.navigate(KioskState.ScanQR);
   }
 }
 

@@ -188,7 +188,7 @@ export class Kiosk {
         }
     }
 
-    private navigate(state: KioskState) {
+    navigate(state: KioskState) {
         this.state = state;
         if (this.onNavigated) {
             this.onNavigated();

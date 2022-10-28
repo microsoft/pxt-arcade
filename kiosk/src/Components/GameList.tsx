@@ -106,7 +106,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 <div className="gameTile" style={{ 
                     backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
                 }}>
-                    <div className="gameContentBackground">
+                    <div className="gameLabelBackground">
                         <div className="gameTitle">{game.name}</div>
                         <div className="gameDescription">{game.description}</div>
                     </div>
@@ -117,7 +117,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
 
     return(
         <div className="carouselWrap">
-            {/* <AddGameCard kiosk={kiosk} selected={buttonSelected} /> */}
             <Carousel
                 slides={slides}
                 showNavigation={false}

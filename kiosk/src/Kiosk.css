@@ -25,6 +25,19 @@ html, body {
     filter: blur(137px);
 }
 
+
+.qrScanner {
+    width: 20vw;
+    height: 20vh;
+}
+
+.qrScanner-label {
+    background-color: white;
+    color:rgba(19, 69, 90, 0.81);
+    padding: 2vh;
+    border-radius: 1.5vh;
+}
+
 .content {
     position: absolute;
     top: 0;
@@ -156,12 +169,13 @@ h2 {
 
 .gameTile {
     position: relative;
-    width: 50vw;
+    width: 35vw;
     height: 50vh;
     background-size:100% 100%;
+    background-repeat: no-repeat;
 }
 
-.gameContentBackground {
+.gameLabelBackground {
     position: absolute;
     bottom: 0;
     height: 128px;
