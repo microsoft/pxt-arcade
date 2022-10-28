@@ -1,6 +1,6 @@
 {
     "GameDataUrl": "GameList.json",
-    "PlayUrlRoot": "https://arcade.makecode.com/v1.9---run",
+    "PlayUrlRoot": "https://arcade.makecode.com/stable---run",
     "Debug": true,
     "EnterHighScoreDelayMilli": 2000,
     "HighScoresToKeep": 10,
