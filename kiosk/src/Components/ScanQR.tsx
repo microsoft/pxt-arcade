@@ -48,26 +48,27 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
         }
 
         if (!!error) {
-            console.log("the error");
-            console.log(error);
-            setData("Unable to scan QR code");
+            setData("No QR Code Found");
         }
     }
 
     return (
-        <div className="scanQr">
-            <h1>Add Game to Kiosk {kioskId}</h1>
-            <ol>
+        <div className="scanQrPage">
+            <h2>Add your game to </h2>
+            <h1>Kiosk {kioskId}</h1>
+            <ol className="scanInstructions">
                 <li>Open your game on your computer</li>
                 <li>Go to share your game</li>
                 <li>Scan QR code from the share modal</li>
             </ol>
-            <button onClick={renderQrScanner}>Open camera to scan the qr code</button>
+            <button className="scanQrButton" onClick={renderQrScanner} style={{display: `${scannerVisible ? "none" : "content"}`}}>Open camera to scan the qr code</button>
             <div>
-            <div className="qrScanner" style={{visibility: `${scannerVisible ? "visible" : "hidden"}`}}>
+            <div className="qrScannerHolder" style={{visibility: `${scannerVisible ? "visible" : "hidden"}`}}>
                 <QrReader constraints={{ facingMode: "environment" }}
                             onResult={scannerResult}
                             scanDelay={500}
+                            className="qrScanner"
+                            videoContainerStyle={{height: "100%"}}
                 />
                 <p>{data}</p>
             </div>

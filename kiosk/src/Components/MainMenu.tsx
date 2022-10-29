@@ -39,14 +39,12 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
     });
 
     return(
-        <div>
-            <div>
-                <nav className="mainMenuTopBar">
-                    <h1 className="mainMenuHeader">SELECT A GAME</h1>
-                    <AddGameButton kiosk={kiosk} selected={buttonSelected} content="Add your game" />
-                </nav>
-                <GameList kiosk={kiosk} buttonSelected={buttonSelected} />
-            </div>
+        <div className="mainMenu">
+            <nav className="mainMenuTopBar">
+                <h1 className="mainMenuHeader">SELECT A GAME</h1>
+                <AddGameButton kiosk={kiosk} selected={buttonSelected} content="Add your game" />
+            </nav>
+            <GameList kiosk={kiosk} buttonSelected={buttonSelected} />
             <HighScoresList kiosk={kiosk} />
         </div>
     )
