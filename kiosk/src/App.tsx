@@ -7,6 +7,7 @@ import { KioskState } from './Models/KioskState';
 import EnterHighScore from './Components/EnterHighScore';
 import AddingGame from './Components/AddingGame';
 import ScanQR from './Components/ScanQR';
+import QrSuccess from './Components/QrSuccess';
 
 const kioskSingleton: Kiosk = new Kiosk();
 kioskSingleton.initialize().catch(error => alert(error));
@@ -32,6 +33,8 @@ function App() {
         return (<AddingGame kiosk={kioskSingleton} />)
       case KioskState.ScanQR:
         return (<ScanQR kiosk={kioskSingleton} />)
+      case KioskState.QrSuccess:
+        return (<QrSuccess kiosk={kioskSingleton} />)
     }
 
   return (<div />)

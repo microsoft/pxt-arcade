@@ -4,6 +4,7 @@ import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
 import "../Kiosk.css";
 import { OnResultFunction, QrReader } from 'react-qr-reader';
+import QrSuccess from "./QrSuccess";
 
 interface IProps {
     kiosk: Kiosk
@@ -38,6 +39,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                     }),
                 });
                 const responseData = await response.json();
+                kiosk.navigate(KioskState.QrSuccess);
             }
             catch (error) {
                 setData("Unable to add game to kiosk. Please try again later");
@@ -46,6 +48,8 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
         }
 
         if (!!error) {
+            console.log("the error");
+            console.log(error);
             setData("Unable to scan QR code");
         }
     }
@@ -60,11 +64,10 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
             </ol>
             <button onClick={renderQrScanner}>Open camera to scan the qr code</button>
             <div>
-            <div className="qrScanner">
+            <div className="qrScanner" style={{visibility: `${scannerVisible ? "visible" : "hidden"}`}}>
                 <QrReader constraints={{ facingMode: "environment" }}
                             onResult={scannerResult}
                             scanDelay={500}
-                            containerStyle={{visibility: `${scannerVisible ? "visible" : "hidden"}`}}
                 />
                 <p>{data}</p>
             </div>

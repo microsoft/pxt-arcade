@@ -16,6 +16,7 @@ export class Kiosk {
     state: KioskState = KioskState.MainMenu;
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
+    private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
     private initializePromise: any;
     private siteElements: ChildNode[] = [];
     private intervalId: any;
@@ -23,6 +24,7 @@ export class Kiosk {
     private lockedGameId?: string;
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
+    private addedGameDescription: string = "Made with love on MakeCode Arcade, added to the kiosk for fun!"
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -43,58 +45,39 @@ export class Kiosk {
             throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
         }
 
+        // the added games persist in local storage, but not the live game list
+        // that feeds the carousel. That's what this function is for.
         this.addNewGamesToList();
     }
 
-    addNewGameToLocalStorage(gameID: string): GameData | undefined {
+    saveNewGame(gameId: string): GameData | undefined {
         // no newGames array in local storage
-        if(localStorage.getItem("newGames") === null){
-            let newGame = new GameData(gameID, "", "", "");
-            let gamesArray : GameData[] = [newGame,];
-
-            localStorage.setItem("newGames", JSON.stringify(gamesArray));
+        const allAddedGames = this.getAllAddedGames();
+        const newGame = new GameData(gameId, "", this.addedGameDescription, "");
+        if (!allAddedGames[gameId]) {
+            this.games.push(newGame);
+            allAddedGames[gameId] = newGame;
+            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
             return newGame;
         }
-        else {
-            let newGames : GameData[] = JSON.parse(localStorage.getItem("newGames")!);
-            let exists = false;
-            for(const game of newGames){
-                if(gameID === game.id){
-                    exists = true;
-                    break;
-                }
-            }
-
-            if(!exists){
-                let newGame = new GameData(gameID, "", "", "");
-                newGames.push(newGame);
-
-                // set the existing newGames array to one with the new game added
-                localStorage.setItem("newGames", JSON.stringify(newGames));
-                return newGame;
-            }
-            return undefined;
-        }
     }
 
-    // Function that should be called to add a new game
-    addGame(shareID: string) : boolean {
-        let gamesData = this.addNewGameToLocalStorage(shareID);
-        if(gamesData){
-            this.addSpecificGameToList(gamesData);
+    getAllAddedGames(): { [index: string]: GameData } {
+        const json = localStorage.getItem(this.addedGamesLocalStorageKey);
+        if (!json) {
+            return {};
         }
-        return true;
-    }
-
-    addSpecificGameToList(gamesData: GameData) : void {
-        this.games.push(gamesData);
+        const allAddedGames: { [index: string]: GameData } = JSON.parse(json);
+        return allAddedGames;
     }
 
     addNewGamesToList() : void {
         // check if there are custom games to add to list
-        if(localStorage.getItem("newGames") !== null){
-            let newGames = JSON.parse(localStorage.getItem("newGames")!);
-            for(const game of newGames){
+        const addedGames = localStorage.getItem(this.addedGamesLocalStorageKey);
+        if (addedGames) {
+            const addedGamesJson: Object = JSON.parse(addedGames);
+            const addedGamesObjs: GameData[] = Object.values(addedGamesJson);
+            for (const game of addedGamesObjs) {
                 this.games.push(game);
             }
         }

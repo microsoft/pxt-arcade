@@ -85,7 +85,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 } else {
                     const gameCode = (await response.json())?.code;
                     if (gameCode !== "0") {
-                        kiosk.addGame(gameCode);
+                        kiosk.saveNewGame(gameCode);
                         // this is something we might want to do in the future
                         // ie if the game gets added, launch it immediately
                         // instead of going back to the main menu to find it
