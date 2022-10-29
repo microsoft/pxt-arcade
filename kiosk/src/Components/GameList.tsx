@@ -13,8 +13,6 @@ interface IProps {
   }
 
 
-//Note: all commented things puts us closer to desired functionality but is not working
-
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     const [freezeControls, setFreeze] = useState(buttonSelected);
