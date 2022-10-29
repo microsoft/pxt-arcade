@@ -55,7 +55,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     }
 
     return (
-        <div>
+        <div className="scanQr">
             <h1>Add Game to Kiosk {kioskId}</h1>
             <ol>
                 <li>Open your game on your computer</li>

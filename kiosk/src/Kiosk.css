@@ -1,64 +1,88 @@
+/* -------- GLOBAL-ISH SYTLING -------- */
+/* ----------------------------------- */
 html, body {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background-color: black;
+    background: linear-gradient(rgba(19, 69, 90, 0.81), rgb(5, 5, 5));
     font-family: 'Press Start 2P';
     color: white;
-    align-items: center;
-}
-
-.bg1 {
-    background: radial-gradient(62.83% 55.51% at 50% 50%, rgba(19, 69, 90, 0.81) 0%, #13455A 100%);
-    height: 100%;
-    width: 100%;
-}
-
-.background {
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    opacity: 0.2;
-    border: 1px solid #141414;
-    filter: blur(137px);
-}
-
-
-.qrScanner {
-    width: 20vw;
-    height: 20vh;
-}
-
-.qrScanner-label {
-    background-color: white;
-    color:rgba(19, 69, 90, 0.81);
-    padding: 2vh;
-    border-radius: 1.5vh;
 }
 
 .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 h1 {
     font-weight: 400;
-    font-size: 54px;
-    line-height: 54px;
+    font-size: 3.375em;
+    line-height: 3.375rem;
     text-align: center;
 }
 
 h2 {
     font-weight: 400;
-    font-size: 44px;
-    line-height: 44px;
+    font-size: 2.75em;
+    line-height: 2.75rem;
     text-align: center;
+}
+
+.sim-embed {
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: -2vw;
+    position: absolute;
+}
+
+.footer {
+    text-align: center;
+    position: fixed;
+    /* These numbers are relative to the size of the footer.png logo */
+    height: 5vh;
+    width: 20vw;
+    left: 1.5%;
+    bottom: 0;
+    background: url("footer.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+}
+
+/* -------- MAIN MENU SYTLING -------- */
+/* ----------------------------------- */
+
+.mainMenuHeader {
+    font-weight: 400;
+    font-size: 2.5rem;
     color: white;
 }
+
+.mainMenuTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    margin-left: 28.5vw;
+}
+
+.kioskButton {
+    width: 20em;
+    border-color: lightblue;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 2em 0.5em;
+    color:white;
+    border-radius: 0.75em;
+    border-width: 0.2em;
+    border-style: solid;
+}
+
+/* -------- ADDING GAME PAGE SYTLING -------- */
+/* ----------------------------------- */
 
 .addInstructions h2 {
     color: lightblue;
@@ -102,64 +126,23 @@ h2 {
     height: 100vh;
 }
 
-.mainMenuHeader {
-    font-weight: 400;
-    font-size: 2.5rem;
-    color: white;
-}
+/* -------- QR PAGES SYTLING -------- */
+/* ----------------------------------- */
 
-.mainMenuTopBar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 80vw;
-    margin-left: 25vw;
-}
-
-/* .topButtonDiv {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
-    flex: 1;
-    margin-top: -8vh;
-    height: 100%;
-} */
-
-.addGameButton {
-    width: 20em;
-    border-color: lightblue;
-    background-color: transparent;
-    font-family: inherit;
-    padding: 2em 0.5em;
-    color:white;
-    border-radius: 0.75em;
-    border-width: 0.2em;
-    border-style: solid;
-}
-
-.highScoreSmallDiv {
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 32px;
-    text-align: center;
-    color: #8AFFF8;
-}
-
-.footer {
-    text-align: center;
-    position: fixed;
-    /* These numbers are relative to the size of the footer.png logo */
-    /* margin-top: -68px; */
-    height: 5vh;
+.qrScanner {
     width: 20vw;
-    left: 1.5%;
-    bottom: 0;
-    background: url("footer.png");
-    background-repeat: no-repeat;
-    background-size: 75%;
+    height: 20vh;
 }
+
+.qrScanner-label {
+    background-color: white;
+    color:rgba(19, 69, 90, 0.81);
+    padding: 2vh;
+    border-radius: 1.5vh;
+}
+
+/* -------- GAME LIST  SYTLING -------- */
+/* ----------------------------------- */
 
 .carouselWrap {
     width: 100%;
@@ -170,15 +153,16 @@ h2 {
 .gameTile {
     position: relative;
     width: 35vw;
-    height: 50vh;
+    height: 45vh;
     background-size:100% 100%;
     background-repeat: no-repeat;
+    min-width: 35rem;
 }
 
 .gameLabelBackground {
     position: absolute;
     bottom: 0;
-    height: 128px;
+    height: 8rem;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
 }
@@ -188,9 +172,10 @@ h2 {
     left: 0;
     font-family: 'Share';
     font-weight: 700;
-    font-size: 34px;
-    height: 38px;
-    margin: 5px;
+    font-size: 2.125em;
+    height: 2.375rem;
+    margin: 0.3rem;
+
 }
 
 .gameDescription {
@@ -199,9 +184,20 @@ h2 {
     left: 0;
     font-family: 'Share';
     font-weight: 400;
-    font-size: 20px;
-    height: 80px;
-    margin: 5px;
+    font-size: 1.25em;
+    height: 5rem;
+    margin: 0.3rem;
+}
+
+/* -------- HIGH SCORE SYTLING -------- */
+/* ----------------------------------- */
+
+.highScoreSmallDiv {
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 2rem;
+    text-align: center;
+    color: #8AFFF8;
 }
 
 .center {
@@ -213,18 +209,13 @@ h2 {
     text-align: right;
 }
 
-.highScoreSmallIndex {
-}
 
 .highScoreSmallInitials {
-    min-width: 150px;
+    min-width: 9.25rem;
 }
 
 .highScoreSmallInitialsScoreSpacer {
-    width: 50px;
-}
-
-.highScoreSmallScore {
+    width: 3.125rem;
 }
 
 .highScoreHighlight {
@@ -232,8 +223,8 @@ h2 {
 }
 
 .highScoreRow {
-    font-size: 40px;
-    height: 60px;
+    font-size: 2.5em;
+    height: 3.75rem;
     color: #8AFFF8;
 }
 
@@ -246,7 +237,7 @@ h2 {
 }
 
 .highScoreInitials {
-    min-width: 150px;
+    min-width: 9.25rem;
     text-align: center;
 }
 
@@ -264,17 +255,9 @@ h2 {
 }
 
 .highScoreInitialsScoreSpacer {
-    width: 50px;
+    width: 3.125rem;
 }
 
 .highScoreScore {
     text-align: right;
-}
-
-.sim-embed {
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    position: absolute;
 }

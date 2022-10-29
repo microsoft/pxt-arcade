@@ -24,7 +24,8 @@ export class Kiosk {
     private lockedGameId?: string;
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
-    private addedGameDescription: string = "Made with love on MakeCode Arcade, added to the kiosk for fun!"
+    private addedGameDescription: string = "Made with love in MakeCode Arcade";
+    private numAddedGames: number = 0;
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -51,10 +52,10 @@ export class Kiosk {
     }
 
     saveNewGame(gameId: string): GameData | undefined {
-        // no newGames array in local storage
         const allAddedGames = this.getAllAddedGames();
-        const newGame = new GameData(gameId, "", this.addedGameDescription, "");
         if (!allAddedGames[gameId]) {
+            this.numAddedGames += 1;
+            const newGame = new GameData(gameId, `Kiosk Game ${this.numAddedGames}`, this.addedGameDescription, "None");
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;
             localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
@@ -276,6 +277,8 @@ export class Kiosk {
             iframe.src = src;
             return iframe;
         }
+        console.log("the built games cache");
+        console.log(this.builtGamesCache);
         gamespace.appendChild(createIFrame(playUrlBase + playQueryParam));
     }
 
