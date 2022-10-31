@@ -643,7 +643,8 @@
         "python": true,
         "assetEditor": true,
         "immersiveReader": true,
-        "tutorialCodeValidation": true
+        "tutorialCodeValidation": true,
+        "multiplayerShareButton": true
     },
     "queryVariants": {
         "skillsMap=1": {

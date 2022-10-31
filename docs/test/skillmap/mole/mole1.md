@@ -249,7 +249,7 @@ When you're ready, click **Done** to return to the skillmap so you can add a rub
 
 
 ```blockconfig.global
-let myMole = sprites.create(img'.', SpriteKind.Enemy)
+let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 
 game.onUpdateInterval(1000, function () {
 sprites.move_to_random_hole_on_grid(myMole)
@@ -258,93 +258,26 @@ sprites.move_to_random_hole_on_grid(myMole)
 ```
 
 
+
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 arcade-text=github:microsoft/arcade-text/
 ```
 
-
 ```customts
 
-enum winTypes {
-    //% block="win game"
-    Win,
-    //% block="lose game"
-    Lose,
-    //% block="high score"
-    Score,
-    //% block="multiplayer"
-    Multi
-}
-
-enum speeds {
-    //% block="fast"
-    Fast,
-    //% block="medium"
-    Med,
-    //% block="slow"
-    Slow
-}
-
-enum areas {
-    //% block="top"
-    Top,
-    //% block="middle"
-    Mid,
-    //% block="bottom"
-    Bottom
-}
-
-let textSprite: TextSprite = null
-//let fanfare: effects.BackgroundEffect = undefined;
-//let winStyle = winTypes.Score
-
-
-
-namespace animation {
-    /**
-    * Prefills animation block with hammer items
-    */
-    //% color="#03aa74"
-    //% blockId=run-image-animation-hammer
-    //% block="animate $sprite=variables_get(myHammer) frames $frames=animation_editor interval (ms) $frameInterval=timePicker loop $loop=toggleOnOff"
-    //% frameInterval.defl=100
-    //% group="Animate"
-    //% weight=100
-    //% help=animation/run-image-animation-hammer
-    export function runImageAnimationHammer(sprite: Sprite, frames: Image[], frameInterval?: number, loop?: boolean) {
-        const anim = new ImageAnimation(sprite, frames, frameInterval || 100, !!loop);
-        anim.init();
-    }
-}
-
-
-
-namespace scene {
-    /**
-    * Adds text to the top, middle, or bottom
-    * of screen as defined by circuis games
-    */
-    //% color="#4b6584"
-    //% blockId=add_label_to
-    //% block="add label $myLabel to $myPosition of window || $myColor"
-    //% myLabel.defl="Whack-the-Mole"
-    //% myColor.shadow="colorindexpicker"
-    //% myColor.defl=4
-    //% myPosition.defl=areas.Bottom
-    //% inlineInputMode=inline
-    export function add_label_to(myLabel: string, myPosition: areas, myColor?:number) {
-        if (!myColor)
-            myColor = 4;
-
-        textSprite = textsprite.create(myLabel, 0, myColor)
-        if (myPosition == areas.Bottom) textSprite.setPosition(80, 110);
-        if (myPosition == areas.Mid) textSprite.setPosition(80, 50);
-        if (myPosition == areas.Top) textSprite.setPosition(80, 20);
-    }
-}
-
 namespace controller{
+
+    export enum Speeds {
+        //% block="fast"
+        Fast,
+        //% block="medium"
+        Med,
+        //% block="slow"
+        Slow
+    }
+
 
     /**
     * Combines a simple "move with arrows"
@@ -353,13 +286,13 @@ namespace controller{
     //% color="#d54322"
     //% blockId=move_only_onscreen_with_arrows
     //% block="move $thisSprite=variables_get(myHammer) on screen with speed $mySpeed"
-    //% mySpeed.defl=speeds.Fast
+    //% mySpeed.defl=Speeds.Fast
     //% inlineInputMode=inline
-    export function move_only_onscreen_with_arrows(thisSprite: Sprite, mySpeed: speeds) {
+    export function moveOnlyOnscreenWithArrows(thisSprite: Sprite, mySpeed: Speeds) {
         thisSprite.setStayInScreen(true)
-        if (mySpeed == speeds.Fast) {
+        if (mySpeed == Speeds.Fast) {
             controller.moveSprite(thisSprite, 225, 225)
-        } else if (mySpeed == speeds.Med) {
+        } else if (mySpeed == Speeds.Med) {
             controller.moveSprite(thisSprite, 175, 175)
         } else {
             controller.moveSprite(thisSprite, 100, 100)
@@ -377,251 +310,17 @@ namespace sprites {
     //% blockId=move_to_random_hole_on_grid
     //% block="move sprite $thisSprite=variables_get(myMole) to random area"
     //% inlineInputMode=inline
-    export function move_to_random_hole_on_grid(thisSprite: Sprite) {
+    export function moveToRandomHoleOnGrid(thisSprite: Sprite) {
         thisSprite.setPosition(simplified.chooseRandomNumber(28, 80, 130), simplified.chooseRandomNumber(21, 53, 85))
+    simplified.still = 0;
     }
 }
 
-namespace info {
-    let countdownInitialized = false;
-    /**
-     * Adds game end style to countdown
-     */
-    //% color="#cf6a87"
-    //% group=countdown
-    //% blockId=start_countdown_game
-    //% block="start countdown $myTime (s) and game over $winType || effect $winEffect"
-    //% myTime.defl=15
-    //% winType.defl=winTypes.Score
-    //% winEffect.defl=effects.confetti
-    //% inlineInputMode=inline
-    export function startCountdownGame(myTime: number, winType: winTypes, winEffect?: effects.BackgroundEffect) {
-        if (!winType)
-            winType = winTypes.Win;
-        if (!winEffect && winType != winTypes.Lose){
-            winEffect = effects.confetti;
-        }
-        else { winEffect = effects.melt;}
-        init(winType, winEffect);
-        info.startCountdown(myTime)
-
-    }
-
-    export function newGameOver(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
-
-        // Prep default variables for different win types
-        let winnerNumber = 1;
-        let thisHigh = 0;
-
-        // Save all scores as relevant to the game.
-        info.saveAllScores();
-
-        // collect the scores before popping the scenes
-        const scoreInfo1 = info.player1.getState();
-        const scoreInfo2 = info.player2.getState();
-        const scoreInfo3 = info.player3.getState();
-        const scoreInfo4 = info.player4.getState();
-        const highScore = info.highScore();
-        const allScores = [scoreInfo1.score, scoreInfo2.score, scoreInfo3.score, scoreInfo4.score];
-
-        // Find player with highest score
-        for (let i = 0; i < 4; i++) {
-            if (allScores[i] > thisHigh) {
-                thisHigh = allScores[i];
-                winnerNumber = i+1;
-            }
-        }
-        // If highest score is higher than saved high, replace
-        if (thisHigh > highScore){
-            info.saveHighScore(); }
-
-
-        // releasing memory and clear fibers. Do not add anything that releases the fiber until background is set below,
-        // or screen will be cleared on the new frame and will not appear as background in the game over screen.
-        game.popScene();
-        game.pushScene();
-        scene.setBackgroundImage(screen.clone());
-
-        music.powerUp.play();
-
-        fanfare.startScreenEffect();
-
-        pause(400);
-
-        const overDialog = new GameOverDialog(true, thisHigh, highScore, winnerNumber, winStyle);
-        scene.createRenderable(scene.HUD_Z, target => {
-            overDialog.update();
-            target.drawTransparentImage(
-                overDialog.image,
-                0,
-                (screen.height - overDialog.image.height) >> 1
-            );
-        });
-        pause(500); // wait for users to stop pressing keys
-        overDialog.displayCursor();
-        game.waitAnyButton();
-        control.reset();
-
-    }
-
-    function init(winStyle: winTypes, fanfare: effects.BackgroundEffect) {
-        if (countdownInitialized) return;
-        countdownInitialized = true;
-
-        info.onCountdownEnd(function () {
-            if (winStyle == winTypes.Win) {
-                game.over(true, fanfare)
-            } else if (winStyle == winTypes.Lose) {
-                game.over(false, fanfare)
-            } else {
-                newGameOver(winStyle, fanfare);
-            }
-        })
-    }
-
-    export class GameOverDialog extends game.BaseDialog {
-        protected cursorOn: boolean;
-        protected isNewHighScore: boolean;
-
-        constructor(
-            protected win: boolean,
-            protected score?: number,
-            protected highScore?: number,
-            protected winnerNum?: number,
-            protected winStyle?: winTypes
-        ) {
-            super(screen.width, 46, img`
-        1 1 1
-        f f f
-        1 1 1
-        `);
-            this.cursorOn = false;
-            this.isNewHighScore = this.score > this.highScore;
-        }
-
-        displayCursor() {
-            this.cursorOn = true;
-        }
-
-        update() {
-            this.clearInterior();
-            this.drawTextCore();
-
-            if (this.cursorOn) {
-                this.drawCursorRow();
-            }
-        }
-
-        drawTextCore() {
-            const titleHeight = 8;
-            if (this.winStyle == winTypes.Multi){
-                this.image.printCenter(
-                    "Player " + this.winnerNum + " wins!",
-                    titleHeight,
-                    screen.isMono ? 1 : 5,
-                    image.font8
-                );
-
-                if (this.score !== undefined) {
-                    const scoreHeight = 23;
-                    const highScoreHeight = 34;
-                    const scoreColor = screen.isMono ? 1 : 2;
-
-                    this.image.printCenter(
-                        "Score:" + this.score,
-                        scoreHeight,
-                        scoreColor,
-                        image.font8
-                    );
-
-                    if (this.isNewHighScore) {
-                        this.image.printCenter(
-                            "New High Score!",
-                            highScoreHeight,
-                            scoreColor,
-                            image.font5
-                        );
-                    } else {
-                        this.image.printCenter(
-                            "HI:" + this.highScore,
-                            highScoreHeight,
-                            scoreColor,
-                            image.font8
-                        );
-                    }
-                }
-            }
-            else {
-                this.image.printCenter(
-                    "Great Job!",
-                    titleHeight,
-                    screen.isMono ? 1 : 5,
-                    image.font8
-                );
-
-                if (this.score !== undefined) {
-                    const scoreHeight = 23;
-                    const highScoreHeight = 34;
-                    const scoreColor = screen.isMono ? 1 : 2;
-
-                    this.image.printCenter(
-                        "Score:" + this.score,
-                        scoreHeight,
-                        scoreColor,
-                        image.font8
-                    );
-
-                    if (this.isNewHighScore) {
-                        this.image.printCenter(
-                            "New High Score!",
-                            highScoreHeight,
-                            scoreColor,
-                            image.font5
-                        );
-                    } else {
-                        this.image.printCenter(
-                            "HI:" + this.highScore,
-                            highScoreHeight,
-                            scoreColor,
-                            image.font8
-                        );
-                    }
-                }
-            }
-        }
-    }
-}
-
-namespace game {
-    /**
-     * Adds additional end game styles
-     */
-    //% color="#8854d0"
-    //% group=Gameplay
-    //% blockId=on_game_over_expanded
-    //% block="game over $winStyle || add effect $winEffect"
-    //% winType.defl=winTypes.Win
-    //% winEffect.defl=effects.confetti
-    //% inlineInputMode=inline
-    export function onGameOverExpanded(winStyle: winTypes, winEffect?: effects.BackgroundEffect) {
-        if (!winStyle)
-            winStyle = winTypes.Win;
-        if (!winEffect && winStyle != winTypes.Lose) {
-            winEffect = effects.confetti;
-        }
-        else { winEffect = effects.melt; }
-
-        if (winStyle == winTypes.Win) {
-            game.over(true, winEffect)
-        } else if (winStyle == winTypes.Lose) {
-            game.over(false, winEffect)
-        } else {
-            info.newGameOver(winStyle, winEffect);
-        }
-    }
-}
 
 namespace simplified {
+
+   export let still = 0;
+
     /**
      * Randomly chooses one of the parameter numbers
      *
@@ -648,12 +347,22 @@ namespace simplified {
         return myList._pickRandom();
     }
 
+    /**
+     * Checks to see if mole has been moved since last time position was checked
+     */
 
+    //% blockId=check_mole_escape
+    //% block="check if mole has escaped"
+    export function checkMoleEscape () {
+        if (still == 1) {
+            info.player2.changeScoreBy(1)
+        }
+        still = 1
+    }
 
 }
 
 ```
-
 
 
 ```assetjson
