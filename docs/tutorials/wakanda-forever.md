@@ -248,7 +248,9 @@ Put this in to the overlap event block.<br/>
 - :paper plane: Send Namor back to the corner of the screen by placing<br/>
 the ``||sprites:set Namor position to x 148 y 2||`` block into the overlap event.
 
-```blocks
+```blocksnamespace SpriteKind {
+    export const Guard = SpriteKind.create()
+}
 sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     otherSprite.setPosition(148, 2)
@@ -270,6 +272,7 @@ and put it in the event to destory Namor.
 - :paper plane: From in ``||game:Game||``, grab a ``||game:game over true||`` block and put it in at the end of the event. This will end the game.
 
 ```blocks
+let Namor: Sprite = null
 info.onScore(20, function () {
     Namor.destroy()
     scene.setBackgroundImage(assets.image`boston-bridge`)
@@ -298,6 +301,8 @@ Pull it into the ``||info:on score 20||`` block after ``||sprites:destroy Namor|
 Use the ``||sprites:Shuri say "WAKANDA FOREVER" for 5000 ms||`` block.
 
 ```blocks
+let Shuri: Sprite = null
+let Namor: Sprite = null
 info.onScore(20, function () {
     Namor.destroy()
     scene.setBackgroundImage(assets.image`boston-bridge`)
