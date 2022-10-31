@@ -132,10 +132,10 @@ namespace sprites.castle {
     //% tags="people"
     export const heroWalkSideRight1 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
-    //% tags="misc"
+    //% tags="buildings"
     export const houseRed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
-    //% tags="misc"
+    //% tags="buildings"
     export const houseBlue = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="people"
