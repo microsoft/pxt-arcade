@@ -100,10 +100,15 @@ hint~
 
 
 #### ~ tutorialhint
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
+```block
+
+simplified.wrap(function () {
+    let myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+    myBalloon2.setPosition(110, 93)
+    let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+    myMouse2.setPosition(110, 93)
 })
+
 ```
 
 
@@ -325,6 +330,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     myMouse2.setImage(img`.`)
     scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+    scaling.scaleByPixels(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    myMouse.setImage(assets.image`mouse1-down`)
+})
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+    myMouse.setImage(assets.image`mouse1-up`)
+})
+
+
 ```
 
 
@@ -455,12 +470,28 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
+
+simplified.wrap(function () {
+    myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+    myBalloon2.setPosition(110, 93)
+    myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+    myMouse2.setPosition(110, 93)
+})
+
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+    scaling.scaleByPixels(myBalloon2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    myMouse2.setImage(img`.`)
+})
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+    myMouse2.setImage(img`.`)
+})
 ```
 
 
 ```package
 pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
@@ -491,6 +522,20 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 myMouse.setPosition(80, 93)
 
+```
+
+
+```customts
+namespace simplified{
+    /**
+    * just run the code
+    */
+    //% block="create player"
+    //% handlerStatement=1
+    export function wrap(handler: () => void) {
+        handler();
+    }
+}
 ```
 
 
