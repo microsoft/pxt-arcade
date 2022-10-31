@@ -248,7 +248,8 @@ Put this in to the overlap event block.<br/>
 - :paper plane: Send Namor back to the corner of the screen by placing<br/>
 the ``||sprites:set Namor position to x 148 y 2||`` block into the overlap event.
 
-```blocksnamespace SpriteKind {
+```blocks
+namespace SpriteKind {
     export const Guard = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSprite) {
