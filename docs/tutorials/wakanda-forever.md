@@ -1,7 +1,5 @@
 # Wakanda Forever
 
-### @explicitHints true
-
 ## {Intro @unplugged}
 
 Help Shuri, Okoye, and Riri Williams (Ironheart) escape Namor.
@@ -352,9 +350,15 @@ game.showLongText("Earn 20 points to win and to stay alive you must keep your he
 
 ---
 
-Now you have a game that helps Shuri, Riri, and Oyoke defeat Namor! Now, give it a try.
+Now you have a game that helps Shuri, Riri, and Oyoke defeat Namor! Go ahead and give it a try.
 
 Click **Done** if you're ready to publish your game and share with friends.
+
+
+
+
+
+
 
 
 
