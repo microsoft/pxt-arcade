@@ -82,7 +82,7 @@ We need to be able to move the hammer around the screen to chase the mole.
 
 - :game: From the ``||controller: Controller||`` category, grab <br/>
 ```block
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
 ```
 and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
@@ -107,7 +107,7 @@ scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 //@highlight
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
 ```
 
 
@@ -180,7 +180,7 @@ Did you notice that the points added up really quickly when the rubber hammer st
 - :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
 
 ```block
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
 ```
 
 and snap it into **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block container already in the workspace.
@@ -203,7 +203,7 @@ hint~
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
 //@highlight
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
 })
 ```
 
@@ -218,7 +218,7 @@ Finally, let's add a timer to keep the game exciting.
 - :id card: From the ``||info: Info||`` category, grab <br/>
 
 ```block
-info.startCountdownGame(15, winTypes.Score)
+carnival.startCountdownGame(15, winTypes.Score)
 ```
 
 and snap it into **the end** of the <br/>
@@ -243,9 +243,9 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
 //@highlight
-info.startCountdownGame(15, winTypes.Score)
+carnival.startCountdownGame(15, winTypes.Score)
 ```
 
 
@@ -301,7 +301,7 @@ scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 
 game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
 })
 ```
 
