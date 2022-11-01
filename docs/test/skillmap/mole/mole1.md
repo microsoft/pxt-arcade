@@ -187,7 +187,7 @@ Let's get the mole jumping from hole to hole every second.
 - :circle: From the ``||game: Game||`` category **in the toolbox**, grab <br/>
 ```blocks
 game.onUpdateInterval(1000, function () {
-sprites.move_to_random_hole_on_grid(myMole)
+sprites.moveToRandomHoleOnGrid(myMole)
 })
 ```
 <br/>and drop it onto **an empty area** of the workspace.
@@ -218,7 +218,7 @@ hint~
 
 ```blocks
 game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
 })
 ```
 
@@ -252,7 +252,7 @@ When you're ready, click **Done** to return to the skillmap so you can add a rub
 let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 
 game.onUpdateInterval(1000, function () {
-sprites.move_to_random_hole_on_grid(myMole)
+sprites.moveToRandomHoleOnGrid(myMole)
 })
 
 ```

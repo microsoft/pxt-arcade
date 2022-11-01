@@ -45,7 +45,7 @@ hint~
 - :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 
 ```block
-scene.add_label_to("Whack-the-Mole", areas.Bottom)
+carnival.addLabelTo("Whack-the-Mole", areas.Bottom)
 ```
 
 and snap it inside and at the very **end** of the
@@ -72,10 +72,10 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score)
+controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
+carnival.startCountdownGame(15, winTypes.Score)
 //@highlight
-scene.add_label_to("Whack-the-Mole", areas.Bottom)
+carnival.addLabelTo("Whack-the-Mole", areas.Bottom)
 ```
 
 
@@ -113,7 +113,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     let myMole: Sprite = null
     let myHammer: Sprite = null
     info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
     //@highlight
 music.knock.play()
 
@@ -184,7 +184,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     let myMole: Sprite = null
     let myHammer: Sprite = null
     info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
     music.knock.play()
     //@highlight
 animation.runImageAnimation(
@@ -250,7 +250,7 @@ arcade-text=github:microsoft/arcade-text/
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
 
 })
 let myMole: Sprite = null
@@ -258,11 +258,11 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)
-info.startCountdownGame(15, winTypes.Score)
+controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
+carnival.startCountdownGame(15, winTypes.Score)
 
 game.onUpdateInterval(1000, function () {
-    sprites.move_to_random_hole_on_grid(myMole)
+    sprites.moveToRandomHoleOnGrid(myMole)
 })
 
 ```
