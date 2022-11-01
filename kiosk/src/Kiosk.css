@@ -39,16 +39,16 @@ h2 {
 }
 
 .footer {
-    text-align: center;
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
     height: 5vh;
     width: 20vw;
     left: 1.5%;
     bottom: 0;
+    margin-bottom: 2vh;
     background: url("footer.png");
     background-repeat: no-repeat;
-    background-size: 75%;
+    background-size: 100%;
 }
 
 /* -------- MAIN MENU SYTLING -------- */
@@ -72,7 +72,6 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 80vw;
     margin-left: 28.5vw;
 }
 
@@ -94,13 +93,33 @@ h2 {
 .addInstructions h2 {
     color: lightblue;
     font-size: 2em;
-    margin-left: -7em;
+    /* margin-left: -7em; */
+}
+
+.addInstructions li {
+    padding: 1em 0;
+    margin-left: 1.5rem;
+    font-size: large;
+}
+
+.addInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
 
 .addGame h1 {
     font-size: 2.5em;
     font-weight: 400;
     margin: 1em 0;
+}
+
+.addGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .innerQRCodeContent {
@@ -118,13 +137,7 @@ h2 {
     margin-top: 5vw;
 }
 
-.addGame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
+
 
 /* -------- QR PAGES SYTLING -------- */
 /* ----------------------------------- */
@@ -180,7 +193,19 @@ h2 {
     padding: 1em 0;
     margin-left: 1.5rem;
     font-size: large;
-    /* letter-spacing: 0.1em; */
+}
+
+.qrSuccess {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 0.25em;
+    line-height: 1.5em;
 }
 
 /* -------- GAME LIST  SYTLING -------- */

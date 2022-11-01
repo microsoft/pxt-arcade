@@ -68,7 +68,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                             onResult={scannerResult}
                             scanDelay={500}
                             className="qrScanner"
-                            videoContainerStyle={{height: "100%"}}
+                            videoContainerStyle={{height: "100%", padding: "0"}}
                 />
                 <p>{data}</p>
             </div>
