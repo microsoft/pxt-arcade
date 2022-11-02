@@ -82,7 +82,7 @@ We need to be able to move the hammer around the screen to chase the mole.
 
 - :game: From the ``||controller: Controller||`` category, grab <br/>
 ```block
-controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
 ```
 and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
@@ -107,7 +107,7 @@ scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 //@highlight
-controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
 ```
 
 
@@ -243,7 +243,7 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
 //@highlight
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
 ```
