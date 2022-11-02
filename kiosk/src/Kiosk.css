@@ -22,8 +22,8 @@ html, body {
 }
 
 .content {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 h1 {
@@ -44,7 +44,7 @@ h2 {
     width: 100%;
     height: 100%;
     top:0;
-    left: -2vw;
+    left: -2%;
     position: absolute;
 }
 
@@ -52,7 +52,7 @@ h2 {
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
     height: 5vh;
-    width: 20vw;
+    width: 20%;
     left: 1.5%;
     bottom: 0;
     margin-bottom: 2vh;
@@ -65,8 +65,8 @@ h2 {
 /* ----------------------------------- */
 
 .mainMenu {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -82,7 +82,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-left: 28.5vw;
+    margin-left: 28.5%;
 }
 
 .kioskButton {
@@ -122,6 +122,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    width: 60%;
 }
 
 .addGame h1 {
@@ -134,8 +135,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 .innerQRCodeContent {
@@ -150,7 +151,7 @@ h2 {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    margin: 5vw 0;
+    margin: 5% 0;
 }
 
 
@@ -162,8 +163,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100vw;
-    max-height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .scanQrPage h2 {
@@ -187,8 +188,8 @@ h2 {
 }
 
 .qrScannerHolder {
-    width: 45vw;
-    height: 30vh;
+    width: 45%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,8 +212,8 @@ h2 {
 }
 
 .qrSuccess {
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
