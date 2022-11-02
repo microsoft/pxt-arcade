@@ -1,14 +1,24 @@
 /* -------- GLOBAL-ISH STYLING -------- */
 /* ----------------------------------- */
+:root {
+    --button-primary-color: #add8e6;
+    --main-text-color: #ffffff;
+    --qr-code-button-color: #247aa0cf;
+    --secondary-dark-color: #13455acf;
+    --high-score-color: #8AFFF8;
+    --high-score-selector-color: #ffd700;
+    --transparent-color: #11ffee00;
+    --black-color: #050505;
+}
 html, body {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background: linear-gradient(rgba(19, 69, 90, 0.81), rgb(5, 5, 5));
+    background: linear-gradient(var(--secondary-dark-color), var(--black-color));
     font-family: 'Press Start 2P';
-    color: white;
+    color: var(--main-text-color);
 }
 
 .content {
@@ -64,7 +74,7 @@ h2 {
 .mainMenuHeader {
     font-weight: 400;
     font-size: 2.5rem;
-    color: white;
+    color: var(--main-text-color);
 }
 
 .mainMenuTopBar {
@@ -77,28 +87,28 @@ h2 {
 
 .kioskButton {
     width: 20em;
-    border-color: lightblue;
+    border-color: var(--button-primary-color);
     font-family: inherit;
     padding: 2em 0.5em;
-    color:white;
+    color:var(--main-text-color);
     border-radius: 0.75em;
     border-width: 0.2em;
     border-style: solid;
 }
 
 .buttonSelected {
-    background-color: lightblue;
+    background-color: var(--button-primary-color);
 }
 
 .buttonUnselected {
-    background-color: transparent;
+    background-color: var(--transparent-color);
 }
 
 /* -------- ADDING GAME PAGE STYLING -------- */
 /* ----------------------------------- */
 
 .addInstructions h2 {
-    color: lightblue;
+    color: var(--button-primary-color);
     font-size: 2em;
 }
 
@@ -163,16 +173,15 @@ h2 {
 .scanQrButton {
     width: 20em;
     border: none;
-    background-color: rgba(36, 122, 160, 0.81);
-    /* font-family: inherit; */
+    background-color: var(--qr-code-button-color);
     padding: 2em 0.5em;
-    color:white;
+    color: var(--main-text-color);
     border-radius: 0.75em;
     border-width: 0.2em;
 }
 .qrScanner-label {
-    background-color: white;
-    color:rgba(19, 69, 90, 0.81);
+    background-color: var(--main-text-color);
+    color: var(--secondary-dark-color);
     padding: 2vh;
     border-radius: 1.5vh;
 }
@@ -270,7 +279,7 @@ h2 {
     font-size: 2em;
     line-height: 2rem;
     text-align: center;
-    color: #8AFFF8;
+    color: var(--high-score-color);
 }
 
 .center {
@@ -292,17 +301,17 @@ h2 {
 }
 
 .highScoreHighlight {
-    background-color: gold;
+    background-color: var(--high-score-selector-color);
 }
 
 .highScoreRow {
     font-size: 2.5em;
     height: 3.75rem;
-    color: #8AFFF8;
+    color: var(--high-score-color);
 }
 
 .enterHighScoreText {
-    color: white;
+    color: var(--main-text-color);
 }
 
 .highScoreIndex {
@@ -320,11 +329,11 @@ h2 {
 }
 
 .highScoreInitialControl {
-    color: white;
+    color: var(--main-text-color);
 }
 
 .highScoreInitialControlSelected {
-    color: yellow;
+    color: var(--high-score-selector-color);
 }
 
 .highScoreInitialsScoreSpacer {

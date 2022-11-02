@@ -53,6 +53,4 @@ export const addGameToKioskAsync = async (kioskId: string | undefined, gameShare
     catch (error) {
         throw new Error("Failed to post game to the kiosk");
     }
-
-    
 }
