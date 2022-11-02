@@ -82,7 +82,7 @@ We need to be able to move the hammer around the screen to chase the mole.
 
 - :game: From the ``||controller: Controller||`` category, grab <br/>
 ```block
-controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
 ```
 and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
@@ -107,7 +107,7 @@ scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 //@highlight
-controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
 ```
 
 
@@ -218,7 +218,7 @@ Finally, let's add a timer to keep the game exciting.
 - :id card: From the ``||info: Info||`` category, grab <br/>
 
 ```block
-carnival.startCountdownGame(15, winTypes.Score)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 ```
 
 and snap it into **the end** of the <br/>
@@ -243,9 +243,9 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
 //@highlight
-carnival.startCountdownGame(15, winTypes.Score)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 ```
 
 
