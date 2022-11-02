@@ -5,6 +5,7 @@ import configData from "../config.json"
 import "../Kiosk.css";
 import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
+import { generateKioskCodeAsync, getGameCodeAsync, isLocal } from "../BackendRequests";
 interface IProps {
     kiosk: Kiosk
   }
@@ -15,7 +16,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
-    const kioskCodeUrl = "http://localhost:3000/static/kiosk/";
+    const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "/kiosk";
 
     const updateLoop = () => {
         if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
@@ -52,14 +53,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
     useEffect(() => {
         async function generateKioskCode() {
-            const codeGenerationUrl = "https://staging.pxt.io/api/kiosk/newcode"
-            const response = await fetch(codeGenerationUrl);
-            if (!response.ok) {
-                throw new Error("Unable to generate kiosk code");
-            }
-
             try {
-                const newKioskCode = (await response.json()).code; 
+                const newKioskCode: string = await generateKioskCodeAsync();
                 setKioskCode(newKioskCode);
                 await addGameToKiosk(newKioskCode);
             }
@@ -73,40 +68,26 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
         function addGameToKiosk(kioskCode: string) {
             const timeoutDuration = 600000; // wait for 10 minutes until the kiosk code expires
-            const whenToPull = 5000; // wait for five seconds to poll for game code data
-            const getGameCodeUrl = `https://staging.pxt.io/api/kiosk/code/${kioskCode}`;
-            const getGameCode = async () => {
-                if (kiosk.state !== KioskState.AddingGame) {
-                    return;
-                }
-                let response = await fetch(getGameCodeUrl);
-                if (!response.ok) {
-                    throw new Error("Unable to get data from the kiosk.");
-                } else {
-                    const gameCode = (await response.json())?.code;
-                    if (gameCode !== "0") {
-                        kiosk.saveNewGame(gameCode);
-                        // this is something we might want to do in the future
-                        // ie if the game gets added, launch it immediately
-                        // instead of going back to the main menu to find it
-                        // kiosk.launchGame(gameCode);
-                        return true;
-                    }
-                    throw new Error("Invalid game code");
-                }
+            const whenToPoll = 5000; // wait for five seconds to poll for game code data
+            if (kiosk.state !== KioskState.AddingGame) {
+                return;
             }
             return new Promise<void>((resolve, reject) => {
                 let pollInterval: any;
                 let pollTimeout: any;
-                pollInterval = setInterval(() => {
-                    getGameCode()
-                        .then(() => {
-                            clearInterval(pollInterval);
-                            clearTimeout(pollTimeout);
-                            resolve();
-                        })
-                        .catch(() => null);
-                }, whenToPull);
+                pollInterval = setInterval(async () => {
+                    try {
+                        const gameCode: string = await getGameCodeAsync(kioskCode);
+                        kiosk.saveNewGame(gameCode);
+                        clearInterval(pollInterval);
+                        clearTimeout(pollTimeout);
+                        resolve();  
+                    }
+                    catch (error) {
+                        throw new Error("Unable to get the id of the game to be added");
+                    }
+
+                }, whenToPoll);
                 pollTimeout = setTimeout(() => {
                     clearInterval(pollInterval);
                     reject();
@@ -128,7 +109,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         else {
             return (
                 <div className="innerQRCodeContent">
-                    <AddGameButton kiosk={kiosk} selected={qrCodeButtonSelected} content="Generate new QR code" />
+                    <AddGameButton selected={qrCodeButtonSelected} content="Generate new QR code" />
                 </div>
             )
         }
@@ -141,10 +122,10 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 <div className="addInstructions">
                     <h2>How to upload your game</h2>
                     <ol>
-                        <li>Go to your game on your personal phone or computer</li>
-                        <li>Click on the share button</li>
-                        <li>Select "Share to Kiosk"</li>
-                        <li>Add kiosk ID.</li>
+                        <li>Scan the QR code to the right with your phone or web cam</li>
+                        <li>Open the link to scan your game's QR code</li>
+                        <li>Return to the Kiosk Main Menu</li>
+                        <li>You will find your game to the left of the GalgaMulti game</li>
                     </ol>
                 </div>
 
@@ -152,7 +133,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     {qrDivContent()}
                 </div>
             </div>
-            <AddGameButton kiosk={kiosk} selected={menuButtonSelected} content="Return to menu" />
+            <AddGameButton selected={menuButtonSelected} content="Return to menu" />
         </div>
 
     )

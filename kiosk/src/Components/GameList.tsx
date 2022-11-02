@@ -5,8 +5,6 @@ import configData from "../config.json"
 import Carousel from "react-spring-3d-carousel";
 import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
-import AddGameCard from "./AddGameButton";
-
 interface IProps {
     kiosk: Kiosk;
     buttonSelected: Boolean;
@@ -15,7 +13,6 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
-    const [freezeControls, setFreeze] = useState(buttonSelected);
     const [indexRef, ] = useState(new PrimitiveRef(0));
     const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
     
@@ -56,7 +53,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     useEffect(() => {
         kiosk.initialize().then(() => {
             setGames(kiosk.games);
-            setFreeze(buttonSelected);
 
             if (!kiosk.selectedGame && kiosk.games.length) {
                 kiosk.selectGame(kiosk.games[0].id);
@@ -75,7 +71,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         // There are some things we only want to do if there are games.
         if (games.length) {
             intervalId = setInterval(() => {
-                if (!freezeControls) {
+                if (!buttonSelected) {
                     updateLoop();
                 }
             }, configData.GamepadPollLoopMilli);
@@ -86,7 +82,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 clearInterval(intervalId);
             }
         };
-    }, [games, freezeControls]);
+    }, [games, buttonSelected]);
 
     useEffect(() => {
         if (kiosk.selectedGame) {

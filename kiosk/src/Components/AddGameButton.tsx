@@ -1,30 +1,17 @@
-import { useEffect, useState } from "react";
-import { Kiosk } from "../Models/Kiosk";
 import "../Kiosk.css";
-import { GameData } from "../Models/GameData";
-
 interface IProps {
-    kiosk: Kiosk;
-    selected: Boolean;
-    content: String;
+    selected: boolean;
+    content: string;
   }
 
-const AddGameButton: React.FC<IProps> = ({ kiosk, selected, content }) => {
-    const [buttonActive, setButtonState] = useState(selected);
-    let buttonColor = buttonActive ? "lightblue" : "transparent";
-
-    const updateButton = () => {
-        buttonColor = buttonActive ? "lightblue" : "transparent";
-    }
-
-    useEffect(() => {
-        setButtonState(selected);
-        updateButton();
-    });
+const AddGameButton: React.FC<IProps> = ({ selected, content }) => {
+    const buttonClassBase: string = "kioskButton";
+    const specificButtonClass = selected ? "buttonSelected" : "buttonUnselected";
+    const kioskButtonClass = `${buttonClassBase} ${specificButtonClass}`;
 
     return (
         <div>
-            <button className="kioskButton" style={{backgroundColor: buttonColor}}>{content}</button>
+            <button className={kioskButtonClass}>{content}</button>
         </div>
     )
 }

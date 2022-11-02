@@ -55,7 +55,7 @@ export class Kiosk {
         const allAddedGames = this.getAllAddedGames();
         if (!allAddedGames[gameId]) {
             this.numAddedGames += 1;
-            const newGame = new GameData(gameId, `Kiosk Game ${this.numAddedGames}`, this.addedGameDescription, "None");
+            const newGame = new GameData(gameId, 'Kiosk Game', this.addedGameDescription, "None");
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;
             localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
@@ -73,14 +73,11 @@ export class Kiosk {
     }
 
     addNewGamesToList() : void {
-        // check if there are custom games to add to list
-        const addedGames = localStorage.getItem(this.addedGamesLocalStorageKey);
-        if (addedGames) {
-            const addedGamesJson: Object = JSON.parse(addedGames);
-            const addedGamesObjs: GameData[] = Object.values(addedGamesJson);
-            for (const game of addedGamesObjs) {
-                this.games.push(game);
-            }
+        // check if there are custom games to add to the game list from local storage
+        const addedGames = this.getAllAddedGames();
+        const addedGamesObjs: GameData[] = Object.values(addedGames);
+        for (const game of addedGamesObjs) {
+            this.games.push(game);
         }
     }
 
@@ -277,8 +274,6 @@ export class Kiosk {
             iframe.src = src;
             return iframe;
         }
-        console.log("the built games cache");
-        console.log(this.builtGamesCache);
         gamespace.appendChild(createIFrame(playUrlBase + playQueryParam));
     }
 

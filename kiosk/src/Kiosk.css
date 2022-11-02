@@ -1,4 +1,4 @@
-/* -------- GLOBAL-ISH SYTLING -------- */
+/* -------- GLOBAL-ISH STYLING -------- */
 /* ----------------------------------- */
 html, body {
     height: 100%;
@@ -51,7 +51,7 @@ h2 {
     background-size: 100%;
 }
 
-/* -------- MAIN MENU SYTLING -------- */
+/* -------- MAIN MENU STYLING -------- */
 /* ----------------------------------- */
 
 .mainMenu {
@@ -78,7 +78,6 @@ h2 {
 .kioskButton {
     width: 20em;
     border-color: lightblue;
-    background-color: transparent;
     font-family: inherit;
     padding: 2em 0.5em;
     color:white;
@@ -87,13 +86,20 @@ h2 {
     border-style: solid;
 }
 
-/* -------- ADDING GAME PAGE SYTLING -------- */
+.buttonSelected {
+    background-color: lightblue;
+}
+
+.buttonUnselected {
+    background-color: transparent;
+}
+
+/* -------- ADDING GAME PAGE STYLING -------- */
 /* ----------------------------------- */
 
 .addInstructions h2 {
     color: lightblue;
     font-size: 2em;
-    /* margin-left: -7em; */
 }
 
 .addInstructions li {
@@ -134,12 +140,12 @@ h2 {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    margin-top: 5vw;
+    margin: 5vw 0;
 }
 
 
 
-/* -------- QR PAGES SYTLING -------- */
+/* -------- QR PAGES STYLING -------- */
 /* ----------------------------------- */
 
 .scanQrPage {
@@ -208,7 +214,7 @@ h2 {
     line-height: 1.5em;
 }
 
-/* -------- GAME LIST  SYTLING -------- */
+/* -------- GAME LIST  STYLING -------- */
 /* ----------------------------------- */
 
 .carouselWrap {
@@ -256,7 +262,7 @@ h2 {
     margin: 0.3rem;
 }
 
-/* -------- HIGH SCORE SYTLING -------- */
+/* -------- HIGH SCORE STYLING -------- */
 /* ----------------------------------- */
 
 .highScoreSmallDiv {

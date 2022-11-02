@@ -34,7 +34,7 @@ function App() {
       case KioskState.ScanQR:
         return (<ScanQR kiosk={kioskSingleton} />)
       case KioskState.QrSuccess:
-        return (<QrSuccess kiosk={kioskSingleton} />)
+        return (<QrSuccess />)
     }
 
   return (<div />)
