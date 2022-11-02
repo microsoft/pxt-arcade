@@ -115,7 +115,7 @@ h2 {
 .addInstructions li {
     padding: 1em 0;
     margin-left: 1.5rem;
-    font-size: large;
+    font-size: 1.25em;
 }
 
 .addInstructions {
@@ -207,7 +207,7 @@ h2 {
 .scanInstructions li {
     padding: 1em 0;
     margin-left: 1.5rem;
-    font-size: large;
+    font-size: 1.10em;
 }
 
 .qrSuccess {
