@@ -72,7 +72,7 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
 //@highlight
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
@@ -258,7 +258,7 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
 
 game.onUpdateInterval(1000, function () {
