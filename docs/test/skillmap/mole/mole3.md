@@ -45,7 +45,7 @@ hint~
 - :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
 
 ```block
-carnival.addLabelTo("Whack-the-Mole", areas.Bottom)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 ```
 
 and snap it inside and at the very **end** of the
@@ -72,10 +72,10 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
-carnival.startCountdownGame(15, winTypes.Score)
+controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 //@highlight
-carnival.addLabelTo("Whack-the-Mole", areas.Bottom)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 ```
 
 
@@ -217,9 +217,9 @@ When your rubber hammer overlaps the mole, points should show up in the top-righ
 
 **🎡 You've done it! 🎡**
 
-You've finished your Whack-the-Mole game!
+You've created a Whack-the-Mole game!
 
-When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
+When you're ready, click **Done** to return to the skillmap so you can turn it into a game for two players!
 
 
 
@@ -258,8 +258,8 @@ let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(myHammer, speeds.Fast)
-carnival.startCountdownGame(15, winTypes.Score)
+controller.moveOnlyOnscreenWithArrows(myHammer, Speeds.Fast)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 
 game.onUpdateInterval(1000, function () {
     sprites.moveToRandomHoleOnGrid(myMole)

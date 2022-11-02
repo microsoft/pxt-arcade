@@ -86,7 +86,7 @@ into **an empty area** of your workspace.
 
 hint~
 
-Now, when player 2 presses the A button (or the **U key** on the keyboard) the mole will hop to a new location.
+Now, when player 2 presses their A button (or the **U key** on the keyboard) the mole will hop to a new location.
 
 
 
@@ -106,13 +106,12 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 Now that player 2 moves the mole, we don't need to have it happen automatically.
 
 
-- :mouse pointer: delete the
+- :mouse pointer: From the <br/>
+``||game(noclick): on game update every [1000] ms||``
+<br/>container already in the workspace, delete
 ```block
     sprites.moveToRandomHoleOnGrid(myMole)
 ```
-block from the <br/>
-``||game(noclick): on game update every [1000] ms||``
-<br/>container already in the workspace.
 
 ~hint How do I delete a block? 💡
 
@@ -341,6 +340,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     sprites.moveToRandomHoleOnGrid(myMole)
 })
 game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press A to move the mole.", DialogLayout.Center)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 ```
 
 
