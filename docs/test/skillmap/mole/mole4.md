@@ -8,7 +8,7 @@ Your code from the last activity is already in the workspace.
 
 Let's add to it to create a multiplayer game.
 
-![Whack-the-Mole](/static/skillmap/mole/mole3.gif "Twice as much fun with two people." )
+![Whack-the-Mole](/static/skillmap/mole/mole4.gif "Twice as much fun with two people." )
 
 
 
@@ -82,7 +82,7 @@ into **an empty area** of your workspace.
 
 ~hint Show me how! 🕵🏽
 
-![Drag the controller bundle into the workspace](/static/skillmap/mole/add-label.gif "Add a second player with the controller bundle")
+![Add a block so a second player can control the mole](/static/skillmap/mole/player2.gif "Add a second player with the controller bundle")
 
 hint~
 
@@ -129,7 +129,7 @@ hint~
 
 ~hint Click here to see how 🕵🏽
 
-![Look under Controller for the block](/static/skillmap/mole/add-music.gif "Drag out the controller block to use later.")
+![Delete the block you don't need](/static/skillmap/mole/delete.gif "Delete the block that moves the mole automatically.")
 
 
 hint~
@@ -156,7 +156,7 @@ into the newly **empty**  <br/>
 
 ~hint Click here to see how 🕵🏽
 
-![Look under Controller for the block](/static/skillmap/mole/add-music.gif "Drag out the controller block to use later.")
+![Score points for staying still](/static/skillmap/mole/check-mole.gif "Add the block to check if the mole is still in the same spot.")
 
 
 hint~
@@ -192,7 +192,7 @@ inside the ``||loops(noclick):on start||`` container, and change **best score** 
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-animation.gif "Add a sprite to your game.")
+![Change the type of win to multiplayer.](/static/skillmap/mole/multi.gif "Make your game multiplayer.")
 
 hint~
 
@@ -242,8 +242,10 @@ You can change your values to make your game exactly the way you like.
 - If player 2 wins too much, change the number of milliseconds they must wait from **1000** to **1500**.<br/>
 - If you don't feel like you have long enough to play, change the countdown from **15** to **25** or **30** seconds. <br/>
 
+---
 
-![Add the sprite block.](/static/skillmap/mole/add-animation.gif "Add a sprite to your game.")
+
+![Customize your game by changing the values in your blocks](/static/skillmap/mole/custom.gif "You can make your game easier or harder.")
 
 hint~
 
@@ -267,7 +269,7 @@ You can change the instructions to whatever you want them to be.
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-animation.gif "Add a sprite to your game.")
+![Add rules.](/static/skillmap/mole/rules.gif "Add some text so users know the rules.")
 
 hint~
 
