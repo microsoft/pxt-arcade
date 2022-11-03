@@ -65,30 +65,20 @@ hint~
 
 ## {3. Add Second Player}
 
-Follow the steps from previous levels to add a second player that reacts to the (B) button!
+**You'll need to repeat your past steps to add a second player.**
 
-- :lightbulb: Can you figure out what to do by yourself?
+We've connected all of the blocks you need inside the toolbox. Can you figure out what you need to do to get Player 2 working?
 
-**Don't forget to try your game after each step!**
-
-
+💡 **Tip:** _If you need more help, click through the steps for details._
 
 
-## {4. Add a Second Button Event}
+## {4. Add the Sprites}
 
-- :lightbulb: Start by adding an <br/>
-``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace and also add a point for **player 2** each time it's clicked.
+- :bolt: Look under ``||simplified:Simplified||`` for the bundle of code you need to add to **the end of** the ``||loops(noclick):on start||`` container.
 
+- :mouse pointer: Click the empty grey boxes to choose the blue balloon and blue mouse images.
 
-~hint Tell me more... 🕵🏽
-
-- :paper plane: From the ``||controller: Controller||`` category in the toolbox, grab the<br/>
-``||controller(noclick): on [B] button [pressed]||`` <br/>
-bundle and drop it onto an empty area of your workspace.
-
-
-hint~
+💡 **Tip:** _You'll also need to change the **x** value for the Player 1 sprites to move them over a bit._
 
 
 ~hint Show me... 🕵🏽
@@ -101,7 +91,15 @@ hint~
 
 #### ~ tutorialhint
 ```block
-
+let myMouse: Sprite = null
+let myBalloon: Sprite = null
+carnival.startCountdownGame(20, carnival.WinTypes.Score)
+scene.setBackgroundColor(1)
+myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
+myBalloon.setPosition(80, 93)
+let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
+myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
+myMouse.setPosition(80, 93)
 simplified.wrap(function () {
     let myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
     myBalloon2.setPosition(110, 93)
@@ -114,31 +112,8 @@ simplified.wrap(function () {
 
 ## {5. Add the Balloon}
 
-- :lightbulb: Can you figure out how to add the second balloon for the second player?
+- :game: Now look under ``||controller:Controller||`` for the blocks you need to allow the second mouse to move when Player 2 presses and releases the **A button**.
 
-_(You'll also need to move player 1 to the left, and set player 2 further right.)_
-
-
-~hint Tell me more... 🕵🏽
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables(sprites): set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Select the image of the blue balloon.
-
-- :mouse pointer: Grab <br/>
-``||sprites: set [myBalloon2] position to x [110] y [93]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Change the positions for the original **myBalloon** and **myMouse** to each have an x value of **50**.
-
-
-hint~
 
 ~hint Show me! 🕵🏽
 
@@ -409,11 +384,11 @@ hint~
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(img`.`)
+simplified.wrap(function () {
+    let myBalloon3 = sprites.create(img`.`, SpriteKind.Player)
+    myBalloon3.setPosition(110, 93)
+    let myMouse3 = sprites.create(img`.`, SpriteKind.Mouse)
+    myMouse3.setPosition(110, 93)
 })
 ```
 
@@ -486,6 +461,9 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
     myMouse2.setImage(img`.`)
 })
+
+
+
 ```
 
 
