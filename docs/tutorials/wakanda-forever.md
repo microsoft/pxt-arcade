@@ -23,7 +23,7 @@ container already in the workspace.
 scene.setBackgroundImage(img`.`)
 ```
 
-## {Step 2.5}
+## {Step 3}
 
 - :paint brush: Click the **grey square** in the new block to open the image editor and choose a background from  **My Assets**.
 
@@ -35,7 +35,7 @@ _The image name shows when you hover over it._
 scene.setBackgroundImage(assets.image`wakanda`)
 ```
 
-## {Step 3}
+## {Step 4}
 
 
 **Introduce Shuri to the game as a new sprite**
@@ -47,7 +47,7 @@ scene.setBackgroundImage(assets.image`wakanda`)
 into **the end** of the  
 ``||loops:on start||`` container.
 
-- :paper plane: Click on ``||variables:mySprite||`` in<br/>
+- :paper plane: Click on ``||variables:[mySprite]||`` in<br/>
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` and<br/>
 select ``||variables(noclick):Rename variable...||``. Rename it to **Shuri**.
 
@@ -61,7 +61,7 @@ scene.setBackgroundImage(assets.image`wakanda`)
 let Shuri = sprites.create(assets.image`shuri`, SpriteKind.Player)
 ```
 
-## {Step 3.5}
+## {Step 5}
 
 
 **Allow Shuri to move inside the screen boundary**
@@ -71,17 +71,17 @@ We need to give Shuri the ability move around when the controller buttons are pr
 ---
 
 - :paper plane: From ``||controller:Controller||``, grab a <br/>
-``||controller:move Shuri with buttons||`` <br/>
+``||controller:move [mySprite] with buttons||`` <br/>
 block and set the sprite variable to ``||variables(noclick):Shuri||``.<br/>
 
 ---
 
-Oh yes, make sure Shuri stays on the screen by turning on a sprite **flag**.
+Oh yes, we need to make sure Shuri stays on the screen by turning on a sprite **flag**.
 
 ---
 
 - :paper plane: In ``||sprites:Sprites||``, get the <br/>
-``||sprites:set stay in screen||`` block. <br/>
+``||sprites:set stay [mySprite] in screen||`` block. <br/>
 Again, set the sprite variable in the block to ``||variables(noclick):Shuri||``.
 
 
@@ -92,7 +92,7 @@ controller.moveSprite(Shuri)
 Shuri.setStayInScreen(true)
 ```
 
-## {Step 4}
+## {Step 6}
 
 
 **Add Namor to the game as Shuri's enemy**
@@ -104,7 +104,7 @@ Shuri.setStayInScreen(true)
 into **the end** of the  
 ``||loops:on start||`` container.
 
-- :paper plane: Click on ``||variables:mySprite||`` in<br/>
+- :paper plane: Click on ``||variables:[mySprite]||`` in<br/>
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` and<br/>
 select ``||variables(noclick):Rename variable...||``.. Rename it to **Namor**.
 
@@ -121,7 +121,7 @@ Shuri.setStayInScreen(true)
 let Namor = sprites.create(assets.image`namor`, SpriteKind.Enemy)
 ```
 
-## {Step 4.5}
+## {Step 7}
 
 
 Namor will start in the upper corner of the screen and chase Shuri all around the screen.
@@ -129,15 +129,15 @@ Namor will start in the upper corner of the screen and chase Shuri all around th
 ---
 
 - :paper plane: In ``||sprites:Sprites||``, pull out the <br/>
-``||sprites:set myEnemy follow mySprite||`` and place it at the end of the ``||loops:on start||``.
+``||sprites:set [myEnemy] follow [mySprite]||`` and place it at the end of the ``||loops:on start||``.
 
-- :paper plane: Click on the ``||variables(noclick):myEnemy||`` dropdown and change it to ``||variables(noclick):Namor||``.<br/>
-Click on the ``||variables(noclick):mySprite||`` dropdown and change to ``||variables(noclick):Shuri||``.<br/>
+- :paper plane: Click on the ``||variables(noclick):[myEnemy]||`` dropdown and change it to ``||variables(noclick):Namor||``.<br/>
+Click on the ``||variables(noclick):[mySprite]||`` dropdown and change to ``||variables(noclick):Shuri||``.<br/>
 Click on the plus **(+)** icon to expand the block and change the speed to **30**.
 
-- :paper plane: From ``||sprites:Sprites||``, pull out a ``||sprites:set mySprite position to x y||``<br/>
+- :paper plane: From ``||sprites:Sprites||``, pull out a ``||sprites:set [mySprite] position to x y||``<br/>
 block and drop it in at ther end of ``||loops:on start||``.<br/>
-Click on the ``||variables(noclick):mySprite||`` dropdown and change to it ``||variables(noclick):Namor||``.<br/>
+Click on the ``||variables(noclick):[mySprite]||`` dropdown and change to it ``||variables(noclick):Namor||``.<br/>
 Set the **x** position to **148** and **y** to **2**.
 
 ```blocks
@@ -150,7 +150,7 @@ Namor.follow(Shuri, 30)
 Namor.setPosition(148, 2)
 ```
 
-## {Step 5}
+## {Step 8}
 
 **Namor attacks Shuri, she loses life points!**
 
@@ -159,9 +159,9 @@ If Namor reaches Shuri, she will lose a life point. Namor will then go back to t
 ---
 
 - :paper plane: In ``||sprites:Sprites||``, grab a <br/>
-``||sprites:on sprite of kind Player overlaps other sprite of kind Enemy||`` block.<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Enemy]||`` block.<br/>
 Put it somewhere out on the Workspace.<br/>
-Change the **kind** of sprite for ``||variables(noclick):otherSprite||`` from ``||sprites:Player||`` to ``||sprites:Enemy||``.
+Change the **kind** of sprite for ``||variables(noclick):[otherSprite]||`` from ``||sprites:[Player]||`` to ``||sprites:[Enemy]||``.
 
 - :paper plane: To subtract a life from Shuri, go into ``||info:Info||`` and get the ``||info:change life by -1||``.<br/>
 Put this in to the overlap event block.<br/>
@@ -177,7 +177,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## {Step 6}
+## {Step 9}
 
 **Give Shuri some lives**
 
@@ -185,7 +185,7 @@ Shuri needs some life points to start with!
 
 ---
 
-- :paper plane: Get an  ``||info:set life to 2||`` from ``||info:Info||``<br/>
+- :paper plane: Get a  ``||info:set life to [3]||`` from ``||info:Info||``<br/>
 and put it at the beginning of ``||loops:on start||``.
 
 ```blocks
@@ -199,7 +199,7 @@ Namor.follow(Shuri, 30)
 Namor.setPosition(148, 2)
 ```
 
-## {Step 7}
+## {Step 10}
 
 **Bring in the guards!**
 
@@ -210,7 +210,7 @@ Both Riri and Okoye join the game to help Shuri and guard her from Namor's attac
 into **the end** of the  
 ``||loops:on start||`` container.
 
-- :paper plane: Click on ``||variables:mySprite||`` in<br/>
+- :paper plane: Click on ``||variables:[mySprite]||`` in<br/>
 ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` and<br/>
 select ``||variables(noclick):Rename variable...||``.. Rename it to **Riri**.
 
@@ -218,10 +218,10 @@ select ``||variables(noclick):Rename variable...||``.. Rename it to **Riri**.
 Select the image for 'Riri' in **My Assets**.
 
 - :paint brush: Repeat the steps you did to make Riri but this time rename<br/>
-``||variables:mySprite||`` to **Okoye** and pick the 'okoye' image from the image editor.
+``||variables:[mySprite]||`` to **Okoye** and pick the 'okoye' image from the image editor.
 
 - :paint brush: Change the **kind** of both **Riri** and **Okoye** from<br/>
-``||sprites:Player||`` to ``||sprites:Guard||``.
+``||sprites:[Player]||`` to ``||sprites:[Guard]||``.
 
 
 ```blocks
@@ -240,15 +240,15 @@ let Riri = sprites.create(assets.image`riri`, SpriteKind.Guard)
 let Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
 ```
 
-## {Step 7.5}
+## {Step 11}
 
 **Make the guards move**
 
 ---
 
-- :paper plane: Just below the sprite block for **Riri**,  put in the ``||controller:move Riri with buttons vx 34 vy -53||`` block.
+- :paper plane: Just below the sprite block for **Riri**, from the ||controller:Controller|| toolbox put in the ``||controller:move Riri with buttons vx 34 vy -53||`` block.
 
-- :paper plane: Just below the sprite block for **Okoye**,  put in the ``||controller:move Okoye with buttons vx -68 vy -58||`` block.
+- :paper plane: Just below the sprite block for **Okoye**, from the ||controller:Controller|| toolbox put in the ``||controller:move Okoye with buttons vx -68 vy -58||`` block.
 
 ```blocks
 namespace SpriteKind {
@@ -268,21 +268,21 @@ let Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
 controller.moveSprite(Okoye, -68, -58)
 ```
 
-## {Step 8}
+## {Step 12}
 
 If one the guards can catch Namor, add a point to the game score. Namor should go back to his corner and start to attack again after being caught.
 
 ---
 
 - :paper plane: In ``||sprites:Sprites||``, grab a <br/>
-``||sprites:on sprite of kind Guard overlaps other sprite of kind Enemy||`` block.<br/>
+``||sprites:on [sprite] of kind [Guard] overlaps [othersprite] of kind [Enemy]||`` block.<br/>
 Put it somewhere out on the Workspace.
 
-- :paper plane: Add a point to the game score with a ``||info:change score by 1||`` inside this new event.<br/>
+- :paper plane: Add a point to the game score with a ``||info:change score by 1||`` from ``||info:Info||`` inside this new event.<br/>
 Put this in to the overlap event block.<br/>
 
 - :paper plane: Send Namor back to the corner of the screen by placing<br/>
-the ``||sprites:set Namor position to x 148 y 2||`` block into the overlap event.
+the ``||sprites:set [mySprite] position to x [0] y [0]||`` block into the overlap event. Set ``||sprites:MySprite||``  to Namor, ``||sprites:x||`` to 148, and ``||sprites:y||`` to 2.
 
 ```blocks
 namespace SpriteKind {
@@ -294,17 +294,17 @@ sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSpr
 })
 ```
 
-## {Step 9}
+## {Step 13}
 
 Well, let's decide when Shuri, with the help Riri and Okoye, will win against Namor's attacks. If the game score reaches **20** then Shuri wins!
 
 ---
 
-- :paper plane: In ``||info:Info||``, grab an ``||info:on score 20||`` event block.<br/>
-Put it somewhere out on the Workspace.
+- :paper plane: In ``||info:Info||``, grab an ``||info:on score 100||`` event block.<br/>
+Put it somewhere out on the Workspace. Change the value from ``||info:100||`` to ``||info:20||``.
 
-- :paper plane: Over in ``||sprites:Sprites||``, get the ``||sprites:destroy Namor||`` block<br/>
-and put it in the event to destory Namor.
+- :paper plane: Over in ``||sprites:Sprites||``, get the ``||sprites:destroy [mySprite]||`` block<br/>
+and put it in the event. Change ``||sprites:mySprite||`` to ``||sprites:Namor||`` to destory Namor.
 
 - :paper plane: From in ``||game:Game||``, grab a ``||game:game over true||`` block and put it in at the end of the event. This will end the game.
 
@@ -317,7 +317,7 @@ info.onScore(20, function () {
 })
 ```
 
-## {Step 9.5}
+## {Step 14}
 
 **Celebrate the victory!**
 
@@ -330,12 +330,12 @@ Make defeating Namor a much more dramatic event. Add some effects and messages t
 ``||scene:set background image to [ ]||`` with the image of the Boston Bridge. <br/>
 Pull it into the ``||info:on score 20||`` block after ``||sprites:destroy Namor||``.
 
-- :paper plane: Get a ``||scene:start screen confetti effect||`` a place it after the background image block.
+- :paper plane: Get a ``||scene:start screen confetti effect||`` from ``||scene:Scene||`` and place it after the background image block.
 
-- :paper plane: Next, display a message with a ``||game:show long text "We are safe!" top||`` block.
+- :paper plane: Next, display a message with a ``||game:show long text "We are safe!" top||`` block by placing it after the confetti effect.
 
-- :paper plane: make Shuri shout "WAKANDA FOREVER" next to her sprite.<br/>
-Use the ``||sprites:Shuri say "WAKANDA FOREVER" for 5000 ms||`` block.
+- :paper plane: Make Shuri shout "WAKANDA FOREVER" next to her sprite.<br/>
+Use the ``||sprites:[mySprite] say [":)"]||`` block from ``||sprites:Game||``. Change mySprite to Shuri. Click the smiley face in the circle and enter ``||sprites:WAKANDA FOREVER||``. Click the + icon and set the display time to ``||sprites:5 seconds||`` and animation to ``||sprites:true||``.
 
 ```blocks
 let Shuri: Sprite = null
@@ -350,7 +350,7 @@ info.onScore(20, function () {
 })
 ```
 
-## {Step 10}
+## {Step 15}
 
 
 **Instructions please!**
@@ -360,13 +360,14 @@ Now that the game is mostly complete, let's give the player some brief instructi
 ---
 
 - :paper plane: Find the ``||game:show long text " " bottom||`` block in ``||game:Game||``<br/>
-Put it in the ``||loops.on start||`` after the ``||info:set life 2||``.<br/>
+Put the block after the ``||info:set life 2||`` in ``||loops.on start||``.<br/>
 Change the ``||game(noclick):bottom||`` dropdown to ``||game(noclick):full screen||``.<br/>
-Make the text say: _"Help Shuri, Okoye and Riri escape Namor.       (Press the \"A\" button to go to the next screen.)"_.
+Click in the cirle and set the text to: _"Help Shuri, Okoye and Riri escape Namor.       (Press the \"A\" button to go to the next screen.)"_.
 
-- :paper plane: Add **2** more ``||game:show long text " " bottom||`` blocks right after that first one.<br/>
-Use the text _"When game begins, press the ARROW KEYS to move Shuri, Okoye and Riri. If Namor catches you, you will lose points!"_ for the second instruction.<br/>
-Use the text _"Earn 20 points to win and to stay alive you must keep your heart(s)."_ for the third istruction.
+- :paper plane: Add another ``||game:show long text " " bottom||`` block right after the one you just created.<br/>
+In the first, click in the cirle and set the text to:  _"When game begins, press the ARROW KEYS to move Shuri, Okoye and Riri. If Namor catches you, you will lose points!"_ for the second instruction.<br/>
+- :paper plane: Add another ``||game:show long text " " bottom||`` block right after the one you just created.<br/>
+Click in the cirle and set the text to:  _"Earn 20 points to win and to stay alive you must keep your heart(s)."_ for the third istruction.
 
 ```blocks
 namespace SpriteKind {
@@ -389,7 +390,7 @@ game.showLongText("When game begins, press the ARROW KEYS to move Shuri, Okoye a
 game.showLongText("Earn 20 points to win and to stay alive you must keep your heart(s).", DialogLayout.Full)
 ```
 
-## {Step 11}
+## {Step 16}
 
 **🎉 Congratulations**
 

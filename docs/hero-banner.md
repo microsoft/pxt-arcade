@@ -5,7 +5,12 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
-
+* name: Stand with Wakanda
+* buttonLabel: Build now
+* imageUrl: /static/banners/wakanda-banner.png
+* url: https://arcade.makecode.com/#tutorial:/tutorials/wakanda-forever
+* cardType: link
+---
 * name: Play the Monster Racer Tutorial
 * buttonLabel: Try Now
 * imageUrl: /static/banners/racer-banner.png
