@@ -7,13 +7,13 @@ Here are some cool activities to get you started with your @boardname@!
 ### ~ codecard
 * name: Stand with Wakanda
 * buttonLabel: Build now
-* imageUrl: /static/banners/wakanda-banner.png
+* imageUrl: /static/hero-gallery/wakanda-banner.png
 * url: /tutorials/wakanda-forever
 * cardType: tutorial
 ---
 * name: Play the Monster Racer Tutorial
 * buttonLabel: Try Now
-* imageUrl: /static/banners/racer-banner.png
+* imageUrl: /static/hero-gallery/racer-banner.png
 * url: https://arcade.makecode.com/--skillmap#docs:/skillmap/racer
 * cardType: link
 ---
