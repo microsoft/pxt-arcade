@@ -65,88 +65,34 @@ hint~
 
 ## {3. Add Second Player}
 
-Follow the steps from previous levels to add a second player that reacts to the (B) button!
+**You'll need to repeat your past steps to add a second player.**
 
-- :lightbulb: Can you figure out what to do by yourself?
+We've connected all of the blocks you need inside the toolbox. Can you figure out what you need to do to get Player 2 working?
 
-**Don't forget to try your game after each step!**
-
-
+💡 **Tip:** _If you need more help, click through the steps for details._
 
 
-## {4. Add a Second Button Event}
-
-- :lightbulb: Start by adding an <br/>
-``||controller:on [B] button [Pressed]||`` <br/>
-block to the workspace and also add a point for **player 2** each time it's clicked.
 
 
-~hint Tell me more... 🕵🏽
+## {4. Add the Sprites}
 
-- :paper plane: From the ``||controller: Controller||`` category in the toolbox, grab the<br/>
-``||controller(noclick): on [B] button [pressed]||`` <br/>
-bundle and drop it onto an empty area of your workspace.
+- :bolt: Look under ``||simplified:Simplified||`` for the bundle of code you need to add to **the end of** the ``||loops(noclick):on start||`` container.
 
+- :mouse pointer: Click the empty grey boxes to choose the blue balloon and blue mouse images.
 
-hint~
+💡 **Tip:** _You'll can also change the **x** value for the Player 1 sprites to move them left a bit._
 
 
 ~hint Show me... 🕵🏽
 
+![Add a second set of sprites](/static/skillmap/balloon/player2.gif "Add the bundle from simplified to create a second player." )
 
-![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=0&end=24)
 
 hint~
 
 
 #### ~ tutorialhint
-```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-})
-```
-
-
-## {5. Add the Balloon}
-
-- :lightbulb: Can you figure out how to add the second balloon for the second player?
-
-_(You'll also need to move player 1 to the left, and set player 2 further right.)_
-
-
-~hint Tell me more... 🕵🏽
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables(sprites): set [myBalloon2] to sprite [ ] of kind [Player]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Select the image of the blue balloon.
-
-- :mouse pointer: Grab <br/>
-``||sprites: set [myBalloon2] position to x [110] y [93]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
-
-- :mouse pointer: Change the positions for the original **myBalloon** and **myMouse** to each have an x value of **50**.
-
-
-hint~
-
-~hint Show me! 🕵🏽
-
-
-![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=24&end=89)
-
-hint~
-
-
-
-#### ~ tutorialhint
-```blocks
-let myBalloon2: Sprite = null
+```block
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
 carnival.startCountdownGame(20, carnival.WinTypes.Score)
@@ -156,192 +102,95 @@ myBalloon.setPosition(50, 93)
 let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 myMouse.setPosition(50, 93)
-myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-myBalloon2.setPosition(110, 93)
+simplified.wrap(function () {
+    let myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+    myBalloon2.setPosition(110, 93)
+    let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+    myMouse2.setPosition(110, 93)
+})
+
 ```
 
 
 
 
 
-## {6. Add the Mouse}
+## {8. Play Your Game!}
 
-- :lightbulb: Now it's time to add the second mouse in front of the second balloon.
+**Take a look!**
+
+- :binoculars: Look at your project in the game window.  <br/><br/>
+You should see that a second mouse and balloon have appeared.
 
 
-~hint Tell me more... 🕵🏽
 
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
-``||variables(sprites): set [myMouse2] to sprite [ ] of kind [Mouse]||`` <br/>
-and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
 
-- :mouse pointer: Select the **mouse2-up** image.
 
-- :mouse pointer: Grab <br/>
-``||sprites: set [myMouse2] position to x [110] y [93]||`` <br/>
-block and snap it inside at the **end** of the
-``||loops(noclick): on start||``
-block already in your workspace.
 
-hint~
+## {5. Player 2 Pressed}
+
+- :game: Now look under ``||controller:Controller||`` for the blocks you need to allow the second mouse to move when Player 2 presses their **A button**.
+
+- :mouse pointer: Click the empty grey box to choose the picture of the second mouse pressing the handle.
+
 
 ~hint Show me! 🕵🏽
 
 
-![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=89&end=116)
+![Add a bundle for the player 2 button](/static/skillmap/balloon/pressed2.gif "Find the bundle under Controller." )
+
 
 hint~
 
 
 
-```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(img`.`)
-})
-```
-
 #### ~ tutorialhint
 ```blocks
 let myBalloon2: Sprite = null
-let myMouse: Sprite = null
-let myBalloon: Sprite = null
 let myMouse2: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
-scene.setBackgroundColor(1)
-myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
-myBalloon.setPosition(50, 93)
-let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
-myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
-myMouse.setPosition(50, 93)
-myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
-myBalloon2.setPosition(110, 93)
-myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+    myMouse2.setImage(assets.image`mouse2-down`)
+    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+})
 ```
 
 
 
 
-## {7. Push Mouse 2}
 
-You're almost there!
+## {6. Mouse Up}
 
-- :lightbulb: Make the second mouse look like it's pushing and releasing the handle when the (B) button is pushed and released.
+- :game: Now look under ``||controller:Controller||`` for the blocks you need to make the second mouse return to normal when Player 2 releases the **A button**.
 
-Don't forget to test your game using the (B) button in the **game window** or the **enter** key on the keyboard!
+- :mouse pointer: Click the empty grey box to choose the picture of the second mouse releasing the handle.
 
-
-~hint Tell me more... 🕵🏽
-
-- :game: From the ``||controller: Controller||`` category in the toolbox, grab the <br/>
-``||controller(noclick):on [B] button [Released]||``<br/>
-bundle and drop it into an empty area of the workspace.
-
-- :mouse pointer: Click the empty box and choose **mouse2-up** from **My Assets**.
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab another <br/>
-``||sprites: set [myMouse2] image to [ ]||`` <br/>
-block and snap it into the <br/>
-``||controller(noclick): on [B] button [Pressed]||`` <br/>
-block already in your workspace.
-
-- :mouse pointer: Click the empty box and choose **mouse2-down** from **My Assets**.
-
-
-hint~
 
 ~hint Show me! 🕵🏽
 
+![Add the button for when the second player releases the button](/static/skillmap/balloon/released2.gif "The new bundle is now under the Controller category." )
 
-![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=127&end=172)
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
+let myMouse2: Sprite = null
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
         myMouse2.setImage(img`.`)
 })
 ```
 
-
 #### ~ tutorialhint
 ```blocks
-    let myMouse2: Sprite = null
-
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(assets.image`mouse2-down`)
-})
-
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        let myMouse2: Sprite = null
-    myMouse2.setImage(assets.image`mouse2-up`)
+let myMouse2: Sprite = null
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+        myMouse2.setImage(assets.image`mouse2-up`)
 })
 ```
 
 
-## {8. Inflate the Balloon}
-
-
-- :lightbulb: Time to make sure that the second balloon gets bigger with each step.
-
-
-~hint Tell me more... 🕵🏽
-
-- :arrows alternate vertical: From the ``||scaling: Scaling||`` category in the toolbox, grab <br/>
-``||scaling: change [myBalloon2] scale by [1] pixels [uniformly] anchor [bottom]|| `` <br/>
-and snap it into the <br/>
-``||controller(noclick): on [B] button [pressed]||`` <br/>
-block already in the workspace.
-
-
-hint~
-
-~hint Show me! 🕵🏽
-
-
-![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=172&end=194)
-
-hint~
-
-
-
-```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(img`.`)
-    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-```
-
-
-#### ~ tutorialhint
-```blocks
-    let myMouse2: Sprite = null
-
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.player2.changeScoreBy(1)
-    myMouse2.setImage(assets.image`mouse2-down`)
-    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
-})
-
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    myMouse2.setImage(assets.image`mouse2-up`)
-})
-```
 
 
 
@@ -359,46 +208,36 @@ Find a friend and have them press the (A) button or **space bar** while you pres
 
 
 
-
-
 ## {9. Add a Label}
 
-Last step!
+**Last step!**
 
-- :lightbulb: Add a label to the booth so everyone knows the name of the game!
+- :ticket: From ``||carnival:Carnival||``, add
+```block
+carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
+```
+to **the end** of the ``||loops(noclick):on start||`` container to put a label on the booth so everyone knows the name of the game!
 
 **Play your finished game a few times!  Who can get the best 2 out of three?**
 
 
-~hint Tell me more... 🕵🏽
 
-- :arrows alternate vertical: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
-``||scene: add label [Burstin' Balloons] to [middle] of window || `` <br/>
-and snap it into the **top** of the ``||loops(noclick): on start||``
-block already in the workspace.
-
-
-hint~
-
-💡 ** Tip:** _Now that you have someone to race against, you can right-click <br/>
-``||info: start countdown [20] (s) and game over [high score]||``<br/>
-inside ``||loops(noclick): on start||`` and choose **Delete Blocks**._
 
 ~hint Show me! 🕵🏽
 
+![Add a label to the game window](/static/skillmap/balloon/label.gif "Find the label under Carnival." )
 
-![balloon multiplayer](azuremedia:9f8857ec-6232-4390-9e1e-cdcabfbd13d9/Multiplayer-Mouse-Level.ism?start=212&end=250)
 
 hint~
 
 
 
 ```blockconfig.local
-let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
-myMouse2.setPosition(110, 93)
-myMouse2.setImage(img`.`)
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-        myMouse2.setImage(img`.`)
+simplified.wrap(function () {
+    let myBalloon3 = sprites.create(img`.`, SpriteKind.Player)
+    myBalloon3.setPosition(110, 93)
+    let myMouse3 = sprites.create(img`.`, SpriteKind.Mouse)
+    myMouse3.setPosition(110, 93)
 })
 ```
 
@@ -431,7 +270,7 @@ carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
 
 **🥳 You've done it 🥳**
 
-You've finished the entire skillmap!
+You've finished your two-player game!
 
 When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
 
@@ -450,17 +289,38 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Booth, function (sprite, otherSp
 carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 myMouse2.setImage(img`.`)
 
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
     info.player2.changeScoreBy(1)
+    myMouse2.setImage(img`.`)
+    scaling.scaleByPixels(myBalloon2, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
 })
 
 carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
+
+simplified.wrap(function () {
+    myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+    myBalloon2.setPosition(110, 93)
+    myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+    myMouse2.setPosition(110, 93)
+})
+
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    info.player2.changeScoreBy(1)
+    scaling.scaleByPixels(myBalloon2, ScaleDirection.Uniformly, ScaleAnchor.Bottom)
+    myMouse2.setImage(img`.`)
+})
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+    myMouse2.setImage(img`.`)
+})
+
+
+
 ```
 
 
 ```package
 pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
@@ -491,6 +351,20 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 myMouse.setPosition(80, 93)
 
+```
+
+
+```customts
+namespace simplified{
+    /**
+    * just run the code
+    */
+    //% block="create player"
+    //% handlerStatement=1
+    export function wrap(handler: () => void) {
+        handler();
+    }
+}
 ```
 
 
