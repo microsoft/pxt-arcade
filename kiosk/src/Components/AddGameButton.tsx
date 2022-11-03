@@ -2,10 +2,10 @@ import "../Kiosk.css";
 interface IProps {
     selected: boolean;
     content: string;
-  }
+}
 
 const AddGameButton: React.FC<IProps> = ({ selected, content }) => {
-    const buttonClassBase: string = "kioskButton";
+    const buttonClassBase = "kioskButton";
     const specificButtonClass = selected ? "buttonSelected" : "buttonUnselected";
     const kioskButtonClass = `${buttonClassBase} ${specificButtonClass}`;
 

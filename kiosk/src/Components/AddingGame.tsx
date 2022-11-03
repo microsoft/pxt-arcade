@@ -122,7 +122,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 <div className="addInstructions">
                     <h2>How to upload your game</h2>
                     <ol>
-                        <li>Scan the QR code to the right with your phone or web cam</li>
+                        <li>Scan the QR code to the right with your phone or webcam</li>
                         <li>Open the link to scan your game's QR code</li>
                         <li>Return to the Kiosk Main Menu</li>
                         <li>You will find your game to the left of the GalgaMulti game</li>

@@ -1,7 +1,7 @@
 import "../Kiosk.css";
 
 const QrSuccess: React.FC<{}> = () => {
-    // should pass the game's title and the kiosk's id through to give more feedback to the user
+    // TODO: pass the game's title and the kiosk's id through to give more feedback to the user
     return (
         <div className="qrSuccess">
             <p>You have successfully uploaded your game to the kiosk!</p>
