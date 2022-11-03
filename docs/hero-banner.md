@@ -8,8 +8,8 @@ Here are some cool activities to get you started with your @boardname@!
 * name: Stand with Wakanda
 * buttonLabel: Build now
 * imageUrl: /static/banners/wakanda-banner.png
-* url: https://arcade.makecode.com/#tutorial:/tutorials/wakanda-forever
-* cardType: link
+* url: /tutorials/wakanda-forever
+* cardType: tutorial
 ---
 * name: Play the Monster Racer Tutorial
 * buttonLabel: Try Now
