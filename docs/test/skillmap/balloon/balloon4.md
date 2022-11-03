@@ -85,7 +85,7 @@ We've connected all of the blocks you need inside the toolbox. Can you figure ou
 
 ~hint Show me... 🕵🏽
 
-![Add a second set of sprites](/static/skillmap/balloon/more-sprites.gif "Add the bundle from simplified to create a second player." )
+![Add a second set of sprites](/static/skillmap/balloon/player2.gif "Add the bundle from simplified to create a second player." )
 
 
 hint~
@@ -225,7 +225,7 @@ to **the end** of the ``||loops(noclick):on start||`` container to put a label o
 
 ~hint Show me! 🕵🏽
 
-![Add a label to the game window](/static/skillmap/balloon/balloon3.gif "Find the label under Carnival." )
+![Add a label to the game window](/static/skillmap/balloon/label.gif "Find the label under Carnival." )
 
 
 hint~
