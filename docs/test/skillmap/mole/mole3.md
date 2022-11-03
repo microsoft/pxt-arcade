@@ -235,6 +235,8 @@ false
 )
 myHammer = sprites.create(img`.`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
+
 ```
 
 
