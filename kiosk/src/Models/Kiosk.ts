@@ -3,7 +3,7 @@ import { HighScore } from "./HighScore";
 import { GameData } from "./GameData";
 import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
-import configData from "../config.json"
+import configData from "../config.json";
 import { runInThisContext } from "vm";
 
 export class Kiosk {
@@ -16,6 +16,7 @@ export class Kiosk {
     state: KioskState = KioskState.MainMenu;
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
+    private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
     private initializePromise: any;
     private siteElements: ChildNode[] = [];
     private intervalId: any;
@@ -23,6 +24,8 @@ export class Kiosk {
     private lockedGameId?: string;
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
+    private addedGameDescription: string = "Made with love in MakeCode Arcade";
+    private numAddedGames: number = 0;
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -37,9 +40,44 @@ export class Kiosk {
 
         try {
             this.games = (await response.json()).games;
+            this.games.push()
         }
         catch (error) {
             throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
+        }
+
+        // the added games persist in local storage, but not the live game list
+        // that feeds the carousel. That's what this function is for.
+        this.addNewGamesToList();
+    }
+
+    saveNewGame(gameId: string): GameData | undefined {
+        const allAddedGames = this.getAllAddedGames();
+        if (!allAddedGames[gameId]) {
+            this.numAddedGames += 1;
+            const newGame = new GameData(gameId, 'Kiosk Game', this.addedGameDescription, "None");
+            this.games.push(newGame);
+            allAddedGames[gameId] = newGame;
+            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
+            return newGame;
+        }
+    }
+
+    getAllAddedGames(): { [index: string]: GameData } {
+        const json = localStorage.getItem(this.addedGamesLocalStorageKey);
+        if (!json) {
+            return {};
+        }
+        const allAddedGames: { [index: string]: GameData } = JSON.parse(json);
+        return allAddedGames;
+    }
+
+    addNewGamesToList() : void {
+        // check if there are custom games to add to the game list from local storage
+        const addedGames = this.getAllAddedGames();
+        const addedGamesObjs: GameData[] = Object.values(addedGames);
+        for (const game of addedGamesObjs) {
+            this.games.push(game);
         }
     }
 
@@ -59,7 +97,11 @@ export class Kiosk {
         }
 
         if (this.gamepadManager.isEscapeButtonPressed() || this.gamepadManager.isMenuButtonPressed()) {
-            this.escapeGame();
+            if (this.state === KioskState.PlayingGame) {
+                this.escapeGame();
+            } else {
+                this.showMainMenu();
+            }
             return;
         }
     }
@@ -127,7 +169,7 @@ export class Kiosk {
         }
     }
 
-    private navigate(state: KioskState) {
+    navigate(state: KioskState) {
         this.state = state;
         if (this.onNavigated) {
             this.onNavigated();
@@ -233,6 +275,10 @@ export class Kiosk {
             return iframe;
         }
         gamespace.appendChild(createIFrame(playUrlBase + playQueryParam));
+    }
+
+    launchAddGame() {
+        this.navigate(KioskState.AddingGame);
     }
 
     getAllHighScores(): { [index: string]: HighScore[] } {
