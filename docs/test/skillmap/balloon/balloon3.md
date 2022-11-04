@@ -358,6 +358,18 @@ scaling.scaleByPixels_defl(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.B
 ```
 
 
+```customts
+namespace simplified{
+    /**
+    * just run the code
+    */
+    //% block="create player"
+    //% handlerStatement=1
+    export function wrap(handler: () => void) {
+        handler();
+    }
+}
+```
 
 
 ```assetjson
