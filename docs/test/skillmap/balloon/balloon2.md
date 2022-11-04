@@ -330,7 +330,7 @@ carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 
 ```package
 pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
