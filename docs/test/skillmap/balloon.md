@@ -71,6 +71,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/balloon-cert.pdf
 * imageUrl: /static/skillmap/certificates/balloon-cert.png
+* showMultiplayerShare: true
 * position: 2 3
 * actions:
     * map: [Finish the Last Level](/skillmap/balloon)
