@@ -44,6 +44,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/**
+ * @license qrcode.react
+ * Copyright (c) Paul O'Shannessy
+ * SPDX-License-Identifier: ISC
+ */
+
 /** @license React v0.13.1
        * scheduler.production.min.js
        *
