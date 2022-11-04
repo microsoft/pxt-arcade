@@ -188,8 +188,8 @@ h2 {
 }
 
 .qrScannerHolder {
-    width: 45%;
-    height: 30%;
+    width: 45vw;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
