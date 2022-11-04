@@ -215,7 +215,18 @@ carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
-
+```customts
+namespace simplified{
+    /**
+    * just run the code
+    */
+    //% block="create player"
+    //% handlerStatement=1
+    export function wrap(handler: () => void) {
+        handler();
+    }
+}
+```
 
 
 

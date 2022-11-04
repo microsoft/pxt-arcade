@@ -437,7 +437,7 @@ info.onScore(20, function () {
 **Celebrate the victory!**
 
 
-Make defeating Namor a much more dramatic event. Add some effects and messages to celebrate the win!.
+Make defeating Namor a much more dramatic event. Add some effects and messages to celebrate the win!
 
 ---
 
@@ -451,7 +451,8 @@ in after the confetti effect.
 - :mouse pointer: Add the message `"We are safe!"` to the text block.
 
 - :paper plane: Make Shuri shout "WAKANDA FOREVER".<br/><br/>
-Add the ``||sprites:[mySprite] say [":)"]||`` block from ``||sprites:Sprites||``.
+Add the <br/>``||sprites:[mySprite] say [":)"]||``<br/>
+block from ``||sprites:Sprites||``.
 
 - :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):Shuri||``.
 
