@@ -6,7 +6,7 @@ Here are some cool activities to get you started with your @boardname@!
 
 ### ~ codecard
 * name: Stand with Wakanda
-* buttonLabel: Build now
+* buttonLabel: Make it now
 * imageUrl: /static/hero-gallery/wakanda-banner.png
 * url: /tutorials/wakanda-forever
 * cardType: tutorial

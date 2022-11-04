@@ -330,7 +330,7 @@ carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 
 ```package
 pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 ```
 
@@ -344,6 +344,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 carnival.startCountdownGame(20, carnival.WinTypes.Score)
 scene.setBackgroundColor(1)
 
+```
+
+```customts
+namespace simplified{
+    /**
+    * just run the code
+    */
+    //% block="create player"
+    //% handlerStatement=1
+    export function wrap(handler: () => void) {
+        handler();
+    }
+}
 ```
 
 

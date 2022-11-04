@@ -80,7 +80,7 @@ We've connected all of the blocks you need inside the toolbox. Can you figure ou
 
 - :mouse pointer: Click the empty grey boxes to choose the blue balloon and blue mouse images.
 
-💡 **Tip:** _You'll can also change the **x** value for the Player 1 sprites to move them left a bit._
+💡 **Tip:** _You can also change the **x** value for the Player 1 sprites to move them left a bit._
 
 
 ~hint Show me... 🕵🏽
@@ -92,7 +92,7 @@ hint~
 
 
 #### ~ tutorialhint
-```block
+```blocks
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
 carnival.startCountdownGame(20, carnival.WinTypes.Score)
@@ -115,7 +115,7 @@ simplified.wrap(function () {
 
 
 
-## {8. Play Your Game!}
+## {5. Play Your Game!}
 
 **Take a look!**
 
@@ -127,7 +127,7 @@ You should see that a second mouse and balloon have appeared.
 
 
 
-## {5. Player 2 Pressed}
+## {6. Player 2 Pressed}
 
 - :game: Now look under ``||controller:Controller||`` for the blocks you need to allow the second mouse to move when Player 2 presses their **A button**.
 
@@ -159,7 +159,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 
 
 
-## {6. Mouse Up}
+## {7. Mouse Up}
 
 - :game: Now look under ``||controller:Controller||`` for the blocks you need to make the second mouse return to normal when Player 2 releases the **A button**.
 
@@ -192,9 +192,6 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
 
 
 
-
-
-
 ## {8. Play Your Game!}
 
 **Try your game!**
@@ -203,6 +200,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
 
 Find a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
 
+![Click the resize button to play your game on the large screen.](/static/skillmap/balloon/big.gif " Size-Up!" )
 
 
 
