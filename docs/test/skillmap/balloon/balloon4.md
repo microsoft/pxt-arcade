@@ -45,7 +45,7 @@ carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(80, 93)
@@ -95,7 +95,7 @@ hint~
 ```blocks
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(50, 93)
@@ -131,7 +131,7 @@ You should see that a second mouse and balloon have appeared.
 
 - :game: Now look under ``||controller:Controller||`` for the blocks you need to allow the second mouse to move when Player 2 presses their **A button**.
 
-- :mouse pointer: Click the empty grey box to choose the picture of the second mouse pressing the handle.
+- :mouse pointer: Drop them in an empty area of the workspace, then click the empty grey box to choose the picture of the second mouse pressing the handle.
 
 
 ~hint Show me! 🕵🏽
@@ -163,7 +163,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 
 - :game: Now look under ``||controller:Controller||`` for the blocks you need to make the second mouse return to normal when Player 2 releases the **A button**.
 
-- :mouse pointer: Click the empty grey box to choose the picture of the second mouse releasing the handle.
+- :mouse pointer: Drop them in an empty area of the workspace, then click the empty grey box to choose the picture of the second mouse releasing the handle.
 
 
 ~hint Show me! 🕵🏽
@@ -246,7 +246,7 @@ let myBalloon2: Sprite = null
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
 let myMouse2: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(50, 93)
@@ -278,7 +278,7 @@ When you're ready, click **Done** to return to the skillmap and click the button
 let myBalloon2: Sprite = null
 let myMouse2: Sprite = null
 info.player2.changeScoreBy(1)
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
 scene.setBackgroundColor(1)
 myBalloon2.setPosition(110, 93)
@@ -341,7 +341,7 @@ carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(80, 93)
