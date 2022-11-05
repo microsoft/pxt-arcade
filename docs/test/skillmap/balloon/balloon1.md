@@ -136,7 +136,7 @@ hint~
 - :ticket: From the ``||carnival: Carnival||`` category in the toolbox,
 grab <br/>
 
-``||carnival: start countdown [20] (s) and game over [high score]||`` <br/>
+``||carnival: start countdown [20] (s) and game over [lose game]||`` <br/>
 
 and snap it into the empty <br/>
 ``||loops(noclick): on start||`` <br/>
@@ -154,7 +154,7 @@ hint~
 #### ~ tutorialhint
 ```blocks
     //@highlight
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 ```
 
 
@@ -179,7 +179,7 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
     //@highlight
 scene.setBackgroundColor(1)
 ```
@@ -204,7 +204,7 @@ When you're finished playing, come back to the instructions and click the **Done
 
 ```blockconfig.global
 info.player1.changeScoreBy(1)
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 ```
 
