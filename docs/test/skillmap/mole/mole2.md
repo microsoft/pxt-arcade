@@ -215,7 +215,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 Finally, let's add a timer to keep the game exciting.
 
 
-- :id card: From the ``||info: Info||`` category, grab <br/>
+- :id card: From the ``||carnival: Carnival||`` category, grab <br/>
 
 ```block
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
@@ -283,6 +283,7 @@ When you're ready, click **Done** to return to the skillmap so you can add sound
 ```blockconfig.global
 let myHammer = sprites.create(img`.`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 ```
 
 
