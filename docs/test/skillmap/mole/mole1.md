@@ -254,9 +254,13 @@ let myMole = sprites.create(img`.`, SpriteKind.Enemy)
 game.onUpdateInterval(1000, function () {
 sprites.moveToRandomHoleOnGrid(myMole)
 })
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 
 ```
 
+```ghost
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
+```
 
 
 ```package
