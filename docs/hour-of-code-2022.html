@@ -122,11 +122,11 @@
 
             function handleLangRedirects(){
                 let language = navigator.language || navigator.userLanguage;
-
-                if (language == "es"){
-                    window.location.href = "http://makecode.com/hour-of-code-2022-es.html";
-                }else if(language == "pt"){
-                    window.location.href = "http://makecode.com/hour-of-code-2022-pt.html";
+                console.log(language)
+                if (language == "es" || language.substring(0, 2)=="es"){
+                    window.location.href = "hour-of-code-2022-es.html";
+                }else if(language == "pt" || language.substring(0, 2)=="pt"){
+                    window.location.href = "hour-of-code-2022-pt.html";
                 }else{
                     //all other languages will stay on this page and get english
                 }
@@ -149,7 +149,7 @@
         </script>
     </head>
 
-    <body id="root" class="root" onload="handleOnLoad()">
+    <body id="root" class="root" onload="init()">
         <img
             class="tracking"
             src="https://code.org/api/hour/begin_microsoft_carnival.png"
