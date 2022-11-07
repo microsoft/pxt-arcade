@@ -16,7 +16,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
-    const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "/kiosk";
+    const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "https://arcade.makecode.com/kiosk";
 
     const updateLoop = () => {
         if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
