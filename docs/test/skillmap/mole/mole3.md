@@ -244,7 +244,7 @@ carnival.startCountdownGame(15, carnival.WinTypes.Score)
 
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 arcade-text=github:microsoft/arcade-text/
 ```
 

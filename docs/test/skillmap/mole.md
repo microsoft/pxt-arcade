@@ -71,6 +71,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/mole-cert.pdf
 * imageUrl: /static/skillmap/certificates/mole-cert.png
+* showMultiplayerShare: true
 * position: 2 0
 * actions:
     * map: [Create Another Carnival Game](/skillmap/balloon)
