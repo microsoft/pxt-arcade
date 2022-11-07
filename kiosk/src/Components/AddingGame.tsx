@@ -55,7 +55,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             try {
                 const newKioskCode: string = await generateKioskCodeAsync();
                 setKioskCode(newKioskCode);
-                await (await addGameToKiosk(newKioskCode));
+                await addGameToKiosk(newKioskCode);
             }
             catch (error) {
                 setRenderQRCode(false);
