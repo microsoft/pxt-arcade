@@ -1,3 +1,4 @@
+import "../Kiosk.css";
 import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
 import { Html5QrcodeResult, Html5QrcodeError, CameraDevice } from "../../node_modules/html5-qrcode/esm/core";
 
@@ -12,7 +13,7 @@ const play = async () => {
         devices = await Html5Qrcode.getCameras();
         if (devices && devices.length) {
             const cameraId: string = devices[0].id;
-            const html5QrCode = new Html5Qrcode("reader");
+            const html5QrCode = new Html5Qrcode("qrReader");
             try {
                 html5QrCode.start(
                     {facingMode: "environment"},
@@ -43,8 +44,13 @@ function onScanSuccess(decodedText: string, decodedResult: Html5QrcodeResult) {
     throw new Error("bad scan");
   }
 
-  const ScanQR: React.FC<IProps> = () => {
-    play();
+  const QrScanner: React.FC<IProps> = ({ show }) => {
+    // if (show) {
+        play();
+    // }
+    return (
+        <div id="qrReader"></div>
+    )
   }
 
-  export default ScanQR;
+  export default QrScanner;
