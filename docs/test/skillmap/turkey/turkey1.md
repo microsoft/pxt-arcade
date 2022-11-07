@@ -39,7 +39,7 @@ grab <br/>
 ```block
 let bigTurkey = sprites.create(img`.`, SpriteKind.Player)
 ```
-<br/>and snap it inside and at **the end** of the ``||loops:on start||`` container.
+<br/>and snap it inside and at **the end** of the ``||loops(noclick):on start||`` container.
 
 
 
@@ -79,7 +79,7 @@ let bigTurkey = sprites.create(assets.image`player`, SpriteKind.Player)
 controller.moveSprite(bigTurkey, 100, 0)
 ```
 <br/>and drag it into **the end** of the <br/>
-``||loops:on start||``
+``||loops(noclick):on start||``
 <br/>container.
 
 This block is set in a way that lets you move the turkey left and right, but not up or down.
@@ -125,7 +125,7 @@ bigTurkey.ay = 500
 ```
 
 <br/>and snap it inside at **the end** of the
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 
 #### ~ tutorialhint
@@ -149,7 +149,7 @@ bigTurkey.ay = 500
 scene.cameraFollowSprite(bigTurkey)
 ```
 <br/>to **the end** of the
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 #### ~ tutorialhint
 
@@ -186,7 +186,7 @@ tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
 ```
 
 <br/>into **the end** of the
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 
 
