@@ -4,53 +4,12 @@ import { KioskState } from "../Models/KioskState";
 import "../Kiosk.css";
 import { OnResultFunction, QrReader } from 'react-qr-reader';
 import { addGameToKioskAsync } from "../BackendRequests";
-import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
-import { Html5QrcodeResult, Html5QrcodeError, CameraDevice } from "../../node_modules/html5-qrcode/esm/core";
+// import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
+// import { Html5QrcodeResult, Html5QrcodeError, CameraDevice } from "../../node_modules/html5-qrcode/esm/core";
 
 interface IProps {
     kiosk: Kiosk
 }
-
-const play = async () => {
-    let devices: CameraDevice[];
-    try {
-        devices = await Html5Qrcode.getCameras();
-        if (devices && devices.length) {
-            const cameraId: string = devices[0].id;
-            const html5QrCode = new Html5Qrcode("reader");
-            try {
-                html5QrCode.start(
-                    {facingMode: "environment"},
-                    undefined,
-                    onScanSuccess,
-                    onScanFailure
-                );
-                await html5QrCode.stop();
-            }
-            catch (error) {
-                console.log("failed to start scanning");
-            }
-        }
-    }
-    catch (error) {
-        console.log("couldn't get camera permissions");
-    }
-
-}
-
-const stopQr = (scanner: Html5Qrcode) => {
-    scanner.stop();
-}
-
-function onScanSuccess(decodedText: string, decodedResult: Html5QrcodeResult) {
-    // handle the scanned code as you like, for example:
-    console.log(`Code matched = ${decodedText}`, decodedResult);
-  }
-  
-  function onScanFailure(errorMessage: string, error: Html5QrcodeError) {
-    console.log("scan failed");
-    throw new Error("bad scan");
-  }
 
 const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const fullUrlHash = window.location.hash;
@@ -60,17 +19,15 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const [qrResponse, setQrResponse] = useState("");
     const [scannerVisible, setScanner] = useState(false);
 
-    useEffect(() => {
-        // const html5QrScanner: Html5QrcodeScanner = new Html5QrcodeScanner(
-        //     "reader", { fps: 10, qrbox: {width: 250, height: 250}, supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA] },
-        //     /* verbose= */ false);
-        // html5QrScanner.render(onScanSuccess, onScanFailure);
-        play();
-    }, []);
-
     const renderQrScanner = () => {
         setScanner(true);
     }
+
+    // useEffect(() => {
+    //     if (scannerVisible) {
+    //         play();
+    //     }
+    // }, [scannerVisible])
 
     const scannerResult: OnResultFunction = async (result, error) => {
         if (!!result) {

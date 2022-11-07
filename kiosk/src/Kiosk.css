@@ -180,6 +180,11 @@ h2 {
     border-radius: 0.75em;
     border-width: 0.2em;
 }
+
+.scanQrButton:hover {
+    cursor: pointer;
+}
+
 .qrScanner-label {
     background-color: var(--main-text-color);
     color: var(--secondary-dark-color);
