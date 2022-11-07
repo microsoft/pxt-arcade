@@ -16,7 +16,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
-    const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "/kiosk";
+    const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "https://arcade.makecode.com/kiosk";
 
     const updateLoop = () => {
         if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
@@ -48,7 +48,6 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 clearInterval(intervalId);
             }
         };
-
     });
 
     useEffect(() => {
@@ -68,30 +67,35 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
         function addGameToKiosk(kioskCode: string) {
             const timeoutDuration = 600000; // wait for 10 minutes until the kiosk code expires
-            const whenToPoll = 5000; // wait for five seconds to poll for game code data
+            const whenToPoll = 10000; // wait for 10 seconds to poll for game code data
             if (kiosk.state !== KioskState.AddingGame) {
                 return;
             }
-            return new Promise<void>((resolve, reject) => {
-                let pollInterval: any;
+            return new Promise<void>(async (resolve, reject) => {
+                let pollFrequency: any;
                 let pollTimeout: any;
-                pollInterval = setInterval(async () => {
+                const getGameCode = async () => {
                     try {
                         const gameCode: string = await getGameCodeAsync(kioskCode);
                         kiosk.saveNewGame(gameCode);
-                        clearInterval(pollInterval);
+                        clearTimeout(pollFrequency);
                         clearTimeout(pollTimeout);
-                        resolve();  
+                        resolve();
                     }
                     catch (error) {
-                        throw new Error("Unable to get the id of the game to be added");
+                        pollFrequency = setTimeout(async () => {
+                            await getGameCode();
+                        }, whenToPoll)
                     }
+                };
 
-                }, whenToPoll);
                 pollTimeout = setTimeout(() => {
-                    clearInterval(pollInterval);
+                    clearTimeout(pollTimeout);
+                    clearTimeout(pollFrequency);
                     reject();
                 }, timeoutDuration)
+
+                await getGameCode();
             });
         }
     }, [renderQRCode]);

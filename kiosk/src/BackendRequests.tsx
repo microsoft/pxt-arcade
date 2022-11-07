@@ -1,4 +1,4 @@
-const backendEndpoint: string = "https://makecode.com/api/kiosk/";
+const backendEndpoint: string = "https://makecode.com/api/kiosk";
 
 export const isLocal = () => {
     return window.location.hostname === "localhost";

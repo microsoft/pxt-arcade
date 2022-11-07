@@ -17,11 +17,11 @@ function App() {
 
   useEffect(() => {
     window.onhashchange = onHashChange;
-    onHashChange();
 
     kioskSingleton.onNavigated = () => {
       setState(kioskSingleton.state);
     };
+    onHashChange();
   }, []);
 
   switch(state) {

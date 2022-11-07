@@ -77,7 +77,7 @@ We can fix that by replacing the cage with an empty tile once you reach it.
 ```
 
 into **the end** of the<br/>
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
 
@@ -116,7 +116,7 @@ Each time you overlap a cage, let's make a new turkey follow you to freedom!
 ```
 
 into **the end** of the<br/>
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
 - :paint brush: Click the empty grey square and switch to
@@ -158,7 +158,7 @@ Let's set each new turkey to appear in the same place the cage disappeared from.
 ```
 
 into **the end** of the
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``
 container.
 
 
@@ -199,6 +199,7 @@ Keep following the instructions to find out how to get the little turkeys to fol
 
 ## {10. Be Free!}
 
+**Leave no turkeys behind!**
 
 - :paper plane: From ``||sprites:Sprites||``, drag
 
@@ -209,7 +210,7 @@ freeTurkeys.follow(sprite)
 ```
 
 into **the end** of the <br/>
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
 
@@ -272,7 +273,7 @@ freeTurkeys.follow(sprite)
 ```
 
 ```package
-simple-blocks=github:kiki-lee/carnival
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 ```
 
 

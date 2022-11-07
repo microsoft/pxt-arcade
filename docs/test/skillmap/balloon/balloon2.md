@@ -82,7 +82,7 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
     //@highlight
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
@@ -124,7 +124,7 @@ hint~
 
 #### ~ tutorialhint
 ```blocks
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
     //@highlight
@@ -209,7 +209,7 @@ let myBooth = sprites.create(img`.`, SpriteKind.Booth)
 
 #### ~ tutorialhint
 ```blocks
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 let myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
 myBalloon.setPosition(80, 93)
@@ -317,7 +317,7 @@ When you're ready, click **Done** to return to the skillmap and continue buildin
 
 ```blockconfig.global
 info.player1.changeScoreBy(1)
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 let myBalloon = sprites.create(img`.`, SpriteKind.Player)
 scene.setBackgroundColor(1)
 myBalloon.setPosition(80, 93)
@@ -341,7 +341,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 
-carnival.startCountdownGame(20, carnival.WinTypes.Score)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 
 ```

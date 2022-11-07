@@ -343,12 +343,14 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 })
 game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press A to move the mole.", DialogLayout.Center)
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
+
 ```
 
 
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 arcade-text=github:microsoft/arcade-text/
 ```
 

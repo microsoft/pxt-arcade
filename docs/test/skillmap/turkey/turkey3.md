@@ -57,10 +57,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile16, function (spri
 
 - :store: From ``||carnival:Carnival||``, snap<br/>
 ```block
-    carnival.onGameOverExpanded(winTypes.Timed)
+    carnival.onGameOverExpanded(carnival.WinTypes.Timed)
 ```
 <br/>into the new <br/>
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
+``||scene(noclick):on [sprite] of kind [Player] overlaps [ ] at [location]||``
 <br/> container that you just added to the workspace.
 
 
@@ -68,7 +68,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile16, function (spri
 #### ~ tutorialhint
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile16, function (sprite, location) {
-carnival.onGameOverExpanded(winTypes.Timed)
+carnival.onGameOverExpanded(carnival.WinTypes.Timed)
 })
 ```
 
@@ -96,7 +96,7 @@ How long does it take you to collect all of the turkeys and get out?
 carnival.startTimer()
 ```
 into **the end** of the<br/>
-``||loops:on start||``<br/>
+``||loops(noclick):on start||``<br/>
 container already in the workspace.
 
 
@@ -153,7 +153,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sp
 })
 tiles.setTileAt(location, assets.tile`transparency16`)
 freeTurkeys.follow(bigTurkey)
-carnival.onGameOverExpanded(winTypes.Timed)
+carnival.onGameOverExpanded(carnival.WinTypes.Timed)
 controller.player2.moveSprite(bigTurkey2)
 
 controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
@@ -164,7 +164,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 ```
 
 ```package
-simple-blocks=github:kiki-lee/carnival
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 ```
 
 

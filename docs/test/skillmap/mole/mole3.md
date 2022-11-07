@@ -42,7 +42,7 @@ hint~
 
 **Let’s add a label to the bottom our Whack-the-Mole game booth.**
 
-- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+- :tree: From the ``||carnival: Carnival||`` category in the toolbox, grab <br/>
 
 ```block
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
@@ -236,6 +236,7 @@ false
 myHammer = sprites.create(img`.`, SpriteKind.Player)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
 
 ```
 
@@ -243,7 +244,7 @@ carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 arcade-text=github:microsoft/arcade-text/
 ```
 
