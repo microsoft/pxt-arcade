@@ -272,7 +272,7 @@ freeTurkeys.follow(sprite)
 ```
 
 ```package
-simple-blocks=github:kiki-lee/carnival
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 ```
 
 

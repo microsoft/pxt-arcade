@@ -164,7 +164,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 ```
 
 ```package
-simple-blocks=github:kiki-lee/carnival
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 ```
 
 
