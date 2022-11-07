@@ -116,7 +116,7 @@ controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
 
 - :binoculars: Test your project in the game window to see how it works!
 
-Try using the on-screen joypad (or the arrow keys on your keyboard) to move the hammer around the screen.
+Try using the on-screen joypad **(or the arrow keys on your keyboard)** to move the hammer around the screen.
 
 
 
@@ -165,6 +165,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 - :binoculars: Play with your project in the game window!
 
+Use the on-screen joypad **(or the arrow keys on your keyboard)** to move the hammer.
 
 When your rubber hammer overlaps the mole, you should see points start to show up in the top-right corner.
 
@@ -290,7 +291,7 @@ carnival.startCountdownGame(15, carnival.WinTypes.Score)
 
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 arcade-text=github:microsoft/arcade-text/
 ```
 
