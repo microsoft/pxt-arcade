@@ -290,7 +290,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ```package
-simple-blocks=github:kiki-lee/carnival
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 ```
 
 
