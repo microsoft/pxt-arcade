@@ -159,25 +159,26 @@
             {
                 "shareId": "S07439-34681-01269-56955",
                 "title": "Perfect Fit",
-                "subtitle": "2-4 player",
-                "image": "/static/multiplayer/perfect-fit.png"
-            },
-            {
-                "shareId": "S07439-34681-01269-56955",
-                "title": "Perfect Fit",
-                "subtitle": "2 player",
-                "image": "/static/multiplayer/perfect-fit.png"
-            },
-            {
-                "shareId": "S07439-34681-01269-56955",
-                "title": "Perfect Fit",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/perfect-fit.png"
             },
             {
-                "shareId": "S07439-34681-01269-56955",
-                "title": "Perfect Fit",
-                "subtitle": "3 player"
+                "shareId": "S83499-96784-35479-44416",
+                "title": "Galga",
+                "subtitle": "4 player",
+                "image": "/static/multiplayer/galga.png"
+            },
+            {
+                "shareId": "S20979-80747-10645-55772",
+                "title": "Painting Together",
+                "subtitle": "1-4 player",
+                "image": "/static/multiplayer/painting.png"
+            },
+            {
+                "shareId": "S42791-93051-00250-80367",
+                "title": "Horse Race",
+                "subtitle": "4 player",
+                "image": "/static/multiplayer/horse-race.png"
             }
         ]
     },
