@@ -74,7 +74,7 @@ let enemySpeed = 50
 
 **🚀 Let's Fly 🚀**
 
-Now that ``||variables:enemySpeed||`` has been set to **50**, we can use the variable
+Now that ``||variables(noclick):enemySpeed||`` has been set to **50**, we can use the variable
 to control the enemy ship's **vy** (vertical velocity).
 
 ---
@@ -82,9 +82,9 @@ to control the enemy ship's **vy** (vertical velocity).
 - :mouse pointer: Go back to the  
 ``||game:on game update every [2000]ms||``  
 container that's already in your workspace, and find the block that sets-up the
-``||variables:myEnemy||`` projectile.
+``||variables(noclick):myEnemy||`` projectile.
 
-- :align justify: Grab ``||variables:enemySpeed||`` and snap it in to
+- :align justify: Grab ``||variables(noclick):enemySpeed||`` and snap it in to
 replace the **vy** value of **50**.
 
 
@@ -257,7 +257,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 ## 12. Play Your Game
 **That's it!  That's all you needed to do.**
 
-Since we already have the ``||variables:enemySpeed||`` variable in place for the projectile's **vy**, it will automatically update when we change the speed in another part of the program!
+Since we already have the ``||variables(noclick):enemySpeed||`` variable in place for the projectile's **vy**, it will automatically update when we change the speed in another part of the program!
 
 ---
 

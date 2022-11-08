@@ -20,7 +20,7 @@ Let's get you set up in your new place!
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag the  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``   
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``   
 block into the ``||loops:on start||`` container.
 
 - :paint brush:  Click the grey box to open the **image editor** and draw yourself in your best zookeeper outfit!
@@ -88,10 +88,7 @@ controller.moveSprite(mySprite)
 
 ## 4. Try It
 
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 Try moving around the game screen!  Your zookeeper will move with the joypad or the arrow keys on your keyboard.
 

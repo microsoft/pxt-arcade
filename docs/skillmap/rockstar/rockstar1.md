@@ -34,7 +34,7 @@ Our game character is called a [__*sprite*__](#sprote "2-D image that move on th
 ---
 
 - :paper plane: From the ``||sprites:Sprites||`` category, drag  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``  
 to **the end** of the ``||loops:on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
@@ -76,10 +76,7 @@ controller.moveSprite(mySprite)
 
 ## 5. Try It
 
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 Jerry appears in the middle of a wall and gets completely lost when moving off screen!
 

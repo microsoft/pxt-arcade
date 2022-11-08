@@ -59,7 +59,7 @@ tiles.setTilemap(tiles.createTilemap(
 
 ## {Step 2}
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||`` and draw your player sprite.
+Find ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||`` and draw your player sprite.
 
 ```blocks
 namespace myTiles {
@@ -319,9 +319,9 @@ game.onUpdateInterval(2000, function () {
 
 ## {Step 9}
 
-Find ``||scene:place mySprite on top of tilemap col row||`` and drag it into the ``||game:on game update interval||`` after ``||variables:set projectile to||``.
+Find ``||scene:place mySprite on top of tilemap col row||`` and drag it into the ``||game:on game update interval||`` after ``||variables(sprites):set projectile to||``.
 Set the ``||scene:col||`` to 9 and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall.
-Change ``||variables:mySprite||`` to ``||variables:projectile||``, so that it refers to the sprite that was just created.
+Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``, so that it refers to the sprite that was just created.
 
 ```blocks
 game.onUpdateInterval(2000, function () {

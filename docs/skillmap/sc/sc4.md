@@ -45,7 +45,7 @@ We're going to use a **projectile** block to clear tiles when we kick.
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` into the empty ``||controller:on [B] button [pressed]||`` container.
+► From ``||sprites:Sprites||``, drag ``||variables(sprites):set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` into the empty ``||controller:on [B] button [pressed]||`` container.
 
 ► Click the empty grey box and toggle to **My Assets** to choose the **power kick** sprite.
 
@@ -66,7 +66,7 @@ For the explosive to overlap the blocks around it, it needs to **go through wall
 
 ► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [auto destroy] <OFF>||`` into **the end** of ``||controller:on [B] button [pressed]||`` container, then toggle ``||loops:<OFF>||`` to ``||loops:<ON>||``.
 
-► Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+► Click ``||variables(noclick):mySprite||`` and change it to ``||variables:projectile||``.
 
 ► Click ``||sprites:auto destroy||`` and change it to ``||sprites:ghost through walls||``.
 
@@ -87,7 +87,7 @@ We don't want the projectile to stick around, so let's set a **lifespan** to mak
 
 ► From ``||sprites:Sprites||``, drag ``||sprites:set [mySprite] [x] to [0]||`` into **the end** of ``||controller:on [B] button [pressed]||`` container.
 
-► Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+► Click ``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):projectile||``.
 
 ► Change ``||sprites:x||`` to ``||sprites:lifespan||``
 
@@ -175,7 +175,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`boulder`, function (sprit
 
 ► From ``||scene:Scene||``, drag ``||scene:set wall <OFF> at tilemap col [0] row [0]||`` into the empty ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` container.
 
-► To remove the wall at the location of overlap, drag the ``||variables:location||`` value block out of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` title and drop it in to replace ``||scene:tilemap col [0] row [0]||``.
+► To remove the wall at the location of overlap, drag the ``||variables(noclick):location||`` value block out of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` title and drop it in to replace ``||scene:tilemap col [0] row [0]||``.
 
 ![Editing our platformer](/static/skillmap/sc/projectile-wall-off.gif "Time to live dangerously!")
 
@@ -200,7 +200,7 @@ Lastly, we need to remove the tile from the same place that we removed the wall.
 
 ► From ``||scene:Scene||``, drag the ``||scene:set [ ] at tilemap col [0] row [0]||`` into **the end** of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` container.
 
-► To remove the tile at the location of overlap, drag the ``||variables:location||`` value block out of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` title and drop it in to replace ``||scene:tilemap col [0] row [0]||``.
+► To remove the tile at the location of overlap, drag the ``||variables(noclick):location||`` value block out of the ``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` title and drop it in to replace ``||scene:tilemap col [0] row [0]||``.
 
 
 ```blocks

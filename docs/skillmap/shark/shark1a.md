@@ -45,9 +45,9 @@ game.onUpdateInterval(2500, function () {
 
 ---
 
-► From ``||sprites:Sprites||``, drag ``||variables: set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2500] ms||`` container.
+► From ``||sprites:Sprites||``, drag ``||variables(sprites): set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||game:on game update every [2500] ms||`` container.
 
-► To rename this to **myEnemy**, click **mySprite2** to open a dropdown menu and choose ``||variables:Rename variable...||``. Enter **myEnemy** and click **Ok**.
+► To rename this to **myEnemy**, click **mySprite2** to open a dropdown menu and choose ``||variables(noclick):Rename variable...||``. Enter **myEnemy** and click **Ok**.
 
 ► Change the kind from **Player** to **Enemy**.
 
@@ -63,7 +63,7 @@ game.onUpdateInterval(2500, function () {
 
 ## Step 5
 
-► Click the grey box inside the ``||variables: set [myEnemy] to sprite [ ] of kind [Enemy]||`` block and toggle to **My Assets** to choose the **enemy** submarine, then click **Done**.
+► Click the grey box inside the ``||variables(sprites): set [myEnemy] to sprite [ ] of kind [Enemy]||`` block and toggle to **My Assets** to choose the **enemy** submarine, then click **Done**.
 
 ```blocks
 game.onUpdateInterval(2500, function () {
@@ -85,7 +85,7 @@ It's time to tell the new enemy sprites where to spawn.
 
 ► From ``||sprites:Sprites||``, drag a ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||game:on game update every [2500] ms||``  container.
 
-► Change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
+► Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myEnemy||``.
 
 ```blocks
 game.onUpdateInterval(2500, function () {
@@ -153,7 +153,7 @@ let mySprite: Sprite = null
 
 ---
 
-► Send your enemies after the shark by adding the ``||sprites:set [myEnemy] follow [mySprite]||`` block to **the end** of the ``||game:on game update every [2500] ms||`` container where ``||variables:myEnemy||`` is made.
+► Send your enemies after the shark by adding the ``||sprites:set [myEnemy] follow [mySprite]||`` block to **the end** of the ``||game:on game update every [2500] ms||`` container where ``||variables(noclick):myEnemy||`` is made.
 
 ► Click the plus sign (**+**) to the right of the ``||sprites:set [myEnemy] follow [mySprite]||`` block and set the enemy speed to **30** so it doesn't attack too fast.
 

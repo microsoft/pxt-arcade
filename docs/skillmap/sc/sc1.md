@@ -34,7 +34,7 @@ Choose a character [__*sprite*__](#sprote "a 2-D image that moves on the screen"
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
+► From the ``||sprites:Sprites||`` category, drag ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` to **the end** of the ``||loops:on start||`` container.
 
 ► To choose your own character, click the empty grey box, then toggle to **My Assets** and choose the standing image for either **Shang-Chi** or **Xialing**.
 

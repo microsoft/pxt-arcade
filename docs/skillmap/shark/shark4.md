@@ -53,9 +53,9 @@ for (let index = 0; index < 10; index++) {
 
 ## Step 4 - Add Background Decorations
 
-► From ``||sprites:Sprites||``, drag ``||variables:set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||loops:repeat [10] times||`` container.
+► From ``||sprites:Sprites||``, drag ``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||`` into the empty ``||loops:repeat [10] times||`` container.
 
-► Click the ``||variables:mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**.
+► Click the ``||variables(noclick):mySprite2||`` dropdown and choose **Rename variable...** call this **myDecor**.
 
 ► Change the **kind** of the sprite to **Decoration**.
 
@@ -88,7 +88,7 @@ To make the seaweed look more natural, let's change the **y value** (vertical po
 
 ► From ``||sprites:Sprites||``, drag the ``||sprites:set [mySprite] position to x [0] y [0]||`` block into **the end** of the ``||loops:repeat [10] times||`` loop.
 
-► Change ``||variables:mySprite||`` to ``||variables:myDecor||``.
+► Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myDecor||``.
 
 ► Change the **y** value to **96**.
 

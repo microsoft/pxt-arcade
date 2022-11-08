@@ -67,12 +67,12 @@ scroller.scrollBackgroundWithSpeed(0, 10)
 ---
 
 - :paper plane: Drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``
 to **the end** of the
 ``||loops:on start||`` container.
 
 - :paint brush: Click on the grey box in the middle of
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``,
+ ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``,
  then toggle to **My Assets** and choose the **Rocket**.
 
 
@@ -110,10 +110,7 @@ controller.moveSprite(mySprite)
 
 ## 6. Try It
 
-**Click the Game Window Tab (Above)**
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**
 
 Try moving your ship around the game screen!  Your ship will move with the joypad, arrow keys, or **W A S D** keys.
 

@@ -1,8 +1,8 @@
-# Whack-em-Mole
+# Whack-the-Mole
 
 **A page for Educators & Parents**
 
-The **Whack-em-Mole** skillmap introduces simple game design and computer science concepts through a fun, relatable carnival interface.
+The **Whack-the-Mole** skillmap introduces simple game design and computer science concepts through a fun, relatable carnival interface.
 
 In this set of activities, students will create a simple mole-chasing game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
@@ -19,7 +19,7 @@ Designed for students between the ages of 8 & 13, this experience contains a tot
 
 ### Objectives
 
-After completing Whack-em-Mole, students will have gained exposure to all the elements they need to successfully create their own Whack-em-Mole game using MakeCode Arcade, including:
+After completing Whack-the-Mole, students will have gained exposure to all the elements they need to successfully create their own Whack-the-Mole game using MakeCode Arcade, including:
 
 #### Computer Science Concepts
 
@@ -61,7 +61,7 @@ After completing Whack-em-Mole, students will have gained exposure to all the el
 | Activity | Get Animated (15 min) |
 |---|---|
 | ![Get Animated thumbnail](/static/skillmap/mole/mole3.gif) | Add sound and animation to polish your game! |
-| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimationHammer(myHammer,[img`.`],100,false)]`` <br/>``[scene.add_label_to("Whack-em-Mole", areas.Bottom)]`` |
+| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimationHammer(myHammer,[img`.`],100,false)]`` <br/>``[scene.add_label_to("Whack-the-Mole", areas.Bottom)]`` |
 | Solution option | [Get Animated Project](https://makecode.com/_PCKW94TVLMpA) |
 
 
@@ -72,7 +72,7 @@ After completing Whack-em-Mole, students will have gained exposure to all the el
 
 ##### Game Mod Ideas
 
-After students complete Whack-em-Mole they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
+After students complete Whack-the-Mole they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
 - Change the mole to a different character. Try a monster, an alien, or a star!
 - Animate your character each time it's tagged by the rubber hammer.
@@ -81,7 +81,7 @@ After students complete Whack-em-Mole they can head back to the skillmap and cli
 
 ### What's Next?
 
-After completing Whack-em-Mole, students can move on to the following activities:
+After completing Whack-the-Mole, students can move on to the following activities:
 
 * [Burstin' Balloons](https://arcade.makecode.com/--skillmap#docs:/skillmap/balloon)
 * [Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)

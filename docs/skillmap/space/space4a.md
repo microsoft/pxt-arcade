@@ -162,7 +162,7 @@ false
 ## Step 8
 
 - :mouse pointer: To make sure we're animating the correct sprite, replace
-``||variables:mySprite||`` with ``||variables:myEnemy||`` 
+``||variables(noclick):mySprite||`` with ``||variables(noclick):myEnemy||`` 
 using the dropdown in the  
 ``||animation:animate [mySprite]||`` block.
 
