@@ -5,6 +5,9 @@ import configData from "../config.json"
 import Carousel from "react-spring-3d-carousel";
 import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Keyboard } from "swiper";
+import "swiper/css";
 interface IProps {
     kiosk: Kiosk;
     buttonSelected: Boolean;
@@ -111,11 +114,37 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
 
     return(
         <div className="carouselWrap">
-            <Carousel
+            <Swiper
+                spaceBetween={30}
+                loop={true}
+                slidesPerView={1}
+                centeredSlides={true}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+                modules={[Keyboard]}
+                keyboard={{enabled: true}}
+            >
+                {kiosk.games.map((game, index) => {
+                    return (
+                        <SwiperSlide>
+                            <div className="gameTile" style={{ 
+                                backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
+                            }}>
+                                <div className="gameLabelBackground">
+                                    <div className="gameTitle">{game.name}</div>
+                                    <div className="gameDescription">{game.description}</div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    )
+                })}
+
+            </Swiper>
+            {/* <Carousel
                 slides={slides}
                 showNavigation={false}
                 goToSlide={selectedIndex}
-            />
+            /> */}
         </div>
     )
 }

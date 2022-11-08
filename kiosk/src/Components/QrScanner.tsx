@@ -44,10 +44,8 @@ function onScanSuccess(decodedText: string, decodedResult: Html5QrcodeResult) {
     throw new Error("bad scan");
   }
 
-  const QrScanner: React.FC<IProps> = ({ show }) => {
-    // if (show) {
-        play();
-    // }
+  const QrScanner: React.FC<{}> = () => {
+    play();
     return (
         <div id="qrReader"></div>
     )

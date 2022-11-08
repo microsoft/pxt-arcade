@@ -7,7 +7,8 @@ import { addGameToKioskAsync } from "../BackendRequests";
 import QrScanner from "./QrScanner";
 import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
 import { Html5QrcodeResult, Html5QrcodeError, CameraDevice } from "../../node_modules/html5-qrcode/esm/core";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
 interface IProps {
     kiosk: Kiosk
 }
@@ -57,9 +58,11 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     const [qrResponse, setQrResponse] = useState("");
     const [scannerVisible, setScanner] = useState(false);
+    const display = scannerVisible ? "none" : "contents";
 
     const renderQrScanner = () => {
         setScanner(true);
+        play();
     }
 
     // useEffect(() => {
@@ -98,7 +101,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
             </ol>
             {
                 !scannerVisible &&
-                <button className="scanQrButton" onClick={play} >Open camera to scan the qr code</button>
+                <button className="scanQrButton" onClick={renderQrScanner} >Open camera to scan the qr code</button>
             }
             
             {/* {
@@ -113,8 +116,12 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                     <p>{qrResponse}</p>
                 </div>
             } */}
-            <div id="reader">
-            </div>
+            {/* {
+                scannerVisible &&
+                <QrScanner />
+            } */}
+            <div id="reader"></div>
+
         </div>
     )
 }
