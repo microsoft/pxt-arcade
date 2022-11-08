@@ -58,8 +58,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 ``||sprites:set [myEnemy] follow [mySprite] ||``   
 and drag it into the empty **overlaps** container.
 
-- :mouse pointer:  Grab the ``||variables:otherSprite||`` value block out of the title of the outer container and
-drag it down to replace the ``||variables:myEnemy||`` argument in the **set follow** block.
+- :mouse pointer:  Grab the ``||variables(noclick):otherSprite||`` value block out of the title of the outer container and
+drag it down to replace the ``||variables(noclick):myEnemy||`` argument in the **set follow** block.
 
 
 
@@ -112,9 +112,9 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 ``||sprites:destroy [mySprite]||``  
 block into the empty overlaps container.
 
-- :mouse pointer:  Grab the ``||variables:sprite||`` value block from the
+- :mouse pointer:  Grab the ``||variables(noclick):sprite||`` value block from the
 **overlaps** container and drag it down to replace the
-``||variables:mySprite||`` argument in the **destroy** block.
+``||variables(noclick):mySprite||`` argument in the **destroy** block.
 
 ---
 

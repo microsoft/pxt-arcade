@@ -7,7 +7,7 @@ function img(lits: any, ...args: any[]): Image { return null }
 
 // set palette before creating screen, so the JS version has the right BPP
 image.setPalette(hex`__palette`)
-let screen = image.create(160, 120) as ScreenImage
+let screen = image.create(_screen_internal.getScreenWidth(160), _screen_internal.getScreenHeight(120)) as ScreenImage
 
 namespace image {
     //% shim=pxt::setPalette
@@ -19,6 +19,16 @@ namespace _screen_internal {
     function updateScreen(img: Image): void { }
     //% shim=pxt::updateStats
     function updateStats(msg: string): void { }
+
+    //% shim=TD_ID
+    export function getScreenWidth(defl: number) {
+        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_WIDTH, defl)
+    }
+
+    //% shim=TD_ID
+    export function getScreenHeight(defl: number) {
+        return control.getConfigValue(DAL.CFG_ARCADE_SCREEN_HEIGHT, defl)
+    }
 
     control.__screen.setupUpdate(() => updateScreen(screen))
     control.EventContext.onStats = function (msg: string) {

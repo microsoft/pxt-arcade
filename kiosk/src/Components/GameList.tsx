@@ -5,12 +5,13 @@ import configData from "../config.json"
 import Carousel from "react-spring-3d-carousel";
 import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
-
 interface IProps {
-    kiosk: Kiosk
+    kiosk: Kiosk;
+    buttonSelected: Boolean;
   }
 
-const GameList: React.FC<IProps> = ({ kiosk }) => {
+
+const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     const [indexRef, ] = useState(new PrimitiveRef(0));
     const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
@@ -70,7 +71,9 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
         // There are some things we only want to do if there are games.
         if (games.length) {
             intervalId = setInterval(() => {
-                updateLoop();
+                if (!buttonSelected) {
+                    updateLoop();
+                }
             }, configData.GamepadPollLoopMilli);
         }
         
@@ -79,7 +82,7 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
                 clearInterval(intervalId);
             }
         };
-    }, [games]);
+    }, [games, buttonSelected]);
 
     useEffect(() => {
         if (kiosk.selectedGame) {
@@ -97,7 +100,7 @@ const GameList: React.FC<IProps> = ({ kiosk }) => {
                 <div className="gameTile" style={{ 
                     backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
                 }}>
-                    <div className="gameContentBackground">
+                    <div className="gameLabelBackground">
                         <div className="gameTitle">{game.name}</div>
                         <div className="gameDescription">{game.description}</div>
                     </div>

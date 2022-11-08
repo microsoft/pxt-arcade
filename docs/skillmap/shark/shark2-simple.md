@@ -46,13 +46,13 @@ game.onUpdateInterval(2100, function () {
 
 
 - :paper plane: Drag  
-``||variables: set [mySprite2] to sprite [ ] of kind [Player]||``  
+``||variables(sprites): set [mySprite2] to sprite [ ] of kind [Player]||``  
 into the empty  
 ``||game:on game update every [2100] ms||``  
 container.
 
 - :mouse pointer: To rename the sprite **myFood**, click **mySprite2** to open a dropdown menu and choose  
-``||variables:Rename variable...||``.  
+``||variables(noclick):Rename variable...||``.  
 Enter **myFood** and click **Ok**.
 
 - :mouse pointer: Change the kind from **Player** to **Food**.
@@ -70,7 +70,7 @@ game.onUpdateInterval(2100, function () {
 ## 5. Pick a Fish
 
 - :paint brush: Click the grey box inside  
-``||variables: set [myFood] to sprite [ ] of kind [Food]||``  
+``||variables(sprites): set [myFood] to sprite [ ] of kind [Food]||``  
 and toggle to **My Assets** to choose **food**, then click **Done**.
 
 ```blocks
@@ -95,7 +95,7 @@ block into **the end** of the
 ``||game:on game update every [2100] ms||``   
 container.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFood||``.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFood||``.
 
 ```blocks
 game.onUpdateInterval(2100, function () {
@@ -145,7 +145,7 @@ and snap it in at **the bottom** of your
 ``||game:on game update every [2100] ms||``  
 container.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myFood||``.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFood||``.
 
 - :mouse pointer: Change ``||sprites:x||`` to ``||sprites:vx (velocity x)||`` and make the value **-75** to get the fish moving from right to left.
 

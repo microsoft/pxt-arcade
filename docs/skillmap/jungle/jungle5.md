@@ -46,7 +46,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ``||sprites:destroy [mySprite]||`` <br/>
 into the empty **on Projectile overlaps Player** container.
 
-- :mouse pointer: Drag the ``||variables:otherSprite||`` value block out of the title bar to replace ``||variables:mySprite||``.
+- :mouse pointer: Drag the ``||variables(noclick):otherSprite||`` value block out of the title bar to replace ``||variables(noclick):mySprite||``.
 
 ![Borrow a variable](/static/skillmap/assets/give-var.gif "Don't destroy the monkey!")
 

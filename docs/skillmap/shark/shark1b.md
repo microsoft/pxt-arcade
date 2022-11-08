@@ -47,7 +47,7 @@ To keep the submarine from attacking again and again, we need to destroy it befo
 
 ► From ``||sprites:Sprites||``, drag ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container.
 
-► Grab the ``||variables:otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables:mySprite||``.
+► Grab the ``||variables(noclick):otherSprite||`` value from the title of the **on overlaps** block and drag it in to replace ``||variables(noclick):mySprite||``.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
