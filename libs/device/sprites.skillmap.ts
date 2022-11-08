@@ -87,10 +87,10 @@ namespace sprites.skillmap {
     //% fixedInstance jres blockIdentity=images._image
     export const mailboxIcon = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
-    //% tags="animal"
+    //% tags="animals"
     export const pigeon = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
-    //% tags="animal"
+    //% tags="animals"
     export const pigeonIcon = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="misc"

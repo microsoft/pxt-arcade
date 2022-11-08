@@ -149,7 +149,7 @@ When a water sprite hits the fire, that water sprite needs to be destroyed.
 into the empty container.
 
 - :mouse pointer: To make sure your code destroys the exact sprite that overlapped the tile,
-grab the red ``||variables:sprite||`` value block from the outer container and use it to replace ``||variables:mySprite||`` in the **destroy** block.
+grab the red ``||variables(noclick):sprite||`` value block from the outer container and use it to replace ``||variables(noclick):mySprite||`` in the **destroy** block.
 
 ![Grab the sprite value from the title bar of the outer container](/static/skillmap/assets/sprite-from-container.gif "This is how your block knows which sprite to use")
 
@@ -249,7 +249,7 @@ container.
 
 - :mouse pointer: Click the checkered square and select the **burnt tree**.
 
-- :mouse pointer: To add the location where the new burnt tree should appear, drag the red ``||variables:location||`` value from the
+- :mouse pointer: To add the location where the new burnt tree should appear, drag the red ``||variables(noclick):location||`` value from the
 ``||sprites:on fire destroyed at [location]||`` <br/>
 container down to replace <br/>
 ``||scene: tilemap col [0] row [0]||``.

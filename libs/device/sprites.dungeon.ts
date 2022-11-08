@@ -1,21 +1,21 @@
 namespace sprites.dungeon {
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile electronics"
     export const buttonOrange = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile electronics"
     export const buttonOrangeDepressed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile electronics"
     export const buttonTeal = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile electronics"
     export const buttonTealDepressed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile electronics"
     export const buttonPink = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    //% tags="?tile misc"
+    //% tags="?tile electronics"
     export const buttonPinkDepressed = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     //% tags="?tile dungeon"

@@ -117,7 +117,7 @@ Let's create a turkey sprite and get it moving.
 
 - :paper plane: From the ``||sprites:Sprites||`` category in the toolbox,
 drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the ``||loops:on start||`` container that's already in the workspace.
 
 _(Keep scrolling until you have read all the instructions 👇👇👇)_

@@ -34,10 +34,7 @@ effects.starField.startScreenEffect()
 ## Take a Look!
 
 
-**Click the Game Window Tab (Above)**<br/>
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**<br/>
 
 Do you see the background you chose scrolling down the screen?
 
@@ -48,11 +45,11 @@ Do you see the background you chose scrolling down the screen?
 
 ---
 
-► From the ``||sprites:Sprites||`` category, drag the ``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+► From the ``||sprites:Sprites||`` category, drag the ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``
 block  and place it at the end of the ``||loops:on start||`` container.
 
 ► Click on the grey box in the middle of your
- ``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block
+ ``||variables(noclick):set [mySprite] to sprite [ ] of kind [Player]||`` block
 to design a ship of your own! Are you a rusty pile of scraps or a sleek, futuristic rocket?
 
 ---

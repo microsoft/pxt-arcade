@@ -8,7 +8,7 @@
 
 ## {Step 1}
 
-Let's start by making the ball. Use ``||variables:set mySprite to sprite||`` to create a ball sprite. Change the variable name of ``||variables:mySprite||`` to ``||variables:ball||``.
+Let's start by making the ball. Use ``||variables(sprites):set mySprite to sprite||`` to create a ball sprite. Change the variable name of ``||variables(noclick):mySprite||`` to ``||variables(noclick):ball||``.
 
 ```blocks
 let ball = sprites.create(img`
@@ -40,7 +40,7 @@ ball.setBounceOnWall(true)
 
 ## {Step 3}
 
-Use some more code to set the ``||sprites:y||`` of ``||variables:ball||`` with ``||math:pick random||`` to get a some value between ``0`` and ``120``.
+Use some more code to set the ``||sprites:y||`` of ``||variables(noclick):ball||`` with ``||math:pick random||`` to get a some value between ``0`` and ``120``.
 
 ```blocks
 let ball = sprites.create(img`
@@ -81,7 +81,7 @@ create_ball()
 
 ## {Step 5}
 
-Let's work on the left paddle. Add a new ``||variables:set mySprite to sprite||`` to ``||loops:on start||`` and rename the variable to ``||variables:left_paddle||``. Change the kind to ``||sprites:LeftPaddles||``.
+Let's work on the left paddle. Add a new ``||variables(sprites):set mySprite to sprite||`` to ``||loops:on start||`` and rename the variable to ``||variables(noclick):left_paddle||``. Change the kind to ``||sprites:LeftPaddles||``.
 
 ```blocks
 namespace SpriteKind {
@@ -109,7 +109,7 @@ let left_paddle = sprites.create(img`
 
 ## {Step 6}
 
-Make the ``||variables:left_paddle||`` move up and down using 
+Make the ``||variables(noclick):left_paddle||`` move up and down using 
 ``||controller:move left_paddle with buttons||``. Use the velocity of `0` for ``||controller:vx||`` and `150`
 for ``||controller:vy||``.
 
@@ -207,10 +207,10 @@ create_left_paddle()
 
 ## {Step 9}
 
-Create another ``||functions:function||`` called ``create_right_paddle``. This will have the code for the ``||variables:right_paddle||``.
+Create another ``||functions:function||`` called ``create_right_paddle``. This will have the code for the ``||variables(noclick):right_paddle||``.
 Copy all of the code from the ``create_left_paddle`` function and put it in this new
-function. Change all of the ``||variables:left_paddle||`` variables in the function to
-``||variables:right_paddle||``. Now, add a ``||functions:call create_right_paddle||`` in ``||loops:on start||``.
+function. Change all of the ``||variables(noclick):left_paddle||`` variables in the function to
+``||variables(noclick):right_paddle||``. Now, add a ``||functions:call create_right_paddle||`` in ``||loops:on start||``.
 
 
 ```blocks
@@ -248,8 +248,8 @@ create_right_paddle()
 
 Let's make some more changes inside of ``create_right_paddle``. Set the kind of the paddle sprite to ``||sprites:RightPaddles||``. Change the position setting of the paddle from ``||sprites:left||`` to
 ``||sprites:right||`` and set the value to `160`. To make this a 2 player game, replace the
-``||controller:move||`` ``||variables:right_paddle||`` code with a multiplayer ``||controller:player 2 move||`` for
-``||variables:right_paddle||``. Use the same values for ``||controller:vx||`` and ``||controller:vy||``
+``||controller:move||`` ``||variables(noclick):right_paddle||`` code with a multiplayer ``||controller:player 2 move||`` for
+``||variables(noclick):right_paddle||``. Use the same values for ``||controller:vx||`` and ``||controller:vy||``
 
 ```blocks
 namespace SpriteKind {
@@ -360,7 +360,7 @@ create_right_paddle()
 
 ## {Step 12}
 
-Add an event that runs code for when ``||variables:ball||`` overlaps with ``||variables:left_paddle||``. This happens for the case when ``||sprites:on||`` ``||variables:sprite||`` ``||sprites:of kind Player overlaps||`` ``||variables:otherSprite||`` ``||sprites:of kind LeftPaddles||``.
+Add an event that runs code for when ``||variables(noclick):ball||`` overlaps with ``||variables:left_paddle||``. This happens for the case when ``||sprites:on||`` ``||variables(noclick):sprite||`` ``||sprites:of kind Player overlaps||`` ``||variables(noclick):otherSprite||`` ``||sprites:of kind LeftPaddles||``.
 
 ```blocks
 namespace SpriteKind {
@@ -372,7 +372,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, o
 
 ## {Step 13}
 
-Inside the event, set the inverse of the horizontal speed for ``||variables:sprite||`` to simulate the bounce on the paddle. This happens if you ``||sprites:set sprite vx (velocity x) to||`` the negative value of the horizontal speed, which is ``||variables:sprite||`` ``||sprites:vx (velocity x)||`` multiplied by ``-1``. Also, ``||info:change score by ||`` ``1`` for the player using the ``||variables:left_paddle||``.
+Inside the event, set the inverse of the horizontal speed for ``||variables(noclick):sprite||`` to simulate the bounce on the paddle. This happens if you ``||sprites:set sprite vx (velocity x) to||`` the negative value of the horizontal speed, which is ``||variables(noclick):sprite||`` ``||sprites:vx (velocity x)||`` multiplied by ``-1``. Also, ``||info:change score by ||`` ``1`` for the player using the ``||variables(noclick):left_paddle||``.
 
 ```blocks
 namespace SpriteKind {
@@ -386,7 +386,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.LeftPaddles, function (sprite, o
 
 ## {Step 14}
 
-Copy the event and all its code from the previous the step. In this event, change the ``||variables:otherSprite||`` kind from ``||sprites:LeftPaddles||`` to ``||sprites:RightPaddles||``. Replace the ``||info:change score by||`` with the multiplayer ``||info:change player 2 score by||`` for the player using the ``||variables:right_paddle||``. Keep the same score increment of ``1``.
+Copy the event and all its code from the previous the step. In this event, change the ``||variables(noclick):otherSprite||`` kind from ``||sprites:LeftPaddles||`` to ``||sprites:RightPaddles||``. Replace the ``||info:change score by||`` with the multiplayer ``||info:change player 2 score by||`` for the player using the ``||variables(noclick):right_paddle||``. Keep the same score increment of ``1``.
 
 ```blocks
 namespace SpriteKind {

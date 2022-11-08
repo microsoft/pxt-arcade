@@ -221,7 +221,7 @@ To do this, we'll use the same method as in previous tutorials.
 block from inside the **set sprite list to** block.
 
 
-► Drop it into the **for element** loop to replace the ``||variables: list||`` variable.
+► Drop it into the **for element** loop to replace the ``||variables(noclick): list||`` variable.
 
 ► Change the "kind" dropdown to **Enemy**.
 
@@ -249,7 +249,7 @@ an ``||logic: if <true> then||`` logic container into the empty **on game update
 ``||logic: <true>||`` with ``||scene: is [mySprite] hitting wall [left]||`` in the empty
 **if/then** header.
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` to make sure
+► Replace ``||variables(noclick): mySprite||`` with ``||variables(noclick): value||`` to make sure
 it's checking the current enemy.
 
 ► Change **left** to **bottom** to check that the bottom of the sprite is on the ground.
@@ -286,7 +286,7 @@ in the new **if/else** statement.
 
 ► In the right blank (to the right of the **and**) snap a ``||scene: tile to the [left] of [mySprite] is [ ]||``
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace the blank
+► Replace ``||variables(noclick): mySprite||`` with ``||variables(noclick): value||`` and replace the blank
 tile with the **[X]**.
 
 ► Pop a ``||logic: [0] [<] [0]||`` block to the left of the **and**.
@@ -322,7 +322,7 @@ is negative.
 ► Grab a ``||sprites: [mySprite] [x]||`` argument block to replace the
 first **0** in ``||logic: [0] [<] [0]||``.
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace
+► Replace ``||variables(noclick): mySprite||`` with ``||variables(noclick): value||`` and replace
 **x** with **vx (velocity x)**.
 
 
@@ -349,7 +349,7 @@ enemy to jump.
 
 ► Inside the newly built **if/then** statement, connect a ``||sprites:set [mySprite] [x] to [0]||`` block.
 
-► Replace ``||variables: mySprite||`` with ``||variables: value||`` and replace
+► Replace ``||variables(noclick): mySprite||`` with ``||variables(noclick): value||`` and replace
 ``||sprites: x||`` with ``||sprites: vy (velocity y)||``.
 
 ► Change **0** to **-150**.

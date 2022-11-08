@@ -127,7 +127,7 @@ tiles.setTilemap(tiles.createTilemap(
 
 ## {Step 2 @fullscreen}
 
-Go into ``||sprites:Sprites||``, grab a ``||sprites:set sprite of kind Player||``, and drag it into ``||loops:on start||``. Click the drop down showing ``||variables:mySprite||`` and rename it to ``||variables:lander||``. In the ``||sprites:sprite of kind Player||`` block, click on the grey box to open the **image editor**. Draw a spaceship.
+Go into ``||sprites:Sprites||``, grab a ``||sprites:set sprite of kind Player||``, and drag it into ``||loops:on start||``. Click the drop down showing ``||variables(noclick):mySprite||`` and rename it to ``||variables(noclick):lander||``. In the ``||sprites:sprite of kind Player||`` block, click on the grey box to open the **image editor**. Draw a spaceship.
 
 ```blocks
 let lander = sprites.create(img`
@@ -152,7 +152,7 @@ let lander = sprites.create(img`
 
 ## {Step 3 @fullscreen}
 
-Find ``||sprites:set mySprite position to||`` under ``||sprites:Sprites||``, and drag it below ``||sprites:set lander to sprite of kind Player||``. Change ``||variables:mySprite||`` to ``||variables:lander||`` then use into the position selector (click the space for ``x`` and click on the position selector) and place it above where you placed your starting position.
+Find ``||sprites:set mySprite position to||`` under ``||sprites:Sprites||``, and drag it below ``||sprites:set lander to sprite of kind Player||``. Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):lander||`` then use into the position selector (click the space for ``x`` and click on the position selector) and place it above where you placed your starting position.
 
 ```blocks
 let lander: Sprite = null
@@ -161,7 +161,7 @@ lander.setPosition(6, 102)
 
 ## {Step 4 @fullscreen}
 
-In ``||sprites:Sprites||`` grab a ``||sprites:set sprite stay in screen||`` and drag it under the ``||sprites:set lander position to||`` block. Set the variable to ``||variables:lander||``. Next, grab a ``||sprites:set sprite x||`` and drag it under the ``||sprites:set stay in screen block||``. Set the drop down to ``ay`` and make the value be ``30``.
+In ``||sprites:Sprites||`` grab a ``||sprites:set sprite stay in screen||`` and drag it under the ``||sprites:set lander position to||`` block. Set the variable to ``||variables(noclick):lander||``. Next, grab a ``||sprites:set sprite x||`` and drag it under the ``||sprites:set stay in screen block||``. Set the drop down to ``ay`` and make the value be ``30``.
 
 ```blocks
 let lander: Sprite = null
@@ -171,7 +171,7 @@ lander.ay = 30
 
 ## {Step 5 @fullscreen}
 
-In ``||variables:Variables||`` grab a ``||variables:set to||`` block and drag it into ``||loops:on start||``. Change the variable name to ``||variables:angle||``, and then drag a text block from ``||text:Text||`` into the value. Set the value to ``"straight"``.
+In ``||variables:Variables||`` grab a ``||variables:set to||`` block and drag it into ``||loops:on start||``. Change the variable name to ``||variables(noclick):angle||``, and then drag a text block from ``||text:Text||`` into the value. Set the value to ``"straight"``.
 
 ```blocks
 let angle = "straight"
@@ -179,7 +179,7 @@ let angle = "straight"
 
 ## {Step 6 @fullscreen}
 
-Drag an ``||controller:on A button pressed||`` from ``||controller:Controller||`` and place it in your workspace. From ``||logic:Logic||``, grab an ``||logic:if then else||`` statement and drag it into ``||controller:on A button pressed||``. Click the **(+)** symbol at the end. Grab a ``||logic:0 = 0||`` block from ``||logic:Logic||`` and place it in the ``||logic:if||``. Duplicate the ``||logic:0 = 0||`` block and place it in the ``||logic:if else||`` section. For both ``||logic:0 = 0||`` statements, set the first value to ``||variables:angle||``. Grab a ``||text:" "||`` and place it in the second value of both equal statements. For the first ``||logic:if||`` statement, check that ``||variables:angle||`` is equal to ``"straight"`` by changing ``" "`` to ``"straight"``. For the ``||logic:else if||``, check that ``||variables:angle||`` is equal to ``"left"``.
+Drag an ``||controller:on A button pressed||`` from ``||controller:Controller||`` and place it in your workspace. From ``||logic:Logic||``, grab an ``||logic:if then else||`` statement and drag it into ``||controller:on A button pressed||``. Click the **(+)** symbol at the end. Grab a ``||logic:0 = 0||`` block from ``||logic:Logic||`` and place it in the ``||logic:if||``. Duplicate the ``||logic:0 = 0||`` block and place it in the ``||logic:if else||`` section. For both ``||logic:0 = 0||`` statements, set the first value to ``||variables(noclick):angle||``. Grab a ``||text:" "||`` and place it in the second value of both equal statements. For the first ``||logic:if||`` statement, check that ``||variables(noclick):angle||`` is equal to ``"straight"`` by changing ``" "`` to ``"straight"``. For the ``||logic:else if||``, check that ``||variables(noclick):angle||`` is equal to ``"left"``.
 
 ```blocks
 let angle = "straight"
@@ -194,7 +194,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 7 @fullscreen}
 
-In ``||sprites:Sprite||`` grab three ``||sprites:set sprite velocity to vx vy||`` and place one inside of each ``||logic:if||``, ``||logic:else if||``, and ``||logic:else then else||`` section. Set the sprite variable for all three to ``||variables:lander||``. In the first, set ``vx`` to ``0`` and ``vy`` to ``-20``. In the second, set ``vx`` to ``-6`` and ``vy`` to ``-20``. Then, in the last, set ``vx`` to ``6`` and ``vy`` to ``-20``.
+In ``||sprites:Sprite||`` grab three ``||sprites:set sprite velocity to vx vy||`` and place one inside of each ``||logic:if||``, ``||logic:else if||``, and ``||logic:else then else||`` section. Set the sprite variable for all three to ``||variables(noclick):lander||``. In the first, set ``vx`` to ``0`` and ``vy`` to ``-20``. In the second, set ``vx`` to ``-6`` and ``vy`` to ``-20``. Then, in the last, set ``vx`` to ``6`` and ``vy`` to ``-20``.
 
 ```blocks
 let lander: Sprite = null
@@ -212,7 +212,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 8 @fullscreen}
 
-When the sprite hits the lunar surface it gets destroyed. So from ``||scene:Scene||`` grab a ``||scene: on sprite of kind Player overlaps at location||`` and place it in the workspace. Make sure the image is the same as the obstacles. From ``||sprites:Sprite||`` grab a ``||sprites:destroy sprite||``. Change the sprite to ``||variables:lander||`` and click on the **(+)** symbol. Set the effect to ``fire`` and the time to ``500`` ms. From ``||game:Game||`` grab a ``||game:game over lose||`` and click the **(+)** symbol and set the effect to ``dissolve``.
+When the sprite hits the lunar surface it gets destroyed. So from ``||scene:Scene||`` grab a ``||scene: on sprite of kind Player overlaps at location||`` and place it in the workspace. Make sure the image is the same as the obstacles. From ``||sprites:Sprite||`` grab a ``||sprites:destroy sprite||``. Change the sprite to ``||variables(noclick):lander||`` and click on the **(+)** symbol. Set the effect to ``fire`` and the time to ``500`` ms. From ``||game:Game||`` grab a ``||game:game over lose||`` and click the **(+)** symbol and set the effect to ``dissolve``.
 
 ```blocks
 namespace myTiles {
@@ -302,7 +302,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
 
 ## {Step 9 @fullscreen}
 
-Next grab from ``||scene:Scene||`` a ``||scene:on sprite of kind Player overlaps at location||`` and drag it into the workspace. Make sure to set the image to the landing pad. Then grab a ``||logic:if then else||`` and drag it inside. Again, from ``||logic:Logic||`` grab a ``||logic:0 = 0||`` and drag it into the ``||logic:if||`` statement. Grab the ``||variables:angle||`` from the ``||variables:Variable||`` drawer and place it in the first field of the ``||logic:0 = 0||``. Grab a ``" "`` from ``||text:Text||`` and place it in the second field and type the string ``straight``.
+Next grab from ``||scene:Scene||`` a ``||scene:on sprite of kind Player overlaps at location||`` and drag it into the workspace. Make sure to set the image to the landing pad. Then grab a ``||logic:if then else||`` and drag it inside. Again, from ``||logic:Logic||`` grab a ``||logic:0 = 0||`` and drag it into the ``||logic:if||`` statement. Grab the ``||variables(noclick):angle||`` from the ``||variables(noclick):Variable||`` drawer and place it in the first field of the ``||logic:0 = 0||``. Grab a ``" "`` from ``||text:Text||`` and place it in the second field and type the string ``straight``.
 
 ```blocks
 namespace myTiles {
@@ -393,7 +393,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
 
 ## {Step 10 @fullscreen}
 
-Find ``||game:game over||`` in ``||game:Game||``, and drag it into the first section of the ``||logic:if then ... else||`` statement. Switch the toggle to **Win**, then click the **(+)** sign and select ``star field``. Then, find ``||sprites:destroy sprite||`` in ``||sprites:Sprites||``, drag it into the ``||logic:else||``, and switch ``||variables:mySprite||`` to ``||variables:Lander||``. Click the **(+)** sign and choose the ``fire`` effect and ``500`` ms. Finally, grab another ``||game:game over||`` and place it after the ``||sprites:destroy sprite||`` block. Click the **(+)** sign and set the effect to ``dissolve``.
+Find ``||game:game over||`` in ``||game:Game||``, and drag it into the first section of the ``||logic:if then ... else||`` statement. Switch the toggle to **Win**, then click the **(+)** sign and select ``star field``. Then, find ``||sprites:destroy sprite||`` in ``||sprites:Sprites||``, drag it into the ``||logic:else||``, and switch ``||variables(noclick):mySprite||`` to ``||variables(noclick):Lander||``. Click the **(+)** sign and choose the ``fire`` effect and ``500`` ms. Finally, grab another ``||game:game over||`` and place it after the ``||sprites:destroy sprite||`` block. Click the **(+)** sign and set the effect to ``dissolve``.
 
 ```blocks
 
@@ -489,7 +489,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
 
 ## {Step 11 @fullscreen}
 
-From ``||controller:Controller||`` grab ``||controller:on A button pressed||`` and drag it into the workspace. Change the button from ``A`` to ``left``. Then from ``||variables:Variables||`` grab ``||variables:set variable to||`` and drag it into ``||controller:on left button pressed||``. Switch the variable to ``||variables:angle||``. Grab a ``" "`` from ``||text:Text||``and place it after the ``to``. Type in ``left``. From ``||sprites:Sprites||`` grab a ``||sprites:set image to||`` and set the variable to ``||variables:lander||``. Draw an image of a sideways lander going left.
+From ``||controller:Controller||`` grab ``||controller:on A button pressed||`` and drag it into the workspace. Change the button from ``A`` to ``left``. Then from ``||variables:Variables||`` grab ``||variables:set variable to||`` and drag it into ``||controller:on left button pressed||``. Switch the variable to ``||variables(noclick):angle||``. Grab a ``" "`` from ``||text:Text||``and place it after the ``to``. Type in ``left``. From ``||sprites:Sprites||`` grab a ``||sprites:set image to||`` and set the variable to ``||variables(noclick):lander||``. Draw an image of a sideways lander going left.
 
 ```blocks
 let lander: Sprite = null

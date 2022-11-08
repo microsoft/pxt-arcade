@@ -34,7 +34,7 @@
 ### balloon2
 * name: Burst Your Balloon
 * type: tutorial
-* description: Add a balloon that inflates as you click! You'll be shocked to see how full it gets before time runs out.
+* description: Add a balloon that inflates as you click! You'll be shocked to see how full it gets before time runs out. Double-click the first level to start.
 * tags: easy, clicker, sprite, events
 * next: balloon3
 * url: /skillmap/balloon/balloon2
@@ -65,7 +65,7 @@
 * position: 2 2
 * actions:
     * map: [Finish the Last Level](/skillmap/balloon)
-    * editor: [Add More to This Game](/)
+    * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/balloon-cert.pdf

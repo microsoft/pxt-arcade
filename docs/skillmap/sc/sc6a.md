@@ -46,7 +46,7 @@ First, move the assassin (otherSprite) so they don't attack too many times in a 
 ► From ``||scene:Scene||``, drag
 ``||scene:place [mySprite] on top of random [ ]||`` into the empty ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Enemy]||`` container.
 
-► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+► Drag the ``||variables(noclick):otherSprite||`` value from the outer container down to replace ``||variables(noclick):mySprite||``.
 
 ► Click the checkered square to choose the **rubble** tile.
 
@@ -134,7 +134,7 @@ When our power kick (projectile) hits an assassin, we want to destroy both the p
 ► From ``||sprites:Sprites||``, drag two ``||sprites:destroy [mySprite]||`` blocks into the empty
 ``||sprites:on [sprite] of kind [Projectile] overlaps [otherSprite] of kind [Enemy]||`` container.
 
-► Drag the ``||variables:otherSprite||`` value from the outer container down to replace ``||variables:mySprite||`` in the first block and drag the ``||variables:sprite||`` value down to replace ``||variables:mySprite||`` in the second block.
+► Drag the ``||variables(noclick):otherSprite||`` value from the outer container down to replace ``||variables(noclick):mySprite||`` in the first block and drag the ``||variables(noclick):sprite||`` value down to replace ``||variables(noclick):mySprite||`` in the second block.
 
 
 ```blocks

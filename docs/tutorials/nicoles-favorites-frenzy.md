@@ -137,7 +137,7 @@ scene.setBackgroundImage(img`
 
 ## {Step 2 - Design your own Characters }
 
-Find the ``||variables:set sprite||`` blocks for Nicole and her Dog and click on the image of Nicole to open the sprite image editor. Erase the image using the **Eraser** tool and draw yourself as the main character. Then, do the same for the Dog character to draw your own pet!
+Find the ``||variables(sprites):set sprite||`` blocks for Nicole and her Dog and click on the image of Nicole to open the sprite image editor. Erase the image using the **Eraser** tool and draw yourself as the main character. Then, do the same for the Dog character to draw your own pet!
 
 ```block
 Nicole = sprites.create(img`
@@ -206,7 +206,7 @@ let Dog = sprites.create(img`
 
 ## {Step 3 - Change Sprite variable Names}
 
-Now that you’ve drawn your own game characters, let’s change their names. In the same ``||variables:set sprite||`` blocks, click on the Nicole drop-down menu and select **Rename Variable**. Type your name and click Ok. Do the same for your pet - instead of Dog, rename the variable to be whatever your pet is.
+Now that you’ve drawn your own game characters, let’s change their names. In the same ``||variables(sprites):set sprite||`` blocks, click on the Nicole drop-down menu and select **Rename Variable**. Type your name and click Ok. Do the same for your pet - instead of Dog, rename the variable to be whatever your pet is.
 
 ![Rename variable from the block menu](/static/tutorials/nicoles-favorites-frenzy/rename-variable.png)
 

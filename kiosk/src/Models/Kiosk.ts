@@ -1,8 +1,9 @@
 import { GamepadManager } from "./GamepadManager";
 import { HighScore } from "./HighScore";
 import { GameData } from "./GameData";
+import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
-import configData from "../config.json"
+import configData from "../config.json";
 import { runInThisContext } from "vm";
 
 export class Kiosk {
@@ -14,13 +15,17 @@ export class Kiosk {
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
 
-
     private readonly highScoresLocalStorageKey: string = "HighScores";
+    private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
     private initializePromise: any;
     private siteElements: ChildNode[] = [];
     private intervalId: any;
     private readonly allScoresStateKey: string = "S/all-scores";
     private lockedGameId?: string;
+    private launchedGame: string = "";
+    private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
+    private addedGameDescription: string = "Made with love in MakeCode Arcade";
+    private numAddedGames: number = 0;
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -35,9 +40,44 @@ export class Kiosk {
 
         try {
             this.games = (await response.json()).games;
+            this.games.push()
         }
         catch (error) {
             throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
+        }
+
+        // the added games persist in local storage, but not the live game list
+        // that feeds the carousel. That's what this function is for.
+        this.addNewGamesToList();
+    }
+
+    saveNewGame(gameId: string): GameData | undefined {
+        const allAddedGames = this.getAllAddedGames();
+        if (!allAddedGames[gameId]) {
+            this.numAddedGames += 1;
+            const newGame = new GameData(gameId, 'Kiosk Game', this.addedGameDescription, "None");
+            this.games.push(newGame);
+            allAddedGames[gameId] = newGame;
+            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
+            return newGame;
+        }
+    }
+
+    getAllAddedGames(): { [index: string]: GameData } {
+        const json = localStorage.getItem(this.addedGamesLocalStorageKey);
+        if (!json) {
+            return {};
+        }
+        const allAddedGames: { [index: string]: GameData } = JSON.parse(json);
+        return allAddedGames;
+    }
+
+    addNewGamesToList() : void {
+        // check if there are custom games to add to the game list from local storage
+        const addedGames = this.getAllAddedGames();
+        const addedGamesObjs: GameData[] = Object.values(addedGames);
+        for (const game of addedGamesObjs) {
+            this.games.push(game);
         }
     }
 
@@ -57,7 +97,11 @@ export class Kiosk {
         }
 
         if (this.gamepadManager.isEscapeButtonPressed() || this.gamepadManager.isMenuButtonPressed()) {
-            this.escapeGame();
+            if (this.state === KioskState.PlayingGame) {
+                this.escapeGame();
+            } else {
+                this.showMainMenu();
+            }
             return;
         }
     }
@@ -72,6 +116,14 @@ export class Kiosk {
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 
         window.addEventListener("message", (event) => {
+            if (event.data?.js) {
+                let builtGame: BuiltSimJSInfo | undefined = this.getBuiltGame(this.launchedGame);
+                if (!builtGame) {
+                    this.addBuiltGame(this.launchedGame, event.data);
+                } else {
+                    this.sendBuiltGame(this.launchedGame);
+                }
+            }
             switch (event.data.type) {
                 case "simulator":
                     switch (event.data.command) {
@@ -96,6 +148,14 @@ export class Kiosk {
                     else {
                         this.gamepadManager.keyboardManager.onKeyup(parts[1]);
                     }
+                    break;
+
+                case "ready":
+                    let builtGame: BuiltSimJSInfo | undefined = this.getBuiltGame(this.launchedGame);
+                    if (builtGame) {
+                        this.sendBuiltGame(this.launchedGame);
+                    }
+                    break;
             }
         });
 
@@ -109,7 +169,7 @@ export class Kiosk {
         }
     }
 
-    private navigate(state: KioskState) {
+    navigate(state: KioskState) {
         this.state = state;
         if (this.onNavigated) {
             this.onNavigated();
@@ -168,7 +228,30 @@ export class Kiosk {
         this.siteElements.forEach(item => gamespace.appendChild(item));
     }
 
+    getBuiltGame(gameId: string): BuiltSimJSInfo | undefined {
+        const allBuiltGames = this.builtGamesCache;
+        if (allBuiltGames[gameId]) {
+            return allBuiltGames[gameId];
+        }
+    }
+
+    addBuiltGame(gameId: string, builtSimJs: BuiltSimJSInfo) {
+        const allBuiltGames = this.builtGamesCache;
+
+        if (!allBuiltGames[gameId]) {
+            allBuiltGames[gameId] = builtSimJs;
+        }
+
+    }
+
+    sendBuiltGame(gameId: string) {
+        const builtGame = this.getBuiltGame(gameId);
+        const simIframe = document.getElementsByTagName("iframe")[0] as HTMLIFrameElement;
+        simIframe?.contentWindow?.postMessage({ ...builtGame, "type": "builtjs"}, "*");
+    }
+
     launchGame(gameId: string, preventReturningToMenu = false): void {
+        this.launchedGame = gameId;
         if (this.state === KioskState.PlayingGame) { return; }
         if (preventReturningToMenu) this.lockedGameId = gameId;
         this.navigate(KioskState.PlayingGame);
@@ -180,7 +263,9 @@ export class Kiosk {
             gamespace.firstChild.remove();
         }
 
-        const playUrl = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1&autofocus=1`;
+        const playUrlBase = `${configData.PlayUrlRoot}?id=${gameId}&hideSimButtons=1&noFooter=1&single=1&fullscreen=1&autofocus=1`
+        let playQueryParam = this.getBuiltGame(gameId) ? "&server=1" : "&sendBuilt=1";
+
         function createIFrame(src: string) {
             const iframe: HTMLIFrameElement = document.createElement("iframe");
             iframe.className = "sim-embed";
@@ -189,7 +274,11 @@ export class Kiosk {
             iframe.src = src;
             return iframe;
         }
-        gamespace.appendChild(createIFrame(playUrl));
+        gamespace.appendChild(createIFrame(playUrlBase + playQueryParam));
+    }
+
+    launchAddGame() {
+        this.navigate(KioskState.AddingGame);
     }
 
     getAllHighScores(): { [index: string]: HighScore[] } {
