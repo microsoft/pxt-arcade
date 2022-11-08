@@ -116,23 +116,6 @@
 
         <script type="text/javascript">
 
-            function init(){
-                handleLangRedirects();
-            }
-
-            function handleLangRedirects(){
-                let language = navigator.language || navigator.userLanguage;
-                console.log(language)
-                if (language == "es" || language.substring(0, 2)=="es"){
-                    window.location.href = "https://arcade.makecode.com/hour-of-code-2022-es";
-                }else if(language == "pt" || language.substring(0, 2)=="pt"){
-                    window.location.href = "https://arcade.makecode.com/hour-of-code-2022-pt";
-                }else{
-                    //all other languages will stay on this page and get english
-                }
-
-            }
-            
             function handleOnLoad() {
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
@@ -149,7 +132,7 @@
         </script>
     </head>
 
-    <body id="root" class="root" onload="init()">
+    <body id="root" class="root">
         <img
             class="tracking"
             src="https://code.org/api/hour/begin_microsoft_carnival.png"
@@ -366,6 +349,7 @@
                 <div>
                     <a href="http://www.makecode.com"  target="_blank">Microsoft MakeCode</a> | <a href="https://www.microsoft.com/legal/terms-of-use"  target="_blank">Terms of use</a> | <a href="https://privacy.microsoft.com/privacystatement"  target="_blank">Privacy</a>
                 </div>
+                <div class="caption">Languages: <a href="https://arcade.makecode.com/hour-of-code-2022">English</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-es">Spanish</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-pt">Portuguese</a></div>
             </footer>
         </main>
 
