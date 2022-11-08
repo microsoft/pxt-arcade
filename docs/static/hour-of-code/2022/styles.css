@@ -52,6 +52,16 @@ header{
     gap:20px;
 }
 
+.emphasis{
+    font-family: 'NunitoBold';
+    font-style: italic;
+}
+
+.caption{
+    font-size: .9rem;
+    opacity: .8;
+}
+
 header img{
     margin: 20px;
 }
