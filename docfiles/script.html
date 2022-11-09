@@ -279,7 +279,7 @@
                                 builtSimJSPromise = Promise.resolve(built);
                             console.log('simulator started...');
 
-                            if (built.parts.indexOf("multiplayer" !== -1)) {
+                            if (built.parts.indexOf("multiplayer") !== -1) {
                                 window.pxtTickEvent('share.isMultiplayerGame', { target: "arcade" });
                                 multiplayerShareButton.style.display = "block";
                             }
