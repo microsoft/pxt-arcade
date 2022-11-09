@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
 import Carousel from "react-spring-3d-carousel";
 import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Keyboard } from "swiper";
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { EffectCoverflow, Keyboard } from "swiper";
 import "swiper/css";
+import "swiper/css/keyboard"
 interface IProps {
     kiosk: Kiosk;
     buttonSelected: Boolean;
@@ -16,26 +17,29 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
-    const [indexRef, ] = useState(new PrimitiveRef(0));
-    const [selectedIndex, setSelectedIndex] = useState(indexRef.value);
+    let gameIndex: number = 0;
+    let localSwiper: any;
+    let slideChangeTriggered: boolean = false;
+    const [selectedIndex, setSelectedIndex] = useState(0);
     
-    const nextItem = () => {
-        indexRef.value = (indexRef.value + 1) % games.length;
-        setSelectedIndex(indexRef.value);
-        kiosk.selectGame(games[indexRef.value].id);
-    }
-
-    const prevItem = () => {
-        indexRef.value = (indexRef.value + games.length - 1) % games.length;
-        setSelectedIndex(indexRef.value);
-        kiosk.selectGame(games[indexRef.value].id);
+    const changeFocusedItem = (changeBy: number) => {
+        const index = (localSwiper.activeIndex + changeBy) % games.length;        
+        if (localSwiper) {
+            localSwiper.slideTo(index);
+            gameIndex = localSwiper.activeIndex;
+        }
+        console.log("after");
+        console.log(gameIndex);
+        setSelectedIndex(gameIndex);
+        kiosk.selectGame(games[gameIndex].id);
     }
 
     const clickItem = () => {
-        kiosk.launchGame(games[indexRef.value].id);
+        kiosk.launchGame(games[gameIndex].id);
     }
         
     const updateLoop = () => {
+        console.log(slideChangeTriggered);
         if (kiosk.state !== KioskState.MainMenu) {
             return;
         }
@@ -45,11 +49,17 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         }
 
         if (kiosk.gamepadManager.isLeftPressed()) {
-            prevItem();
+            if (slideChangeTriggered) {
+                console.log("hello");
+            }
+            console.log("left pressed");
+            changeFocusedItem(games.length - 1);
         }
 
         if (kiosk.gamepadManager.isRightPressed()) {
-            nextItem();
+            console.log("right pressed");
+            changeFocusedItem(1);
+
         }
     }
 
@@ -62,7 +72,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             }
 
             if (kiosk.selectedGame) {
-                indexRef.value = kiosk.games.map(item => item.id).indexOf(kiosk.selectedGame.id);
+                gameIndex = kiosk.games.map(item => item.id).indexOf(kiosk.selectedGame.id);
             }
         })
     });
@@ -115,13 +125,18 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     return(
         <div className="carouselWrap">
             <Swiper
-                spaceBetween={30}
+                effect={"coverflow"}
                 loop={true}
-                slidesPerView={1}
+                slidesPerView={1.5}
                 centeredSlides={true}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-                modules={[Keyboard]}
+                spaceBetween={10}
+                onSwiper={(swiper) => localSwiper = swiper}
+                onSlideChange={(swiper) => slideChangeTriggered = true}
+                coverflowEffect={{
+                    scale: 0.75,
+                    depth: 5,
+                }}
+                modules={[EffectCoverflow, Keyboard]}
                 keyboard={{enabled: true}}
             >
                 {kiosk.games.map((game, index) => {
@@ -140,11 +155,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 })}
 
             </Swiper>
-            {/* <Carousel
-                slides={slides}
-                showNavigation={false}
-                goToSlide={selectedIndex}
-            /> */}
         </div>
     )
 }

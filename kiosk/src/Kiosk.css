@@ -234,14 +234,24 @@ h2 {
 
 .carouselWrap {
     width: 100%;
-    height: 60vh;
-    margin: 0 auto;
+    height: 80vh;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    /* justify-content: center; */
+    margin-right: -2rem
+}
+
+.swiper {
+    width: 100%;
+    height: 90%;
+    margin-left: -5rem;
 }
 
 .gameTile {
-    position: relative;
-    width: 35vw;
-    height: 45vh;
+    width: 100%;
+    height: 100%;
     background-size:100% 100%;
     background-repeat: no-repeat;
     min-width: 35rem;
