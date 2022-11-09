@@ -116,23 +116,6 @@
 
         <script type="text/javascript">
 
-            function init(){
-                handleLangRedirects();
-            }
-
-            function handleLangRedirects(){
-                let language = navigator.language || navigator.userLanguage;
-                console.log(language)
-                if (language == "es" || language.substring(0, 2)=="es"){
-                    window.location.href = "https://arcade.makecode.com/hour-of-code-2022-es";
-                }else if(language == "pt" || language.substring(0, 2)=="pt"){
-                    window.location.href = "https://arcade.makecode.com/hour-of-code-2022-pt";
-                }else{
-                    //all other languages will stay on this page and get english
-                }
-
-            }
-            
             function handleOnLoad() {
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
@@ -149,7 +132,8 @@
         </script>
     </head>
 
-    <body id="root" class="root" onload="init()">
+    <body id="root" class="root">
+
         <img
             class="tracking"
             src="https://code.org/api/hour/begin_microsoft_carnival.png"
@@ -164,6 +148,7 @@
                     <img id="logo" src="static/hour-of-code/2022/HoC_logo.png" alt="Hour of Code 2022: Carnival">
                     <div class="header-tag">
                         <p>Code a fun carnival game in less than an hour!<br />Pick a game and step right up.</p>
+
                     </div>
                 </div>
             </section>
@@ -186,7 +171,7 @@
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_whack_em_all.png" alt="Whack-the-Mole game screenshot">
                         <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-mole.png" alt="beginner level"> </div>
                         <div>Create a classic game where you can bop moles in holes</div>
-                        <div class="caption">Players: 👤👤 </div>
+                     
                     </div>
                     <div class="card"
                     onClick="launchPage('https://aka.ms/balloon', 'hourofcode2022.skillmap.open.burstinBalloons')">
@@ -194,7 +179,7 @@
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_ballon2.png" alt="Burstin’ Balloons game screenshot">
                         <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
                         <div>Code a mouse that fills your balloon as quickly as possible</div>
-                        <div class="caption">Players: 👤👤 </div>
+                    
                     </div>
 
                     <!-- <div class="card"
@@ -366,6 +351,7 @@
                 <div>
                     <a href="http://www.makecode.com"  target="_blank">Microsoft MakeCode</a> | <a href="https://www.microsoft.com/legal/terms-of-use"  target="_blank">Terms of use</a> | <a href="https://privacy.microsoft.com/privacystatement"  target="_blank">Privacy</a>
                 </div>
+                <div class="caption">Languages: <a href="https://arcade.makecode.com/hour-of-code-2022">English</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-es">Spanish</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-pt">Portuguese</a></div>
             </footer>
         </main>
 

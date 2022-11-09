@@ -116,23 +116,7 @@
 
         <script type="text/javascript">
 
-            function init(){
-                handleLangRedirects();
-            }
 
-            function handleLangRedirects(){
-                let language = navigator.language || navigator.userLanguage;
-
-                if (language == "es"){
-                    window.location.href = "http://makecode.com/hour-of-code-2022-es.html";
-                }else if(language == "pt"){
-                    window.location.href = "http://makecode.com/hour-of-code-2022-pt.html";
-                }else{
-                    //all other languages will stay on this page and get english
-                }
-
-            }
-            
             function handleOnLoad() {
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
@@ -145,7 +129,6 @@
                 window.pxtTickEvent(tickEvent);
             }
 
-            init();
         </script>
     </head>
 
@@ -364,7 +347,9 @@
                 <div>
                     <a href="http://www.makecode.com"  target="_blank">Microsoft MakeCode</a> | <a href="https://www.microsoft.com/legal/terms-of-use"  target="_blank">Termos de uso</a> | <a href="https://privacy.microsoft.com/privacystatement"  target="_blank">Privacidade</a>
                 </div>
+                <div class="caption">Languages: <a href="https://arcade.makecode.com/hour-of-code-2022">English</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-es">Spanish</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-pt">Portuguese</a></div>
             </footer>
+
         </main>
 
 
