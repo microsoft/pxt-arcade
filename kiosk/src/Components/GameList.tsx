@@ -81,6 +81,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         }
     }
 
+    // on page load use effect
     useEffect(() => {
         kiosk.initialize().then(() => {
             setGames(kiosk.games);
@@ -96,11 +97,10 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         })
     }, []);
 
+    // poll for game pad input
     useEffect(() => {
-        // Make sure we keep track of the interval so we can clean it up as needed.
         let intervalId: any = null;
 
-        // There are some things we only want to do if there are games.
         if (games.length) {
             intervalId = setInterval(() => {
                 if (!buttonSelected) {
@@ -117,7 +117,10 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     }, [games, buttonSelected]);
 
     if (!kiosk.games || !kiosk.games.length) {
-        return(<div></div>);
+        return(
+        <div>
+            <p>Could not fetch kiosk games</p>
+        </div>);
     }
 
     return(
@@ -136,6 +139,8 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                     depth: 5,
                 }}
                 allowTouchMove={false}
+                allowSlideNext={!!!buttonSelected}
+                allowSlidePrev={!!!buttonSelected}
                 modules={[EffectCoverflow, Keyboard]}
                 keyboard={{enabled: true}}
             >
