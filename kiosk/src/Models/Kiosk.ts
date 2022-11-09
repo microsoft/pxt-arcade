@@ -10,6 +10,7 @@ export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
     selectedGame?: GameData;
+    selectedGameIndex?: number;
     mostRecentScores: number[] = [];
     onGameSelected!: () => void;
     onNavigated!: () => void;
@@ -180,10 +181,10 @@ export class Kiosk {
         this.navigate(KioskState.MainMenu);
     }
 
-    selectGame(gameId: string): void {
-        const index = this.games.map(item => item.id).indexOf(gameId);
-        if (index >= 0) {
-            this.selectedGame = this.games[index];
+    selectGame(gameIndex: number): void {
+        if (gameIndex >= 0) {
+            this.selectedGame = this.games[gameIndex];
+            this.selectedGameIndex = gameIndex;
         }
         else {
             this.selectedGame = undefined;

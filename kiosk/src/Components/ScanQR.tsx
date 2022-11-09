@@ -7,8 +7,7 @@ import { addGameToKioskAsync } from "../BackendRequests";
 import QrScanner from "./QrScanner";
 import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
 import { Html5QrcodeResult, Html5QrcodeError, CameraDevice } from "../../node_modules/html5-qrcode/esm/core";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import "swiper/css";
+
 interface IProps {
     kiosk: Kiosk
 }

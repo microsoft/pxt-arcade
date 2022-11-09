@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
-import Carousel from "react-spring-3d-carousel";
-import { PrimitiveRef } from "../Models/PrimitiveRef";
 import "../Kiosk.css";
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { KeyboardManager } from "../Models/KeyboardManager";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Keyboard } from "swiper";
 import "swiper/css";
-import "swiper/css/keyboard"
+import "swiper/css/keyboard";
 interface IProps {
     kiosk: Kiosk;
     buttonSelected: Boolean;
@@ -17,29 +16,46 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
-    let gameIndex: number = 0;
     let localSwiper: any;
-    let slideChangeTriggered: boolean = false;
+    const keyboardManager = new KeyboardManager();
     const [selectedIndex, setSelectedIndex] = useState(0);
-    
-    const changeFocusedItem = (changeBy: number) => {
-        const index = (localSwiper.activeIndex + changeBy) % games.length;        
-        if (localSwiper) {
-            localSwiper.slideTo(index);
-            gameIndex = localSwiper.activeIndex;
-        }
-        console.log("after");
-        console.log(gameIndex);
+
+    const leftKeyEvent = (eventType: string) => {
+        return new KeyboardEvent(eventType, {
+            "key": "ArrowLeft",
+            "code": "ArrowLeft",
+            "composed": true,
+            "keyCode": 37,
+            "cancelable": true,
+            "view": window
+        });
+    }
+
+    const rightKeyEvent = (eventType: string) => {
+        return new KeyboardEvent(eventType, {
+            "key": "ArrowRight",
+            "code": "ArrowRight",
+            "composed": true,
+            "keyCode": 39,
+            "cancelable": true,
+            "view": window
+        });
+    }
+
+    const changeFocusedItem = () => {
+        const gameIndex = (localSwiper.activeIndex - 2) % games.length
         setSelectedIndex(gameIndex);
-        kiosk.selectGame(games[gameIndex].id);
+        kiosk.selectGame(gameIndex);
     }
 
     const clickItem = () => {
-        kiosk.launchGame(games[gameIndex].id);
+        const gameId = kiosk.selectedGame?.id;
+        if (gameId) {
+            kiosk.launchGame(gameId);
+        }
     }
         
     const updateLoop = () => {
-        console.log(slideChangeTriggered);
         if (kiosk.state !== KioskState.MainMenu) {
             return;
         }
@@ -49,17 +65,19 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         }
 
         if (kiosk.gamepadManager.isLeftPressed()) {
-            if (slideChangeTriggered) {
-                console.log("hello");
+            if (!keyboardManager.isLeftPressed()) {
+                document.dispatchEvent(leftKeyEvent("keydown"));
+                document.dispatchEvent(leftKeyEvent("keyup"));
             }
-            console.log("left pressed");
-            changeFocusedItem(games.length - 1);
+            changeFocusedItem();
         }
 
         if (kiosk.gamepadManager.isRightPressed()) {
-            console.log("right pressed");
-            changeFocusedItem(1);
-
+            if (!keyboardManager.isRightPressed()) {
+                document.dispatchEvent(rightKeyEvent("keydown"));
+                document.dispatchEvent(rightKeyEvent("keyup"));
+            }
+            changeFocusedItem();
         }
     }
 
@@ -68,14 +86,15 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             setGames(kiosk.games);
 
             if (!kiosk.selectedGame && kiosk.games.length) {
-                kiosk.selectGame(kiosk.games[0].id);
+                kiosk.selectGame(0);
             }
 
-            if (kiosk.selectedGame) {
-                gameIndex = kiosk.games.map(item => item.id).indexOf(kiosk.selectedGame.id);
+            if (kiosk.selectedGameIndex) {
+                setSelectedIndex(kiosk.selectedGameIndex);
+                localSwiper.slideTo(kiosk.selectedGameIndex + 2);
             }
         })
-    });
+    }, []);
 
     useEffect(() => {
         // Make sure we keep track of the interval so we can clean it up as needed.
@@ -97,30 +116,9 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         };
     }, [games, buttonSelected]);
 
-    useEffect(() => {
-        if (kiosk.selectedGame) {
-            setSelectedIndex(games.map(item => item.id).indexOf(kiosk.selectedGame!.id));
-        }
-    }, [kiosk.selectedGame]);
-
     if (!kiosk.games || !kiosk.games.length) {
         return(<div></div>);
     }
-
-    const slides = kiosk.games.map((game, index) => {
-        return {
-            content: 
-                <div className="gameTile" style={{ 
-                    backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
-                }}>
-                    <div className="gameLabelBackground">
-                        <div className="gameTitle">{game.name}</div>
-                        <div className="gameDescription">{game.description}</div>
-                    </div>
-                </div>,
-         onClick: () => kiosk.launchGame(game.id)
-        };
-    });
 
     return(
         <div className="carouselWrap">
@@ -130,12 +128,14 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 slidesPerView={1.5}
                 centeredSlides={true}
                 spaceBetween={10}
-                onSwiper={(swiper) => localSwiper = swiper}
-                onSlideChange={(swiper) => slideChangeTriggered = true}
+                onSwiper={(swiper) => {
+                    localSwiper = swiper;
+                }}
                 coverflowEffect={{
                     scale: 0.75,
                     depth: 5,
                 }}
+                allowTouchMove={false}
                 modules={[EffectCoverflow, Keyboard]}
                 keyboard={{enabled: true}}
             >
