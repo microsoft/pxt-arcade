@@ -18,7 +18,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     let localSwiper: any;
     const keyboardManager = new KeyboardManager();
-    const [selectedIndex, setSelectedIndex] = useState(0);
 
     const leftKeyEvent = (eventType: string) => {
         return new KeyboardEvent(eventType, {
@@ -44,7 +43,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
 
     const changeFocusedItem = () => {
         const gameIndex = (localSwiper.activeIndex - 2) % games.length
-        setSelectedIndex(gameIndex);
         kiosk.selectGame(gameIndex);
     }
 
@@ -91,7 +89,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             }
 
             if (kiosk.selectedGameIndex) {
-                setSelectedIndex(kiosk.selectedGameIndex);
                 localSwiper.slideTo(kiosk.selectedGameIndex + 2);
             }
         })
