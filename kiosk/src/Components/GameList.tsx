@@ -42,7 +42,10 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     }
 
     const changeFocusedItem = () => {
-        const gameIndex = (localSwiper.activeIndex - 2) % games.length
+        let gameIndex = (localSwiper.activeIndex - 2) % games.length;
+        if (gameIndex < 0) {
+            gameIndex = games.length - 1;
+        }
         kiosk.selectGame(gameIndex);
     }
 

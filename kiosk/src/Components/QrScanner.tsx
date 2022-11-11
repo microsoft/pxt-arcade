@@ -1,19 +1,35 @@
 import "../Kiosk.css";
-import { Html5QrcodeScanner, Html5QrcodeScanType, Html5Qrcode } from "html5-qrcode";
-import { Html5QrcodeResult, Html5QrcodeError, CameraDevice } from "../../node_modules/html5-qrcode/esm/core";
-
-interface IProps {
-    show: boolean;
-}
+import { Html5Qrcode } from "html5-qrcode";
+import { Kiosk } from "../Models/Kiosk";
+import { addGameToKioskAsync } from "../BackendRequests";
+import { KioskState } from "../Models/KioskState";
 
 
-const play = async () => {
-    let devices: CameraDevice[];
+const play = async (kiosk: Kiosk, kioskId: string) => {
+    const html5QrCode = new Html5Qrcode("qrReader");
+    let devices: any[];
+
+
+    async function onScanSuccess(decodedText: string, decodedResult: any) {
+        const shareId = /\/([^\/]+)\/?$/.exec(decodedText)?.[1];
+        try {
+            await addGameToKioskAsync(kioskId, shareId);
+            await html5QrCode.stop();
+            kiosk.navigate(KioskState.QrSuccess);
+        }
+        catch (error) {
+            console.log("Unable to add game to kiosk. Please try again later");
+        }
+    }
+      
+    function onScanFailure(errorMessage: string, error: any) {
+        console.log("scan failed");
+        throw new Error("bad scan");
+    }
+
     try {
         devices = await Html5Qrcode.getCameras();
         if (devices && devices.length) {
-            const cameraId: string = devices[0].id;
-            const html5QrCode = new Html5Qrcode("qrReader");
             try {
                 html5QrCode.start(
                     {facingMode: "environment"},
@@ -21,34 +37,17 @@ const play = async () => {
                     onScanSuccess,
                     onScanFailure
                 );
-                await html5QrCode.stop();
             }
             catch (error) {
                 console.log("failed to start scanning");
             }
         }
     }
+
     catch (error) {
         console.log("couldn't get camera permissions");
     }
 
 }
 
-function onScanSuccess(decodedText: string, decodedResult: Html5QrcodeResult) {
-    // handle the scanned code as you like, for example:
-    console.log(`Code matched = ${decodedText}`, decodedResult);
-  }
-  
-  function onScanFailure(errorMessage: string, error: Html5QrcodeError) {
-    console.log("scan failed");
-    throw new Error("bad scan");
-  }
-
-  const QrScanner: React.FC<{}> = () => {
-    play();
-    return (
-        <div id="qrReader"></div>
-    )
-  }
-
-  export default QrScanner;
+  export default play;

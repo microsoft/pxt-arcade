@@ -10,6 +10,7 @@
     --transparent-color: #11ffee00;
     --black-color: #050505;
 }
+
 html, body {
     height: 100%;
     width: 100%;
@@ -163,12 +164,26 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100vh;
+}
+
+.scanInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 50%;
 }
 
 .scanQrPage h2 {
     margin-bottom: 0;
+    font-size: 2em;
+}
+
+.scanQrPage h1 {
+    margin-bottom: 0;
+    font-size: 2.5em;
 }
 
 .scanQrButton {
@@ -198,12 +213,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.qrScanner {
-    width: 100%;
-    height: 100%;
-    /* content: fill; */
 }
 
 .scanInstructions ol {
