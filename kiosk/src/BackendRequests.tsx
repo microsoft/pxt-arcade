@@ -68,17 +68,20 @@ export const getGameDetail = async (gameId: string, detail: string) => {
                 return gameDescription;
             }
             catch (error) {
-                throw new Error("Could not get the game description");
+                return "Made with love in MakeCode Arcade";
             }
         }
 
         else if (detail === "name") {
             try {
-                const gameName = (await response.json()).name;
+                let gameName = (await response.json()).name;
+                if (gameName.toLowerCase() === "untitled") {
+                    gameName = "Kiosk Game";
+                }
                 return gameName;
             }
             catch (error) {
-                throw new Error("Could not get the name of the game");
+                return "Kiosk Game";
             }
         }
 

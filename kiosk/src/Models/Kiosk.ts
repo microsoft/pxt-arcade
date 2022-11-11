@@ -25,7 +25,6 @@ export class Kiosk {
     private lockedGameId?: string;
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
-    private addedGameDescription: string = "Made with love in MakeCode Arcade";
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
