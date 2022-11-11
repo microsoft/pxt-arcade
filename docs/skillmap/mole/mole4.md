@@ -1,4 +1,4 @@
-# Hammer Time
+# Play with Friends
 ### @explicitHints true
 
 
@@ -6,10 +6,9 @@
 
 Your code from the last activity is already in the workspace.
 
-Let's use **SPRITES** and **EVENTS** to add a rubber hammer.
+Let's add to it to create a multiplayer game.
 
-
-![Whack-the-Mole](/static/skillmap/mole/mole2.gif "Let's add a hammer to make our game more exciting." )
+![Whack-the-Mole](/static/skillmap/mole/mole4.gif "Twice as much fun with two people." )
 
 
 
@@ -17,276 +16,336 @@ Let's use **SPRITES** and **EVENTS** to add a rubber hammer.
 ## {2. Play Your Game}
 
 
-**Look at the game window.**
+- :binoculars: Play the game you have so far.
 
-- :binoculars: Look at your project in the game window to see what we're starting with.
-
-You should see a mole changing spots every second.
+Using the joypad (or the arrow keys on your keyboard) move the hammer around the screen and earn 1 point each time it overlaps the mole!
 
 
-💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
+~hint My game doesn't work ⚠️
+
+---
+
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
+
+hint~
 
 
+#### ~ tutorialhint
 
+```blocks
 
+let myMole: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
+carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 
+game.onUpdateInterval(1000, function () {
+    sprites.moveToRandomHoleOnGrid(myMole)
+})
 
-## {3. Add the Hammer}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.moveToRandomHoleOnGrid(myMole)
+    music.knock.play()
+        animation.runImageAnimation(
+        myHammer,
+        assets.animation`hammerAnimation`,
+        50,
+        false
+        )
+})
 
-Let's add another **SPRITE** for our rubber hammer.
-
-- :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab
-
-```block
-let myHammer = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-and snap it inside and at the very **end** of the
-``||loops(noclick): on start||``
-block container that's already in your workspace.
-
-- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
-![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
-<br/>to select the **hammer** sprite.<br/>
-![Choose the image that looks like a hammer.](/static/skillmap/mole/hammer.png "Select the rubber hammer from My Assets.")
-<br/>Then click **Done**.
 
 
+## {3. Player 2}
+
+**Allow player 2 to move the mole**
+
+- :tree: From the ``||controller: Controller||`` category, drag <br/>
+
+```blocks
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    sprites.moveToRandomHoleOnGrid(myMole)
+})
+```
+
+into **an empty area** of your workspace.
 
 
 ~hint Show me how! 🕵🏽
 
-![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
+![Add a block so a second player can control the mole](/static/skillmap/mole/player2.gif "Add a second player with the controller bundle")
 
 hint~
 
+Now, when player 2 presses their A button (or the **U key** on the keyboard) the mole will hop to a new location.
 
 
 
 #### ~ tutorialhint
 
 ```blocks
-let myMole: Sprite = null
-let myHammer: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-//@highlight
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    sprites.moveToRandomHoleOnGrid(myMole)
+})
 ```
 
 
-## {4. Move the Hammer}
+## {4. Playing Chicken}
 
-We need to be able to move the hammer around the screen to chase the mole.
+**Give player 2 a point for being fearless.**
+
+Now that player 2 moves the mole, we don't need to have it happen automatically.
 
 
-- :game: From the ``||controller: Controller||`` category, grab <br/>
+- :mouse pointer: From the <br/>
+``||game(noclick): on game update every [1000] ms||``
+<br/>container already in the workspace, delete
 ```block
-controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
+    sprites.moveToRandomHoleOnGrid(myMole)
 ```
-and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
+
+~hint How do I delete a block? 💡
+
+---
+
+You can delete a block three ways:<br/>
+1) Click the block to select, then press **delete** on your keyboard<br/>
+2) Right-click the block and choose **Delete Blocks**<br/>
+3) Drag the block back into the toolbox<br/>
+
+
+hint~
+
 
 
 ~hint Click here to see how 🕵🏽
 
-![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
+![Delete the block you don't need](/static/skillmap/mole/delete.gif "Delete the block that moves the mole automatically.")
 
 
 hint~
 
 
-
-
-
 #### ~ tutorialhint
 
 ```blocks
-let myMole: Sprite = null
-let myHammer: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-//@highlight
-controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
+game.onUpdateInterval(1000, function () {})
 ```
 
 
 
-## {5. Check Your Game!}
+## {5. Add a point each second}
 
-- :binoculars: Test your project in the game window to see how it works!
-
-Try using the on-screen joypad **(or the arrow keys on your keyboard)** to move the hammer around the screen.
-
-
-
-
-
-
-
-## {6. Add the Overlap}
-
-
-Did you notice that nothing happened when the hammer overlapped the mole?
-
-That's because we haven't created an **EVENT** for that yet!
-
-
-- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {  info.changeScoreBy(1) })
-```
-
-and drag it to an **empty** area of the workspace.
-
-
-~hint Show me how! 🕵🏽
-
-
-![Add an overlap block.](/static/skillmap/mole/add-overlap.gif "On sprite of kind Player overlaps otherSprite of kind Enemy")
-
-hint~
-
-
-
-
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
-```
-
-
-
-
-## {7. Check Your Game Again!}
-
-
-- :binoculars: Play with your project in the game window!
-
-Use the on-screen joypad **(or the arrow keys on your keyboard)** to move the hammer.
-
-When your rubber hammer overlaps the mole, you should see points start to show up in the top-right corner.
-
-
-
-
-
-## {8. Too Many Points}
-
-Did you notice that the points added up really quickly when the rubber hammer stayed above the mole? Let's fix that.
-
-
-- :paper plane: From the ``||sprites: Sprites||`` category, grab <br/>
-
+- :bolt: From ``||simplified:Simplified||``, drag
 ```block
-    sprites.moveToRandomHoleOnGrid(myMole)
+    simplified.checkMoleEscape()
 ```
+into the newly **empty**  <br/>
+``||game(noclick): on game update every [1000] ms||``
+<br/>container already in the workspace.
 
-and snap it into **the end** of the ``||sprites(noclick): on sprite overlaps otherSprite||`` block container already in the workspace.
 
-Now, when the rubber hammer overlaps the mole, the mole will quickly dash away!
+~hint Click here to see how 🕵🏽
 
+![Score points for staying still](/static/skillmap/mole/check-mole.gif "Add the block to check if the mole is still in the same spot.")
 
-~hint Show me how! 🕵🏽
-
-![Move the mole.](/static/skillmap/mole/overlap-move.gif "Add another move myMole to random area block to the project")
 
 hint~
-
-
 
 
 #### ~ tutorialhint
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-//@highlight
-    sprites.moveToRandomHoleOnGrid(myMole)
+game.onUpdateInterval(1000, function () {
+    //@highlight
+    simplified.checkMoleEscape()
 })
 ```
 
 
 
 
-## {9. Timer}
 
-Finally, let's add a timer to keep the game exciting.
+## {6. Multiplayer Win}
 
 
-- :id card: From the ``||carnival: Carnival||`` category, grab <br/>
+**Change to a multiplayer win screen.**
 
+Now that we have two scores to judge, you need to change the game over screen to **multiplayer**.
+
+- :mouse pointer: Find
 ```block
-carnival.startCountdownGame(15, carnival.WinTypes.Score)
+carnival.startCountdownGame(15, carnival.WinTypes.Score
 ```
-
-and snap it into **the end** of the <br/>
-``||loops(noclick): on start||`` <br/>
-block container already in the workspace.
+inside the ``||loops(noclick):on start||`` container, and change **best score** to **multiplayer**.
 
 
 ~hint Show me how! 🕵🏽
 
-![Add timer.](/static/skillmap/mole/countdown.gif "start countdown 15 (s) and game over high score")
+
+![Change the type of win to multiplayer.](/static/skillmap/mole/multi.gif "Make your game multiplayer.")
+
+hint~
+
+
+#### ~ tutorialhint
+
+
+```blocks
+let myMole: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+//@highlight
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
+carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
+```
+
+
+## {7. Check Your Game Again!}
+
+
+
+- :binoculars: Play your game in the game window!
+
+Player 2 should be able to move the mole with the **U key** on the keyboard.
+
+They should also get a point for every second they stay in the same spot.
+
+**Play against someone.  Who wins?**
+
+
+
+## {8. Fine Tune}
+
+
+**Is your game too easy? Too hard?**
+
+You can change your values to make your game exactly the way you like.
+
+
+~hint Show me how! 🕵🏽
+
+---
+
+- If player 1 wins too much, change the hammer speed to **medium** or **slow** or change the number of milliseconds the mole must wait from **1000** to **500**.<br/>
+- If player 2 wins too much, change the number of milliseconds they must wait from **1000** to **1500**.<br/>
+- If you don't feel like you have long enough to play, change the countdown from **15** to **25** or **30** seconds. <br/>
+
+---
+
+
+![Customize your game by changing the values in your blocks](/static/skillmap/mole/custom.gif "You can make your game easier or harder.")
 
 hint~
 
 
 
+## {9. Add Instructions}
+
+
+**Add some instructions to the beginning to let users know how to play!**
+
+
+- :circle: From ``||game:Game||``, snap
+```block
+game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press A to move the mole.", DialogLayout.Center)
+```
+into the **top of** the ``||loops(noclick):on start||`` container.
+
+You can change the instructions to whatever you want them to be.
+
+
+~hint Show me how! 🕵🏽
+
+
+![Add rules.](/static/skillmap/mole/rules.gif "Add some text so users know the rules.")
+
+hint~
+
 
 #### ~ tutorialhint
 
+
 ```blocks
 let myMole: Sprite = null
-let myHammer: Sprite = null
+//@highlight
+game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press B to move the mole.", DialogLayout.Center)
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
-//@highlight
-carnival.startCountdownGame(15, carnival.WinTypes.Score)
+carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 ```
 
 
-
-
-## {10. Play your game!}
-
-
-- :binoculars: Play your game in the game window.
-
-You should get one point each time you overlap the mole with the rubber hammer, then the mole should hop to another spot. Time should run out after 15 seconds and your high score should display!
-
-**Can you get 15 points before the timer runs out?**
+## {10. Play your finished game}
 
 
 
+- :binoculars: Play your finished game in the game window!
 
+You should see the instructions before the game starts.  Press the A button to clear them.
 
-
+**Start a Whack-the-Mole tournament? Who gets best 2 out of 3?**
 
 
 
 ## {11. Finale}
 
-**🥳 You got it! 🥳**
+**🎡 You've done it! 🎡**
 
-You have made a Whack-the-Mole game.
+You've finished your Whack-the-Mole game!
 
-When you're ready, click **Done** to return to the skillmap so you can add sound and animation to your game!
+When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
 
 
 
 
 
 ```blockconfig.global
-let myHammer = sprites.create(img`.`, SpriteKind.Player)
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { info.changeScoreBy(1) })
+let myHammer: Sprite = null
+animation.runImageAnimation(
+myHammer,
+[img`.`],
+50,
+false
+)
+myHammer = sprites.create(img`.`, SpriteKind.Player)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.moveToRandomHoleOnGrid(myMole)
+    music.knock.play()
+        animation.runImageAnimation(
+        myHammer,
+        [img`.`],
+        50,
+        false
+        )
+})
+carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+game.onUpdateInterval(1000, function () {
+    simplified.checkMoleEscape()
+})
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    sprites.moveToRandomHoleOnGrid(myMole)
+})
+game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press A to move the mole.", DialogLayout.Center)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
-```
 
+```
 
 
 ```package
@@ -297,16 +356,54 @@ carnival=github:microsoft/arcade-carnival
 
 ```template
 
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.moveToRandomHoleOnGrid(myMole)
+    music.knock.play()
+        animation.runImageAnimation(
+        myHammer,
+        assets.animation`hammerAnimation`,
+        50,
+        false
+        )
+})
 let myMole: Sprite = null
+let myHammer: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
+carnival.startCountdownGame(15, carnival.WinTypes.Score)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 
 game.onUpdateInterval(1000, function () {
     sprites.moveToRandomHoleOnGrid(myMole)
 })
+
 ```
 
+```ghost
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+    sprites.moveToRandomHoleOnGrid(myMole)
+})
 
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    sprites.moveToRandomHoleOnGrid(myMole)
+})
+
+let myMole: Sprite = null
+game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press B to move the mole.", DialogLayout.Center)
+scene.setBackgroundImage(assets.image`grid`)
+myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
+let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+controller.moveOnlyOnscreenWithArrows(myHammer, controller.Speeds.Fast)
+carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+game.onUpdateInterval(1000, function () {
+    simplified.checkMoleEscape()
+})
+
+```
 
 ```customts
 

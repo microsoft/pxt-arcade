@@ -47,12 +47,22 @@
 * type: tutorial
 * description: Add a carnival character to pump up your balloon! Can you beat the clock?
 * tags: easy, clicker, sprite, buttons
-* next: balloon-cert
+* next: balloon4
 * url: /skillmap/balloon/balloon3
 * imageUrl: /static/skillmap/balloon/balloon3.gif
 * position: 1 2
 
 
+
+### balloon4
+* name: Two Player Party
+* type: tutorial
+* description: Remove your timer and add a second player to create a real-life competition!
+* tags: easy, clicker, sprite, buttons, multiplayer
+* next: balloon-cert
+* url: /skillmap/balloon/balloon4
+* imageUrl: /static/skillmap/balloon/balloon4.gif
+* position: 2 2
 
 
 ### balloon-cert
@@ -61,10 +71,10 @@
 * type: certificate
 * url: /static/skillmap/certificates/balloon-cert.pdf
 * imageUrl: /static/skillmap/certificates/balloon-cert.png
-* next: balloon4
-* position: 2 2
+* showMultiplayerShare: true
+* position: 2 3
 * actions:
-    * map: [Finish the Last Level](/skillmap/balloon)
+    * map: [Try Whack-the-Mole](/skillmap/mole)
     * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
@@ -76,13 +86,4 @@
 
 
 
-
-### balloon4
-* name: Two Player Party (Optional)
-* type: tutorial
-* description: Remove your timer and add a second player to create a real-life competition!
-* tags: easy, clicker, sprite, buttons, multiplayer
-* url: /skillmap/balloon/balloon4
-* imageUrl: /static/skillmap/balloon/balloon4.gif
-* position: 2 3
 
