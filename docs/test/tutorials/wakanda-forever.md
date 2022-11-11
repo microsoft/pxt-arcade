@@ -2,12 +2,14 @@
 
 ## {Intro @unplugged}
 
+![ ](https://code.org/api/hour/begin_msft_wakanda.png " ")
+
 Help Shuri, Okoye, and Riri Williams (Ironheart) escape Namor.
 
 ![Keep Namor Away!](/static/tutorials/wakanda/assets.png " ")
 
 
-Design a game in MakeCode Arcade, creating sprites for Shuri, Okoye, Ironheart, and Namor.
+Design your own adventure in MakeCode Arcade, creating sprites for Shuri, Okoye, Ironheart, and Namor.
 
 ## {Step 2}
 

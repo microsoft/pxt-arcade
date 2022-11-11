@@ -74,7 +74,7 @@
 * showMultiplayerShare: true
 * position: 2 0
 * actions:
-    * map: [Create Another Carnival Game](/skillmap/balloon)
+    * map: [Try Burstin' Balloons](/skillmap/balloon)
     * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
