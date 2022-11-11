@@ -5,7 +5,7 @@ import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { runInThisContext } from "vm";
-
+import { getGameDetail } from "../BackendRequests"
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -26,7 +26,6 @@ export class Kiosk {
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private addedGameDescription: string = "Made with love in MakeCode Arcade";
-    private numAddedGames: number = 0;
 
     async downloadGameList(): Promise<void> {
         let url = configData.GameDataUrl;
@@ -52,11 +51,13 @@ export class Kiosk {
         this.addNewGamesToList();
     }
 
-    saveNewGame(gameId: string): GameData | undefined {
+    async saveNewGame(gameId: string): Promise<GameData | undefined> {
         const allAddedGames = this.getAllAddedGames();
         if (!allAddedGames[gameId]) {
-            this.numAddedGames += 1;
-            const newGame = new GameData(gameId, 'Kiosk Game', this.addedGameDescription, "None");
+            const gameName = await getGameDetail(gameId, "name");
+            const gameDescription = await getGameDetail(gameId, "description");
+            const newGame = new GameData(gameId, gameName, gameDescription, "None");
+
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;
             localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));

@@ -54,3 +54,33 @@ export const addGameToKioskAsync = async (kioskId: string | undefined, gameShare
         throw new Error("Failed to post game to the kiosk");
     }
 }
+
+export const getGameDetail = async (gameId: string, detail: string) => {
+    console.log("IN GETTING GAME DETAIL");
+    const gameDetailsUrl = `https://makecode.com/api/${gameId}`;
+    const response  = await fetch(gameDetailsUrl);
+    if (!response.ok) {
+        throw new Error("Unable to fetch the game details");
+    } else {
+        if (detail === "description") {
+            try {
+                const gameDescription = (await response.json()).description;
+                return gameDescription;
+            }
+            catch (error) {
+                throw new Error("Could not get the game description");
+            }
+        }
+
+        else if (detail === "name") {
+            try {
+                const gameName = (await response.json()).name;
+                return gameName;
+            }
+            catch (error) {
+                throw new Error("Could not get the name of the game");
+            }
+        }
+
+    }
+}
