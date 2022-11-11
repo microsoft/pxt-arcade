@@ -273,7 +273,7 @@ freeTurkeys.follow(sprite)
 ```
 
 ```package
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival
 ```
 
 

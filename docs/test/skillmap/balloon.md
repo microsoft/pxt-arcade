@@ -74,7 +74,7 @@
 * showMultiplayerShare: true
 * position: 2 3
 * actions:
-    * map: [Finish the Last Level](/skillmap/balloon)
+    * map: [Try Whack-the-Mole](/skillmap/mole)
     * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:

@@ -116,6 +116,7 @@
 
         <script type="text/javascript">
 
+
             function handleOnLoad() {
                 var langPicker = document.querySelector('#langpicker');
                 if (langPicker) {
@@ -128,12 +129,10 @@
                 window.pxtTickEvent(tickEvent);
             }
 
-            init();
         </script>
     </head>
 
     <body id="root" class="root">
-
         <img
             class="tracking"
             src="https://code.org/api/hour/begin_microsoft_carnival.png"
@@ -145,10 +144,9 @@
             </header>
             <section id="hero">
                 <div>
-                    <img id="logo" src="static/hour-of-code/2022/HoC_logo.png" alt="Hour of Code 2022: Carnival">
+                    <img id="logo" src="static/hour-of-code/2022/HoC_logo_es.png" alt="Hour of Code 2022: Carnival">
                     <div class="header-tag">
-                        <p>Code a fun carnival game in less than an hour!<br />Pick a game and step right up.</p>
-
+                        <p>Codifique um divertido jogo de carnaval em menos de uma hora!  Escolha um jogo e avance.</p>
                     </div>
                 </div>
             </section>
@@ -160,33 +158,31 @@
 
                     <div id="start-here">
                         <div id="twisted">
-                            New?<br/>
-                        Start here!<br/>
+                            Novo?<br/>
+                        começa aqui!<br/>
                         </div>
                         <img src="static/hour-of-code/2022/start-here-arrow.png" alt="">
                     </div>
                     
                     
-                    <div class="card-cta btn">Whack-the-Mole</div>
+                    <div class="card-cta btn">Bata a toupeira</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_whack_em_all.png" alt="Whack-the-Mole game screenshot">
-                        <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-mole.png" alt="beginner level"> </div>
-                        <div>Create a classic game where you can bop moles in holes</div>
-                     
+                        <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-mole.png" alt="beginner level"> </div>
+                        <div>Crie um jogo clássico onde você pode jogar toupeiras em buracos</div>
                     </div>
                     <div class="card"
                     onClick="launchPage('https://aka.ms/balloon', 'hourofcode2022.skillmap.open.burstinBalloons')">
-                        <div class="card-cta btn">Burstin’ Balloons</div>
+                        <div class="card-cta btn">Balões estourando</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_ballon2.png" alt="Burstin’ Balloons game screenshot">
-                        <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
-                        <div>Code a mouse that fills your balloon as quickly as possible</div>
-                    
+                        <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                        <div>Codifique um mouse que encha seu balão o mais rápido possível</div>
                     </div>
 
                     <!-- <div class="card"
                     onClick="launchPage('https://aka.ms/targets', 'hourofcode2022.skillmap.open.targetBlaster')">
                         <div class="card-cta btn">Target Blaster</div>
                         <img class="thumbnail" src="static/hour-of-code/2022/gameImg_target.png" alt="Target Blaster game screenshot">
-                        <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-target.png" alt="advanced level"></div>
+                        <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-target.png" alt="advanced level"></div>
                         <div>Follow a video to learn how to launch a ball at moving targets</div>
                     </div> -->
                 </div>
@@ -215,23 +211,23 @@
             <section>
                 <div id="moregames">
                     <div class="container">
-                        <h3>Build more games</h3>
-                        <div>Find similar MakeCode games and projects.</div>
+                        <h3>Crie mais jogos</h3>
+                        <div>Encontre jogos e projetos MakeCode semelhantes.</div>
                         <div class="container-grid">
                             <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/shark', 'hourofcode2022.skillmap.open.shark')">
                                 <img class="thumbnail" src="static/hour-of-code/2022/gameImg_shark.png" alt="Shark Attack Game Screenshot">
-                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
-                                <div>Create a shark attack game, then gobble up fish</div>
+                                <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Crie um jogo de ataque de tubarão e depois coma peixes</div>
                             </div>
                             <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/racer', 'hourofcode2022.skillmap.open.racer')">
                                 <img class="thumbnail" src="static/hour-of-code/2022/gameImg_racer.png" alt="Monster Racer game screenshot">
-                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
-                                <div>Build a racing game with a creepy "monster" truck</div>
+                                <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Construa um jogo de corrida com um caminhão “monstro” assustador</div>
                             </div>
                             <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/forest', 'hourofcode2022.skillmap.open.forest')">
                                 <img class="thumbnail" src="static/hour-of-code/2022/gameImg_forest.png" alt="Forest Fire game screenshot">
-                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
-                                <div>Code a forest fire, then put it out with an airtanker</div>
+                                <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Codifique um incêndio florestal e apague-o com um tanque aéreo</div>
                             </div>
                         </div>
 
@@ -264,12 +260,12 @@
             <section>
                 <div class="container col-2">
                     <div>
-                        <h2>Calling all teachers</h2>
-                        <p>Bring Hour of Code™ into your classroom with games that make coding fun for you and your kids — no hardware or downloads required.</p>
-                        <p> Whether you’ve got an hour or a week, we’ll get you started with creative tutorials, and customizable lesson plans.</p>
+                        <h2>Chamando todos os professores</h2>
+                        <p>Leve o Hour of Code™ para sua sala de aula com jogos que tornam a programação divertida para você e seus filhos — sem necessidade de hardware ou downloads.</p>
+                        <p>Se você tem uma hora ou uma semana, vamos começar com tutoriais criativos e planos de aula personalizáveis.</p>
                         <button
                         onClick="launchPage('https://aka.ms/HoC-22-Lesson', 'hourofcode2022.skillmap.educator')">
-                        Teacher resources 
+                        Recursos do professor 
                         <!-- <img src="static/hour-of-code/2022/arrow.png" alt=""> -->
                         </button>
                     </div>
@@ -281,25 +277,25 @@
 
             <section>
                 <div class="container">
-                    <h3>More from Microsoft</h3>
+                    <h3>Mais da Microsoft</h3>
                     <div class="container-grid">
                         <div class="card"
                         onClick="launchPage('http://makecode.microbit.org', 'hourofcode2022.footer.open.microbit')">
                             <img class="thumbnail" src="static/hour-of-code/2022/microbitImage.png" alt="microbit image">
                             <div class="card-item-title">micro:bit</div>
-                            <div>Program sounds, effects, and more onto a hand-held computer.</div>
+                            <div>Programe sons, efeitos e muito mais em um computador portátil.</div>
                         </div>
                         <div class="card"
                         onClick="launchPage('https://aka.ms/hourofcode', 'hourofcode2022.footer.open.minecraft')">
                             <img class="thumbnail" src="static/hour-of-code/2022/minecraft-hoc.png" alt="minecraft image">
                             <div class="card-item-title">Minecraft</div>
-                            <div>Subscribe to Education Edition for fun, immersive STEM learning.</div>
+                            <div>Assine a Education Edition para um aprendizado “STEM” divertido e imersivo.</div>
                         </div>
                         <div class="card"
                         onClick="launchPage('https://arcade.makecode.com/hour-of-code', 'hourofcode2022.footer.open.arcade')">
                             <img class="thumbnail" src="static/hour-of-code/2022/arcadeImage.png" alt="Arcade image">
                             <div class="card-item-title">Arcade</div>
-                            <div>Build video games, create characters, and play with friends.</div>
+                            <div>Construa videogames, crie personagens e brinque com amigos.</div>
                         </div>
                     </div>
                 </div>
@@ -346,13 +342,14 @@
                         onClick="launchPage('https://www.tiktok.com/@msmakecode', 'hourofcode2022.social.tiktok')">
                 </div>
                 <p class="container hoc-statement">
-                    The <a href="http://www.hourofcode.com" target="_blank">'Hour of Code™'</a> is a nationwide initiative by <a href="https://www.csedweek.org/"  target="_blank">Computer Science Education Week</a> and <a href="https://code.org/"  target="_blank">Code.org</a> to introduce millions of students to one hour of computer science and computer programming.
+                    A <a href="http://www.hourofcode.com" target="_blank">'Hour of Code™'</a> é uma iniciativa nacional da <a href="https://www.csedweek.org/"  target="_blank">Computer Science Education Week</a> e <a href="https://code.org/"  target="_blank">Code.org</a> para apresentar a milhões de estudantes uma hora de ciência da computação e programação de computadores.
                 </p>
                 <div>
-                    <a href="http://www.makecode.com"  target="_blank">Microsoft MakeCode</a> | <a href="https://www.microsoft.com/legal/terms-of-use"  target="_blank">Terms of use</a> | <a href="https://privacy.microsoft.com/privacystatement"  target="_blank">Privacy</a>
+                    <a href="http://www.makecode.com"  target="_blank">Microsoft MakeCode</a> | <a href="https://www.microsoft.com/legal/terms-of-use"  target="_blank">Termos de uso</a> | <a href="https://privacy.microsoft.com/privacystatement"  target="_blank">Privacidade</a>
                 </div>
                 <div class="caption">Languages: <a href="https://arcade.makecode.com/hour-of-code-2022">English</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-es">Spanish</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-pt">Portuguese</a></div>
             </footer>
+
         </main>
 
 

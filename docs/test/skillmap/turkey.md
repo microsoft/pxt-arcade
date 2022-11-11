@@ -47,6 +47,7 @@
 
 
 ### turkey-finish
+* name: Congratulations!
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/turkey-cert.pdf

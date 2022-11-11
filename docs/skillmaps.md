@@ -16,6 +16,30 @@
   "directOpen": true
 },
 {
+  "name": "Whack-the-Mole",
+  "cardType": "link",
+  "description": "Create your own mole whacking carnival game. Double-click the first level to start.",
+  "imageUrl": "/static/skillmap/backgrounds/mole.gif",
+  "url": "https://arcade.makecode.com/--skillmap#mole",
+  "directOpen": true
+},
+{
+  "name": "Burstin' Balloons",
+  "cardType": "link",
+  "description": "Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.",
+  "imageUrl": "/static/skillmap/backgrounds/mouse.gif",
+  "url": "https://arcade.makecode.com/--skillmap#balloon",
+  "directOpen": true
+},
+{
+  "name": "Turkey Day",
+  "cardType": "link",
+  "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
+  "imageUrl": "/static/skillmap/backgrounds/turkey.gif",
+  "url": "https://arcade.makecode.com/--skillmap#turkey",
+  "directOpen": true
+},
+{
   "name": "Monster Truck Racer",
   "cardType": "link",
   "description": "Create a side-scrolling monster truck racing game, then jump obstacles to get your rig to the finish line.",
@@ -45,14 +69,6 @@
   "description": "Use blocks to code your airtanker and set up tech so your ground team can help you save the forest!",
   "imageUrl": "/static/skillmap/backgrounds/forest.png",
   "url": "https://arcade.makecode.com/--skillmap#forest",
-  "directOpen": true
-},
-{
-  "name": "Turkey Day",
-  "cardType": "link",
-  "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
-  "imageUrl": "/static/skillmap/turkey/turkey3.gif",
-  "url": "https://arcade.makecode.com/--skillmap#turkey",
   "directOpen": true
 },
 {

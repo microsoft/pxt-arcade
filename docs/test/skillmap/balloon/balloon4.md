@@ -65,9 +65,9 @@ hint~
 
 ## {3. Add Second Player}
 
-**You'll need to repeat your past steps to add a second player.**
+**Repeat your past steps to add a second player!**
 
-We've connected all of the blocks you need inside the toolbox. Can you figure out what you need to do to get Player 2 working?
+To save time, we've connected the blocks you need inside a new category in the toolbox. Can you figure out what you need to do to get Player 2 working?
 
 💡 **Tip:** _If you need more help, click through the steps for details._
 
@@ -132,6 +132,9 @@ You should see that a second mouse and balloon have appeared.
 - :game: Now look under ``||controller:Controller||`` for the blocks you need to allow the second mouse to move when Player 2 presses their **A button**.
 
 - :mouse pointer: Drop them in an empty area of the workspace, then click the empty grey box to choose the picture of the second mouse pressing the handle.
+
+💡 **Tip:** _To test these blocks, use the U key on your keyboard to simulate the player 2 A button._
+
 
 
 ~hint Show me! 🕵🏽
@@ -198,7 +201,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
 
 - :binoculars: Look at your project in full-screen by clicking the **resize** button on the normal game window!
 
-Find a friend and have them press the (A) button or **space bar** while you press the (B) button or **enter** key.  Who makes it to the top first?
+Find a friend and have them press the (A) button or **space bar** while you press the **U** key on the keyboard.  Who makes it to the top first?
 
 ![Click the resize button to play your game on the large screen.](/static/skillmap/balloon/big.gif " Size-Up!" )
 
@@ -216,7 +219,7 @@ carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
 ```
 to **the end** of the ``||loops(noclick):on start||`` container to put a label on the booth so everyone knows the name of the game!
 
-**Play your finished game a few times!  Who can get the best 2 out of three?**
+**Play your finished game a few times!  Who can get the best 2 out of 3?**
 
 
 
@@ -319,7 +322,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
 ```package
 pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
 carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
 ```
 
 
