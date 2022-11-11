@@ -277,9 +277,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 You've completed an amazing carnival game! Take some time to play it and appreciate what you've built.
 
-When you're ready, click **Done** to return to the skillmap and claim your **badge and certificate**.
-
-After you grab your rewards, you have the option to complete one more level to make your game a into a two-player race.
+When you're ready, click **Done** to return to the skillmap to move on and make your game a into a two-player race.
 
 ```blockconfig.local
 let myMouse: Sprite = null
