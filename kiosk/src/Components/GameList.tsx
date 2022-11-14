@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
