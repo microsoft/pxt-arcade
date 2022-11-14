@@ -124,6 +124,9 @@ h2 {
     flex-direction: column;
     align-items: baseline;
     width: 60%;
+    line-height: 200%;
+    /* text-align: center; */
+
 }
 
 .addGame h1 {
@@ -154,20 +157,24 @@ h2 {
 }
 
 .kioskLink {
-    margin: 1rem 0;
-    width: 60%;
+    margin: 2rem 0;
+    width: 55%;
     text-align: center;
+    line-height: 170%;
+}
+
+.innerQRCodeContent h3 {
+    margin-bottom: -1.5rem;
 }
 
 .addGameContent {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
+    align-items: center;
+    width: 95%;
     margin: 5% 0;
 }
-
-
 
 /* -------- QR PAGES STYLING -------- */
 /* ----------------------------------- */
