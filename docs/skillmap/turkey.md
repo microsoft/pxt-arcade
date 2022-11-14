@@ -4,12 +4,12 @@
 * infoUrl: /skillmap/educator-info/turkey-map-info
 * backgroundurl: /static/skillmap/backgrounds/turkey-comp.gif
 * bannerurl: /static/skillmap/turkey/turkey2.gif
-* primarycolor: #e77038
-* secondarycolor: #fdf60c
+* primarycolor: #cda6cc
+* secondarycolor: #ffffff
 * tertiarycolor: #baefff
-* strokecolor: #ffffff
-* highlightcolor: #ffffff
-* completednodecolor: #3b3738
+* strokecolor: #fdf60c
+* highlightcolor: #fdf60c
+* completednodecolor: #003457
 
 
 ## turkey-day
