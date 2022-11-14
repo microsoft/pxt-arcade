@@ -102,11 +102,15 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
     const qrDivContent = () => {
         if (renderQRCode) {
+            const kioskUrl = `${kioskCodeUrl}#add-game:${kioskCode}`;
             return (
                 <div className="innerQRCodeContent">
-                    <QRCodeSVG value={`${kioskCodeUrl}#add-game:${kioskCode}`} />
+                    <QRCodeSVG value={kioskUrl} />
+                    <div className="kioskLink">
+                        <a  target="_blank" href={kioskUrl}>{kioskUrl}</a>
+                    </div>
                     <h3>10 minute Kiosk ID</h3>
-                    <h1>{kioskCode}</h1>
+                    <h1 className="kioskCode">{kioskCode}</h1>
                 </div>
             )
         }

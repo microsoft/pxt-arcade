@@ -146,6 +146,18 @@ h2 {
     justify-content: center;
 }
 
+.kioskLink a {
+    color: var(--main-text-color);
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.kioskLink {
+    margin: 1rem 0;
+    width: 60%;
+    text-align: center;
+}
+
 .addGameContent {
     display: flex;
     flex-direction: row;
