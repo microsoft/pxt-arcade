@@ -6,6 +6,8 @@
 
 ![Make your own Target Practice Game](/static/skillmap/target/target3.gif "This is what we'll be making today.")
 
+Special thanks to *Lucas_M* for creating the original Target Practice game!
+
 
 
 ## {2. Read Instructions}
@@ -15,9 +17,11 @@
 
 This video will show you what to do.
 
-Watch the video and follow along!
+Feel free to pause or restart the video as often as you need!
 
-![Balloon Bursting Carnival Intro](youtube:ttlam7rkh1U)
+You can click the
+
+![Balloon Bursting Carnival Intro](youtube:6Q35Rc6tIgg?start=29)
 
 
 
