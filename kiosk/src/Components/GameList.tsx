@@ -139,8 +139,8 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                     depth: 5,
                 }}
                 allowTouchMove={false}
-                allowSlideNext={!!!buttonSelected}
-                allowSlidePrev={!!!buttonSelected}
+                allowSlideNext={!buttonSelected}
+                allowSlidePrev={!buttonSelected}
                 modules={[EffectCoverflow, Keyboard]}
                 keyboard={{enabled: true}}
             >
