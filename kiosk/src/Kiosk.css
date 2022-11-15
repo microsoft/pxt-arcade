@@ -90,22 +90,26 @@ h2 {
 
 .kioskButton {
     width: 20em;
-    border-color: var(--button-primary-color);
-    font-family: inherit;
     padding: 2em 0.5em;
-    color:var(--main-text-color);
+    font-family: inherit;
+    /* font-weight: 600; */
+    letter-spacing: 0.25em;
+    background-color: var(--button-primary-color);
+    color: var(--secondary-dark-color);
     border-radius: 0.75em;
     border-width: 0.2em;
-    border-style: solid;
+    border-color: var(--transparent-color);
+    border-bottom: #10b7e5 solid;
+    cursor: pointer;
 }
 
 .buttonSelected {
     background-color: var(--button-primary-color);
 }
 
-.buttonUnselected {
+/* .buttonUnselected {
     background-color: var(--transparent-color);
-}
+} */
 
 /* -------- ADDING GAME PAGE STYLING -------- */
 /* ----------------------------------- */

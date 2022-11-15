@@ -12,6 +12,10 @@ interface IProps {
 const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const fullUrlHash = window.location.hash;
     const urlHashList = /add-game:((?:[a-zA-Z0-9]{6}))/.exec(fullUrlHash);
+    const screenWidth = window.screen.width;
+    console.log(screenWidth);
+    const phoneWidth = screenWidth < 500;
+    console.log(phoneWidth);
     const kioskId = urlHashList?.[1];
     const [scannerVisible, setScanner] = useState(false);
     const [linkError, setLinkError] = useState(false);
@@ -53,28 +57,32 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 </ol>
                 {
                     !scannerVisible &&
-                    <button className="scanQrButton" onClick={renderQrScanner} >Open camera to scan the qr code</button>
+                    <button className="scanQrButton" onClick={renderQrScanner} >Scan qr code</button>
                 }
                 <div id="qrReader"></div>
-                <div className="linkOption">
-                    <p>No phone?</p>
-                    <label>Submit share link here</label>
-                    <input type="url"
-                        id="kiosk-share-link"
-                        placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
-                        pattern="https:///arcade.makecode.com/.*"
-                        maxLength={perisistentShareLen}
-                        minLength={regularShareLen}
-                        spellCheck={false}
-                        required
-                        title="Share Link"
-                        />
-                    <input type="submit" onClick={checkUrl}></input>
-                    {
-                        linkError &&
-                        <p>Incorrect format for a share link</p>
-                    }
-                </div>
+                {
+                    !phoneWidth &&
+                    <div className="linkOption">
+                        <p>No phone?</p>
+                        <label>Submit share link here</label>
+                        <input type="url"
+                            id="kiosk-share-link"
+                            placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
+                            pattern="https:///arcade.makecode.com/.*"
+                            maxLength={perisistentShareLen}
+                            minLength={regularShareLen}
+                            spellCheck={false}
+                            required
+                            title="Share Link"
+                            />
+                        <input type="submit" onClick={checkUrl}></input>
+                        {
+                            linkError &&
+                            <p>Incorrect format for a share link</p>
+                        }
+                    </div>
+                }
+
 
             </div>
         </div>
