@@ -55,7 +55,7 @@ export const addGameToKioskAsync = async (kioskId: string | undefined, gameShare
     }
 }
 
-export const getGameDetailAsync = async (gameId: string) => {
+export const getGameDetailsAsync = async (gameId: string) => {
     const gameDetailsUrl = `https://makecode.com/api/${gameId}`;
     const response  = await fetch(gameDetailsUrl);
     if (!response.ok) {

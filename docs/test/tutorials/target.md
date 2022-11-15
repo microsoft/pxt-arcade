@@ -19,9 +19,9 @@ This video will show you what to do.
 
 Feel free to pause or restart the video as often as you need!
 
-You can click the
+Click  "Pop out video" to resize the video window or move it around the screen.
 
-![Balloon Bursting Carnival Intro](youtube:6Q35Rc6tIgg?start=29)
+![Balloon Bursting Carnival Intro](azuremedia:2593255d-ab7a-49e1-99b2-bbf59af49d97/Target-Practice.ism?start=29)
 
 
 

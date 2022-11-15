@@ -119,7 +119,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     if (!kiosk.games || !kiosk.games.length) {
         return(
         <div>
-            <p>Could not fetch kiosk games</p>
+            <p>Currently no kiosk games</p>
         </div>);
     }
 
