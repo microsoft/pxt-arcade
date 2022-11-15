@@ -9,6 +9,8 @@
     --high-score-selector-color: #ffd700;
     --transparent-color: #11ffee00;
     --black-color: #050505;
+    --input-outline: #e5e7eb;
+    --button-underline: #10b7e5;
 }
 
 html, body {
@@ -255,6 +257,40 @@ h2 {
     font-size: 1.5em;
     letter-spacing: 0.25em;
     line-height: 1.5em;
+}
+
+.linkOption {
+    margin-top: 5rem;
+    border-color: var(--button-primary-color);
+    border-style: solid;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+.linkOption label {
+    display: block;
+}
+
+.linkOption input[type=url] {
+    margin-top: 1rem;
+    border-color: var(--button-primary-color);
+    width: 20rem;
+    height: 2em;
+    border-radius: 0.45em;
+    text-overflow: ellipsis;
+}
+
+.linkOption input[type=submit] {
+    margin-left: 0.25rem;
+    height: 2em;
+    border-radius: 0.45em;
+    background-color: var(--button-primary-color);
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    border-bottom: #10b7e5;
+    border-style: solid;
+    cursor: pointer;
+    color: var(--secondary-dark-color);
 }
 
 /* -------- GAME LIST  STYLING -------- */
