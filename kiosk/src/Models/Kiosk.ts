@@ -5,7 +5,6 @@ import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { runInThisContext } from "vm";
-
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -15,6 +14,7 @@ export class Kiosk {
     onGameSelected!: () => void;
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
+    clean: boolean;
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
@@ -26,25 +26,30 @@ export class Kiosk {
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private addedGameDescription: string = "Made with love in MakeCode Arcade";
-    private numAddedGames: number = 0;
+
+    constructor(clean: boolean) {
+        this.clean = clean;
+    }
 
     async downloadGameList(): Promise<void> {
-        let url = configData.GameDataUrl;
-        if (configData.Debug) {
-            url = `/static/kiosk/${url}`;
-        }
-
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Unable to download game list from "${url}"`);
-        }
-
-        try {
-            this.games = (await response.json()).games;
-            this.games.push()
-        }
-        catch (error) {
-            throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
+        if (!this.clean) {
+            let url = configData.GameDataUrl;
+            if (configData.Debug) {
+                url = `/static/kiosk/${url}`;
+            }
+    
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Unable to download game list from "${url}"`);
+            }
+    
+            try {
+                this.games = (await response.json()).games;
+                this.games.push()
+            }
+            catch (error) {
+                throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
+            }
         }
 
         // the added games persist in local storage, but not the live game list
@@ -55,7 +60,6 @@ export class Kiosk {
     saveNewGame(gameId: string): GameData | undefined {
         const allAddedGames = this.getAllAddedGames();
         if (!allAddedGames[gameId]) {
-            this.numAddedGames += 1;
             const newGame = new GameData(gameId, 'Kiosk Game', this.addedGameDescription, "None");
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;

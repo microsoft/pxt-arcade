@@ -9,7 +9,9 @@ import AddingGame from './Components/AddingGame';
 import ScanQR from './Components/ScanQR';
 import QrSuccess from './Components/QrSuccess';
 
-const kioskSingleton: Kiosk = new Kiosk();
+const firstHash = window.location.pathname;
+const clean = /--clean/.exec(firstHash);
+const kioskSingleton: Kiosk = new Kiosk(!!clean);
 kioskSingleton.initialize().catch(error => alert(error));
 
 function App() {
@@ -46,7 +48,7 @@ function onHashChange() {
   const addGame = /add-game:((?:[a-zA-Z0-9]{6}))/.exec(hash);
   if (match) {
     kioskSingleton.launchGame(match[1], true);
-  } else if (addGame){
+  } else if (addGame) {
     kioskSingleton.navigate(KioskState.ScanQR);
   }
 }
