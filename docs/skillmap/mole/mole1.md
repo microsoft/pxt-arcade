@@ -6,8 +6,14 @@
 
 ![whack-the-mole](azuremedia:eb645602-3355-4aa7-a756-0ea205b2ce80/Whack-the-Mole-Intro.ism)
 
-Special thanks to MakeCode Forum User _SoftTalker_ for this submission.
+~hint Click here view the intro video with ASL
 
+![ASL Whack-the-Mole Intro](azuremedia:36d0e002-d2cd-40db-a0f2-b112627bb8da/ASL-Whack-the-Mole-Intro-Vid.ism)
+
+hint~
+
+
+Special thanks to MakeCode forum User _SoftTalker_ for this submission.
 
 
 
