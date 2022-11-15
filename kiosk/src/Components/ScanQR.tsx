@@ -25,7 +25,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 <ol>
                     <li>Open your game on your computer</li>
                     <li>Go to share your game</li>
-                    <li>Scan QR code from the share modal</li>
+                    <li>Scan QR code from the share dailog</li>
                 </ol>
                 {
                     !scannerVisible &&

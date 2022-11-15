@@ -16,8 +16,7 @@ const play = async (kiosk: Kiosk, kioskId: string) => {
             await addGameToKioskAsync(kioskId, shareId);
             await html5QrCode.stop();
             kiosk.navigate(KioskState.QrSuccess);
-        }
-        catch (error) {
+        } catch (error) {
             console.log("Unable to add game to kiosk. Please try again later");
         }
     }
@@ -37,14 +36,11 @@ const play = async (kiosk: Kiosk, kioskId: string) => {
                     onScanSuccess,
                     onScanFailure
                 );
-            }
-            catch (error) {
+            } catch (error) {
                 console.log("failed to start scanning");
             }
         }
-    }
-
-    catch (error) {
+    } catch (error) {
         console.log("couldn't get camera permissions");
     }
 
