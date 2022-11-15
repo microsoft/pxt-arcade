@@ -1,11 +1,12 @@
-const backendEndpoint: string = "https://makecode.com/api/kiosk";
+const kioskBackendEndpoint: string = "https://makecode.com/api/kiosk";
+const apiBackendEndpoint: string = "https://makecode.com/api"
 
 export const isLocal = () => {
     return window.location.hostname === "localhost";
 }
 
 export const getGameCodeAsync = async (kioskCode: string) => {
-    const getGameCodeUrl = `${backendEndpoint}/code/${kioskCode}`; 
+    const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`; 
     let response = await fetch(getGameCodeUrl);
     if (!response.ok) {
         throw new Error("Unable to get data from the kiosk.");
@@ -19,7 +20,7 @@ export const getGameCodeAsync = async (kioskCode: string) => {
 }
 
 export const generateKioskCodeAsync = async () => {
-    const codeGenerationUrl = `${backendEndpoint}/newcode`;
+    const codeGenerationUrl = `${kioskBackendEndpoint}/newcode`;
     const response = await fetch(codeGenerationUrl);
     if (!response.ok) {
         throw new Error("Unable to generate kiosk code");
@@ -35,7 +36,7 @@ export const generateKioskCodeAsync = async () => {
 }
 
 export const addGameToKioskAsync = async (kioskId: string | undefined, gameShareId: string | undefined) => {
-    const updateKioskUrl = `${backendEndpoint}/updatecode`;
+    const updateKioskUrl = `${kioskBackendEndpoint}/updatecode`;
     try {
         const response: Response = await fetch(updateKioskUrl, {
             method: 'POST',
@@ -56,12 +57,11 @@ export const addGameToKioskAsync = async (kioskId: string | undefined, gameShare
 }
 
 export const getGameDetailsAsync = async (gameId: string) => {
-    const gameDetailsUrl = `https://makecode.com/api/${gameId}`;
+    const gameDetailsUrl = `${apiBackendEndpoint}/${gameId}`;
     const response  = await fetch(gameDetailsUrl);
     if (!response.ok) {
         throw new Error("Unable to fetch the game details");
     } else {
-        const gameDetails = (await response.json());
-        return gameDetails;
+        return await response.json();
     }
 }

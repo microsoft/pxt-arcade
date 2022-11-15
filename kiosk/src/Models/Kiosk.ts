@@ -26,6 +26,7 @@ export class Kiosk {
     private lockedGameId?: string;
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
+    private defaultGameDescription = "Made with love in MakeCode Arcade";
 
     constructor(clean: boolean) {
         this.clean = clean;
@@ -65,20 +66,27 @@ export class Kiosk {
         return name;
     }
 
+    getGameDescription(desc: string) {
+        if (desc.length === 0) {
+            return this.defaultGameDescription
+        }
+        
+        return desc;
+    }
+
     async saveNewGameAsync(gameId: string): Promise<GameData | undefined> {
         const allAddedGames = this.getAllAddedGames();
         if (!allAddedGames[gameId]) {
-            let gameDetails;
             let gameName;
             let gameDescription;
 
             try {
-                gameDetails = await getGameDetailsAsync(gameId);
+                const gameDetails = await getGameDetailsAsync(gameId);
                 gameName = this.getGameName(gameDetails.name);
-                gameDescription = gameDetails.description;
+                gameDescription = this.getGameDescription(gameDetails.description);
             } catch (error) {
                 gameName = "Kiosk Game";
-                gameDescription = "Made with love in MakeCode Arcade";
+                gameDescription = this.defaultGameDescription;
             }
 
             const newGame = new GameData(gameId, gameName, gameDescription, "None");
