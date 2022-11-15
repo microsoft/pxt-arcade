@@ -86,6 +86,10 @@ h2 {
     margin-left: 28.5%;
 }
 
+.locked {
+    margin-left: 0;
+}
+
 .kioskButton {
     width: 20em;
     border-color: var(--button-primary-color);

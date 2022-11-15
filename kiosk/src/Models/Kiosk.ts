@@ -15,6 +15,7 @@ export class Kiosk {
     onNavigated!: () => void;
     state: KioskState = KioskState.MainMenu;
     clean: boolean;
+    locked: boolean;
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
@@ -27,8 +28,9 @@ export class Kiosk {
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private addedGameDescription: string = "Made with love in MakeCode Arcade";
 
-    constructor(clean: boolean) {
+    constructor(clean: boolean, locked: boolean) {
         this.clean = clean;
+        this.locked = locked;
     }
 
     async downloadGameList(): Promise<void> {
