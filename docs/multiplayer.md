@@ -126,7 +126,9 @@ For safe usage and interaction in the MakeCode online multiplayer environment, h
 
 * Once inside an online multiplayer session, MakeCode does not provide tools for messaging any players whether joined to a host's game or not. Also, we do not provide any way to share personal contact information that might lead to opening chat session communication outside of the tool, including names, usernames, and/or profile images.
 
-* The only form of communication inside of our online multiplayer tool is limited to sending just an allowed set of emojis.
+* The only form of communication inside of our online multiplayer tool is limited to sending just an allowed set of emojis:
+
+![Multiplayer game emojis](/static/multiplayer/help/emojis.png)
 
 User privacy and safety is of the utmost importance. To provide awareness of inappropriate content or actions, all users are able to flag inappropriate games and/or teammates for immediate removal at any time during game play.
 
