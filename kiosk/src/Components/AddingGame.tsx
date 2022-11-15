@@ -77,7 +77,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 const getGameCode = async () => {
                     try {
                         const gameCode: string = await getGameCodeAsync(kioskCode);
-                        await kiosk.saveNewGame(gameCode);
+                        await kiosk.saveNewGameAsync(gameCode);
                         clearTimeout(pollFrequency);
                         clearTimeout(pollTimeout);
                         resolve();

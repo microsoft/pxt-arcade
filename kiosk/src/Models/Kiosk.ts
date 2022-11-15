@@ -5,7 +5,7 @@ import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { runInThisContext } from "vm";
-import { getGameDetail } from "../BackendRequests"
+import { getGameDetailAsync } from "../BackendRequests"
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -50,11 +50,30 @@ export class Kiosk {
         this.addNewGamesToList();
     }
 
-    async saveNewGame(gameId: string): Promise<GameData | undefined> {
+    getGameName(name: string) {
+        if (name.toLowerCase() === "untitled") {
+            return "Kiosk Game";
+        }
+        
+        return name;
+    }
+
+    async saveNewGameAsync(gameId: string): Promise<GameData | undefined> {
         const allAddedGames = this.getAllAddedGames();
         if (!allAddedGames[gameId]) {
-            const gameName = await getGameDetail(gameId, "name");
-            const gameDescription = await getGameDetail(gameId, "description");
+            let gameDetails;
+            let gameName;
+            let gameDescription;
+
+            try {
+                gameDetails = await getGameDetailAsync(gameId);
+                gameName = this.getGameName(gameDetails.name);
+                gameDescription = gameDetails.description;
+            } catch (error) {
+                gameName = "Kiosk Game";
+                gameDescription = "Made with love in MakeCode Arcade";
+            }
+
             const newGame = new GameData(gameId, gameName, gameDescription, "None");
 
             this.games.push(newGame);
