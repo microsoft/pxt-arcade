@@ -23,6 +23,9 @@ and snap it into the empty <br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
+- :mouse pointer: Click **Next** to get to the next set step.
+
+
 ```blocks
 //@highlight
 scene.setBackgroundImage(img`.`)
@@ -39,7 +42,7 @@ block that's now in your workspace.
 and choose the **Wakanda** background.
 ![Choose Wakanda](/static/tutorials/wakanda/wakanda.png " ")
 
-
+- :mouse pointer: Then click **Done**.
 
 ```blocks
 //@highlight
@@ -54,7 +57,7 @@ scene.setBackgroundImage(assets.image`wakanda`)
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, grab
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``
 and drag it into **the end** of the <br/>
 ``||loops(noclick):on start||`` container.
 
@@ -123,7 +126,22 @@ controller.moveSprite(Shuri)
 Shuri.setStayInScreen(true)
 ```
 
-## {Step 7}
+
+
+
+## {7. Check Your Game!}
+
+
+- :binoculars: Look at your project in the game window!
+
+You should see Shuri and be able to move her around with the arrow keys when hovering over the controls.
+
+
+
+
+
+
+## {Step 8}
 
 
 **Add Namor to the game.**
@@ -131,13 +149,13 @@ Shuri.setStayInScreen(true)
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``<br/>
 into **the end** of the
 ``||loops(noclick):on start||`` container.
 
 - :mouse pointer: Find the new<br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``<br/>
-block in the workspace and click on the name ``||variables:mySprite||``. <br/>
+``||variables(noclick):set [mySprite] to sprite [ ] of kind [Player]||``<br/>
+block in the workspace and click on the name ``||variables(noclick):mySprite||``. <br/>
 Select **Rename variable...** and enter **Namor**.
 
 - :paint brush: Click the empty grey box in the same block to open the **image editor**.
@@ -156,7 +174,7 @@ let Namor = sprites.create(assets.image`namor`, SpriteKind.Player)
 ```
 
 
-## {Step 8}
+## {Step 9}
 
 
 **Make Namor the Enemy.**
@@ -177,7 +195,7 @@ Shuri.setStayInScreen(true)
 let Namor = sprites.create(assets.image`namor`, SpriteKind.Enemy)
 ```
 
-## {Step 9}
+## {Step 10}
 
 
 We want Namor to start in the upper corner of the screen.
@@ -203,7 +221,7 @@ let Namor = sprites.create(assets.image`namor`, SpriteKind.Enemy)
 Namor.setPosition(148, 2)
 ```
 
-## {Step 10}
+## {Step 11}
 
 
 Let's add the code that makes Namor chase Shuri all around the screen.
@@ -231,7 +249,19 @@ Namor.setPosition(148, 2)
 Namor.follow(Shuri, 30)
 ```
 
-## {Step 11}
+
+## {12. Check Your Game!}
+
+
+- :binoculars: Don't forget to look at your project in the game window after each step!
+
+Play with your project as you go along.  This will help make sure you're on the right track.
+
+
+
+
+
+## {Step 13}
 
 **When Namor attacks Shuri, she should lose lives.**
 
@@ -244,7 +274,7 @@ Let's use a sprite overlap event to make sure the game detects when Namor gets t
 and drop it into an **empty area** of the workspace.
 
 
-- :mouse pointer: Change the **kind** of the ``||variables(noclick):otherSprite||`` from ``||sprites(noclick):Player||`` to ``||sprites(noclick):Enemy||``.
+- :mouse pointer: Change the **kind** of **otherSprite** from ``||sprites(noclick):Player||`` to ``||sprites(noclick):Enemy||``.
 
 - :id card: To subtract a life from Shuri, open ``||info:Info||`` and grab<br/>
 ``||info:change life by -1||``.<br/>
@@ -260,7 +290,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 
 
-## {Step 12}
+## {Step 14}
 
 **If Namor and Shuri continue to overlap, Shuri will lose all of her lives too soon.**
 
@@ -271,7 +301,20 @@ Let's move Namor away to keep the game going.
 - :mouse pointer: Send Namor back to the corner of the screen by duplicating<br/>
 the ``||sprites(noclick):set Namor position to x 148 y 2||`` block that's inside the<br/>
 ``||loops(noclick):on start||`` container.
-<br/><br/>Place the copy into the<br/>
+
+~hint How do I duplicate? 💡
+
+---
+
+There are two great ways to duplicate a block
+
+1) Highlight it and use the copy/paste feature on your keyboard
+2) Right-click the block and choose **Duplicate**.
+
+hint~
+
+
+- :mouse pointer: Place the copy into the<br/>
 ``||sprites(onclick):on [sprite] of kind [Player] overlaps [othersprite] of kind [Enemy]||`` container already in the workspace.
 
 
@@ -286,14 +329,15 @@ info.changeLifeBy(-1)
 
 
 
-## {Step 13}
+
+## {Step 15}
 
 **Bring in the guards!**
 
 Both Riri and Okoye can now join the game to guard Shuri from Namor's attacks.
 
 - :paper plane: From ``||sprites:Sprites||``, drag another<br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 into **the end** of the<br/>
 ``||loops(noclick):on start||`` container.
 
@@ -333,7 +377,7 @@ let Riri = sprites.create(assets.image`riri`, SpriteKind.Guard)
 let Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
 ```
 
-## {Step 14}
+## {Step 16}
 
 **Make the guards move**
 
@@ -372,7 +416,7 @@ let Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
 controller.moveSprite(Okoye, -68, -58)
 ```
 
-## {Step 15}
+## {Step 17}
 
 **You need an event to tell when one of the guards overlaps with Namor.**
 
@@ -395,7 +439,7 @@ sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSpr
 ```
 
 
-## {Step 16}
+## {Step 18}
 
 Award a point, then Namor should go back to his corner and start to attack again after being caught.
 
@@ -425,7 +469,7 @@ sprites.onOverlap(SpriteKind.Guard, SpriteKind.Enemy, function (sprite, otherSpr
 
 
 
-## {Step 17}
+## {Step 19}
 
 **Let's decide when Shuri, with the help Riri and Okoye, will win against Namor's attacks.**
 
@@ -449,7 +493,7 @@ and snap it inside the new score event.
 ``||scene: set background image to [ ]||``<br/>
 and drop it in at **the end** of the same event.
 
-- :paint brush: Click the empty grey square and switch to **My Assets** to select the Boston Bridge scene.
+- :paint brush: Click the empty grey square and switch to **My Assets** to select the **Boston Bridge scene**.
 
 ```blocks
 let Namor: Sprite = null
@@ -461,7 +505,7 @@ info.onScore(20, function () {
 
 
 
-## {Step 18}
+## {Step 20}
 
 **Celebrate the victory!**
 
@@ -471,15 +515,15 @@ Make defeating Namor a much more dramatic event. Add some effects and messages t
 ---
 
 
-- :tree: Get a <br/>``||scene:start screen [confetti] effect||``<br/> from ``||scene:Scene||`` and place it inside at **the end** of the score event.
+- :tree: Get a <br/>``||scene:start screen [confetti] effect||``<br/> from ``||scene:Scene||`` and place it inside at **the end** of the ``||info(noclick):on score 20||`` event.
 
 - :paper plane: From the ``||sprites:Sprites||`` category, drag<br/>
 ``||sprites:[mySprite] say [":)"]||``<br/>
-into the ``||info(noclick):on score 100||`` block already in the workspace.
+into the **end of** the ``||info(noclick):on score 20||`` block already in the workspace.
 
 - :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):Shuri||``.
 
-- :mouse pointer: Click the smiley face in the circle and enter **WAKANDA FOREVER**, then click the (+) icon and set the display time to **2000** ms.
+- :mouse pointer: Click the smiley face in the circle and enter **WAKANDA FOREVER!**, then click the (+) icon and set the display time to **2 seconds** (it will automatically change to 2000 ms.)
 
 
 ```blocks
@@ -494,7 +538,7 @@ info.onScore(20, function () {
 ```
 
 
-## {Step 19}
+## {Step 21}
 
 **🎉 Congratulations**
 
