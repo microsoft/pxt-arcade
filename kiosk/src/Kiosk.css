@@ -19,7 +19,7 @@ html, body {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background: var(--black-color);
+    background: linear-gradient(var(--secondary-dark-color), var(--black-color));
     font-family: 'Press Start 2P';
     color: var(--main-text-color);
 }
