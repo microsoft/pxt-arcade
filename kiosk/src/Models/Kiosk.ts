@@ -5,6 +5,7 @@ import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { runInThisContext } from "vm";
+import { getGameDetailsAsync } from "../BackendRequests"
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -26,14 +27,14 @@ export class Kiosk {
     private lockedGameId?: string;
     private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
-    private addedGameDescription: string = "Made with love in MakeCode Arcade";
+    private defaultGameDescription = "Made with love in MakeCode Arcade";
 
     constructor(clean: boolean, locked: boolean) {
         this.clean = clean;
         this.locked = locked;
     }
 
-    async downloadGameList(): Promise<void> {
+    async downloadGameListAsync(): Promise<void> {
         if (!this.clean) {
             let url = configData.GameDataUrl;
             if (configData.Debug) {
@@ -59,10 +60,39 @@ export class Kiosk {
         this.addNewGamesToList();
     }
 
-    saveNewGame(gameId: string): GameData | undefined {
+    getGameName(name: string) {
+        if (name.toLowerCase() === "untitled") {
+            return "Kiosk Game";
+        }
+        
+        return name;
+    }
+
+    getGameDescription(desc: string) {
+        if (desc.length === 0) {
+            return this.defaultGameDescription
+        }
+        
+        return desc;
+    }
+
+    async saveNewGameAsync(gameId: string): Promise<GameData | undefined> {
         const allAddedGames = this.getAllAddedGames();
         if (!allAddedGames[gameId]) {
-            const newGame = new GameData(gameId, 'Kiosk Game', this.addedGameDescription, "None");
+            let gameName;
+            let gameDescription;
+
+            try {
+                const gameDetails = await getGameDetailsAsync(gameId);
+                gameName = this.getGameName(gameDetails.name);
+                gameDescription = this.getGameDescription(gameDetails.description);
+            } catch (error) {
+                gameName = "Kiosk Game";
+                gameDescription = this.defaultGameDescription;
+            }
+
+            const newGame = new GameData(gameId, gameName, gameDescription, "None");
+
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;
             localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
@@ -118,7 +148,7 @@ export class Kiosk {
             return this.initializePromise;
         }
 
-        this.initializePromise = this.downloadGameList();
+        this.initializePromise = this.downloadGameListAsync();
 
         this.intervalId = setInterval(() => this.gamePadLoop(), configData.GamepadPollLoopMilli);
 
