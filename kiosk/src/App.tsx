@@ -10,7 +10,7 @@ import ScanQR from './Components/ScanQR';
 import QrSuccess from './Components/QrSuccess';
 
 const url = window.location.href;
-const clean = !!/--clean/.exec(url);
+const clean = !!/clean(?:[:=])1/.test(url);
 const locked = !!/lock(?:[:=])1/i.test(url);
 
 const kioskSingleton: Kiosk = new Kiosk(clean, locked);
