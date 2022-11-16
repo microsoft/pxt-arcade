@@ -88,6 +88,10 @@ h2 {
     margin-left: 26%;
 }
 
+.locked {
+    margin-left: 0;
+}
+
 .kioskButton {
     padding: 1.25em 1em;
     font-family: inherit;

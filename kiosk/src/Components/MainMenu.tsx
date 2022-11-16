@@ -11,6 +11,7 @@ interface IProps {
 
 const MainMenu: React.FC<IProps> = ({ kiosk }) => {
     const [buttonSelected, setButtonState] = useState(false);
+    const topBarClassName = `mainMenuTopBar${kiosk.locked ? " locked" : ""}`;
 
     const updateLoop = () => {
         if (!buttonSelected && kiosk.gamepadManager.isUpPressed()) {
@@ -25,24 +26,29 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
     }
 
     useEffect(() => {
-        let intervalId: any = null;
-        intervalId = setInterval(() => {
-            updateLoop();
-        }, configData.GamepadPollLoopMilli);
-        
-        return () => {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-        };
-
+        if (!kiosk.locked) {
+            let intervalId: any = null;
+            intervalId = setInterval(() => {
+    
+                updateLoop();
+            }, configData.GamepadPollLoopMilli);
+            
+            return () => {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                }
+            };
+        }
     });
 
     return(
         <div className="mainMenu">
-            <nav className="mainMenuTopBar">
+            <nav className={topBarClassName}>
                 <h1 className="mainMenuHeader">SELECT A GAME</h1>
-                <AddGameButton selected={buttonSelected} content="Add game" />
+                {
+                    !kiosk.locked &&
+                    <AddGameButton selected={buttonSelected} content="Add your game" />
+                }
             </nav>
             <GameList kiosk={kiosk} buttonSelected={buttonSelected} />
             {/* <HighScoresList kiosk={kiosk} /> */}
