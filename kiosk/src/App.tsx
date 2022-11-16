@@ -9,9 +9,11 @@ import AddingGame from './Components/AddingGame';
 import ScanQR from './Components/ScanQR';
 import QrSuccess from './Components/QrSuccess';
 
-const firstHash = window.location.pathname;
-const clean = /--clean/.exec(firstHash);
-const kioskSingleton: Kiosk = new Kiosk(!!clean);
+const url = window.location.href;
+const clean = !!/clean(?:[:=])1/.test(url);
+const locked = !!/lock(?:[:=])1/i.test(url);
+
+const kioskSingleton: Kiosk = new Kiosk(clean, locked);
 kioskSingleton.initialize().catch(error => alert(error));
 
 function App() {
