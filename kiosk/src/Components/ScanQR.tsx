@@ -29,10 +29,12 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     const checkUrl = async () => {
         const input = document.getElementById("kiosk-share-link") as HTMLInputElement;
-        const shareLink = input.value;
-        const shareId = /\/([^\/]+)\/?$/.exec(shareLink)?.[1];
-        if (shareId) {
+        const inputValue = input.value;
+        const shareLink = /(https:\/\/)((arcade\.makecode\.com\/)|(makecode\.com\/))((?:S\d{5}-\d{5}-\d{5}-\d{5})|(?:_[a-zA-Z0-9]+))/.exec(inputValue);
+        let shareId;
+        if (shareLink) {
             setLinkError(false);
+            shareId = /\/([^\/]+)\/?$/.exec(inputValue)?.[1];
             try {
                 await addGameToKioskAsync(kioskId, shareId);
                 kiosk.navigate(KioskState.QrSuccess);
@@ -48,17 +50,26 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     return (
         <div className="scanQrPage">
             <h2>Add game to </h2>
-            <h2>Kiosk {kioskId}</h2>
+            <h1>Kiosk {kioskId}</h1>
             <div className="scanInstructions">
                 <ol>
-                    <li>Open your game on your computer</li>
+                    <li>Open your game on the arcade editor</li>
                     <li>Go to share your game</li>
-                    <li>Scan QR code from the share dailog</li>
+                    <li>Select 'Share Project'</li>
+                    <li>
+                        {
+                            !scannerVisible &&
+                            <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
+                        }
+
+                        {
+                            scannerVisible &&
+                            "Scan QR code "
+                        }
+                         from the share dailog
+                    </li>
                 </ol>
-                {
-                    !scannerVisible &&
-                    <button className="scanQrButton" onClick={renderQrScanner} >Scan qr code</button>
-                }
+
                 <div id="qrReader"></div>
                 {
                     !phoneWidth &&
@@ -68,9 +79,6 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                         <input type="url"
                             id="kiosk-share-link"
                             placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
-                            pattern="https:///arcade.makecode.com/.*"
-                            maxLength={perisistentShareLen}
-                            minLength={regularShareLen}
                             spellCheck={false}
                             required
                             title="Share Link"
