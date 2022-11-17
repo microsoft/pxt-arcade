@@ -6,7 +6,7 @@
 
 In this tutorial, we'll show you how to create your own Arrow Battle game.
 
-![Play Arrow Battle](/static/tutorials/arrow/arrow.gif "This is how you play Arrow Battle")
+![Play Arrow Battle](/static/tutorials/arrows/battle.gif "This is how you play Arrow Battle")
 
 
 
@@ -15,23 +15,32 @@ In this tutorial, we'll show you how to create your own Arrow Battle game.
 
 **Ready to start coding?**
 
-Let's set a nice background color.
+Let's set a background for both players.
 
 
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab
 ```block
-scene.setBackgroundColor(9)
+scene.setBackgroundImage(img`.`)
 ```
 then snap it inside the empty <br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
 
+- :mouse pointer: Click the empty grey square inside the <br/>
+``||scene(noclick):set background image to [ ]||`` <br/>
+block and switch to the **My Assets** library.<br/>
+![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
+Choose the colorful image called **2pbg**.
+![Choose the color-blocked background](/static/tutorials/arrows/2pbg.png " ")
+
+
+
 #### ~ tutorialhint
 
 ```blocks
 //@highlight
-scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`2pbg`)
 ```
 
 
@@ -43,7 +52,7 @@ scene.setBackgroundColor(9)
 ```block
 bundles.wrap1(function () {
     mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(img`.`, SpriteKind.Player))
-    mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(45, 90)
+    mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
 })
 ```
 bundle into **the end** of the<br/>
@@ -56,6 +65,7 @@ container already in the workspace.
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
 Choose the red duck called **p1**.
+![Choose the red duck](/static/tutorials/arrows/p1.png " ")
 
 
 
@@ -66,7 +76,7 @@ scene.setBackgroundColor(9)
 //@highlight
 bundles.wrap1(function () {
     mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(assets.image`p1`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(45, 90)
+mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
 })
 ```
 
@@ -81,7 +91,7 @@ mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(45, 90)
 ```block
 bundles.wrap2(function () {
     mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(img`.`, SpriteKind.Player))
-    mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(110, 90)
+    mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
 })
 ```
 bundle into **the end** of the<br/>
@@ -94,6 +104,7 @@ container already in the workspace.
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
 Choose the blue duck called **p2**.
+![Choose the blue duck](/static/tutorials/arrows/p2.png " ")
 
 
 #### ~ tutorialhint
@@ -102,12 +113,12 @@ Choose the blue duck called **p2**.
 scene.setBackgroundColor(9)
 bundles.wrap1(function () {
    mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(assets.image`p1`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(45, 90)
+mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
 })
 //@highlight
 bundles.wrap2(function () {
     mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(assets.image`p2`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(110, 90)
+mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
 })
 ```
 
@@ -143,7 +154,7 @@ bundles.wrap3(function () {
     img`.`
     ]
     arrow = sprites.create(img`.`, SpriteKind.Player)
-    arrow.setPosition(80, 23)
+    arrow.setPosition(80, 30)
 })
 ```
 bundle into **the end** of the<br/>
@@ -190,7 +201,7 @@ bundles.wrap3(function () {
     assets.image`3`
     ]
     arrow = sprites.create(img`.`, SpriteKind.Player)
-    arrow.setPosition(80, 23)
+    arrow.setPosition(80, 30)
 })
 ```
 
@@ -404,13 +415,86 @@ mp.onButtonEvent(mp.MultiplayerButton.Down, ControllerButtonEvent.Pressed, funct
 
 
 
+## {13. Check Your Game!}
+
+
+- :binoculars: Try playing your game!
+
+Your player should change to whichever arrow you're pressing, and you should get points when your arrow matches the arrow at the top.
+
+
+
+
+## {14. Add the finishing touches!}
+
+To finish your game, let's add a game screen that keeps the game from starting until everyone is ready.  Also, we'll add a timer and a tone that lets everyone know it's time to play!
+
+- :suitcase: Open the ``||bundles:Bundles||`` category and drag the
+```block
+bundles.wrap4(function () {
+    game.splash("Be the quickest to match", "arrow directions to win!")
+    carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+    music.playSoundEffect(music.createSoundEffect(WaveShape.Triangle, 4750, 4783, 255, 0, 449, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
+})
+```
+bundle into **the end** of the<br/>
+``||loops(noclick): on start||`` <br/>
+container already in the workspace.
+
+
+#### ~ tutorialhint
+
+```blocks
+scene.setBackgroundColor(9)
+bundles.wrap1(function () {
+    let player1 = sprites.create(assets.image`p1`, SpriteKind.Player)
+    player1.setPosition(45, 90)
+})
+bundles.wrap2(function () {
+    let player2 = sprites.create(assets.image`p2`, SpriteKind.Player)
+    player2.setPosition(110, 90)
+})
+bundles.wrap3(function () {
+    let arrow: Sprite = null
+    let arrow_list = [
+    assets.image`0`,
+    assets.image`1`,
+    assets.image`2`,
+    assets.image`3`
+    ]
+    arrow = sprites.create(img`.`, SpriteKind.Player)
+    arrow.setPosition(80, 30)
+})
+//@highlight
+bundles.wrap4(function () {
+    game.splash("Be the quickest to match", "arrow directions to win!")
+    carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+    music.playSoundEffect(music.createSoundEffect(WaveShape.Triangle, 4750, 4783, 255, 0, 449, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
+})
+```
+
+
+
+## {15. Play Game!}
+
+
+- :binoculars: Play your finished game!
+
+You can play against someone else on the same keyboard using the arrow keys for player 1 and **I, J, K, L** for **player 2**.
+
+![Play on the same keyboard](/static/tutorials/arrows/key.png " ")
+
+
+
+
+
 ## {11. Finale}
 
 **🎉 Way to Go 🎉**
 
-You have started your very own Whack-the-Mole game.
+You have finished your very own Arrow Battle!
 
-When you're ready, click **Done** to return to the skillmap so you can add a rubber hammer!
+When you're ready, sign-in and click **Done** to challenge a friend to a multiplayer battle online!
 
 
 
@@ -428,15 +512,13 @@ game.onUpdateInterval(500, function () {
 
 bundles.wrap1(function () {
     mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(img`.`, SpriteKind.Player))
-    mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(45, 90)
+    mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
 })
 
 bundles.wrap2(function () {
     mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(img`.`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(110, 90)
+mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
 })
-
-scene.setBackgroundColor(9)
 
 bundles.wrap3(function () {
     arrow_list = [
@@ -446,7 +528,7 @@ bundles.wrap3(function () {
     img`.`
     ]
     arrow = sprites.create(img`.`, SpriteKind.Player)
-    arrow.setPosition(80, 23)
+    arrow.setPosition(80, 30)
 })
 
 mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, function (player) {
@@ -454,6 +536,12 @@ mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, functio
     if (arrow.image.equals(img`.`)) {
         mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
     }
+})
+
+bundles.wrap4(function () {
+game.splash("Be the quickest to match", "arrow directions to win!")
+    carnival.startCountdownGame(15, carnival.WinTypes.Multi)
+    music.playSoundEffect(music.createSoundEffect(WaveShape.Triangle, 4750, 4783, 255, 0, 449, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
 })
 
 ```
@@ -484,7 +572,6 @@ mp.onButtonEvent(mp.MultiplayerButton.Right, ControllerButtonEvent.Pressed, func
     }
 })
 let arrow: Sprite = null
-scene.setBackgroundColor(9)
 let arrow_list = [
 assets.image`0`,
 assets.image`1`,
@@ -509,11 +596,11 @@ arrow = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     `, SpriteKind.Player)
-arrow.setPosition(80, 23)
+arrow.setPosition(80, 30)
 mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(assets.image`p1`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(45, 90)
+mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
 mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(assets.image`p2`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(110, 90)
+mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
 game.showLongText("Be the quickest to match the arrow directions to win!", DialogLayout.Bottom)
 carnival.startCountdownGame(15, carnival.WinTypes.Multi)
 music.playSoundEffect(music.createSoundEffect(WaveShape.Triangle, 4750, 4783, 255, 0, 449, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
@@ -521,7 +608,8 @@ game.onUpdateInterval(500, function () {
     arrow.setImage(arrow_list._pickRandom())
 })
 
-
+game.splash("Be the quickest to match", "arrow directions to win!")
+scene.setBackgroundImage(img`.`)
 ```
 
 
@@ -537,7 +625,7 @@ namespace bundles{
     /**
     * just run the code
     */
-    //% block="create player 1"  weight=200
+    //% block="create player 1"  weight=300
     //% handlerStatement=1
     export function wrap1(handler: () => void) {
         handler();
@@ -546,7 +634,7 @@ namespace bundles{
     /**
     * just run the code
     */
-    //% block="create player 2"  weight=150
+    //% block="create player 2"  weight=200
     //% handlerStatement=1
     export function wrap2(handler: () => void) {
         handler();
@@ -555,13 +643,20 @@ namespace bundles{
     /**
     * just run the code
     */
-    //% block="create arrow"
+    //% block="create arrow"  weight=100
     //% handlerStatement=1
     export function wrap3(handler: () => void) {
         handler();
     }
 
-
+    /**
+    * just run the code
+    */
+    //% block="finishing touches"
+    //% handlerStatement=1
+    export function wrap4(handler: () => void) {
+        handler();
+    }
 }
 
 ```
@@ -571,11 +666,11 @@ namespace bundles{
 {
   "README.md": " ",
   "assets.json": "",
-  "images.g.jres": "{\n    \"image1\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzAAAAAAAAMBEDAAAAAAATMQAAAAAAMBEDAAAAAAATMTMzMwMAMBERERERMQAwERERERExAAATMTMzMwMAADARAwAAAAAAABMxAAAAAAAAMBEDAAAAAAAAMwAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"0\"\n    },\n    \"image2\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAMAMAAAAAAAATMQAAAAAAMBERAwAAAAATERExAAAAMBETMREDAAATMRMxEzEAABMDEzEwMQAAMAATMQADAAAAABMxAAAAAAAAEzEAAAAAAAATMQAAAAAAABMxAAAAAAAAMAMAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"1\"\n    },\n    \"image3\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAwAAAAAAABMxAAAAAAAAEzEAAAAAAAATMQAAAAAAABMxAAAAADAAEzEAAwAAEwMTMTAxAAATMRMxEzEAADAREzERAwAAABMRETEAAAAAMBERAwAAAAAAEzEAAAAAAAAwAwAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"2\"\n    },\n    \"image4\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMwAAAAAAADARAwAAAAAAABMxAAAAAAAAMBEDAAAwMzMzEzEAABMREREREQMAExERERERAwAwMzMzEzEAAAAAADARAwAAAAAAEzEAAAAAADARAwAAAAAAADMAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"3\"\n    },\n    \"image5\": {\n        \"data\": \"hwQQABAAAAAAAAAAu8wAAAAAALC0tAwAAAAAsERMxAAAAACwJMK0DAAAu0srQkwMALArIisiTAwAuyIitCJLDAArFCQitEQMACvxLyIiQgywK/8rJSIiDCsrIlQlIiIMsitCVCUiIgsLsFRVJSKyCwAAz1W1IrQAAAAAUAu7CwAAAACwAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"p1\"\n    },\n    \"image6\": {\n        \"data\": \"hwQQABAAAAAAAADAAAAAAAAAAEAMzAwAAADwRMSIxgAMwEZEhIjIDMiMaEaEiIgMjIyIRoSIiA/AjP+MhIiIDwCM8Y+IiGgPAIwWhojGZg8AzIiIxohsDwDAjIiMiG8PAADMbIxobw8AAADAhvjGDwAAAMBmb/YAAAAAwMbGDwAAAAAAzP8AAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"p2\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}",
-  "images.g.ts": "// Auto-generated code. Do not edit.\nnamespace myImages {\n\n    helpers._registerFactory(\"image\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"image1\":\n            case \"0\":return img`\n. . . . . . . . . . . . . . . . \n. . . . . . . c c . . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . c 4 4 4 4 c . . . . . \n. . . . c 4 4 4 4 4 4 c . . . . \n. . . c 4 4 c 4 4 c 4 4 c . . . \n. . c 4 4 c c 4 4 c c 4 4 c . . \n. . c 4 c . c 4 4 c . c 4 c . . \n. . . c . . c 4 4 c . . c . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . . c c . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n`;\n            case \"image2\":\n            case \"1\":return img`\n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . c c . . . . . . . . \n. . . . . c 4 4 c . . . . . . . \n. . . . c 4 4 c . . . . . . . . \n. . . c 4 4 c . . . . . . . . . \n. . c 4 4 c c c c c c c c . . . \n. c 4 4 4 4 4 4 4 4 4 4 4 c . . \n. c 4 4 4 4 4 4 4 4 4 4 4 c . . \n. . c 4 4 c c c c c c c c . . . \n. . . c 4 4 c . . . . . . . . . \n. . . . c 4 4 c . . . . . . . . \n. . . . . c 4 4 c . . . . . . . \n. . . . . . c c . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n`;\n            case \"image3\":\n            case \"2\":return img`\n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . c c . . . . . . \n. . . . . . . c 4 4 c . . . . . \n. . . . . . . . c 4 4 c . . . . \n. . . . . . . . . c 4 4 c . . . \n. . . c c c c c c c c 4 4 c . . \n. . c 4 4 4 4 4 4 4 4 4 4 4 c . \n. . c 4 4 4 4 4 4 4 4 4 4 4 c . \n. . . c c c c c c c c 4 4 c . . \n. . . . . . . . . c 4 4 c . . . \n. . . . . . . . c 4 4 c . . . . \n. . . . . . . c 4 4 c . . . . . \n. . . . . . . . c c . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n`;\n            case \"image4\":\n            case \"3\":return img`\n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . c c . . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . c . . c 4 4 c . . c . . . \n. . c 4 c . c 4 4 c . c 4 c . . \n. . c 4 4 c c 4 4 c c 4 4 c . . \n. . . c 4 4 c 4 4 c 4 4 c . . . \n. . . . c 4 4 4 4 4 4 c . . . . \n. . . . . c 4 4 4 4 c . . . . . \n. . . . . . c 4 4 c . . . . . . \n. . . . . . . c c . . . . . . . \n. . . . . . . . . . . . . . . . \n`;\n            case \"image5\":\n            case \"p1\":return img`\n. . . . . . . . . . b 2 b . . . \n. . . . . . . . . b 2 b . . . . \n. . . . . . b b b b b b . . . . \n. . . . . b b 2 2 2 2 2 b . . . \n. . . . b b 2 4 1 f 2 2 4 f . . \n. . . . b 2 2 1 f f 2 4 5 c . . \n. . . . b 2 2 4 f b 4 4 5 5 . . \n. b b b 4 2 2 2 2 2 5 5 5 5 5 b \nb 4 4 4 b b 4 2 2 5 5 5 5 5 b . \nb b 4 2 2 2 b 2 2 2 2 2 2 b . . \nc 4 c 2 2 2 2 4 2 2 2 2 2 2 b . \nc b 4 c 4 2 2 b 2 2 2 2 2 2 b . \n. c 4 4 c c b 4 2 2 2 2 2 4 b . \n. . c b 4 4 4 4 4 2 2 2 b b . . \n. . . c c c c c c c c b b . . . \n. . . . . . . . . . . . . . . . \n`;\n            case \"image6\":\n            case \"p2\":return img`\n. . . c 8 c . . . . . . . . . . \n. . . . c 8 c . . . . . . . . . \n. . . . c c c c c c . . . . . . \n. . . c 8 8 8 8 8 c c . . . . . \n. . . 6 8 8 f 1 6 8 c c . . . . \n. . f 4 6 8 f f 1 8 8 c . . . . \n. . 4 4 6 6 c f 6 8 8 c . . . . \nc 4 4 4 4 4 8 8 8 8 8 6 c c c . \n. c 4 4 4 4 4 8 8 6 c c 6 6 6 c \n. . c 8 8 8 8 8 8 c 8 8 8 6 c c \n. c 8 8 8 8 8 8 6 8 8 8 8 f 6 f \n. c 8 8 8 8 8 8 c 8 8 6 f 6 c f \n. c 6 8 8 8 8 8 6 c f f 6 6 f . \n. . c c 8 8 8 6 6 6 6 6 c f . . \n. . . c c f f f f f f f f . . . \n. . . . . . . . . . . . . . . . \n`;\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"animation\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"song\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n",
-  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_MultiplayerState\" id=\"=1xbc21ccB7NUhS(5`Ki\">Score</variable><variable type=\"KIND_MultiplayerState\" id=\"6-rlP@ewOQDtR;M@duE8\">Lives</variable><variable type=\"KIND_SpriteKind\" id=\";dijmdxVLjO~dLVL(}9y\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"Y-br7v.[i[8lDKr|eB(x\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"W.qCU3r3i;6;dQXv!/IG\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"9+i2dTY`pUfneLA2@sM@\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"`XQd7*{=*5wyvE*cO=GL\">Text</variable><variable type=\"KIND_SpriteKind\" id=\"=or+x`]et9iR:p^1YW)+\">StatusBar</variable><variable type=\"KIND_SpriteKind\" id=\"2{FCq@Ui6+cs2H{_5([4\">Ball</variable><variable type=\"KIND_SpriteKind\" id=\"5R=_bw-sDzN@dP!kHULl\">Booth</variable><variable type=\"KIND_SpriteKind\" id=\"SG#%o38H:*fLb7MCzo|X\">Mouse</variable><variable type=\"KIND_SpriteKind\" id=\"(jV%f~ywHn:|i-+An%Ht\">Crosshair</variable><variable type=\"KIND_SpriteKind\" id=\"jH3z`?7pP!cQ3*^oFcb=\">Moon</variable><variable id=\"X?K2NbsJyJ(Rfbim*a/.\">direction</variable><variable id=\"d%aqGf[M5%;g*:VSu~!`\">player2</variable><variable id=\"eM~W6VE4dc(EqK@t%?6*\">arrow</variable><variable id=\";Oq|iUwe18gsFcdd$6EQ\">arrow_list</variable><variable id=\"$/VX^4EW.%Pb7gH6w{7T\">mySprite</variable><variable id=\"=nV-EWxfErrCr/qPk1.`\">mySprite2</variable><variable id=\"djdrir#(xN;Y^]P,nOt3\">picture</variable></variables></xml>",
+  "images.g.jres": "{\n    \"image5\": {\n        \"data\": \"hwQSABIAAAAAAAAAEBEBAAAAAAAAAAAAscscAAAAAAAAAAAQS0vLAQAAAAAAAAAQS8REHAAAAAAAABARSyJMywEAAAAAALG7tCLExAEAAAAAELsisiLCxAEAAAAAsSsiQiuyxAEAAAAAsUJBIkJLxAEAAAAAsRL/IiIixAEAAAAQu/K/UiIiwgEAAACxsiJCVSIiwgEAAAAhuyJEVSIisgEAAACxEUtVVSIiuwEAAAAQAPFcVStCGwAAAAAAABARtbG7AQAAAAAAAAAQGxARAAAAAAAAAAAAAQAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"p1\"\n    },\n    \"image6\": {\n        \"data\": \"hwQSABIAAAAAAAAAAQAAAAAAAAAAAAAQHBARAAAAAAAAAAARxMHMAQAAAAAQABFPRIxoHAAAAADBEWxERIiIzAEAAACBzIhmRIiIyAEAAADByIhoRIiI+AEAAAAQzPjPSIiI+AEAAAAAwRj/iIiI9gEAAAAAwWhhiGhs9gEAAAAAwYyIaIzI9gEAAAAAEMyIyIj49gEAAAAAAMHMxoj29gEAAAAAABARbIhv/AEAAAAAAAAQbPZmHwAAAAAAAAAQbGz8AQAAAAAAAAAAwfwfAAAAAAAAAAAAEBEBAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"p2\"\n    },\n    \"image7\": {\n        \"data\": \"hwSgAHgAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////8vIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIi8v////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////+PiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI+P////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"2pbg\"\n    },\n    \"image1\": {\n        \"data\": \"hwQSABIAAAAAAAAAzAAAAAAAAAAAAADAEQwAAAAAAAAAAAAcEQwAAAAAAAAAAMAREQwAAAAAAAAAABwRwQAAAAAAAAAAwBERDAAAAAAAAAAAHBHBzMzMzAAAAADAEREREREREQwAAAAcEREREREREcEAAAAcEREREREREcEAAADAEREREREREQwAAAAAHBHBzMzMzAAAAAAAwBERDAAAAAAAAAAAABwRwQAAAAAAAAAAAMAREQwAAAAAAAAAAAAcEQwAAAAAAAAAAADAEQwAAAAAAAAAAAAAzAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"0\"\n    },\n    \"image2\": {\n        \"data\": \"hwQSABIAAAAAAAAAzAAAAAAAAAAAAADAEQwAAAAAAAAAAAAcEcEAAAAAAAAAAMAREREMAAAAAAAAABwRERHBAAAAAAAAwBERERERDAAAAAAAHBERERERwQAAAADAEREcEcEREQwAAAAcEcEcEcEcEcEAAAAcEQwcEcHAEcEAAADAzAAcEcEAzAwAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAADAEQwAAAAAAAAAAAAAzAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"1\"\n    },\n    \"image3\": {\n        \"data\": \"hwQSABIAAAAAAAAAzAAAAAAAAAAAAADAEQwAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAAAAAAAcEcEAAAAAAADAzAAcEcEAzAwAAAAcEQwcEcHAEcEAAAAcEcEcEcEcEcEAAADAEREcEcEREQwAAAAAHBERERERwQAAAAAAwBERERERDAAAAAAAABwRERHBAAAAAAAAAMAREREMAAAAAAAAAAAcEcEAAAAAAAAAAADAEQwAAAAAAAAAAAAAzAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"2\"\n    },\n    \"image4\": {\n        \"data\": \"hwQSABIAAAAAAAAAzAAAAAAAAAAAAADAEQwAAAAAAAAAAADAEcEAAAAAAAAAAADAEREMAAAAAAAAAAAAHBHBAAAAAAAAAAAAwBERDAAAAAAAzMzMzBwRwQAAAADAEREREREREQwAAAAcEREREREREcEAAAAcEREREREREcEAAADAEREREREREQwAAAAAzMzMzBwRwQAAAAAAAAAAwBERDAAAAAAAAAAAHBHBAAAAAAAAAADAEREMAAAAAAAAAADAEcEAAAAAAAAAAADAEQwAAAAAAAAAAAAAzAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"3\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"2pbgs\"\n    }\n}",
+  "images.g.ts": "// Auto-generated code. Do not edit.\nnamespace 2pbgs {\n\n    helpers._registerFactory(\"image\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"image5\":\n            case \"p1\":return img`\n...........111....\n..........1b2b1...\n.......111b2b1....\n......1bbbbbb1....\n.....1bb22222b1...\n....1bb241f224f1..\n....1b221ff245c1..\n..111b224fb445511.\n.1bbb42222255555b1\n1b444bb42255555b1.\n1bb4222b222222b1..\n1c4c22224222222b1.\n1cb4c422b222222b1.\n.1c44ccb4222224b1.\n..1cb44444222bb1..\n...1ccccccccbb1...\n....1111111111....\n..................\n`;\n            case \"image6\":\n            case \"p2\":return img`\n....111...........\n...1c8c1..........\n....1c8c111.......\n....1cccccc1......\n...1c88888cc1.....\n...1688f168cc1....\n..1f468ff188c1....\n.114466cf688c111..\n1c44444888886ccc1.\n.1c44444886cc666c1\n..1c888888c8886cc1\n.1c88888868888f6f1\n.1c888888c886f6cf1\n.1c6888886cff66f1.\n..1cc88866666cf1..\n...1ccffffffff1...\n....1111111111....\n..................\n`;\n            case \"image7\":\n            case \"2pbg\":return img`\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nfff2222222222222222222222222222222222222222222222222222222222222222222222222ffffffff8888888888888888888888888888888888888888888888888888888888888888888888888fff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\nffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff\n`;\n            case \"image1\":\n            case \"0\":return img`\n........cc........\n.......c11c.......\n......c1111c......\n.....c111111c.....\n....c11111111c....\n...c1111111111c...\n..c111111111111c..\n.c1111c1111c1111c.\nc1111cc1111cc1111c\nc111c.c1111c.c111c\n.ccc..c1111c..ccc.\n......c1111c......\n......c1111c......\n......c1111c......\n......c1111c......\n......c1111c......\n.......c11c.......\n........cc........\n`;\n            case \"image2\":\n            case \"1\":return img`\n........cc........\n.......c11c.......\n......c111c.......\n.....c1111c.......\n....c1111c........\n...c1111c.........\n..c1111ccccccccc..\n.c11111111111111c.\nc1111111111111111c\nc1111111111111111c\n.c11111111111111c.\n..c1111ccccccccc..\n...c1111c.........\n....c1111c........\n.....c1111c.......\n......c111c.......\n.......c11c.......\n........cc........\n`;\n            case \"image3\":\n            case \"2\":return img`\n........cc........\n.......c11c.......\n.......c111c......\n.......c1111c.....\n........c1111c....\n.........c1111c...\n..ccccccccc1111c..\n.c11111111111111c.\nc1111111111111111c\nc1111111111111111c\n.c11111111111111c.\n..ccccccccc1111c..\n.........c1111c...\n........c1111c....\n.......c1111c.....\n.......c111c......\n.......c11c.......\n........cc........\n`;\n            case \"image4\":\n            case \"3\":return img`\n........cc........\n.......c11c.......\n......c1111c......\n......c1111c......\n......c1111c......\n......c1111c......\n......c1111c......\n.ccc..c1111c..ccc.\nc111c.c1111c.c111c\nc1111cc1111cc1111c\n.c1111c1111c1111c.\n..c111111111111c..\n...c1111111111c...\n....c11111111c....\n.....c111111c.....\n......c1111c......\n.......c11c.......\n........cc........\n`;\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"animation\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"song\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n",
+  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_MultiplayerState\" id=\"~jb^96O[lq(e;_11?v{p\">Score</variable><variable type=\"KIND_MultiplayerState\" id=\":WodzJe9=91N?owh8:!f\">Lives</variable><variable type=\"KIND_SpriteKind\" id=\"?a(_IEB}R:F][$9~XscF\">Player</variable><variable type=\"KIND_SpriteKind\" id=\",XwoJ6]vHT6Ul_`[J8X3\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"74x+!yvoc}@HFnIdd8MO\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"A?#1tTfdcx%_~n+5j`|K\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"(R;|q2XZmY$RE88?mWd%\">Text</variable><variable type=\"KIND_SpriteKind\" id=\"r_,ZX(SsT@AFT0(lyp7y\">StatusBar</variable><variable type=\"KIND_SpriteKind\" id=\"9ob?~eBR_YUj+Z9/60S#\">Ball</variable><variable type=\"KIND_SpriteKind\" id=\"1E6tzW$l$3b?NvnYtJGJ\">Booth</variable><variable type=\"KIND_SpriteKind\" id=\":ic##;(MVpxI:c(r:*m#\">Mouse</variable><variable type=\"KIND_SpriteKind\" id=\"FNhLi%C+atMBORwQ;7ce\">Crosshair</variable><variable type=\"KIND_SpriteKind\" id=\"3rL@?xS?DA/K=GapAiVY\">Moon</variable><variable id=\",~Fccw*m{xLzs}Q+0?*1\">arrow</variable><variable id=\"E@-ndD@nv3-QiO+7[qC}\">arrow_list</variable><variable id=\"I4B@z)N5p*mq;Rta-F^B\">mySprite</variable><variable id=\"{#i}s}A#4i=-8s.G$9X2\">picture</variable></variables></xml>",
   "main.ts": "\n",
-  "pxt.json": "{\n    \"name\": \"Arrow Battle - Assets\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"carnival\": \"github:microsoft/arcade-carnival#v0.0.5\",\n        \"arcade-mp\": \"github:riknoll/arcade-mp#v0.0.2\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.11.37\",\n        \"tag\": \"v1.11.37\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/bf992d35ca2baeaa26d773aac7caad5a152c45aa\",\n        \"target\": \"1.11.37\",\n        \"pxt\": \"8.4.30\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n",
+  "pxt.json": "{\n    \"name\": \"Arrow Battle - Assets\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"carnival\": \"github:microsoft/arcade-carnival#v0.0.6\",\n        \"arcade-mp\": \"github:riknoll/arcade-mp#v0.1.0\",\n        \"Color Fading\": \"github:jwunderl/pxt-color#v0.2.2\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.11.37\",\n        \"tag\": \"v1.11.37\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/bf992d35ca2baeaa26d773aac7caad5a152c45aa\",\n        \"target\": \"1.11.37\",\n        \"pxt\": \"8.4.30\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n",
   "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
   "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
