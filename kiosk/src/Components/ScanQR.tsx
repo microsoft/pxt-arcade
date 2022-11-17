@@ -13,18 +13,14 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const fullUrlHash = window.location.hash;
     const urlHashList = /add-game:((?:[a-zA-Z0-9]{6}))/.exec(fullUrlHash);
     const screenWidth = window.screen.width;
-    console.log(screenWidth);
     const phoneWidth = screenWidth < 500;
-    console.log(phoneWidth);
     const kioskId = urlHashList?.[1];
     const [scannerVisible, setScanner] = useState(false);
     const [linkError, setLinkError] = useState(false);
-    const perisistentShareLen = 52;
-    const regularShareLen = 34;
 
     const renderQrScanner = () => {
-        setScanner(true);
         play(kiosk, kioskId!);
+        setScanner(true);
     }
 
     const checkUrl = async () => {
@@ -47,64 +43,47 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     }
 
-    const computerSteps = () => {
-        return (
-            <div className="scanInstructions">
-                <ol>
-                    <li>Go to edit your game in MakeCode Arcade</li>
-                    <li>Click the share button in the top right</li>
-                    <li>Select 'Share Project'</li>
-                    <li>Click on the QR code</li>
-                    <li>Use the button below to scan the game's QR code</li>
-                </ol>
-            </div>
-        )
-    }
-
-    const phoneSteps = () => {
-        return (
-            <div className="scanInstructions">
-                <ol>
-                    <li>Go to edit your game in MakeCode Arcade</li>
-                    <li>Share your game from the edior</li>
-                    <li>Use the button below to scan the game's QR code</li>
-                </ol>
-            </div>
-        )
-    }
-
     return (
         <div className="scanQrPage">
             <h2>Add game to </h2>
             <h1>Kiosk {kioskId}</h1>
-            {
-                !phoneWidth ? computerSteps() : phoneSteps()
-            }
-
-            {
-                !scannerVisible &&
-                <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
-            }
-            <div id="qrReader"></div>
-            {
-                !phoneWidth &&
-                <div className="linkOption">
-                    <p>Can't scan?</p>
-                    <label>Submit your game's share link here</label>
-                    <input type="url"
-                        id="kiosk-share-link"
-                        placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
-                        spellCheck={false}
-                        required
-                        title="Share Link"
-                        />
-                    <input type="submit" onClick={checkUrl}></input>
+            <div className="scanInstructions">
+                <div className="qrOption">
+                    <p className="scanIntro">Scan game's share QR code with the button below</p>
                     {
-                        linkError &&
-                        <p>Incorrect format for a share link</p>
+                        !scannerVisible &&
+                        <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
+                    }
+                    <div id="qrReader"></div>
+                    {
+                        scannerVisible &&
+                        <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
                     }
                 </div>
-            }
+
+                {
+                    !phoneWidth &&
+                    <div className="linkOption">
+                        <p>Can't scan?</p>
+                        <label>Submit share link here</label>
+                        <input type="url"
+                            id="kiosk-share-link"
+                            placeholder="Enter share link"
+                            spellCheck={false}
+                            required
+                            title="Share Link"
+                            />
+                        <input type="submit" onClick={checkUrl}></input>
+                        {
+                            linkError &&
+                            <p>Incorrect format for a share link</p>
+                        }
+                    </div>
+                }
+                <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
+                    How do I get a game's share link or QR code?
+                </a>
+            </div>
         </div>
     )
 }
