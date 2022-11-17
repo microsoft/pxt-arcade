@@ -14,6 +14,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     const [initialIndexRef, ] = useState(new PrimitiveRef(0));
     const [initialIndex, setInitialIndex] = useState(initialIndexRef.value);
     const [initials, setInitials] = useState(Array(configData.HighScoreInitialsLength + 1).join(configData.HighScoreInitialAllowedCharacters[0]));
+    let timesAPressed = 0;
 
     if (!kiosk.mostRecentScores || !kiosk.mostRecentScores.length) {
         throw new Error("Cannot load high score entry view without having recent scores");
@@ -44,8 +45,6 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     const renderInitials = (): JSX.Element[] => {
         const elements = [];
 
-        console.log("Initial index: " + initialIndexRef.value);
-
         for (let lcv = 0; lcv < configData.HighScoreInitialsLength; lcv++) {
             const thisIndex = lcv;
             elements.push(
@@ -57,11 +56,6 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         return elements;
     }
 
-    const previousInitial = () => {
-        initialIndexRef.value = (initialIndexRef.value + configData.HighScoreInitialsLength - 1) % configData.HighScoreInitialsLength;
-        setInitialIndex(initialIndexRef.value);
-    }
-
     const nextInitial = () => {
         initialIndexRef.value = (initialIndexRef.value + 1) % configData.HighScoreInitialsLength;
         setInitialIndex(initialIndexRef.value);
@@ -71,17 +65,14 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         const gamepadLoop = () => {
             if (kiosk.state !== KioskState.EnterHighScore) { return; }
 
-            if (kiosk.gamepadManager.isLeftPressed()) {
-                previousInitial();
-            }
-
-            if (kiosk.gamepadManager.isRightPressed()) {
-                nextInitial();
-            }
-
             if (kiosk.gamepadManager.isAButtonPressed()) {
-                kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
-                kiosk.showMainMenu();
+                console.log("the number of times a pressed");
+                console.log(initialIndexRef);
+                nextInitial();
+                if (initialIndex > 3) {
+                    kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
+                    kiosk.showMainMenu();
+                }
             }
 
             if (kiosk.gamepadManager.isBButtonPressed()) {

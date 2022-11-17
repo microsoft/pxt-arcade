@@ -5,7 +5,7 @@
     "EnterHighScoreDelayMilli": 2000,
     "HighScoresToKeep": 10,
     "HighScoreInitialsLength": 3,
-    "HighScoreInitialAllowedCharacters": "_ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "HighScoreInitialAllowedCharacters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     "GamepadPollLoopMilli": 150,
     "GamepadCacheMilli": 50,
     "GamepadAButtonPin": 0,
