@@ -388,7 +388,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Down, ControllerButtonEvent.Pressed, funct
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Replace both of the empty grey boxes with up arrows from **My Assets**.
+- :mouse pointer: Replace both of the empty grey boxes with down arrows from **My Assets**.
 
 ```blockconfig.local
     let arrow: Sprite = null

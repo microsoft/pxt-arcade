@@ -1,12 +1,12 @@
-# Arrow Battle
+# Horse Race
 ### @explicitHints true
 
 
-## Arrow Battle Intro @showdialog
+## Horse Race Intro @showdialog
 
-In this tutorial, we'll show you how to create your own Arrow Battle game.
+In this tutorial, we'll show you how to create your own Horse Race game.
 
-![Play Arrow Battle](/static/tutorials/horse/race.gif "This is how you play Arrow Battle")
+![Play Horse Race](/static/tutorials/horse/race.gif "This is how you play Horse Race")
 
 
 
@@ -64,8 +64,8 @@ container already in the workspace.
 ``||mp(noclick):set player 1||`` <br/>
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
-Choose the red duck called **p1**.
-![Choose the red duck](/static/tutorials/horse/p1.png " ")
+Choose the red horse called **p1**.
+![Choose the red horse](/static/tutorials/horse/p1.png " ")
 
 
 
@@ -103,8 +103,8 @@ container already in the workspace.
 ``||mp(noclick):set player 2||`` <br/>
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
-Choose the blue duck called **p2**.
-![Choose the blue duck](/static/tutorials/horse/p2.png " ")
+Choose the blue hore called **p2**.
+![Choose the blue horse](/static/tutorials/horse/p2.png " ")
 
 
 #### ~ tutorialhint
@@ -156,7 +156,7 @@ container already in the workspace.
 
 
 - :mouse pointer: Click the empty grey square inside the <br/>
-``||scene(noclick):set background image to [ ]||`` <br/>
+``||variables(noclick):set [finish] to] [ ]||`` <br/>
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
 Choose the background called **finish**.
@@ -250,7 +250,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Finish, function (sprite, otherS
 
 
 
-## {13. Check Your Game!}
+## {10. Check Your Game!}
 
 
 - :binoculars: Go for the win!
@@ -259,9 +259,9 @@ Play your game against yourself using the **space bar** and **U key** on your ke
 
 
 
-## {14. Add the finishing touches!}
+## {11. Add the finishing touches!}
 
-To polish your game, let's add a game screen that keeps the game from starting until everyone is ready.  Also, we'll add a label and a tone that lets everyone know when it's time to play!
+To polish your game, let's add a game screen that keeps the game from starting until everyone is ready.  Also, we'll add a label and a tone to let everyone know when it's time to play!
 
 - :suitcase: Open the ``||bundles:Bundles||`` category and drag the
 ```block
