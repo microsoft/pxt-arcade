@@ -1,7 +1,7 @@
 /* -------- GLOBAL-ISH STYLING -------- */
 /* ----------------------------------- */
 :root {
-    --button-primary-color: #add8e6;
+    --button-primary-color: #AFF1FF;
     --main-text-color: #ffffff;
     --qr-code-button-color: #247aa0cf;
     --secondary-dark-color: #13455acf;
@@ -9,6 +9,8 @@
     --high-score-selector-color: #ffd700;
     --transparent-color: #11ffee00;
     --black-color: #050505;
+    --input-outline: #e5e7eb;
+    --button-underline: #10b7e5;
 }
 
 html, body {
@@ -83,7 +85,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-left: 28.5%;
+    margin-left: 26%;
 }
 
 .locked {
@@ -91,23 +93,25 @@ h2 {
 }
 
 .kioskButton {
-    width: 20em;
-    border-color: var(--button-primary-color);
+    padding: 1.25em 1em;
     font-family: inherit;
-    padding: 2em 0.5em;
-    color:var(--main-text-color);
-    border-radius: 0.75em;
-    border-width: 0.2em;
-    border-style: solid;
+    letter-spacing: 0.2rem;
+    background-color: var(--button-primary-color);
+    color: var(--black-color);
+    border-radius: 0.3em;
+    border-color: var(--transparent-color);
+    border-bottom: 0.5rem var(--button-underline) solid;
+    cursor: pointer;
 }
 
 .buttonSelected {
     background-color: var(--button-primary-color);
+    border:#ffd700 0.5rem solid;
 }
 
-.buttonUnselected {
+/* .buttonUnselected {
     background-color: var(--transparent-color);
-}
+} */
 
 /* -------- ADDING GAME PAGE STYLING -------- */
 /* ----------------------------------- */
@@ -128,6 +132,7 @@ h2 {
     flex-direction: column;
     align-items: baseline;
     width: 60%;
+    line-height: 200%;
 }
 
 .addGame h1 {
@@ -140,6 +145,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
@@ -151,15 +157,33 @@ h2 {
     justify-content: center;
 }
 
+.kioskLink a {
+    color: var(--main-text-color);
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.kioskLink {
+    margin: 2rem 0;
+    width: 55%;
+    text-align: center;
+    line-height: 170%;
+}
+
+.innerQRCodeContent h3 {
+    margin-bottom: -1.5rem;
+}
+
 .addGameContent {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
-    margin: 5% 0;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin-top: 1%;
+    margin-bottom: 3%;
 }
-
-
 
 /* -------- QR PAGES STYLING -------- */
 /* ----------------------------------- */
@@ -177,7 +201,14 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-height: 50%;
+}
+
+.qrOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
 }
 
 .scanQrPage h2 {
@@ -186,18 +217,22 @@ h2 {
 }
 
 .scanQrPage h1 {
-    margin-bottom: 0;
-    font-size: 2.5em;
+    margin-bottom: 2rem;
+    font-size: 2.25em;
 }
 
 .scanQrButton {
-    width: 20em;
-    border: none;
-    background-color: var(--qr-code-button-color);
-    padding: 2em 0.5em;
-    color: var(--main-text-color);
-    border-radius: 0.75em;
-    border-width: 0.2em;
+    padding: 1.25em 1em;
+    font-family: inherit;
+    letter-spacing: 0.2rem;
+    background-color: var(--button-primary-color);
+    color: var(--black-color);
+    border-radius: 0.3em;
+    border-color: var(--transparent-color);
+    border-bottom: 0.5rem var(--button-underline) solid;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 2rem;
 }
 
 .scanQrButton:hover {
@@ -219,14 +254,10 @@ h2 {
     align-items: center;
 }
 
-.scanInstructions ol {
-    padding-left: -1em;
-}
-
-.scanInstructions li {
-    padding: 1em 0;
-    margin-left: 1.5rem;
-    font-size: 1.10em;
+.scanIntro {
+    overflow-wrap: break-word;
+    text-align: center;
+    line-height: 1.5rem;
 }
 
 .qrSuccess {
@@ -240,6 +271,56 @@ h2 {
     font-size: 1.5em;
     letter-spacing: 0.25em;
     line-height: 1.5em;
+}
+
+.linkOption {
+    margin-top: 5rem;
+    border-color: var(--button-primary-color);
+    border-style: solid;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+.linkOption label {
+    display: block;
+}
+
+.linkOption input[type=url] {
+    margin-top: 1rem;
+    border-color: var(--button-primary-color);
+    width: 20rem;
+    height: 2em;
+    border-radius: 0.45em;
+    text-overflow: ellipsis;
+}
+
+.linkOption input[type=submit] {
+    margin-left: 0.25rem;
+    height: 2em;
+    border-radius: 0.45em;
+    background-color: var(--button-primary-color);
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    border-bottom: #10b7e5;
+    border-style: solid;
+    cursor: pointer;
+    color: var(--secondary-dark-color);
+}
+
+.shareHelp {
+    color: var(--main-text-color);
+    overflow: auto;
+    overflow-wrap: break-word;
+    font-family: 'Share';
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.scanTip {
+    overflow-wrap: break-word;
+    font-family: 'Share';
+    font-size: 1.25rem;
+    margin-top: 2rem;
 }
 
 /* -------- GAME LIST  STYLING -------- */
