@@ -57,7 +57,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                     <div id="qrReader"></div>
                     {
                         scannerVisible &&
-                        <p className="scanTip">Tip: Do not use the QR code you just scanned</p>
+                        <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
                     }
                 </div>
 
