@@ -372,3 +372,19 @@ h2 {
 .highScoreScore {
     text-align: right;
 }
+
+/* -------- GAME OVER STYLING -------- */
+/* ----------------------------------- */
+
+.gameOverButtons {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 5%
+}
+
+.gameOverPage {
+    margin-top: 15%;
+}
