@@ -201,7 +201,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-height: 70%;
+    max-height: 50%;
 }
 
 .scanQrPage h2 {
@@ -210,7 +210,7 @@ h2 {
 }
 
 .scanQrPage h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     font-size: 2.25em;
 }
 

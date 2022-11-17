@@ -47,52 +47,64 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     }
 
+    const computerSteps = () => {
+        return (
+            <div className="scanInstructions">
+                <ol>
+                    <li>Go to edit your game in MakeCode Arcade</li>
+                    <li>Click the share button in the top right</li>
+                    <li>Select 'Share Project'</li>
+                    <li>Click on the QR code</li>
+                    <li>Use the button below to scan the game's QR code</li>
+                </ol>
+            </div>
+        )
+    }
+
+    const phoneSteps = () => {
+        return (
+            <div className="scanInstructions">
+                <ol>
+                    <li>Go to edit your game in MakeCode Arcade</li>
+                    <li>Share your game from the edior</li>
+                    <li>Use the button below to scan the game's QR code</li>
+                </ol>
+            </div>
+        )
+    }
+
     return (
         <div className="scanQrPage">
             <h2>Add game to </h2>
             <h1>Kiosk {kioskId}</h1>
-            <div className="scanInstructions">
-                <ol>
-                    <li>Open your game on the arcade editor</li>
-                    <li>Go to share your game</li>
-                    <li>Select 'Share Project'</li>
-                    <li>
-                        {
-                            !scannerVisible &&
-                            <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
-                        }
+            {
+                !phoneWidth ? computerSteps() : phoneSteps()
+            }
 
-                        {
-                            scannerVisible &&
-                            "Scan QR code "
-                        }
-                         from the share dailog
-                    </li>
-                </ol>
-
-                <div id="qrReader"></div>
-                {
-                    !phoneWidth &&
-                    <div className="linkOption">
-                        <p>No phone?</p>
-                        <label>Submit share link here</label>
-                        <input type="url"
-                            id="kiosk-share-link"
-                            placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
-                            spellCheck={false}
-                            required
-                            title="Share Link"
-                            />
-                        <input type="submit" onClick={checkUrl}></input>
-                        {
-                            linkError &&
-                            <p>Incorrect format for a share link</p>
-                        }
-                    </div>
-                }
-
-
-            </div>
+            {
+                !scannerVisible &&
+                <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
+            }
+            <div id="qrReader"></div>
+            {
+                !phoneWidth &&
+                <div className="linkOption">
+                    <p>Can't scan?</p>
+                    <label>Submit your game's share link here</label>
+                    <input type="url"
+                        id="kiosk-share-link"
+                        placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
+                        spellCheck={false}
+                        required
+                        title="Share Link"
+                        />
+                    <input type="submit" onClick={checkUrl}></input>
+                    {
+                        linkError &&
+                        <p>Incorrect format for a share link</p>
+                    }
+                </div>
+            }
         </div>
     )
 }

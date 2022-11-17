@@ -55,7 +55,11 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             try {
                 const newKioskCode: string = await generateKioskCodeAsync();
                 setKioskCode(newKioskCode);
-                await addGameToKiosk(newKioskCode);
+                try {
+                    await addGameToKiosk(newKioskCode);
+                } catch (error) {
+                    throw new Error("Unable to add game to kioksk");
+                }
             }
             catch (error) {
                 setRenderQRCode(false);
@@ -132,8 +136,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 <div className="addInstructions">
                     <h2>How to upload your game</h2>
                     <ol>
-                        <li className="firstStep">Scan the QR code to the right with your phone<br/>-OR-<br/>Click the link under the QR code</li>
-                        <li>Use the page to scan your game's QR code</li>
+                        <li className="firstStep">Use your mobile device to scan the QR code<br/>-OR-<br/>Click the link under the QR code</li>
+                        <li>Follow the instructions on the newly opened page</li>
                         <li>If the game is uploaded successfully, your game will be launched here</li>
                     </ol>
                 </div>
