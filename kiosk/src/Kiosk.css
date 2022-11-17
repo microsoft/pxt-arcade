@@ -201,7 +201,14 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-height: 70%;
+}
+
+.qrOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
 }
 
 .scanQrPage h2 {
@@ -225,6 +232,7 @@ h2 {
     border-bottom: 0.5rem var(--button-underline) solid;
     cursor: pointer;
     margin-right: 1rem;
+    margin-top: 2rem;
 }
 
 .scanQrButton:hover {
@@ -246,14 +254,10 @@ h2 {
     align-items: center;
 }
 
-.scanInstructions ol {
-    padding-left: -1em;
-}
-
-.scanInstructions li {
-    padding: 1em 0;
-    margin-left: 1.5rem;
-    font-size: 1.10em;
+.scanIntro {
+    overflow-wrap: break-word;
+    text-align: center;
+    line-height: 1.5rem;
 }
 
 .qrSuccess {
@@ -301,6 +305,22 @@ h2 {
     border-style: solid;
     cursor: pointer;
     color: var(--secondary-dark-color);
+}
+
+.shareHelp {
+    color: var(--main-text-color);
+    overflow: auto;
+    overflow-wrap: break-word;
+    font-family: 'Share';
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.scanTip {
+    overflow-wrap: break-word;
+    font-family: 'Share';
+    font-size: 1.25rem;
+    margin-top: 2rem;
 }
 
 /* -------- GAME LIST  STYLING -------- */

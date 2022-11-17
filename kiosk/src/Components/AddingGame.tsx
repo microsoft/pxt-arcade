@@ -132,8 +132,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 <div className="addInstructions">
                     <h2>How to upload your game</h2>
                     <ol>
-                        <li className="firstStep">Scan the QR code to the right with your phone<br/>-OR-<br/>Click the link under the QR code</li>
-                        <li>Use the page to scan your game's QR code</li>
+                        <li>Use your mobile device to scan the QR code</li>
+                        <li>Use the new page to scan or enter your game's share code</li>
                         <li>If the game is uploaded successfully, your game will be launched here</li>
                     </ol>
                 </div>

@@ -13,18 +13,14 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const fullUrlHash = window.location.hash;
     const urlHashList = /add-game:((?:[a-zA-Z0-9]{6}))/.exec(fullUrlHash);
     const screenWidth = window.screen.width;
-    console.log(screenWidth);
     const phoneWidth = screenWidth < 500;
-    console.log(phoneWidth);
     const kioskId = urlHashList?.[1];
     const [scannerVisible, setScanner] = useState(false);
     const [linkError, setLinkError] = useState(false);
-    const perisistentShareLen = 52;
-    const regularShareLen = 34;
 
     const renderQrScanner = () => {
-        setScanner(true);
         play(kiosk, kioskId!);
+        setScanner(true);
     }
 
     const checkUrl = async () => {
@@ -52,33 +48,27 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
             <h2>Add game to </h2>
             <h1>Kiosk {kioskId}</h1>
             <div className="scanInstructions">
-                <ol>
-                    <li>Open your game on the arcade editor</li>
-                    <li>Go to share your game</li>
-                    <li>Select 'Share Project'</li>
-                    <li>
-                        {
-                            !scannerVisible &&
-                            <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
-                        }
+                <div className="qrOption">
+                    <p className="scanIntro">Scan game's share QR code with the button below</p>
+                    {
+                        !scannerVisible &&
+                        <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
+                    }
+                    <div id="qrReader"></div>
+                    {
+                        scannerVisible &&
+                        <p className="scanTip">Tip: Do not use the QR code you just scanned</p>
+                    }
+                </div>
 
-                        {
-                            scannerVisible &&
-                            "Scan QR code "
-                        }
-                         from the share dailog
-                    </li>
-                </ol>
-
-                <div id="qrReader"></div>
                 {
                     !phoneWidth &&
                     <div className="linkOption">
-                        <p>No phone?</p>
+                        <p>Can't scan?</p>
                         <label>Submit share link here</label>
                         <input type="url"
                             id="kiosk-share-link"
-                            placeholder="Ex: https://arcade.makecode.com/S36491-40385-33470-30269"
+                            placeholder="Enter share link"
                             spellCheck={false}
                             required
                             title="Share Link"
@@ -90,6 +80,11 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                         }
                     </div>
                 }
+                <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
+                    How do I get a game's share link or QR code?
+                </a>
+
+
 
 
             </div>
