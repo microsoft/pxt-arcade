@@ -103,11 +103,16 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
     const qrDivContent = () => {
         if (renderQRCode) {
+            const kioskUrl = `${kioskCodeUrl}#add-game:${kioskCode}`;
             return (
                 <div className="innerQRCodeContent">
-                    <QRCodeSVG value={`${kioskCodeUrl}#add-game:${kioskCode}`} />
                     <h3>10 minute Kiosk ID</h3>
-                    <h1>{kioskCode}</h1>
+                    <h1 className="kioskCode">{kioskCode}</h1>
+                    <QRCodeSVG value={kioskUrl} />
+                    <div className="kioskLink">
+                        <a target="_blank" href={kioskUrl}>{kioskUrl}</a>
+                    </div>
+
                 </div>
             )
         }
@@ -127,10 +132,9 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 <div className="addInstructions">
                     <h2>How to upload your game</h2>
                     <ol>
-                        <li>Scan the QR code to the right with your phone or webcam</li>
-                        <li>Open the link to scan your game's QR code</li>
-                        <li>Return to the Kiosk Main Menu</li>
-                        <li>You will find your game to the left of the GalgaMulti game</li>
+                        <li>Use your mobile device to scan the QR code</li>
+                        <li>Use the new page to scan or enter your game's share code</li>
+                        <li>If the game is uploaded successfully, your game will be launched here</li>
                     </ol>
                 </div>
 

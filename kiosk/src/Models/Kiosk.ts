@@ -25,9 +25,9 @@ export class Kiosk {
     private intervalId: any;
     private readonly allScoresStateKey: string = "S/all-scores";
     private lockedGameId?: string;
-    private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private defaultGameDescription = "Made with love in MakeCode Arcade";
+    launchedGame: string = "";
 
     constructor(clean: boolean, locked: boolean) {
         this.clean = clean;
@@ -229,6 +229,21 @@ export class Kiosk {
         this.onGameSelected();
     }
 
+    exitToEnterHighScore(): void {
+        const launchedGameHighs = this.getHighScores(this.launchedGame);
+        const currentHighScore = this.mostRecentScores[0];
+        const lastScore = launchedGameHighs[launchedGameHighs.length - 1]?.score;
+        if (launchedGameHighs.length === configData.HighScoresToKeep 
+            && lastScore 
+            && currentHighScore < lastScore) {
+                this.exitGame(KioskState.GameOver);
+
+        } else {
+            this.exitGame(KioskState.EnterHighScore);
+        }
+
+    }
+
     gameOver(skipHighScore?: boolean): void {
         if (this.state !== KioskState.PlayingGame) { return; }
 
@@ -237,13 +252,12 @@ export class Kiosk {
             return;
         }
 
-        this.gamepadManager.keyboardManager.clear();
-
         if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
-            this.exitGame(KioskState.EnterHighScore);
+            console.log("getting in this condition");
+            this.exitToEnterHighScore();
         }
         else {
-            this.exitGame(KioskState.MainMenu);
+            this.exitGame(KioskState.GameOver);
         }
     }
 
