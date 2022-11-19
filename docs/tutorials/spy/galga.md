@@ -14,7 +14,7 @@ Fly your space plane through the oncoming bogey spacecraft. Can you survive the 
 
 ## {Step 1}
 
-Add code to create a ``||sprites:sprite||``, rename it as ``||variables:spacePlane||``, and draw a plane or some kind of flying object in it.
+Add code to create a ``||sprites:sprite||``, rename it as ``||variables(noclick):spacePlane||``, and draw a plane or some kind of flying object in it.
 
 ![Space plane sprite image](/static/tutorials/galga/space-plane.jpg)
 
@@ -57,7 +57,7 @@ let spacePlane = sprites.create(img`
 
 ## {Step 2}
 
-``||sprites:set||`` the ``||variables:spacePlane||`` to ``||sprites:stay in the screen||``.
+``||sprites:set||`` the ``||variables(noclick):spacePlane||`` to ``||sprites:stay in the screen||``.
 
 ```spy
 let spacePlane = sprites.create(img`
@@ -144,7 +144,7 @@ info.setLife(3)
 
 ## {Step 4}
 
-Now ``||controller:move||`` the ``||variables:spacePlane||``
+Now ``||controller:move||`` the ``||variables(noclick):spacePlane||``
 with the ``||controller:controller buttons||`` and change the sensitivity
 ``vx`` and ``vy`` to ``200``.
 
@@ -192,7 +192,7 @@ controller.moveSprite(spacePlane, 200, 200)
 ## {Step 5 @fullscreen}
 
 Add an event to run code when ``||controller:button A is pressed||``.
-In that event, create a ``||sprites:projectile sprite||`` named **dart** that is launched ``||sprites:from||`` the ``||variables:spacePlane||`` and set the sensitivity ``vx`` to ``200``
+In that event, create a ``||sprites:projectile sprite||`` named **dart** that is launched ``||sprites:from||`` the ``||variables(noclick):spacePlane||`` and set the sensitivity ``vx`` to ``200``
 and ``vy`` to ``0``.
 
 ```spy
@@ -250,7 +250,7 @@ game.onUpdateInterval(500, function () {
 
 ## {Step 7}
 
-On the ``||variables:bogey||`` sprite, ``||sprites:set the velocity||`` with
+On the ``||variables(noclick):bogey||`` sprite, ``||sprites:set the velocity||`` with
 values to have it fly **horizontally** from **right to left**.
 
 ```spy
@@ -280,7 +280,7 @@ game.onUpdateInterval(500, function () {
 
 ## {Step 8}
 
-Add code to set ``||sprites:left||`` of ``||variables:bogey||`` to the ``||scene:screen width||`` and ``||sprites:y||`` to a ``||math:random number||`` between ``0`` and ``||scene:screen height||``.
+Add code to set ``||sprites:left||`` of ``||variables(noclick):bogey||`` to the ``||scene:screen width||`` and ``||sprites:y||`` to a ``||math:random number||`` between ``0`` and ``||scene:screen height||``.
 
 ```spy
 game.onUpdateInterval(500, function () {
@@ -312,7 +312,7 @@ game.onUpdateInterval(500, function () {
 
 ## {Step 9}
 
-To keep the amount of ``||sprites:Enemy||`` sprites from increasing even though they leave the screen, set the ``||sprites:auto destroy||`` flag for ``||variables:bogey||`` to **ON**.
+To keep the amount of ``||sprites:Enemy||`` sprites from increasing even though they leave the screen, set the ``||sprites:auto destroy||`` flag for ``||variables(noclick):bogey||`` to **ON**.
 
 ```spy
 game.onUpdateInterval(500, function () {
@@ -353,7 +353,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## {Step 11}
 
-Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, which is the enemy sprite.
+Add code to ``||sprites:destroy||`` ``||variables(noclick):otherSprite||``, which is the enemy sprite.
 
 ```spy
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -385,7 +385,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## {Step 14}
 
-Add code to ``||sprites:destroy||`` ``||variables:otherSprite||``, the enemy sprite.
+Add code to ``||sprites:destroy||`` ``||variables(noclick):otherSprite||``, the enemy sprite.
 
 ```spy
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -396,7 +396,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 
 ## {Step 15}
 
-Insert code to ``||sprites:destroy||`` ``||variables:sprite||``, the projectile sprite,
+Insert code to ``||sprites:destroy||`` ``||variables(noclick):sprite||``, the projectile sprite,
 with a ``||sprites:fire effect||``.
 
 ```spy

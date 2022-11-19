@@ -1,9 +1,9 @@
 # Whack-the-Mole
 * name: Whack-the-Mole
-* description: Create your own 'Whack-a-Mole' style of carnival game!
+* description: Create your own mole whacking carnival game. Double-click the first level to start.
 * infoUrl: skillmap/educator-info/mole-map-info
 * bannerUrl: /static/skillmap/mole/mole3.gif
-* backgroundurl: https://raw.githubusercontent.com/clkantner/whack/master/skillmap2-final.gif
+* backgroundurl: /static/skillmap/backgrounds/mole-comp.gif
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
 * tertiarycolor: #82cd54
@@ -13,7 +13,7 @@
 * tags: easy, beginner, carnival
 
 
-## whack-the-Mole
+## whack-the-mole
 * layout: manual
 
 
@@ -25,7 +25,7 @@
 * description: Learn to use MakeCode Arcade and add a sneaky mole sprite to your project.
 * tags: easy, sprite, random
 * next: mole2
-* url: /test/skillmap/mole/mole1a
+* url: /test/skillmap/mole/mole1
 * imageUrl: /static/skillmap/mole/mole1.gif
 * position: -1 1
 
@@ -37,7 +37,7 @@
 * description: Add a rubber hammer to tag the mole and earn points! How many points can you get before time runs out?
 * tags: easy, sprite, overlap, points
 * next: mole3
-* url: /test/skillmap/mole/mole2a
+* url: /test/skillmap/mole/mole2
 * imageUrl: /static/skillmap/mole/mole2.gif
 * position: 0 1
 
@@ -47,12 +47,22 @@
 * type: tutorial
 * description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
-* next: mole-cert
-* url: /test/skillmap/mole/mole3a
+* next: mole4
+* url: /test/skillmap/mole/mole3
 * imageUrl: /static/skillmap/mole/mole3.gif
 * position: 1 1
 
 
+
+### mole4
+* name: Play with Friends
+* type: tutorial
+* description: Want to play with friends? A few simple changes will have you playing chase in no time!
+* tags: easy, clicker, multiplayer, buttons
+* next: mole-cert
+* url: /test/skillmap/mole/mole4
+* imageUrl: /static/skillmap/mole/mole3.gif
+* position: 1 0
 
 
 ### mole-cert
@@ -61,10 +71,11 @@
 * type: certificate
 * url: /static/skillmap/certificates/mole-cert.pdf
 * imageUrl: /static/skillmap/certificates/mole-cert.png
+* showMultiplayerShare: true
 * position: 2 0
 * actions:
-    * map: [Create Another Carnival Game](/skillmap/balloon)
-    * editor: [Add to This Project](/)
+    * map: [Try Burstin' Balloons](/skillmap/balloon)
+    * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/mole-cert.pdf
@@ -72,4 +83,3 @@
     * completion-badge:
         * image: /static/badges/badge-mole.png
         * name: Whack-the-Mole
-

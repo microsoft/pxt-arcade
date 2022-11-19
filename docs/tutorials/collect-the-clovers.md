@@ -765,7 +765,7 @@ game.onUpdateInterval(5000, function () {
 ## {Step 7 - Add a Clover Projectile}
 
 A Projectile is a Sprite that moves on its own. From the ``||sprites:Sprites||`` Toolbox drawer, drag a
-``||variables:set projectile to||`` ``||sprites:projectile from side||`` block and drop into the
+``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||`` block and drop into the
 ``||game:on game update on every||`` block. Click on the grey oval to open the sprite
 image editor and draw an image of a 4-leaf Clover.
 
@@ -798,7 +798,7 @@ f f f f . . f 7 7 f f 7 7 f f .
 Notice how our Clovers are always coming from the top right in a diagonal direction. Let’s add some random
 movements by setting the **X** and **Y** velocity values. From the ``||math:Math||`` Toolbox drawer, drag out 2
 ``||math:pick random||`` blocks onto the workspace. Drop one into the **vx** value and drop the other into
-the **vy** value of the ``||variables:set projectile to||`` ``||sprites:projectile from side||`` block. In each of the
+the **vy** value of the ``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||`` block. In each of the
 ``||math:pick random||`` blocks, change the minimum and maximum values to `-50` and `50`.
 
 ```blocks
@@ -827,9 +827,9 @@ f f f f . . f 7 7 f f 7 7 f f .
 
 ## {Step 9 - Add Bee Projectile @fullscreen}
 
-Now let’s add a Bee projectile. Right-click on the ``||variables:set projectile to||`` ``||sprites:projectile from side||``
+Now let’s add a Bee projectile. Right-click on the ``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||``
 clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
-projectile block, click on the ``||variables:projectile||`` variable name drop-down, and select **New variable**. Name this
+projectile block, click on the ``||variables(noclick):projectile||`` variable name drop-down, and select **New variable**. Name this
 variable **"bee"**. Then click on the grey oval to open the sprite image editor and draw an image of a bee.
 
 ![Create the bee projectile](/static/tutorials/collect-the-clovers/bee-projectile.png)
@@ -881,7 +881,7 @@ f f f f 5 f 5 f 5 f 5 f 5 f f f
 
 To make the Bee an enemy sprite, we need to set its kind. From the ``||sprites:Sprites||`` Toolbox drawer,
 under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block and drop after the
-``||variables:set bee to||`` ``||sprites:projectile||`` block. Click on the ``||variables:mySprite||`` variable
+``||variables:set bee to||`` ``||sprites:projectile||`` block. Click on the ``||variables(noclick):mySprite||`` variable
 drop-down menu and select the **bee** variable. Click on the ``||sprites:Player||`` kind drop-down menu and select
 ``||sprites:Enemy||`` sprite kind.
 

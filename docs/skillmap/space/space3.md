@@ -35,12 +35,12 @@ game.onUpdateInterval(2000, function () {
 ## 3. Rename the Variable
 
 - :paper plane: Find the  
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``   
+``||variables(sprites):set [projectile2] to projectile [ ] from side with vx [50] vy [50]||``   
 block and drag it into the new **on game update** container.
 
-- :mouse pointer: Click on the ``||variables:[projectile2]||`` value inside the new block and select "Rename variable..." .
+- :mouse pointer: Click on the ``||variables(noclick):[projectile2]||`` value inside the new block and select "Rename variable..." .
 
-- :mouse pointer: Change the variable name to ``||variables:myEnemy||`` so we know these are the baddies.
+- :mouse pointer: Change the variable name to ``||variables(noclick):myEnemy||`` so we know these are the baddies.
 
 
 
@@ -91,7 +91,7 @@ block into the end of the
 ``||game:on game update every [2000] ms||``  
 container.
 
-- :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
+- :mouse pointer: To make sure we're acting on the right sprites, use the dropdown in the new block to change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myEnemy||``.
 
 ```blocks
 game.onUpdateInterval(2000, function () {
@@ -138,7 +138,7 @@ We now have two different kinds of projectiles. Let's make sure the computer kno
 ``||sprites:set [mySprite] kind to [Player]||``  
 block into the bottom of the **on game update** container.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose ``||sprites:Enemy||`` as the kind.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myEnemy||``, then choose ``||sprites(noclick):Enemy||`` as the kind.
 
 
 
@@ -202,8 +202,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## 10. Destroy
 
-- :mouse pointer: To tell the **destroy** block that you want it to affect the overlapping enemy, click on the ``||variables:otherSprite||`` value from the top of the **overlaps** container and drag it down to replace the
-``||variables:mySprite||`` value inside  
+- :mouse pointer: To tell the **destroy** block that you want it to affect the overlapping enemy, click on the ``||variables(noclick):otherSprite||`` value from the top of the **overlaps** container and drag it down to replace the
+``||variables(noclick):mySprite||`` value inside  
 ``||sprites:destroy [mySprite] ➕||``.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
@@ -242,8 +242,8 @@ container into the workspace.
 - :paper plane: Inside, add two  
 ``||sprites:destroy [mySprite] ⊕||``   
 blocks, then change the arguments
-so that one destroys the enemy (``||variables:sprite||``) and the other
-destroys your projectile (``||variables:otherSprite||``).
+so that one destroys the enemy (``||variables(noclick):sprite||``) and the other
+destroys your projectile (``||variables(noclick):otherSprite||``).
 
 ---
 

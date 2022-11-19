@@ -29,7 +29,7 @@ The snow people are trying to catch snowflakes as they jump, but there's not a f
 ---
 
 - :paper plane : From ``||sprites: Sprites||``, drag <br/>
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` <br/>
+``||variables(sprites):set [projectile] to projectile [ ] from side with vx [50] vy [50]||`` <br/>
 into the empty <br/>
 ``||game:on game update every [300] ms||`` container. <br/>
 
@@ -54,8 +54,8 @@ game.onUpdateInterval(300, function () {
 
 ## {Step 4}
 
-**Click the Game Window Tab (Above)**
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+**Try your game in the Game Window (Bottom Right)**  
+![Go to the Game Window in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
@@ -71,7 +71,7 @@ Let's send all of the snow in from the side of the screen.
 ---
 
 - :mouse pointer: Find <br/>
-``||variables:set [projectile] to projectile [❄️] from side with vx [50] vy [50]||`` <br/>
+``||variables(sprites):set [projectile] to projectile [❄️] from side with vx [50] vy [50]||`` <br/>
 already in the workspace, and change **vy** to **0**.
 
 
@@ -107,7 +107,7 @@ into the **on game update** container.
 
 
 - :mouse pointer: To make sure this block is working on the snowflake, click
-``||variables:mySprite||`` and change it to ``||variables:projectile||`` using the dropdown menu.
+``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):projectile||`` using the dropdown menu.
 
 - :mouse pointer: To change the up and down position on the screen, click ``||sprites:x||`` and change it to ``||sprites:y||`` using the dropdown menu
 

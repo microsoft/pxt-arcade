@@ -57,8 +57,8 @@ mySprite = sprites.create(assets.image`Hero`, SpriteKind.Player)
 
 ## 4. Try It
 
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+**Try your game in the Game Window (Bottom Right)**  
+![Go to the Game Window in the editor.](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
 
 ---
 
@@ -91,7 +91,7 @@ The frog needs something to eat.
 ---
 
 - :paper plane: Snap a new   
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||``  
 block into **the end** of the  
 ``||loops:on start||`` container.
 

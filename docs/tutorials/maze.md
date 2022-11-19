@@ -14,7 +14,7 @@ Welcome to @boardname@! Let's get started by creating a game where your player t
 
 ## {Step 1}
 
-The first thing we'll do is make our player. Find the ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
+The first thing we'll do is make our player. Find the ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
 ```blocks
 let mySprite: Sprite = sprites.create(img`
@@ -39,7 +39,7 @@ let mySprite: Sprite = sprites.create(img`
 
 ## {Step 2 @fullscreen}
 
-Click on the grey box in ``||variables:set mySprite to||`` and draw your player's image. It can be anything, solid block or a figure.
+Click on the grey box in ``||variables(sprites):set mySprite to||`` and draw your player's image. It can be anything, solid block or a figure.
 
 ![Draw a figure for the sprite](/static/tutorials/maze/draw-sprite-figure.gif)
 
@@ -66,7 +66,7 @@ let mySprite: Sprite = sprites.create(img`
 
 ## {Step 3}
 
-Now, let's make our sprite figure move with the controller arrow keys. Get a ``||controller:move mySprite with buttons||`` from ``||controller:Controller||`` and put it under ``||variables:set mySprite to||``.
+Now, let's make our sprite figure move with the controller arrow keys. Get a ``||controller:move mySprite with buttons||`` from ``||controller:Controller||`` and put it under ``||variables(sprites):set mySprite to||``.
 
 ```blocks
 let mySprite: Sprite = sprites.create(img`

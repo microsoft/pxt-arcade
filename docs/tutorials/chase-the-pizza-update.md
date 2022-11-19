@@ -54,7 +54,7 @@ Let's create a new ``||sprites:Player||`` character.
 ---
 
 ► Open the ``||sprites:Sprites||`` category and drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` into the **end** of the
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` into the **end** of the
 ``||loops:on start||`` container.
 
 ► Click the grey box in the new block to open the **Image Editor** where you can draw
@@ -173,7 +173,7 @@ mySprite.setStayInScreen(true)
 ---
 
 ► From ``||sprites:Sprites||``, drag
-``||variables:set [mySprite2] to sprite [ ] of kind [Player]||``
+``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||``
 to **the end** of the ``||loops:on start||`` container.
 
 ► Click the grey box in the new block to open the **Image Editor** and draw your snack.
@@ -311,8 +311,8 @@ know which sprite to move.**
 
 ---
 
-► Grab the red ``||variables:otherSprite||`` value block from the header
-of the **on overlaps** container and drag it down to replace ``||variables:mySprite||``
+► Grab the red ``||variables(noclick):otherSprite||`` value block from the header
+of the **on overlaps** container and drag it down to replace ``||variables(noclick):mySprite||``
 in the **set position** block.
 
 

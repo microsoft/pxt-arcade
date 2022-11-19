@@ -74,7 +74,7 @@ container.
 - :mouse pointer: Replace  
 ``||scene:tilemap col [0] row [0]||``  
 with the  
-``||variables:location||``  
+``||variables(noclick):location||``  
 value from the top of the **Player overlaps fan** container.
 
 
@@ -106,7 +106,7 @@ into
 ``||scene:on [sprite] of kind [Player] overlaps [fan] at [location]||``  
 and replace  
 ``||scene:tilemap col [0] row [0]||``  
-with ``||variables:location||``.
+with ``||variables(noclick):location||``.
 
 - :id card: Snap ``||info:change score by [1]||`` into the new container and change to **-1**.
 

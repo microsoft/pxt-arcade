@@ -56,13 +56,3 @@ You must be a verified educator to download the course materials. Please create 
 Download the course materials: https://aka.ms/TEALSintroCS
 
 ### ~
-
-### ~ reminder
-
-#### Professional Development
-
-Online professional development is available during the summer months. To help prepare Educators to teach the Intro to CS course for the 2022-2023 academic year, we are offering a free workshop. The course will be held four Tuesdays in a row this summer from 8am Pacific / 10am Central / 11am Eastern to 4pm Pacific / 6pm Central / 7pm Eastern : July 19, July 26, August 2, and August 9. By attending the training and using Microsoft MakeCode’s curriculum, you will be prepared with a syllabus, pacing plan, and lesson plans, PowerPoints, student handouts, and resources for every day of the course. Please register using the form below. Once you have registered an email with more information will be sent to you.
-
-Register here: https://forms.office.com/r/3MNvqMsScS
-
-### ~

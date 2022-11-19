@@ -14,7 +14,7 @@ Flowers make everyone around them happier, especially the bees who get nectar fr
 
 ## {Step 1}
 
-Find ``||scene:set background color to||`` in ``||scene:Scene||`` and put it in the ``||loops:on start||``. Set the background color to **light blue**. Get a ``||variables:set mySprite to||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||`` too. Click on the empty sprite image to open the image editor and draw a flower.
+Find ``||scene:set background color to||`` in ``||scene:Scene||`` and put it in the ``||loops:on start||``. Set the background color to **light blue**. Get a ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||`` too. Click on the empty sprite image to open the image editor and draw a flower.
 
 ```blocks
 let mySprite: Sprite = null
@@ -71,7 +71,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 3}
 
-Find ``||variables:set projectile to||`` ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 1000 ms||``.
+Find ``||variables(sprites):set projectile to||`` ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||``. Pull it out and put it into the ``||game:on game update every 1000 ms||``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -259,7 +259,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 7 @fullscreen}
 
-Find the ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``, place it after ``||variables:set projectile to||``, and change ``||variables:mySprite||`` to ``||variables:projectile||``. Click on the ``||sprites:x||`` and select ``||sprites:lifespan||`` from the list of properties. Set its value to **3000** instead of **0**.
+Find the ``||sprites:set mySprite x to 0||`` in ``||sprites:Sprites||``, place it after ``||variables(sprites):set projectile to||``, and change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``. Click on the ``||sprites:x||`` and select ``||sprites:lifespan||`` from the list of properties. Set its value to **3000** instead of **0**.
 
 ![Adding life span](/static/tutorials/happy-flower/life-span.gif)
 
@@ -366,7 +366,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 10}
 
-Replace the first **0** in the ``||logic:0 < 0||`` condition with ``||sprites:mySprite x||``. Change the ``||variables:mySprite||`` to ``||variables:projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
+Replace the first **0** in the ``||logic:0 < 0||`` condition with ``||sprites:mySprite x||``. Change the ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||`` and change the ``||sprites:x||`` to ``||sprites:vx (velocity x)||``.
 
 ```blocks
 let projectile: Sprite = null
@@ -417,7 +417,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 11}
 
-Go to the Toolbox and open the **Advanced** categories. In ``||images:Images||`` find the ``||images:flip picture horizontally||`` block. Pull it out and place it inside the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and drop it over the ``||variables:picture||`` variable to replace it in ``||images:flip picture horzontally||``. Change the ``||variables:mySprite||`` to ``||variables:projectile||``.
+Go to the Toolbox and open the **Advanced** categories. In ``||images:Images||`` find the ``||images:flip picture horizontally||`` block. Pull it out and place it inside the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and drop it over the ``||variables(noclick):picture||`` variable to replace it in ``||images:flip picture horzontally||``. Change the ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``.
 
 ![Flip image of the bee](/static/tutorials/happy-flower/bee-flip.gif)
 

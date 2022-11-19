@@ -50,7 +50,7 @@ To do this, we'll need to create a [__*sprite*__](#sprite "a 2-D image that move
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category in the toolbox, drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(noclick):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.
