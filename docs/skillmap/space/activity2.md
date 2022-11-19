@@ -79,7 +79,7 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 ► Drag an ``||controller:on [A] button pressed ||`` container into the workspace.
 
 ► Snap a
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 block inside of the new container.
 
 ► Click the grey box inside of the new projectile block to draw your
@@ -116,7 +116,7 @@ a second to figure out what's happening.
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with
+The ``||variables(sprites):set projectile to||`` block comes preloaded with
 an [__*argument*__](#argue "extra chunk of information that the block needs")
 that sets both the [__*vx*__](#whatVX "horizontal velocity")
 and [__*vy*__](#whatVY "vertical velocity")
@@ -171,7 +171,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ``||sprites:[mySprite] start [spray] effect||`` and snap it in at
 the bottom of the ``||controller:on [A] button pressed ||`` container.
 
-► Change variable ``||variables:mySprite||`` to ``||variables:projectile||`` if you
+► Change variable ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||`` if you
 want the effects on your projectiles instead of on your ship.
 
 ► Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!

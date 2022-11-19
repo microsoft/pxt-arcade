@@ -1,0 +1,64 @@
+import { useEffect, useState } from "react";
+import { Kiosk } from "../Models/Kiosk";
+import AddGameButton from "./AddGameButton";
+import configData from "../config.json"
+import { KioskState } from "../Models/KioskState";
+
+
+interface IProps {
+    kiosk: Kiosk
+  }
+
+const GameOver: React.FC<IProps> = ({ kiosk }) => {
+    const [homeButtonSelected, setHomeButtonState] = useState(false);
+    const [retryButtonSelected, setRetryButtonState] = useState(true);
+    const gameId = kiosk.launchedGame;
+
+
+    const updateLoop = () => {
+        if (homeButtonSelected && kiosk.gamepadManager.isLeftPressed()) {
+            setRetryButtonState(true);
+            setHomeButtonState(false);
+
+        }
+        if (retryButtonSelected && kiosk.gamepadManager.isRightPressed()) {
+            setHomeButtonState(true);
+            setRetryButtonState(false);
+
+        }
+        if (homeButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            kiosk.navigate(KioskState.MainMenu);
+        }
+
+        if (retryButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            kiosk.launchGame(gameId);
+        }
+    }
+
+    useEffect(() => {
+        let intervalId: any = null;
+        intervalId = setInterval(() => {
+            updateLoop();
+        }, configData.GamepadPollLoopMilli);
+        
+        return () => {
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        };
+    });
+
+
+    return (
+        <div className="gameOverPage">
+            <h1>GAME OVER</h1>
+            <h2>Would you like to retry?</h2>
+            <div className="gameOverButtons">
+                <AddGameButton selected={retryButtonSelected} content="Retry" />
+                <AddGameButton selected={homeButtonSelected} content="Main Menu" />
+            </div>
+        </div>
+    )
+}
+
+export default GameOver;

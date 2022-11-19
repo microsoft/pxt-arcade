@@ -58,7 +58,7 @@ It's time to set up your monster truck.  To do this, we'll need to create a [__*
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.

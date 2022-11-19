@@ -6,6 +6,12 @@
 ```codecard
 [
 {
+  "name": "Stand with Wakanda",
+  "description": "Shuri, Okoye, and Riri are on a mission to protect Wakanda. Code your own action-packed game to join this band of heroes on their journey.",
+  "url": "/tutorials/wakanda-forever",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/wakanda-forever.png"},
+{
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",

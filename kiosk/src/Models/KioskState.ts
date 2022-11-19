@@ -1,5 +1,9 @@
 export enum KioskState {
     MainMenu,
     PlayingGame,
-    EnterHighScore
+    EnterHighScore,
+    AddingGame,
+    ScanQR,
+    QrSuccess,
+    GameOver,
 }

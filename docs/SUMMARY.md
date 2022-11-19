@@ -48,6 +48,7 @@
     * [Support](/support)
     * [Translate](/translate)
     * [Sharing projects](/share)
+    * [Multiplayer](/multiplayer)
     * [Offline support](/offline)
     * [Save](/save)
     * [Sign In](/identity/sign-in)

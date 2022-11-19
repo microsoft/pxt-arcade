@@ -4,65 +4,38 @@
 
 ## Burstin' Balloons Intro @showdialog
 
-![Balloon Bursting Carnival Intro](youtube:ttlam7rkh1U)
+![balloon intro](azuremedia:64101234-a394-4f89-98af-b4edfd11143a/BurstinBalloonsIntro.ism)
 
 
 
-## {2. Read Instructions}
-
-**🎈Start with Instructions🎈**
-
-- :comment: This is the **instruction panel** that has directions
-on what to do.
-
-
-- :lightbulb: Don't miss anything! Scroll down to the **double lines** before moving to the next instruction.
-
-
-- :mouse pointer: When you're done reading, click **Next** to move to the next instruction.
-
----
----
-
-
-## {3. Tips and Tricks}
-
-**Tips and Tricks**
-
-Be on the lookout for secret information!
-
-
-~hint Click here to reveal hidden info 🕵🏽
-
-<br/>
-Look for clues like this when you read instructions.
-
-Each one gives extra info, tips, or tricks.
-
-hint~
-
-
-
-- :mouse pointer: Once you see the double lines, you can click **Next** to move to the next instruction.
-
----
----
-
-
-## {4. Your First Block}
+## {3. Your First Block}
 
 **Ready to start coding?**
 
-Let's make something happen each time you press the (A) button in the game window using **EVENTS**!
+Let's make something happen using **EVENTS**!
 
 
-- :game: From the ``||controller: Controller||`` category **in the toolbox**, grab
+
+- :game: From the ``||controller: Controller||`` category **in the toolbox**, grab <br/>
+``||controller: on [A] button [pressed]||`` <br/>
+and drop it into an empty area of the workspace.
+
+~hint What does that mean? 💡
+
+---
+
+When giving instructions, we'll highlight some text to give you a better idea of what you are looking for.
+
+For example, when we suggest the <br/>
+``||controller: on [A] button [pressed]||`` <br/>
+block, we are pointing you toward <br/>
+
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
-and drop it into an empty area of the workspace.
 
+hint~
 
 ~hint Click here to see how 🕵🏽
 
@@ -74,8 +47,7 @@ and drop it into an empty area of the workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
@@ -85,17 +57,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {5. Add Points}
+## {4. Add Points}
 
-Now we need to add points when the (A) button is clicked in the game window. This will be the **ACTION** that goes with the **EVENT**.
+Now we need to add points when the (A) button is clicked in the game window.
+
+This will be the **ACTION** that goes with our **EVENT**.
 
 
-- :id card: From the ``||info: Info||`` category in the toolbox, grab
-```block
-    info.changeScoreBy_defl1(info.player1, 1)
-```
+- :id card: From the ``||info: Info||`` category in the toolbox, grab <br/>
+``||info: change player [1] score by [1]||`` <br/>
+
+
 and snap it into the empty <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block that's already in the workspace.
 
 💡 **Tip:** _Make sure the blocks connect!_
@@ -103,70 +77,70 @@ block that's already in the workspace.
 
 ~hint Click here to see how 🕵🏽
 
+---
+
 ![Look under Info for the block](/static/skillmap/balloon/change-p1-score.gif "Snap the score block into the controller block")
 
 - :lightbulb: Make sure the new <br/>
 ``||info: change player [1] score by [1]||`` <br/>
 block connects to the inside of the <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [A] button [pressed]||`` <br/>
 block!
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy_defl1(info.player1, 1)
+    //@highlight
+    info.player1.changeScoreBy(1)
 })
 ```
 
 
 
-## {6. Check Your Game!}
+## {5. Check Your Game!}
 
 Now it's time to try your game!
 
-- :mouse pointer: Click the mini **game window** in the bottom corner to open the **bigger game window**!
+- :binoculars: Look at your project in the game window to see how it has changed!
 
 Click the (A) button as fast as you can.  You can also use the **space bar** on your keyboard.
 
 You should see the score go up with each click.
 
+
+---
+
 Clicking the button is the **EVENT** that causes the score to go up!
 
 ~hint Click here to see how 🕵🏽
 
-![Look for the game window in the lower right](/static/skillmap/balloon/game.gif "Click the mini game window to pop open the playable console.")
+
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
 hint~
 
 
 
 
----
----
 
 
 
-
-## {7. Add a Timer}
+## {6. Add a Timer}
 
 **Let's add a challenge** ⏰
 
-- :id card: From the ``||info: Info||`` category in the toolbox,
-grab
-```block
-    info.startCountdown(10)
-```
+- :ticket: From the ``||carnival: Carnival||`` category in the toolbox,
+grab <br/>
+
+``||carnival: start countdown [20] (s) and game over [lose game]||`` <br/>
 
 and snap it into the empty <br/>
-``||loops: on start||`` <br/>
+``||loops(noclick): on start||`` <br/>
 block that's already in the workspace.
-
-- :mouse pointer: Change the countdown time from **10** seconds to **20** seconds.
 
 
 ~hint Click here to see how 🕵🏽
@@ -175,65 +149,85 @@ block that's already in the workspace.
 
 hint~
 
----
----
+
 
 #### ~ tutorialhint
 ```blocks
-info.startCountdown(20)
+    //@highlight
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 ```
 
 
 
-## {Step 12}
+## {7. Set the Scene}
+
+**Now let's make it look nice**
+
+- :tree: From the ``||scene: Scene||`` category in the toolbox, grab <br/>
+``||scene: set background color to [ ]||`` <br/>
+and snap it inside and at the **end** of the
+``||loops(noclick): on start||``
+block container that's already in your workspace.
+
+~hint Show me how! 🕵🏽
+
+![Open the Scene category to find the block that changes the background color](/static/skillmap/balloon/bg-color.gif "Set the background color to white." )
+
+hint~
+
+
+
+#### ~ tutorialhint
+```blocks
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
+    //@highlight
+scene.setBackgroundColor(1)
+```
+
+
+
+
+## {Finale}
 
 **🎉 Way to Go 🎉**
 
 You have started your very own clicker game!
-Try it in the bigger game window and see if you can get more than **40 points**.
 
-When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing **🎈carnival game🎈**!
+Can you get more than **40 points**?
 
 ---
----
+
+When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
 
 
-```customts
 
-namespace SpriteKind {
-    //% isKind
-    export const Booth = SpriteKind.create()
-    //% isKind
-    export const Mouse = SpriteKind.create()
-}
 
-namespace info {
-        /**
-         * Change the score of a player
-         * @param value
-         * but with default player 1
-         */
-    //% color="#cf6a87"
-    //% help=github:carnival/docs/player_score_deflt1
-    //% blockId=pichangescore-defl1
-    //% block="change %player score by %value"
-    //% value.defl=1
-    //% player.defl=info.player1
-    export function changeScoreBy_defl1(player: info.PlayerInfo, value: number) {
-        player.setScore(player.score() + value);
-    }
-
-}
+```blockconfig.global
+info.player1.changeScoreBy(1)
+carnival.startCountdownGame(20, carnival.WinTypes.Lose)
+scene.setBackgroundColor(1)
 ```
-
-
 
 
 ```package
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-arcade-text=github:microsoft/arcade-text/
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling/
+pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
+carnival=github:microsoft/arcade-carnival
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
 ```
+
+```customts
+namespace simplified{
+    /**
+    * just run the code
+    */
+    //% block="create player"
+    //% handlerStatement=1
+    export function wrap(handler: () => void) {
+        handler();
+    }
+}
+```
+
 
 
 ```assetjson

@@ -1,98 +1,360 @@
+/* -------- GLOBAL-ISH STYLING -------- */
+/* ----------------------------------- */
+:root {
+    --button-primary-color: #AFF1FF;
+    --main-text-color: #ffffff;
+    --qr-code-button-color: #247aa0cf;
+    --secondary-dark-color: #13455acf;
+    --high-score-color: #8AFFF8;
+    --high-score-selector-color: #ffd700;
+    --transparent-color: #11ffee00;
+    --black-color: #050505;
+    --input-outline: #e5e7eb;
+    --button-underline: #10b7e5;
+}
+
 html, body {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background-color: black;
+    background: linear-gradient(var(--secondary-dark-color), var(--black-color));
     font-family: 'Press Start 2P';
-    color: white;
-    align-items: center;
-}
-
-.bg1 {
-    background: radial-gradient(62.83% 55.51% at 50% 50%, rgba(19, 69, 90, 0.81) 0%, #13455A 100%);
-    height: 100%;
-    width: 100%;
-}
-
-.background {
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    opacity: 0.2;
-    border: 1px solid #141414;
-    filter: blur(137px);
+    color: var(--main-text-color);
 }
 
 .content {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
+    height: 100%;
 }
 
 h1 {
     font-weight: 400;
-    font-size: 54px;
-    line-height: 54px;
+    font-size: 3.375em;
+    line-height: 3.375rem;
     text-align: center;
 }
 
 h2 {
     font-weight: 400;
-    font-size: 44px;
-    line-height: 44px;
+    font-size: 2.75em;
+    line-height: 2.75rem;
     text-align: center;
-    color: white;
 }
 
-.mainMenuHighScoreHeader {
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: white;
-}
-
-.highScoreSmallDiv {
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 32px;
-    text-align: center;
-    color: #8AFFF8;
+.sim-embed {
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: -2%;
+    position: absolute;
 }
 
 .footer {
-    text-align: center;
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
-    margin-top: -68px;
-    height: 68px;
-    width: 662px;
-    left: 50%;
-    margin-left: -331px;
+    height: 5vh;
+    width: 20%;
+    left: 1.5%;
     bottom: 0;
+    margin-bottom: 2vh;
     background: url("footer.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
+
+/* -------- MAIN MENU STYLING -------- */
+/* ----------------------------------- */
+
+.mainMenu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainMenuHeader {
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--main-text-color);
+}
+
+.mainMenuTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 26%;
+}
+
+.locked {
+    margin-left: 0;
+}
+
+.kioskButton {
+    padding: 1.25em 1em;
+    font-family: inherit;
+    letter-spacing: 0.2rem;
+    background-color: var(--button-primary-color);
+    color: var(--black-color);
+    border-radius: 0.3em;
+    border-color: var(--transparent-color);
+    border-bottom: 0.5rem var(--button-underline) solid;
+    cursor: pointer;
+}
+
+.buttonSelected {
+    background-color: var(--button-primary-color);
+    border:#ffd700 0.5rem solid;
+}
+
+/* .buttonUnselected {
+    background-color: var(--transparent-color);
+} */
+
+/* -------- ADDING GAME PAGE STYLING -------- */
+/* ----------------------------------- */
+
+.addInstructions h2 {
+    color: var(--button-primary-color);
+    font-size: 2em;
+}
+
+.addInstructions li {
+    padding: 1em 0;
+    margin-left: 1.5rem;
+    font-size: 1.25em;
+}
+
+.addInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 60%;
+    line-height: 200%;
+}
+
+.addGame h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 1em 0;
+}
+
+.addGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.innerQRCodeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.kioskLink a {
+    color: var(--main-text-color);
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.kioskLink {
+    margin: 2rem 0;
+    width: 55%;
+    text-align: center;
+    line-height: 170%;
+}
+
+.innerQRCodeContent h3 {
+    margin-bottom: -1.5rem;
+}
+
+.addGameContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+/* -------- QR PAGES STYLING -------- */
+/* ----------------------------------- */
+
+.scanQrPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.scanInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qrOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+}
+
+.scanQrPage h2 {
+    margin-bottom: 0;
+    font-size: 2em;
+}
+
+.scanQrPage h1 {
+    margin-bottom: 2rem;
+    font-size: 2.25em;
+}
+
+.scanQrButton {
+    padding: 1.25em 1em;
+    font-family: inherit;
+    letter-spacing: 0.2rem;
+    background-color: var(--button-primary-color);
+    color: var(--black-color);
+    border-radius: 0.3em;
+    border-color: var(--transparent-color);
+    border-bottom: 0.5rem var(--button-underline) solid;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 2rem;
+}
+
+.scanQrButton:hover {
+    cursor: pointer;
+}
+
+.qrScanner-label {
+    background-color: var(--main-text-color);
+    color: var(--secondary-dark-color);
+    padding: 2vh;
+    border-radius: 1.5vh;
+}
+
+.qrScannerHolder {
+    width: 45vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scanIntro {
+    overflow-wrap: break-word;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.qrSuccess {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 0.25em;
+    line-height: 1.5em;
+}
+
+.linkOption {
+    margin-top: 5rem;
+    border-color: var(--button-primary-color);
+    border-style: solid;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+.linkOption label {
+    display: block;
+}
+
+.linkOption input[type=url] {
+    margin-top: 1rem;
+    border-color: var(--button-primary-color);
+    width: 20rem;
+    height: 2em;
+    border-radius: 0.45em;
+    text-overflow: ellipsis;
+}
+
+.linkOption input[type=submit] {
+    margin-left: 0.25rem;
+    height: 2em;
+    border-radius: 0.45em;
+    background-color: var(--button-primary-color);
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    border-bottom: #10b7e5;
+    border-style: solid;
+    cursor: pointer;
+    color: var(--secondary-dark-color);
+}
+
+.shareHelp {
+    color: var(--main-text-color);
+    overflow: auto;
+    overflow-wrap: break-word;
+    font-family: 'Share';
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.scanTip {
+    overflow-wrap: break-word;
+    font-family: 'Share';
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+/* -------- GAME LIST  STYLING -------- */
+/* ----------------------------------- */
 
 .carouselWrap {
     width: 100%;
-    height: 500px;
-    margin: 0 auto;
+    height: 80vh;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    /* justify-content: center; */
+    margin-right: -2rem
+}
+
+.swiper {
+    width: 100%;
+    height: 90%;
+    margin-left: -5rem;
 }
 
 .gameTile {
-    position: relative;
-    width: 554px;
-    height: 367px;
+    width: 100%;
+    height: 100%;
     background-size:100% 100%;
+    background-repeat: no-repeat;
+    min-width: 35rem;
 }
 
-.gameContentBackground {
+.gameLabelBackground {
     position: absolute;
     bottom: 0;
-    height: 128px;
+    height: 8rem;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
 }
@@ -102,9 +364,10 @@ h2 {
     left: 0;
     font-family: 'Share';
     font-weight: 700;
-    font-size: 34px;
-    height: 38px;
-    margin: 5px;
+    font-size: 2.125em;
+    height: 2.375rem;
+    margin: 0.3rem;
+
 }
 
 .gameDescription {
@@ -113,9 +376,20 @@ h2 {
     left: 0;
     font-family: 'Share';
     font-weight: 400;
-    font-size: 20px;
-    height: 80px;
-    margin: 5px;
+    font-size: 1.25em;
+    height: 5rem;
+    margin: 0.3rem;
+}
+
+/* -------- HIGH SCORE STYLING -------- */
+/* ----------------------------------- */
+
+.highScoreSmallDiv {
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 2rem;
+    text-align: center;
+    color: var(--high-score-color);
 }
 
 .center {
@@ -127,32 +401,27 @@ h2 {
     text-align: right;
 }
 
-.highScoreSmallIndex {
-}
 
 .highScoreSmallInitials {
-    min-width: 150px;
+    min-width: 9.25rem;
 }
 
 .highScoreSmallInitialsScoreSpacer {
-    width: 50px;
-}
-
-.highScoreSmallScore {
+    width: 3.125rem;
 }
 
 .highScoreHighlight {
-    background-color: gold;
+    background-color: var(--high-score-selector-color);
 }
 
 .highScoreRow {
-    font-size: 40px;
-    height: 60px;
-    color: #8AFFF8;
+    font-size: 2.5em;
+    height: 3.75rem;
+    color: var(--high-score-color);
 }
 
 .enterHighScoreText {
-    color: white;
+    color: var(--main-text-color);
 }
 
 .highScoreIndex {
@@ -160,7 +429,7 @@ h2 {
 }
 
 .highScoreInitials {
-    min-width: 150px;
+    min-width: 9.25rem;
     text-align: center;
 }
 
@@ -170,25 +439,33 @@ h2 {
 }
 
 .highScoreInitialControl {
-    color: white;
+    color: var(--main-text-color);
 }
 
 .highScoreInitialControlSelected {
-    color: yellow;
+    color: var(--high-score-selector-color);
 }
 
 .highScoreInitialsScoreSpacer {
-    width: 50px;
+    width: 3.125rem;
 }
 
 .highScoreScore {
     text-align: right;
 }
 
-.sim-embed {
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    position: absolute;
+/* -------- GAME OVER STYLING -------- */
+/* ----------------------------------- */
+
+.gameOverButtons {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 5%
+}
+
+.gameOverPage {
+    margin-top: 15%;
 }

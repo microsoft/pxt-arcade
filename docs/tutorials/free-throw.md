@@ -290,15 +290,15 @@ let mySprite = sprites.create(img`
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set sprite position||``
 block and drop after the ``||Sprites:set sprite||`` block. In the ``||sprites:set||``
-``||variables:mySprite||`` ``||sprites:position||`` block, click on the **x** coordinate,
+``||variables(noclick):mySprite||`` ``||sprites:position||`` block, click on the **x** coordinate,
 and using the coordinate picker, select a location at the bottom of the screen.
 
 ![Set x position to 0](/static/tutorials/free-throw/x-position0.png)
 
 ## {Step 4 - Set the player’s velocity (movement)}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:mySprite||``
-``||sprites:velocity||`` block and drop after the ``||sprites:set||`` ``||variables:mySprite||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables(noclick):mySprite||``
+``||sprites:velocity||`` block and drop after the ``||sprites:set||`` ``||variables(noclick):mySprite||``
 ``||sprites:position||`` block. Since we only want the player to move horizontally, set the **vy**
 value to be **0**.
 
@@ -450,8 +450,8 @@ mySprite.setVelocity(50, 0)
 ## {Step 5 - Make the player bounce off walls}
 
 Notice in the game console window that our player actually moves off the screen! We don’t want that.
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:mySprite||``
-``||sprites:bounce on wall||`` block and drop after the ``||sprites:set||`` ``||variables:mySprite||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables(noclick):mySprite||``
+``||sprites:bounce on wall||`` block and drop after the ``||sprites:set||`` ``||variables(noclick):mySprite||``
 ``||sprites:velocity||`` block.
 
 ```blocks
@@ -603,7 +603,7 @@ mySprite.setBounceOnWall(true)
 ## {Step 6 - Create the Basketball Hoop}
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||variables:set mySprite||`` block and drop
-after the ``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:bounce on wall||`` block. Click on the
+after the ``||sprites:set||`` ``||variables(noclick):mySprite||`` ``||sprites:bounce on wall||`` block. Click on the
 grey oval to open the sprite image editor, and draw an image of a basketball hoop.
 
 ```blocks
@@ -779,10 +779,10 @@ drop-down menu, select **Add a new kind**, and type in **Hoop**.
 
 ## {Step 8 - Set the Position of the Basketball Hoop to the top of the screen}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables:mySprite||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables(noclick):mySprite||``
 ``||sprites:position||`` block and drop after the ``||variables:set mySprite2||`` block. In the
-``||sprites:set||`` ``||variables:mySprite||`` ``||sprites:position||`` block, click on the ``||variables:mySprite||``
-drop-down menu, and select ``||variables:mySprite2||``. Then click on the **x** coordinate, and using the coordinate
+``||sprites:set||`` ``||variables(noclick):mySprite||`` ``||sprites:position||`` block, click on the ``||variables(noclick):mySprite||``
+drop-down menu, and select ``||variables(noclick):mySprite2||``. Then click on the **x** coordinate, and using the coordinate
 picker, select a location at the top center of the screen.
 
 ![Set x position to 75](/static/tutorials/free-throw/x-position75.png)
@@ -800,8 +800,8 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 10 - Shoot the Basketballs}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set projectile to||``
-``||sprites:projectile from||`` ``||variables:mySprite||`` block and drop into the ``||controller:on button pressed||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables(sprites):set projectile to||``
+``||sprites:projectile from||`` ``||variables(noclick):mySprite||`` block and drop into the ``||controller:on button pressed||``
 block. Click on the grey oval to open the sprite image editor and draw an image of a basketball
 (hint: try using the circle tool in the image editor).
 
@@ -833,14 +833,14 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
 ## {Step 11 - Set the velocity (movement) of the basketballs}
 
 We want the basketballs to travel from our Player character vertically upwards. In the
-``||variables:set projectile||`` block, set the **vx** value to **0**, and set the **vy**
+``||variables(sprites):set projectile||`` block, set the **vx** value to **0**, and set the **vy**
 value to **-100**.
 
 ![Select Hoop kind](/static/tutorials/free-throw/projectile-vy.png)
 
 ## {Step 12 - Win when we get a basket}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag an ``||sprites:on||`` ``||variables:mySprite||``
+From the ``||sprites:Sprites||`` Toolbox drawer, drag an ``||sprites:on||`` ``||variables(noclick):mySprite||``
 ``||sprites:overlaps||``block and drop on the Workspace.
 
 ```blocks

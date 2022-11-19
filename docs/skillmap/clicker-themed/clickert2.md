@@ -29,7 +29,7 @@ button [__*sprite*__](#sprote "a 2-D image that moves on the screen") to the scr
 ---
 
 - :paper plane:  From ``||sprites:Sprites||`` drag out  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``  
 and snap it into **the bottom** of the  
 ``||loops:on start||`` container.
 

@@ -8,7 +8,7 @@ We're so excited to have you designing this exhibit.
 ---
 
 - :paper plane:  To start, go to the ``||sprites:Sprites||`` category and drag
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``
 into the ``||loops:on start||`` container.
 
 - :paint brush:  Click the grey box and use the **image editor** to
@@ -195,10 +195,7 @@ mySprite.y = randint(10, 110)
 
 ## 6. Try It
 
-**Click the Game Window Tab (Above)**  
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
-
----
+**Check the Game Window**  
 
 Watch your friend swim!
 

@@ -135,7 +135,7 @@ into **the top** of the <br/>
 
 - :mouse pointer: Replace <br/>
 ``||scene:tilemap col [0] row [0]||`` <br/>
-with the ``||variables:location||`` <br/>
+with the ``||variables(noclick):location||`` <br/>
 value from the top of the **Player overlaps orange bauble** container.
 
 ![Share your location](/static/skillmap/jungle/jungle-location.gif "Grab the variable from the overlap container")

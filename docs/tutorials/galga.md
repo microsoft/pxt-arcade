@@ -24,11 +24,11 @@ Can you survive the continuous attack?
 ---
 
 ► From the ``||sprites:Sprites||`` category, grab a
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` block and
 snap it into the **on start** block already in the workspace.
 
-► Click on the word ``||variables:[mySprite]||`` in the new block to
-rename the variable ``||variables:[spacePlane]||``.
+► Click on the word ``||variables(noclick):[mySprite]||`` in the new block to
+rename the variable ``||variables(noclick):[spacePlane]||``.
 
 ► Now click inside the grey box in the new block to open the image editor.
 Draw a plane or choose something from the Gallery.
@@ -245,7 +245,7 @@ launch projectiles at oncoming enemies.**
 area of the workspace.
 
 ► Snap a
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
 block inside the new container and click inside the grey box to draw your dart.
 
 ► Change **mySprite** to **spacePlane**. Change **vx** to **[200]** and **vy** to **[0]**.
@@ -287,11 +287,11 @@ Let's add code to make that happen.
 an empty area in the workspace and change **500** to **1000**.
 
 ► Inside, snap a
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` block and
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` block and
 change the **kind** from **Player** to **Enemy**.
 
-► Click ``||variables:mySprite||`` in the new block to
-rename the variable ``||variables:bogey||``.
+► Click ``||variables(noclick):mySprite||`` in the new block to
+rename the variable ``||variables(noclick):bogey||``.
 
 ► Click the grey box to draw your enemy ship.
 
@@ -471,7 +471,7 @@ Now add the blocks to destroy the other sprite.
 ► Snap a ``||sprites:destroy [mySprite]||`` block into the empty
 **on sprite overlaps** container.
 
-► Drag the ``||variables:otherSprite||`` value from
+► Drag the ``||variables(noclick):otherSprite||`` value from
 the header of the **on sprite overlaps** container and snap it in to replace
 **mySprite** in the **destroy** block.
 

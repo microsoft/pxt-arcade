@@ -24,7 +24,7 @@ over (or down and over) to keep building.
 
 
 ► Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find ``||variables:set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
+You'll find ``||variables(sprites):set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
 Drag one to the end of the ``||loops:on start||`` container.
 
 ► To keep track of how much *gas* is left, set the argument for
@@ -106,10 +106,10 @@ workspace and use them as a guide.
 into the workspace and change the interval to **5 seconds (5000 ms)**.
 
 ► Snap a
-``||variables:set [projectile2] to||`` ``||sprites:projectile [ ] from side with vx [50] vy [50]||``
+``||variables(sprites):set [projectile2] to||`` ``||sprites(sprites):projectile [ ] from side with vx [50] vy [50]||``
 block inside the newest **on game update** container.
 
-► Click ``||variables:[projectile2]||`` and rename the sprite ``||variables:[myFuel]||``.
+► Click ``||variables(noclick):[projectile2]||`` and rename the sprite ``||variables(noclick):[myFuel]||``.
 
 ► Click on the grey square to bring up the sprite editor so you can
 draw a fuel sprite (or choose one from the gallery.)
@@ -152,7 +152,7 @@ across the top of the screen.
 bottom of the ``||game:on game update every [5000] ms||`` container.
 
 ► To make sure we're acting on the right sprites, use the dropdown in the
-new block to change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+new block to change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFuel||``.
 
 ► To set a random [__*x*__](#setX "horizontal location")
 for the fuel, grab a
@@ -204,7 +204,7 @@ Now we need to put our **myFuel** sprite into the _Gas_ class.
 ► Snap a ``||sprites:set [mySprite] kind to [Player]||`` block
 into the bottom of the newest **on game update** container.
 
-► Change ``||variables:mySprite||`` to ``||variables:myFuel||``.
+► Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myFuel||``.
 
 ► Click ``||sprites:Player||`` to get the menu, then choose
 ``||sprites:Add a new kind...||`` and create the type **Gas**.
