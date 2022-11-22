@@ -5,4 +5,5 @@ export enum KioskState {
     AddingGame,
     ScanQR,
     QrSuccess,
+    GameOver,
 }

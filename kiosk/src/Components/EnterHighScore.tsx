@@ -81,11 +81,11 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
 
             if (kiosk.gamepadManager.isAButtonPressed()) {
                 kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
-                kiosk.showMainMenu();
+                kiosk.navigate(KioskState.GameOver);
             }
 
             if (kiosk.gamepadManager.isBButtonPressed()) {
-                kiosk.showMainMenu();
+                kiosk.navigate(KioskState.GameOver);
             }
         };
 
