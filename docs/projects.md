@@ -10,9 +10,7 @@
     {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/chase-the-pizza.png",
-        "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
-        "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
+        "imageUrl": "/static/tutorials/wakanda-forever.png"
     },
     {
         "name": "Live Coding",
