@@ -25,9 +25,9 @@ export class Kiosk {
     private intervalId: any;
     private readonly allScoresStateKey: string = "S/all-scores";
     private lockedGameId?: string;
-    private launchedGame: string = "";
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private defaultGameDescription = "Made with love in MakeCode Arcade";
+    launchedGame: string = "";
 
     constructor(clean: boolean, locked: boolean) {
         this.clean = clean;
@@ -237,13 +237,11 @@ export class Kiosk {
             return;
         }
 
-        this.gamepadManager.keyboardManager.clear();
-
         if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
             this.exitGame(KioskState.EnterHighScore);
         }
         else {
-            this.exitGame(KioskState.MainMenu);
+            this.exitGame(KioskState.GameOver);
         }
     }
 
