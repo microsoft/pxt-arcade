@@ -12,8 +12,11 @@
 
 hint~
 
+---
 
 Special thanks to MakeCode forum User _SoftTalker_ for this submission.
+
+---
 
 Thank you to Deaf Kids Code for providing ASL video translations.
 ![Deaf Kids Code Logo](/static/skillmap/assets/dkc-logo-small " ")
