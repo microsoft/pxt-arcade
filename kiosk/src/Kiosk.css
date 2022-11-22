@@ -349,6 +349,12 @@ h2 {
     background-size:100% 100%;
     background-repeat: no-repeat;
     min-width: 35rem;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 .gameLabelBackground {
@@ -367,7 +373,6 @@ h2 {
     font-size: 2.125em;
     height: 2.375rem;
     margin: 0.3rem;
-
 }
 
 .gameDescription {

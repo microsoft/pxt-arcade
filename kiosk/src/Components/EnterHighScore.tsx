@@ -11,10 +11,11 @@ interface IProps {
   }
 
 const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
-    const [initialIndexRef, ] = useState(new PrimitiveRef(0));
-    const [initialIndex, setInitialIndex] = useState(initialIndexRef.value);
+    const [indexChanged, setIndexChanged] = useState(false);
     const [initials, setInitials] = useState(Array(configData.HighScoreInitialsLength + 1).join(configData.HighScoreInitialAllowedCharacters[0]));
-    let timesAPressed = 0;
+    const [timesAPressed, setTimesAPressed] = useState(0);
+    const [runOnce, setRunOnce] = useState(false);
+    const [firstRun, setFirstRun] = useState(true);
 
     const existingHighScores = kiosk.getHighScores(kiosk.selectedGame!.id);
     const aboveScores = existingHighScores.filter(item => item.score > kiosk.mostRecentScores[0]);
@@ -24,43 +25,72 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         throw new Error("Cannot load high score entry view without having recent scores");
     }
 
-    const nextInitial = () => {
-        initialIndexRef.value = (initialIndexRef.value + 1) % configData.HighScoreInitialsLength;
-        setInitialIndex(initialIndexRef.value);
-    }
+    const gamepadLoop = () => {
+        if (kiosk.state !== KioskState.EnterHighScore) { return; }
 
-    useEffect(() => {
-        const gamepadLoop = () => {
-            if (kiosk.state !== KioskState.EnterHighScore) { return; }
+        if (kiosk.gamepadManager.isAButtonPressed()) {
+            setIndexChanged(true);
+        } else {
+            setIndexChanged(false);
+        }
 
-            if (kiosk.gamepadManager.isAButtonPressed()) {
-                console.log("the number of times a pressed");
-                console.log(initialIndexRef);
-                nextInitial();
-                if (initialIndex > 3) {
-                    kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
-                    kiosk.navigate(KioskState.GameOver);
-                }
+        if (kiosk.gamepadManager.isBButtonPressed()) {
+            kiosk.navigate(KioskState.GameOver);
+        }
+    };
 
-            }
+    const lookForPressed = () => {
+        let interval: any;
+        let timeout: any;
+        timeout = setTimeout(() => {
+            interval = setInterval(() =>
+            gamepadLoop(),
+            configData.EnterHighScorePoll
+        )
+        }, configData.EnterHighScoreDelayMilli)
 
-            if (kiosk.gamepadManager.isBButtonPressed()) {
-                kiosk.navigate(KioskState.GameOver);
-            }
-        };
-
-        let interval: any = null;
-
-        setTimeout(() => {
-            interval = setInterval(() => gamepadLoop(), configData.GamepadPollLoopMilli);
-        }, configData.EnterHighScoreDelayMilli);
 
         return () => {
             if (interval) {
                 clearInterval(interval);
             }
-        };
-    }, [initials]);
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+        }
+    }
+
+    lookForPressed();
+
+    const updateTimesPressed = () => {
+        if (!runOnce) {
+            if (!firstRun) {
+                setTimesAPressed(timesAPressed + 1);
+                setRunOnce(true);
+                return timesAPressed + 1;
+            } else {
+                setFirstRun(false);
+                return timesAPressed;
+            }
+
+        } else {
+            setRunOnce(false);
+            return timesAPressed;
+        }
+    }
+
+    useEffect(() => {
+        const updatedPressed = updateTimesPressed();
+
+
+        if (updatedPressed >= 3) {
+            setTimesAPressed(0);
+            kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
+            kiosk.navigate(KioskState.GameOver);
+        }
+
+    }, [indexChanged]);
+
 
     const updateInitial = (i: number, character: string) => {
         const newInitials = `${initials.substring(0, i)}${character}${initials.substring(i + 1)}`;
@@ -73,7 +103,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         for (let lcv = 0; lcv < configData.HighScoreInitialsLength; lcv++) {
             const thisIndex = lcv;
             elements.push(
-                <HighScoreInitial kiosk={kiosk} key={lcv} isSelected={thisIndex === initialIndex}
+                <HighScoreInitial kiosk={kiosk} key={lcv} isSelected={thisIndex === timesAPressed}
                     onCharacterChanged={character => updateInitial(thisIndex, character[0])} />
             );
         }

@@ -253,7 +253,6 @@ export class Kiosk {
         }
 
         if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
-            console.log("getting in this condition");
             this.exitToEnterHighScore();
         }
         else {
