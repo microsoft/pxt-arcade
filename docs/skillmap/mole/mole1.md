@@ -8,7 +8,7 @@
 
 ~hint Click here view the intro video with ASL
 
-![ASL Whack-the-Mole Intro](azuremedia:36d0e002-d2cd-40db-a0f2-b112627bb8da/ASL-Whack-the-Mole-Intro-Vid.ism)
+![ASL Whack-the-Mole Intro](azuremedia:02104365-8137-40f6-9de6-3920afaf5f42/mole-asl.ism)
 
 hint~
 
