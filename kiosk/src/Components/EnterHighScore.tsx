@@ -5,6 +5,7 @@ import { KioskState } from "../Models/KioskState";
 import HighScoreInitial from "./HighScoreInitial";
 import configData from "../config.json"
 import { PrimitiveRef } from "../Models/PrimitiveRef";
+import ExistingScoreList from "./ExistingScoreList";
 
 interface IProps {
     kiosk: Kiosk
@@ -35,18 +36,19 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
         }
 
         if (kiosk.gamepadManager.isBButtonPressed()) {
+            kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
             kiosk.navigate(KioskState.GameOver);
         }
     };
 
-    const lookForPressed = () => {
+    useEffect(() => {
         let interval: any;
         let timeout: any;
         timeout = setTimeout(() => {
             interval = setInterval(() =>
-            gamepadLoop(),
-            configData.EnterHighScorePoll
-        )
+                gamepadLoop(),
+                configData.EnterHighScorePoll
+            )
         }, configData.EnterHighScoreDelayMilli)
 
 
@@ -58,9 +60,7 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
                 clearTimeout(timeout);
             }
         }
-    }
-
-    lookForPressed();
+    }, [timesAPressed]);
 
     const updateTimesPressed = () => {
         if (!runOnce) {
@@ -114,10 +114,8 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
     const renderList = (highScores: HighScore[]): JSX.Element[] => {
         return highScores.map((highScore, i) => {
             return (
-                <li>
-                    <span className="highScoreInitials">{highScore.initials}</span>
-                    <span className="highScoreScore">{highScore.score}</span>
-                </li>
+                <ExistingScoreList key={i} highScoreInitials={highScore.initials}
+                highScoreScore={highScore.score} />
             )
         })
     }
