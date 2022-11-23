@@ -410,6 +410,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 90%;
 }
 
 .highScoreHighlight {
@@ -417,10 +418,11 @@ h2 {
 }
 
 .highScoreList {
-    font-size: 2.5em;
-    height: 3.75rem;
+    font-size: 2em;
     color: var(--high-score-color);
     line-height: 1.5em;
+    height: 80%;
+    margin-top: -1.5em;
 }
 
 .highScoreInitials {
