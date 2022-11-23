@@ -413,6 +413,22 @@ h2 {
     height: 90%;
 }
 
+.highScoreContent {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content:right;
+    width: 90%;
+}
+
+.highScoreInstructions {
+    width: 30%;
+    line-height: 1.5em;
+    font-family: 'Share';
+    font-size: 1.25em;
+    margin-left: 10%;
+}
+
 .highScoreHighlight {
     background-color: var(--high-score-selector-color);
 }

@@ -128,15 +128,27 @@ const EnterHighScore: React.FC<IProps> = ({ kiosk }) => {
                 <h1>YOU GOT A HIGH SCORE!</h1>
                 <h2>Enter your initials</h2>
             </div>
-            <div className="highScoreList">
-                <ol>
-                    {renderList(aboveScores)}
-                    <li>
-                        {renderInitials()}    {kiosk.mostRecentScores[0]}
-                    </li>
-                    {renderList(belowScores)}
-                </ol>
+            <div className="highScoreContent">
+                <div className="highScoreList">
+                    <ol>
+                        {renderList(aboveScores)}
+                        <li>
+                            <span className="highScoreInitials">{renderInitials()}</span>
+                            <span className="highScoreScore">{kiosk.mostRecentScores[0]}</span>
+                        </li>
+                        {renderList(belowScores)}
+                    </ol>
+                </div>
+
+                <div className="highScoreInstructions">
+                    <ul>
+                        <li>Use up/down to scroll through the alphabet</li>
+                        <li>When you find your initial, press A</li>
+                    </ul>
+
+                </div>
             </div>
+
 
         </div>
     )
