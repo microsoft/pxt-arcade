@@ -39,11 +39,13 @@ let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 
 and snap it inside at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
+- :paint brush: Click the grey box in the new block to open the **image editor**.
+Select the image for **Mama** in **My Assets**.
 
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/dino/add-sprite.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
 
 hint~
 
@@ -52,7 +54,7 @@ hint~
 
 ```blocks
 //@highlight
-let mamaDino = sprites.create(img`.`, SpriteKind.Player)
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 ```
 
 
@@ -75,9 +77,11 @@ You should see Mama Dino in the middle of the screen.
 
 
 - :game: From the ``||controller: Controller||`` category, grab <br/>
+
 ```block
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 ```
+
 and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
@@ -88,7 +92,6 @@ and snap it in at **the end** of the ``||loops(noclick): on start||`` block alre
 ![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
 
 hint~
-
 
 #### ~ tutorialhint
 
@@ -111,26 +114,30 @@ arrow keys, or **W** and **S** keys.
 
 ## {Step 6}
 
-**Let's set the scene**
+**Let's set the scene**<br/>
 🖼️ 🖼️ 🖼️
 
 ---
 
 - :paper plane:  From ``||scene:Scene||``, grab
-``||scene:set background image to [ ]||``
+
+```block
+scene.setBackgroundImage(img`.`)
+```
+
 and snap it into **the top**
 of the ``||loops:on start||`` container.
 
-- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background.
+- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background
+
 
 #### ~ tutorialhint
 
 ```blocks
-let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 //@highlight
 scene.setBackgroundImage(assets.image`Freeway`)
-
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 ```
 
 
@@ -142,11 +149,13 @@ scene.setBackgroundImage(assets.image`Freeway`)
 
 - :arrows alternate:  To make it look like the dino is walking along the road,
 go to ``||scroller:Scroller||`` and drag
-``||scroller:scroll background with vx [-50] vy [-50]||``
+
+```block
+scroller.scrollBackgroundWithSpeed(-50, 0)
+```
+
 into **the end**
 of the ``||loops:on start||`` container.
-
-- :mouse pointer:  Stop the background from scrolling vertically by changing the value of **vy** to **0**.
 
 #### ~ tutorialhint
 
@@ -154,7 +163,6 @@ of the ``||loops:on start||`` container.
 scene.setBackgroundImage(assets.image`Freeway`)
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
-mamaDino.setStayInScreen(true)
 //@highlight
 scroller.scrollBackgroundWithSpeed(-50, 0)
 ```
@@ -178,34 +186,25 @@ Let's add some baby dinos for the mama dinosaur to rescue 💚
 ---
 
 - :redo:  From ``||loops:Loops||``, grab a
-``||loops:forever||``
+
+```block
+forever(function () {})
+```
 loop container and drag it into
 an empty spot on the workspace.
 
 - :paper plane:  From ``||sprites:Sprites||``, grab
-``||variables(sprites):set [projectile] to projectile [ ] from side with vx [50] vy [50]||``
+
+```block
+projectile = sprites.createProjectileFromSide(img`.`, -90, 0)
+```
+
 and snap it into the empty
 ``||loops:forever||`` container.
 
-- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite.
+- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite image.
 
 #### ~ tutorialhint
-
-```blocks
-forever(function () {
-    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, 50, 50)
-})
-
-```
-
-## {Step 10}
-
-- :mouse pointer:  To make the babies look like they're walking along the road, change
-[__*vx*__](#whatVX "horizontal velocity") (or horizontal speed) to **-90**.
-
-- :mouse pointer:  Change [__*vy*__](#whatVY "vertical velocity") (or vertical speed) to **0** so they don't float up or down.
-
-
 
 ```blocks
 forever(function () {
@@ -215,8 +214,7 @@ forever(function () {
 ```
 
 
-
-## {Step 11}
+## {Step 10}
 
 **😲 They're flying 😲**
 
@@ -226,66 +224,53 @@ send the babies in from a random height each time.
 ---
 
 - :paper plane:  From  ``||sprites:Sprites||``, grab a
-``||sprites:set [mamaDino] [x] to [0]||``
+
+```block
+let projectile: Sprite = null
+projectile.y = randint(15, 115)
+```
 block and snap it into **the end** of the
 ``||loops:forever||`` loop container.
 
-- :mouse pointer:  Change **mamaDino** to **projectile** using the first dropdown menu.
-
-- :mouse pointer:  To change their vertical starting point, change **x** to **y** using the other dropdown menu.
+```blockconfig.local
+let projectile: Sprite = null
+projectile.y = randint(15, 115)
+```
 
 #### ~ tutorialhint
 ```blocks
 forever(function () {
     let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     //@highlight
-    projectile.y = 0
-})
-
-```
-
-
-## {Step 12}
-
-**This is looking great, but they still hover around the top.**
-
----
-- :calculator:  In
-``||sprites:set [mamaDino] [y] to [0]||``,
-replace **0** with
-``||math:pick random [0] to [10]||``.
-(From the ``||math:Math||`` category)
-
-- :mouse pointer:  Help the babies spread out along the road by changing the smallest random number from **0** to **15** and the largest random number from
-**10** to **115**.
-
-#### ~ tutorialhint
-```blocks
-forever(function () {
-    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     projectile.y = randint(15, 115)
 })
+
 ```
 
-
-
-## {Step 13}
+## {Step 11}
 
 - :redo:  Keep the babies from running out at the speed of light by
 adding a
-``||loops:pause [100] ms||``
+
+```block
+pause(1000)
+```
+
 block (from the  ``||loops:Loops||``
 category) to **the end** of the
 ``||loops:forever||`` loop.
 
-- :mouse pointer:  Change the pause time to **1000 ms** by clicking in the textbox and typing
-**1000** (or click the dropdown and select **1 second**.)
+
+```blockconfig.local
+pause(1000)
+```
 
 #### ~ tutorialhint
 ```blocks
 forever(function () {
     let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     projectile.y = randint(15, 115)
+    //@highlight
     pause(1000)
 })
 ```
@@ -293,7 +278,7 @@ forever(function () {
 
 
 
-## {Step 11}
+## {Step 12}
 
 **🎆 Congrats 🎆**
 
@@ -305,8 +290,10 @@ When you're done playing, click **Done** to return to the main page and continue
 
 
 ```blockconfig.global
-let mamaDino = sprites.create(img`.`, SpriteKind.Player)
-
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
+let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+projectile.y = 0
 ```
 
 
@@ -317,24 +304,15 @@ arcade-background-scroll=github:microsoft/arcade-background-scroll/
 
 
 ```ghost
-
 let projectile: Sprite = null
 
 scene.setBackgroundImage(assets.image`Freeway`)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
-animation.runImageAnimation(
-mamaDino,
-assets.animation`Mama Moving`,
-100,
-true
-)
 
 forever(function () {
     projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     projectile.y = randint(0, 120)
-    pause(randint(1000, 2000))
+    pause(1000)
 })
 
 ```
