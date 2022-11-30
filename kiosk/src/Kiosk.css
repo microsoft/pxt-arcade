@@ -434,7 +434,7 @@ h2 {
 }
 
 .highScoreList {
-    font-size: 2em;
+    font-size: 2.2em;
     color: var(--high-score-color);
     line-height: 1.5em;
     height: 80%;

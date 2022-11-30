@@ -3,7 +3,7 @@
     "PlayUrlRoot": "https://arcade.makecode.com/stable/---run",
     "Debug": true,
     "EnterHighScoreDelayMilli": 3000,
-    "EnterHighScorePoll": 200,
+    "EnterHighScorePoll": 100,
     "HighScoresToKeep": 10,
     "HighScoreInitialsLength": 3,
     "HighScoreInitialAllowedCharacters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
