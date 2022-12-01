@@ -56,7 +56,7 @@ h2 {
 .footer {
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
-    height: 5vh;
+    height: 3vh;
     width: 20%;
     left: 1.5%;
     bottom: 0;
@@ -79,7 +79,7 @@ h2 {
 
 .mainMenuHeader {
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: var(--main-text-color);
     margin-left: 27%;
     margin-right: 2%;
@@ -125,13 +125,13 @@ h2 {
 
 .addInstructions h2 {
     color: var(--button-primary-color);
-    font-size: 150%;
+    font-size: 1.5rem;
 }
 
 .addInstructions li {
     padding: 1em 0;
     margin-left: 1.5rem;
-    font-size: 95%;
+    font-size: 1rem;
 }
 
 .addInstructions {
@@ -143,7 +143,7 @@ h2 {
 }
 
 .addGame h1 {
-    font-size: 225%;
+    font-size: 2.25rem;
     font-weight: 400;
     margin: 1em 0;
 }
@@ -190,7 +190,7 @@ h2 {
 }
 
 .innerQRCodeContent h1{
-    font-size: 200%;
+    font-size: 2rem;
 }
 
 .addGameContent {
@@ -232,12 +232,12 @@ h2 {
 
 .scanQrPage h2 {
     margin-bottom: 0;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .scanQrPage h1 {
     margin-bottom: 2rem;
-    font-size: 2.25em;
+    font-size: 2.25rem;
 }
 
 .scanQrButton {
@@ -346,8 +346,8 @@ h2 {
 /* ----------------------------------- */
 
 .carouselWrap {
-    width: 98%;
-    height: 78vh;
+    width: 99%;
+    height: 80vh;
     border-radius: 1.5rem;
 }
 
@@ -368,6 +368,10 @@ h2 {
 .swiper-wrapper {
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+.swiper-slide-active {
+    box-shadow: 0 0 1rem var(--game-selected-outline);
 }
 
 .gameTile {
