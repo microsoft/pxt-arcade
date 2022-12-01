@@ -72,12 +72,14 @@ h2 {
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .mainMenuHeader {
     font-weight: 400;
     font-size: 2.5rem;
     color: var(--main-text-color);
+    margin-left: 27%;
 }
 
 .mainMenuTopBar {
@@ -85,11 +87,15 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-left: 26%;
+    width: 100%;
 }
 
 .locked {
     margin-left: 0;
+}
+
+.buttonUnselected {
+    border: var(--transparent-color) 0.5rem solid;
 }
 
 .kioskButton {
@@ -108,10 +114,6 @@ h2 {
     background-color: var(--button-primary-color);
     border:#ffd700 0.5rem solid;
 }
-
-/* .buttonUnselected {
-    background-color: var(--transparent-color);
-} */
 
 /* -------- ADDING GAME PAGE STYLING -------- */
 /* ----------------------------------- */
@@ -155,10 +157,17 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--black-color);
+    background-color: var(--button-primary-color);
+    border-radius: 0.3em;
+}
+
+.QRCodeHolder {
+    max-width: 30%;
 }
 
 .kioskLink a {
-    color: var(--main-text-color);
+    color: var(--black-color);
     overflow: auto;
     overflow-wrap: break-word;
 }
@@ -177,7 +186,7 @@ h2 {
 .addGameContent {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 95%;
     height: 100%;
@@ -327,20 +336,27 @@ h2 {
 /* ----------------------------------- */
 
 .carouselWrap {
-    width: 100%;
-    height: 80vh;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    /* justify-content: center; */
-    margin-right: -2rem
+    width: 98%;
+    height: 78vh;
+    border-radius: 1.5rem;
+}
+
+.selected {
+    box-shadow: 0 0 1rem #ffd700;
+}
+
+.unselected {
+    box-shadow: none;
 }
 
 .swiper {
     width: 100%;
     height: 90%;
-    margin-left: -5rem;
+}
+
+.swiper-wrapper {
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .gameTile {

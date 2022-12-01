@@ -18,6 +18,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     let localSwiper: any;
     const keyboardManager = new KeyboardManager();
+    const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     const leftKeyEvent = (eventType: string) => {
         return new KeyboardEvent(eventType, {
@@ -124,7 +125,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     }
 
     return(
-        <div className="carouselWrap">
+        <div className={`carouselWrap ${carouselSelected}`}>
             <Swiper
                 effect={"coverflow"}
                 loop={true}
