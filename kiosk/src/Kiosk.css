@@ -373,11 +373,8 @@ h2 {
 .gameTile {
     width: 100%;
     height: 100%;
-    background-size:100% 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    min-width: 35rem;
-    border: var(--button-primary-color) 0.25rem solid;
-    border-radius: 0.5rem;
 }
 
 .gameLabelBackground {
