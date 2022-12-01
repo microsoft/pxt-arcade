@@ -83,10 +83,6 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
                     How do I get a game's share link or QR code?
                 </a>
-
-
-
-
             </div>
         </div>
     )
