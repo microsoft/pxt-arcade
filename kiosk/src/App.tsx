@@ -8,6 +8,7 @@ import EnterHighScore from './Components/EnterHighScore';
 import AddingGame from './Components/AddingGame';
 import ScanQR from './Components/ScanQR';
 import QrSuccess from './Components/QrSuccess';
+import GameOver from './Components/GameOver';
 
 const url = window.location.href;
 const clean = !!/clean(?:[:=])1/.test(url);
@@ -39,6 +40,8 @@ function App() {
         return (<ScanQR kiosk={kioskSingleton} />)
       case KioskState.QrSuccess:
         return (<QrSuccess />)
+      case KioskState.GameOver:
+        return (<GameOver kiosk={kioskSingleton}/>)
     }
 
   return (<div />)

@@ -6,6 +6,17 @@
 
 ![balloon intro](azuremedia:64101234-a394-4f89-98af-b4edfd11143a/BurstinBalloonsIntro.ism)
 
+~hint Click here view the intro video with ASL
+
+![ASL Whack-the-Mole Intro](azuremedia:6026eebb-7d56-450e-9c25-5bbaac549f3f/balloon-asl.ism)
+
+hint~
+
+---
+
+Thank you to Deaf Kids Code for providing ASL video translations.
+![Deaf Kids Code Logo](/static/skillmap/assets/dkc-logo-small.png " ")
+
 
 
 ## {3. Your First Block}
