@@ -196,7 +196,7 @@ an empty spot on the workspace.
 - :paper plane:  From ``||sprites:Sprites||``, grab
 
 ```block
-projectile = sprites.createProjectileFromSide(img`.`, -90, 0)
+babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
 ```
 
 and snap it into the empty
@@ -208,7 +208,7 @@ and snap it into the empty
 
 ```blocks
 forever(function () {
-    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
 })
 
 ```
@@ -226,23 +226,23 @@ send the babies in from a random height each time.
 - :paper plane:  From  ``||sprites:Sprites||``, grab a
 
 ```block
-let projectile: Sprite = null
-projectile.y = randint(15, 115)
+let babyDino: Sprite = null
+babyDino.y = randint(15, 115)
 ```
 block and snap it into **the end** of the
 ``||loops:forever||`` loop container.
 
 ```blockconfig.local
-let projectile: Sprite = null
-projectile.y = randint(15, 115)
+let babyDino: Sprite = null
+babyDino.y = randint(15, 115)
 ```
 
 #### ~ tutorialhint
 ```blocks
 forever(function () {
-    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     //@highlight
-    projectile.y = randint(15, 115)
+    babyDino.y = randint(15, 115)
 })
 
 ```
@@ -268,8 +268,8 @@ pause(1000)
 #### ~ tutorialhint
 ```blocks
 forever(function () {
-    let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(15, 115)
+    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    babyDino.y = randint(15, 115)
     //@highlight
     pause(1000)
 })
@@ -291,9 +291,9 @@ When you're done playing, click **Done** to return to the main page and continue
 
 ```blockconfig.global
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
-let projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
 scroller.scrollBackgroundWithSpeed(-50, 0)
-projectile.y = 0
+babyDino.y = 0
 ```
 
 
@@ -304,14 +304,14 @@ arcade-background-scroll=github:microsoft/arcade-background-scroll/
 
 
 ```ghost
-let projectile: Sprite = null
+let babyDino: Sprite = null
 
 scene.setBackgroundImage(assets.image`Freeway`)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 
 forever(function () {
-    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(0, 120)
+    babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    babyDino.y = randint(0, 120)
     pause(1000)
 })
 
