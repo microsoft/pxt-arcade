@@ -225,8 +225,6 @@ export class Kiosk {
         else {
             this.selectedGame = undefined;
         }
-
-        this.onGameSelected();
     }
 
     exitToEnterHighScore(): void {

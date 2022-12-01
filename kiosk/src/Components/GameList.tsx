@@ -146,8 +146,8 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             >
                 {kiosk.games.map((game, index) => {
                     return (
-                        <SwiperSlide>
-                            <div className="gameTile" style={{ 
+                        <SwiperSlide key={game.id}>
+                            <div className="gameTile" style={{
                                 backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
                             }}>
                                 <div className="gameLabelBackground">
