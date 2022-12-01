@@ -375,6 +375,12 @@ h2 {
     height: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 
 .gameLabelBackground {
@@ -393,7 +399,6 @@ h2 {
     font-size: 2.125em;
     height: 2.375rem;
     margin: 0.3rem;
-
 }
 
 .gameDescription {
@@ -418,45 +423,60 @@ h2 {
     color: var(--high-score-color);
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .highScoreSmallList {
     text-align: right;
 }
-
 
 .highScoreSmallInitials {
     min-width: 9.25rem;
 }
 
-.highScoreSmallInitialsScoreSpacer {
-    width: 3.125rem;
+.enterHighScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+.highScoreContent {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content:right;
+    width: 90%;
+}
+
+.highScoreInstructions {
+    width: 30%;
+    line-height: 1.5em;
+    font-family: 'Share';
+    font-size: 1.25em;
+    margin-left: 10%;
 }
 
 .highScoreHighlight {
     background-color: var(--high-score-selector-color);
 }
 
-.highScoreRow {
-    font-size: 2.5em;
-    height: 3.75rem;
+.highScoreList {
+    font-size: 2.2em;
     color: var(--high-score-color);
+    line-height: 1.5em;
+    height: 80%;
+    margin-top: -1.5em;
+}
+
+.highScoreInitials {
+    margin-left: -1.25rem;
+}
+
+.highScoreScore {
+    margin-left: 3.5rem;
 }
 
 .enterHighScoreText {
     color: var(--main-text-color);
-}
-
-.highScoreIndex {
-    text-align: right;
-}
-
-.highScoreInitials {
-    min-width: 9.25rem;
-    text-align: center;
 }
 
 .highScoreInitial {

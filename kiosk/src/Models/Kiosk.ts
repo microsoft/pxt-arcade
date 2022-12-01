@@ -225,8 +225,21 @@ export class Kiosk {
         else {
             this.selectedGame = undefined;
         }
+    }
 
-        this.onGameSelected();
+    exitToEnterHighScore(): void {
+        const launchedGameHighs = this.getHighScores(this.launchedGame);
+        const currentHighScore = this.mostRecentScores[0];
+        const lastScore = launchedGameHighs[launchedGameHighs.length - 1]?.score;
+        if (launchedGameHighs.length === configData.HighScoresToKeep 
+            && lastScore 
+            && currentHighScore < lastScore) {
+                this.exitGame(KioskState.GameOver);
+
+        } else {
+            this.exitGame(KioskState.EnterHighScore);
+        }
+
     }
 
     gameOver(skipHighScore?: boolean): void {
@@ -238,7 +251,7 @@ export class Kiosk {
         }
 
         if (!skipHighScore && this.mostRecentScores && this.mostRecentScores.length && (this.selectedGame!.highScoreMode !== "None")) {
-            this.exitGame(KioskState.EnterHighScore);
+            this.exitToEnterHighScore();
         }
         else {
             this.exitGame(KioskState.GameOver);
