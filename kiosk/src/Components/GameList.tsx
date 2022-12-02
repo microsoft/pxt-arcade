@@ -125,7 +125,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     }
 
     return(
-        <div className={`carouselWrap ${carouselSelected}`}>
+        <div className="carouselWrap">
             <Swiper
                 effect={"coverflow"}
                 loop={true}
@@ -148,7 +148,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 {kiosk.games.map((game, index) => {
                     return (
                         <SwiperSlide key={game.id}>
-                            <div className="gameTile" style={{
+                            <div className={`gameTile ${carouselSelected}`} style={{
                                 backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
                             }}>
                                 <div className="gameLabelBackground">
