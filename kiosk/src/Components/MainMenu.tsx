@@ -11,7 +11,7 @@ interface IProps {
 
 const MainMenu: React.FC<IProps> = ({ kiosk }) => {
     const [buttonSelected, setButtonState] = useState(false);
-    const topBarClassName = `mainMenuTopBar${kiosk.locked ? " locked" : ""}`;
+    const lockedClassName = kiosk.locked ? " locked" : "";
 
     const updateLoop = () => {
         if (!buttonSelected && kiosk.gamepadManager.isUpPressed()) {
@@ -43,8 +43,8 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
 
     return(
         <div className="mainMenu">
-            <nav className={topBarClassName}>
-                <h1 className="mainMenuHeader">Select a Game</h1>
+            <nav className="mainMenuTopBar">
+                <h1 className={`mainMenuHeader${lockedClassName}`}>Select a Game</h1>
                 {
                     !kiosk.locked &&
                     <AddGameButton selected={buttonSelected} content="Add your game" />

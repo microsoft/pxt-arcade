@@ -383,6 +383,7 @@ h2 {
     image-rendering: optimize-contrast;
     image-rendering: pixelated;
     -ms-interpolation-mode: nearest-neighbor;
+    border: var(--black-color) 2px solid;
 }
 
 .gameLabelBackground {
