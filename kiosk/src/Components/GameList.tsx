@@ -66,18 +66,14 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         }
 
         if (kiosk.gamepadManager.isLeftPressed()) {
-            if (!keyboardManager.isLeftPressed()) {
-                document.dispatchEvent(leftKeyEvent("keydown"));
-                document.dispatchEvent(leftKeyEvent("keyup"));
-            }
+            document.dispatchEvent(leftKeyEvent("keydown"));
+            document.dispatchEvent(leftKeyEvent("keyup"));
             changeFocusedItem();
         }
 
         if (kiosk.gamepadManager.isRightPressed()) {
-            if (!keyboardManager.isRightPressed()) {
-                document.dispatchEvent(rightKeyEvent("keydown"));
-                document.dispatchEvent(rightKeyEvent("keyup"));
-            }
+            document.dispatchEvent(rightKeyEvent("keydown"));
+            document.dispatchEvent(rightKeyEvent("keyup"));
             changeFocusedItem();
         }
     }
