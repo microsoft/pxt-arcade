@@ -11,17 +11,17 @@ interface IProps {
 
 const GameOver: React.FC<IProps> = ({ kiosk }) => {
     const [homeButtonSelected, setHomeButtonState] = useState(false);
-    const [retryButtonSelected, setRetryButtonState] = useState(true);
+    const [retryButtonSelected, setRetryButtonState] = useState(false);
     const gameId = kiosk.launchedGame;
 
 
     const updateLoop = () => {
-        if (homeButtonSelected && kiosk.gamepadManager.isLeftPressed()) {
+        if (kiosk.gamepadManager.isLeftPressed()) {
             setRetryButtonState(true);
             setHomeButtonState(false);
 
         }
-        if (retryButtonSelected && kiosk.gamepadManager.isRightPressed()) {
+        if (kiosk.gamepadManager.isRightPressed()) {
             setHomeButtonState(true);
             setRetryButtonState(false);
 
@@ -37,10 +37,11 @@ const GameOver: React.FC<IProps> = ({ kiosk }) => {
 
     useEffect(() => {
         let intervalId: any = null;
+
         intervalId = setInterval(() => {
             updateLoop();
         }, configData.GamepadPollLoopMilli);
-        
+
         return () => {
             if (intervalId) {
                 clearInterval(intervalId);
