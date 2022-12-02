@@ -114,7 +114,6 @@ h2 {
 }
 
 .buttonSelected {
-    /* background-color: var(--button-primary-color); */
     border:#ffd700 0.5rem solid;
     box-shadow: 0 0 0.4rem var(--high-score-selector-color);
 
@@ -351,9 +350,8 @@ h2 {
     border-radius: 1.5rem;
 }
 
-.selected {
+.swiper-slide-active .selected {
     box-shadow: 0 0 1rem var(--high-score-selector-color);
-    /* background-color: var(--button-primary-color); */
 }
 
 .unselected {

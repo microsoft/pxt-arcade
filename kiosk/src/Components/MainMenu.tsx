@@ -44,7 +44,7 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
     return(
         <div className="mainMenu">
             <nav className={topBarClassName}>
-                <h1 className="mainMenuHeader">Select A Game</h1>
+                <h1 className="mainMenuHeader">Select a Game</h1>
                 {
                     !kiosk.locked &&
                     <AddGameButton selected={buttonSelected} content="Add your game" />
