@@ -25,12 +25,17 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     const checkUrl = async () => {
         const input = document.getElementById("kiosk-share-link") as HTMLInputElement;
-        const inputValue = input.value;
-        const shareLink = /(https:\/\/)((arcade\.makecode\.com\/)|(makecode\.com\/))((?:S\d{5}-\d{5}-\d{5}-\d{5})|(?:_[a-zA-Z0-9]+))/.exec(inputValue);
+        const inputValue = input.value?.trim();
+        const shareLink = /^(https:\/\/)((arcade\.makecode\.com\/)|(makecode\.com\/))((?:S?\d{5}-\d{5}-\d{5}-\d{5})$|(?:_[a-zA-Z0-9]+)$)/i.exec(inputValue);
+        const shareCode = /(^(?:S?\d{5}-\d{5}-\d{5}-\d{5})$|^(?:_[a-zA-Z0-9]{12})$)/.exec(inputValue);
         let shareId;
         if (shareLink) {
-            setLinkError(false);
             shareId = /\/([^\/]+)\/?$/.exec(inputValue)?.[1];
+        } else if (shareCode) {
+            shareId = shareCode[1];
+        }
+        if (shareId) {
+            setLinkError(false);
             try {
                 await addGameToKioskAsync(kioskId, shareId);
                 kiosk.navigate(KioskState.QrSuccess);
