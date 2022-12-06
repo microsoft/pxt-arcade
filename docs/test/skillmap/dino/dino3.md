@@ -27,38 +27,27 @@ Let's add a new kind of projectile, an ``||sprites:Enemy||``!
 
 ---
 
-- :redo:  Grab a new  
+- :paper plane:  Grab the  
 ``||loops:forever||``  
 loop container and drop it into an empty area of the workspace.
 
-- :paper plane:  From ``||sprites:Sprites||``, drag
-
 ```block
-let tourist = sprites.createProjectileFromSide(img`.`, -90, 0)
+forever(function () {
+    let tourist = sprites.createProjectileFromSide(img`.`, -90, 0)
+    tourist.setKind(SpriteKind.Enemy)
+    pause(2100)
+})
 ```
-into the new  ``||loops:forever||`` loop container.
+
+- :paint brush:  Click the empty grey box in the ``||sprites:projectile [ ] from side||`` block for ``||variables(noclick):tourist||`` and toggle to **My Assets** to select the blue car.
 
 ```blockconfig.local
 forever(function () {
-//@highlight
     let tourist = sprites.createProjectileFromSide(img`.`, -90, 0)
+    tourist.setKind(SpriteKind.Enemy)
+    pause(2100)
 })
 ```
-
-
-#### ~ tutorialhint
-
-```blocks
-forever(function () {
-//@highlight
-    let tourist = sprites.createProjectileFromSide(img`.`, -90, 0)
-})
-```
-
-
-## {Step 4}
-
-- :paint brush:  Click the empty grey box and toggle to **My Assets** to select the blue car.
 
 #### ~ tutorialhint
 
@@ -66,6 +55,8 @@ forever(function () {
 forever(function () {
 //@highlight
     let tourist = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
+    tourist.setKind(SpriteKind.Enemy)
+    pause(2100)
 })
 ```
 
@@ -73,17 +64,17 @@ forever(function () {
 ## {Step 4}
 
 **Our new enemy isn't quite ready.**
-We still have to set the vertical positions on the screen and add a pause to the loop.
+We still have to set the vertical positions on the screen.
 
 ---
 
-- :paper plane:  Just like we did when making the baby dinos, we'll need to grab  
+- :paper plane:  Wwe'll need to grab  
 
 ```block
 let tourist: Sprite = null
 tourist.y = randint(15, 115)
 ```
-and snap it in **below** the new projectile block.
+and snap it in **below** the projectile block. This causes our tourist ``||sprites:Enemy||`` sprites to start at a different height each time.
 
 #### ~ tutorialhint
 
@@ -92,29 +83,7 @@ forever(function () {
     let tourist = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
     //@highlight
     tourist.y = randint(15, 115)
-})
-```
-
-## {Step 5}
-
-- :redo:  Add  
-
-```block
-pause(2100)
-```
-to the bottom of this ``||loops:forever||`` loop.
-
-```blockconfig.local
-pause(2100)
-```
-
-#### ~ tutorialhint
-
-```blocks
-forever(function () {
-    let tourist = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    tourist.y = randint(15, 115)
-    //@highlight
+    tourist.setKind(SpriteKind.Enemy)
     pause(2100)
 })
 ```
@@ -127,37 +96,6 @@ forever(function () {
 How is it working?
 
 
-
-## {Step 7}
-
-**😲 Uh-Oh 😲**
-
-Running into an enemy INCREASES your score. That's not right. Let's add code to treat the two projectiles differently.
-
----
-
-- :paper plane:  From ``||sprites:Sprites||``, grab a  
-
-```block
-let tourist: Sprite = null
-tourist.setKind(SpriteKind.Enemy)
-```
-block and snap it just **ABOVE** the **pause** block in the enemy's  
-``||loops:forever||`` loop container.
-
-#### ~ tutorialhint
-
-```blocks
-
-forever(function () {
-    let tourist = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
-    tourist.y = randint(15, 115)
-    //@highlight
-    tourist.setKind(SpriteKind.Enemy)
-    pause(2100)
-
-})
-```
 
 ## {Step 8}
 
@@ -177,7 +115,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeLifeBy(-1)
 })
 ```
-block. This already has code to reduce our life points by one when we get hit by a tourist.
+block. This has code to reduce our life points when Mama gets hit by a tourist.
 
 ```blockconfig.local
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
