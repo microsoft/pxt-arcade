@@ -538,6 +538,44 @@ info.onScore(20, function () {
 ```
 
 
+
+## {Step 21}
+
+**Be a leader!**
+
+Teach users how to play with well-placed instructions.
+
+---
+
+- :circle: From the ``||game:Game||`` category, grab <br/>
+ ``||game(noclick):show long text "..." [full screen]||``<br/>
+ and snap it in at **the top** of the ``||loops(noclick):on start||`` container already in the workspace.
+
+Now, when your game starts, users will see a message suggesting that they use the arrow keys to play.
+
+
+```blocks
+namespace SpriteKind {
+    export const Guard = SpriteKind.create()
+}
+
+//@highlight
+game.showLongText("When game begins, press the ARROW KEYS to move Shuri, Okoye and Riri. If Namor catches you, you will lose points! ", DialogLayout.Full)
+scene.setBackgroundImage(assets.image`wakanda`)
+let Shuri = sprites.create(assets.image`shuri`, SpriteKind.Player)
+controller.moveSprite(Shuri)
+Shuri.setStayInScreen(true)
+let Namor = sprites.create(assets.image`namor`, SpriteKind.Enemy)
+Namor.follow(Shuri, 30)
+Namor.setPosition(148, 2)
+let Riri = sprites.create(assets.image`riri`, SpriteKind.Guard)
+controller.moveSprite(Riri, 34, -53)
+let Okoye = sprites.create(assets.image`okoye`, SpriteKind.Guard)
+controller.moveSprite(Okoye, -68, -58)
+```
+
+
+
 ## {Step 21}
 
 **🎉 Congratulations**
@@ -549,7 +587,9 @@ Now you have a game that helps Shuri, Riri, and Oyoke defeat Namor! Go ahead and
 Click **Done** when you're ready to publish your game and share with friends.
 
 
-
+```blockconfig.global
+game.showLongText("When game begins, press the ARROW KEYS to move Shuri, Okoye and Riri. If Namor catches you, you will lose points! ", DialogLayout.Full)
+```
 
 ```package
 wakanda-palette=github:riknoll/wakanda-palette

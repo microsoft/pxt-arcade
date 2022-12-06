@@ -18,6 +18,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     let localSwiper: any;
     const keyboardManager = new KeyboardManager();
+    const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     const leftKeyEvent = (eventType: string) => {
         return new KeyboardEvent(eventType, {
@@ -66,18 +67,14 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         }
 
         if (kiosk.gamepadManager.isLeftPressed()) {
-            if (!keyboardManager.isLeftPressed()) {
-                document.dispatchEvent(leftKeyEvent("keydown"));
-                document.dispatchEvent(leftKeyEvent("keyup"));
-            }
+            document.dispatchEvent(leftKeyEvent("keydown"));
+            document.dispatchEvent(leftKeyEvent("keyup"));
             changeFocusedItem();
         }
 
         if (kiosk.gamepadManager.isRightPressed()) {
-            if (!keyboardManager.isRightPressed()) {
-                document.dispatchEvent(rightKeyEvent("keydown"));
-                document.dispatchEvent(rightKeyEvent("keyup"));
-            }
+            document.dispatchEvent(rightKeyEvent("keydown"));
+            document.dispatchEvent(rightKeyEvent("keyup"));
             changeFocusedItem();
         }
     }
@@ -146,8 +143,8 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             >
                 {kiosk.games.map((game, index) => {
                     return (
-                        <SwiperSlide>
-                            <div className="gameTile" style={{ 
+                        <SwiperSlide key={game.id}>
+                            <div className={`gameTile ${carouselSelected}`} style={{
                                 backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
                             }}>
                                 <div className="gameLabelBackground">

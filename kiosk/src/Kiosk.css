@@ -11,6 +11,8 @@
     --black-color: #050505;
     --input-outline: #e5e7eb;
     --button-underline: #10b7e5;
+    --game-tile-outline: #AFF1FF3d;
+    --game-selected-outline: #AFF1FFaa;
 }
 
 html, body {
@@ -19,7 +21,7 @@ html, body {
     padding: 0;
     margin: 0;
     overflow: hidden;
-    background: linear-gradient(var(--secondary-dark-color), var(--black-color));
+    background-color: var(--black-color);
     font-family: 'Press Start 2P';
     color: var(--main-text-color);
 }
@@ -54,7 +56,7 @@ h2 {
 .footer {
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
-    height: 5vh;
+    height: 3vh;
     width: 20%;
     left: 1.5%;
     bottom: 0;
@@ -72,12 +74,15 @@ h2 {
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .mainMenuHeader {
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: var(--main-text-color);
+    margin-left: 27%;
+    margin-right: 2%;
 }
 
 .mainMenuTopBar {
@@ -85,11 +90,15 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-left: 26%;
+    width: 100%;
 }
 
 .locked {
     margin-left: 0;
+}
+
+.buttonUnselected {
+    border: var(--transparent-color) 0.5rem solid;
 }
 
 .kioskButton {
@@ -105,26 +114,23 @@ h2 {
 }
 
 .buttonSelected {
-    background-color: var(--button-primary-color);
     border:#ffd700 0.5rem solid;
-}
+    box-shadow: 0 0 0.4rem var(--high-score-selector-color);
 
-/* .buttonUnselected {
-    background-color: var(--transparent-color);
-} */
+}
 
 /* -------- ADDING GAME PAGE STYLING -------- */
 /* ----------------------------------- */
 
 .addInstructions h2 {
     color: var(--button-primary-color);
-    font-size: 2em;
+    font-size: 1.5rem;
 }
 
 .addInstructions li {
     padding: 1em 0;
     margin-left: 1.5rem;
-    font-size: 1.25em;
+    font-size: 1rem;
 }
 
 .addInstructions {
@@ -136,7 +142,7 @@ h2 {
 }
 
 .addGame h1 {
-    font-size: 2.5em;
+    font-size: 2.25rem;
     font-weight: 400;
     margin: 1em 0;
 }
@@ -155,10 +161,17 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--black-color);
+    background-color: var(--button-primary-color);
+    border-radius: 0.3em;
+}
+
+.QRCodeHolder {
+    max-width: 30%;
 }
 
 .kioskLink a {
-    color: var(--main-text-color);
+    color: var(--black-color);
     overflow: auto;
     overflow-wrap: break-word;
 }
@@ -172,12 +185,17 @@ h2 {
 
 .innerQRCodeContent h3 {
     margin-bottom: -1.5rem;
+    text-align: center;
+}
+
+.innerQRCodeContent h1{
+    font-size: 2rem;
 }
 
 .addGameContent {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 95%;
     height: 100%;
@@ -213,12 +231,12 @@ h2 {
 
 .scanQrPage h2 {
     margin-bottom: 0;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .scanQrPage h1 {
     margin-bottom: 2rem;
-    font-size: 2.25em;
+    font-size: 2.25rem;
 }
 
 .scanQrButton {
@@ -327,28 +345,45 @@ h2 {
 /* ----------------------------------- */
 
 .carouselWrap {
-    width: 100%;
+    width: 99%;
     height: 80vh;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    /* justify-content: center; */
-    margin-right: -2rem
+    border-radius: 1.5rem;
+}
+
+.swiper-slide-active .selected {
+    box-shadow: 0 0 1rem var(--high-score-selector-color);
+}
+
+.unselected {
+    box-shadow: none;
 }
 
 .swiper {
     width: 100%;
     height: 90%;
-    margin-left: -5rem;
+}
+
+.swiper-wrapper {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.swiper-slide-active {
+    box-shadow: 0 0 1rem var(--game-selected-outline);
 }
 
 .gameTile {
     width: 100%;
     height: 100%;
-    background-size:100% 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    min-width: 35rem;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    border: var(--black-color) 2px solid;
 }
 
 .gameLabelBackground {
@@ -367,7 +402,6 @@ h2 {
     font-size: 2.125em;
     height: 2.375rem;
     margin: 0.3rem;
-
 }
 
 .gameDescription {
@@ -392,45 +426,60 @@ h2 {
     color: var(--high-score-color);
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .highScoreSmallList {
     text-align: right;
 }
-
 
 .highScoreSmallInitials {
     min-width: 9.25rem;
 }
 
-.highScoreSmallInitialsScoreSpacer {
-    width: 3.125rem;
+.enterHighScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+.highScoreContent {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    justify-content:right;
+    width: 90%;
+}
+
+.highScoreInstructions {
+    width: 30%;
+    line-height: 1.5em;
+    font-family: 'Share';
+    font-size: 1.25em;
+    margin-left: 10%;
 }
 
 .highScoreHighlight {
     background-color: var(--high-score-selector-color);
 }
 
-.highScoreRow {
-    font-size: 2.5em;
-    height: 3.75rem;
+.highScoreList {
+    font-size: 2.2em;
     color: var(--high-score-color);
+    line-height: 1.5em;
+    height: 80%;
+    margin-top: -1.5em;
+}
+
+.highScoreInitials {
+    margin-left: -1.25rem;
+}
+
+.highScoreScore {
+    margin-left: 3.5rem;
 }
 
 .enterHighScoreText {
     color: var(--main-text-color);
-}
-
-.highScoreIndex {
-    text-align: right;
-}
-
-.highScoreInitials {
-    min-width: 9.25rem;
-    text-align: center;
 }
 
 .highScoreInitial {
