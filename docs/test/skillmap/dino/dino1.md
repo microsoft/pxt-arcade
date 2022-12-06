@@ -76,7 +76,7 @@ You should see Mama Dino in the middle of the screen.
 **Mama Dino needs to be able to move around the screen.**
 
 
-- :game: From the ``||controller: Controller||`` category, grab <br/>
+- :game: From the ``||controller: Controller||`` category, grab  
 
 ```block
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
@@ -185,100 +185,42 @@ Let's add some baby dinos for the mama dinosaur to rescue 💚
 
 ---
 
-- :redo:  From ``||loops:Loops||``, grab a
+- :redo:  From ``||loops:Loops||``, grab the
 
 ```block
-forever(function () {})
+forever(function () {
+    let babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
+    babyDino.y = randint(15, 115)
+    pause(1000)
+})
 ```
-loop container and drag it into
-an empty spot on the workspace.
+loop container and drag it into an empty spot on the workspace.
+This will create a new baby dino every second at a random starting height. 
 
-- :paper plane:  From ``||sprites:Sprites||``, grab
+- :paint brush:  Click the **grey square** in the ``||sprites:projectile [ ] from side||`` block for ``||variables(noclick):babyDino||`` and toggle to **My Assets** to choose the **Baby** sprite image.
 
-```block
-babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
+```blockconfig.local
+forever(function () {
+    let babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
+    babyDino.y = randint(15, 115)
+    pause(1000)
+})
 ```
-
-and snap it into the empty
-``||loops:forever||`` container.
-
-- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Baby** sprite image.
 
 #### ~ tutorialhint
 
 ```blocks
 forever(function () {
+    //@highlight
     let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    babyDino.y = randint(15, 115)
+    pause(1000)
 })
 
 ```
 
 
 ## {Step 10}
-
-**😲 They're flying 😲**
-
-If we leave them like this, we won't be able to see them properly.  Let's
-send the babies in from a random height each time.
-
----
-
-- :paper plane:  From  ``||sprites:Sprites||``, grab a
-
-```block
-let babyDino: Sprite = null
-babyDino.y = randint(15, 115)
-```
-block and snap it into **the end** of the
-``||loops:forever||`` loop container.
-
-```blockconfig.local
-let babyDino: Sprite = null
-babyDino.y = randint(15, 115)
-```
-
-#### ~ tutorialhint
-```blocks
-forever(function () {
-    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    //@highlight
-    babyDino.y = randint(15, 115)
-})
-
-```
-
-## {Step 11}
-
-- :redo:  Keep the babies from running out at the speed of light by
-adding a
-
-```block
-pause(1000)
-```
-
-block (from the  ``||loops:Loops||``
-category) to **the end** of the
-``||loops:forever||`` loop.
-
-
-```blockconfig.local
-pause(1000)
-```
-
-#### ~ tutorialhint
-```blocks
-forever(function () {
-    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    babyDino.y = randint(15, 115)
-    //@highlight
-    pause(1000)
-})
-```
-
-
-
-
-## {Step 12}
 
 **🎆 Congrats 🎆**
 
