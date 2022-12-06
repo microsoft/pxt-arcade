@@ -25,68 +25,35 @@ Can you move Mama Dino around the screen? Do baby dinos walk toward you?
 ## {Step 3}
 
 **We're off to a great start!!**
-Let's add some code that tells the game what to do when the mom reaches her baby.
+Let's add some code that tells the game what to do when mama reaches her baby.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab an
+- :paper plane:  From ``||sprites:Sprites||``, grab the
 
 ```block
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-})
-```
-
-container and drop it into an empty area of the workspace.
-
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-
-})
-```
-
-
-
-## {Step 4}
-
-Now we have a container for code that runs when Mama Dino overlaps the babies.
-**Let's add a block to remove the babies from the play area when you catch them.**
-
----
-
-- :paper plane:  From ``||sprites:Sprites||``, grab
-
-```block
-let babyDino: Sprite = null
-babyDino.destroy()
-```
-and snap it into the empty
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``
-container.
-
-- :mouse pointer:  To make sure that the correct **babyDino** is destroyed, grab the
-``||variables(noclick):otherSprite||`` value from the title of  
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``  
-and drop it into the
-``||sprites:destroy [babyDino]||``
-block to replace the value ``||variables(noclick):babyDino||``.
-
-
-~hint Show me how! 🕵🏽
-
-![Grab otherSprite from header](/static/skillmap/assets/give-var.gif "Replace mamaDino with the otherSprite variable" )
-
-hint~
-
-#### ~ tutorialhint
-```blocks
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    //@highlight
     otherSprite.destroy()
 })
 ```
+container and drop it into an empty area of the workspace.
+
+- :paper plane: To show that mama collected her baby, we want the baby dino to go off the screen when they reach each other. The ``||variables(noclick):sprite||`` variable is a ``||sprites:Player||`` sprite, or **mamaDino**, and ``||variables(noclick):otherSprite||`` is the ``||variables(noclick):projectile||`` sprite which is a **babyDino**. 
+
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
+```
+
 
 ## {Step 5}
 
@@ -133,19 +100,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     info.changeScoreBy(1)
 })
 
-
 let babyDino: Sprite = null
 scene.setBackgroundImage(assets.image`Freeway`)
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 
-
 forever(function () {
     babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     babyDino.y = randint(15, 115)
     pause(1000)
-
 })
 ```
 
@@ -193,16 +157,17 @@ Right now, when time runs out, you lose the game. We can change that!
 - :id card:  From ``||info:Info||``,  grab the  
 
 ```block
-info.onCountdownEnd(function () {})
+info.onCountdownEnd(function () {
+    game.over(true)
+})
 ```
 container and drop it into a blank area of the workspace.
 
-- :circle:  Now, from ``||game:Game||``, pick a  
-
-```block
-game.over(true)
+```blockconfig.local
+info.onCountdownEnd(function () {
+    game.over(true)
+})
 ```
-block and snap it into the empty ``||info:on countdown end||`` container.
 
 #### ~ tutorialhint
 
