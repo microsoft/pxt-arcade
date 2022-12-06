@@ -137,7 +137,7 @@ game.onUpdateInterval(2000, function () {
 
 ## Spawn planets
 
-From ``||sprites:Sprites||`` drag ``||variables:projectile from side||`` into
+From ``||sprites:Sprites||`` drag ``||variables(sprites):projectile from side||`` into
 the ``||game:on game update every||``. Set the ``||sprites:vx||`` value to `0`.
 
 ```blocks
@@ -150,7 +150,7 @@ game.onUpdateInterval(2000, function () {
 
 You already drew your planets, so we need to grab the images from your array.
 Find the ``||arrays:get value at||`` in ``||arrays:Arrays||`` and drag it over
-the gray image square in your ``||variables:projectile from side||`` block.
+the gray image square in your ``||variables(sprites):projectile from side||`` block.
 Click the hint to check that your code looks correct!
 
 ```blocks
@@ -161,8 +161,8 @@ game.onUpdateInterval(2000, function () {
 
 ## Set planet position
 Place a ``||sprites:set position to||`` block right below the
-``||variables:set projectile to||`` ``||sprites:projectile||`` block. Change
-the variable to ``||variables:projectile||`` in the dropdown list. You should
+``||variables(sprites):set projectile to||`` ``||sprites:projectile||`` block. Change
+the variable to ``||variables(noclick):projectile||`` in the dropdown list. You should
 see a row of planets (or asteroids, or alien ships) going down the left side
 of your game.
 

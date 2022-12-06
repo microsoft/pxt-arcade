@@ -71,13 +71,15 @@ We currently support two hardware variants which match the above criteria:
   * **STM32F411xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
   * **STM32F412xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
   * **STM32F412xG** (Cortex M4F, 256kB of RAM, 1024kB of flash, 96MHz)
+* **R2** based on **RP2040** (Cortex-M0+, 264kB of RAM, typically 2048kB+ of flash, 125MHz)
 
 The STM32F41x series is listed to run at 100MHz, but to support USB we need to run them at 96MHz.
 We support 48 pin and larger packages. Only STM32F412 in 64 pin and larger packages support a parallel display interface,
 which is required if you want to use an ILI9341 320x240 display (see [display](#screen)).
 
 Additionally, we're considering adding support for the following in the future (but not in the next 6 months):
-* **N840** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
+* **N4** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
+* **N3** based on Nordic **NRF52833** (Cortex M4F, 128kB of RAM, 512kB of flash, 64MHz)
 
 Of course, many other choices are possible and we would love to hear your feedback.
 
@@ -232,7 +234,7 @@ An accelerometer is optional. We currently support the following parts:
 
 * LIS3DH
 * MMA8453
-* MMA8653
+* MPU6050
 
 If requested, we can potentially add support for other accelerometers such as MSA300.
 
@@ -488,6 +490,13 @@ PIN_VIBRATION = PC14
 
 `JACK_SND` needs to be on ``PA02`` (DAC output).
 
+#### R2 #r2
+
+For RP2040, the application looks for CF2 section (see below) at 4kB before the end of 1MB, 2MB, 4MB, 8MB, 16MB, 32MB (that's megabytes) in the flash. It's recommended to place it at all these addresses (size of flash permitting). 
+See [sample config UF2](https://github.com/microsoft/pxt-arcade/blob/master/libs/hw---rp2040/sample-config.uf2).
+Manufacturers should provide a "factory reset" UF2 which contains all these config sections, and possibly a test game.
+This file can be used to recover after the flash has been overwritten (eg by large files in Micropython filesystem).
+
 ### Configuration #cf2
 
 We anticipate the future need of various configurations for display controllers, as well as different
@@ -503,3 +512,4 @@ Generally, the header isn't essential to this board, but it's recommended
 to at least leave holes for people to solder it in.
 
 The mapping between MCU GPIOs and the various hardware signals such as the buttons and display interface is specified in the bootloader. They can be changed as described above.
+

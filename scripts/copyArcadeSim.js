@@ -1,13 +1,12 @@
 const fs = require("fs");
 const path = require("path");
-const rimraf = require("rimraf");
 
 const simModule = path.resolve("node_modules", "pxt-arcade-sim");
 const simSrc = path.resolve("..", "pxt-arcade-sim");
 
 if (fs.existsSync("node_modules")) {
     console.log("Deleting " + simModule)
-    rimraf.sync(simModule);
+    fs.rmSync(simModule, { recursive: true, force: true });
 }
 
 shallowCopy(simSrc, simModule);

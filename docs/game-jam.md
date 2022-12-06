@@ -28,9 +28,9 @@ Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring
 * name: Flying Through Time
 * description: Fast and fun, with an incredible soundtrack--use the experimental time wings to swap between past, present, and future as you zip through different landscapes to rescue your friends.
 * author: lucasmayhew
-* url: https://arcade.makecode.com/30418-01173-18811-61378
+* url: https://arcade.makecode.com/29445-50662-54495-27773
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/30418-01173-18811-61378/thumb
+* imageUrl: https://pxt.azureedge.net/api/29445-50662-54495-27773/thumb
 ---
 * name: Tomb raider
 * description: Adventure through an ancient tomb in this tough-as-nails platformer. See if you can find all 13 ancient gems and the 3 exits before collapse!

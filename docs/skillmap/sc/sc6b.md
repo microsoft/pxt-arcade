@@ -27,7 +27,7 @@ We can make your assassins smart enough to turn around.
 
 ► Find the ``||sprites:on created [sprite] of kind [Enemy]||`` container where your assassins are made.
 
-► Add a ``||animation:animate [mySprite]...when not moving||`` block anywhere inside the assassin's container and drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+► Add a ``||animation:animate [mySprite]...when not moving||`` block anywhere inside the assassin's container and drag the ``||variables(noclick):sprite||`` value from the outer container down to replace ``||variables(noclick):mySprite||``.
 
 ► Choose the **assassin right** animation and change **not moving** to **moving right**.
 
@@ -66,7 +66,7 @@ A little barrier wouldn't stop a Ten Rings assassin. Let's teach them to jump wh
 
 ► From ``||sprites:Sprites||`` drag ``||sprites:make [mySprite] hurdle side wall||`` into the empty container.
 
-► Drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+► Drag the ``||variables(noclick):sprite||`` value from the outer container down to replace ``||variables(noclick):mySprite||``.
 
 
 
@@ -102,7 +102,7 @@ When you're done testing your project, click **Done** to return to the main page
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
+arcade-character-animations=github:microsoft/arcade-character-animations/
 ```
 
 

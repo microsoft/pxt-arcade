@@ -1,0 +1,447 @@
+/* Fonts imports are in html page */
+
+
+body{
+
+    font-family: 'NunitoRegular', sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #140083;  
+    /* min-width: 1200px; */
+}
+
+h2{
+    font-family: 'NunitoExtraBold';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 87px;
+    background: linear-gradient(282.51deg, #F9CD03 38.08%, #F703C1 94.99%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin:0;
+    line-height: 87px;
+}
+
+h3{
+    color: #F9CD03;
+    font-size: 32px;
+    margin: 0;
+}
+
+section, footer{
+    background-color: #0000AA;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 0 0;
+}
+
+header{
+    /* background-color:rgb(20 0 133 / 80%); */
+    /* padding: 20px 20px 0 20px; */
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    gap:20px;
+}
+
+.emphasis{
+    font-family: 'NunitoBold';
+    font-style: italic;
+}
+
+.caption{
+    font-size: .9rem;
+    opacity: .8;
+}
+
+header img{
+    margin: 20px;
+}
+
+/* Nav */
+nav {
+    width: 80%;
+}
+
+nav a{
+    font-family: 'InterBold', sans-serif;
+    font-size: 18px;
+}
+
+
+a {
+    color: #FFBE00;
+    text-decoration: none;
+}
+
+a:link{
+    color: #FFBE00
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+p > a{
+    text-decoration: underline;
+}
+
+nav ul{
+    display: flex;
+    gap:20px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    float: right;
+}
+
+nav ul li{
+    list-style: none;
+    /* margin-right: 1em; */
+    line-height: 10px;
+}
+
+#nav-items {
+    float:right;
+}
+
+#hamburger-menu {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 20px;
+    background: linear-gradient(
+      to bottom,
+      white, white 20%,
+      #140083 20%, #140083 40%,
+      white 40%, white 60%,
+      #140083 60%, #140083 80%,
+      white 80%, white 100%
+    );
+}
+
+#hamburger-menu #sidebar-menu {
+    /* visibilty: hidden; */
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #3D0E61;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+/* HERO */
+/* background image is in HTML page due to known pathing issue */
+#hero{
+    padding: 0;
+    /* margin-top: 60px; */
+    text-align: center;
+    background-color: #140083;
+    background-repeat: no-repeat, repeat-x;
+    background-position: center;
+    background-size: 1500px 500px, 500px;
+    height: 500px;
+}
+
+#hero #logo {
+    margin-top: 100px;
+    width: 80%;
+}
+
+#hero h1{
+    font-family: 'NunitoBold', sans-serif;
+    font-weight: bold;
+    font-size: 147px;
+    margin: 0;
+    text-shadow:15px 0 0 red,0 15px 0 red,-15px 0 0 red,0 -15px 0 red;
+}
+
+#hero .header-title {
+    font-size: 52px;
+}
+
+#hero .header-tag{
+    /* font-weight: bold; */
+    width: 300px;
+    margin: auto;
+}
+
+/* overflow games */
+.container-grid.overflow-games{
+    display: none;
+}
+
+.container-grid.overflow-games.active{
+    display: flex;
+}
+
+
+/* Cards */
+.card{
+    position: relative;
+    display:block;
+    padding: 20px;
+    margin: 10px 0 ;
+    background-color: #140083;
+    border-radius: 10px;
+    box-shadow: 0px 6.4px 14.4px rgba(0, 0, 0, 0.132), 0px 1.2px 3.6px rgba(0, 0, 0, 0.108);
+    transition: transform .15s, filter .15s;
+    max-width: 350px;
+}
+
+.card:hover{
+    box-shadow: 0px 3.4px 7.4px rgba(0, 0, 0, 0.132);
+    transform: scale(.98);
+    filter: brightness(75%);
+    /* opacity: .8; */
+}
+
+.card-item-title{
+    font-family: 'NunitoBold';
+    display:flex;
+}
+.card img.thumbnail{
+    width: 100%;
+}
+
+.difficulty {
+    max-width: 150px;
+    padding: 0 5px;
+}
+
+#start-here{
+    z-index: 1;
+    float:left;
+    position:absolute;
+    max-width: 180px;
+    height:0px;
+    overflow: visible;
+    top: -50px;
+    left: -70px;
+}
+
+#twisted{
+    transform: rotate(-25deg);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Featured */
+
+.featured-list{
+    margin: 0;
+    padding: 10px 75px 0px 75px;
+    background: linear-gradient(180deg, #1C7100 60%, #0000AA 50%);
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+
+.container-grid-btns button{
+    margin: auto;
+}
+
+.container-grid{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    position: relative;
+}
+
+.container-grid .card{
+    cursor: pointer;
+}
+
+.container{
+    max-width: 1270px;
+    padding:20px;
+}
+
+.featured-list .card .btn{
+    display: inline-block;
+    transform: translateX(-50%);
+    margin-top: -50px;
+    width: 230px;
+    position: absolute;
+    left: 50%;
+
+}
+
+.return-to-code{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: .8em;
+    margin: -40px 0;
+    text-align: center;
+    /* max-width: 400px; */
+    /* padding:0 0 50px 0; */
+
+}
+
+
+/* Feature Highlight */
+.col-2{
+    display: flex;
+}
+
+.col-2 > div{
+    width:50%;
+}
+
+.col-2 img.rowImg{
+    width: 100%;
+}
+
+.mini-col-1{
+    text-align: center;
+    max-width: 400px;
+    padding:50px;
+}
+
+.mini-col-1 button{
+    display: inline-block;
+}
+
+/* UI */
+button, .btn{
+    display: flex;
+    gap: 10px;
+    color:#ffffff;
+    background: #DB00FF;
+    border: 3px solid #000000;
+    box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    text-align: center;
+    /* height: 58px; */
+    font-size: 22px;
+    font-style: normal;
+    padding: 15px;
+    font-family: 'NunitoSemiBold';
+    letter-spacing: 0.035em;
+    transition: filter .15s;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover{
+    filter: brightness(75%);
+}
+
+/* footer */
+
+footer{
+    text-align: center;
+    padding: 75px 0;
+}
+
+footer a:link, footer a{
+    color: #ffffff;
+}
+
+footer div {
+    padding: 20px;
+}
+
+footer div img{
+    margin: 0 10px;
+}
+
+.hoc-statement{
+    margin:auto;
+    font-size: .9rem;
+    opacity: .9;
+    max-width: 600px;
+}
+
+#social img{
+    cursor: pointer;
+}
+
+#social img:hover{
+    opacity: .9;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 950px) {
+    body{
+        min-width: auto;
+    }
+
+    header{
+        display: block;
+        position: relative;
+    }
+
+    h2{
+        font-size: 65px;
+        line-height: 65px;
+    }
+
+    #hero{
+        background-size: 800px 300px, 300px;
+        height: 300px;
+        margin-top: 0px;
+    }
+
+    #hero .header-tag{
+        display:none;
+    }
+
+    section{
+        padding: 10px 10px 30px 10px
+    }
+
+
+    .container-grid{
+        display: block;
+    }
+
+    .featured-list {
+        padding: 0;
+    }
+
+    .featured-list #startHere{
+        left: -15px;
+        top: -120px;
+    }
+
+    .card {
+        margin: 50px 0;
+        max-width: 600px;
+    }
+
+    .col-2 {
+        width: 100%;
+        display: block;
+    }
+    .col-2 > div {
+        width: auto;
+    }
+
+
+    .rowImg{
+        display: none;
+    }
+
+    footer div img{
+        margin: 0 5px;
+        width: 50px;
+    }
+
+}

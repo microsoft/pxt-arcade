@@ -20,7 +20,7 @@ We're going to start with Mama Dino.
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, grab  
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||``  
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``  
 and drag it into the empty  
 ``||loops:on start||`` container in the workspace.
 
@@ -173,7 +173,7 @@ loop container and drag it into
 an empty spot on the workspace.
 
 - :paper plane:  From ``||sprites:Sprites||``, grab  
-``||variables:set [projectile] to projectile [ ] from side with vx [50] vy [50]||``  
+``||variables(sprites):set [projectile] to projectile [ ] from side with vx [50] vy [50]||``  
 and snap it into the empty  
 ``||loops:forever||`` container.
 

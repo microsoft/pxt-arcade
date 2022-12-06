@@ -49,7 +49,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## 4. The Pits
+## 4. Play it Again
+
+Remember to play your game again each time you make a change.
+
+Can you see the effects of the code you just wrote?
+
+
+
+
+## 5. The Pits
 
 
 Now that you can jump the pits, let's make them dangerous.
@@ -60,7 +69,8 @@ Now that you can jump the pits, let's make them dangerous.
 ``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into an empty area of the workspace.
 
-- :paint brush: Click the checkerboard image and change it to the **acid** tile.
+- :paint brush: Click the checkerboard image and change it to the **acid** tile.<br/>
+![Make your truck jump dangerous pits of acid](/static/skillmap/racer/acid.png "Avoid the acid tiles")
 
 - :circle: From ``||game:Game||``, snap a <br/>
 ``||game:game over <LOSE>||`` <br/>
@@ -75,13 +85,18 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, loca
 
 
 
-## 5. The Spikes
+## 6. The Spikes
 
 Pressing the (A) button more than once might send you into a spike. Let's make the spikes dangerous, too.
 
+
 ---
 
-- :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the **spikes** as you did for the **acid** tile.
+- :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the **spikes** as you did for the **acid** tile. <br/>
+![Avoid the spikes!](/static/skillmap/racer/spikes.png "Avoid the spike tiles")
+
+_💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
+
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
@@ -91,7 +106,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, lo
 
 
 
-## 6. Take a Look!
+## 7. Take a Look!
 
 Click back to the game window to see how everything is coming together.
 
@@ -101,7 +116,7 @@ You should be able to jump the acid pits by pressing the (A) button and the game
 
 
 
-## 7. End of the Tunnel
+## 8. End of the Tunnel
 
 We have a way to lose, now we need a way to win.
 
@@ -111,10 +126,11 @@ At the end of the cave, there is a set of pure black **empty cave** tiles.
 
 - :mouse pointer:  Follow the same steps to end the game when your sprite overlaps
 an **empty cave** tile as you did for the **acid** tile.
+<br/>
+![Get to the cave](/static/skillmap/racer/cave.png "Choose the cave tile")
+
 
 - :mouse pointer: Finish by changing the ``||game: game over <LOSE>||`` to say ``||game: game over <WIN>||``.
-
-
 
 
 ```blocks
@@ -122,13 +138,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite
     game.over(true)
 })
 ```
-
-## 8. Time to Play
-
-Open the game window and check out the game you have so far.
-
-Can you jump over the pits without hitting the spikes and make it out of the cave?
-
 
 
 ## Finale

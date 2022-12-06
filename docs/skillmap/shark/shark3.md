@@ -47,7 +47,7 @@ When the shark catches the fish, we need to make the fish disappear.
 
 ► Open ``||sprites:Sprites||``, then snap ``||sprites:destroy [mySprite]||`` into the empty **on overlaps** container.
 
-► Drag the ``||variables:otherSprite||`` value from the title of the **on overlaps** container down to replace ``||variables:mySprite||``.
+► Drag the ``||variables(noclick):otherSprite||`` value from the title of the **on overlaps** container down to replace ``||variables(noclick):mySprite||``.
 
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 

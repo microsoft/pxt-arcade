@@ -1,4 +1,5 @@
 # Gather a Crowd
+### @explicitHints true
 
 
 ## Welcome @showdialog
@@ -9,75 +10,78 @@
 
 
 
-## 2. Try It!
+## {2. Try It!}
 
-**First, check the game you have so far.**  
-🕹️ 🕹️ 🕹️ 
+**First, check the game you have so far.**<br/>
+🕹️ 🕹️ 🕹️
 
 ---
 
-You should be able to move your turkey from side to side and make it jump 
+You should be able to move your turkey from side to side and make it jump
 from platform to platform using the A button (or the space bar.)
 
 
 
-## 3. Rescue the Others
+## {3. Rescue the Others}
 
-**Turkey to the rescue!**  
+**Turkey to the rescue!**<br/>
 🦃 🦃 🦃
 
-When the player overlaps a _cage_ tile, let's trigger some code.
+When the player overlaps a **cage** tile, let's trigger some code.
 
 ---
 
-- :tree: Drag the  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
-container into an empty area of the workspace.
+- :tree: From the ``||scene:Scene||`` category, drag the
+
+```blocks
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
+    info.changeScoreBy(1)
+})
+```
+
+bundle into **an empty area** of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **cage** tile.
-
-- :id card: To give the player a point for each turkey it saves, snap a   
-``||info:change score by [1]||``    
-block into the new container.
+![Pick the cage tile](/static/skillmap/turkey/cage-tile.png "Choose the second non-empty tile")
 
 
+#### ~ tutorialhint
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
     info.changeScoreBy(1)
 })
 ```
 
-## 4. Try It Again!
+## {4. Try It Again!}
 
-**Give it a try in the game window**
+**Look at your game window.**
+
+Guide your turkey to a cage.  What happens when the two overlap?
+
+Which block do you think causes your points to increase?
+
+
+
+## {5. Too Many Points}
+
+**Uh oh!  You get WAY too many points when you overlap a cage.**
+
+We can fix that by replacing the cage with an empty tile once you reach it.
 
 ---
 
-Guide your turkey over to a cage.  What happens when the two overlap?
+- :tree: From ``||scene:Scene||``, drag
 
+```block
+    tiles.setTileAt(location, assets.tile`transparency16`)
+```
 
-
-## 5. Too Many Points
-
-Uh oh!  You get WAY too many points when you overlap a cage. 
-
-**We can fix that by replacing the cage with an empty tile once you reach it.**
-
----
-
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+into **the end** of the<br/>
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the ``||variables:location||``  
-value from the top of the **Player overlaps cage** container.
 
-![Share your location](/static/skillmap/turkey/turkey-location.gif "Grab the variable from the overlap container")
-
+#### ~ tutorialhint
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
     info.changeScoreBy(1)
@@ -86,45 +90,45 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
 })
 ```
 
-![Share your location](/static/skillmap/turkey/turkey-location.gif "Grab the variable from the overlap container")
 
 
-## 6. Play Again!
+## {6. Play Again!}
 
 **Give it a try in the game window**
 
+
+You should get one point for each cage you grab.  Can you find all 15?
+
+
+
+## {7. Gather an Army}
+
+**You have the start of a very nice game!**
+
+Each time you overlap a cage, let's make a new turkey follow you to freedom!
+
 ---
 
-You should get one point for each cage you grab.  Can you find all 15? 
+- :paper plane: From ``||sprites:Sprites||``, drag
 
+```block
+    let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
+```
 
-
-## 7. Gather an Army
-
-You should have the start of a very nice game! 
-
-**Each time you overlap a cage, let's make a new turkey follow you to freedom!**
-
----
-
-- :paper plane: Drag  
-``||sprites:set [mySprite2] to sprite [ ] of kind [Player]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+into **the end** of the<br/>
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Click  
-``||variables:mySprite2||``  
-and rename the variable **turkey**.
-
-- :paint brush: Click the empty grey square and toggle to 
+- :paint brush: Click the empty grey square and switch to
 **MyAssets** to choose the little **turkey** sprite.
-
-- :mouse pointer: Click  
-``||sprites:Player||``   
-and change it to ``||sprites:Rescued||``.
+![Pick the smaller turkey sprite](/static/skillmap/turkey/little-turkey.png "Choose the smaller turkey")
 
 
+```blockconfig.local
+    let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
+```
+
+#### ~ tutorialhint
 ```blocks
 namespace SpriteKind {
     export const Rescued = SpriteKind.create()
@@ -134,34 +138,35 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
     info.changeScoreBy(1)
     tiles.setTileAt(location, assets.tile`transparency16`)
     //@highlight
-    let turkey = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
+    let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
 })
 ```
 
 
-## 8. Appear
+## {8. Appear}
 
-What good does it do to add the turkey if you can't see it?  
+What good does it do to add the turkey if you can't see it?
+
 Let's set each new turkey to appear in the same place the cage disappeared from.
 
 ---
 
-- :tree: Drag  
-``||scene:place [mySprite] on top of tilemap col [0] row [0]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+- :tree: From ``||scene:Scene||``, drag
+
+```block
+    tiles.placeOnTile(freeTurkeys, location)
+```
+
+into **the end** of the
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``
 container.
 
-- :mouse pointer: Click  
-``||variables:mySprite||``  
-and select ``||variables:turkey||``.
 
-- :mouse pointer: Replace  
-``||scene:tilemap col [0] row [0]||``  
-with the ``||variables:location||``  
-value from the top of the **Player overlaps cage** container.
+```blockconfig.local
+    let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
+```
 
-
+#### ~ tutorialhint
 ```blocks
 namespace SpriteKind {
     export const Rescued = SpriteKind.create()
@@ -170,39 +175,51 @@ namespace SpriteKind {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
     info.changeScoreBy(1)
     tiles.setTileAt(location, assets.tile`transparency16`)
-    let turkey = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
+    let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
     //@highlight
-    tiles.placeOnTile(turkey, location)
+    tiles.placeOnTile(freeTurkeys, location)
 })
 ```
 
 
-## 9. Play!
+## {9. Play!}
 
 **Give it a try in the game window**
 
 ---
 
-A little turkey should appear each time you overlap a cage.   
+A little turkey should appear each time you overlap a cage.
 
 Keep following the instructions to find out how to get the little turkeys to follow you to freedom.
 
+```blockconfig.local
+    let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
+```
 
 
-## 10. Be Free!
+## {10. Be Free!}
 
+**Leave no turkeys behind!**
 
-- :paper plane: Drag  
-``||sprites:set [myEnemy] follow [mySprite]||``   
-into **the end** of the   
-``||scene:on [sprite] of kind [Player] overlaps [cage] at [location]||``   
+- :paper plane: From ``||sprites:Sprites||``, drag
+
+```block
+let freeTurkeys: Sprite = null
+
+freeTurkeys.follow(sprite)
+```
+
+into **the end** of the <br/>
+``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
 
-- :mouse pointer: Click  
-``||variables:myEnemy||``  
-and change to ``||variables:turkey||``.
+
+```blockconfig.local
+    let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
+```
 
 
+#### ~ tutorialhint
 ```blocks
 namespace SpriteKind {
     export const Rescued = SpriteKind.create()
@@ -211,46 +228,77 @@ namespace SpriteKind {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
     info.changeScoreBy(1)
     tiles.setTileAt(location, assets.tile`transparency16`)
-    let turkey = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
-    tiles.placeOnTile(turkey, location)
+    let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
+    tiles.placeOnTile(freeTurkeys, location)
     //@highlight
-    turkey.follow(mySprite)
+    freeTurkeys.follow(sprite)
 })
 ```
+
+
+## {11. Play}
+
+**Play your game!**
+
+Each turkey you rescue should follow you as you make your way to the top.
 
 
 
 ## Finale
 
-**There you have it!**
-
-Each turkey you rescue should follow you as you make your way to the top.
-
----
-
-When you're finished playing your game, click **Done** to return to the 
-main skillmap and keep going so we can show you how to end the game with a win!
+When you're finished playing, click **Done** to return to the
+main skillmap to keep going and find out how to add the ability to WIN!
 
 
+
+```blockconfig.global
+let freeTurkeys: Sprite = null
+let bigTurkey = sprites.create(img`.`, SpriteKind.Player)
+
+tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
+tiles.placeOnTile(freeTurkeys, location)
+
+scene.cameraFollowSprite(bigTurkey)
+controller.moveSprite(bigTurkey, 100, 0)
+bigTurkey.ay = 500
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bigTurkey.vy = -300
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
+    info.changeScoreBy(1)
+})
+tiles.setTileAt(location, assets.tile`transparency16`)
+freeTurkeys.follow(sprite)
+
+```
+
+```package
+carnival=github:microsoft/arcade-carnival
+```
 
 
 ```template
-namespace SpriteKind {
-    export const Rescued = SpriteKind.create()
-}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy = -300
+    bigTurkey.vy = -300
 })
 
-let mySprite: Sprite = null
+let bigTurkey: Sprite = null
+bigTurkey = sprites.create(assets.image`player`, SpriteKind.Player)
+controller.moveSprite(bigTurkey, 100, 0)
+bigTurkey.ay = 500
+scene.cameraFollowSprite(bigTurkey)
+tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
+
+```
+
+```customts
 scene.setBackgroundColor(9)
 tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 0)
-mySprite.ay = 500
-scene.cameraFollowSprite(mySprite)
-tiles.placeOnRandomTile(mySprite, assets.tile`start`)
 
+namespace SpriteKind {
+    //% isKind
+    export const Rescued = SpriteKind.create()
+}
 ```
 
 
@@ -260,7 +308,7 @@ tiles.placeOnRandomTile(mySprite, assets.tile`start`)
   "assets.json": "",
   "images.g.jres": "{\n    \"image2\": {\n        \"data\": \"hwQYABgAAAAAAAC7AAC7CwAAAAAAALC7uwAruwAAAAAAALBLtAsrsrALAAAAAAC7RAsrsrsLAAAAAACwS7QrsksLAAAAsLu7u7QrS0QLAAAAsCIisksrRL28AAAAsLsiIksrRNy9CwAAALC7K0vk7s69uwAAAAAAK0Lk7t7cvAAAAAAAsCLi7u7MvAsAAAAAAOvs7u7LzAsAALC7vczu7u7NzAsAALvu7rvu7u7ezAsAsOvu7u7u7u7szAsAsN7R7u7uzszszAsAsB7/7u7u7u7uvgsAu/6/Ti7u7u7uvgSwvu7eRCLu7u7uvgTgu+7dRCLu7u7uuwCwANtERC677u6+CwAAAPBMRAsAu7u7AAAAAAAAtAAAAAAAAAAAAAAACwAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"player\"\n    },\n    \"image1\": {\n        \"data\": \"hwQeABQAAAAAAAC7AAC7CwAAAAAAALC7uwAruwAAAAAAALBLtAsrsrALAAAAAAC7RAsrsrsLAAAAAACwS7QrsksLAAAAsLu7u7Qru8wLAAAAsCIisksr7r0MAAAAsLsiItvr7tzNAAAAALC7K9vt7s69AAAAAAAAu9vu7t7cAAAAAACwu73u7u7cAAAAAAC77r7u7u7bAAAAALDr7u7uu73dAAAAALDe0e7u7u7eAAAAALAe/+7u7u7uAAAAALv+v07u7u7uAAAAsL7u3kTi7u7uAAAA4Lvu3UTi7u5OAAAAsADbRESwu7tNAAAAAADwTEQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"turkey\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}",
   "images.g.ts": "// Auto-generated code. Do not edit.\nnamespace myImages {\n\n    helpers._registerFactory(\"image\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"image2\":\n            case \"player\":return img`\n........................\n..................beb...\n.................beb....\n.....bbb......bbbbbb....\n.....b2b.....bbeeeeeb...\n.bb..b2bb...bbed1feedf..\nbbbb.b22b...bee1ffed4c..\nbb4bbb22b...beedfbdd44..\n.b44bb22bb..deeeee44444b\n.bb44bb222b.beeee44444b.\n..bb44bbb22bcbeeee22eb..\n....bb44442ecbeee2222...\nbbbbbbbb442ceeeeeeeeb...\nb2222222eeeeeeeeeeeeb...\nbb222b44eeeeeeeeeeeeeb..\n.bbbb444eeeeeeeceeeeeb..\n...bb4dceeeeeeeceeeeeb..\n..bb44bdcdeeeeeceeeeeb..\n..bbbbcddccbdecceeeeeb..\n......bbbdcccdeeeeeebb..\n.......bbccccccceeebb...\n........bbbcccccbbbb....\n..........bbbbbbb44.....\n........................\n`;\n            case \"image1\":\n            case \"turkey\":return img`\n..............................\n..............................\n..............................\n.....bbb........beb...........\n.....b2b.......beb............\n.bb..b2bb...bbbbbb............\nbbbb.b22b..bbeeeeeb...........\nbb4bbb22b.bbed1feedf..........\n.b44bb22bbbee1ffed4c..........\n.bb44bb22bbeedfbdd44..........\n..bb44bbbbdeeeee44444.........\n....bb4dddbbeee44444..........\nbbbbbbbbdeeeeeee22............\nb222222eeeeeeeeeeeb...........\nbb222beeeeeebeeeeeb...........\n.bbbbbeeeeeebeeeeeb...........\n...bbcdceeeedeeeeeb...........\n..bb4cbdcdeebeeeeeb...........\n..bbbbcddccbdeeeeed...........\n.......cbdddddeee44...........\n`;\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"animation\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n",
-  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_SpriteKind\" id=\"9ecw?uPtb)o)0#+E^u,1\">Player</variable><variable type=\"KIND_SpriteKind\" id=\":ML9S)E@KgRhXE/x{A`9\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\";B^Y[cZd;E_DnD.5{J@R\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"wsNPniHJ[)XHrQ;3T)#=\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"H;j``voP]Rgjc1sSe+-(\">Turkey</variable><variable id=\"gcUpn%0~ykX#(O:!pNmV\">mySprite</variable><variable id=\"r5?^Ib{kgL!.xn|uBAI,\">followTurkey</variable><variable id=\"S|~*(#7WP05%3gUAO?Yz\">myEnemy</variable></variables></xml>",
+  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_SpriteKind\" id=\"9ecw?uPtb)o)0#+E^u,1\">Player</variable><variable type=\"KIND_SpriteKind\" id=\":ML9S)E@KgRhXE/x{A`9\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\";B^Y[cZd;E_DnD.5{J@R\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"wsNPniHJ[)XHrQ;3T)#=\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"H;j``voP]Rgjc1sSe+-(\">Turkey</variable><variable id=\"gcUpn%0~ykX#(O:!pNmV\">bigTurkey</variable><variable id=\"r5?^Ib{kgL!.xn|uBAI,\">followTurkey</variable><variable id=\"S|~*(#7WP05%3gUAO?Yz\">myEnemy</variable></variables></xml>",
   "main.ts": "\n",
   "pxt.json": "{\n    \"name\": \"turkey day assets only\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.6.24\",\n        \"tag\": \"v1.6.24\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/5bea1575ea693e0648a647cbd86cda9776d58f48\",\n        \"target\": \"1.6.24\",\n        \"pxt\": \"7.2.25\"\n    },\n    \"preferredEditor\": \"tsprj\"\n}\n",
   "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAuwAAAAAAAADbAAAAAAAAANsAAAAAAAAA2wAAAAAAAADbAAAAAAAAANsAAAAAAAAA2wAAAAAAAADbAAAAAAAAANsAAAAAAAAA2wAAAAAAAADbAAAAAAAAANsAAAAAAAAA2wAAAAAAAADbAAAAAAAAANsAAAAAAAAAuw==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"start\"\n    },\n    \"tile2\": {\n        \"data\": \"hwQQABAAAADMzMzMzMzMzNzd3d3d3d3N3LBLtLAiu8vcALtEuyK7xMzMzMzMzMzM3N3d3dzd3M3cKyKy3O7czdy7u7Lc7tzM3ACwu9zu3M3MzMzM3O7cztzd3d3c7tzO3Lvu7ty+3Mvc6x3t3O7cztzr8e/c7tzOzMzMzMz8zMzc3d3d3f3dzQ==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"cage\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAxMDAwYTAwMDAyMDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzAxMDIwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwNjAwMDAwMDAwMDAwMDAwMDAwMDA1MDQwNDA2MDEwMjA5MDAwMDAwMDAwMDA1MDQwNDA0MDQwNDA0MDYwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwNTA0MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDUwNjAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwNTA0MDYwMDAwMDAwMDAwMDAwNTA0MDQwNjAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDA1MDYwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDUwNDA0MDYwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDUwNjAwMDAwMDAwMDkwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDQwNDA2MDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDQwNDA0MDQwNjAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwNTA0MDYwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwNTA0MDQwNjAwMDAwMDAwMDAwMTAyMDAwMDAwMDUwNjAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjA2MDAwMDAwMDAwMDAwMDAwMDAwMDUwNjAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwOTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDUwNjAwMDAwMDAwMDAwMDAwMDAwNTA0MDYwMTAyMDAwMDA1MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDA1MDQwNjAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDUwNjAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwNjAwMDAwMTAyMDUwNDA0MDQwNjAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDYwMTAyMDAwMDAwMDAwMDAwMDkwMDAwMDUwNjAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwNTA0MDYwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDQwNDA2MDEwMjAwMDUwNDA2MDAwMDAwMDUwNjAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDA1MDQwNjAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDA1MDYwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwNTA0MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDA1MDQwNjAwMDAwMDAwMDAwMTAyMDAwMDAwMDkwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDQwNDA2MDEwMjAwMDAwMDA1MDYwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwNTA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDUwNjAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDA1MDQwNDA2MDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDUwNDA2MDAwMDAwMDAwMDAwMDUwNjAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDA1MDYwMDAwMDAwNTA0MDQwNjAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDA1MDQwNDA0MDQwNDA2MDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwNjAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDA5MDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwMTAyMDAwMDAwMDAwMDA1MDQwNDA2MDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNTA2MDAwMTAyMDAwNTA0MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDUwNjAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwOTAwMDAwMDAwMDUwNDA0MDQwNjAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwNTA0MDQwNDA2MDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwNTA2MDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwNTA2MDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwNTA0MDQwNDA0MDEwMjAwMDUwNDA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwNTA2MDAwMDAwMDkwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDQwNjAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwNTA0MDYwMDAwMDAwMDAwMDAwMDAxMDIwNTA0MDQwNjAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDUwNDA2MDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDA1MDQwNjAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDA1MDQwNjAwMDAwMDAwMDAwMDAwMDEwMjAwMDkwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwNDA2MDAwMDAwMDAwMDA1MDYwMDAwMDkwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwNTA0MDQwNjAxMDIwMDAwMDAwNTA0MDYwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwNTA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDUwNDA0MDYwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwNTA0MDYwMTAyMDUwNDA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDA5MDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDA1MDQwNDA2MDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA1MDYwMDAxMDIwMDAwMDkwMDAwMDAwNTA0MDQwNjAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDA1MDYwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDUwNDA2MDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDUwNDA2MDAwMDA5MDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDUwNDA0MDYwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwNTA0MDQwNjAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwOTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwNDA0MDYwMDAwMDAwMDAwMDUwNDA2MDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDIwMDAwMDAwMDA1MDQwNjAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDkwMDAwMDAwMTAyMDAwMDAwMDAwMDAwMDAwMDAwMDUwNjAwMDAwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAyMDAwNTA0MDQwNjAwMDAwMDA1MDQwNDA0MDYwMDAxMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMjAwMDAwMDAwMDAwMDA4MDAwMDAwMDAwMDAwMDAwMTAyMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDIyMDAwMDAwMDAyMDIyMjIwMjAwMDAyMDIyMjIyMjIyMDIwMDAwMDAwMDAwMDAyMDIyMjIwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMjAwMjAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIyMjAyMDAwMDIwMjIyMjAyMDAwMDAwMDAwMDAwMjAwMjAwMDAyMDAyMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDIyMjIwMDIwMDIwMDAwMjAwMjAwMDAyMDAyMDAwMDAwMDAyMDIyMjIwMjAwMDAwMDAwMDAwMDIwMjIyMjIyMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDIwMjIwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAyMjIyMDAwMDIwMDIwMDIyMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAyMjAwMDAwMDAwMjAwMjIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjIyMDAwMDAwMDAyMjIyMDIyMDAyMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMjIwMjAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMjAwMjAwMjAwMjAwMDAwMDAwMjAwMjIwMjIyMjIyMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAyMDIyMDIwMDAwMDAwMDIyMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAyMjAyMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAyMDIyMjIwMjIyMDIwMDIyMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAyMDIyMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMjIwMDIwMDIwMDAwMDAwMDAwMDAyMDIyMjIwMDAwMDAwMDAwMjAwMjAwMDAyMDIyMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAyMDIyMjIwMjAwMjIwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjIwMDIwMDAwMDAwMDIwMDIwMDIyMDAwMDAwMDAyMDAyMDAyMDIyMDIwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMjIyMjAwMDAwMDIyMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMjIwMDIwMjIyMjAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIyMDIyMjIyMjAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMjAwMjIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIyMDIwMDAwMjIyMjAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAyMjIwMDIyMjAyMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDIyMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDIyMjIwMjIwMDIwMDAwMDAwMDAwMDAyMDIyMjIyMjAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDIwMDIwMDAwMjAwMjAwMDAyMjAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAyMjIyMjIwMjIyMDIwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAyMjAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAyMDIyMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDIwMjIwMDAwMDAyMDIyMjIwMjAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDIyMDIyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMjIwMjAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAyMDIyMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDIyMDIwMDAwMjIwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDIwMjIyMjAyMDAyMjAyMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjIwMDIwMDAwMDAwMDIwMDIwMDAwMjAyMjAyMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAyMjIyMjIyMjAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMjIyMjAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMjIyMDAyMDAwMDIwMjIwMjAwMjAwMjAwMDAwMDAwMDAwMDIwMDIyMDAyMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDIyMDIwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMjAyMjAwMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMjAyMjIyMDIwMDAwMDAwMDAwMDAyMDAyMDAyMjIyMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDIyMjIwMDAwMjAyMjAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAyMDAyMDAyMDIyMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDIyMDAyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMDIyMjIyMDAyMDIyMjIyMDAyMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDIwMjIyMjIyMjIyMjIyMjIyMg==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"sprites.skillmap.islandTile3\",\n            \"sprites.skillmap.islandTile5\",\n            \"sprites.skillmap.islandTile1\",\n            \"sprites.castle.tilePath2\",\n            \"sprites.castle.tilePath1\",\n            \"sprites.castle.tilePath3\",\n            \"sprites.swamp.swampTile16\",\n            \"myTiles.tile1\",\n            \"myTiles.tile2\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",

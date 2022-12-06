@@ -119,3 +119,7 @@
 --------------------*/
 
 @greenScreenBlockColor: #20BF6B;
+
+
+@soundEffectHeaderColor: #E30FC0;
+@soundPreviewBackgroundColor: #F7EEF5;

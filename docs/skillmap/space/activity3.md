@@ -95,13 +95,13 @@ game.onUpdateInterval(1000, function () {
 ## Step 2
 
 ► In the ``||sprites:Sprites||`` category, find the
-``||variables:set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` block
+``||variables(sprites):set [projectile2] to projectile [ ] from side with vx [50] vy [50]||`` block
 and drag it into the new **on game update** container.
 
-► Click on the ``||variables:[projectile2]||`` value inside the new block and
+► Click on the ``||variables(noclick):[projectile2]||`` value inside the new block and
 select "Rename variable..."
 
-► Change the variable name to ``||variables:myEnemy||`` so we know these are the baddies.
+► Change the variable name to ``||variables(noclick):myEnemy||`` so we know these are the baddies.
 <br/>
 ```blocks
 let myEnemy: Sprite = null
@@ -178,7 +178,7 @@ so let's add an element of surprise using [__*random numbers*__](#randos "number
 end of the **on game update** container.
 
 ► To make sure we're acting on the right sprites, use the dropdown in the
-new block to change ``||variables:mySprite||`` to ``||variables:myEnemy||``.
+new block to change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myEnemy||``.
 
 ► Set a random [__*x*__](#setX "horizontal location")
 for the enemies using a
@@ -233,7 +233,7 @@ We can make sure they all have the same effect using the
 ► Snap a ``||sprites:set [mySprite] kind to [Player]||`` block into the bottom of the
 **on game update** container.
 
-► Change ``||variables:mySprite||`` to ``||variables:myEnemy||``, then choose
+► Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):myEnemy||``, then choose
  ``||sprites:Enemy||`` as the kind.
  <br/>
 
@@ -282,7 +282,7 @@ collides with our ship.
 ► Drag an ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
-► Change the last argument from ``||variables:Player||`` to ``||variables:Enemy||``.
+► Change the last argument from ``||variables(noclick):Player||`` to ``||variables(noclick):Enemy||``.
 
 ---
 
@@ -311,9 +311,9 @@ That removes a life from the player every time it's hit by an enemy.
 ► Find the ``||sprites:destroy [mySprite] ⊕||`` block and snap it below the previous block.
 
 ► To tell the **destroy** block that you want it to affect the overlapping enemy,
-click on the ``||variables:otherSprite||`` variable from the top of the
+click on the ``||variables(noclick):otherSprite||`` variable from the top of the
 **overlaps** container and drag it down to replace the
-``||variables:mySprite||`` argument in ``||sprites:destroy [mySprite] ⊕||``.
+``||variables(noclick):mySprite||`` argument in ``||sprites:destroy [mySprite] ⊕||``.
 ![Grabbing variable from block](/static/skillmap/space/give-var.gif "So that's how you do that!")
 
 ---
@@ -341,12 +341,12 @@ destroy our enemies on impact.
 ► Drag another ``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
-► Change the first kind to ``||sprites:Enemy||`` and the second kind to
-``||sprites:Projectile||``.
+► Change the first kind to ``||sprites(noclick):Enemy||`` and the second kind to
+``||sprites(noclick):Projectile||``.
 
 ► Inside, add two ``||sprites:destroy [mySprite] ⊕||`` blocks, then change the arguments
-so that one destroys the enemy (``||variables:sprite||``) and the other
-destroys your projectile (``||variables:otherSprite||``).
+so that one destroys the enemy (``||variables(noclick):sprite||``) and the other
+destroys your projectile (``||variables(noclick):otherSprite||``).
 
 ---
 

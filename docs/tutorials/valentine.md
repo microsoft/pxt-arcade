@@ -46,7 +46,7 @@ You can add a block to check for a win or loss each time the game updates.
 **Exciting!**
 
 How does the game feel? <br/>
-Too hard?  To easy?
+Too hard?  Too easy?
 
 Change the difficulty by adjusting how many arrows the Valentines throw.
 
@@ -149,22 +149,24 @@ You now have a game that you can send to _your_ Valentine!
 Don't forget to click **Done** to share your game and remix it using any of the blocks from the full toolbox.
 
 
-
 ```package
-valentine-special = github:kiki-lee/valentine-special
+valentine-special=github:microsoft/arcade-tutorial-extensions/valentine
 ```
 
 ```template
 
+// Every 1.8 seconds a red heart appears on the screen shooting this number of arrows
 game.onUpdateInterval(1800, function () {
     valentine.send_valentine(assets.image`cupid hearts`, 3, assets.image`arrow`)
 })
 
+// When your Player (grey heart) overlaps with a Cupid (red heart), the Cupid disappears and your Player heart grows
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Valentine, function (sprite, otherSprite) {
     otherSprite.destroy()
     scaling.scaleByPixels(sprite, 15, ScaleDirection.Uniformly, ScaleAnchor.Middle)
 })
 
+// When your Player (grey heart) overlaps with an Arrow, the Arrow disappears and your Player heart shrinks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSprite) {
     otherSprite.destroy()
     scaling.scaleByPixels(sprite, -7, ScaleDirection.Uniformly, ScaleAnchor.Middle)
@@ -173,6 +175,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSp
 ```
 
 ```ghost
+let player_sprite: Sprite = null
 
 valentine.set_win_lose_size(120, 6)
 player_sprite.setImage(assets.image`mySpriteHeart`)
@@ -195,6 +198,16 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Arrow, function (sprite, otherSp
 
 ```
 
+```customts
+
+let player_sprite: Sprite = null
+
+tiles.setCurrentTilemap(tilemap`level0`)
+player_sprite = sprites.create(assets.image`mySpriteHeart`, SpriteKind.Player)
+controller.moveSprite(player_sprite)
+scene.cameraFollowSprite(player_sprite)
+
+```
 
 
 

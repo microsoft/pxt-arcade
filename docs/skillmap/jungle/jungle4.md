@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-**One of our baubles is locked away!**  
+**One of our baubles is locked away!**
 
 This activity will show you how to explode tiles so you can get every point.
 
@@ -22,14 +22,14 @@ Can you find the bauble that's blocked-in?
 
 ## 3. When B Pressed
 
-**Nothing a little dynamite can't fix**  
-💥💥💥  
+**Nothing a little dynamite can't fix** <br/>
+💥💥💥
 We need to remove some walls and tiles! Let's clear the way when the (B) button is pressed.
 
 ---
 
-- :game: Drag the  
-``||controller:on [A] button [pressed]||``  
+- :game: Drag the <br/>
+``||controller:on [A] button [pressed]||`` <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Click the letter A and change it to B.
@@ -49,10 +49,10 @@ We're going to use a **Projectile** block here, even though our dynamite stays i
 
 ---
 
-- :paper plane: Drag  
-``||variables:set [projectile] to projectile from [mySprite] with vx [50] vy [50]||``   
-into the empty  
-``||controller:on [B] button [pressed]||``  
+- :paper plane: Drag <br/>
+``||variables(sprites):set [projectile] to projectile from [mySprite] with vx [50] vy [50]||`` <br/>
+into the empty <br/>
+``||controller:on [B] button [pressed]||`` <br/>
 container.
 
 - :mouse pointer: Change both **vx** (horizontal speed) and **vy** (vertical speed) to **0** so the explosive stays where you drop it.
@@ -75,17 +75,17 @@ For the explosive to overlap the blocks around it, we need it to be able to **go
 
 ---
 
-- :paper plane: Drag  
-``||sprites:set [mySprite] [auto destroy] <OFF>||``  
-into **the end** of  
-``||controller:on [B] button [pressed]||``  
+- :paper plane: Drag <br/>
+``||sprites:set [mySprite] [auto destroy] <OFF>||`` <br/>
+into **the end** of <br/>
+``||controller:on [B] button [pressed]||`` <br/>
 container, then toggle **`<OFF>`** to **`<ON>`**.
 
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):projectile||``.
 
-- :mouse pointer: Click  
-``||sprites:auto destroy||``  
-and change it to  
+- :mouse pointer: Click <br/>
+``||sprites:auto destroy||`` <br/>
+and change it to <br/>
 ``||sprites:ghost through walls||``.
 
 
@@ -106,12 +106,12 @@ In this step, we'll choose **an animation** for our projectile to make it look l
 
 - :chevron down: Click the **Advanced** category in the toolbar to reveal the ``||animation:Animation||`` category.
 
-- :sync: Drag the large  
-``||animation:animate [mySprite]||``  
-block to **the end** of  
+- :sync: Drag the large <br/>
+``||animation:animate [mySprite]||`` <br/>
+block to **the end** of <br/>
 ``||controller:on [B] button [pressed]||``.
 
-- :mouse pointer: Click ``||variables:mySprite||`` and change it to ``||variables:projectile||``.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to ``||variables(noclick):projectile||``.
 
 
 ```blocks
@@ -122,7 +122,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     projectile,
     [img`
-        . 
+        .
         `],
     500,
     false
@@ -168,13 +168,13 @@ You should be able to jump with the up arrow, place tiles with the (A) button, a
 
 ## 9. Removing Block Tiles
 
-**💥 Kaboom 💥**  
+**💥 Kaboom 💥** <br/>
 When your **splode** animation overlaps a platform tile, we need to remove both the wall and the tile.
 
 ---
 
-- :tree: Drag the  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree: Drag the <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
 container into an empty area of the workspace.
 
 - :mouse pointer: Click ``||sprites:Player||`` and change it to ``||sprites:Projectile||``.
@@ -190,15 +190,15 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (spri
 
 ## 10. Removing Walls
 
-- :tree: Drag  
-``||scene:set wall <OFF> at tilemap col [0] row [0]||``  
-into the empty  
-``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``   
+- :tree: Drag <br/>
+``||scene:set wall <OFF> at tilemap col [0] row [0]||`` <br/>
+into the empty <br/>
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` <br/>
 container.
 
-- :mouse pointer: To remove the wall at the location of overlap, drag the ``||variables:location||`` value block out of the  
-``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``   
-title and drop it in to replace  
+- :mouse pointer: To remove the wall at the location of overlap, drag the ``||variables(noclick):location||`` value block out of the <br/>
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` <br/>
+title and drop it in to replace <br/>
 ``||scene:tilemap col [0] row [0]||``.
 
 ![Editing our platformer](/static/skillmap/jungle/projectile-wall-off.gif "Time to live dangerously!")
@@ -222,14 +222,15 @@ Lastly, we need to remove the tile from the same place that we removed the wall.
 
 ---
 
-- :tree: Drag  
-``||scene:set [ ] at tilemap col [0] row [0]||``  
-into **the end** of the  
-``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``  
+- :tree: Drag <br/>
+``||scene:set [ ] at tilemap col [0] row [0]||`` <br/>
+into **the end** of the <br/>
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||`` <br/>
 container.
 
-- :mouse pointer: To remove the tile at the location of overlap, drag the  ``||variables:location||`` value block out of the  
-``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``   title and drop it in to replace  
+- :mouse pointer: To remove the tile at the location of overlap, drag the  ``||variables(noclick):location||`` value block out of the <br/>
+``||scene:on [sprite] of kind [Projectile] overlaps [skyblock] at [location]||``    <br/>
+title and drop it in to replace <br/>
 ``||scene:tilemap col [0] row [0]||``.
 
 
@@ -264,13 +265,14 @@ When you're done playing, click **Done** to return to the main page to find out 
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 ```
 
 
 ```template
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    sprites.gravity_jump(mySprite)
+    simplified.gravity_jump(mySprite)
 })
 scene.setBackgroundImage(assets.image`background`)
 tiles.setTilemap(tilemap`level1`)
@@ -316,18 +318,6 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`skyblock`, function (spri
 })
 ```
 
-```customts
-
-namespace sprites {
-    //% block="make $thisSprite=variables_get(mySprite) gravity jump"
-        export function gravity_jump (thisSprite: Sprite) {
-        if (thisSprite.isHittingTile(CollisionDirection.Bottom)) {
-            thisSprite.vy = -200
-        }
-    }
-}
-
-```
 
 
 ```assetjson

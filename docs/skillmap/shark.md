@@ -80,9 +80,13 @@
 * url: /static/skillmap/certificates/shark-cert.pdf
 * position: 3 0
 * actions:
-    * map: [Try Jungle Monkey Jump](/skillmap/jungle)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * map: [Try Jungle Jump](/skillmap/jungle)
+    * editor: [Edit with Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/shark-cert.pdf
-    * completion-badge: /static/badges/badge-shark.png
+    * certificate:
+        * url: /static/skillmap/certificates/shark-cert.pdf
+        * preview: /static/skillmap/certificates/shark-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-shark.png
+        * name: Shark Splash
 

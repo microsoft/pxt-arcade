@@ -16,6 +16,30 @@
   "directOpen": true
 },
 {
+  "name": "Whack-the-Mole",
+  "cardType": "link",
+  "description": "Create your own mole whacking carnival game. Double-click the first level to start.",
+  "imageUrl": "/static/skillmap/backgrounds/mole.gif",
+  "url": "https://arcade.makecode.com/--skillmap#mole",
+  "directOpen": true
+},
+{
+  "name": "Burstin' Balloons",
+  "cardType": "link",
+  "description": "Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.",
+  "imageUrl": "/static/skillmap/backgrounds/mouse.gif",
+  "url": "https://arcade.makecode.com/--skillmap#balloon",
+  "directOpen": true
+},
+{
+  "name": "Turkey Day",
+  "cardType": "link",
+  "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
+  "imageUrl": "/static/skillmap/backgrounds/turkey.gif",
+  "url": "https://arcade.makecode.com/--skillmap#turkey",
+  "directOpen": true
+},
+{
   "name": "Monster Truck Racer",
   "cardType": "link",
   "description": "Create a side-scrolling monster truck racing game, then jump obstacles to get your rig to the finish line.",
@@ -24,9 +48,9 @@
   "directOpen": true
 },
 {
-  "name": "Sing 2",
+  "name": "Talent Show",
   "cardType": "link",
-  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite stars from Sing 2.",
+  "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite performers.",
   "imageUrl": "/static/skillmap/backgrounds/star-map.png",
   "url": "https://arcade.makecode.com/--skillmap#star",
   "directOpen": true
@@ -48,14 +72,6 @@
   "directOpen": true
 },
 {
-  "name": "Turkey Day",
-  "cardType": "link",
-  "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
-  "imageUrl": "/static/skillmap/turkey/turkey3.gif",
-  "url": "https://arcade.makecode.com/--skillmap#turkey",
-  "directOpen": true
-},
-{
   "name": "80s Rockstar Maze",
   "cardType": "link",
   "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
@@ -64,9 +80,9 @@
   "directOpen": true
 },
 {
-  "name": "Jungle Monkey Jump Platformer",
+  "name": "Jungle Jump Platformer",
   "cardType": "link",
-  "description": "Code your monkey, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
+  "description": "Code your player, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
   "imageUrl":  "/static/skillmap/backgrounds/jungle-map.png",
   "url": "https://arcade.makecode.com/--skillmap#jungle",
   "directOpen": true

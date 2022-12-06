@@ -18,14 +18,14 @@
             "github": {
                 "id": "github",
                 "name": "GitHub",
-                "icon": "./static/providers/github-mark.png",
+                "icon": "/static/providers/github-mark.png",
                 "identity": false,
                 "order": 3
             },
             "microsoft": {
                 "id": "microsoft",
                 "name": "Microsoft",
-                "icon": "./static/providers/microsoft-logo.svg",
+                "icon": "/static/providers/microsoft-logo.svg",
                 "identity": true,
                 "redirect": true,
                 "order": 1
@@ -33,8 +33,8 @@
             "google": {
                 "id": "google",
                 "name": "Google",
-                "icon": "./static/providers/google-logo.svg",
-                "identity": false,
+                "icon": "/static/providers/google-logo.svg",
+                "identity": true,
                 "redirect": true,
                 "order": 2
             }
@@ -55,6 +55,7 @@
         "libs/core---nrf52",
         "libs/core---samd",
         "libs/core---stm32",
+        "libs/core---rp2040",
         "libs/core---vm",
         "libs/corgio",
         "libs/d5prj",
@@ -73,6 +74,7 @@
         "libs/hw---rpi",
         "libs/hw---samd51",
         "libs/hw---stm32f401",
+        "libs/hw---rp2040",
         "libs/hw---vm",
         "libs/keyboard",
         "libs/light",
@@ -85,6 +87,7 @@
         "libs/mixer---nrf52",
         "libs/mixer---samd",
         "libs/mixer---stm32",
+        "libs/mixer---rp2040",
         "libs/mouse",
         "libs/mqtt",
         "libs/net",
@@ -144,7 +147,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD|RPI-RP2)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
@@ -272,6 +275,14 @@
                         "tilemap\\s*\\.\\s*loadedWorldRow": "tiles.loadedWorldRow"
                     }
                 }
+            ],
+            "0.0.0 - 1.9.0": [
+                {
+                    "type": "api",
+                    "map": {
+                        "myCorg\\s*\\.\\s*follow": "myCorg.cameraFollow"
+                    }
+                }
             ]
         }
     },
@@ -366,7 +377,7 @@
                 "codalTarget": {
                     "name": "codal-nrf52833-dk",
                     "url": "https://github.com/mmoskal/codal-nrf52833-dk",
-                    "branch": "v1.1.4",
+                    "branch": "v2.0.2",
                     "type": "git"
                 },
                 "codalBinary": "NRF52840_DK",
@@ -379,6 +390,27 @@
                         }
                     }
                 }
+            }
+        },
+        "rp2040": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "???",
+                "flashChecksumAddr": 0,
+                "flashEnd": 2097152,
+                "uf2Family": "0xe48bff56"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-pi-pico",
+                    "url": "https://github.com/lancaster-university/codal-pi-pico",
+                    "branch": "v0.0.13",
+                    "type": "git"
+                },
+                "gittag": "v0.9.0",
+                "codalBinary": "PI-PICO",
+                "serviceId": "codal2pico",
+                "dockerImage": "pext/arm:gcc9"
             }
         },
         "rpi": {
@@ -479,17 +511,17 @@
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
-        "logo": "./static/logo.svg",
-        "docsLogo": "./static/logo.svg",
-        "cardLogo": "./static/logo.png",
-        "portraitLogo": "./static/logo.svg",
-        "footerLogo": "./static/logo.svg",
+        "logo": "/static/logo.svg",
+        "docsLogo": "/static/logo.svg",
+        "cardLogo": "/static/logo.png",
+        "portraitLogo": "/static/logo.svg",
+        "footerLogo": "/static/logo.svg",
         "organization": "Microsoft MakeCode",
         "organizationText": "MakeCode Arcade",
         "organizationShortText": "MakeCode",
         "organizationUrl": "https://makecode.com/org",
-        "organizationLogo": "./static/Micorsoft_logo_rgb_W-white_D-square.png",
-        "organizationWideLogo": "./static/Micorsoft_logo_rgb_W-white_D.png",
+        "organizationLogo": "/static/Micorsoft_logo_rgb_W-white_D-square.png",
+        "organizationWideLogo": "/static/Micorsoft_logo_rgb_W-white_D.png",
         "homeUrl": "https://arcade.makecode.com/",
         "embedUrl": "https://arcade.makecode.com/",
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
@@ -523,6 +555,7 @@
             "de",
             "fr",
             "ja",
+            "es-ES",
             "es-MX"
         ],
         "invertedMenu": true,
@@ -567,13 +600,14 @@
         },
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
-        "crowdinProject": "kindscript",
+        "crowdinProject": "makecode",
         "monacoColors": {
             "editor.background": "#FEF3E0"
         },
         "monacoFieldEditors": [
             "image-editor",
-            "tilemap-editor"
+            "tilemap-editor",
+            "soundeffect-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
@@ -587,7 +621,8 @@
             "tutorialBlocksDiff",
             "blocksErrorList",
             "identity",
-            "accessibleBlocks"
+            "accessibleBlocks",
+            "palettePicker"
         ],
         "blocksCollapsing": true,
         "errorList": true,
@@ -609,7 +644,9 @@
         "python": true,
         "assetEditor": true,
         "immersiveReader": true,
-        "tutorialCodeValidation": true
+        "tutorialCodeValidation": true,
+        "multiplayerShareButton": true,
+        "songEditor": true
     },
     "queryVariants": {
         "skillsMap=1": {

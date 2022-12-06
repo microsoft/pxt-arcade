@@ -47,7 +47,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-► Create the wall **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
+► Create the wall **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables(noclick):location||``.
 
 
 ```blocks
@@ -98,7 +98,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ► Click the word **left** to open the dropdown menu, and change the direction to **bottom**.
 
-► As before, create the tile **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables:location||``.
+► As before, create the tile **under** your sprite by opening ``||tiles:Tilemaps||`` and dragging ``||tiles:location of [mySprite]||`` in to replace  ``||variables(noclick):location||``.
 
 
 ```blocks

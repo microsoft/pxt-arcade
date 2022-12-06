@@ -18,15 +18,16 @@
 
     <div class="showDesktop page-header">
         <div class="ui container">
-                <div id="page-header-wrapper">
+                <div id="page-header-wrapper" role="menubar">
                     <div class="page-header-item page-header-content no-grow">
                         <h2 class="ui item header no-select">@title@</h2>
                     </div>
                     <div class="page-header-item show-code-toggle">
-                        <button id="show-code-button" class="ui mini default button">Show Code</button>
-                        <a id="editCodeButton" href="/@versionsuff@#pub:@id@" class="ui mini button landscape only">Edit Code</a>
+                        <button id="show-code-button" class="ui mini default button" role="menuitem">Show Code</button>
+                        <a id="editCodeButton" href="/@versionsuff@#pub:@id@" class="ui mini button landscape only" role="menuitem">Edit Code</a>
                     </div>
                     <div class="page-header-item no-grow">
+                        <button id="multiplayer-share-button" class="ui mini default button" role="menuitem" style="display: none">Host Game</button>
                         <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization no-select">
                             <img class="ui logo portrait hide" src="./static/Microsoft-logo_rgb_c-gray.png" alt="Microsoft MakeCode Logo">
                             <img class="ui mini image portrait only" src="./static/Microsoft-logo_rgb_c-gray-square.png" alt="Microsoft MakeCode Logo">
@@ -145,6 +146,7 @@
             var editorEmbedURL = "/@versionsuff@#sandbox:@id@";
             var showCodeButton = document.getElementById("show-code-button");
             var editCodeButton = document.getElementById("editCodeButton");
+            var multiplayerShareButton = document.getElementById("multiplayer-share-button");
             var embedContainer = document.getElementById("embed-frame");
 
             var builtSimJSPromise = Promise.resolve(undefined);
@@ -189,6 +191,14 @@
                 }
                 isGame = !isGame;
             });
+
+            multiplayerShareButton.addEventListener("click", function() {
+                window.pxtTickEvent('share.multiplayerShareClick', { target: "arcade" });
+                const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://localhost:3000" : "";
+                const multiplayerHostUrl = `${domain}${pxt.webConfig.relprefix}multiplayer?host=@id@`;
+
+                window.open(multiplayerHostUrl, "_blank");
+            })
 
             var shareLinkIsApproved = false;
 
@@ -268,6 +278,11 @@
                             if (!builtSimJS)
                                 builtSimJSPromise = Promise.resolve(built);
                             console.log('simulator started...');
+
+                            if (built.parts.indexOf("multiplayer") !== -1) {
+                                window.pxtTickEvent('share.isMultiplayerGame', { target: "arcade" });
+                                multiplayerShareButton.style.display = "block";
+                            }
                         });
                     });
                 }, 0);

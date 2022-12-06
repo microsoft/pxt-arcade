@@ -89,7 +89,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ► Set each assassin's animation by snapping ``||animation:animate [mySprite]...when not moving||`` into the empty ``||sprites:on created [sprite] of kind [Enemy]||`` container.
 
-► To animate each enemy sprite, drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+► To animate each enemy sprite, drag the ``||variables(noclick):sprite||`` value from the outer container down to replace ``||variables(noclick):mySprite||``.
 
 ► Choose the **assassin left** animation and change **not moving** to **moving left**.
 
@@ -123,7 +123,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 
 ► Send the assassins running toward you by adding ``||sprites:set [myEnemy] follow [mySprite]||`` to **the end** of the ``||sprites:on created [sprite] of kind [Enemy]||`` container.
 
-► Like before, drag the ``||variables:sprite||`` value from the outer container down, but this time, replace ``||variables:myEnemy||``.
+► Like before, drag the ``||variables(noclick):sprite||`` value from the outer container down, but this time, replace ``||variables(noclick):myEnemy||``.
 
 ► Now, click the plus at the right of the ``||sprites:set [myEnemy] follow [mySprite]||`` block and change the speed to **30** so they don't catch you too quickly.
 
@@ -160,7 +160,7 @@ Keep them on the ground by adding acceleration.
 
 ► Drag ``||sprites:set [mySprite] [x] to [0]||`` into **the end** of the ``||sprites:on created [sprite] of kind [Enemy]||`` container.
 
-► Drag the ``||variables:sprite||`` value from the outer container down to replace ``||variables:mySprite||``.
+► Drag the ``||variables(noclick):sprite||`` value from the outer container down to replace ``||variables(noclick):mySprite||``.
 
 ► Change ``||sprites:x||`` to ``||sprites:ay (acceleration y)||`` and change **0** to **500** to keep the assassin from floating.
 
@@ -200,7 +200,7 @@ When you're done testing your project, click **Done** to return to the main page
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 arcade-premium-life=github:jwunderl/arcade-premium-life/
-pxt-characterAnimations=github:microsoft/arcade-character-animations/
+arcade-character-animations=github:microsoft/arcade-character-animations/
 ```
 
 

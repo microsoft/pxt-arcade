@@ -27,14 +27,14 @@ Let's launch projectiles when the **Ⓐ** button is pressed!
 
 ---
 
-- :game: Drag an  
-``||controller:on [A] button pressed ||``  
+- :game: Drag an
+``||controller:on [A] button pressed ||``
 container into the workspace.
 
-- :paper plane: Snap  
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``   
-inside the new  
-``||controller:on [A] button pressed ||``  
+- :paper plane: Snap
+``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``
+inside the new
+``||controller:on [A] button pressed ||``
 container.
 
 - :paint brush: Click the grey box inside of the new projectile block and toggle to **My Assets** to choose one of the **Dart** sprites.
@@ -58,7 +58,7 @@ right corner. This is *not helpful* when your enemies are coming from above! Let
 
 ---
 
-The ``||variables:set projectile to||`` block comes preloaded with
+The ``||variables(sprites):set projectile to||`` block comes preloaded with
 values setting both the [__*vx*__](#whatVX "horizontal velocity")
 and [__*vy*__](#whatVY "vertical velocity") to 50.
 
@@ -88,18 +88,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## 7. Custom Effects
 
-**Now for some special effects**  
-💥 💥 💥 
+**Now for some special effects**
+💥 💥 💥
 
 ---
 
-- :paper plane: Find  
-``||sprites:[mySprite] start [spray] effect ➕||``   
-and snap it in at **the end** of the  
-``||controller:on [A] button pressed ||``  
+- :paper plane: Find
+``||sprites:[mySprite] start [spray] effect ➕||``
+and snap it in at **the end** of the
+``||controller:on [A] button pressed ||``
 container.
 
-- :mouse pointer: Change ``||variables:mySprite||`` to ``||variables:projectile||`` if you want the effects on your projectiles instead of on your ship.
+- :mouse pointer: Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||`` if you want the effects on your projectiles instead of on your ship.
 
 - :mouse pointer: Try different options from the ``||sprites:[spray]||`` dropdown menu and choose the one you like best!
 
@@ -133,6 +133,7 @@ Play your game on the game screen, then click **Done** to return to the main ski
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll#926e12eefffd09d453c7cde73f8d6ebd0e666d9d/
+pxt-status-bar=github:jwunderl/pxt-status-bar
 ```
 
 ```ghost

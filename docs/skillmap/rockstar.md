@@ -53,7 +53,6 @@
 * imageUrl: /static/skillmap/certificates/rockstar-cert.png
 * position: 4 0
 * actions:
-    * map: [Try Jungle Monkey Jump](/skillmap/jungle)
     * map: [Try our Space Explorer](/skillmap/space)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:

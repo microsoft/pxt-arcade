@@ -5,17 +5,22 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
-
-* name: Play the Monster Racer Tutorial
+* name: Stand with Wakanda
+* buttonLabel: Make it now
+* imageUrl: /static/hero-gallery/wakanda-banner.png
+* url: /tutorials/wakanda-forever
+* cardType: tutorial
+---
+* name: Code a Carnival!
 * buttonLabel: Try Now
-* imageUrl: /static/banners/racer-banner.png
-* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/racer
+* imageUrl: /static/hero-gallery/hoc-2022.png
+* url: https://arcade.makecode.com/hour-of-code-2022
 * cardType: link
 ---
-* name: Try our limited-edition Sing 2 activity
+* name: Save the Turkeys!
 * buttonLabel: Play Now
-* imageUrl: /static/hero-gallery/star.png
-* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/star
+* imageUrl: /static/hero-gallery/turkey.png
+* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey
 * cardType: link
 ---
 * name: How-to code a video game

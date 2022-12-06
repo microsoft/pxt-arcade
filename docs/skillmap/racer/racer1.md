@@ -9,14 +9,9 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 ![Set your sprite](/static/skillmap/racer/racer1.gif "Look what we're about to make!")
 
 
+
 ## 2. The Scene is Set
 
-
-We've added blocks to your workspace to get you started. <br/>
-⚠️**Don't touch them yet!**⚠️ <br/>
-If you do, you might make a change that keeps your game from working later.
-
----
 
 - :binoculars: We have already added **tilemap** and
 **background image** blocks to your workspace to set the scene in this activity.
@@ -24,6 +19,10 @@ If you do, you might make a change that keeps your game from working later.
 _💡 Both blocks have been added to the ``||loops: on start||`` container so they load as soon as the game starts.)_
 
 - :mouse pointer: Keep scrolling down to read all of the instructions in this step before moving on to the next step.
+
+** If you found yourself playing with the tilemap and now it looks different, click** <br/>
+_"Replace my code"_ <br/>
+**beneath the instructions to get the original blocks back.**
 
 ---
 
@@ -37,9 +36,9 @@ Open the game window to take a look at the scene you've just set up.
 
 ---
 
-To take a closer look, you can either click on the **preview window** in the lower-right corner of your screen, or click the **game window tab** above:
+To take a closer look, you can either click on the **preview window** in the lower-right corner of your screen, or click the **game window tab** above.
 
-![Click the Game Window tab to see your scene. ](/static/skillmap/assets/game-win-tab.png "Don't forget to look at your game!")
+![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
 
 ---
 
@@ -59,12 +58,12 @@ It's time to set up your monster truck.  To do this, we'll need to create a [__*
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag <br/>
-``||variables:set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
 to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.
 
-- :paint brush:  To choose a truck, click the empty grey box and toggle to **My Assets**.
+- :paint brush:  To choose a truck, click the empty grey box, then select **My Assets**.
 
 ![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
 
@@ -128,7 +127,7 @@ Click back to the game window to see how everything is coming together.
 
 ---
 
-You should see you truck drop to the ground inside the cave.
+The truck should drop to the ground inside the cave.
 
 ---
 
@@ -140,7 +139,7 @@ You should see you truck drop to the ground inside the cave.
 
 In this game, your truck needs to start rolling as soon as the game starts.
 
-To make that happen, you need to set its **vx** or _vertical velocity_ (speed from side to side).
+To make that happen, you need to set its **vx** or _horizontal velocity_ (speed from side to side).
 
 ![Set the speed](/static/skillmap/racer/velocity.gif "Choose vx(velocity x)")
 
@@ -217,7 +216,7 @@ scene.cameraFollowSprite(mySprite)
 
 Well done!
 
-Take a look at the experience that you've created so far. Your truck should start rolling as soon as the game loads and keep going until it gets to the end of the map!
+Take a look at the experience that you've created so far. Your truck should start rolling as soon as the game loads and keep going until it gets to the end of the first pit!
 
 When you're ready, click **Done** to head back out to the skillmap where you can play the next level to find out how to control your truck with arrows and buttons!
 

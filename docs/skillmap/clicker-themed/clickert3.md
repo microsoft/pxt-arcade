@@ -18,7 +18,7 @@ some flying star [__*projectiles*__](#projected "sprites that moves on their own
 ---
 
 - :paper plane:  From ``||sprites:Sprites||``, grab  
-``||variables:set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``  
+``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``  
 and drop it into **the end** of the  
 ``||controller:on [A] button [pressed]||`` container
 already in the workspace.
@@ -75,7 +75,7 @@ Does a star come out of your button each time you press the (A) button?
 blocks.
 
 - :mouse pointer:  Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the  
-``||variables:set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``   
+``||variables(sprites):set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``   
 block.
 
 - :mouse pointer:  Add the second to the [__*vy*__](#whatVY "vertical velocity") argument.

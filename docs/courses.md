@@ -9,29 +9,18 @@ Structured courses for teaching computer science in the classroom.
 ```codecard
 [
     {
-        "name": "CS Intro 1",
-        "description": "A quarter length computer science course for beginning coders",
-        "url": "/courses/csintro1",
-        "imageUrl": "/static/courses/csintro1.png",
-        "largeImageUrl": "/static/courses/csintro1.gif"
-    }, {
-        "name": "CS Intro 2",
-        "description": "A quarter length continuation of the CS Intro 1 course",
-        "url": "/courses/csintro2",
-        "imageUrl": "/static/courses/csintro2.png",
-        "largeImageUrl": "/static/courses/csintro2.gif"
-    }, {
-        "name": "CS Intro 3",
-        "description": "A quarter length transition from blocks to JavaScript",
-        "url": "/courses/csintro3",
-        "imageUrl": "/static/courses/csintro3.png",
-        "largeImageUrl": "/static/courses/csintro3.gif"
-    }, {
         "name": "AP Computer Science Principles",
         "description": "AP endorsed introductory class for High School students. The course is designed to attract students of all backgrounds, experience levels, and interests.",
         "url": "https://makecode.com/csp",
         "imageUrl": "/static/courses/csp.png",
         "largeImageUrl": "/static/courses/csp.png"
+    },
+    {
+        "name": "Introduction to Computer Science with Microsoft MakeCode Arcade",
+        "description": "A full academic year course designed to be taught for introductory programming classes in High School.",
+        "url": "/courses/introcs",
+        "imageUrl": "/static/courses/teals-introcs.jpg",
+        "largeImageUrl": "/static/courses/teals-introcs.jpg"
     }
 ]
 ```
@@ -61,10 +50,6 @@ The games they make in the course can run on the GameGo device! Courses are free
 
 ## See also
 
-[CS Intro Home Page](/courses/csintro),
-[CS Intro 1](/courses/csintro1),
-[CS Intro 2](/courses/csintro2),
-[CS Intro 3](/courses/csintro3)
-
+[AP Computer Science Principles](https://makecode.com/csp)
 [GameGo Beginner](https://make2learn.tinkergen.com/course/?sku=604182001),
 [GameGo Intermediate](https://make2learn.tinkergen.com/course/?sku=604182003)

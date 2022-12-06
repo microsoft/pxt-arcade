@@ -1,17 +1,18 @@
 # Turkey Day!
 * name: Turkey Day!
-* description: It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.
-* infoUrl: skillmap/educator-info/turkey-map-info
-* backgroundurl: static/skillmap/backgrounds/turkey-comp.png
+* description: It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer. Double-click the first level to start.
+* infoUrl: /skillmap/educator-info/turkey-map-info
+* backgroundurl: /static/skillmap/backgrounds/turkey-comp.gif
 * bannerurl: /static/skillmap/turkey/turkey2.gif
-* primarycolor: #e77038
-* secondarycolor: #fdf60c
-* tertiarycolor: #77dc52
-* strokecolor: #ffffff
-* highlightcolor: #ffffff
-* completednodecolor: #3b3738
+* primarycolor: #cda6cc
+* secondarycolor: #ffffff
+* tertiarycolor: #baefff
+* strokecolor: #fdf60c
+* highlightcolor: #fdf60c
+* completednodecolor: #003457
 
-## Turkey
+
+## turkey-day
 * name: Turkey Day
 * layout: manual
 
@@ -47,15 +48,20 @@
 
 
 ### turkey-finish
+* name: Congratulations!
 * kind: completion
 * type: certificate
 * url: /static/skillmap/certificates/turkey-cert.pdf
 * imageUrl: /static/skillmap/certificates/turkey-cert.png
 * position: 3 0
 * actions:
-    * map: [Try Space Explorer](/skillmap/space)
+    * map: [Try Burstin' Balloons](/skillmap/balloon)
     * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
-    * certificate: /static/skillmap/certificates/turkey-cert.pdf
-    * completion-badge: /static/badges/badge-turkey.png
+    * certificate:
+        * url: /static/skillmap/certificates/turkey-cert.pdf
+        * preview: /static/skillmap/certificates/turkey-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-turkey.png
+        * name: Turkey Day
 

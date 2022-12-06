@@ -322,12 +322,6 @@ Games submitted by the MakeCode community.
         "cardType": "forumUrl",
         "name": "Freakout Bug Fix Update",
         "description": ""
-    },
-    {
-        "name": "Add Game",
-        "description": "Are you looking to contribute your own game? These instructions will explain how to submit your game for the chance to appear in this carousel.",
-        "imageUrl": "/static/community/add-game.png",
-        "url": "/game-submission"
     }
 ]
 ```

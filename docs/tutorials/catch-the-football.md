@@ -140,13 +140,13 @@ mySprite2 = sprites.create(img`
 
 ## {Step 7}
 
-In the set ``||variables:set mySprite2||`` block, click on ``||variables:mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``football`` as the new sprite name and click **Ok**.
+In the set ``||variables:set mySprite2||`` block, click on ``||variables(noclick):mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``football`` as the new sprite name and click **Ok**.
 
 ![Rename mySprite2](/static/tutorials/catch-the-football/rename-variable.gif)
 
 ## {Step 8}
 
-In the ``||variables:set football||`` block, click on the ``||sprites:Player||`` kind to open the menu of different Sprite kinds.  Select ``||sprites:Projectile||`` as your ``||variables:football||`` sprite kind.
+In the ``||variables:set football||`` block, click on the ``||sprites:Player||`` kind to open the menu of different Sprite kinds.  Select ``||sprites:Projectile||`` as your ``||variables(noclick):football||`` sprite kind.
 
 ![Set sprite kind](/static/tutorials/catch-the-football/sprite-kind.png)
 
@@ -169,7 +169,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 
 ## {Step 11}
 
-In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables:otherSprite||`` to open the menu. Select ``||sprites:Projectile||`` as its kind.
+In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables(noclick):otherSprite||`` to open the menu. Select ``||sprites:Projectile||`` as its kind.
 
 ![Overlap sprite kind](/static/tutorials/catch-the-football/overlaps-projectile.png)
 
@@ -186,7 +186,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 13}
 
-Let’s set the position for ``||variables:football||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
+Let’s set the position for ``||variables(noclick):football||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
 ```blocks
 let mySprite: Sprite = null
@@ -199,7 +199,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 14}
 
-In the ``||sprites:set mySprite position||`` block, click on the ``||variables:mySprite||`` variable to open the menu, and select your ``||variables:football||`` sprite.
+In the ``||sprites:set mySprite position||`` block, click on the ``||variables(noclick):mySprite||`` variable to open the menu, and select your ``||variables(noclick):football||`` sprite.
 
 ![Change mySprite to football](/static/tutorials/catch-the-football/set-football-position.png)
 

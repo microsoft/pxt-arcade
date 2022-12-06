@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html
+    lang="en-US"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Microsoft MakeCode Arcade Hour of Code™ 2022</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="Description"
+            content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!"
+        />
+
+        <link rel="manifest" href="/blb/sim.webmanifest" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-title"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2022"
+        />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="translucent-black"
+        />
+        <meta name="format-detection" content="telephone=no" />
+        <meta
+            name="application-name"
+            content="Microsoft MakeCode Arcade Hour of Code™ 2022"
+        />
+
+        <meta name="msapplication-TileColor" content="#3DC1AA" />
+        <meta
+            name="msapplication-TileImage"
+            content="/static/hour-of-code/2022/hoc_square.png"
+        />
+        <meta name="msapplication-config" content="none" />
+        <meta name="theme-color" content="#3DC1AA" />
+
+
+        <meta name="description" content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!">
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://arcade.makecode.com/hour-of-code-2022">
+        <meta property="og:title" content="Microsoft MakeCode Arcade Hour of Code™ 2022">
+        <meta property="og:site_name" content="Microsoft MakeCode Arcade Hour of Code™ 2022"/>
+        <meta property="og:description" content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!">
+        <meta property="og:image" content="/static/hour-of-code/2022/hoc_opengraph_large.png">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="Microsoft MakeCode Arcade" />
+        <meta property="twitter:domain" content="arcade.makecode.com">
+        <meta property="twitter:url" content="https://arcade.makecode.com/hour-of-code-2022">
+        <meta name="twitter:title" content="Microsoft MakeCode Arcade Hour of Code™ 2022">
+        <meta name="twitter:description" content="Join us in celebrating this year's Computer Science Education Week by playing, designing and coding your very own retro arcade games!">
+        <meta name="twitter:image" content="/static/hour-of-code/2022/hoc_opengraph_large.png">
+
+
+        <link
+            rel="apple-touch-icon"
+            href="/static/hour-of-code/2022/favicon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/static/hour-of-code/2022/favicon.png"
+        />
+        <link
+            rel="shortcut icon"
+            href="/static/hour-of-code/2022/favicon.png"
+        />
+
+       
+        <link rel="stylesheet" href="static/hour-of-code/2022/styles.css" />
+
+        <style>
+            @font-face {
+                font-family: 'InterBold';
+                src: url('static/hour-of-code/2022/Inter/static/Inter-Bold.ttf')
+                    format('truetype');
+            }
+
+
+            @font-face {
+                font-family: 'NunitoRegular';
+                src: url('static/hour-of-code/2022/Nunito/static/Nunito-Regular.ttf')
+                    format('truetype');
+            }
+
+            @font-face {
+                font-family: 'NunitoSemiBold';
+                src: url('static/hour-of-code/2022/Nunito/static/Nunito-SemiBold.ttf')
+                    format('truetype');
+            }
+
+            @font-face {
+                font-family: 'NunitoBold';
+                src: url('static/hour-of-code/2022/Nunito/static/Nunito-Bold.ttf')
+                    format('truetype');
+            }
+
+            @font-face {
+                font-family: 'NunitoExtraBold';
+                src: url('static/hour-of-code/2022/Nunito/static/Nunito-ExtraBold.ttf')
+                    format('truetype');
+            }
+            #hero{
+                background-image:  url("static/hour-of-code/2022/hoc202_heroImage_large.gif"), url("static/hour-of-code/2022/skyTile.png");
+            }
+        </style>
+
+
+        <script type="text/javascript">
+
+            function handleOnLoad() {
+                var langPicker = document.querySelector('#langpicker');
+                if (langPicker) {
+                    langPicker.remove();
+                }
+            }
+
+            function launchPage(url, tickEvent){
+                window.open(url, "_blank");
+                window.pxtTickEvent(tickEvent);
+            }
+
+        </script>
+    </head>
+
+    <body id="root" class="root">
+        <img
+            class="tracking"
+            src="https://code.org/api/hour/begin_microsoft_carnival.png"
+            alt="tracking"
+        /> 
+        <main role="presentation">
+            <header>
+                <img src="static/hour-of-code/2022/microsoftMakeCodeLogo.svg" alt="MakeCode Logo">
+            </header>
+            <section id="hero">
+                <div>
+                    <img id="logo" src="static/hour-of-code/2022/HoC_logo_es.png" alt="Hour of Code 2022: Carnival">
+                    <div class="header-tag">
+                        <p>Codifique um divertido jogo de carnaval em menos de uma hora!  Escolha um jogo e avance.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-list">
+                <div class="container container-grid">
+                    <div class="card"
+                    onClick="launchPage('https://aka.ms/whack-the-mole', 'hourofcode2022.skillmap.open.whackEmAll')">
+
+                    <div id="start-here">
+                        <div id="twisted">
+                            Novo?<br/>
+                        começa aqui!<br/>
+                        </div>
+                        <img src="static/hour-of-code/2022/start-here-arrow.png" alt="">
+                    </div>
+                    
+                    
+                    <div class="card-cta btn">Bata a toupeira</div>
+                        <img class="thumbnail" src="static/hour-of-code/2022/gameImg_whack_em_all.png" alt="Whack-the-Mole game screenshot">
+                        <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-mole.png" alt="beginner level"> </div>
+                        <div>Crie um jogo clássico onde você pode jogar toupeiras em buracos</div>
+                    </div>
+                    <div class="card"
+                    onClick="launchPage('https://aka.ms/balloon', 'hourofcode2022.skillmap.open.burstinBalloons')">
+                        <div class="card-cta btn">Balões estourando</div>
+                        <img class="thumbnail" src="static/hour-of-code/2022/gameImg_ballon2.png" alt="Burstin’ Balloons game screenshot">
+                        <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                        <div>Codifique um mouse que encha seu balão o mais rápido possível</div>
+                    </div>
+
+                    <!-- <div class="card"
+                    onClick="launchPage('https://aka.ms/targets', 'hourofcode2022.skillmap.open.targetBlaster')">
+                        <div class="card-cta btn">Target Blaster</div>
+                        <img class="thumbnail" src="static/hour-of-code/2022/gameImg_target.png" alt="Target Blaster game screenshot">
+                        <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-target.png" alt="advanced level"></div>
+                        <div>Follow a video to learn how to launch a ball at moving targets</div>
+                    </div> -->
+                </div>
+            </section>
+            <section>
+                <div class="container return-to-code">
+                    <div>
+                        <p>Done? Go back to <a href="https://code.org/api/hour/finish" target="_blank">Code.org</a> <!--→--> <br />or continue to <a href="#moregames">build more games</a> below.</p>
+                    
+                    </div>
+                    <!-- <button
+                    onClick="launchPage('https://code.org/api/hour/finish', 'hourofcode2022.open.codeOrg')">
+                    More games</button> -->
+                    
+                </div>
+    
+            </section>
+            <!-- <section style="background-color:#140083;">
+                <div class="container mini-col-1">
+                    <p>Want to keep creating?<br/>Here are some things you can do next…</p>
+                    <img src="static/hour-of-code/2022/carnivalSign.gif" alt="">
+
+                </div>
+
+            </section> -->
+            <section>
+                <div id="moregames">
+                    <div class="container">
+                        <h3>Crie mais jogos</h3>
+                        <div>Encontre jogos e projetos MakeCode semelhantes.</div>
+                        <div class="container-grid">
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/shark', 'hourofcode2022.skillmap.open.shark')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_shark.png" alt="Shark Attack Game Screenshot">
+                                <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Crie um jogo de ataque de tubarão e depois coma peixes</div>
+                            </div>
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/racer', 'hourofcode2022.skillmap.open.racer')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_racer.png" alt="Monster Racer game screenshot">
+                                <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Construa um jogo de corrida com um caminhão “monstro” assustador</div>
+                            </div>
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/forest', 'hourofcode2022.skillmap.open.forest')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_forest.png" alt="Forest Fire game screenshot">
+                                <div class="card-item-title">Dificuldade: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Codifique um incêndio florestal e apague-o com um tanque aéreo</div>
+                            </div>
+                        </div>
+
+                    <!-- THIS IS PLACEHOLDER FOR WHEN WE HAVE OVERFLOW 
+                        
+                        <div class="container-grid overflow-games">
+
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/shark', 'hourofcode2022.skillmap.open.shark')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_shark.png" alt="Shark Attack Game Screenshot">
+                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Create a shark attack game, then gobble up fish</div>
+                            </div>
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/racer', 'hourofcode2022.skillmap.open.racer')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_racer.png" alt="Monster Racer game screenshot">
+                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Build a racing game with a creepy "monster" truck</div>
+                            </div>
+                            <div class="card" onClick="launchPage('https://arcade.makecode.com/--skillmap#docs:skillmap/forest', 'hourofcode2022.skillmap.open.forest')">
+                                <img class="thumbnail" src="static/hour-of-code/2022/gameImg_forest.png" alt="Forest Fire game screenshot">
+                                <div class="card-item-title">Difficulty: <img class="difficulty" src="static/hour-of-code/2022/chili-balloon.png" alt="intermediate level"></div>
+                                <div>Code a forest fire, then put it out with an airtanker</div>
+                            </div>
+                        </div>
+                    -->
+                    </div>
+                    <!-- THIS IS PLACEHOLDER FOR WHEN WE HAVE OVERFLOW
+                        <div class="container container-grid-btns"><button id="showMoreGames_btn">More games</button></div> -->
+                </div>
+            </section>
+            <section>
+                <div class="container col-2">
+                    <div>
+                        <h2>Chamando todos os professores</h2>
+                        <p>Leve o Hour of Code™ para sua sala de aula com jogos que tornam a programação divertida para você e seus filhos — sem necessidade de hardware ou downloads.</p>
+                        <p>Se você tem uma hora ou uma semana, vamos começar com tutoriais criativos e planos de aula personalizáveis.</p>
+                        <button
+                        onClick="launchPage('https://aka.ms/HoC-22-Lesson', 'hourofcode2022.skillmap.educator')">
+                        Recursos do professor 
+                        <!-- <img src="static/hour-of-code/2022/arrow.png" alt=""> -->
+                        </button>
+                    </div>
+                    <div>
+                        <img class="rowImg" src="static/hour-of-code/2022/boothAni.gif" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h3>Mais da Microsoft</h3>
+                    <div class="container-grid">
+                        <div class="card"
+                        onClick="launchPage('http://makecode.microbit.org', 'hourofcode2022.footer.open.microbit')">
+                            <img class="thumbnail" src="static/hour-of-code/2022/microbitImage.png" alt="microbit image">
+                            <div class="card-item-title">micro:bit</div>
+                            <div>Programe sons, efeitos e muito mais em um computador portátil.</div>
+                        </div>
+                        <div class="card"
+                        onClick="launchPage('https://aka.ms/hourofcode', 'hourofcode2022.footer.open.minecraft')">
+                            <img class="thumbnail" src="static/hour-of-code/2022/minecraft-hoc.png" alt="minecraft image">
+                            <div class="card-item-title">Minecraft</div>
+                            <div>Assine a Education Edition para um aprendizado “STEM” divertido e imersivo.</div>
+                        </div>
+                        <div class="card"
+                        onClick="launchPage('https://arcade.makecode.com/hour-of-code', 'hourofcode2022.footer.open.arcade')">
+                            <img class="thumbnail" src="static/hour-of-code/2022/arcadeImage.png" alt="Arcade image">
+                            <div class="card-item-title">Arcade</div>
+                            <div>Construa videogames, crie personagens e brinque com amigos.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WAITING ON CODE NINJA ASSETS 
+                <section>
+                <div>
+                    <div class="container">
+                        <h3>Get help from CodeNinjas</h3>
+                        <div>Would you like to Code a Carnival at your school?</div>
+                        <div>
+                            CodeNinjas Banner / Blurb Here
+                        </div>
+                    </div>
+                    <div class="container container-grid-btns"><button>More games</button></div>
+                </div>
+            </section> -->
+
+            <footer id="footer">
+                <div>
+                    <img src="static/hour-of-code/2022/red-pixel-heart-vmx.png" alt="">
+                </div>
+                <div id="social">
+                    <img
+                        src="static/hour-of-code/2022/social/twitter.png"
+                        alt="twitter"
+                        onClick="launchPage('https://twitter.com/MSMakeCode', 'hourofcode2022.social.twitter')">
+                    <img
+                        src="static/hour-of-code/2022/social/youtube.png"
+                        alt="youtube"
+                        onClick="launchPage('https://www.youtube.com/c/MicrosoftMakeCode', 'hourofcode2022.social.youtube')">
+                    <img
+                        src="static/hour-of-code/2022/social/instagram.png"
+                        alt="instagram"
+                        onClick="launchPage('https://www.instagram.com/msmakecode', 'hourofcode2022.social.instagram')">
+                    <img
+                        src="static/hour-of-code/2022/social/twitch.png"
+                        alt="twitch"
+                        onClick="launchPage('https://www.twitch.tv/msmakecode', 'hourofcode2022.social.twitch')">
+                    <img
+                        src="static/hour-of-code/2022/social/tik_tok.png"
+                        alt="tik tok"
+                        onClick="launchPage('https://www.tiktok.com/@msmakecode', 'hourofcode2022.social.tiktok')">
+                </div>
+                <p class="container hoc-statement">
+                    A <a href="http://www.hourofcode.com" target="_blank">'Hour of Code™'</a> é uma iniciativa nacional da <a href="https://www.csedweek.org/"  target="_blank">Computer Science Education Week</a> e <a href="https://code.org/"  target="_blank">Code.org</a> para apresentar a milhões de estudantes uma hora de ciência da computação e programação de computadores.
+                </p>
+                <div>
+                    <a href="http://www.makecode.com"  target="_blank">Microsoft MakeCode</a> | <a href="https://www.microsoft.com/legal/terms-of-use"  target="_blank">Termos de uso</a> | <a href="https://privacy.microsoft.com/privacystatement"  target="_blank">Privacidade</a>
+                </div>
+                <div class="caption">Languages: <a href="https://arcade.makecode.com/hour-of-code-2022">English</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-es">Spanish</a> | <a href="https://arcade.makecode.com/hour-of-code-2022-pt">Portuguese</a></div>
+            </footer>
+
+        </main>
+
+
+        <script>
+            const showMoreGames_btn = document.querySelector("#showMoreGames_btn");
+            showMoreGames_btn.addEventListener('click', (event) => {
+                const overflow_games = document.querySelectorAll(".overflow-games");
+                for(var i=0; i< overflow_games.length; i++){
+                    overflow_games[i].classList.add("active");
+                }
+                showMoreGames_btn.style.display = "none";
+            });
+        </script>
+
+
+
+
+        <!-- @include tracking.html -->
+        <!-- @include tickevent.html -->
+
+        <!-- TODO: update usabilia for HoC 2022 -->
+        <!-- begin usabilla live embed code -->
+        <script type="text/javascript">
+            /*{literal}<![CDATA[*/ window.lightningjs ||
+                (function (c) {
+                    function g(b, d) {
+                        d && (d += (/\?/.test(d) ? '&' : '?') + 'lv=1');
+                        c[b] ||
+                            (function () {
+                                var i = window,
+                                    h = document,
+                                    j = b,
+                                    g = h.location.protocol,
+                                    l = 'load',
+                                    k = 0;
+                                (function () {
+                                    function b() {
+                                        a.P(l);
+                                        a.w = 1;
+                                        c[j]('_load');
+                                    }
+                                    c[j] = function () {
+                                        function m() {
+                                            m.id = e;
+                                            return c[j].apply(m, arguments);
+                                        }
+                                        var b,
+                                            e = ++k;
+                                        b =
+                                            this && this != i
+                                                ? this.id || 0
+                                                : 0;
+                                        (a.s = a.s || []).push([
+                                            e,
+                                            b,
+                                            arguments
+                                        ]);
+                                        m.then = function (b, c, h) {
+                                            var d = (a.fh[e] = a.fh[e] || []),
+                                                j = (a.eh[e] = a.eh[e] || []),
+                                                f = (a.ph[e] = a.ph[e] || []);
+                                            b && d.push(b);
+                                            c && j.push(c);
+                                            h && f.push(h);
+                                            return m;
+                                        };
+                                        return m;
+                                    };
+                                    var a = (c[j]._ = {});
+                                    a.fh = {};
+                                    a.eh = {};
+                                    a.ph = {};
+                                    a.l = d
+                                        ? d.replace(
+                                              /^\/\//,
+                                              (g == 'https:' ? g : 'http:') +
+                                                  '//'
+                                          )
+                                        : d;
+                                    a.p = { 0: +new Date() };
+                                    a.P = function (b) {
+                                        a.p[b] = new Date() - a.p[0];
+                                    };
+                                    a.w && b();
+                                    i.addEventListener
+                                        ? i.addEventListener(l, b, !1)
+                                        : i.attachEvent('on' + l, b);
+                                    var q = function () {
+                                        function b() {
+                                            return [
+                                                '<head></head><',
+                                                c,
+                                                ' onload="var d=',
+                                                n,
+                                                ";d.getElementsByTagName('head')[0].",
+                                                d,
+                                                '(d.',
+                                                g,
+                                                "('script')).",
+                                                i,
+                                                "='",
+                                                a.l,
+                                                '\'"></',
+                                                c,
+                                                '>'
+                                            ].join('');
+                                        }
+                                        var c = 'body',
+                                            e = h[c];
+                                        if (!e) return setTimeout(q, 100);
+                                        a.P(1);
+                                        var d = 'appendChild',
+                                            g = 'createElement',
+                                            i = 'src',
+                                            k = h[g]('div'),
+                                            l = k[d](h[g]('div')),
+                                            f = h[g]('iframe'),
+                                            n = 'document',
+                                            p;
+                                        k.style.display = 'none';
+                                        e.insertBefore(k, e.firstChild).id =
+                                            o + '-' + j;
+                                        f.frameBorder = '0';
+                                        f.id = o + '-frame-' + j;
+                                        /MSIE[ ]+6/.test(navigator.userAgent) &&
+                                            (f[i] = 'javascript:false');
+                                        f.allowTransparency = 'true';
+                                        l[d](f);
+                                        try {
+                                            f.contentWindow[n].open();
+                                        } catch (s) {
+                                            (a.domain = h.domain),
+                                                (p =
+                                                    'javascript:var d=' +
+                                                    n +
+                                                    ".open();d.domain='" +
+                                                    h.domain +
+                                                    "';"),
+                                                (f[i] = p + 'void(0);');
+                                        }
+                                        try {
+                                            var r = f.contentWindow[n];
+                                            r.write(b());
+                                            r.close();
+                                        } catch (t) {
+                                            f[i] =
+                                                p +
+                                                'd.write("' +
+                                                b().replace(
+                                                    /"/g,
+                                                    String.fromCharCode(92) +
+                                                        '"'
+                                                ) +
+                                                '");d.close();';
+                                        }
+                                        a.P(2);
+                                    };
+                                    a.l && setTimeout(q, 0);
+                                })();
+                            })();
+                        c[b].lv = '1';
+                        return c[b];
+                    }
+                    var o = 'lightningjs',
+                        k = (window[o] = g(o));
+                    k.require = g;
+                    k.modules = c;
+                })({});
+            window.usabilla_live = lightningjs.require(
+                'usabilla_live',
+                '//w.usabilla.com/04a02d64289a.js'
+            );
+            /*]]>{/literal}*/
+        </script>
+        <!-- end usabilla live embed code -->
+    </body>
+</html>
