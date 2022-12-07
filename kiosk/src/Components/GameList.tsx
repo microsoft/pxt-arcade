@@ -3,7 +3,6 @@ import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
 import "../Kiosk.css";
-import { KeyboardManager } from "../Models/KeyboardManager";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Keyboard } from "swiper";
 import "swiper/css";
@@ -16,8 +15,8 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
+    const [stateSwiper, setSwiper] = useState<any>();
     let localSwiper: any;
-    const keyboardManager = new KeyboardManager();
     const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     const leftKeyEvent = (eventType: string) => {
@@ -42,15 +41,25 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         });
     }
 
-    const changeFocusedItem = () => {
+    const getGameIndex = () => {
         let gameIndex = (localSwiper.activeIndex - 2) % games.length;
         if (gameIndex < 0) {
             gameIndex = games.length - 1;
         }
+        return gameIndex;
+    }
+
+    const changeFocusedItem = () => {
+        const gameIndex = getGameIndex();
         kiosk.selectGame(gameIndex);
     }
 
     const clickItem = () => {
+        const localSwiperIndex = getGameIndex();
+        if (localSwiperIndex !== kiosk.selectedGameIndex) {
+            kiosk.selectGame(localSwiperIndex);
+        }
+
         const gameId = kiosk.selectedGame?.id;
         if (gameId) {
             kiosk.launchGame(gameId);
@@ -97,7 +106,9 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     // poll for game pad input
     useEffect(() => {
         let intervalId: any = null;
-
+        if (!localSwiper) {
+            localSwiper = stateSwiper;
+        }
         if (games.length) {
             intervalId = setInterval(() => {
                 if (!buttonSelected) {
@@ -130,6 +141,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 spaceBetween={10}
                 onSwiper={(swiper) => {
                     localSwiper = swiper;
+                    setSwiper(swiper);
                 }}
                 coverflowEffect={{
                     scale: 0.75,
