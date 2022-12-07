@@ -2,11 +2,11 @@
 ### @explicitHints true
 
 
-## Happy Holiday Intro @showdialog
+## Bow Battle Intro @showdialog
 
 In this tutorial, we'll show you how to create your own Holiday Bow Battle.
 
-![Play Happy Holiday](/static/tutorials/holiday/Holiday.gif "This is how you play Happy Holiday")
+![Play Holiday Bow Battle](/static/tutorials/holiday/hbb.gif "This is how you play Holiday Bow Battle")
 
 
 
