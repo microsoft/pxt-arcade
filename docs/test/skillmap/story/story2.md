@@ -58,6 +58,13 @@ into **an empty area** of the workspace.
 ![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
 hint~
 
+
+``` blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
+})
+```
+
 #### ~ tutorialhint
 ``` blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -105,6 +112,10 @@ container.
 ![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
 hint~
 
+```blockconfig.local
+game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
+```
+
 #### ~ tutorialhint
 ``` blocks
 
@@ -126,7 +137,7 @@ Customize the text frame to bring it all together.
 - :mouse pointer:  From ``||game:Game||``, grab
 
 ```block
-    game.setDialogFrame(sprites.dialog.mediumLeaf1)
+game.setDialogFrame(sprites.dialog.mediumLeaf1)
 ```
 
 and snap it in at **the top** of the<br/>
@@ -179,7 +190,7 @@ Change the color of the text so it works with your background.
 - :circle:  From ``||game:Game||``, grab
 
 ```block
-    game.setDialogTextColor(1)
+game.setDialogTextColor(1)
 ```
 
 and snap it into the top of the<br/>
@@ -234,14 +245,9 @@ Click **Done** to return to the main skillmap to move on to the next level where
 
 ```blockconfig.global
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-})
-    game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
-    game.setDialogFrame(sprites.dialog.mediumLeaf1)
-    game.setDialogTextColor(1)
-
+game.showLongText("Happy Earth Day", DialogLayout.Bottom)
+game.setDialogFrame(sprites.dialog.mediumLeaf1)
+game.setDialogTextColor(1)
 ```
 
 
@@ -251,26 +257,9 @@ carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 
 
 ```template
-{
 scene.setBackgroundImage(storySprites.world)
 effects.confetti.startScreenEffect()
 music.startSong(assets.song`birthday`, false)
-}
-```
-
-
-```ghost
-scene.setBackgroundColor(0)
-scene.setBackgroundImage(img`
-    .
-    `, SpriteKind.Player)
-mySprite.setPosition(0, 0)
-forever(function () {
-    for (let index = 0; index < 4; index++) {
-
-    }
-})
-
 ```
 
 
