@@ -11,7 +11,7 @@ You've created a card, now let's make it extra special!
 
 ## {Step 2}
 
-The code for a simple card is already in the workspace.
+The code for a simple card is already in the workspace.<br/>
 ⭐⭐⭐
 
 ---
