@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
@@ -15,8 +15,7 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
-    const [stateSwiper, setSwiper] = useState<any>();
-    let localSwiper: any;
+    const localSwiper = useRef<any>();
     const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     const leftKeyEvent = (eventType: string) => {
@@ -42,7 +41,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     }
 
     const getGameIndex = () => {
-        let gameIndex = (localSwiper.activeIndex - 2) % games.length;
+        let gameIndex = (localSwiper.current.activeIndex - 2) % games.length;
         if (gameIndex < 0) {
             gameIndex = games.length - 1;
         }
@@ -98,7 +97,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             }
 
             if (kiosk.selectedGameIndex) {
-                localSwiper.slideTo(kiosk.selectedGameIndex + 2);
+                localSwiper.current.slideTo(kiosk.selectedGameIndex + 2);
             }
         })
     }, []);
@@ -106,9 +105,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     // poll for game pad input
     useEffect(() => {
         let intervalId: any = null;
-        if (!localSwiper) {
-            localSwiper = stateSwiper;
-        }
         if (games.length) {
             intervalId = setInterval(() => {
                 if (!buttonSelected) {
@@ -140,8 +136,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 centeredSlides={true}
                 spaceBetween={10}
                 onSwiper={(swiper) => {
-                    localSwiper = swiper;
-                    setSwiper(swiper);
+                    localSwiper.current = swiper;
                 }}
                 coverflowEffect={{
                     scale: 0.75,
