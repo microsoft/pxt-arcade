@@ -90,7 +90,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 - :calculator: Now, drag out the e<br/>
 
 ```block
-randint(-50, 100)
+randint(-50, -100)
 ```
 block
 
@@ -99,7 +99,7 @@ block
 block.
 
 ```blockconfig.local
-randint(-50, 100)
+randint(-50, -100)
 ```
 
 #### ~ tutorialhint
@@ -110,7 +110,7 @@ let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, 100))
+    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
