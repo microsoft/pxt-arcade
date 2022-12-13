@@ -1,4 +1,5 @@
 # The Biggest Star
+### @explicitHints true
 
 
 ## {Introduction @showdialog}
