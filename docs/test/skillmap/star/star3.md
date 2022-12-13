@@ -21,7 +21,7 @@ some flying star [__*projectiles*__](#projected "sprites that moves on their own
 - :paper plane: From ``||sprites:Sprites||``, grab<br/>
 
 ```block
-let star = sprites.createProjectileFromSprite(img`.`, audience, randint(0, 10), randint(0, 10))
+let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
 ```
 and drop it into **the end** of the<br/>
 ``||controller:on [A] button [pressed]||`` container
@@ -32,9 +32,6 @@ to choose the long audience sprite called **star**.
 
 - :mouse pointer: Click **Next** to move on to the next instruction.
 
-```blockconfig.local
-let star = sprites.createProjectileFromSprite(img`.`, audience, randint(0, 10), randint(0, 10))
-```
 
 #### ~ tutorialhint
 
@@ -44,7 +41,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(0, 10), randint(0, 10))
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, 50, 50)
 })
 ```
 
@@ -55,22 +52,26 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Does a star come from the audience each time you press the **Ⓐ** button?
 
+## {Step 5}
 
+**🌟 Let's make the star projectiles shoot up 🌟**
 
-## {Step 6}
+---
 
+- :calculator: From the ``||math:Math||`` category, drag out the<br/>
 
-- :mouse pointer: Change the range of the first<br/>
-``||math: pick random [0] to [10]||``<br/>
-block (next to **vx**) to pick between
-**-80** and **80**.<br/>This will scatter stars randomly from side to side.
+```block
+randint(-80, 80)
+```
+block.
 
-- :mouse pointer: Change the range of the second<br/>
-``||math: pick random [0] to [10]||``<br/>
-block (next to **vy**) to pick between
-**-50** and **-100**.<br/>
-This will make sure the stars only move upward.
+- :mouse pointer: Add this block to the  [__*vx*__](#whatVX "horizontal velocity") value of the<br/>
+``||variables(sprites):set [star] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``<br/>
+block.
 
+```blockconfig.local
+randint(-80, 80)
+```
 
 #### ~ tutorialhint
 
@@ -80,21 +81,26 @@ let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
-    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
+    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
 })
 ```
 
-## {Step 7}
+## {Step 6}
 
-
-- :mouse pointer: Go to ``||loops:Loops||`` and grab a
+- :calculator: Now, drag out the e<br/>
 
 ```block
-for (let index = 0; index < 4; index++) {}
+randint(-50, 100)
 ```
-loop container and drag it over the<br/>
-``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [pick random] vy [pick random]||``
-so that it's inside the new ``||loops:repeat||`` loop.
+block
+
+- :mouse pointer: Add this block to the  [__*vy*__](#whatVY "horizontal velocity") value of the<br/>
+``||variables(sprites):set [star] to projectile [⭐] from [mySprite] with vx [pick random] vy [50]||``<br/>
+block.
+
+```blockconfig.local
+randint(-50, 100)
+```
 
 #### ~ tutorialhint
 
@@ -104,10 +110,7 @@ let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
-    //@highlight
-    for (let index = 0; index < 4; index++) {
-        let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
-    }
+    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, 100))
 })
 ```
 
