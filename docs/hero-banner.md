@@ -17,11 +17,11 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/hour-of-code-2022
 * cardType: link
 ---
-* name: Save the Turkeys!
-* buttonLabel: Play Now
-* imageUrl: /static/hero-gallery/turkey.png
-* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey
-* cardType: link
+* name: Holiday Bow Battle!
+* buttonLabel: Try Now
+* imageUrl: /static/hero-gallery/holiday.png
+* url: /tutorials/holiday
+* cardType: tutorial
 ---
 * name: How-to code a video game
 * imageUrl: /static/hero-gallery/how-to-code.png
