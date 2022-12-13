@@ -203,6 +203,16 @@ h2 {
     margin-bottom: 3%;
 }
 
+.tooManyError {
+    background-color: #e76d6d;
+}
+
+.innerQRCodeContent p {
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
 /* -------- QR PAGES STYLING -------- */
 /* ----------------------------------- */
 
