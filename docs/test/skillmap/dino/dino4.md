@@ -327,17 +327,17 @@ namespace controller{
     */
     //% color="#d54322"
     //% blockId=move_only_onscreen_with_arrows
-    //% block="move $thisSprite=variables_get(mamaDino) on screen with speed $mySpeed"
+    //% block="move $thisSprite=variables_get(mamaDino) up or down with speed $mySpeed"
     //% mySpeed.defl=Speeds.Fast
     //% inlineInputMode=inline
     export function moveOnlyOnscreenWithArrows(thisSprite: Sprite, mySpeed: Speeds) {
         thisSprite.setStayInScreen(true)
         if (mySpeed == Speeds.Fast) {
-            controller.moveSprite(thisSprite, 225, 225)
+            controller.moveSprite(thisSprite, 0, 225)
         } else if (mySpeed == Speeds.Med) {
-            controller.moveSprite(thisSprite, 175, 175)
+            controller.moveSprite(thisSprite, 0, 175)
         } else {
-            controller.moveSprite(thisSprite, 100, 100)
+            controller.moveSprite(thisSprite, 0, 100)
         }
     }
 
