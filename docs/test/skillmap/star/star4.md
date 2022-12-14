@@ -1,4 +1,5 @@
 # Coming Up Roses
+### @explicitHints true
 
 
 ## {Introduction @showdialog}
@@ -17,12 +18,17 @@ Instead of always throwing stars, we can put a whole list of items inside the **
 - :mouse pointer: Open the ``||simplified:Simplified||`` category.
 
 - :puzzle: Grab<br/>
-``||simplified:choose one of [ ] [ ] +||``<br/>
+
+```block
+simplified.chooseRandomImage(img`.`, img`.`)
+```
 and use it to replace the image of the star in the **projectile**
 block (inside of <br/>
 ``||controller:on [A] button [pressed]||``).
 
 - :mouse pointer: Click **Next** to move on to the next instruction.
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -30,7 +36,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(simplified.chooseRandomImage(img`.`, img`.`), audience, randint(-100, 100), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(simplified.chooseRandomImage(img`.`, img`.`), audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
@@ -40,6 +46,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 - :paint brush: Click the empty grey squares and toggle to **My Assets**
 to grab a star for the first box and a rose for the second one.
 
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -47,7 +54,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`), audience, randint(-100, 100), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`), audience, randint(-80, 80), randint(-50, -100))
 
 })
 ```
@@ -66,20 +73,24 @@ Does the audience now throw a random number of stars and roses?
 ---
 
 - :mouse pointer: Click the white **plus** at the right of <br/>
-``||simplified:choose one of [⭐] [🌹] +||`` <br/>
+
+```block
+simplified.chooseRandomImage(assets.image`star`, assets.image`rose`, img`.`)
+```
 to create a new empty box.
 
 - :paint brush: Click the new empty box and draw another item for the audience to send to the stage (like hearts or flower petals.)
 
 _💡 You can choose up to **5** things!_
 
+#### ~ tutorialhint
 
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     mySprite.setImage(assets.image`clap1`)
-    projectile = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`, img`
+    let star = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`, img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
@@ -96,7 +107,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . . 2 . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`), audience, randint(-100, 100), randint(-50, -100))
+`), audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
@@ -116,12 +127,19 @@ When you're finished, click **Done** to return to the main page where you can
 collect your badge and share your final game with family and friends.
 
 
+```blockconfig.global
+game.over(true, effects.confetti)
+let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.setImage(assets.image`clap2`)
+audience.bottom = 120
+let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
+```
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap2`)
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-100, 100), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 info.onCountdownEnd(function () {
     game.over(true, effects.hearts)
@@ -131,8 +149,8 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 })
 let audience: Sprite = null
 scene.setBackgroundImage(assets.image`stage`)
-let mySprite = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-mySprite.bottom = 115
+let performer = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+performer.bottom = 115
 audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.bottom = 120
 game.splash("Press (A) to play!")
