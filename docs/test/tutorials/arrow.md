@@ -72,7 +72,7 @@ Choose the red duck called **p1**.
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`2pbg`)
 //@highlight
 bundles.wrap1(function () {
     mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(assets.image`p1`, SpriteKind.Player))
@@ -110,7 +110,7 @@ Choose the blue duck called **p2**.
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`2pbg`)
 bundles.wrap1(function () {
    mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(assets.image`p1`, SpriteKind.Player))
 mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
@@ -181,7 +181,7 @@ Add each of the arrows in this order.
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`2pbg`)
 bundles.wrap1(function () {
     let player1 = sprites.create(assets.image`p1`, SpriteKind.Player)
     player1.setPosition(45, 90)
@@ -445,7 +445,7 @@ container already in the workspace.
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundColor(9)
+scene.setBackgroundImage(assets.image`2pbg`)
 bundles.wrap1(function () {
     let player1 = sprites.create(assets.image`p1`, SpriteKind.Player)
     player1.setPosition(45, 90)
