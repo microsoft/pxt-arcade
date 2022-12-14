@@ -39,9 +39,6 @@ let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 
 and snap it inside at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
-- :paint brush: Click the grey box in the new block to open the **image editor**.
-Select the image for **Mama** in **My Assets**.
-
 ~hint Show me how! 🕵🏽
 
 
@@ -54,9 +51,19 @@ hint~
 
 ```blocks
 //@highlight
-let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
+let mamaDino = sprites.create(img`.``, SpriteKind.Player)
 ```
 
+## {Step 3}
+
+- :paint brush: Click the grey box in the new block to open the **image editor**.
+Select the image for **Mama** in **My Assets**.
+
+#### ~ tutorialhint
+
+```blocks
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
+```
 
 ## {3. Look at Your Game}
 
