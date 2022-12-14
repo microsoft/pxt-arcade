@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
 import "../Kiosk.css";
-import { KeyboardManager } from "../Models/KeyboardManager";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Keyboard } from "swiper";
 import "swiper/css";
@@ -16,8 +15,7 @@ interface IProps {
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
-    let localSwiper: any;
-    const keyboardManager = new KeyboardManager();
+    const localSwiper = useRef<any>();
     const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     const leftKeyEvent = (eventType: string) => {
@@ -42,15 +40,25 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
         });
     }
 
-    const changeFocusedItem = () => {
-        let gameIndex = (localSwiper.activeIndex - 2) % games.length;
+    const getGameIndex = () => {
+        let gameIndex = (localSwiper.current.activeIndex - 2) % games.length;
         if (gameIndex < 0) {
             gameIndex = games.length - 1;
         }
+        return gameIndex;
+    }
+
+    const changeFocusedItem = () => {
+        const gameIndex = getGameIndex();
         kiosk.selectGame(gameIndex);
     }
 
     const clickItem = () => {
+        const localSwiperIndex = getGameIndex();
+        if (localSwiperIndex !== kiosk.selectedGameIndex) {
+            kiosk.selectGame(localSwiperIndex);
+        }
+
         const gameId = kiosk.selectedGame?.id;
         if (gameId) {
             kiosk.launchGame(gameId);
@@ -89,7 +97,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
             }
 
             if (kiosk.selectedGameIndex) {
-                localSwiper.slideTo(kiosk.selectedGameIndex + 2);
+                localSwiper.current.slideTo(kiosk.selectedGameIndex + 2);
             }
         })
     }, []);
@@ -97,7 +105,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     // poll for game pad input
     useEffect(() => {
         let intervalId: any = null;
-
         if (games.length) {
             intervalId = setInterval(() => {
                 if (!buttonSelected) {
@@ -129,7 +136,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 centeredSlides={true}
                 spaceBetween={10}
                 onSwiper={(swiper) => {
-                    localSwiper = swiper;
+                    localSwiper.current = swiper;
                 }}
                 coverflowEffect={{
                     scale: 0.75,
