@@ -166,11 +166,6 @@ info.startCountdown(10)
 ```
 
 
-
-```package
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-```
-
 ```assetjson
 {
   "README.md": " ",

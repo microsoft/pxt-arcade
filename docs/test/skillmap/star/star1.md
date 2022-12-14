@@ -275,12 +275,6 @@ When you're finished, click **Done** to return to the main page where you can sh
 
 
 
-
-
-```package
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-```
-
 ```blockconfig.global
 let performer = sprites.create(img`.`, SpriteKind.Player)
 performer.bottom = 115
