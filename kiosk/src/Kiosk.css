@@ -56,7 +56,7 @@ h2 {
 .footer {
     position: fixed;
     /* These numbers are relative to the size of the footer.png logo */
-    height: 3vh;
+    height: 6vh;
     width: 20%;
     left: 1.5%;
     bottom: 0;
