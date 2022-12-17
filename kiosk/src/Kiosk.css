@@ -375,8 +375,7 @@ h2 {
 .gameTile {
     width: 100%;
     height: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
@@ -384,28 +383,36 @@ h2 {
     image-rendering: pixelated;
     -ms-interpolation-mode: nearest-neighbor;
     border: var(--black-color) 2px solid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
 }
 
-.gameLabelBackground {
-    position: absolute;
-    bottom: 0;
-    height: 8rem;
+.gameThumbnail {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.gameDetails {
+
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--black-color);
+    grid-area: 1 / 4 / 2 / 5;
 }
 
 .gameTitle {
-    position: absolute;
-    left: 0;
     font-family: 'Share';
     font-weight: 700;
     font-size: 2.125em;
     height: 2.375rem;
-    margin: 0.3rem;
+    margin: 2rem;
 }
 
 .gameDescription {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     font-family: 'Share';
