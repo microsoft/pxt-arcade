@@ -70,38 +70,38 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                     </div>
                 }
 
+                {
+                    phoneWidth && !linkVisible &&
+                    <div className="scanIntro">
+                        <p>OR</p>
+                        <button className="scanQrButton back" onClick={() => setLinkVisible(true)} >Submit share link</button>
+                    </div>
+                }
 
-                    {
-                        phoneWidth && !linkVisible &&
-                        <div className="scanIntro">
-                            <p>OR</p>
-                            <button className="scanQrButton back" onClick={() => setLinkVisible(true)} >Submit share link</button>
-                        </div>
-                    }
-                    {
-                        ((phoneWidth && linkVisible) ||
-                        (!phoneWidth)) &&
-                        <div className="linkOption">
-                            <p>Can't scan?</p>
-                            <label>Submit share link here</label>
-                            <input type="url"
-                                id="kiosk-share-link"
-                                placeholder="Enter share link"
-                                spellCheck={false}
-                                required
-                                title="Share Link"
-                                />
-                            <input type="submit" onClick={checkUrl}></input>
-                            {
-                                linkError &&
-                                <p>Incorrect format for a share link</p>
-                            }
-                        </div>
-                    }
-                                        {
-                        (phoneWidth && linkVisible) &&
-                        <button className="scanQrButton" onClick={() => setLinkVisible(false)} >Back</button>
-                    }
+                {
+                    ((phoneWidth && linkVisible) ||
+                    (!phoneWidth)) &&
+                    <div className="linkOption">
+                        <p>Can't scan?</p>
+                        <label>Submit share link here</label>
+                        <input type="url"
+                            id="kiosk-share-link"
+                            placeholder="Enter share link"
+                            spellCheck={false}
+                            required
+                            title="Share Link"
+                            />
+                        <input type="submit" onClick={checkUrl}></input>
+                        {
+                            linkError &&
+                            <p>Incorrect format for a share link</p>
+                        }
+                    </div>
+                }
+                {
+                    (phoneWidth && linkVisible) &&
+                    <button className="scanQrButton" onClick={() => setLinkVisible(false)} >Back</button>
+                }
 
                 <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
                     How do I get a game's share link or QR code?
