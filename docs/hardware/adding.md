@@ -57,27 +57,27 @@ The rest of this page is split into three main sections, each of which refers to
 
 ### MCU #mcu
 
-MakeCode Arcade currently only targets ARM Cortex-based MCUs, and we have only tested Cortex M4F.
+MakeCode Arcade currently only targets ARM Cortex-based MCUs; we have tested Cortex M4F and M0+.
 
 The Arcade display resolution and colour depth requires 160x120x4 bits for a display buffer, taking a little under 10kB.
 We need at least two sets of display data for double-buffering and the user is very likely to use two or three more for various
 sprite operations. This, together with heap fragmentation concerns,  requires the hardware to have **at least 96kB of RAM**. Programs with heavy memory requirements may only run if there is more than 96kB of RAM.
 In addition **512kB of flash** and a processor speed of at least **64MHz** or more are recommended.
 
-We currently support two hardware variants which match the above criteria:
-* **D51** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
+We currently support the following hardware variants which match the above criteria:
+* **** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
 * **F4** (formerly F401) based on one of the ST Micro **STM32F4xx** chips:
-  * **STM32F401xE** (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)
-  * **STM32F411xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
-  * **STM32F412xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
-  * **STM32F412xG** (Cortex M4F, 256kB of RAM, 1024kB of flash, 96MHz)
+  - **STM32F401xE** (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)
+  - **STM32F411xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
+  - **STM32F412xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
+  - **STM32F412xG** (Cortex M4F, 256kB of RAM, 1024kB of flash, 96MHz)
 * **R2** based on **RP2040** (Cortex-M0+, 264kB of RAM, typically 2048kB+ of flash, 125MHz)
 
 The STM32F41x series is listed to run at 100MHz, but to support USB we need to run them at 96MHz.
 We support 48 pin and larger packages. Only STM32F412 in 64 pin and larger packages support a parallel display interface,
 which is required if you want to use an ILI9341 320x240 display (see [display](#screen)).
 
-Additionally, we're considering adding support for the following in the future (but not in the next 6 months):
+Additionally, we have experimental support for the following:
 * **N4** based on Nordic **NRF52840** (Cortex M4F, 256kB of RAM, 1024kB of flash, 64MHz)
 * **N3** based on Nordic **NRF52833** (Cortex M4F, 128kB of RAM, 512kB of flash, 64MHz)
 
@@ -130,11 +130,11 @@ DISPLAY_CFG2 = 50
 
 #### 320x240 based on ILI9341 via 8-bit parallel
 
-On F4, this requires an 8 bit parallel interface because SPI at 42Mhz is unstable;
-int this case STM32F412RE or better is required.
+On F4, this requires an 8 bit parallel interface because SPI at 42MHz is unstable;
+in this case STM32F412RE or better is required.
 
 The FSMC controller on STM32F412 in 64 pin version enforces
-the following pin connections.
+the following pin connections:
 
 | Screen   | Function | STM32F412RE |
 | -------- | -------- | ------- |
@@ -171,7 +171,7 @@ DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 0x1000004
 ```
 
-Note that the ILI9341 have 4 configuration pins IM3, IM2, IM1, IM0.
+Note that the ILI9341 has 4 configuration pins IM3, IM2, IM1, IM0.
 The following configurations are supported:
 
 | IM3 | IM2 | IM1 | IM0 | Connection       |
@@ -198,9 +198,9 @@ Arcade boards should have 'soft power off' rather than a physical on-off switch,
 ### Audio #audio
 
 Single channel mono audio output requires either a DAC or PWM with DMA support. The corresponding audio output from the MCU
-should be connected to an amplifier and an on-board sounder or speaker. A headphone jack for sound is optional, but note
-that this IS SEPARATE FROM the stereo jack for networking (see [multi-player communications](#jacdac). If there is an audio
-headphone jact it must be clearly labelled with a 'headphone' symbol so that users do not confuse it with the networking jack.
+should be connected to an amplifier and an on-board sounder or speaker. A headphone jack for sound is optional.
+Note that we no longer use a stereo jack for networking, instead we use the purpose-built [Jacdac protocol](#jacdac) with its own connector. If there is an audio
+headphone jact it must be clearly labelled with a 'headphone' symbol.
 
 ### USB connector #usb
 
@@ -209,13 +209,13 @@ mechanical solder-down tabs to provide more strength, especially for 'bare board
 add mechanical strength. We recommend adding ESD protection for the USB data lines and a zener diode
 to clamp the Vbus power line and thereby limit over-voltage transients during USB connection. 
 
-### Multi-player communications #jacdac
+### Multi-player communications with Jacdac #jacdac
 
 ### ~ alert
 
 #### Warning
 
-**Multi-player communications is under active development and it may change.
+**Multi-player communication is under development.
 It's fine to build prototypes, but before designing any production hardware please contact us at arcadehdw@microsoft.com.**
 
 ### ~
@@ -243,20 +243,15 @@ to each respective `ACCELEROMETER_*` line as defined in the bootloader.
 
 ### Vibration motor #vibrationmotor
 
-An optional vibration motor can be connected. Software will keep it low during normal operation, and drive it high
-to activate the motor. It should be connected to the `VIBRATION` line as defined in the bootloader.
+An optional vibration motor can be connected. It should be driven by the `VIBRATION` line as defined in the bootloader. Software will keep this pin low during normal operation, and drive it high to activate the motor. 
 
 ### LEDs #leds
 
-Up to 4 LEDs can be defined. The first two can be used for Jacdac status.
+Up to 4 LEDs can be defined. The first can be used for Jacdac status.
 
 ### Expansion connector #pins
 
-If possible, keep this separate from the `SDA`/`SCL` exposed on the header
-to keep the one on the header available as a general digital IO line.
-
-If pins are to be exposed, we recommend a micro:bit compatible edge-connector.
-The recommended pinout is being finalized.
+You may wish to include some kind of expansion connector that allows users to connect their own circuitry to your Arcade board. This could be a pin header that's either fitted during production or left unpopulated for users to fit or solder to if desired. Alternatively, if a number of pins are to be exposed in an 'edge connector' style, one option is a micro:bit compatible edge-connector. Another approach is to use [Jacdac](https://aka.ms/jacdac) so that it's really easy for users to add or remove additional hardware functionality. 
 
 ## Hardware design notes #hardwaredev
 
@@ -286,37 +281,38 @@ Provision must be made for commissioning boards following manufacture. Depending
 be possible to flash and test the board over USB. However, to-date we have used a debug connector
 which exposes SWD and other signals, as shown in the reference design. We use a standard 0.1" pitch
 single row header footprint for this, but we do not fit a connector to the PCB. Instead we use the technique
-described here: [Debug connector information](/hardware/dbg).
+described here: [debug connector information](/hardware/dbg).
 
 ### Pin mapping
 
-The reference design provides a particular pinout, but it is possible to use a different pinout.
+The reference design provides a particular pinout (or pin mapping), but it is possible to use a different pinout.
 You need to put your pinout in the bootloader and flash the bootloader.
-Then, when you get a UF2 file from Arcade website, it will at runtime look for
-settings in the bootloader and use the right pins.
+Then, when you get a UF2 file from the Arcade website, it will at runtime look for
+settings such as the pinout in the bootloader and use the right pins.
 
 There are some restrictions on the pinout:
 
 * if using SPI screen, if needs to be on SPI pins; on F4 best use SPI1 as it may allow for faster refresh in the future
 * DISPLAY_BL should be on a pin with PWM (so we can dim it)
-* MENU button should be a pin which can wake the MCU up from sleep mode (on D51 it requires `EIC`; on F4 it can be any pin)
+* MENU button should be a pin which can wake the MCU up from sleep mode (on D5 it requires `EIC`; on F4 it can be any pin)
 * other buttons can be on any pin
-* `JACK_TX` if present needs to be on `UART_TX` pin on F4, and on PAD0 of a SERCOM with EIC on D51
-* `JACK_SND` if present needs to be on TIM1_CH* pin of F4 and DAC0 of D51 (PA02)
+* `JACK_TX` if present needs to be on `UART_TX` pin on F4, and on PAD0 of a SERCOM with EIC on D5
+* `JACK_SND` if present needs to be on TIM1_CH* pin of F4 and DAC0 of D5 (PA02)
 
 ## Firmware development notes #firmwaredev
 
 ### Bootloaders #bootloaders
 
-There are 2 different bootloaders to support the hardware variants.
+There are different bootloaders to support the hardware variants.
 These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
-* D51: https://github.com/microsoft/uf2-samdx1
+* D5: https://github.com/microsoft/uf2-samdx1
+* R2
 
 The following bootloaders do **not** support the [CF2 configuration data section](#cf2) yet.
 
-* N840: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
+* N4: https://github.com/adafruit/Adafruit_nRF52840_Bootloader
 
 ### Compilation
 
@@ -327,24 +323,24 @@ Then:
 * if you don't have accelerometer, remove all lines with the `ACCELEROMETER` word
 * if you don't have vibration motor, remove the line for `PIN_VIBRATION`
 * if you are not doing a pin header:
-  * maybe you can at least leave holes for people to solder a header in?
-  * otherwise, remove all `PIN_Dx`, and `PIN_SDA`, `PIN_SCL`, `PIN_MISO`, `PIN_MOSI`, 
+  - maybe you want to leave holes for people to solder a header in?
+  - otherwise, remove all `PIN_Dx`, and `PIN_SDA`, `PIN_SCL`, `PIN_MISO`, `PIN_MOSI`, 
     `PIN_SCK`, `PIN_SERVO_x` entries
-* if you have less than 4 LEDs remove `PIN_LEDx`
+* if you have fewer than 4 LEDs remove `PIN_LEDx`
 * if you do not have a way to disable power to external components, remove `PIN_PWREN`
 * if you don't have Jacdac, remove `PIN_JACK_*`
 * if you don't have Jacdac power, remove `PIN_JACK_PWREN`
 * if you don't have second menu button (it's not required), remove `PIN_BTN_MENU2`
-* if you don't have voltage divider for measuring battery level (which isn't supported yet anyway),
+* if you don't have a voltage divider for measuring battery level (which isn't supported yet anyway),
   remove `PIN_BATTSENSE`
 
 Once you're done with all these changes, drop the `board.h` file onto https://microsoft.github.io/uf2/patcher/.
 
 This should load the config, with stuff removed.
-Now you can patch the config with your pin out.
+Now you can patch the config with your pinout.
 You should at least change `BOOTLOADER_BOARD_ID` to a new random value. 
-Don't generate it by banging on the board or using clever hex string, 
-just use `printf "0x%04x%04x\n" $RANDOM $RANDOM` to minimize the risk of a conflict
+DO NOT generate it by banging on the board or using a clever hex string, 
+use `printf "0x%04x%04x\n" $RANDOM $RANDOM` to minimize the risk of a conflict
 
 If you're seeing strange effects on the display, you can try one of the following
 configs:
@@ -367,22 +363,20 @@ For the ST7735 and ILI9341 screens:
 * `CFG1` is FRMCTR1
 * the low byte of `CFG2` is the desired SPI frequency in MHz (ignored for ILI9341)
 
-Once you're done patching, press "Apply my patch", which will download new `board.h`.
+The patching website can also remove config entries, just specify the value as `null`.
+
+Once you're done patching, select "Apply my patch", which will download new `board.h`.
 
 Note that you need to use the patching website to put the right header and size
-in the configuration data.
-
-It's also possible to patch a binary file of the bootloader with new config using the
+in the configuration data. It's also possible to patch a binary file of the bootloader with new config using the
 same website.
-
-The patching website can also remove config entries, just specify the value as `null`.
 
 ### Bootloader protection #protection
 
 End users will typically update the bootloader by copying a special UF2 file, which
 has a user-level application that overwrites the bootloader.
 
-To prevent misuse of this feature (eg., one student emailing to a another a malicious UF2 
+To prevent misuse of this feature (eg one student emailing to a another a malicious UF2 
 file which writes a non-functional bootloader), some bootloaders (currently only F4)
 implement a protection feature.
 When booting, the bootloader will check if it's write-protected (this is done by setting bits
@@ -484,7 +478,7 @@ PIN_PWREN = PC15
 PIN_VIBRATION = PC14
 ```
 
-#### D51 #d51
+#### D5 #d5
 
 `JACK_TX` needs to be on a pin with external IRQ and `PAD0` of some SERCOM.
 
@@ -495,7 +489,7 @@ PIN_VIBRATION = PC14
 For RP2040, the application looks for CF2 section (see below) at 4kB before the end of 1MB, 2MB, 4MB, 8MB, 16MB, 32MB (that's megabytes) in the flash. It's recommended to place it at all these addresses (size of flash permitting). 
 See [sample config UF2](https://github.com/microsoft/pxt-arcade/blob/master/libs/hw---rp2040/sample-config.uf2).
 Manufacturers should provide a "factory reset" UF2 which contains all these config sections, and possibly a test game.
-This file can be used to recover after the flash has been overwritten (eg by large files in Micropython filesystem).
+This file can be used to recover after the flash has been overwritten (eg by large files in the Micropython filesystem).
 
 ### Configuration #cf2
 
