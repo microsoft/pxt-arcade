@@ -370,6 +370,7 @@ h2 {
 
 .swiper-slide-active {
     box-shadow: 0 0 1rem var(--game-selected-outline);
+
 }
 
 .gameTile {
@@ -388,38 +389,49 @@ h2 {
     grid-template-rows: 1fr;
     grid-column-gap: 0;
     grid-row-gap: 0;
+    box-shadow: 0 0 1rem var(--game-tile-outline);
+
 }
 
 .gameThumbnail {
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    grid-area: 1 / 1 / 2 / 5;
+}
+
+.swiper-slide-active .gameThumbnail {
     grid-area: 1 / 1 / 2 / 4;
 }
 
-.gameDetails {
-
-    width: 100%;
+.swiper-slide-active .gameDetails {
+    margin-left: 1rem;
     background: var(--black-color);
     grid-area: 1 / 4 / 2 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.gameDetails {
+    display: none;
 }
 
 .gameTitle {
-    font-family: 'Share';
-    font-weight: 700;
-    font-size: 2.125em;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     height: 2.375rem;
-    margin: 2rem;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .gameDescription {
-    /* position: absolute; */
-    bottom: 0;
-    left: 0;
     font-family: 'Share';
-    font-weight: 400;
     font-size: 1.25em;
-    height: 5rem;
-    margin: 0.3rem;
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+.gameHighScores {
+    grid-area: 4 / 1 / 6 / 2;
 }
 
 /* -------- HIGH SCORE STYLING -------- */
@@ -508,6 +520,12 @@ h2 {
 
 .highScoreScore {
     text-align: right;
+}
+
+.highScoreHeader {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: left;
 }
 
 /* -------- GAME OVER STYLING -------- */

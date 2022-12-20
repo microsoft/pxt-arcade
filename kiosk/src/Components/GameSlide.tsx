@@ -1,9 +1,12 @@
 import { GameData } from "../Models/GameData";
+import { Kiosk } from "../Models/Kiosk";
+import HighScoresList from "./HighScoresList";
 interface IProps {
+    kiosk: Kiosk;
     buttonSelected: boolean;
     game: GameData;
 }
-const GameSlide: React.FC<IProps> = ({ buttonSelected, game }) => {
+const GameSlide: React.FC<IProps> = ({ kiosk, buttonSelected, game }) => {
     const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     return (
@@ -16,6 +19,7 @@ const GameSlide: React.FC<IProps> = ({ buttonSelected, game }) => {
             <div className="gameDetails">
                 <div className="gameTitle">{game.name}</div>
                 <div className="gameDescription">{game.description}</div>
+                <HighScoresList kiosk={kiosk} gameId={game.id} highScoreMode={game.highScoreMode} />
             </div>
         </div>
     )

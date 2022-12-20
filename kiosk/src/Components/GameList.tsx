@@ -151,7 +151,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 {kiosk.games.map((game, index) => {
                     return (
                         <SwiperSlide key={game.id}>
-                            <GameSlide buttonSelected={buttonSelected} game={game} />
+                            <GameSlide kiosk={kiosk} buttonSelected={buttonSelected} game={game} />
                         </SwiperSlide>
                     )
                 })}
