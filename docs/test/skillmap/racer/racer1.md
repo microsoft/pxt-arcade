@@ -241,39 +241,6 @@ tiles.setTilemap(tilemap`level1`)
 scene.setBackgroundImage(assets.image`background`)
 ```
 
-```ghost
-scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
-    game.over(true)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (truck.isHittingTile(CollisionDirection.Bottom)) {
-        truck.vy = -200
-    }
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    speed += -50
-    truck.vx = speed
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    speed += 50
-    truck.vx = speed
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
-    game.over(false)
-})
-let truck: Sprite = null
-let speed = 0
-speed = 100
-scene.setBackgroundColor(9)
-scene.setBackgroundImage(assets.image`background`)
-tiles.setTilemap(tilemap`level1`)
-truck = sprites.create(assets.image`truck3`, SpriteKind.Player)
-truck.ay = 400
-truck.vx = speed
-scene.cameraFollowSprite(truck)
-
-```
-
 
 ```assetjson
 {
