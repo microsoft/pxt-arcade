@@ -39,9 +39,6 @@ animation.runImageAnimation(truck, [img`.`], 500, true)
 ```
 block into the end of the ``||loops:on start||`` container.
 
-```blockconfig.local
-animation.runImageAnimation(truck, [img`.`], 500, true)
-```
 
 #### ~ tutorialhint
 
@@ -119,6 +116,7 @@ scene.cameraFollowSprite(truck)
 let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
 truck.vx = 100
 scene.cameraFollowSprite(truck)
+animation.runImageAnimation(truck, [img`.`], 500, true)
 ```
 
 
