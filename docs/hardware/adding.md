@@ -40,7 +40,7 @@ In addition we encourage:
 Other optional elements include:
 * an accelerometer or other motion sensor (see [accelerometer](#accelerometer))
 * a vibration motor (see [vibration motor](#vibrationmotor))
-* a second 3.5mm stereo audio connector for headphones (see [audio](#audio))
+* a 3.5mm stereo audio connector for headphones (see [audio](#audio))
 * additional flash memory
 * status LEDs (see [LEDs](#leds))
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
