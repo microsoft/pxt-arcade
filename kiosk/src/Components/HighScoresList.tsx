@@ -16,23 +16,23 @@ const HighScoresList: React.FC<IProps> = ({ kiosk, gameId, highScoreMode }) => {
         <div className="gameHighScores">
             {
                 highScoreMode !== "None" &&
-                <h2 className="highScoreHeader">High Scores</h2>
+                <h2 className="gameHighScoreHeader">High Scores</h2>
             }
             {
                 !highScoresExist && 
                 highScoreMode !== "None" &&
-                <p className="highScoreSmallDiv">None yet</p>
+                <p className="gameHighScoreContent">None yet</p>
             }
             {
                 highScoresExist &&
                 highScoreMode !== "None" &&
-                <ol>
+                <ol className="gameHighScoreContent">
                     {
                         highScores.slice(0,5).map((highScore, index) => {
                             return (
                                 <li key={index}>
-                                    <span className="highScoreInitials">{highScore.initials}</span>
-                                    <span className="highScoreScore">{highScore.score}</span>
+                                    <span className="gameHighScoreInitials">{highScore.initials}</span>
+                                    <span className="gameHighScoreScore">{highScore.score}</span>
                                 </li>
                             )   
                         }

@@ -412,6 +412,11 @@ h2 {
     grid-template-rows: repeat(5, 1fr);
 }
 
+.gameDetails hr {
+    width: 90%;
+    margin-top: 1.5rem;
+}
+
 .gameDetails {
     display: none;
 }
@@ -434,24 +439,25 @@ h2 {
     grid-area: 4 / 1 / 6 / 2;
 }
 
+.gameHighScoreHeader {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: left;
+    color: var(--button-primary-color);
+
+}
+
+.gameHighScoreContent {
+    line-height: 1.25rem;
+    font-size: 0.85rem;
+}
+
+.gameHighScoreScore {
+    margin-left: 2.5rem;
+}
+
 /* -------- HIGH SCORE STYLING -------- */
 /* ----------------------------------- */
-
-.highScoreSmallDiv {
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 2rem;
-    text-align: center;
-    color: var(--high-score-color);
-}
-
-.highScoreSmallList {
-    text-align: right;
-}
-
-.highScoreSmallInitials {
-    min-width: 9.25rem;
-}
 
 .enterHighScore {
     display: flex;
@@ -520,12 +526,6 @@ h2 {
 
 .highScoreScore {
     text-align: right;
-}
-
-.highScoreHeader {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    text-align: left;
 }
 
 /* -------- GAME OVER STYLING -------- */
