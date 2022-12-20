@@ -180,7 +180,7 @@ truck.vx = 100
 
 Open the game window again and check out the game you have so far.
 
-Notice that the arrow keys and (A) button don't work yet.
+Notice that the **arrow** keys and **(A)** button don't work yet.
 The game only does what you've coded it to do.
 
 ---
@@ -239,6 +239,9 @@ scene.cameraFollowSprite(truck)
 ```customts
 tiles.setTilemap(tilemap`level1`)
 scene.setBackgroundImage(assets.image`background`)
+for (let value of tiles.getTilesByType(assets.tile`acid`)) {
+    tiles.setWallAt(value, false)
+}
 ```
 
 
