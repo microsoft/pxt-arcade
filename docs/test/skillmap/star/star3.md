@@ -157,8 +157,8 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 })
 let audience: Sprite = null
 scene.setBackgroundImage(assets.image`stage`)
-let performer = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-performer.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.bottom = 120
 game.splash("Press (A) to play!")

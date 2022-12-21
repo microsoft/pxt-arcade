@@ -74,8 +74,8 @@ and snap it into **the end** of the <br/>
 
 ```blocks
 scene.setBackgroundImage(assets.image`stage`)
-let performer = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-performer.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
 let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
@@ -238,8 +238,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 scene.setBackgroundImage(assets.image`stage`)
-let performer = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-performer.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
 ```
