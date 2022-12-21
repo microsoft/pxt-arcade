@@ -14,7 +14,7 @@ Follow these quick steps and you'll have one in no time!
 
 ## {Step 2}
 
-**Let's make a card to share!**
+**Let's make a card to share!**<br/>
 🎨 🎨 🎨
 
 ---
@@ -87,7 +87,7 @@ scene.setBackgroundImage(storySprites.halloween)
 
 ## {Step 5}
 
-**Add a heartfelt greeting**
+**Add a heartfelt greeting**<br/>
 💛 💛 💛
 
 ---
@@ -126,7 +126,7 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 
 ## {Step 6}
 
-**Time for a celebration**
+**Time for a celebration**<br/>
 🎉🎉🎉
 
 ---
@@ -174,7 +174,7 @@ Feel free to make edits until you are happy with it.
 
 ## {Step 8}
 
-**Let's add a personal note**
+**Let's add a personal note**<br/>
 🎵 🎵 🎵
 
 ---
@@ -203,6 +203,7 @@ hint~
 
 ```blocks
 scene.setBackgroundImage(storySprites.halloween)
+carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 effects.confetti.startScreenEffect()
 music.startSong(assets.song`birthday`, false)
 ```
@@ -221,7 +222,7 @@ Feel free to go back and make changes until you are happy with it.
 
 ## {Finish}
 
-**Congratulations, you've finished your greeting card! **
+**Congratulations, you've finished your greeting card!**<br/>
 🥳 🥳 🥳
 
 Click **Done** to return to the main skillmap page where you can keep going to make an even more detailed card.
@@ -239,24 +240,10 @@ carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 
 
 ```ghost
-scene.setBackgroundColor(0)
-scene.setBackgroundImage(img`
-    .
-    `)
+scene.setBackgroundImage(img`.`)
 effects.confetti.startScreenEffect()
-music.setVolume(20)
-music.playMelody("- - - - - - - - ", 120)
-let mySprite = sprites.create(img`
-     .
-    `, SpriteKind.Player)
-mySprite.setPosition(0, 0)
-forever(function () {
-    for (let index = 0; index < 4; index++) {
-
-    }
-})
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Bottom)
-
+music.startSong(assets.song`birthday`, false)
 ```
 
 
