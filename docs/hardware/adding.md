@@ -65,7 +65,7 @@ sprite operations. This, together with heap fragmentation concerns,  requires th
 In addition **512kB of flash** and a processor speed of at least **64MHz** or more are recommended.
 
 We currently support the following hardware variants which match the above criteria:
-* **** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
+* **D5** based on Microchip **ATSAMD51G19A** (Cortex M4F, 192kB of RAM, 512kB of flash, 120MHz)
 * **F4** (formerly F401) based on one of the ST Micro **STM32F4xx** chips:
   - **STM32F401xE** (Cortex M4F, 96kB of RAM, 512kB of flash, 84MHz)
   - **STM32F411xE** (Cortex M4F, 128kB of RAM, 512kB of flash, 96MHz)
