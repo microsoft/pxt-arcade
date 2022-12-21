@@ -308,7 +308,7 @@ These bootloaders support the [CF2 configuration data section](#cf2).
 
 * F4: https://github.com/mmoskal/uf2-stm32f
 * D5: https://github.com/microsoft/uf2-samdx1
-* R2
+* R2 (UF2 bootloader always in ROM)
 
 The following bootloaders do **not** support the [CF2 configuration data section](#cf2) yet.
 
