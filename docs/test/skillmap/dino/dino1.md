@@ -51,13 +51,28 @@ hint~
 
 ```blocks
 //@highlight
-let mamaDino = sprites.create(img`.``, SpriteKind.Player)
+let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 ## {Step 3}
 
-- :paint brush: Click the grey box in the new block to open the **image editor**.
-Select the image for **Mama** in **My Assets**.
+- :paint brush: Click the grey box inside
+```block
+let mamaDino = sprites.create(img`.`, SpriteKind.Player)
+```
+to open the
+image editor and then click the **My Assets** tab.
+
+
+![My Assets](/static/skillmap/assets/my-assets-three.png "Toggle to see the images for this game" )
+
+
+- :mouse pointer: Choose **Mama** dino and click **Done**.
+
+![Choose mama dino from My Assets gallery](/static/skillmap/collector/mama.png " " )
+
+
+
 
 #### ~ tutorialhint
 
@@ -135,8 +150,9 @@ scene.setBackgroundImage(img`.`)
 and snap it into **the top**
 of the ``||loops:on start||`` container.
 
-- :paint brush:  Click the **grey square** in the new block and toggle to **My Assets** to choose the **Freeway** background
+- :paint brush:  Click the **grey square** and toggle to **My Assets** to choose the **Freeway** background
 
+![Choose the freeway from My Assets gallery](/static/skillmap/collector/freeway.png " " )
 
 #### ~ tutorialhint
 
