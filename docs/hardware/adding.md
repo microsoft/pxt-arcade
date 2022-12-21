@@ -200,7 +200,7 @@ Arcade boards should have 'soft power off' rather than a physical on-off switch,
 Single channel mono audio output requires either a DAC or PWM with DMA support. The corresponding audio output from the MCU
 should be connected to an amplifier and an on-board sounder or speaker. A headphone jack for sound is optional.
 Note that we no longer use a stereo jack for networking, instead we use the purpose-built [Jacdac protocol](#jacdac) with its own connector. If there is an audio
-headphone jact it must be clearly labelled with a 'headphone' symbol.
+headphone jack it must be clearly labelled with a 'headphone' symbol.
 
 ### USB connector #usb
 
