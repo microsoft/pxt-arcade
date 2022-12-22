@@ -16,8 +16,6 @@ This game will test your speed as you click quickly as possible to earn points.<
 
 Let's start by setting the stage.
 
-![Choose a background](/static/skillmap/star/change-bg.gif "Click the grey square and choose the stage." )
-
 
 - :tree: Open the ``||scene:Scene||`` category and drag
 
@@ -28,6 +26,12 @@ into the ``||loops:on start||``<br/>
 container that's already in the workspace.
 
 - :mouse pointer: When you're done, click **Next** to see the next step.
+
+~hint Click here to see how 🕵🏽
+
+![Grab background block](/static/skillmap/star/set-bg.gif "Pull in the block to set the background image." )
+
+hint~
 
 #### ~ tutorialhint
 
@@ -76,13 +80,17 @@ scene.setBackgroundImage(assets.image`stage`)
 
 **Switch to the game window**
 
-![Go to the Game Window to see your scene. ](/static/skillmap/star/see-game.gif "Don't forget to look at your game!")
+
 
 
 Do you see the background you chose?
 
 
+~hint Click here to see how to check 🕵🏽
 
+![Go to the Game Window to see your scene. ](/static/skillmap/star/see-game.gif "Don't forget to look at your game!")
+
+hint~
 
 
 ## {Step 5}
@@ -91,8 +99,6 @@ Do you see the background you chose?
 ⭐ ⭐ ⭐
 
 Which talent will the audience be cheering for today?
-
-![Set your sprite](/static/skillmap/star/choose-sprite.gif "Pick your sprite from the My Assets tab.")
 
 
 - :paper plane: From ``||sprites: Sprites||``, drag a
@@ -105,6 +111,11 @@ block into **the end** of the ``||loops: on start||`` container.
 - :paint brush: Click the empty grey box and toggle to **My Assets** to
  select a character for your project.
 
+~hint Click here to see how 🕵🏽
+
+![Set your sprite](/static/skillmap/star/choose-sprite.gif "Pick your sprite from the My Assets tab.")
+
+hint~
 
 #### ~ tutorialhint
 
@@ -122,8 +133,6 @@ let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
 
 Now we need to put our character exactly where we want them.
 
-![Move the bottom of the sprite](/static/skillmap/star/sprite-bottom.gif "Set the sprite bottom to 115.")
-
 
 - :paper plane: From ``||sprites: Sprites||``, grab
 
@@ -134,6 +143,11 @@ talent.bottom = 115
 ```
 and snap it into **the end** of the ``||loops: on start||`` container.
 
+~hint Click here to see how 🕵🏽
+
+![Move the bottom of the sprite](/static/skillmap/star/sprite-bottom.gif "Set the sprite bottom to 115.")
+
+hint~
 
 ```blockconfig.local
 let talent: Sprite = null
@@ -168,7 +182,6 @@ You should see your character posing in the spotlight on stage.
 It's time to add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
 **Ⓐ** button when they're ready to start playing.
 
-![Add a splash screen](/static/skillmap/star/splash.gif "Grab the block from the Game category.")
 
 - :circle: Open the ``||game:Game||`` category and
 drag the
@@ -182,6 +195,12 @@ block into the bottom of the<br/>
 ```blockconfig.local
 game.splash("Press (A) to play!")
 ```
+
+~hint Click here to see how 🕵🏽
+
+![Add a splash screen](/static/skillmap/star/splash.gif "Grab the block from the Game category.")
+
+hint~
 
 #### ~ tutorialhint
 
@@ -201,8 +220,6 @@ game.splash("Press (A) to play!")
 Now the game needs a container to hold the code that
 adds to the score when the **Ⓐ** button is clicked.
 
-![Add a container to hold the code for points](/static/skillmap/star/add-point.gif "On A button pressed")
-
 
 - :game: From the ``||controller:Controller||`` category, grab the
 
@@ -213,6 +230,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 container and drop it into an
 empty spot in the workspace.
+
+~hint Click here to see how 🕵🏽
+
+![Add a container to hold the code for points](/static/skillmap/star/add-point.gif "On A button pressed")
+
+hint~
 
 ```blockconfig.local
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -241,8 +264,6 @@ Do you see your score go up each time you press the **Ⓐ** button?
 This game is off to a great start...but it goes on forever! Add a countdown timer to give
 the player a clear endpoint.
 
-![Add a countdown timer](/static/skillmap/star/countdown.gif "Put a timer at the end of your on start code")
-
 - :id card: Open the ``||info:Info||`` category and
 drag the
 
@@ -251,6 +272,12 @@ info.startCountdown(10)
 ```
 block into **the bottom** of the<br/>
 ``||loops:on start||`` container.
+
+~hint Click here to see how 🕵🏽
+
+![Add a countdown timer](/static/skillmap/star/countdown.gif "Put a timer at the end of your on start code")
+
+hint~
 
 #### ~ tutorialhint
 
