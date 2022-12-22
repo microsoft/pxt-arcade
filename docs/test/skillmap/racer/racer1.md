@@ -31,8 +31,6 @@ Open the game window to take a look at the scene you've just set up.
 
 To take a closer look, you can click on the **preview window** in the lower-right corner of your screen.
 
-![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
-
 ---
 
 You should see the background with the spooky trees and a dark cave layer on top.
@@ -42,7 +40,11 @@ You should see the background with the spooky trees and a dark cave layer on top
 - :mouse pointer: When you're ready to continue, click **Next**.
 
 
+~hint Click here to see how 🕵🏽
 
+![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
+
+hint~
 
 ## 4. Add the Truck
 
@@ -61,14 +63,17 @@ container.
 
 - :paint brush:  To choose a truck, click the empty grey box, then select **My Assets**.
 
-![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
-
 _💡 This image shows the **truck2** sprite, but you can use whichever one you want._
 
 ---
 
 - :mouse pointer: When you're ready to continue, click **Next**.
 
+~hint Click here to see how 🕵🏽
+
+![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
+
+hint~
 
 #### ~ tutorialhint
 
@@ -87,8 +92,6 @@ For that, we'll add [__*acceleration*__](#accel "increased speed in a direction"
 to "pull down" on the sprite.
 
 
-![Set the gravity](/static/skillmap/racer/acceleration.gif "Choose ay(acceleration y)")
-
 ---
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag <br/>
@@ -105,6 +108,12 @@ to **the end** of the <br/>
 ---
 
 - :mouse pointer: When you're ready to continue, click **Next**.
+
+~hint Click here to see how 🕵🏽
+
+![Set the gravity](/static/skillmap/racer/acceleration.gif "Choose ay(acceleration y)")
+
+hint~
 
 ```blockconfig.local
 let truck: Sprite = null
@@ -143,8 +152,6 @@ In this game, your truck needs to start rolling as soon as the game starts.
 
 To make that happen, you need to set its **vx** or _horizontal velocity_ (speed from side to side).
 
-![Set the speed](/static/skillmap/racer/velocity.gif "Choose vx(velocity x)")
-
 ---
 
 - :paper plane:  Drag a new <br/>
@@ -161,6 +168,12 @@ to **the end** of the <br/>
 ---
 
 - :mouse pointer: When you're ready to continue, click **Next**.
+
+~hint Click here to see how 🕵🏽
+
+![Set the speed](/static/skillmap/racer/velocity.gif "Choose vx(velocity x)")
+
+hint~
 
 ```blockconfig.local
 let truck: Sprite = null

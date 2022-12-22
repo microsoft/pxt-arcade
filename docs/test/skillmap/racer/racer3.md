@@ -89,8 +89,11 @@ Finally, you can edit the cave to have your own set of pits and spikes!
 
 The current tilemap will open in the **Tilemap Editor**.
 
+~hint Click here to see how 🕵🏽
+
 ![Opening the tilmap](/static/skillmap/racer/racer-map.gif "Want to edit the tilemap?")
 
+hint~
 
 
 ## 7. Cave Walls
@@ -99,8 +102,11 @@ Click the **wall** icon to solidify tiles.
 
 With the wall icon highlighted, you can select the eraser tool to remove walls, too!
 
+~hint Click here to see how 🕵🏽
+
 ![Add or remove walls](/static/skillmap/racer/racer-walls.gif "Use the pencil to draw walls and the eraser to remove them. ")
 
+hint~
 
 ## Finale
 
