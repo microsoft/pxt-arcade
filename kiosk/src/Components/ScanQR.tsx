@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import "../Kiosk.css";
-import play from "./QrScanner";
+import { play, stopScan } from "./QrScanner";
 import { addGameToKioskAsync } from "../BackendRequests";
 import { KioskState } from "../Models/KioskState";
+import { Html5Qrcode } from "html5-qrcode";
 
 interface IProps {
     kiosk: Kiosk
@@ -15,14 +16,32 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const screenWidth = window.screen.width;
     const phoneWidth = screenWidth < 500;
     const kioskId = urlHashList?.[1];
-    const [scannerVisible, setScanner] = useState(false);
+    const [scannerVisible, setScannerVisible] = useState(false);
     const [linkError, setLinkError] = useState(false);
     const [linkVisible, setLinkVisible] = useState(false);
+    const qrReaderRendered = useRef(null);
+    const [html5QrCode, setQrCode] = useState<undefined | Html5Qrcode>();
 
     const renderQrScanner = () => {
-        play(kiosk, kioskId!);
-        setScanner(true);
+        play(kiosk, kioskId!, html5QrCode!);
+        setScannerVisible(true);
     }
+
+    const stopQrScanner = () => {
+        stopScan(html5QrCode!);
+        setScannerVisible(false);
+    }
+
+    const initiateQrCode = () => {
+        if (qrReaderRendered.current) {
+            const qrCodeReader = new Html5Qrcode("qrReader");
+            setQrCode(qrCodeReader);
+        }
+    }
+
+    useEffect(() => {
+        initiateQrCode();
+    }, [])
 
     const checkUrl = async () => {
         const input = document.getElementById("kiosk-share-link") as HTMLInputElement;
@@ -51,8 +70,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     return (
         <div className="scanQrPage">
-            <h2>Add game to </h2>
-            <h1>Kiosk {kioskId}</h1>
+            <h2>Add game to<br/>Kiosk {kioskId}</h2>
             <div className="scanInstructions">
                 {
                     !linkVisible &&
@@ -62,27 +80,19 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                             !scannerVisible &&
                             <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
                         }
-                        <div id="qrReader"></div>
+                        <div id="qrReader" ref={qrReaderRendered}></div>
                         {
                             scannerVisible &&
-                            <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
+                            <div className="scanning">
+                                <button className="scanQrButton" onClick={stopQrScanner} >Cancel Scan</button>
+                                <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
+                            </div>
                         }
-                    </div>
-                }
-
-                {
-                    phoneWidth && !linkVisible &&
-                    <div className="scanIntro">
                         <p>OR</p>
-                        <button className="scanQrButton back" onClick={() => setLinkVisible(true)} >Submit share link</button>
                     </div>
                 }
-
                 {
-                    ((phoneWidth && linkVisible) ||
-                    (!phoneWidth)) &&
                     <div className="linkOption">
-                        <p>Can't scan?</p>
                         <label>Submit share link here</label>
                         <input type="url"
                             id="kiosk-share-link"
@@ -97,10 +107,6 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                             <p>Incorrect format for a share link</p>
                         }
                     </div>
-                }
-                {
-                    (phoneWidth && linkVisible) &&
-                    <button className="scanQrButton" onClick={() => setLinkVisible(false)} >Back</button>
                 }
 
                 <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">

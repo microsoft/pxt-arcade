@@ -4,11 +4,8 @@ import { Kiosk } from "../Models/Kiosk";
 import { addGameToKioskAsync } from "../BackendRequests";
 import { KioskState } from "../Models/KioskState";
 
-
-const play = async (kiosk: Kiosk, kioskId: string) => {
-    const html5QrCode = new Html5Qrcode("qrReader");
+export const play = async (kiosk: Kiosk, kioskId: string, html5QrCode: Html5Qrcode) => {
     let devices: any[];
-
 
     async function onScanSuccess(decodedText: string, decodedResult: any) {
         const shareId = /\/([^\/]+)\/?$/.exec(decodedText)?.[1];
@@ -43,7 +40,8 @@ const play = async (kiosk: Kiosk, kioskId: string) => {
     } catch (error) {
         console.log("couldn't get camera permissions");
     }
-
 }
 
-  export default play;
+export const stopScan = async (html5QrCode: Html5Qrcode) => {
+    await html5QrCode.stop();
+}
