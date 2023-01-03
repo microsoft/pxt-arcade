@@ -20,7 +20,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const [linkError, setLinkError] = useState(false);
     const [linkVisible, setLinkVisible] = useState(false);
     const qrReaderRendered = useRef(null);
-    const [html5QrCode, setQrCode] = useState<undefined | Html5Qrcode>();
+    const [html5QrCode, setHtml5QrCode] = useState<undefined | Html5Qrcode>();
 
     const renderQrScanner = () => {
         play(kiosk, kioskId!, html5QrCode!);
@@ -35,7 +35,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const initiateQrCode = () => {
         if (qrReaderRendered.current) {
             const qrCodeReader = new Html5Qrcode("qrReader");
-            setQrCode(qrCodeReader);
+            setHtml5QrCode(qrCodeReader);
         }
     }
 
@@ -68,47 +68,47 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     }
 
+    const clearStatus = () => {
+        if (linkError) {
+            setLinkError(false);
+        }
+    }
+
     return (
         <div className="scanQrPage">
             <h2>Add game to<br/>Kiosk {kioskId}</h2>
             <div className="scanInstructions">
-                {
-                    !linkVisible &&
-                    <div className="qrOption">
-                        <p className="scanIntro">Scan game's share QR code with the button below</p>
-                        {
-                            !scannerVisible &&
-                            <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
-                        }
-                        <div id="qrReader" ref={qrReaderRendered}></div>
-                        {
-                            scannerVisible &&
-                            <div className="scanning">
-                                <button className="scanQrButton" onClick={stopQrScanner} >Cancel Scan</button>
-                                <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
-                            </div>
-                        }
-                        <p>OR</p>
-                    </div>
-                }
-                {
-                    <div className="linkOption">
-                        <label>Submit share link here</label>
-                        <input type="url"
-                            id="kiosk-share-link"
-                            placeholder="Enter share link"
-                            spellCheck={false}
-                            required
-                            title="Share Link"
-                            />
-                        <input type="submit" onClick={checkUrl}></input>
-                        {
-                            linkError &&
-                            <p>Incorrect format for a share link</p>
-                        }
-                    </div>
-                }
-
+                <div className="qrOption">
+                    {
+                        !scannerVisible &&
+                        <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
+                    }
+                    <div id="qrReader" ref={qrReaderRendered}></div>
+                    {
+                        scannerVisible &&
+                        <div className="scanning">
+                            <button className="scanQrButton" onClick={stopQrScanner} >Cancel Scan</button>
+                            <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
+                        </div>
+                    }
+                    <p>OR</p>
+                </div>
+                <div className="linkOption">
+                    <label>Submit share link</label>
+                    <input type="url"
+                        id="kiosk-share-link"
+                        placeholder="Enter share link"
+                        spellCheck={false}
+                        required
+                        title="Share Link"
+                        onChange={clearStatus}
+                        />
+                    <input type="submit" onClick={checkUrl}></input>
+                    {
+                        linkError &&
+                        <p className="linkError">Incorrect format for a share link</p>
+                    }
+                </div>
                 <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
                     How do I get a game's share link or QR code?
                 </a>
