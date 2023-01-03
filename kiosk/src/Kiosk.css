@@ -370,7 +370,6 @@ h2 {
 
 .swiper-slide-active {
     box-shadow: 0 0 1rem var(--game-selected-outline);
-
 }
 
 .gameTile {
@@ -422,10 +421,9 @@ h2 {
 }
 
 .gameTitle {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
     font-size: 1.25rem;
     line-height: 1.5rem;
-    height: 2.375rem;
     grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -454,6 +452,20 @@ h2 {
 
 .gameHighScoreScore {
     margin-left: 2.5rem;
+}
+
+@media only screen and (min-width: 1920px) {
+    .swiper-slide-active .gameDetails {
+        margin: 6rem 2rem;
+    }
+
+    .gameHighScoreHeader {
+        font-size: 1.15rem;
+    }
+
+    .gameHighScoreContent {
+        font-size: 0.9rem;
+    }
 }
 
 /* -------- HIGH SCORE STYLING -------- */

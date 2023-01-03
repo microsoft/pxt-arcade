@@ -149,9 +149,10 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 keyboard={{enabled: true}}
             >
                 {kiosk.games.map((game, index) => {
+                    const gameHighScores = kiosk.getHighScores(game.id);
                     return (
                         <SwiperSlide key={game.id}>
-                            <GameSlide kiosk={kiosk} buttonSelected={buttonSelected} game={game} />
+                            <GameSlide highScores={gameHighScores} buttonSelected={buttonSelected} game={game} />
                         </SwiperSlide>
                     )
                 })}

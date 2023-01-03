@@ -3,32 +3,29 @@ import { HighScore } from "../Models/HighScore";
 import { Kiosk } from "../Models/Kiosk";
 
 interface IProps {
-    kiosk: Kiosk;
-    gameId: string;
+    highScores: HighScore[];
     highScoreMode: string;
   }
 
-const HighScoresList: React.FC<IProps> = ({ kiosk, gameId, highScoreMode }) => {
-    const highScores: HighScore[] = kiosk.getHighScores(gameId);
+const HighScoresList: React.FC<IProps> = ({ highScores, highScoreMode }) => {
     const highScoresExist = !!highScores.length;
 
-    return(
+    if (highScoreMode === "None") {
+        return null;
+    }
+
+    return (
         <div className="gameHighScores">
-            {
-                highScoreMode !== "None" &&
-                <h2 className="gameHighScoreHeader">High Scores</h2>
-            }
+            <h2 className="gameHighScoreHeader">High Scores</h2>
             {
                 !highScoresExist && 
-                highScoreMode !== "None" &&
                 <p className="gameHighScoreContent">None yet</p>
             }
             {
                 highScoresExist &&
-                highScoreMode !== "None" &&
                 <ol className="gameHighScoreContent">
                     {
-                        highScores.slice(0,5).map((highScore, index) => {
+                        highScores.slice(0, 5).map((highScore, index) => {
                             return (
                                 <li key={index}>
                                     <span className="gameHighScoreInitials">{highScore.initials}</span>
