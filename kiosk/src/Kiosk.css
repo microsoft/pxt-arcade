@@ -394,8 +394,7 @@ h2 {
 .gameTile {
     width: 100%;
     height: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
@@ -403,55 +402,93 @@ h2 {
     image-rendering: pixelated;
     -ms-interpolation-mode: nearest-neighbor;
     border: var(--black-color) 2px solid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    box-shadow: 0 0 1rem var(--game-tile-outline);
+
 }
 
-.gameLabelBackground {
-    position: absolute;
-    bottom: 0;
-    height: 8rem;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+.gameThumbnail {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    grid-area: 1 / 1 / 2 / 5;
+}
+
+.swiper-slide-active .gameThumbnail {
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.swiper-slide-active .gameDetails {
+    margin-left: 1rem;
+    background: var(--black-color);
+    grid-area: 1 / 4 / 2 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.gameDetails hr {
+    width: 90%;
+    margin-top: 1.5rem;
+}
+
+.gameDetails {
+    display: none;
 }
 
 .gameTitle {
-    position: absolute;
-    left: 0;
-    font-family: 'Share';
-    font-weight: 700;
-    font-size: 2.125em;
-    height: 2.375rem;
-    margin: 0.3rem;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .gameDescription {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     font-family: 'Share';
-    font-weight: 400;
     font-size: 1.25em;
-    height: 5rem;
-    margin: 0.3rem;
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+.gameHighScores {
+    grid-area: 4 / 1 / 6 / 2;
+}
+
+.gameHighScoreHeader {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: left;
+    color: var(--button-primary-color);
+
+}
+
+.gameHighScoreContent {
+    line-height: 1.25rem;
+    font-size: 0.85rem;
+}
+
+.gameHighScoreScore {
+    margin-left: 2.5rem;
+}
+
+@media only screen and (min-width: 1920px) {
+    .swiper-slide-active .gameDetails {
+        margin: 6rem 2rem;
+    }
+
+    .gameHighScoreHeader {
+        font-size: 1.15rem;
+    }
+
+    .gameHighScoreContent {
+        font-size: 0.9rem;
+    }
 }
 
 /* -------- HIGH SCORE STYLING -------- */
 /* ----------------------------------- */
-
-.highScoreSmallDiv {
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 2rem;
-    text-align: center;
-    color: var(--high-score-color);
-}
-
-.highScoreSmallList {
-    text-align: right;
-}
-
-.highScoreSmallInitials {
-    min-width: 9.25rem;
-}
 
 .enterHighScore {
     display: flex;
