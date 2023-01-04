@@ -13,6 +13,7 @@
     --button-underline: #10b7e5;
     --game-tile-outline: #AFF1FF3d;
     --game-selected-outline: #AFF1FFaa;
+    --error-color: #ff7676;
 }
 
 html, body {
@@ -116,7 +117,6 @@ h2 {
 .buttonSelected {
     border:#ffd700 0.5rem solid;
     box-shadow: 0 0 0.4rem var(--high-score-selector-color);
-
 }
 
 /* -------- ADDING GAME PAGE STYLING -------- */
@@ -230,13 +230,7 @@ h2 {
 }
 
 .scanQrPage h2 {
-    margin-bottom: 0;
     font-size: 2rem;
-}
-
-.scanQrPage h1 {
-    margin-bottom: 2rem;
-    font-size: 2.25rem;
 }
 
 .scanQrButton {
@@ -251,6 +245,13 @@ h2 {
     cursor: pointer;
     margin-right: 1rem;
     margin-top: 2rem;
+}
+
+.scanning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .scanQrButton:hover {
@@ -292,11 +293,11 @@ h2 {
 }
 
 .linkOption {
-    margin-top: 5rem;
     border-color: var(--button-primary-color);
     border-style: solid;
     border-radius: 1.5rem;
     padding: 2rem;
+    width: 350px;
 }
 
 .linkOption label {
@@ -306,7 +307,7 @@ h2 {
 .linkOption input[type=url] {
     margin-top: 1rem;
     border-color: var(--button-primary-color);
-    width: 20rem;
+    width: 67%;
     height: 2em;
     border-radius: 0.45em;
     text-overflow: ellipsis;
@@ -325,6 +326,11 @@ h2 {
     color: var(--secondary-dark-color);
 }
 
+.linkError {
+    font-family: 'Share';
+    color: var(--error-color);
+}
+
 .shareHelp {
     color: var(--main-text-color);
     overflow: auto;
@@ -340,6 +346,19 @@ h2 {
     font-size: 1.25rem;
     margin-top: 2rem;
 }
+
+@media (max-width: 768px) {
+    .scanQrPage h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 570px) {
+    .linkOption {
+        width: 80%;
+    }
+}
+
 
 /* -------- GAME LIST  STYLING -------- */
 /* ----------------------------------- */
