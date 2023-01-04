@@ -103,7 +103,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                         title="Share Link"
                         onChange={clearStatus}
                         />
-                    <input type="submit" onClick={checkUrl}></input>
+                    <input type="submit" onClick={checkUrl} />
                     {
                         linkError &&
                         <p className="linkError">Incorrect format for a share link</p>
