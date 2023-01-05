@@ -7,16 +7,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Keyboard } from "swiper";
 import "swiper/css";
 import "swiper/css/keyboard";
+import GameSlide from "./GameSlide";
 interface IProps {
     kiosk: Kiosk;
-    buttonSelected: Boolean;
+    buttonSelected: boolean;
   }
 
 
 const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     const localSwiper = useRef<any>();
-    const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     const leftKeyEvent = (eventType: string) => {
         return new KeyboardEvent(eventType, {
@@ -149,16 +149,10 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 keyboard={{enabled: true}}
             >
                 {kiosk.games.map((game, index) => {
+                    const gameHighScores = kiosk.getHighScores(game.id);
                     return (
                         <SwiperSlide key={game.id}>
-                            <div className={`gameTile ${carouselSelected}`} style={{
-                                backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")` 
-                            }}>
-                                <div className="gameLabelBackground">
-                                    <div className="gameTitle">{game.name}</div>
-                                    <div className="gameDescription">{game.description}</div>
-                                </div>
-                            </div>
+                            <GameSlide highScores={gameHighScores} buttonSelected={buttonSelected} game={game} />
                         </SwiperSlide>
                     )
                 })}
