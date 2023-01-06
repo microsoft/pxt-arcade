@@ -12,10 +12,11 @@ const GameSlide: React.FC<IProps> = ({ highScores, buttonSelected, game }) => {
 
     return (
         <div className={`gameTile ${carouselSelected}`}>
-            
             <div className="gameThumbnail" 
                 style={{backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")`}}
             />
+
+            <p className="pressStart">Press A to Start</p>
 
             <div className="gameDetails">
                 <div className="gameTitle">{game.name}</div>

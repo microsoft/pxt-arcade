@@ -14,6 +14,7 @@
     --game-tile-outline: #AFF1FF3d;
     --game-selected-outline: #AFF1FFaa;
     --error-color: #ff7676;
+    --black-color-transparent: #050505ab;
 }
 
 html, body {
@@ -412,6 +413,16 @@ h2 {
     grid-row-gap: 0;
     box-shadow: 0 0 1rem var(--game-tile-outline);
 
+}
+
+.pressStart {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: end;
+    justify-self: center;
+    background-color: var(--black-color-transparent);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: solid var(--main-text-color);
 }
 
 .gameThumbnail {
