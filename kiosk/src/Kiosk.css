@@ -82,15 +82,18 @@ h2 {
     font-weight: 400;
     font-size: 2.25rem;
     color: var(--main-text-color);
-    margin-left: 27%;
-    margin-right: 2%;
+    grid-area: 1 / 2 / 2 / 4;
+}
+
+.mainMenuButton {
+    grid-area: 1 / 4 / 2 / 5;
+    margin-top: 2rem;
 }
 
 .mainMenuTopBar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     width: 100%;
 }
 
