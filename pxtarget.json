@@ -89,6 +89,7 @@
         "libs/mixer---rp2040",
         "libs/mouse",
         "libs/mqtt",
+        "libs/multiplayer",
         "libs/net",
         "libs/net-game",
         "libs/palette",

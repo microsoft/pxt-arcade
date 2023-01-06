@@ -4,7 +4,7 @@ import { KioskState } from "../Models/KioskState";
 import configData from "../config.json"
 import "../Kiosk.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Keyboard } from "swiper";
+import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/keyboard";
 import GameSlide from "./GameSlide";
@@ -135,6 +135,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 slidesPerView={1.5}
                 centeredSlides={true}
                 spaceBetween={10}
+                pagination={{type: "fraction",}}
                 onSwiper={(swiper) => {
                     localSwiper.current = swiper;
                 }}
@@ -145,7 +146,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                 allowTouchMove={false}
                 allowSlideNext={!buttonSelected}
                 allowSlidePrev={!buttonSelected}
-                modules={[EffectCoverflow, Keyboard]}
+                modules={[EffectCoverflow, Keyboard, Pagination]}
                 keyboard={{enabled: true}}
             >
                 {kiosk.games.map((game, index) => {
