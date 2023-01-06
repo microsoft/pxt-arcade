@@ -422,7 +422,7 @@ h2 {
     background-color: var(--black-color-transparent);
     padding: 1rem;
     border-radius: 1rem;
-    border: solid var(--main-text-color);
+    text-shadow: 1px 3px 0 var(--black-color);
 }
 
 .gameThumbnail {
