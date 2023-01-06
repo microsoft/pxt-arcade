@@ -369,7 +369,7 @@ h2 {
 
 .carouselWrap {
     width: 99%;
-    height: 80vh;
+    height: 85vh;
     border-radius: 1.5rem;
 }
 
@@ -384,6 +384,10 @@ h2 {
 .swiper {
     width: 100%;
     height: 90%;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .swiper-wrapper {
@@ -391,13 +395,9 @@ h2 {
     padding-bottom: 2%;
 }
 
-.swiper-slide-active {
-    box-shadow: 0 0 1rem var(--game-selected-outline);
-}
-
 .gameTile {
-    width: 100%;
-    height: 100%;
+    width: 99%;
+    height: 99%;
 
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
@@ -412,7 +412,6 @@ h2 {
     grid-column-gap: 0;
     grid-row-gap: 0;
     box-shadow: 0 0 1rem var(--game-tile-outline);
-
 }
 
 .pressStart {
@@ -436,7 +435,7 @@ h2 {
 }
 
 .swiper-slide-active .gameDetails {
-    margin-left: 1rem;
+    padding-left: 1rem;
     background: var(--black-color);
     grid-area: 1 / 4 / 2 / 5;
     display: grid;
@@ -497,7 +496,7 @@ h2 {
 
 @media only screen and (min-width: 1920px) {
     .swiper-slide-active .gameDetails {
-        margin: 6rem 2rem;
+        padding: 6rem 2rem;
     }
 
     .gameHighScoreHeader {
