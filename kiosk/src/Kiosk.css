@@ -459,6 +459,14 @@ h2 {
     grid-area: 4 / 1 / 6 / 2;
 }
 
+.gameDate {
+    font-family: 'Share';
+    font-size: 1.05em;
+    grid-area: 5 / 1 / 6 / 2;
+    align-self: end;
+    margin-bottom: 2rem;
+}
+
 .gameHighScoreHeader {
     font-size: 1rem;
     line-height: 1.5rem;

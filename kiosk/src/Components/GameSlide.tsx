@@ -21,6 +21,13 @@ const GameSlide: React.FC<IProps> = ({ highScores, buttonSelected, game }) => {
                 <div className="gameTitle">{game.name}</div>
                 <div className="gameDescription">{game.description} <hr/></div>
                 <HighScoresList highScores={highScores} highScoreMode={game.highScoreMode} />
+                {
+                    game.date &&
+                    <div className="gameDate">
+                        Added {game.date}
+                    </div>
+                }
+
             </div>
         </div>
     )
