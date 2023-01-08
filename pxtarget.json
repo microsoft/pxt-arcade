@@ -645,7 +645,7 @@
         "assetEditor": true,
         "immersiveReader": true,
         "tutorialCodeValidation": true,
-        "multiplayerShareButton": true,
+        "multiplayer": true,
         "songEditor": true
     },
     "queryVariants": {
