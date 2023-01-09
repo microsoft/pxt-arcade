@@ -53,7 +53,6 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                 }
             </nav>
             <GameList kiosk={kiosk} buttonSelected={buttonSelected} />
-            {/* <HighScoresList kiosk={kiosk} /> */}
         </div>
     )
 }

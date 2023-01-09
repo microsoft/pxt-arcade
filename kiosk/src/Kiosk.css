@@ -86,11 +86,6 @@ h2 {
     grid-area: 1 / 2 / 2 / 4;
 }
 
-.mainMenuButton {
-    grid-area: 1 / 4 / 2 / 5;
-    margin-top: 2rem;
-}
-
 .mainMenuTopBar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -107,7 +102,7 @@ h2 {
 }
 
 .kioskButton {
-    padding: 1.25em 1em;
+    padding: 1.25vh 1em;
     font-family: inherit;
     letter-spacing: 0.2rem;
     background-color: var(--button-primary-color);
@@ -115,12 +110,23 @@ h2 {
     border-radius: 0.3em;
     border-color: var(--transparent-color);
     border-bottom: 0.5rem var(--button-underline) solid;
-    cursor: pointer;
+}
+
+.mainMenuButton {
+    grid-area: 1 / 4 / 2 / 5;
+    margin-top: 2rem;
 }
 
 .buttonSelected {
     border:#ffd700 0.5rem solid;
     box-shadow: 0 0 0.4rem var(--high-score-selector-color);
+}
+
+@media only screen and (max-width: 1200px) {
+    .mainMenuHeader {
+        font-weight: 400;
+        font-size: 1.75rem;
+    }
 }
 
 /* -------- ADDING GAME PAGE STYLING -------- */
@@ -374,7 +380,7 @@ h2 {
 }
 
 .swiper-slide-active .selected {
-    box-shadow: 0 0 1rem var(--high-score-selector-color);
+    box-shadow: 0 0 2rem var(--high-score-selector-color);
 }
 
 .unselected {
@@ -420,7 +426,6 @@ h2 {
     justify-self: center;
     background-color: var(--black-color-transparent);
     padding: 1rem;
-    border-radius: 1rem;
     text-shadow: 1px 3px 0 var(--black-color);
 }
 
@@ -436,7 +441,7 @@ h2 {
 
 .swiper-slide-active .gameDetails {
     padding-left: 1rem;
-    background: var(--black-color);
+    background-color: var(--black-color);
     grid-area: 1 / 4 / 2 / 5;
     display: grid;
     grid-template-columns: 1fr;
@@ -505,6 +510,25 @@ h2 {
 
     .gameHighScoreContent {
         font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 1490px) and (max-height: 715px) {
+    .gameTitle {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .gameDescription {
+        font-size: 1rem;
+    }
+
+    .gameHighScoreHeader {
+        font-size: 1rem;
+    }
+
+    .gameHighScoreContent {
+        font-size: 0.75rem;
     }
 }
 
