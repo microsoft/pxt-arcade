@@ -22,7 +22,7 @@ Let's start by setting the stage.
 ```block
 scene.setBackgroundImage(img`.`)
 ```
-into the ``||loops:on start||``<br/>
+into the ``||loops(noclick):on start||``<br/>
 container that's already in the workspace.
 
 - :mouse pointer: When you're done, click **Next** to see the next step.
@@ -52,7 +52,7 @@ scene.setBackgroundImage(img`.`)
 - :paint brush: Click the grey box inside<br/>
 
 ```block
-scene.setBackgroundImage(assets.image`stage`)
+scene.setBackgroundImage(img`.`)
 ```
 to open the
 image editor and click the **My Assets** tab.
@@ -78,19 +78,10 @@ scene.setBackgroundImage(assets.image`stage`)
 
 ## {Step 4}
 
-**Switch to the game window**
-
-
-
+**Take a look at the game window**
 
 Do you see the background you chose?
 
-
-~hint Click here to see how to check 🕵🏽
-
-![Go to the Game Window to see your scene. ](/static/skillmap/star/see-game.gif "Don't forget to look at your game!")
-
-hint~
 
 
 ## {Step 5}
@@ -106,7 +97,7 @@ Which talent will the audience be cheering for today?
 ```block
 let talent = sprites.create(img`.`, SpriteKind.Player)
 ```
-block into **the end** of the ``||loops: on start||`` container.
+block into **the end** of the ``||loops(noclick): on start||`` container.
 
 - :paint brush: Click the empty grey box and toggle to **My Assets** to
  select a character for your project.
@@ -141,7 +132,7 @@ let talent: Sprite = null
 
 talent.bottom = 115
 ```
-and snap it into **the end** of the ``||loops: on start||`` container.
+and snap it into **the end** of the ``||loops(noclick): on start||`` container.
 
 ~hint Click here to see how 🕵🏽
 
@@ -169,9 +160,9 @@ talent.bottom = 115
 
 ## {Step 7}
 
-**Check your game**<br/>
+**Check your scene**<br/>
 
-Switch over to the game window to see how your scene looks so far.
+Look at the game window to see how your scene looks so far.
 
 You should see your character posing in the spotlight on stage.
 
@@ -179,8 +170,15 @@ You should see your character posing in the spotlight on stage.
 
 
 ## {Step 8}
-It's time to add a [__*splash screen*__](#splasht "A full-screen message that shows while a program or level is loading") to let the user know to press the
-**Ⓐ** button when they're ready to start playing.
+It's time to add a splash screen to let the user know to press the
+(A) button when they're ready to start playing.
+
+~hint What is a "splash screen"? 💡
+
+---
+
+In video games, a splash screen is a message that shows while a program or level is loading.
+hint~
 
 
 - :circle: Open the ``||game:Game||`` category and
@@ -190,7 +188,7 @@ drag the
 game.splash("Press (A) to play!")
 ```
 block into the bottom of the<br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 ```blockconfig.local
 game.splash("Press (A) to play!")
@@ -217,8 +215,8 @@ game.splash("Press (A) to play!")
 
 **⚡ Here comes the action ⚡**
 
-Now the game needs a container to hold the code that
-adds to the score when the **Ⓐ** button is clicked.
+Now the game needs the code that
+adds to the score when the (A) button is clicked.
 
 
 - :game: From the ``||controller:Controller||`` category, grab the
@@ -254,9 +252,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 10}
 
-**🎮 Test your game on the game screen**
+**Play your game on the game screen**<br/>
+🎮 🎮 🎮 
 
-Do you see your score go up each time you press the **Ⓐ** button?
+Do you see your score go up each time you press the (A) button?
 
 
 ## {Step 11}
@@ -271,7 +270,7 @@ drag the
 info.startCountdown(10)
 ```
 block into **the bottom** of the<br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 ~hint Click here to see how 🕵🏽
 
@@ -296,9 +295,10 @@ info.startCountdown(10)
 **🎉 Congrats 🎉**
 
 You have started your very own clicker game!
+
 Play it on the game screen and see if you can get more than **40 clicks**.
 
-When you're finished, click **Done** to return to the main page where you can share your game with family and friends to compare scores!
+When you're finished, click **Done** to return to the main page to move forward and see how to add an audience!
 
 
 
