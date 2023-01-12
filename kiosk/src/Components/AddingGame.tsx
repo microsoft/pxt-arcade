@@ -6,6 +6,7 @@ import "../Kiosk.css";
 import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
 import { generateKioskCodeAsync, getGameCodeAsync, isLocal } from "../BackendRequests";
+import { tickEvent } from "../browserUtils";
 interface IProps {
     kiosk: Kiosk
   }
@@ -26,6 +27,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             }
         }
         if (menuButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.toMainMenu");
             kiosk.showMainMenu();
         }
         if (!renderQRCode && kiosk.gamepadManager.isUpPressed()) {
@@ -33,6 +35,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             setQrButtonState(true);
         }
         if (qrCodeButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.newKioskCode")
             setRenderQRCode(true);
         }
     }
@@ -82,6 +85,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     try {
                         const gameCode: string = await getGameCodeAsync(kioskCode);
                         await kiosk.saveNewGameAsync(gameCode);
+                        tickEvent("kiosk.gameUploaded");
                         clearTimeout(pollFrequency);
                         clearTimeout(pollTimeout);
                         resolve();
@@ -106,6 +110,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     }, [renderQRCode]);
 
     const qrDivContent = () => {
+        //TODO: add an onclick to the link so I can track activity
         if (renderQRCode) {
             const kioskUrl = `${kioskCodeUrl}#add-game:${kioskCode}`;
             return (

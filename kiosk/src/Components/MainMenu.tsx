@@ -4,6 +4,7 @@ import AddGameButton from "./AddGameButton";
 import GameList from "./GameList";
 import configData from "../config.json"
 import HighScoresList from "./HighScoresList";
+import { tickEvent } from "../browserUtils";
 
 interface IProps {
     kiosk: Kiosk
@@ -38,6 +39,8 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                     clearInterval(intervalId);
                 }
             };
+        } else {
+            tickEvent("kiosk.locked");
         }
     });
 

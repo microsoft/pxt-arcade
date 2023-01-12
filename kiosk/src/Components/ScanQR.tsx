@@ -5,6 +5,7 @@ import { play, stopScan } from "./QrScanner";
 import { addGameToKioskAsync } from "../BackendRequests";
 import { KioskState } from "../Models/KioskState";
 import { Html5Qrcode } from "html5-qrcode";
+import { tickEvent } from "../browserUtils";
 
 interface IProps {
     kiosk: Kiosk
@@ -23,11 +24,13 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const [html5QrCode, setHtml5QrCode] = useState<undefined | Html5Qrcode>();
 
     const renderQrScanner = () => {
+        tickEvent("kiosk.scanQrClicked");
         play(kiosk, kioskId!, html5QrCode!);
         setScannerVisible(true);
     }
 
     const stopQrScanner = () => {
+        tickEvent("kiosk.stopScanClicked");
         stopScan(html5QrCode!);
         setScannerVisible(false);
     }
@@ -44,6 +47,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     }, [])
 
     const checkUrl = async () => {
+        tickEvent("kiosk.submitGameId.clicked");
         const input = document.getElementById("kiosk-share-link") as HTMLInputElement;
         const inputValue = input.value?.trim();
         const shareLink = /^(https:\/\/)((arcade\.makecode\.com\/)|(makecode\.com\/))((?:S?\d{5}-\d{5}-\d{5}-\d{5})$|(?:_[a-zA-Z0-9]+)$)/i.exec(inputValue);
@@ -58,6 +62,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
             setLinkError(false);
             try {
                 await addGameToKioskAsync(kioskId, shareId);
+                tickEvent("kiosk.submitGameId.submitSuccess");
                 kiosk.navigate(KioskState.QrSuccess);
             } catch (error) {
                 console.log("Unable to add game to kiosk. Please try again later");

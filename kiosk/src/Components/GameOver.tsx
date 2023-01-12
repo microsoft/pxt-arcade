@@ -3,6 +3,7 @@ import { Kiosk } from "../Models/Kiosk";
 import AddGameButton from "./AddGameButton";
 import configData from "../config.json"
 import { KioskState } from "../Models/KioskState";
+import { tickEvent } from "../browserUtils";
 
 
 interface IProps {
@@ -27,10 +28,12 @@ const GameOver: React.FC<IProps> = ({ kiosk }) => {
 
         }
         if (homeButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.gameOver.mainMenu");
             kiosk.navigate(KioskState.MainMenu);
         }
 
         if (retryButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.gameOver.retry");
             kiosk.launchGame(gameId);
         }
     }

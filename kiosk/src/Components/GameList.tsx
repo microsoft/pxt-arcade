@@ -8,6 +8,7 @@ import { EffectCoverflow, Keyboard, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/keyboard";
 import GameSlide from "./GameSlide";
+import { tickEvent } from "../browserUtils";
 interface IProps {
     kiosk: Kiosk;
     buttonSelected: boolean;
@@ -61,6 +62,8 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
 
         const gameId = kiosk.selectedGame?.id;
         if (gameId) {
+            //TODO: include the game id for which game is launched
+            tickEvent("kiosk.gameLaunched");
             kiosk.launchGame(gameId);
         }
     }
