@@ -67,13 +67,13 @@ _💡 This image shows the **truck2** sprite, but you can use whichever one you 
 
 ---
 
-- :mouse pointer: When you're ready to continue, click **Next**.
-
 ~hint Click here to see how 🕵🏽
 
 ![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
 
 hint~
+
+- :mouse pointer: When you're ready to continue, click **Next**.
 
 #### ~ tutorialhint
 
@@ -107,13 +107,13 @@ to **the end** of the <br/>
 
 ---
 
-- :mouse pointer: When you're ready to continue, click **Next**.
-
 ~hint Click here to see how 🕵🏽
 
 ![Set the gravity](/static/skillmap/racer/acceleration.gif "Choose ay(acceleration y)")
 
 hint~
+
+- :mouse pointer: When you're ready to continue, click **Next**.
 
 ```blockconfig.local
 let truck: Sprite = null
