@@ -427,6 +427,8 @@ h2 {
     background-color: var(--black-color-transparent);
     padding: 1rem;
     text-shadow: 1px 3px 0 var(--black-color);
+    text-align: center;
+    line-height: 115%;
 }
 
 .gameThumbnail {
