@@ -159,7 +159,6 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                         </SwiperSlide>
                     )
                 })}
-
             </Swiper>
         </div>
     )

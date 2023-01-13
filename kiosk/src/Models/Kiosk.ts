@@ -94,7 +94,8 @@ export class Kiosk {
                 gameDescription = this.defaultGameDescription;
             }
 
-            const newGame = new GameData(gameId, gameName, gameDescription, "None");
+            const gameUploadDate = (new Date()).toLocaleString()
+            const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate);
 
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;
