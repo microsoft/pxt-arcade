@@ -42,12 +42,17 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
         }
     }
 
+    const clickHelp = () => {
+        tickEvent("kiosk.helpLink");
+        return true;
+    }
+
     useEffect(() => {
+        tickEvent("kiosk.scanQrLoaded");
         initiateQrCode();
     }, [])
 
     const checkUrl = async () => {
-        tickEvent("kiosk.submitGameId.clicked");
         const input = document.getElementById("kiosk-share-link") as HTMLInputElement;
         const inputValue = input.value?.trim();
         const shareLink = /^(https:\/\/)((arcade\.makecode\.com\/)|(makecode\.com\/))((?:S?\d{5}-\d{5}-\d{5}-\d{5})$|(?:_[a-zA-Z0-9]+)$)/i.exec(inputValue);
@@ -58,6 +63,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
         } else if (shareCode) {
             shareId = shareCode[1];
         }
+        tickEvent("kiosk.submitGameId.clicked", { submitVal: inputValue });
         if (shareId) {
             setLinkError(false);
             try {
@@ -114,7 +120,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                         <p className="linkError">Incorrect format for a share link</p>
                     }
                 </div>
-                <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
+                <a className="shareHelp" target="_blank" onClick={clickHelp} href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
                     How do I get a game's share link or QR code?
                 </a>
             </div>

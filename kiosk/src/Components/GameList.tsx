@@ -62,8 +62,7 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
 
         const gameId = kiosk.selectedGame?.id;
         if (gameId) {
-            //TODO: include the game id for which game is launched
-            tickEvent("kiosk.gameLaunched");
+            tickEvent("kiosk.gameLaunched", { game: gameId });
             kiosk.launchGame(gameId);
         }
     }

@@ -5,14 +5,14 @@ import configData from "../config.json"
 import "../Kiosk.css";
 import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
-import { generateKioskCodeAsync, getGameCodeAsync, isLocal } from "../BackendRequests";
-import { tickEvent } from "../browserUtils";
+import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
+import { isLocal, tickEvent } from "../browserUtils";
 interface IProps {
     kiosk: Kiosk
   }
 
 const AddingGame: React.FC<IProps> = ({ kiosk }) => {
-    // TODO: update the urls to be more flexible for production code.
+    // TODO: try to add a tick for when someone scans the QR code with a phone, maybe this will be tracked with the dimensions of the screen
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
@@ -35,9 +35,14 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             setQrButtonState(true);
         }
         if (qrCodeButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
-            tickEvent("kiosk.newKioskCode")
+            tickEvent("kiosk.newKioskCode");
             setRenderQRCode(true);
         }
+    }
+
+    const kioskLinkClicked = () => {
+        tickEvent("kiosk.addGameLink");
+        return true;
     }
 
     useEffect(() => {
@@ -110,7 +115,6 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     }, [renderQRCode]);
 
     const qrDivContent = () => {
-        //TODO: add an onclick to the link so I can track activity
         if (renderQRCode) {
             const kioskUrl = `${kioskCodeUrl}#add-game:${kioskCode}`;
             return (
@@ -119,7 +123,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     <h1 className="kioskCode">{kioskCode}</h1>
                     <QRCodeSVG value={kioskUrl} />
                     <div className="kioskLink">
-                        <a target="_blank" href={kioskUrl}>{kioskUrl}</a>
+                        <a target="_blank" onClick={kioskLinkClicked} href={kioskUrl}>{kioskUrl}</a>
                     </div>
 
                 </div>

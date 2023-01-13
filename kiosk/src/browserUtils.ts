@@ -1,7 +1,4 @@
 export function tickEvent(id: string, data?: { [key: string]: string | number }) {
-    console.log("gets in the tick event");
-    console.log(id);
-    console.log((window as any).pxtTickEvent);
     (window as any).pxtTickEvent?.(id, data);
 }
 

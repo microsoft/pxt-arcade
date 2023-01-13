@@ -22,6 +22,7 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
             setButtonState(false);
         }
         if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.addGamePageLoaded");
             kiosk.launchAddGame();
         }
     }
