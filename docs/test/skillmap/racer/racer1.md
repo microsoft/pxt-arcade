@@ -88,9 +88,13 @@ let truck = sprites.create(assets.image`truck2`, SpriteKind.Player)
 
 To make the game feel more realistic, it needs gravity.
 
-For that, we'll add [__*acceleration*__](#accel "increased speed in a direction")
-to "pull down" on the sprite.
+~hint How do I add gravity? 📥
 
+For gravity, we'll add [__*acceleration*__](#accel "increased speed in a direction")
+to "pull down" on the sprite. This is done by setting the sprite's vertical
+acceleration, **ay**, value.
+
+hint~
 
 ---
 
@@ -98,12 +102,10 @@ to "pull down" on the sprite.
 
 ```block
 let truck: Sprite = null
-truck.ay = 0
+truck.ay = 500
 ```
 to **the end** of the <br/>
 ``||loops:on start||`` container.
-
-- :mouse pointer: To pull the sprite toward the ground, replace **0** with **500**.
 
 ---
 
@@ -117,7 +119,7 @@ hint~
 
 ```blockconfig.local
 let truck: Sprite = null
-truck.ay = 0
+truck.ay = 500
 ```
 
 #### ~ tutorialhint
@@ -150,7 +152,11 @@ The truck should drop to the ground inside the cave.
 
 In this game, your truck needs to start rolling as soon as the game starts.
 
-To make that happen, you need to set its **vx** or _horizontal velocity_ (speed from side to side).
+~hint How do I make the truck move? 🚚
+
+To make the truck move, you need to set its **vx** or _horizontal velocity_ (speed from side to side).
+
+hint~
 
 ---
 
@@ -158,12 +164,10 @@ To make that happen, you need to set its **vx** or _horizontal velocity_ (speed 
 
 ```block
 let truck: Sprite = null
-truck.vx = 0
+truck.vx = 100
 ```
 to **the end** of the <br/>
 ``||loops:on start||`` container.
-
-- :mouse pointer: To push the sprite toward the right, replace **0** with **100**.
 
 ---
 
@@ -177,7 +181,7 @@ hint~
 
 ```blockconfig.local
 let truck: Sprite = null
-truck.vx = 0
+truck.vx = 100
 ```
 
 #### ~ tutorialhint
