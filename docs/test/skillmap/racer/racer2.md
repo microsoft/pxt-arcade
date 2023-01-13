@@ -1,7 +1,7 @@
 # Over and Under
 ### @explicitHints true
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Now that you have a truck that moves, let's add the ability to jump and navigate around obstacles.
 
@@ -10,7 +10,7 @@ Now that you have a truck that moves, let's add the ability to jump and navigate
 
 
 
-## 2. Remember
+## {2. Remember}
 
 Take a look at the code that's already in your workspace.
 
@@ -19,7 +19,7 @@ You should see the blocks that add gravity, make your truck start moving, and se
 
 
 
-## 3. Make the Jump
+## {3. Make the Jump}
 
 You'll notice some pits of acid in the road. Help your truck avoid them when you press the (A) button.
 
@@ -58,7 +58,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## 4. Play it Again
+## {4. Play it Again}
 
 Remember to play your game again each time you make a change.
 
@@ -67,7 +67,7 @@ Can you see the effects of the code you just wrote?
 
 
 
-## 5. The Pits
+## {5. The Pits}
 
 
 Now that you can jump the pits, let's make them dangerous.
@@ -103,7 +103,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, loca
 
 
 
-## 6. The Spikes
+## {6. The Spikes}
 
 Pressing the **(A)** button more than once might send you into a spike. Let's make the spikes dangerous, too.
 
@@ -131,7 +131,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, lo
 
 
 
-## 7. Take a Look!
+## {7. Take a Look!}
 
 Click back to the game window to see how everything is coming together.
 
@@ -141,7 +141,7 @@ You should be able to jump the acid pits by pressing the (A) button and the game
 
 
 
-## 8. End of the Tunnel
+## {8. End of the Tunnel}
 
 We have a way to lose, now we need a way to win.
 
@@ -170,7 +170,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite
 ```
 
 
-## Finale
+## {Finale}
 
 Congratulations!
 

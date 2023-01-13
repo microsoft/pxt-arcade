@@ -1,7 +1,7 @@
 # Ready, Set, Go!
 ### @explicitHints true
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Let's make a racer game!
 
@@ -11,7 +11,7 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 
 
 
-## 2. The Scene is Set
+## {2. The Scene is Set}
 
 
 - :binoculars: We have already added **tilemap** and
@@ -23,7 +23,7 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 
 
 
-## 3. Look at the Game!
+## {3. Look at the Game!}
 
 Open the game window to take a look at the scene you've just set up.
 
@@ -46,7 +46,7 @@ You should see the background with the spooky trees and a dark cave layer on top
 
 hint~
 
-## 4. Add the Truck
+## {4. Add the Truck}
 
 It's time to set up your monster truck. To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
 
@@ -84,7 +84,7 @@ let truck = sprites.create(assets.image`truck2`, SpriteKind.Player)
 
 
 
-## 5. Add Gravity
+## {5. Add Gravity}
 
 To make the game feel more realistic, it needs gravity.
 
@@ -132,7 +132,7 @@ truck.ay = 500
 
 
 
-## 6. Take a Look!
+## {6. Take a Look!}
 
 Click back to the game window to see how everything is coming together.
 
@@ -146,7 +146,7 @@ The truck should drop to the ground inside the cave.
 
 
 
-## 7. Time to Drive
+## {7. Time to Drive}
 
 In this game, your truck needs to start rolling as soon as the game starts.
 
@@ -189,7 +189,7 @@ truck.ay = 500
 truck.vx = 100
 ```
 
-## 8. Try It!
+## {8. Try It!}
 
 Open the game window again and check out the game you have so far.
 
@@ -201,7 +201,7 @@ The game only does what you've coded it to do.
 - :mouse pointer: When you're ready to continue, click **Next**.
 
 
-## 9. Follow that Sprite
+## {9. Follow that Sprite}
 
 Did you notice that your truck quickly drives off-screen?
 
@@ -234,7 +234,7 @@ scene.cameraFollowSprite(truck)
 
 
 
-## Finale
+## {Finale}
 
 Well done!
 

@@ -1,14 +1,14 @@
 # Going Further
 ### @explicitHints true
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 In this tutorial, we'll customize your Monster Racer game to make it even more special.
 
 ![Animating your truck.](/static/skillmap/racer/racer3.gif "Look what we're about to make!")
 
 
-## 2. Review
+## {2. Review}
 
 
 Take a look at the code that's already in your workspace.
@@ -24,7 +24,7 @@ There should also be three **overlap** containers:
 Click "Replace my code" below to replace the code in your workspace with recommended code.
 
 
-## 3. Keep Rollin'
+## {3. Keep Rollin'}
 
 Let's add a block to animate your truck.
 
@@ -51,7 +51,7 @@ scene.cameraFollowSprite(truck)
 animation.runImageAnimation(truck, [img`.`], 500, true)
 ```
 
-## 4. Trucking Along
+## {4. Trucking Along}
 
 Choose your truck animation.
 
@@ -72,14 +72,14 @@ scene.cameraFollowSprite(truck)
 animation.runImageAnimation(truck, assets.animation`truck2 animated`, 100, true)
 ```
 
-## 5. Play it Again
+## {5. Play it Again}
 
 Remember to play your game again each time you make a change.
 
 Can you see the effects of the code you just wrote?
 
 
-## 6. Cave Design
+## {6. Cave Design}
 
 Finally, you can edit the cave to have your own set of pits and spikes!
 
@@ -96,7 +96,7 @@ The current tilemap will open in the **Tilemap Editor**.
 hint~
 
 
-## 7. Cave Walls
+## {7. Cave Walls}
 
 Click the **wall** icon to solidify tiles.
 
@@ -108,7 +108,7 @@ With the wall icon highlighted, you can select the eraser tool to remove walls, 
 
 hint~
 
-## Finale
+## {Finale}
 
 Excellent!
 
