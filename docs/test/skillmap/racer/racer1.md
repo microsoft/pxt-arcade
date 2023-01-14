@@ -37,14 +37,13 @@ You should see the background with the spooky trees and a dark cave layer on top
 
 ---
 
-- :mouse pointer: When you're ready to continue, click **Next**.
-
-
 ~hint Click here to see how 🕵🏽
 
 ![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
 
 hint~
+
+- :mouse pointer: When you're ready to continue, click **Next**.
 
 ## {4. Add the Truck}
 
