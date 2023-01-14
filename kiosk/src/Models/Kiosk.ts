@@ -119,6 +119,18 @@ export class Kiosk {
         }
     }
 
+    removeGameFromList(): void {
+        //NOTE: for pre-loaded games: if the page is refreshed, those games will come back.
+        // might want to have a discussion on how this is dealt
+        const removedGame: GameData = this.games.splice(this.selectedGameIndex!, 1)[0];
+        const addedGameIds = this.getAllAddedGames();
+
+        if (removedGame.id in addedGameIds) {
+            localStorage.removeItem(this.addedGamesLocalStorageKey);
+        }
+        //for removing added games: need to remove game from local storage AND the game list
+    }
+
     gamePadLoop(): void {
         const isDebug = true;
         if (isDebug) {
