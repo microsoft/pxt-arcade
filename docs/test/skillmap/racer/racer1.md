@@ -11,43 +11,9 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 
 
 
-## {2. The Scene is Set}
-
-
-- :binoculars: We have already added **tilemap** and
-**background image** blocks into the game to set the scene in this activity.
-
----
-
-- :mouse pointer: When you're ready to continue, click **Next**.
-
-
-
-## {3. Look at the Game!}
-
-Open the game window to take a look at the scene you've just set up.
-
----
-
-To take a closer look, you can click on the **preview window** in the lower-right corner of your screen.
-
----
-
-You should see the background with the spooky trees and a dark cave layer on top.
-
----
-
-~hint Click here to see how 🕵🏽
-
-![Click the Game Window tab to see your scene. ](/static/skillmap/racer/toggle-tab.gif "Don't forget to look at your game!")
-
-hint~
-
-- :mouse pointer: When you're ready to continue, click **Next**.
-
 ## {4. Add the Truck}
 
-It's time to set up your monster truck. To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
+First, let's set up your monster truck. To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
 
 ---
 
@@ -60,7 +26,9 @@ to **the end** of the <br/>
 ``||loops:on start||`` <br/>
 container.
 
-- :paint brush:  To choose a truck, click the empty grey box, then select **My Assets**.
+- :paint brush:  To choose a truck, click the empty grey box to display the image editor, then select **My Assets**.
+
+![Choose a truck sprite](/static/skillmap/racer/truck2.png "Choose a truck image from the gallery")
 
 _💡 This image shows the **truck2** sprite, but you can use whichever one you want._
 
