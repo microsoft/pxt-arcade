@@ -1,10 +1,6 @@
 const kioskBackendEndpoint: string = "https://makecode.com/api/kiosk";
 const apiBackendEndpoint: string = "https://makecode.com/api"
 
-export const isLocal = () => {
-    return window.location.hostname === "localhost";
-}
-
 export const getGameCodeAsync = async (kioskCode: string) => {
     const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`; 
     let response = await fetch(getGameCodeUrl);
