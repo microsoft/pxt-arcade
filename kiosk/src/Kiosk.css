@@ -125,10 +125,15 @@ h2 {
 .deleteGame {
     color: var(--main-text-color);
     height: 2rem;
-    margin-top: -7.75rem;
+    margin-top: -7rem;
     margin-left: 55%;
     border: none;
     text-align: center;
+    width: 3rem;
+}
+
+.deleteGame svg {
+    fill: white;
 }
 
 .deleteGame p {
