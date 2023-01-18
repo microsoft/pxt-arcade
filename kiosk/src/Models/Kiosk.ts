@@ -6,6 +6,7 @@ import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { runInThisContext } from "vm";
 import { getGameDetailsAsync } from "../BackendRequests"
+import { tickEvent } from "../browserUtils";
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -53,6 +54,8 @@ export class Kiosk {
             catch (error) {
                 throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
             }
+        } else {
+            tickEvent("kiosk.clean");
         }
 
         // the added games persist in local storage, but not the live game list
@@ -91,7 +94,8 @@ export class Kiosk {
                 gameDescription = this.defaultGameDescription;
             }
 
-            const newGame = new GameData(gameId, gameName, gameDescription, "None");
+            const gameUploadDate = (new Date()).toLocaleString()
+            const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate);
 
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;

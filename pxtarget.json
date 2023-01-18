@@ -89,6 +89,7 @@
         "libs/mixer---rp2040",
         "libs/mouse",
         "libs/mqtt",
+        "libs/multiplayer",
         "libs/net",
         "libs/net-game",
         "libs/palette",
@@ -644,7 +645,7 @@
         "assetEditor": true,
         "immersiveReader": true,
         "tutorialCodeValidation": true,
-        "multiplayerShareButton": true,
+        "multiplayer": true,
         "songEditor": true
     },
     "queryVariants": {
