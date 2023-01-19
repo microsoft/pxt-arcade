@@ -1,6 +1,6 @@
 # Kiosk
 
-To allow users to showcase their games in a fun and unique way, the games' Kiosk is added to Makecode Arcade. The purpose of the Kiosk is to further encourage users to upload their games. The Kiosk is an interface where a list of games is displayed in a carousel, letting a user scroll through what's currently highlighted to play. Hopefully, this will users excite users to want to upload their games.  
+To allow users to showcase their games in a fun and unique way, the Kiosk is added to Makecode Arcade. The Kiosk is an interface where a list of games is displayed in a carousel, letting a user scroll through what's currently highlighted to play. Hopefully, this will excite users to want to upload their games.  
 
 ## Getting started 
 
@@ -10,7 +10,7 @@ The default Kiosk contains an initial set some of our most popular games from Ar
 
 ## Clearing the Kiosk
 
-To have students start with an empty (clean) Kiosk, so that they won't be tempted to just strart by playing random games, you can add the clean flag to the url:
+To have students start with an empty (clean) Kiosk, so that they won't be tempted to play random games, you can add the clean flag to the url:
 
 https://arcade.makecode.com/kiosk?clean=1
 
@@ -74,7 +74,7 @@ Get the share link or QR code of the game you created in MakeCode Arcade.
 
 The steps to get your game's share link or QR code are outlined [below](#share-link-qr-code).
 
-Use the page that looks like the one below to add your game.
+Use the following page to add your game.
 
 ![Add the game to a kiosk](/static/developer/kiosk/add-to-kiosk.png)
 
@@ -99,8 +99,18 @@ This will bring up the Developer Tools window.
 
 You can get a game's share link or QR code using these steps:
 
-1. Click on the three connected dots in the upper right corner of the Arcade editor.
-2. Make sure to change your project title to something fun and update the project thumbnail if desired. Click 'Share Project'.
-3. For the share link: Click 'Copy'.
-4. This will copy the game's share link to your clipboard.
-5. To scan the QR Code, click on the QR code to enlarge it.
+Click on the three connected dots in the upper right corner of the Arcade editor.
+
+![Arcade edtior menu bar](/static/developer/kiosk/menu-bar.png)
+
+Make sure to change your project title to something fun and update the project thumbnail if desired. Click 'Share Project'.
+
+![Share project and name the project](/static/developer/kiosk/shared-project-name.png)
+
+For the share link: Click 'Copy'. This will copy the game's share link to your clipboard.
+
+![Shared project link](/static/developer/kiosk/shared-project-link.png)
+
+To scan the QR Code, click on the QR code to enlarge it.
+
+![Enlarged QR code for scanning](/static/developer/kiosk/qr-code-enlarged.png)
