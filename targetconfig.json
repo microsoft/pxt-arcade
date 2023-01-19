@@ -136,7 +136,9 @@
             "S07439-34681-01269-56955",
             "S83499-96784-35479-44416",
             "S20979-80747-10645-55772",
-            "S42791-93051-00250-80367"
+            "S42791-93051-00250-80367",
+            "S13576-07071-76812-53311",
+            "S07614-94936-04135-66963"
         ]
     },
     "skillMap": {
@@ -189,6 +191,7 @@
     "galleries": {
         "Skillmaps": "skillmaps",
         "Tutorials": "tutorials",
+        "Multiplayer Games": "multiplayer-games",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
