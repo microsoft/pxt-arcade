@@ -1,6 +1,7 @@
 import { GameData } from "../Models/GameData";
 import { HighScore } from "../Models/HighScore";
 import { Kiosk } from "../Models/Kiosk";
+import { DeleteButton } from "./DeleteButton";
 import HighScoresList from "./HighScoresList";
 interface IProps {
     highScores: HighScore[];
@@ -27,6 +28,9 @@ const GameSlide: React.FC<IProps> = ({ highScores, buttonSelected, game }) => {
                     <div className="gameDate">
                         Added {game.date}
                     </div>
+                }
+                { game.userAdded &&
+                    <DeleteButton gameId={game.id} focused={false} pressed={false}/>
                 }
 
             </div>

@@ -1,30 +1,42 @@
 import { useEffect } from "react";
 import "../Kiosk.css";
+import { GameData } from "../Models/GameData";
 import { Kiosk } from "../Models/Kiosk";
 
+
 interface IProps {
-    kiosk: Kiosk ;
+    gameId: string ;
     focused: boolean;
     pressed: boolean;
 }
 
-export const DeleteButton: React.FC<IProps> = ({ kiosk, focused, pressed }) => {
-        //TODO: handle the case for the delete button when there are no kiosk games
+export const DeleteButton: React.FC<IProps> = ({ gameId, focused, pressed }) => {
+    const addedGamesLocalStorageKey: string = "UserAddedGames";
+
+    const getAllAddedGames= (): { [index: string]: GameData } => {
+        const json = localStorage.getItem(addedGamesLocalStorageKey);
+        if (!json) {
+            return {};
+        }
+        const allAddedGames: { [index: string]: GameData } = JSON.parse(json);
+        return allAddedGames;
+    }
 
     const specificButtonClass = focused ? "buttonSelected" : "buttonUnselected";
 
     useEffect(() => {
         if (pressed) {
-            console.log(kiosk.games);
-            kiosk.removeGameFromList()
+            const userAddedGames = getAllAddedGames();
+            if (gameId in userAddedGames) {
+                delete userAddedGames[gameId];
+                localStorage.setItem(addedGamesLocalStorageKey, JSON.stringify(userAddedGames));
+            }
         }
     }, [pressed]);
 
     return (
         <div className={`deleteGame ${specificButtonClass}`}>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg> */}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-            {/* <p>Delete</p> */}
         </div>
     )
 }
