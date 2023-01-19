@@ -646,7 +646,8 @@
         "immersiveReader": true,
         "tutorialCodeValidation": true,
         "multiplayer": true,
-        "songEditor": true
+        "songEditor": true,
+        "shareToKiosk": true
     },
     "queryVariants": {
         "skillsMap=1": {
