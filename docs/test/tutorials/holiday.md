@@ -226,9 +226,13 @@ bundles.wrap1(function () {
 })
 //@highlight
 bundles.wrap2(function () {
+  //@highlight
     let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
+  //@highlight
     mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
+  //@highlight
     player_2.setStayInScreen(true)
+  //@highlight
     player_2.right = 145
 })
 ```
@@ -258,7 +262,10 @@ block into **the end** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-
+```validation.local
+# BlocksExistValidator
+  * enabled: false
+```
 
 
 #### ~ tutorialhint
@@ -477,7 +484,10 @@ You have finished your very own Holiday Bow Battle!
 
 When you're ready, sign-in and click **Done** to challenge a friend to a multiplayer battle online!
 
-
+```validation.global
+# BlocksExistValidator
+  * UseAnswerKeyHighlight: true
+```
 
 
 
@@ -510,6 +520,8 @@ bundles.wrap2(function () {
 carnival.startCountdownGame(60, carnival.WinTypes.Multi)
 
 ```
+
+
 
 
 
