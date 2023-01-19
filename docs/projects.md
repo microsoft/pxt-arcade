@@ -15,6 +15,11 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Multiplayer Games",
+        "url": "/multiplayer-games",
+        "imageUrl": "/static/multiplayer/perfect-fit.png"
+    },
+    {
         "name": "Live Coding",
         "url": "/live-coding",
         "imageUrl": "/static/live-coding/7pBGS_tKfmU.jpg"
@@ -106,6 +111,7 @@
 
 [Skillmaps](/skillmaps),
 [Tutorials](/tutorials),
+[Multiplayer Games](/multiplayer-games),
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
