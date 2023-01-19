@@ -4,6 +4,7 @@ export class GameData {
         public description: string,
         public highScoreMode: string,
         public date?: string,
+        public userAdded?: boolean,
         ) {
     }
 }

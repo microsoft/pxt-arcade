@@ -5,6 +5,7 @@ import GameList from "./GameList";
 import configData from "../config.json"
 import HighScoresList from "./HighScoresList";
 import { DeleteButton } from "./DeleteButton";
+import { tickEvent } from "../browserUtils";
 
 interface IProps {
     kiosk: Kiosk
@@ -32,6 +33,7 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
             setDeleteTriggered(false);
         }
         if (addButtonSelected && (kiosk.gamepadManager.isAButtonPressed() || kiosk.gamepadManager.isBButtonPressed())) {
+            tickEvent("kiosk.addGamePageLoaded");
             kiosk.launchAddGame();
         }
         if (deleteButtonSelected && (kiosk.gamepadManager.isAButtonPressed() || kiosk.gamepadManager.isBButtonPressed())) {
@@ -52,6 +54,8 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                     clearInterval(intervalId);
                 }
             };
+        } else {
+            tickEvent("kiosk.locked");
         }
     });
 

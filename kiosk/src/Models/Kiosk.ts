@@ -6,6 +6,7 @@ import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { runInThisContext } from "vm";
 import { getGameDetailsAsync } from "../BackendRequests"
+import { tickEvent } from "../browserUtils";
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -53,6 +54,8 @@ export class Kiosk {
             catch (error) {
                 throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
             }
+        } else {
+            tickEvent("kiosk.clean");
         }
 
         // the added games persist in local storage, but not the live game list
@@ -92,7 +95,7 @@ export class Kiosk {
             }
 
             const gameUploadDate = (new Date()).toLocaleString()
-            const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate);
+            const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate, true);
 
             this.games.push(newGame);
             allAddedGames[gameId] = newGame;
@@ -120,10 +123,10 @@ export class Kiosk {
     }
 
     removeGameFromList(): void {
-        //NOTE: for pre-loaded games: if the page is refreshed, those games will come back.
-        // might want to have a discussion on how this is dealt
         const removedGame: GameData = this.games.splice(this.selectedGameIndex!, 1)[0];
         const addedGameIds = this.getAllAddedGames();
+        console.log(addedGameIds);
+        delete addedGameIds[removedGame.id];
 
         if (removedGame.id in addedGameIds) {
             localStorage.removeItem(this.addedGamesLocalStorageKey);
