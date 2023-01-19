@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Kiosk } from "../Models/Kiosk";
 import "../Kiosk.css";
-import play from "./QrScanner";
+import { play, stopScan } from "./QrScanner";
 import { addGameToKioskAsync } from "../BackendRequests";
 import { KioskState } from "../Models/KioskState";
+import { Html5Qrcode } from "html5-qrcode";
+import { tickEvent } from "../browserUtils";
 
 interface IProps {
     kiosk: Kiosk
@@ -15,13 +17,40 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const screenWidth = window.screen.width;
     const phoneWidth = screenWidth < 500;
     const kioskId = urlHashList?.[1];
-    const [scannerVisible, setScanner] = useState(false);
+    const [scannerVisible, setScannerVisible] = useState(false);
     const [linkError, setLinkError] = useState(false);
+    const [linkVisible, setLinkVisible] = useState(false);
+    const qrReaderRendered = useRef(null);
+    const [html5QrCode, setHtml5QrCode] = useState<undefined | Html5Qrcode>();
 
     const renderQrScanner = () => {
-        play(kiosk, kioskId!);
-        setScanner(true);
+        tickEvent("kiosk.scanQrClicked");
+        play(kiosk, kioskId!, html5QrCode!);
+        setScannerVisible(true);
     }
+
+    const stopQrScanner = () => {
+        tickEvent("kiosk.stopScanClicked");
+        stopScan(html5QrCode!);
+        setScannerVisible(false);
+    }
+
+    const initiateQrCode = () => {
+        if (qrReaderRendered.current) {
+            const qrCodeReader = new Html5Qrcode("qrReader");
+            setHtml5QrCode(qrCodeReader);
+        }
+    }
+
+    const clickHelp = () => {
+        tickEvent("kiosk.helpLink");
+        return true;
+    }
+
+    useEffect(() => {
+        tickEvent("kiosk.scanQrLoaded");
+        initiateQrCode();
+    }, [])
 
     const checkUrl = async () => {
         const input = document.getElementById("kiosk-share-link") as HTMLInputElement;
@@ -34,10 +63,12 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
         } else if (shareCode) {
             shareId = shareCode[1];
         }
+        tickEvent("kiosk.submitGameId.clicked", { submitVal: inputValue });
         if (shareId) {
             setLinkError(false);
             try {
                 await addGameToKioskAsync(kioskId, shareId);
+                tickEvent("kiosk.submitGameId.submitSuccess");
                 kiosk.navigate(KioskState.QrSuccess);
             } catch (error) {
                 console.log("Unable to add game to kiosk. Please try again later");
@@ -48,44 +79,48 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     }
 
+    const clearStatus = () => {
+        if (linkError) {
+            setLinkError(false);
+        }
+    }
+
     return (
         <div className="scanQrPage">
-            <h2>Add game to </h2>
-            <h1>Kiosk {kioskId}</h1>
+            <h2>Add game to<br/>Kiosk {kioskId}</h2>
             <div className="scanInstructions">
                 <div className="qrOption">
-                    <p className="scanIntro">Scan game's share QR code with the button below</p>
                     {
                         !scannerVisible &&
                         <button className="scanQrButton" onClick={renderQrScanner} >Scan QR code</button>
                     }
-                    <div id="qrReader"></div>
+                    <div id="qrReader" ref={qrReaderRendered}></div>
                     {
                         scannerVisible &&
-                        <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
+                        <div className="scanning">
+                            <button className="scanQrButton" onClick={stopQrScanner} >Cancel Scan</button>
+                            <p className="scanTip">Tip: Do not use the kiosk's QR code</p>
+                        </div>
+                    }
+                    <p>OR</p>
+                </div>
+                <div className="linkOption">
+                    <label>Submit share link</label>
+                    <input type="url"
+                        id="kiosk-share-link"
+                        placeholder="Enter share link"
+                        spellCheck={false}
+                        required
+                        title="Share Link"
+                        onChange={clearStatus}
+                        />
+                    <input type="submit" onClick={checkUrl} />
+                    {
+                        linkError &&
+                        <p className="linkError">Incorrect format for a share link</p>
                     }
                 </div>
-
-                {
-                    !phoneWidth &&
-                    <div className="linkOption">
-                        <p>Can't scan?</p>
-                        <label>Submit share link here</label>
-                        <input type="url"
-                            id="kiosk-share-link"
-                            placeholder="Enter share link"
-                            spellCheck={false}
-                            required
-                            title="Share Link"
-                            />
-                        <input type="submit" onClick={checkUrl}></input>
-                        {
-                            linkError &&
-                            <p>Incorrect format for a share link</p>
-                        }
-                    </div>
-                }
-                <a className="shareHelp" target="_blank" href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
+                <a className="shareHelp" target="_blank" onClick={clickHelp} href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
                     How do I get a game's share link or QR code?
                 </a>
             </div>

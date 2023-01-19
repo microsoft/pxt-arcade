@@ -13,6 +13,8 @@
     --button-underline: #10b7e5;
     --game-tile-outline: #AFF1FF3d;
     --game-selected-outline: #AFF1FFaa;
+    --error-color: #ff7676;
+    --black-color-transparent: #050505ab;
 }
 
 html, body {
@@ -81,15 +83,13 @@ h2 {
     font-weight: 400;
     font-size: 2.25rem;
     color: var(--main-text-color);
-    margin-left: 27%;
-    margin-right: 2%;
+    grid-area: 1 / 2 / 2 / 4;
 }
 
 .mainMenuTopBar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     width: 100%;
 }
 
@@ -102,7 +102,7 @@ h2 {
 }
 
 .kioskButton {
-    padding: 1.25em 1em;
+    padding: 1.25vh 1em;
     font-family: inherit;
     letter-spacing: 0.2rem;
     background-color: var(--button-primary-color);
@@ -110,13 +110,23 @@ h2 {
     border-radius: 0.3em;
     border-color: var(--transparent-color);
     border-bottom: 0.5rem var(--button-underline) solid;
-    cursor: pointer;
+}
+
+.mainMenuButton {
+    grid-area: 1 / 4 / 2 / 5;
+    margin-top: 2rem;
 }
 
 .buttonSelected {
     border:#ffd700 0.5rem solid;
     box-shadow: 0 0 0.4rem var(--high-score-selector-color);
+}
 
+@media only screen and (max-width: 1200px) {
+    .mainMenuHeader {
+        font-weight: 400;
+        font-size: 1.75rem;
+    }
 }
 
 /* -------- ADDING GAME PAGE STYLING -------- */
@@ -230,13 +240,7 @@ h2 {
 }
 
 .scanQrPage h2 {
-    margin-bottom: 0;
     font-size: 2rem;
-}
-
-.scanQrPage h1 {
-    margin-bottom: 2rem;
-    font-size: 2.25rem;
 }
 
 .scanQrButton {
@@ -251,6 +255,13 @@ h2 {
     cursor: pointer;
     margin-right: 1rem;
     margin-top: 2rem;
+}
+
+.scanning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .scanQrButton:hover {
@@ -292,11 +303,11 @@ h2 {
 }
 
 .linkOption {
-    margin-top: 5rem;
     border-color: var(--button-primary-color);
     border-style: solid;
     border-radius: 1.5rem;
     padding: 2rem;
+    width: 350px;
 }
 
 .linkOption label {
@@ -306,7 +317,7 @@ h2 {
 .linkOption input[type=url] {
     margin-top: 1rem;
     border-color: var(--button-primary-color);
-    width: 20rem;
+    width: 67%;
     height: 2em;
     border-radius: 0.45em;
     text-overflow: ellipsis;
@@ -325,6 +336,11 @@ h2 {
     color: var(--secondary-dark-color);
 }
 
+.linkError {
+    font-family: 'Share';
+    color: var(--error-color);
+}
+
 .shareHelp {
     color: var(--main-text-color);
     overflow: auto;
@@ -341,17 +357,30 @@ h2 {
     margin-top: 2rem;
 }
 
+@media (max-width: 768px) {
+    .scanQrPage h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 570px) {
+    .linkOption {
+        width: 80%;
+    }
+}
+
+
 /* -------- GAME LIST  STYLING -------- */
 /* ----------------------------------- */
 
 .carouselWrap {
     width: 99%;
-    height: 80vh;
+    height: 85vh;
     border-radius: 1.5rem;
 }
 
 .swiper-slide-active .selected {
-    box-shadow: 0 0 1rem var(--high-score-selector-color);
+    box-shadow: 0 0 2rem var(--high-score-selector-color);
 }
 
 .unselected {
@@ -361,6 +390,10 @@ h2 {
 .swiper {
     width: 100%;
     height: 90%;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .swiper-wrapper {
@@ -368,15 +401,10 @@ h2 {
     padding-bottom: 2%;
 }
 
-.swiper-slide-active {
-    box-shadow: 0 0 1rem var(--game-selected-outline);
-}
-
 .gameTile {
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    width: 99%;
+    height: 99%;
+
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
@@ -384,55 +412,128 @@ h2 {
     image-rendering: pixelated;
     -ms-interpolation-mode: nearest-neighbor;
     border: var(--black-color) 2px solid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    box-shadow: 0 0 1rem var(--game-tile-outline);
 }
 
-.gameLabelBackground {
-    position: absolute;
-    bottom: 0;
-    height: 8rem;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+.pressStart {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: end;
+    justify-self: center;
+    background-color: var(--black-color-transparent);
+    padding: 1rem;
+    text-shadow: 1px 3px 0 var(--black-color);
+}
+
+.gameThumbnail {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    grid-area: 1 / 1 / 2 / 5;
+}
+
+.swiper-slide-active .gameThumbnail {
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.swiper-slide-active .gameDetails {
+    padding-left: 1rem;
+    background-color: var(--black-color);
+    grid-area: 1 / 4 / 2 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.gameDetails hr {
+    width: 90%;
+    margin-top: 1.5rem;
+}
+
+.gameDetails {
+    display: none;
 }
 
 .gameTitle {
-    position: absolute;
-    left: 0;
-    font-family: 'Share';
-    font-weight: 700;
-    font-size: 2.125em;
-    height: 2.375rem;
-    margin: 0.3rem;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .gameDescription {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     font-family: 'Share';
-    font-weight: 400;
     font-size: 1.25em;
-    height: 5rem;
-    margin: 0.3rem;
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+.gameHighScores {
+    grid-area: 4 / 1 / 6 / 2;
+}
+
+.gameDate {
+    font-family: 'Share';
+    font-size: 1.05em;
+    grid-area: 5 / 1 / 6 / 2;
+    align-self: end;
+    margin-bottom: 2rem;
+}
+
+.gameHighScoreHeader {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: left;
+    color: var(--button-primary-color);
+
+}
+
+.gameHighScoreContent {
+    line-height: 1.25rem;
+    font-size: 0.85rem;
+}
+
+.gameHighScoreScore {
+    margin-left: 2.5rem;
+}
+
+@media only screen and (min-width: 1920px) {
+    .swiper-slide-active .gameDetails {
+        padding: 6rem 2rem;
+    }
+
+    .gameHighScoreHeader {
+        font-size: 1.15rem;
+    }
+
+    .gameHighScoreContent {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 1490px) and (max-height: 715px) {
+    .gameTitle {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .gameDescription {
+        font-size: 1rem;
+    }
+
+    .gameHighScoreHeader {
+        font-size: 1rem;
+    }
+
+    .gameHighScoreContent {
+        font-size: 0.75rem;
+    }
 }
 
 /* -------- HIGH SCORE STYLING -------- */
 /* ----------------------------------- */
-
-.highScoreSmallDiv {
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 2rem;
-    text-align: center;
-    color: var(--high-score-color);
-}
-
-.highScoreSmallList {
-    text-align: right;
-}
-
-.highScoreSmallInitials {
-    min-width: 9.25rem;
-}
 
 .enterHighScore {
     display: flex;
