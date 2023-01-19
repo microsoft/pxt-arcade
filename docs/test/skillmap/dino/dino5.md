@@ -1,6 +1,5 @@
 # Go for Gusto
-
-### @autoexpandOff true
+### @explicitHints true
 
 
 ```template
