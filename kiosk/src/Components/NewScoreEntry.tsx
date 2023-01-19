@@ -4,6 +4,7 @@ import { Kiosk } from "../Models/Kiosk";
 import { KioskState } from "../Models/KioskState";
 import HighScoreInitial from "./HighScoreInitial";
 import configData from "../config.json"
+import { tickEvent } from "../browserUtils";
 
 interface IProps {
     kiosk: Kiosk
@@ -23,11 +24,13 @@ const NewScoreEntry: React.FC<IProps> = ({ kiosk }) => {
         if (kiosk.state !== KioskState.EnterHighScore) { return; }
 
         if (kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.newHighScore.nextInitial");
             setIndexChanged(true);
             setNextIndex(true);
         } 
 
         else if (kiosk.gamepadManager.isBButtonPressed()) {
+            tickEvent("kiosk.newHighScore.prevInitial");
             setIndexChanged(true);
             setPreviousIndex(true);
         } 
@@ -39,6 +42,7 @@ const NewScoreEntry: React.FC<IProps> = ({ kiosk }) => {
         }
 
         if (kiosk.gamepadManager.isEscapeButtonPressed()) {
+            tickEvent("kiosk.newHighScore.defaultInitialsUsed");
             kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
             kiosk.navigate(KioskState.GameOver);
         }
@@ -103,6 +107,7 @@ const NewScoreEntry: React.FC<IProps> = ({ kiosk }) => {
 
         if (updatedPressed >= 3) {
             setTimesAPressed(0);
+            tickEvent("kiosk.newHighScore.initialsEntered");
             kiosk.saveHighScore(kiosk.selectedGame!.id, initials, kiosk.mostRecentScores[0]);
             kiosk.navigate(KioskState.GameOver);
         }
