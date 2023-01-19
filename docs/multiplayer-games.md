@@ -10,7 +10,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/perfect-fit.png
-* url: https://arcade.makecode.com/---multiplayer?host=S07439-34681-01269-56955
+* url: https://arcade.makecode.com/---multiplayer?host=_bz3CCuWFiepH
 * cardType: link
 ---
 * name: Galga
@@ -18,7 +18,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/galga.png
-* url: https://arcade.makecode.com/---multiplayer?host=S83499-96784-35479-44416
+* url: https://arcade.makecode.com/---multiplayer?host=_C71PmfFaYDm2
 * cardType: link
 ---
 * name: Arrow Battle
@@ -26,7 +26,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/arrow-battle.gif
-* url: https://arcade.makecode.com/---multiplayer?host=S07614-94936-04135-66963
+* url: https://arcade.makecode.com/---multiplayer?host=_dCP7f8c3q5PJ
 * cardType: link
 ---
 * name: Tag
@@ -34,7 +34,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/tag.png
-* url: https://arcade.makecode.com/---multiplayer?host=S13576-07071-76812-53311
+* url: https://arcade.makecode.com/---multiplayer?host=_cvxPm1WesYyi
 * cardType: link
 ---
 * name: Horse Race
@@ -42,7 +42,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/horse-race.png
-* url: https://arcade.makecode.com/---multiplayer?host=S42791-93051-00250-80367
+* url: https://arcade.makecode.com/---multiplayer?host=_1DogpPTpb8fK
 * cardType: link
 ---
 * name: Painting Together
@@ -50,7 +50,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/painting.png
-* url: https://arcade.makecode.com/---multiplayer?host=S20979-80747-10645-55772
+* url: https://arcade.makecode.com/---multiplayer?host=_FdYfDwixRTAw
 * cardType: link
 
 ### ~

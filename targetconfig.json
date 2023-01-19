@@ -137,8 +137,12 @@
             "S83499-96784-35479-44416",
             "S20979-80747-10645-55772",
             "S42791-93051-00250-80367",
-            "S13576-07071-76812-53311",
-            "S07614-94936-04135-66963"
+            "_1DogpPTpb8fK",
+            "_bz3CCuWFiepH",
+            "_C71PmfFaYDm2",
+            "_dCP7f8c3q5PJ",
+            "_cvxPm1WesYyi",
+            "_FdYfDwixRTAw"
         ]
     },
     "skillMap": {
@@ -163,25 +167,25 @@
     "multiplayer": {
         "games": [
             {
-                "shareId": "S07439-34681-01269-56955",
+                "shareId": "_bz3CCuWFiepH",
                 "title": "Perfect Fit",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/perfect-fit.png"
             },
             {
-                "shareId": "S83499-96784-35479-44416",
+                "shareId": "_C71PmfFaYDm2",
                 "title": "Galga",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/galga.png"
             },
             {
-                "shareId": "S20979-80747-10645-55772",
+                "shareId": "_FdYfDwixRTAw",
                 "title": "Painting Together",
                 "subtitle": "1-4 player",
                 "image": "/static/multiplayer/painting.png"
             },
             {
-                "shareId": "S42791-93051-00250-80367",
+                "shareId": "_1DogpPTpb8fK",
                 "title": "Horse Race",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/horse-race.png"
