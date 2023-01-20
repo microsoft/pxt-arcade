@@ -117,28 +117,58 @@ h2 {
     margin-top: 2rem;
 }
 
+.deleteGame {
+    position: fixed;
+    left: 75%;
+    bottom: -3rem;
+    width: 12rem;
+    height: 2rem;
+    border: none;
+    text-align: center;
+    color: var(--error-color);
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: var(--transparent-color) 0.25rem solid;
+}
+
 .buttonSelected {
     border:#ffd700 0.5rem solid;
     box-shadow: 0 0 0.4rem var(--high-score-selector-color);
 }
 
-.deleteGame {
-    color: var(--main-text-color);
-    height: 2rem;
-    margin-top: -7rem;
-    margin-left: 55%;
-    border: none;
-    text-align: center;
-    width: 3rem;
-}
-
 .deleteGame svg {
-    fill: white;
+    width: 1.25rem;
+    height: 2rem;
+    fill: var(--error-color);
 }
 
 .deleteGame p {
-    margin: 0;
-    padding: 0.5rem 1.5rem;
+    display: inline;
+}
+
+.gameTile .deleted {
+    display: none;
+}
+
+.deleteSelected {
+    border:#ffd700 0.25rem solid;
+    box-shadow: 0 0 0.4rem var(--high-score-selector-color);
+}
+.swiper-slide-active .deleted {
+    animation: 1s shrink;
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1);
+        height: 100%;
+    }
+    to {
+        transform: scale(0.0001);
+        height: 0;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
