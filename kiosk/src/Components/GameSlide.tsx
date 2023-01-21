@@ -8,23 +8,25 @@ interface IProps {
     highScores: HighScore[];
     addButtonSelected: boolean;
     deleteButtonSelected: boolean;
-    game: GameData;
     deleteTriggered: boolean;
+    onTriggerDelete: (p: boolean) => void;
+    game: GameData;
+    kiosk: Kiosk;
 }
-const GameSlide: React.FC<IProps> = ({ highScores, addButtonSelected, deleteButtonSelected, game, deleteTriggered }) => {
+const GameSlide: React.FC<IProps> = (
+    {   highScores,
+        addButtonSelected,
+        deleteButtonSelected,
+        deleteTriggered,
+        onTriggerDelete,
+        game,
+        kiosk
+    }) => {
     const buttonSelected = addButtonSelected || deleteButtonSelected;
     const carouselSelected = buttonSelected ? "unselected" : "selected";
-    const [deleted, setDeleted] = useState("");
-
-    useEffect(() => {
-        if (deleteTriggered) {
-            console.log("got in the use effect, and changed deleted");
-            setDeleted("deleted");
-        }
-    }, [deleteTriggered]);
 
     return (
-        <div className={`gameTile ${carouselSelected} ${deleted}`}>
+        <div className={`gameTile ${carouselSelected}`}>
             <div className="gameThumbnail" 
                 style={{backgroundImage: `url("https://makecode.com/api/${game.id}/thumb")`}}
             />
@@ -42,7 +44,9 @@ const GameSlide: React.FC<IProps> = ({ highScores, addButtonSelected, deleteButt
                     </div>
                 }
                 { game.userAdded &&
-                    <DeleteButton gameId={game.id} focused={deleteButtonSelected} pressed={deleteTriggered}/>
+                    <DeleteButton kiosk={kiosk} gameId={game.id}
+                        focused={deleteButtonSelected} pressed={deleteTriggered} onPressed={onTriggerDelete}
+                        />
                 }
             </div>
         </div>
