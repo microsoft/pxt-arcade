@@ -1,0 +1,132 @@
+
+> makecode-arcade-kiosk@0.1.0 prestart
+> node ./scripts/linkfonts.js
+
+Inlining fonts/Press_Start_2P/PressStart2P-Regular.ttf
+Inlining fonts/Share/Share-Regular.ttf
+
+> makecode-arcade-kiosk@0.1.0 start
+> react-scripts start
+
+(node:5418) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:5418) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled with warnings.
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/camera.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/camera.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/code-decoder.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/code-decoder.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/core.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/core.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/experimental-features.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/experimental-features.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode-scanner.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode-scanner.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/image-assets.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/image-assets.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/index.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/index.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/native-bar-code-detector.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/native-bar-code-detector.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/state-manager.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/state-manager.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/storage.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/storage.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/strings.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/strings.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/scan-type-selector.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/scan-type-selector.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/torch-button.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/torch-button.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/utils.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/utils.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/zxing-html5-qrcode-decoder.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/zxing-html5-qrcode-decoder.ts'
+
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/html5-qrcode/third_party/index.js.map' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/html5-qrcode/third_party/index.js.map'
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in ./node_modules/html5-qrcode/esm/camera.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/camera.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/camera.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/code-decoder.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/code-decoder.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/code-decoder.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/core.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/core.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/core.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/experimental-features.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/experimental-features.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/experimental-features.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/html5-qrcode-scanner.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode-scanner.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode-scanner.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/html5-qrcode.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/html5-qrcode.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/image-assets.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/image-assets.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/image-assets.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/index.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/index.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/index.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/native-bar-code-detector.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/native-bar-code-detector.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/native-bar-code-detector.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/state-manager.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/state-manager.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/state-manager.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/storage.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/storage.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/storage.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/strings.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/strings.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/strings.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/ui.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/ui/scanner/scan-type-selector.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/scan-type-selector.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/scan-type-selector.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/ui/scanner/torch-button.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/torch-button.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/ui/scanner/torch-button.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/utils.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/utils.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/utils.ts'
+
+WARNING in ./node_modules/html5-qrcode/esm/zxing-html5-qrcode-decoder.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/zxing-html5-qrcode-decoder.ts' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/src/zxing-html5-qrcode-decoder.ts'
+
+WARNING in ./node_modules/html5-qrcode/third_party/zxing-js.umd.js
+Module Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+Failed to parse source map from '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/html5-qrcode/third_party/index.js.map' file: Error: ENOENT: no such file or directory, open '/home/srietkerk/make-code/pxt-arcade/kiosk/node_modules/html5-qrcode/third_party/index.js.map'
+
+webpack compiled with 18 warnings
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
