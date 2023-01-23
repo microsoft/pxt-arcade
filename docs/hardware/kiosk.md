@@ -78,21 +78,21 @@ Use the following page to add your game.
 
 ![Add the game to a kiosk](/static/hardware/kiosk/add-to-kiosk.png)
 
-If you submit/scan your game successfully, your game will be launched on the Kiosk. If you don't see your game, wait 5 seconds as the Kiosk might be polling for it. If you do not see your game in a couple of seconds, there might be something wrong. Check the logs on the page using the hardware Tools window.
+If you submit/scan your game successfully, your game will be launched on the Kiosk. If you don't see your game, wait 5 seconds as the Kiosk might be polling for it. If you do not see your game in a couple of seconds, there might be something wrong. Check the logs on the page using the Developer Tools window.
 
 ## Removing all user uploaded games from the Kiosk 
 
 At some point you may decide that you no longer want your games in the Kiosk anymore. If you want to get rid of all the user-uploaded games from Kiosk, follow these steps:
 
 1. Inspect the page by right clicking on the Kiosk's landing page and selecting 'Inspect'.
-This will bring up the hardware Tools window. 
+This will bring up the Developer Tools window. 
 2. In the 'Application' tab, find the 'Storage' section.
 3. Expand 'Local Storage'.
 4. Click https://arcade.makecode.com to see all the items.
 5. Filter the items with the word 'user'.
 6. Click on the entry 'UserAddedGames'.
 7. Press backspace or delete on your keyboard.
-8. Close the hardware tools.
+8. Close the Developer tools.
 9. Refresh the kiosk. You will now have the default kiosk.
 
 ## Getting a game's share link or QR code #share-link-qr-code
