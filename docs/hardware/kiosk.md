@@ -101,7 +101,7 @@ You can get a game's share link or QR code using these steps:
 
 Click on the three connected dots in the upper right corner of the Arcade editor.
 
-![Arcade edtior menu bar](/static/hardware/kiosk/menu-bar.png)
+![Arcade editor menu bar](/static/hardware/kiosk/menu-bar.png)
 
 Make sure to change your project title to something fun and update the project thumbnail if desired. Click 'Share Project'.
 
