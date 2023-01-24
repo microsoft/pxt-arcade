@@ -6,7 +6,7 @@ To allow users to showcase their games in a fun and unique way, the Kiosk is add
 
 The default Kiosk contains an initial set some of our most popular games from Arcade. This page is located at https://arcade.makecode.com/kiosk.
 
-![Starting screen](/static/developer/kiosk/select-a-game.png)
+![Starting screen](/static/hardware/kiosk/select-a-game.png)
 
 ## Clearing the Kiosk
 
@@ -16,21 +16,21 @@ https://arcade.makecode.com/kiosk?clean=1
 
 If there are no games uploaded yet, your kiosk will look like the following:
 
-![No games uploaded yet](/static/developer/kiosk/no-uploaded-games.png)
+![No games uploaded yet](/static/hardware/kiosk/no-uploaded-games.png)
 
 If you have only uploaded one game, you will see three copies of that game. This gives the illusion that you can move to the next or previous game even though it's the same one.
 
-![Just one uploaded game](/static/developer/kiosk/single-uploaded-game.png)
+![Just one uploaded game](/static/hardware/kiosk/single-uploaded-game.png)
 
 When you upload more games, you will see them in the list as you scroll through.
 
-![Multiple uploaded games](/static/developer/kiosk/multiple-uploaded-games.png)
+![Multiple uploaded games](/static/hardware/kiosk/multiple-uploaded-games.png)
 
 ## Locking the Kiosk
 
 If you are just looking to put games on display and not to edit the game list already in the kiosk, there is a **lock** flag that can be added to the url. This makes the **Add your game** button disappear. https://arcade.makecode.com/kiosk?lock=1 
 
-![Locked kiosk](/static/developer/kiosk/locked-state.png)
+![Locked kiosk](/static/hardware/kiosk/locked-state.png)
 
 You can put your Kiosk in a locked and clean state by using both flags together like the this:
 
@@ -51,7 +51,7 @@ There's a full list of do it yourself projects at:
 
 Because of this, the only way to interact with the kiosk is through keyboard controls. 
 
-![Keyboard controls](/static/developer/kiosk/keyboard-controls.png)
+![Keyboard controls](/static/hardware/kiosk/keyboard-controls.png)
 
 Two additional keyboard controls are:
 
@@ -62,21 +62,21 @@ Two additional keyboard controls are:
 
 Use the up arrow or trigger your joystick in the upwards direction to select the **Add your game** button.
 
-![Starting screen](/static/developer/kiosk/select-a-game.png)
+![Starting screen](/static/hardware/kiosk/select-a-game.png)
 
 Use the space bar or the a button to select the button. Then, scan the QR code on the Kiosk.
 
-![Add your game screen](/static/developer/kiosk/add-your-game.png)
+![Add your game screen](/static/hardware/kiosk/add-your-game.png)
 
 Get the share link or QR code of the game you created in MakeCode Arcade.
 
-![Share project window](/static/developer/kiosk/share-project.png)
+![Share project window](/static/hardware/kiosk/share-project.png)
 
 The steps to get your game's share link or QR code are outlined [below](#share-link-qr-code).
 
 Use the following page to add your game.
 
-![Add the game to a kiosk](/static/developer/kiosk/add-to-kiosk.png)
+![Add the game to a kiosk](/static/hardware/kiosk/add-to-kiosk.png)
 
 If you submit/scan your game successfully, your game will be launched on the Kiosk. If you don't see your game, wait 5 seconds as the Kiosk might be polling for it. If you do not see your game in a couple of seconds, there might be something wrong. Check the logs on the page using the Developer Tools window.
 
@@ -101,16 +101,16 @@ You can get a game's share link or QR code using these steps:
 
 Click on the three connected dots in the upper right corner of the Arcade editor.
 
-![Arcade edtior menu bar](/static/developer/kiosk/menu-bar.png)
+![Arcade editor menu bar](/static/hardware/kiosk/menu-bar.png)
 
 Make sure to change your project title to something fun and update the project thumbnail if desired. Click 'Share Project'.
 
-![Share project and name the project](/static/developer/kiosk/shared-project-name.png)
+![Share project and name the project](/static/hardware/kiosk/shared-project-name.png)
 
 For the share link: Click 'Copy'. This will copy the game's share link to your clipboard.
 
-![Shared project link](/static/developer/kiosk/shared-project-link.png)
+![Shared project link](/static/hardware/kiosk/shared-project-link.png)
 
 To scan the QR Code, click on the QR code to enlarge it.
 
-![Enlarged QR code for scanning](/static/developer/kiosk/qr-code-enlarged.png)
+![Enlarged QR code for scanning](/static/hardware/kiosk/qr-code-enlarged.png)
