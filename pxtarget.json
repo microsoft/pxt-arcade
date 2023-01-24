@@ -468,6 +468,9 @@
         "functionBlocks": true,
         "breakBlock": true,
         "continueBlock": true,
+        "pauseUntilBlock": {
+            "category": "loops"
+        },
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
