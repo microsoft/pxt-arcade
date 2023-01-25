@@ -168,11 +168,11 @@
             },
             "color-coded-tilemap": {
                 "preferred": true,
-                "tags": [ "Utility"]
+                "tags": [ "Utility" ]
             },
             "feather": {
                 "preferred": true,
-                "tags": [ "Hardware"]
+                "tags": [ "Hardware" ]
             }
         },
         "upgrades": {
