@@ -610,7 +610,8 @@
         "monacoFieldEditors": [
             "image-editor",
             "tilemap-editor",
-            "soundeffect-editor"
+            "soundeffect-editor",
+            "music-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
