@@ -13,7 +13,7 @@ Here are some cool activities to get you started with your @boardname@!
 * cardType: link
 ---
 * name: Stand with Wakanda
-* buttonLabel: Make it Now
+* buttonLabel: Make It Now
 * imageUrl: /static/hero-gallery/wakanda-banner.png
 * url: /tutorials/wakanda-forever
 * cardType: tutorial
@@ -24,7 +24,7 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/hour-of-code-2022
 * cardType: link
 ---
-* name: How to Code a Video Game
+* name: How To Code a Video Game
 * imageUrl: /static/hero-gallery/how-to-code.png
 * youTubePlaylistId: PLMMBk9hE-SepfPK6z19t6aAfwbOQNY6K7
 ---
