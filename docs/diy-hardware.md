@@ -39,6 +39,12 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "description": "Turn a shoebox into a USB game controller for a PC.",
         "imageUrl": "/static/hardware/shoebox.jpg",
         "url": "/hardware/shoebox-controller"
+    },
+    {
+        "name": "Kiosk",
+        "description": "Showcase games on your project Arcade in the Kiosk.",
+        "imageUrl": "/static/hardware/kiosk/kiosk-thumb.png",
+        "url": "/hardware/kiosk"
     }
 ]
 ```

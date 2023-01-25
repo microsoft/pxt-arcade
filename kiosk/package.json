@@ -22,10 +22,10 @@
   },
   "scripts": {
     "prestart": "node ./scripts/linkfonts.js",
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "prebuild": "node ./scripts/linkfonts.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "deploy": "node ./scripts/deploy.js"
   },
@@ -48,6 +48,9 @@
     ]
   },
   "devDependencies": {
-    "@types/qrcode": "^1.5.0"
+    "@types/qrcode": "^1.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "react-app-alias": "^2.2.2",
+    "react-app-rewired": "^2.2.1"
   }
 }
