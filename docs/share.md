@@ -2,7 +2,7 @@
 
 ![Arcade project share banner menu bar](/static/ide-tour/share-project/share-banner.jpg)
 
-You can share a Makecode Arcade project to the cloud and to make it available to anyone.
+You can share a Makecode Arcade project to the cloud and make it available to anyone.
 
 ## Share your project and a get share link or QR code
 
