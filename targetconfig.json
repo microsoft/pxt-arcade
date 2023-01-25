@@ -121,6 +121,60 @@
             "code-ninjas-home-office/game-building-session-tutorials": {},
             "microsoft/arcade-carnival": {}
         },
+        "builtinExtensionsLib": {
+            "controller": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "animation": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "multiplayer": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "sprite-scaling": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "corgio": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "darts": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "edge-connector": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "light": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "radio-broadcast": {
+                "preferred": true,
+                "tags": [ "Utility"]
+            },
+            "servo": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "sevenseg": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "color-coded-tilemap": {
+                "preferred": true,
+                "tags": [ "Utility"]
+            },
+            "feather": {
+                "preferred": true,
+                "tags": [ "Hardware"]
+            }
+        },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
