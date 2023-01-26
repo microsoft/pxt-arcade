@@ -62,7 +62,7 @@
             },
             "jwunderl/pxt-status-bar": {
                 "preferred": true,
-                "tags": [ "Sprites", "Info" ]
+                "tags": [ "Sprites" ]
             },
             "microsoft/pxt-settings-blocks": {
                 "preferred": true,
@@ -70,7 +70,7 @@
             },
             "microsoft/arcade-sprite-data": {
                 "preferred": true,
-                "tags": [ "Utility", "Info" ],
+                "tags": [ "Utility" ],
                 "upgrades": "min:v0.0.6"
             },
             "microsoft/arcade-grid": {
@@ -83,7 +83,7 @@
             },
             "microsoft/arcade-timers": {
                 "preferred": true,
-                "tags": [ "Utility", "Game" ]
+                "tags": [ "Utility" ]
             },
             "microsoft/arcade-text": {
                 "preferred": true,
@@ -136,7 +136,7 @@
             },
             "multiplayer": {
                 "preferred": true,
-                "tags": [ "Utility", "Controller", "Game", "Info", "Sprites" ]
+                "tags": [ "Utility", "Controller", "Sprites" ]
             },
             "sprite-scaling": {
                 "preferred": true,
@@ -172,7 +172,7 @@
             },
             "feather": {
                 "preferred": true,
-                "tags": [ "Hardware" ]
+                "tags": [ "Hardware", "Controller" ]
             }
         },
         "upgrades": {
