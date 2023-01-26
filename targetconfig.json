@@ -53,7 +53,8 @@
                 "tags": [ "Hardware" ]
             },
             "jwunderl/pxt-button-combos": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Controller" ]
             },
             "jwunderl/pxt-color": {
                 "preferred": true,
@@ -61,7 +62,7 @@
             },
             "jwunderl/pxt-status-bar": {
                 "preferred": true,
-                "tags": [ "Sprites" ]
+                "tags": [ "Sprites", "Info" ]
             },
             "microsoft/pxt-settings-blocks": {
                 "preferred": true,
@@ -69,17 +70,20 @@
             },
             "microsoft/arcade-sprite-data": {
                 "preferred": true,
-                "tags": [ "Utility" ],
+                "tags": [ "Utility", "Info" ],
                 "upgrades": "min:v0.0.6"
             },
-            "microsoft/arcade-grid": { "preferred": true },
-            "microsoft/arcade-minimap": {
+            "microsoft/arcade-grid": {
                 "preferred": true,
                 "tags": [ "Sprites" ]
             },
+            "microsoft/arcade-minimap": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
             "microsoft/arcade-timers": {
                 "preferred": true,
-                "tags": [ "Utility" ]
+                "tags": [ "Utility", "Game" ]
             },
             "microsoft/arcade-text": {
                 "preferred": true,
@@ -124,19 +128,19 @@
         "builtinExtensionsLib": {
             "controller": {
                 "preferred": true,
-                "tags": [ "Utility" ]
+                "tags": [ "Utility", "Controller" ]
             },
             "animation": {
                 "preferred": true,
-                "tags": [ "Sprites" ]
+                "tags": [ "Sprites", "Visual Effects" ]
             },
             "multiplayer": {
                 "preferred": true,
-                "tags": [ "Utility" ]
+                "tags": [ "Utility", "Controller", "Game", "Info", "Sprites" ]
             },
             "sprite-scaling": {
                 "preferred": true,
-                "tags": [ "Sprites" ]
+                "tags": [ "Sprites", "Visual Effects" ]
             },
             "corgio": {
                 "preferred": true,
@@ -163,10 +167,6 @@
                 "tags": [ "Hardware" ]
             },
             "sevenseg": {
-                "preferred": true,
-                "tags": [ "Utility" ]
-            },
-            "color-coded-tilemap": {
                 "preferred": true,
                 "tags": [ "Utility" ]
             },
