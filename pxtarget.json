@@ -468,6 +468,9 @@
         "functionBlocks": true,
         "breakBlock": true,
         "continueBlock": true,
+        "pauseUntilBlock": {
+            "category": "loops"
+        },
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
@@ -567,11 +570,11 @@
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": {
-            "imageUrl": "/static/hero-gallery/skillmap.png",
-            "name": "Start Skillmap",
-            "url": "https://aka.ms/ArcadeSkillmap",
-            "buttonLabel": "Start Skillmap",
-            "description": "New? Start here!",
+            "imageUrl": "/static/hero-gallery/multiplayer-banner.png",
+            "name": "Multiplayer Games!",
+            "url": "https://arcade.makecode.com/--multiplayer",
+            "buttonLabel": "Try Now",
+            "description": "Multiplayer Games!",
             "cardType": "link"
         },
         "homeScreenHeroGallery": "/hero-banner",
@@ -607,7 +610,8 @@
         "monacoFieldEditors": [
             "image-editor",
             "tilemap-editor",
-            "soundeffect-editor"
+            "soundeffect-editor",
+            "music-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
