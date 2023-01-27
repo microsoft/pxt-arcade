@@ -89,10 +89,13 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 const getGameCode = async () => {
                     try {
                         const gameCode: [string] = await getGameCodeAsync(kioskCode);
-                        await kiosk.saveNewGameAsync(gameCode);
+                        if (gameCode?.length) {
+                            await kiosk.saveNewGameAsync(gameCode);
+                        }
                         tickEvent("kiosk.gameUploaded");
                     }
                     catch (error) {
+                        console.log(error)
                     }
                     finally {
                         pollFrequency = setTimeout(async () => {
@@ -104,7 +107,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 pollTimeout = setTimeout(() => {
                     clearTimeout(pollTimeout);
                     clearTimeout(pollFrequency);
-                    reject();
+                    resolve();
                 }, timeoutDuration)
 
                 await getGameCode();
