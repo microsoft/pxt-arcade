@@ -7,9 +7,9 @@ export const getGameCodeAsync = async (kioskCode: string) => {
     if (!response.ok) {
         throw new Error("Unable to get data from the kiosk.");
     } else {
-        const gameCode = (await response.json())?.code;
-        if (gameCode !== "0") {
-            return gameCode;
+        const shareIds = (await response.json())?.code;
+        if (shareIds.lenghth !== "0") {
+            return shareIds;
         }
         throw new Error("Invalid game code");
     }

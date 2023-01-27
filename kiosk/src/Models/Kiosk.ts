@@ -79,29 +79,37 @@ export class Kiosk {
         return desc;
     }
 
-    async saveNewGameAsync(gameId: string): Promise<GameData | undefined> {
+    async saveNewGameAsync(gameIds: [string]): Promise<GameData[] > {
         const allAddedGames = this.getAllAddedGames();
-        if (!allAddedGames[gameId]) {
-            let gameName;
-            let gameDescription;
+        let gameData : GameData[] = []; 
+        for (let i = 0; i < gameIds.length; i++) {
+            let gameId = gameIds[i];
+            if (!allAddedGames[gameId]) {
+                let gameName;
+                let gameDescription;
 
-            try {
-                const gameDetails = await getGameDetailsAsync(gameId);
-                gameName = this.getGameName(gameDetails.name);
-                gameDescription = this.getGameDescription(gameDetails.description);
-            } catch (error) {
-                gameName = "Kiosk Game";
-                gameDescription = this.defaultGameDescription;
+                try {
+                    const gameDetails = await getGameDetailsAsync(gameId);
+                    gameName = this.getGameName(gameDetails.name);
+                    gameDescription = this.getGameDescription(gameDetails.description);
+                } catch (error) {
+                    gameName = "Kiosk Game";
+                    gameDescription = this.defaultGameDescription;
+                }
+
+                const gameUploadDate = (new Date()).toLocaleString()
+                const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate);
+
+                this.games.push(newGame);
+                allAddedGames[gameId] = newGame;
+                gameData.push(newGame);
             }
-
-            const gameUploadDate = (new Date()).toLocaleString()
-            const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate);
-
-            this.games.push(newGame);
-            allAddedGames[gameId] = newGame;
-            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
-            return newGame;
         }
+        if (gameData.length) {
+            //if any game was added
+            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
+        }
+        return gameData;
     }
 
     getAllAddedGames(): { [index: string]: GameData } {
