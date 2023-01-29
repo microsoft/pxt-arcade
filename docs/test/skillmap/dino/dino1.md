@@ -95,10 +95,10 @@ You should see Mama Dino in the middle of the screen.
 
 ## {Step 4}
 
-**Mama Dino needs to be able to up and down on the screen.**
+**Mama Dino needs to be able to move up and down on the screen.**
 
 
-- :game: From the ``||controller: Controller||`` category, grab  
+- :game: From the ``||controller: Controller||`` category, grab
 
 ```block
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
@@ -218,7 +218,7 @@ forever(function () {
 })
 ```
 loop container and drag it into an empty spot on the workspace.
-This will create a new baby dino every second at a random starting height. 
+This will create a new baby dino every second at a random starting height.
 
 - :paint brush:  Click the **grey square** in the ``||sprites:projectile [ ] from side||`` block for ``||variables(noclick):babyDino||`` and toggle to **My Assets** to choose the **Baby** sprite image.
 
