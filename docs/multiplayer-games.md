@@ -10,6 +10,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/perfect-fit.png
+* largeImageUrl: /static/multiplayer/perfect-fit.gif
 * url: https://arcade.makecode.com/---multiplayer?host=_bz3CCuWFiepH
 * cardType: link
 * otherAction: https://arcade.makecode.com/_bz3CCuWFiepH, , sharedExample
@@ -19,6 +20,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/galga.png
+* largeImageUrl: /static/multiplayer/galga.gif
 * url: https://arcade.makecode.com/---multiplayer?host=_C71PmfFaYDm2
 * cardType: link
 * otherAction: https://arcade.makecode.com/_C71PmfFaYDm2, , sharedExample
@@ -28,6 +30,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/arrow-battle.gif
+* largeImageUrl: /static/multiplayer/arrow-battle-large.gif
 * url: https://arcade.makecode.com/---multiplayer?host=_dCP7f8c3q5PJ
 * cardType: link
 * otherAction: https://arcade.makecode.com/_dCP7f8c3q5PJ, , sharedExample
@@ -37,6 +40,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/tag.png
+* largeImageUrl: /static/multiplayer/tag.gif
 * url: https://arcade.makecode.com/---multiplayer?host=_cvxPm1WesYyi
 * cardType: link
 * otherAction: https://arcade.makecode.com/_cvxPm1WesYyi, , sharedExample
@@ -46,6 +50,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/horse-race.png
+* largeImageUrl: /static/multiplayer/horse-race.gif
 * url: https://arcade.makecode.com/---multiplayer?host=_1DogpPTpb8fK
 * cardType: link
 * otherAction: https://arcade.makecode.com/_1DogpPTpb8fK, , sharedExample
@@ -55,6 +60,7 @@ Try these multiplayer games with your friends!
 * buttonLabel: Host Game
 * actionIcon: xicon multiplayer
 * imageUrl: /static/multiplayer/painting.png
+* largeImageUrl: /static/multiplayer/painting.gif
 * url: https://arcade.makecode.com/---multiplayer?host=_FdYfDwixRTAw
 * cardType: link
 * otherAction: https://arcade.makecode.com/_FdYfDwixRTAw, , sharedExample

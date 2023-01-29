@@ -53,7 +53,8 @@
                 "tags": [ "Hardware" ]
             },
             "jwunderl/pxt-button-combos": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Controller" ]
             },
             "jwunderl/pxt-color": {
                 "preferred": true,
@@ -72,10 +73,13 @@
                 "tags": [ "Utility" ],
                 "upgrades": "min:v0.0.6"
             },
-            "microsoft/arcade-grid": { "preferred": true },
-            "microsoft/arcade-minimap": {
+            "microsoft/arcade-grid": {
                 "preferred": true,
                 "tags": [ "Sprites" ]
+            },
+            "microsoft/arcade-minimap": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
             },
             "microsoft/arcade-timers": {
                 "preferred": true,
@@ -120,6 +124,56 @@
             },
             "code-ninjas-home-office/game-building-session-tutorials": {},
             "microsoft/arcade-carnival": {}
+        },
+        "builtinExtensionsLib": {
+            "controller": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller" ]
+            },
+            "animation": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
+            "multiplayer": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller", "Sprites" ]
+            },
+            "sprite-scaling": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
+            "corgio": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "darts": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "edge-connector": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "light": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "radio-broadcast": {
+                "preferred": true,
+                "tags": [ "Utility"]
+            },
+            "servo": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "sevenseg": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "feather": {
+                "preferred": true,
+                "tags": [ "Hardware", "Controller" ]
+            }
         },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
