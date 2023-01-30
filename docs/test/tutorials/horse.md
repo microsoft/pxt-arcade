@@ -366,18 +366,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Finish, function (sprite, otherS
 ```
 
 ```ghost
-
 namespace SpriteKind {
     export const Finish = SpriteKind.create()
 }
-controller.player4.onEvent(ControllerEvent.Connected, function () {
-    set_up_for_players(4)
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Finish, function (sprite, otherSprite) {
     carnival.customGameOverExpanded("Player " + mp.getPlayerProperty(mp.getPlayerBySprite(sprite), mp.PlayerProperty.Number) + " Wins!", effects.confetti, music.powerUp, carnival.ScoreTypes.LTime)
 })
-mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
-    mp.getPlayerSprite(player2).x += 1.5
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player) {
+    mp.getPlayerSprite(player).x += 1.5
 })
 function set_up_for_players (num: number) {
     sprites.destroyAllSpritesOfKind(SpriteKind.Player)
@@ -386,19 +382,19 @@ function set_up_for_players (num: number) {
         mp.getPlayerSprite(mp.getPlayerByIndex(index)).setPosition(20, 115 / (num + 1) + 20 * index)
     }
 }
-controller.player3.onEvent(ControllerEvent.Connected, function () {
-    set_up_for_players(3)
+mp.onControllerEvent(ControllerEvent.Connected, function (player2) {
+    set_up_for_players(mp.getPlayerProperty(player2, mp.PlayerProperty.Number))
 })
 let list: Image[] = []
 list = [
 assets.image`p1`,
 assets.image`p2`,
-assets.image`p3`,
-assets.image`p4`
+assets.image`p4`,
+assets.image`p3`
 ]
 scene.setBackgroundColor(1)
 scene.setBackgroundImage(assets.image`bgFrame`)
-set_up_for_players(4)
+set_up_for_players(2)
 let finish = sprites.create(assets.image`finish`, SpriteKind.Finish)
 finish.setPosition(150, 50)
 let textSprite2 = textsprite.create("Horse Race")

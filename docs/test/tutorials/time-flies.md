@@ -80,7 +80,7 @@ block into **the end** of the<br/>
 
 ```validation.local
 # BlocksExistValidator
-  * UseAnswerKeyHighlight: false
+* Enabled: false
 ```
 
 #### ~ tutorialhint

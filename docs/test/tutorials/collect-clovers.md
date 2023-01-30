@@ -519,7 +519,7 @@ let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
 
 ```validation.local
 # BlocksExistValidator
-  * UseAnswerKeyHighlight: false
+    * Enabled: false
 ```
 
 #### ~ tutorialhint
@@ -712,7 +712,7 @@ Instead of adding a score, our player should lose a life when they run into a be
     info.changeScoreBy(1)
 ```
 block inside the  <br/>
-``||sprites(noclick):on sprite overlaps [Enemy]||`` <br/> container that's already in the workspace and delete it.
+``||sprites(noclick):on sprite overlaps [Enemy]||`` <br/> container that's already in the workspace and **delete it**.
 
 
 
