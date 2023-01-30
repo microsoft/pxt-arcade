@@ -270,7 +270,7 @@ game.onUpdateInterval(1000, function () {
     simplified.moveToRandomHoleOnGrid(myMole)
 })
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
-
+simplified.moveToRandomHoleOnGrid(myMole)
 ```
 
 

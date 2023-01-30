@@ -351,6 +351,7 @@ game.onUpdateInterval(5000, function () {
 
 ## {Step 13 - Set the Bee to Enemy}
 
+
 To make the bee dangerous, we need to change its **kind** to **Enemy**.
 
 ---
@@ -364,6 +365,7 @@ and drag it into **the end** of the ``||game(noclick):on game update [5000]ms||`
 
 
 ```blockconfig.local
+
 
 let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
     bee.setKind(SpriteKind.Enemy)
@@ -449,7 +451,6 @@ container and drop it into the empty<br/>
 container already in the workspace.
 
 
-
 ~hint Why call the clover "othersprite"? 💡
 
 ---
@@ -459,6 +460,7 @@ You might think the overlap should use the names "hero" and "clover", but that w
 Every clover is named "clover", so if you choose to delete "clover" on overlap, it will always delete the last one created, **not** just the one you overlapped with!
 
 This is why the overlap event uses the terms "sprite" and "othersprite". That way, you have nicknames you can use to access the _exact_ sprites that overlapped one another.
+
 
 
 hint~
@@ -567,8 +569,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ## {Step 19 - Change Score}
 
 
-
-
 **Add points when a clover is collected**
 
 
@@ -616,6 +616,25 @@ and choose **duplicate**.
 _Don’t worry if it looks disabled, we’ll fix that._
 
 
+## {Step 20 - Add Overlaps behavior for Bee @fullscreen}
+
+**We need an overlap behavior for the bee**
+
+- :mouse pointer: Right-click on the the<br/>
+``||sprites(noclick):on sprite overlaps||`` <br/>
+container that's already in your workspace.
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 100)
+    music.baDing.play()
+    info.changeScoreBy(1)
+})
+```
+and choose **duplicate**.
+
+_Don’t worry if it looks disabled, we’ll fix that._
+
+
 - :mouse pointer: In the copied <br/>
 ``||sprites(noclick):on sprite overlaps||`` <br/>
 block, click the kind ``||sprites:Projectile||`` and change it to ``||sprites:Enemy||``.
@@ -642,6 +661,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ```
 
 ## {Step 21 - Change effects and sounds}
+
 
 Let's choose some better sounds and effects for the bee.
 
@@ -747,6 +767,7 @@ Click **Done** to share your game with family and friends!
 ```validation.global
 # BlocksExistValidator
 ```
+
 
 ```blockconfig.global
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) { })
