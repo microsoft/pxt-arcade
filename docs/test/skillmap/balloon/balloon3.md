@@ -301,12 +301,11 @@ myMouse.setImage(img`.`)
 
 ```
 
-
 ```package
 sprite-scaling
 carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
-balloon-images=github:kiki-lee/balloon-images
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
+balloon-images=github:kiki-lee/balloon-images#v0.0.1
 ```
 
 

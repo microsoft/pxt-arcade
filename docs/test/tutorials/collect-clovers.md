@@ -15,14 +15,13 @@ Create a garden game to collect 4-leaf clovers and avoid the bees!
 
 
 
-## {Step 1 - Set the Background image}
+## {Step 2 - Set the Background image}
 
 
 Start by setting the scene.
 
 
 - :tree: Open the ``||scene:Scene||`` category and drag
-
 ```block
 scene.setBackgroundImage(img`.`)
 ```
@@ -53,7 +52,7 @@ scene.setBackgroundImage(img`.`)
 
 
 
-## {Step 2}
+## {Step 3}
 
 **Choose your background!**<br/>
 🖼 🖼 🖼
@@ -62,11 +61,11 @@ scene.setBackgroundImage(img`.`)
 
 
 - :mouse pointer: Click the grey box inside<br/>
-
 ```block
 scene.setBackgroundImage(img`.`)
 ```
 to open the image editor.
+
 
 - :paint brush: Draw a nice grassy background, or choose an image from the **gallery**.
 
@@ -81,9 +80,9 @@ scene.setBackgroundImage(assets.image`background`)
 
 
 
-## {Step 3}
+## {Step 4}
 
-**Take a look at the game window**
+**Check the game window 🎮**
 
 Do you see the background you chose?
 
@@ -91,20 +90,19 @@ Do you see the background you chose?
 
 
 
-## {Step 4}
+## {Step 5}
 
-**Choose your hero!**<br/>
-⭐ ⭐ ⭐
+**⭐ Choose your hero ⭐**<br/>
 
 Do you want a rabbit? A princess? A warrior?
 
 
 - :paper plane: From ``||sprites: Sprites||``, drag
-
 ```block
 let hero = sprites.create(img`.`, SpriteKind.Player)
 ```
 into **the end** of the ``||loops(noclick): on start||`` container.
+
 
 - :paint brush: Click the empty grey box and switch to the **gallery** to
  select a character for your project.
@@ -123,17 +121,15 @@ let hero = sprites.create(assets.image`hero`, SpriteKind.Player)
 
 
 
-## {Step 5}
+## {Step 6}
 
 **The hero needs to be able to move around the screen.**
 
 
 - :game: From the ``||controller: Controller||`` category, grab
-
 ```block
 controller.moveSprite(hero)
 ```
-
 and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
@@ -151,7 +147,7 @@ controller.moveSprite(hero)
 
 
 
-## {Step 6 - Keep the Player in the screen}
+## {Step 7 - Keep the Player in the screen}
 
 
 **The hero can leave the screen if things get crazy.**
@@ -160,12 +156,10 @@ Let's fix that.
 
 
 - :paper plane: From the ``||sprites: Sprites||`` category, grab
-
 ```block
 let hero: Sprite = null
 hero.setStayInScreen(true)
 ```
-
 and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 
@@ -180,19 +174,27 @@ hero.setStayInScreen(true)
 ```
 
 
-## {Step 7 - Game Update}
 
-Every 5 seconds, we want a clover and a bee to appear in our game.
+## {Step 8}
+
+**Check the game window 🎮**
+
+You should be able to move your hero around with the joypad or arrow keys.
+
+Your hero should stay on the screen at all times.
+
+
+
+## {Step 9 - Game Update}
+
+Every 5 seconds, we want more clovers and bees to appear in our game.
 
 - :circle: From the ``||game:Game||`` category, grab
-
-```block
-game.onUpdateInterval(200, function () {
-
-})
+```blocks
+game.onUpdateInterval(200, function () { })
 ```
-
 and snap it into an **empty area** of the workspace.
+
 
 - :mouse pointer: Click on the **200 ms** value and change it to **5 seconds**
 (which is 5000 milliseconds).
@@ -201,58 +203,137 @@ and snap it into an **empty area** of the workspace.
 #### ~ tutorialhint
 
 ```blocks
+//@highlight
 game.onUpdateInterval(5000, function () {
 
 })
 ```
 
-## {Step 7 - Add a Clover Projectile}
 
-A Projectile is a Sprite that moves on its own. From the ``||sprites:Sprites||`` Toolbox drawer, drag a
-``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||`` block and drop into the
-``||game:on game update on every||`` block. Click on the grey oval to open the sprite
-image editor and draw an image of a 4-leaf Clover.
+
+
+## {Step 10}
+
+**The hero needs something to collect!**
+
+Let's add some clovers 🍀
+
+---
+
+- :paper plane:  From ``||sprites:Sprites||``, grab the
+```block
+    let clover = sprites.createProjectileFromSide(img`.`, 50, 50)
+```
+and drag it into the empty ``||game(noclick):on game update [5000]ms||`` container that's already in your workspace.
+
+
+- :paint brush:  Click the **grey square** and draw a clover (or choose one from the **gallery**).
+
+
 
 #### ~ tutorialhint
+
 
 ```blocks
 let projectile: Sprite = null
 game.onUpdateInterval(5000, function () {
-    projectile = sprites.createProjectileFromSide(assets.image`collect`, 50, 50)
+    //@highlight
+    clover = sprites.createProjectileFromSide(assets.image`collect`, 50, 50)
 })
 ```
 
-## {Step 8 - Add Random Movements}
+## {Step 11 - Add Random Movements}
 
-Notice how our Clovers are always coming from the top right in a diagonal direction. Let’s add some random
-movements by setting the **X** and **Y** velocity values. From the ``||math:Math||`` Toolbox drawer, drag out 2
-``||math:pick random||`` blocks onto the workspace. Drop one into the **vx** value and drop the other into
-the **vy** value of the ``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||`` block. In each of the
-``||math:pick random||`` blocks, change the minimum and maximum values to `-50` and `50`.
+Our clovers are always coming from the top right and dropping to the bottom left.
+
+Let’s add variety using random numbers.
+
+
+
+- :calculator:  From the ``||math:Math||`` category, drag two
+```block
+randint(-50, 50)
+```
+blocks into the workspace.
+
+
+- :mouse pointer: Drop one ``||math:pick random||`` block in to replace each of the **vx** and **vy** values of the <bbr/>
+``||variables:set clover to projectile||`` <br/>
+block.
+
+
+~hint What are random numbers? 💡
+
+---
+
+**Random** numbers are numbers that don't appear to have a predictable pattern. Using our `random` block, you'll be given a number between the minimum and maximum that you set, but you won't know which number will be chosen beforehand.
+
+This number is rechosen every time the block runs, and each time you may randomly end up with a number that is either the same or different than the last.
+
+hint~
+
+
+~hint What are vx and vy? 💡
+
+---
+
+The field **vx** is for the **velocity** of the item from side to side.<br/>
+The velocity of an item is the speed that it travels in a direction.
+
+_Velocity in the x (horizontal) direction_
+
+- A **vx** greater than 0 will send something moving right.
+- A **vx** less than 0 will send something moving left.
+- A **vx** of 0 will not change its position.
+
+_Velocity in the y (vertical) direction_
+
+- A **vy** greater than 0 will send something moving down.
+- A **vy** less than 0 will send something moving up.
+- A **vy** of 0 will not change its position.
+
+hint~
+
 
 #### ~ tutorialhint
 
 ```blocks
-let projectile: Sprite = null
+
 game.onUpdateInterval(5000, function () {
-    projectile = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
+
+//@highlight
+    let clover = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
 })
 ```
 
-## {Step 9 - Add Bee Projectile @fullscreen}
+## {Step 12 - Add Bee Projectile @fullscreen}
 
-Now let’s add a Bee projectile. Right-click on the ``||variables(sprites):set projectile to||`` ``||sprites:projectile from side||``
-clover block that we just created and select **Duplicate**. Drop the copied block after the existing clover
-projectile block, click on the ``||variables(noclick):projectile||`` variable name drop-down, and select **New variable**. Name this
-variable **"bee"**. Then click on the grey oval to open the sprite image editor and draw an image of a bee.
+Now we can add the bee 🐝
 
-![Create the bee projectile](/static/tutorials/collect-the-clovers/bee-projectile.png)
+---
+
+- :paper plane:  From ``||sprites:Sprites||``, grab
+```block
+    let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+```
+and drag it into **the end** of the ``||game(noclick):on game update [5000]ms||`` container that's already in your workspace.
+
+
+- :paint brush:  Click the **grey square** and draw a bee (or choose one from the **gallery**).
+
+
+- :calculator:  From ``||math:Math||``, drag more
+```block
+randint(-50, 50)
+```
+blocks into the **vx** and **vy** for <br/>
+``||variables:set bee to projectile||``</br> block.
 
 
 
 ```blockconfig.local
 
-bee = sprites.createProjectileFromSide(assets.image`avoid`, randint(-50, 50), randint(-50, 50))
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
     bee.setKind(SpriteKind.Enemy)
 ```
 
@@ -260,82 +341,250 @@ bee = sprites.createProjectileFromSide(assets.image`avoid`, randint(-50, 50), ra
 #### ~ tutorialhint
 
 ```blocks
-let projectile: Sprite = null
-let bee: Sprite = null
+
 game.onUpdateInterval(5000, function () {
-    projectile = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
-    bee = sprites.createProjectileFromSide(assets.image`avoid`, randint(-50, 50), randint(-50, 50))
+    let clover = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
+//@highlight
+    let bee = sprites.createProjectileFromSide(assets.image`avoid`, randint(-50, 50), randint(-50, 50))
 })
 ```
 
-## {Step 10 - Set the Bee to Enemy}
+## {Step 13 - Set the Bee to Enemy}
 
-To make the Bee an enemy sprite, we need to set its kind. From the ``||sprites:Sprites||`` Toolbox drawer,
-under the **Overlaps** category, drag a ``||sprites:set sprite kind||`` block and drop after the
-``||variables:set bee to||`` ``||sprites:projectile||`` block. Click on the ``||variables(noclick):hero||`` variable
-drop-down menu and select the **bee** variable. Click on the ``||sprites:Player||`` kind drop-down menu and select
-``||sprites:Enemy||`` sprite kind.
+To make the bee dangerous, we need to change its **kind** to **Enemy**.
+
+---
+
+- :paper plane:  From ``||sprites:Sprites||``, grab
+```block
+    let bee: Sprite = null
+     bee.setKind(SpriteKind.Enemy)
+```
+and drag it into **the end** of the ``||game(noclick):on game update [5000]ms||`` container that's already in your workspace.
+
+
+```blockconfig.local
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
 
 #### ~ tutorialhint
 
 ```blocks
-let projectile: Sprite = null
-let bee: Sprite = null
+
 game.onUpdateInterval(5000, function () {
-    projectile = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
-    bee = sprites.createProjectileFromSide(assets.image`avoid`, randint(-50, 50), randint(-50, 50))
+    let clover = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
+    let bee = sprites.createProjectileFromSide(assets.image`avoid`, randint(-50, 50), randint(-50, 50))
+//@highlight
     bee.setKind(SpriteKind.Enemy)
 })
 ```
 
-## {Step 11 - Add Overlaps behavior}
+## {Step 14 - Add Overlaps behavior}
 
-Now let’s add code that will increment our score when the ``||sprites:Player||`` collects a clover.
-From the ``||sprites:Sprites||`` Toolbox drawer, in the **Overlaps** section, drag an
-``||sprites:on sprite overlaps||`` block and drop on the Workspace (you can place this anywhere).
-Click on the last ``||sprites:Player||`` kind drop-down menu and select ``||sprites:Projectile||`` sprite kind.
+Time to add the code that will give a point when the hero overlaps the clover.
 
-#### ~ tutorialhint
-
+- :paper plane:  From ``||sprites:Sprites||``, grab
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+   sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {  })
+```
+and drag it into **an empty** area of the workspace.
 
-})
+
+~hint What's a sprite? 💡
+
+In Arcade, each character or image that does something is called a **SPRITE**.
+
+Sprites have properties that you can use and change — things like scale, position, and lifespan are all properties of sprites.
+
+Our mole will be a sprite, too.
+
+hint~
+
+
+~hint Why use "sprite" and "othersprite"? 💡
+
+---
+
+You might think the overlap should use the names "hero" and "clover", but that would cause problems later.
+
+Every clover is named "clover", so if you choose to delete "clover" on overlap, it will always delete the last one created, **not** just the one you overlapped with!
+
+This is why the overlap event uses the terms "sprite" and "othersprite". That way, you have nicknames you can use to access the _exact_ sprites that overlapped one another.
+
+
+hint~
+
+
+```blockconfig.local
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
 ```
 
-## {Step 12 - Destroy Clover}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:destroy sprite||`` block and drop in the ``||sprites:on sprite overlaps||`` block.
-In the ``||sprites:on sprite overlaps||`` block, drag the ``||sprites:otherSprite||`` local variable (representing the specific overlapping clover) into the ``||sprites:destroy sprite||`` block replacing ``||sprites:hero||``.
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {  })
+```
+
+
+
+## {Step 15 - Destroy Clover}
+
+When the clover is collected, it needs to disappear.
+
+
+- :paper plane:  From ``||sprites:Sprites||``, grab the
+
+```block
+    let otherSprite: Sprite = null
+    otherSprite.destroy()
+```
+container and drop it into the empty<br/>
+``||sprites(noclick):on sprite overlaps||``<br/>
+container already in the workspace.
+
+
+
+~hint Why call the clover "othersprite"? 💡
+
+---
+
+You might think the overlap should use the names "hero" and "clover", but that would cause problems later.
+
+Every clover is named "clover", so if you choose to delete "clover" on overlap, it will always delete the last one created, **not** just the one you overlapped with!
+
+This is why the overlap event uses the terms "sprite" and "othersprite". That way, you have nicknames you can use to access the _exact_ sprites that overlapped one another.
+
+
+hint~
+
+
+```blockconfig.local
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
 
 #### ~ tutorialhint
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+//@highlight
     otherSprite.destroy()
 })
 ```
 
-## {Step 13 - Add Effect @fullscreen}
 
-In the ``||sprites:destroy sprite||`` block, click on the Plus **(+)** icon to expand.
-Click on the ``spray effect`` drop-down menu and select an effect that you want to display when your ``||sprites:Player||`` collects a Clover.
-Click on the ``500 ms`` drop-down menu and select ``100 ms`` for the duration of your effect.
+
+## {Step 16}
+
+**Check the game window 🎮**
+
+You should be able to move your hero around with the joypad or arrow keys.
+
+When your hero overlaps a clover, the clover shoud disappear.
+
+
+## {Step 17 - Add Effect @fullscreen}
+
+
+- :binoculars: Look for the
+```block
+    let otherSprite: Sprite = null
+    otherSprite.destroy()
+```
+block that's already in the workspace.
+
+
+- :mouse pointer: Click the plus **(+)** icon to expand the block, then click the **spray effect** drop-down menu and choose whatever you like.
+
+
+- :mouse pointer: Click the **500 ms** drop-down and choose **100 ms** so the time stays nice and short.
 
 ![Choose a destroy effect](/static/tutorials/collect-the-clovers/destroy-effect.png)
 
+
+```blockconfig.local
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
+
+```validation.local
+# BlocksExistValidator
+  * UseAnswerKeyHighlight: false
+```
+
+#### ~ tutorialhint
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+//@highlight
+    otherSprite.destroy(effects.confetti, 100)
+})
+```
+
+
+## {Step 18 - Play a Sound}
+
+
+**Add sound effects**
+
+
+- :headphones: From the ``||music:Music||`` category, grab
+```block
+    music.baDing.play()
+```
+and drag it into **the end** of the <br/>
+``||sprites(noclick):on sprite overlaps||`` <br/>
+container that's already in your workspace.
+
+
+- :mouse pointer: Click the **ba ding** dropdown to choose a sound that you like best.
+
+
+```blockconfig.local
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
+
 #### ~ tutorialhint
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 100)
+//@highlight
+    music.baDing.play()
 })
 ```
 
-## {Step 14 - Play a Sound}
+## {Step 19 - Change Score}
 
-From the ``||music:Music||`` Toolbox drawer, drag a ``||music:play sound||`` block, and drop after
-the ``||sprites:destroy sprite||`` block.
+
+
+
+**Add points when a clover is collected**
+
+
+- :id card: From the ``||info:Info||`` category, grab
+```block
+    info.changeScoreBy(1)
+```
+and drag it into **the end** of the <br/>
+``||sprites(noclick):on sprite overlaps||`` <br/>
+container that's already in your workspace.
+
+
+```blockconfig.local
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
 
 #### ~ tutorialhint
 
@@ -343,16 +592,18 @@ the ``||sprites:destroy sprite||`` block.
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 100)
     music.baDing.play()
+//@highlight
+    info.changeScoreBy(1)
 })
 ```
 
-## {Step 15 - Change Score}
+## {Step 20 - Add Overlaps behavior for Bee @fullscreen}
 
-From the ``||info:Info||`` Toolbox drawer, drag a ``||info:change score||`` block and drop after
-the ``||music:play sound||`` block.
+**We need an overlap behavior for the bee**
 
-#### ~ tutorialhint
-
+- :mouse pointer: Right-click on the the<br/>
+``||sprites(noclick):on sprite overlaps||`` <br/>
+container that's already in your workspace.
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 100)
@@ -360,20 +611,29 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     info.changeScoreBy(1)
 })
 ```
+and choose **duplicate**.
 
-## {Step 16 - Add Overlaps behavior for Bee @fullscreen}
+_Don’t worry if it looks disabled, we’ll fix that._
 
-Now let’s add behavior for when our ``||sprites:Player||`` runs into a bee.
-Right-click on the the ``||sprites:on sprite overlaps||`` block that we were just working on,
-and select **Duplicate** to make a copy of this chunk of code. Don’t worry if it looks disabled, we’ll fix that.
-In the copied ``||sprites:on sprite overlaps||`` block, click on the ``||sprites:Projectile||`` kind drop-down
-menu and select ``||sprites:Enemy||`` for the kind.
+
+- :mouse pointer: In the copied <br/>
+``||sprites(noclick):on sprite overlaps||`` <br/>
+block, click the kind ``||sprites:Projectile||`` and change it to ``||sprites:Enemy||``.
 
 ![Duplicate the overlap event for the enemy](/static/tutorials/collect-the-clovers/overlaps-enemy.png)
 
+
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { })
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
+
 #### ~ tutorialhint
 
 ```blocks
+//@highlight
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 100)
     music.baDing.play()
@@ -381,10 +641,35 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## {Step 17 - Change effects and sounds}
+## {Step 21 - Change effects and sounds}
 
-In the ``||sprites:destroy||`` enemy block, select a different effect when your player runs into a bee.
-In the ``||music:play sound||`` block, select a different sound when your player runs into a bee.
+Let's choose some better sounds and effects for the bee.
+
+- :binoculars: Look for the
+```block
+    otherSprite.destroy(effects.disintegrate, 100)
+```
+block inside the  <br/>
+``||sprites(noclick):on sprite overlaps [Enemy]||`` <br/>
+in your workspace and change the effect to something less jolly.
+
+
+
+- :binoculars: Look for the
+```block
+    music.baDing.play()
+```
+block inside the  <br/>
+``||sprites(noclick):on sprite overlaps [Enemy]||`` <br/> container that's already in the workspace and change the sound to something that better matches getting tagged by a bee.
+
+
+
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { })
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
 
 #### ~ tutorialhint
 
@@ -396,12 +681,45 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 ```
 
-## {Step 18 - Lose a life}
+## {Step 22 - Lose a life}
 
-Instead of adding a score, let’s change the code to lose a life when our player runs into a bee.
-Delete the ``||info:change score||`` block.
-From the ``||info:Info||`` Toolbox drawer, drag a ``||info:change life||`` block and drop after
-the ``||music:play sound||`` block.
+Instead of adding a score, our player should lose a life when they run into a bee.
+
+
+- :binoculars: Look for the
+```block
+    info.changeScoreBy(1)
+```
+block inside the  <br/>
+``||sprites(noclick):on sprite overlaps [Enemy]||`` <br/> container that's already in the workspace and delete it.
+
+
+
+~hint How do I delete a block? 💡
+
+---
+
+You can delete a block three ways:<br/>
+1) Click the block to select, then press **delete** on your keyboard<br/>
+2) Right-click the block and choose **Delete Blocks**<br/>
+3) Drag the block back into the toolbox<br/>
+
+hint~
+
+- :id card: From the ``||info:Info||`` category, grab
+```block
+    info.changeLifeBy(-1)
+```
+And drop it in at **the end** of the  <br/>
+``||sprites(noclick):on sprite overlaps [Enemy]||`` <br/> container that's already in the workspace.
+
+
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) { })
+
+let bee = sprites.createProjectileFromSide(img`.`, 50, 50)
+    bee.setKind(SpriteKind.Enemy)
+```
 
 #### ~ tutorialhint
 
@@ -409,37 +727,41 @@ the ``||music:play sound||`` block.
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.disintegrate, 100)
     music.pewPew.play()
+//@highlight
     info.changeLifeBy(-1)
 })
 ```
 
-## {Step 19 - Play your Game!}
 
-That’s it! Now try playing your game in the full screen simulator. You can also try downloading
-your game to a hardware device, or Share your game with others!
+## {Step 23 - Play your Game!}
 
+**That’s it!**
+🎉 🎉 🎉
+
+Now try playing your finished game in the full screen simulator.
+
+Click **Done** to share your game with family and friends!
 
 
 
 
 ```blockconfig.global
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.disintegrate, 100)
-    music.pewPew.play()
-    info.changeLifeBy(-1)
-})
-
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) { })
+let otherSprite: Sprite = null
+info.changeLifeBy(-1)
 scene.setBackgroundImage(assets.image`background`)
 let hero = sprites.create(assets.image`hero`, SpriteKind.Player)
 controller.moveSprite(hero)
 hero.setStayInScreen(true)
-
+otherSprite.destroy()
 game.onUpdateInterval(200, function () {
 
 })
 
- projectile = sprites.createProjectileFromSide(assets.image`collect`, randint(-50, 50), randint(-50, 50))
-
+let clover = sprites.createProjectileFromSide(img`.`, 50, 50)
+let bee: Sprite = null
+randint(-50, 50)
+bee.setKind(SpriteKind.Enemy)
 ```
 
 

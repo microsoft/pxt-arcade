@@ -108,7 +108,7 @@ Now that player 2 moves the mole, we don't need to have it happen automatically.
 
 - :mouse pointer: From the <br/>
 ``||game(noclick): on game update every [1000] ms||``
-<br/>container already in the workspace, delete
+<br/>container already in the workspace, **delete**
 ```block
     simplified.moveToRandomHoleOnGrid(myMole)
 ```
@@ -345,7 +345,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
 game.showLongText("Player 1: Use the arrow keys to move the hammer. Player 2: Press A to move the mole.", DialogLayout.Center)
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 carnival.startCountdownGame(15, carnival.WinTypes.Score)
-
+simplified.moveToRandomHoleOnGrid(myMole)
 ```
 
 
