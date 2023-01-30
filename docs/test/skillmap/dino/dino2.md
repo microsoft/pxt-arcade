@@ -16,7 +16,7 @@ The start of a collector game is in your workspace. Let's take it even further b
 ## {Step 2}
 
 **Play the game in the workspace before you begin** <br/>
-🎮 🎮 🎮 
+🎮 🎮 🎮
 
 Can you move Mama Dino around the screen? Do baby dinos walk toward you?
 
@@ -31,14 +31,14 @@ Let's add some code that tells the game what to do when mama reaches her baby.
 
 - :paper plane:  From ``||sprites:Sprites||``, grab the
 
-```block
+```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
 })
 ```
 container and drop it into an empty area of the workspace.
 
-- :paper plane: To show that mama collected her baby, we want the baby dino to go off the screen when they reach each other. The ``||variables(noclick):sprite||`` variable is a ``||sprites:Player||`` sprite, or **mamaDino**, and ``||variables(noclick):otherSprite||`` is the ``||variables(noclick):projectile||`` sprite which is a **babyDino**. 
+- :paper plane: To show that mama collected her baby, we want the baby dino to go off the screen when they reach each other. The ``||variables(noclick):sprite||`` variable is a ``||sprites:Player||`` sprite, or **mamaDino**, and ``||variables(noclick):otherSprite||`` is the ``||variables(noclick):projectile||`` sprite which is a **babyDino**.
 
 ```blockconfig.local
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -85,7 +85,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ## {Step 6}
 
 **Now try it out on the game screen** <br/>
-🎮 🎮 🎮 
+🎮 🎮 🎮
 
 How do you like your game so far?
 
@@ -120,18 +120,18 @@ forever(function () {
 ## {Step 7}
 
 **Does this game feel long to you?**<br/>
-🕔 🕔 🕔 
+🕔 🕔 🕔
 
 We haven't added a way to win or lose.
 Let's do that now by adding a countdown timer.
 
 ---
 
-- :id card:  From ``||info:Info||``,  choose the  
+- :id card:  From ``||info:Info||``,  choose the
 ```block
 info.startCountdown(15)
 ```
-and snap it into the end of the  
+and snap it into the end of the
 ``||loops:on start||`` container.
 
 #### ~ tutorialhint
@@ -154,7 +154,7 @@ Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
-- :id card:  From ``||info:Info||``,  grab the  
+- :id card:  From ``||info:Info||``,  grab the
 
 ```block
 info.onCountdownEnd(function () {
@@ -182,7 +182,7 @@ info.onCountdownEnd(function () {
 ## {Step 9}
 
 **Now play your winning creation**<br/>
-🏆 🏆 🏆 
+🏆 🏆 🏆
 
 Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?
 

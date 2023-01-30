@@ -17,7 +17,8 @@
     {
         "name": "Multiplayer Games",
         "url": "/multiplayer-games",
-        "imageUrl": "/static/multiplayer/perfect-fit.png"
+        "imageUrl": "/static/multiplayer/perfect-fit.png",
+        "largeImageUrl": "/static/multiplayer/perfect-fit.gif"
     },
     {
         "name": "Live Coding",
