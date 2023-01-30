@@ -31,7 +31,7 @@ If your code doesn't work, start by looking to see if you can figure out what is
 ```blocks
 
 let myBalloon: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Lose)
+carnival.startCountdownGame(20, carnival.WinTypes.Win)
 scene.setBackgroundColor(1)
 
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
@@ -100,7 +100,7 @@ hint~
 ```blocks
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Lose)
+carnival.startCountdownGame(20, carnival.WinTypes.Win)
 
 scene.setBackgroundColor(1)
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
@@ -290,7 +290,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```blockconfig.global
 info.player1.changeScoreBy(1)
-carnival.startCountdownGame(20, carnival.WinTypes.Lose)
+carnival.startCountdownGame(20, carnival.WinTypes.Win)
 let myMouse = sprites.create(img`.`, SpriteKind.Mouse)
 scene.setBackgroundColor(1)
 myMouse.setPosition(80, 93)
@@ -301,11 +301,11 @@ myMouse.setImage(img`.`)
 
 ```
 
-
 ```package
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
+sprite-scaling
 carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
+balloon-images=github:kiki-lee/balloon-images#v0.0.1
 ```
 
 
@@ -320,7 +320,7 @@ carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 })
 
 let myBalloon: Sprite = null
-carnival.startCountdownGame(20, carnival.WinTypes.Lose)
+carnival.startCountdownGame(20, carnival.WinTypes.Win)
 scene.setBackgroundColor(1)
 
 myBalloon = sprites.create(assets.image`balloon-1`, SpriteKind.Player)
@@ -355,19 +355,6 @@ scaling.scaleByPixels_defl(myBalloon, 1, ScaleDirection.Uniformly, ScaleAnchor.B
 
 ```
 
-
-```customts
-namespace simplified{
-    /**
-    * just run the code
-    */
-    //% block="create player"
-    //% handlerStatement=1
-    export function wrap(handler: () => void) {
-        handler();
-    }
-}
-```
 
 
 ```assetjson
