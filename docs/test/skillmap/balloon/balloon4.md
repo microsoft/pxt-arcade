@@ -92,6 +92,7 @@ hint~
 
 
 #### ~ tutorialhint
+
 ```blocks
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
@@ -207,6 +208,13 @@ Find a friend and have them press the (A) button or **space bar** while you pres
 
 
 
+```blockconfig.local
+let myMouse2: Sprite = null
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+        myMouse2.setImage(img`.`)
+})
+```
+
 
 
 ## {9. Add a Label}
@@ -233,7 +241,13 @@ hint~
 
 
 
+
 ```blockconfig.local
+let myMouse2: Sprite = null
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+        myMouse2.setImage(img`.`)
+})
+
 simplified.wrap(function () {
     let myBalloon3 = sprites.create(img`.`, SpriteKind.Player)
     myBalloon3.setPosition(110, 93)
