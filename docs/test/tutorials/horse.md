@@ -367,29 +367,52 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Finish, function (sprite, otherS
 
 ```ghost
 
+namespace SpriteKind {
+    export const Finish = SpriteKind.create()
+}
+controller.player4.onEvent(ControllerEvent.Connected, function () {
+    set_up_for_players(4)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Finish, function (sprite, otherSprite) {
-    carnival.onGameOverExpanded(carnival.WinTypes.Multi)
+    carnival.customGameOverExpanded("Player " + mp.getPlayerProperty(mp.getPlayerBySprite(sprite), mp.PlayerProperty.Number) + " Wins!", effects.confetti, music.powerUp, carnival.ScoreTypes.LTime)
 })
 mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
     mp.getPlayerSprite(player2).x += 1.5
-    mp.changePlayerStateBy(player2, MultiplayerState.Score, 1)
 })
+function set_up_for_players (num: number) {
+    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
+    for (let index = 0; index <= num - 1; index++) {
+        mp.setPlayerSprite(mp.getPlayerByIndex(index), sprites.create(list[index], SpriteKind.Player))
+        mp.getPlayerSprite(mp.getPlayerByIndex(index)).setPosition(20, 115 / (num + 1) + 20 * index)
+    }
+}
+controller.player3.onEvent(ControllerEvent.Connected, function () {
+    set_up_for_players(3)
+})
+let list: Image[] = []
+list = [
+assets.image`p1`,
+assets.image`p2`,
+assets.image`p3`,
+assets.image`p4`
+]
+scene.setBackgroundColor(1)
 scene.setBackgroundImage(assets.image`bgFrame`)
-mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(assets.image`p1`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(20, 45)
-mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(assets.image`p2`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(20, 65)
+set_up_for_players(4)
 let finish = sprites.create(assets.image`finish`, SpriteKind.Finish)
 finish.setPosition(150, 50)
-carnival.addLabelTo("Horse Race", carnival.Areas.Bottom)
+let textSprite2 = textsprite.create("Horse Race")
+textSprite2.setPosition(80, 108)
 game.showLongText("Press the A button to Start", DialogLayout.Bottom)
 music.bigCrash.playUntilDone()
+carnival.startTimer()
+
 
 ```
 
 
 ```package
-arcade-mp=github:riknoll/arcade-mp
+multiplayer
 arcade-carnival=github:microsoft/arcade-carnival
 ```
 
