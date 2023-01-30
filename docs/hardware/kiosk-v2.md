@@ -46,7 +46,7 @@ Give your game a title and select an image or gif of your game and click the **S
 
 In the next window, click the **Share to Kiosk** button which will allow you to enter a code for your Kiosk.
 
-<TODO: insert share dialog with updated kiosk button and circle it>
+![Share project dialog with kiosk button](/static/hardware/kiosk/share-kiosk-button.png)
 
 To obtain the code for your kiosk, on your Arcade machine’s computer, open [kiosk](https://arcade.makecode.com/kiosk) mode, then use the joystick to navigate to the **Add your game** button. Then press the **A** button to select.
 
@@ -56,7 +56,7 @@ In the "Add your Game" screen, you’ll see the 6-digit alphanumeric code of you
 
 Type this code into the Share Project window of your game and click Submit.
 
-<TODO: insert share dialog with updated kiosk button and Kiosk ID typed in>
+![Share project dialog with kiosk code](/static/hardware/kiosk/share-kiosk-code.png)
 
 This will append your game to your Arcade machine’s kiosk game list.
 
