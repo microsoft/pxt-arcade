@@ -51,7 +51,7 @@ scene.setBackgroundImage(assets.image`2pbg`)
 - :suitcase: Open the ``||bundles:Bundles||`` category and drag the
 ```block
 bundles.wrap1(function () {
-    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`.`, SpriteKind.Player))
 mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(40, 90)
 })
 ```
@@ -90,8 +90,8 @@ mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(40, 90)
 - :suitcase: Open the ``||bundles:Bundles||`` category and drag the
 ```block
 bundles.wrap2(function () {
-    mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(img`.`, SpriteKind.Player))
-    mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`.`, SpriteKind.Player))
+mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setPosition(120, 90)
 })
 ```
 bundle into **the end** of the<br/>
@@ -117,8 +117,8 @@ mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(40, 90)
 })
 //@highlight
 bundles.wrap2(function () {
-    mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(assets.image`p2`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setPosition(120, 90)
 })
 ```
 
@@ -183,12 +183,12 @@ Add each of the arrows in this order.
 ```blocks
 scene.setBackgroundImage(assets.image`2pbg`)
 bundles.wrap1(function () {
-    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+   mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
 mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(40, 90)
 })
 bundles.wrap2(function () {
-    let player2 = sprites.create(assets.image`p2`, SpriteKind.Player)
-    player2.setPosition(110, 90)
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setPosition(120, 90)
 })
 //@highlight
 
@@ -256,14 +256,14 @@ mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, functio
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Replace both of the empty grey boxes with up arrows from **My Assets**.
+- :mouse pointer: Replace both of the empty grey boxes with **up arrows** from **My Assets**.
 
 
 #### ~ tutorialhint
@@ -273,7 +273,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, functio
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(assets.image`0`)
     if (arrow.image.equals(assets.image`0`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -291,14 +291,14 @@ mp.onButtonEvent(mp.MultiplayerButton.Left, ControllerButtonEvent.Pressed, funct
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Replace both of the empty grey boxes with left arrows from **My Assets**.
+- :mouse pointer: Replace both of the empty grey boxes with **left arrows** from **My Assets**.
 
 
 ```blockconfig.local
@@ -307,7 +307,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Left, ControllerButtonEvent.Pressed, funct
 
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -319,7 +319,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Left, ControllerButtonEvent.Pressed, funct
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(assets.image`1`)
     if (arrow.image.equals(assets.image`1`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -337,21 +337,21 @@ mp.onButtonEvent(mp.MultiplayerButton.Right, ControllerButtonEvent.Pressed, func
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Replace both of the empty grey boxes with up arrows from **My Assets**.
+- :mouse pointer: Replace both of the empty grey boxes with **up arrows** from **My Assets**.
 
 ```blockconfig.local
     let arrow: Sprite = null
 mp.onButtonEvent(mp.MultiplayerButton.Right, ControllerButtonEvent.Pressed, function (player) {
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -363,7 +363,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Right, ControllerButtonEvent.Pressed, func
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(assets.image`2`)
     if (arrow.image.equals(assets.image`2`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -381,21 +381,21 @@ mp.onButtonEvent(mp.MultiplayerButton.Down, ControllerButtonEvent.Pressed, funct
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Replace both of the empty grey boxes with down arrows from **My Assets**.
+- :mouse pointer: Replace both of the empty grey boxes with **down arrows** from **My Assets**.
 
 ```blockconfig.local
     let arrow: Sprite = null
 mp.onButtonEvent(mp.MultiplayerButton.Down, ControllerButtonEvent.Pressed, function (player) {
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -408,7 +408,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Down, ControllerButtonEvent.Pressed, funct
     let arrow: Sprite = null
     mp.getPlayerSprite(player).setImage(assets.image`3`)
     if (arrow.image.equals(assets.image`3`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 ```
@@ -427,7 +427,7 @@ Your player should change to whichever arrow you're pressing, and you should get
 
 ## {14. Add the finishing touches!}
 
-To finish your game, let's add a game screen that keeps the game from starting until everyone is ready.  Also, we'll add a timer and a tone that lets everyone know it's time to play!
+To finish your game, let's add a game screen that keeps the game from starting until everyone is ready.  Also, we'll add a countdown timer and a tone that lets everyone know it's time to play!
 
 - :suitcase: Open the ``||bundles:Bundles||`` category and drag the
 ```block
@@ -447,12 +447,12 @@ container already in the workspace.
 ```blocks
 scene.setBackgroundImage(assets.image`2pbg`)
 bundles.wrap1(function () {
-    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+   mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
 mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(40, 90)
 })
 bundles.wrap2(function () {
-    let player2 = sprites.create(assets.image`p2`, SpriteKind.Player)
-    player2.setPosition(110, 90)
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setPosition(120, 90)
 })
 bundles.wrap3(function () {
     let arrow: Sprite = null
@@ -511,13 +511,13 @@ game.onUpdateInterval(500, function () {
 })
 
 bundles.wrap1(function () {
-    mp.setPlayerSprite(mp.PlayerNumber.One, sprites.create(img`.`, SpriteKind.Player))
-    mp.getPlayerSprite(mp.PlayerNumber.One).setPosition(40, 90)
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`.`, SpriteKind.Player))
+mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(40, 90)
 })
 
 bundles.wrap2(function () {
-    mp.setPlayerSprite(mp.PlayerNumber.Two, sprites.create(img`.`, SpriteKind.Player))
-mp.getPlayerSprite(mp.PlayerNumber.Two).setPosition(120, 90)
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`.`, SpriteKind.Player))
+mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setPosition(120, 90)
 })
 
 bundles.wrap3(function () {
@@ -534,7 +534,7 @@ bundles.wrap3(function () {
 mp.onButtonEvent(mp.MultiplayerButton.Up, ControllerButtonEvent.Pressed, function (player) {
     mp.getPlayerSprite(player).setImage(img`.`)
     if (arrow.image.equals(img`.`)) {
-        mp.changePlayerStateBy(player, MultiplayerState.Score, 1)
+        mp.changePlayerStateBy(player, MultiplayerState.score, 1)
     }
 })
 
