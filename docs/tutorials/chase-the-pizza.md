@@ -296,5 +296,4 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 ```validation.global
 # BlocksExistValidator
-  * UseAnswerKeyHighlight: true
 ```
