@@ -221,24 +221,11 @@ scene.setBackgroundColor(1)
 
 
 ```package
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
+sprite-scaling
 carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
+balloon-images=github:kiki-lee/balloon-images#v0.0.1
 ```
-
-```customts
-namespace simplified{
-    /**
-    * just run the code
-    */
-    //% block="create player"
-    //% handlerStatement=1
-    export function wrap(handler: () => void) {
-        handler();
-    }
-}
-```
-
 
 
 ```assetjson
