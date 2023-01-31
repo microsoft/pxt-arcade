@@ -9,7 +9,7 @@ interface IProps {
     addButtonSelected: boolean;
     deleteButtonSelected: boolean;
     deleteTriggered: boolean;
-    onTriggerDelete: (p: boolean) => void;
+    onDeleteTriggered: (p: boolean) => void;
     game: GameData;
     kiosk: Kiosk;
 }
@@ -18,7 +18,7 @@ const GameSlide: React.FC<IProps> = (
         addButtonSelected,
         deleteButtonSelected,
         deleteTriggered,
-        onTriggerDelete,
+        onDeleteTriggered,
         game,
         kiosk
     }) => {
@@ -45,7 +45,7 @@ const GameSlide: React.FC<IProps> = (
                 }
                 { game.userAdded &&
                     <DeleteButton kiosk={kiosk} gameId={game.id}
-                        focused={deleteButtonSelected} pressed={deleteTriggered} onPressed={onTriggerDelete}
+                        focused={deleteButtonSelected} pressed={deleteTriggered} onPressed={onDeleteTriggered}
                         />
                 }
             </div>

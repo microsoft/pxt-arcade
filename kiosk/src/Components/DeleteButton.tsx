@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../Kiosk.css";
 import { GameData } from "../Models/GameData";
 import { Kiosk } from "../Models/Kiosk";
@@ -15,6 +15,7 @@ interface IProps {
 export const DeleteButton: React.FC<IProps> = ({ kiosk, gameId, focused, pressed, onPressed }) => {
     const addedGamesLocalStorageKey: string = "UserAddedGames";
     const specificButtonClass = focused ? "deleteSelected" : "buttonUnselected";
+    const [gameDeleted, setGameDeleted] = useState(false);
 
     const getAllAddedGames= (): { [index: string]: GameData } => {
         const json = localStorage.getItem(addedGamesLocalStorageKey);
@@ -25,10 +26,9 @@ export const DeleteButton: React.FC<IProps> = ({ kiosk, gameId, focused, pressed
         return allAddedGames;
     }
 
-
     useEffect(() => {
         console.log("got in this use effect");
-        if (pressed) {
+        if (pressed && gameDeleted) {
             console.log("got in pressed");
             const userAddedGames = getAllAddedGames();
             if (gameId in userAddedGames) {
@@ -39,9 +39,18 @@ export const DeleteButton: React.FC<IProps> = ({ kiosk, gameId, focused, pressed
                 console.log(userAddedGames);
                 localStorage.setItem(addedGamesLocalStorageKey, JSON.stringify(userAddedGames));
                 kiosk.games.splice(kiosk.selectedGameIndex!, 1);
-                onPressed(true);
+                onPressed(false);
+                setGameDeleted(false);
             }
 
+        }
+    }, [gameDeleted])
+
+
+    useEffect(() => {
+        if (pressed) {
+            onPressed(false);
+            setGameDeleted(true);
         }
     }, [pressed]);
 
