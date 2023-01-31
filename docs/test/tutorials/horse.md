@@ -400,7 +400,9 @@ assets.image`p4`,
 assets.image`p3`
 ]
 scene.setBackgroundColor(1)
+
 scene.setBackgroundImage(img`.`)
+
 set_up_for_players(2)
 let finish = sprites.create(assets.image`finish`, SpriteKind.Finish)
 finish.setPosition(150, 50)

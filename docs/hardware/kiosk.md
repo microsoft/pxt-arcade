@@ -1,116 +1,83 @@
-# Kiosk
+# MakeCode Arcade Kiosk
 
-To allow users to showcase their games in a fun and unique way, the Kiosk is added to Makecode Arcade. The Kiosk is an interface where a list of games is displayed in a carousel, letting a user scroll through what's currently highlighted to play. Hopefully, this will excite users to want to upload their games.  
+The Kiosk mode in MakeCode Arcade is meant to be used in conjunction with a MakeCode Arcade machine, a [DIY MakeCode Arcade cabinet]( https://arcade.makecode.com/hardware/raspberry-pi/wooden-cabinet), or a simple computer screen with a game controller interface – i.e. [Shoe Box Controller](https://arcade.makecode.com/hardware/shoebox-controller).
 
-## Getting started 
+![Makecode Arcade consoles](/static/hardware/kiosk/makecode-arcade-machines.jpg)
 
-The default Kiosk contains an initial set some of our most popular games from Arcade. This page is located at https://arcade.makecode.com/kiosk.
+In Kiosk mode, MakeCode Arcade games are displayed in a carousel list. Games may be browsed and played using the joystick and buttons on an Arcade machine.
 
-![Starting screen](/static/hardware/kiosk/select-a-game.png)
+## Setting up the Kiosk
+
+To use the MakeCode Arcade Kiosk mode in an Arcade machine or cabinet, you will need a monitor and a computer with internet access.
+
+If you are using a Windows computer for your Arcade machine, we recommend using [Windows Kiosk mode](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-configure-kiosk-mode#configure-using-windows-settings) and select Microsoft Edge displayed full-screen with MakeCode Arcade Kiosk https://arcade.makecode.com/kiosk as the default URL, and in step 10 select Never. If you want to escape from the Windows Kiosk mode, press ctrl+alt+delete to switch or reboot user. Watch this [video](https://youtu.be/Z8alME1nRmQ) to see the process.
+
+## Operating the Kiosk
+
+The default Kiosk mode, accessed at https://arcade.makecode.com/kiosk, contains a list of popular MakeCode Arcade single and multiplayer games including [Galga](https://arcade.makecode.com/_Y8VUmcHYsdsy), [Secure the River](https://arcade.makecode.com/32777-59846-95775-11055), [Tic Tac Two](https://arcade.makecode.com/13412-17300-80986-88577), [Pigeon: Deliverance](https://arcade.makecode.com/24832-19682-40817-54648) and more – see [GameList.json](https://github.com/microsoft/pxt-arcade/blob/master/kiosk/public/GameList.json) for the full list.
+
+To navigate the Kiosk interface, use the **Player 1** joystick and the **A** button:
+
+* **Joystick**: left and right will allow you to move game selection through the carousel list
+* **Joystick**: up and down allows you to select the "Add your game" button, or scroll through the alphabet when setting High Score initials for a game
+* **Button A**: enter or select to play a game, click on buttons, or set a name initial in the High Score interface
+* **Menu button**: if your Arcade machine or controller includes a Menu button, this will take you back to the main Kiosk carousel menu screen
+
+If you have a keyboard connected to your Arcade machine, you can also use the directional arrow keys or WASD keys to simulate joystick movement, 
+the **Space bar** for the **A** button, and the **Escape** key (Esc) for the Menu button.
+
+Each game in the Kiosk has an image or gif, a title, a description, and some have a list of high scores if scoring is enabled in the game.
+
+![Share project button](/static/hardware/kiosk/hot-air-balloon.png)
+
+## Customizing the Kiosk
+
+The MakeCode Arcade Kiosk mode supports fully customizing the game list. Any customizations you make will be stored in the local browser’s memory. This means that if you clear your browser history on the Arcade machine’s computer, your customizations will be lost. A best practice is to store a list of the share URL’s or game files for your Kiosk games in case they accidentally get deleted from the kiosk.
+
+## Adding a game to the Kiosk
+
+Open the [MakeCode Arcade]( https://arcade.makecode.com) game you would like to add to your Kiosk, and click the **Share** button.
+
+![Share project button](/static/hardware/kiosk/share-button.png)
+
+Give your game a title and select an image or gif of your game and click the **Share Project** button.
+
+![Share project dialog](/static/hardware/kiosk/share-project.png)
+
+In the next window, click the **Share to Kiosk** button which will allow you to enter a code for your Kiosk.
+
+![Share project dialog with kiosk button](/static/hardware/kiosk/share-kiosk-button.png)
+
+To obtain the code for your kiosk, on your Arcade machine’s computer, open [kiosk](https://arcade.makecode.com/kiosk) mode, then use the joystick to navigate to the **Add your game** button. Then press the **A** button to select.
+
+![Select a game screen](/static/hardware/kiosk/select-a-game.png)
+
+In the "Add your Game" screen, you’ll see the 6-digit alphanumeric code of your kiosk.
+
+Type this code into the Share Project window of your game and click Submit.
+
+![Share project dialog with kiosk code](/static/hardware/kiosk/share-kiosk-code.png)
+
+This will append your game to your Arcade machine’s kiosk game list.
+
+Alternately, you can add a game to the kiosk through a shared game link. On the MakeCode Arcade machine, use your phone or other computer’s camera to scan the QR code in the Add your Game screen for your kiosk (or browse to http://arcade.makecode.com/kiosk#add-game:<KIOSK_ID> where the KIOSK ID is the 6-digit alphanumeric code of your kiosk) and enter in the **Share Link** for the game you would like to add to the kiosk.
+
+Please note that for security purposes, the Kiosk ID is only valid for 10 minutes, after which time you will need to generate a new Kiosk ID. There is no limit to how many games can be added to a kiosk.
 
 ## Clearing the Kiosk
 
-To have students start with an empty (clean) Kiosk, so that they won't be tempted to play random games, you can add the clean flag to the url:
+Instead of starting with the default game list in the MakeCode Arcade Kiosk, you can open Kiosk mode with no games in the game list. Use the **"clean=1"** flag to do this:
 
 https://arcade.makecode.com/kiosk?clean=1
 
-If there are no games uploaded yet, your kiosk will look like the following:
-
 ![No games uploaded yet](/static/hardware/kiosk/no-uploaded-games.png)
 
-If you have only uploaded one game, you will see three copies of that game. This gives the illusion that you can move to the next or previous game even though it's the same one.
+Note that if you have only uploaded one game to the kiosk, you will see three copies of that game. This behavior just allows the carousel interface to scroll to the left or right. Once you upload 3 or more different games, you should not see any duplicate games in the list.
 
 ![Just one uploaded game](/static/hardware/kiosk/single-uploaded-game.png)
 
-When you upload more games, you will see them in the list as you scroll through.
-
-![Multiple uploaded games](/static/hardware/kiosk/multiple-uploaded-games.png)
-
 ## Locking the Kiosk
 
-If you are just looking to put games on display and not to edit the game list already in the kiosk, there is a **lock** flag that can be added to the url. This makes the **Add your game** button disappear. https://arcade.makecode.com/kiosk?lock=1 
+Once you’ve set up your game list in the Kiosk, you have the option to lock the kiosk into a read-only mode – where no games can be added or deleted. This may be helpful if you have your MakeCode Arcade machine located in a public space and don’t want people to edit your game list. Use the **"lock=1"** flag to do this:
 
-![Locked kiosk](/static/hardware/kiosk/locked-state.png)
-
-You can put your Kiosk in a locked and clean state by using both flags together like the this:
-
-https://arcade.makecode.com/kiosk?clean=1&lock=1
-
-The order of the flags does not matter.
-
-## Kiosk controls 
-
-The Kiosk is added to improve the "console style" experience and the intention is that users will have a keyboard, connect their computer to a shoebox controller, or build themselves an arcade cabinet. You can do any of those projects with our help here: 
-
-* [Making an arcade cabinet](https://arcade.makecode.com/hardware/raspberry-pi/wooden-cabinet)
-* [Making a shoe box controller](https://arcade.makecode.com/hardware/shoebox-controller)
-
-There's a full list of do it yourself projects at:
-
-* [Do it yourself hardware](diy-hardware)
-
-Because of this, the only way to interact with the kiosk is through keyboard controls. 
-
-![Keyboard controls](/static/hardware/kiosk/keyboard-controls.png)
-
-Two additional keyboard controls are:
-
-* **Spacebar**: Select
-* **ESC**: Exit
-
-## Adding a game to the Kiosk 
-
-Use the up arrow or trigger your joystick in the upwards direction to select the **Add your game** button.
-
-![Starting screen](/static/hardware/kiosk/select-a-game.png)
-
-Use the space bar or the a button to select the button. Then, scan the QR code on the Kiosk.
-
-![Add your game screen](/static/hardware/kiosk/add-your-game.png)
-
-Get the share link or QR code of the game you created in MakeCode Arcade.
-
-![Share project window](/static/hardware/kiosk/share-project.png)
-
-The steps to get your game's share link or QR code are outlined [below](#share-link-qr-code).
-
-Use the following page to add your game.
-
-![Add the game to a kiosk](/static/hardware/kiosk/add-to-kiosk.png)
-
-If you submit/scan your game successfully, your game will be launched on the Kiosk. If you don't see your game, wait 5 seconds as the Kiosk might be polling for it. If you do not see your game in a couple of seconds, there might be something wrong. Check the logs on the page using the Developer Tools window.
-
-## Removing all user uploaded games from the Kiosk 
-
-At some point you may decide that you no longer want your games in the Kiosk anymore. If you want to get rid of all the user-uploaded games from Kiosk, follow these steps:
-
-1. Inspect the page by right clicking on the Kiosk's landing page and selecting 'Inspect'.
-This will bring up the Developer Tools window. 
-2. In the 'Application' tab, find the 'Storage' section.
-3. Expand 'Local Storage'.
-4. Click https://arcade.makecode.com to see all the items.
-5. Filter the items with the word 'user'.
-6. Click on the entry 'UserAddedGames'.
-7. Press backspace or delete on your keyboard.
-8. Close the Developer tools.
-9. Refresh the kiosk. You will now have the default kiosk.
-
-## Getting a game's share link or QR code #share-link-qr-code
-
-You can get a game's share link or QR code using these steps:
-
-Click on the three connected dots in the upper right corner of the Arcade editor.
-
-![Arcade editor menu bar](/static/hardware/kiosk/menu-bar.png)
-
-Make sure to change your project title to something fun and update the project thumbnail if desired. Click 'Share Project'.
-
-![Share project and name the project](/static/hardware/kiosk/shared-project-name.png)
-
-For the share link: Click 'Copy'. This will copy the game's share link to your clipboard.
-
-![Shared project link](/static/hardware/kiosk/shared-project-link.png)
-
-To scan the QR Code, click on the QR code to enlarge it.
-
-![Enlarged QR code for scanning](/static/hardware/kiosk/qr-code-enlarged.png)
+https://arcade.makecode.com/kiosk?lock=1
