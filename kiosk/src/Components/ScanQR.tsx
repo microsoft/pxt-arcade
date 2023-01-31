@@ -120,7 +120,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                         <p className="linkError">Incorrect format for a share link</p>
                     }
                 </div>
-                <a className="shareHelp" target="_blank" onClick={clickHelp} href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
+                <a className="shareHelp" target="_blank" onClick={clickHelp} href="https://arcade.makecode.com/share">
                     How do I get a game's share link or QR code?
                 </a>
             </div>
