@@ -217,7 +217,9 @@ block (from the ``||logic:Logic||`` category).
 #### ~ tutorialhint
 
 ```blocks
+//@highlight
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    //@highlight
     if (true) {
     } else {
     }
