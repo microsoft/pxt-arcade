@@ -4,9 +4,7 @@
 
 ## {Intro @showdialog}
 
-Are you ready to make greeting cards for your friends and family?
-
-Follow these quick steps and you'll have one in no time!
+Follow these quick steps to make greeting cards for your friends and family!
 
 ![Greetings](/static/skillmap/story/card.gif "Happy birthday to you!" )
 
@@ -52,7 +50,13 @@ scene.setBackgroundImage(img`.`)
 ## {Step 3}
 
 
-- :paint brush:  Click the empty grey square inside the block to open the **image editor**. <br/><br/>
+- :paint brush:  Click the empty grey square inside
+
+```block
+scene.setBackgroundImage(img`.`)
+```
+
+to open the **image editor**. <br/><br/>
 You can draw your own background or choose one from the **Gallery**.
 ![This is where the gallery is located](/static/skillmap/assets/gallery.png "You can switch over to the gallery or make your own image." )
 
@@ -80,7 +84,8 @@ scene.setBackgroundImage(storySprites.halloween)
 
 **Look at your card.**
 
-- :binoculars: Take a look at the game window. Do you see the background you chose?
+- :binoculars: Take a look at the game window. <br/><br/>
+Do you see the background you chose?
 
 
 
@@ -126,12 +131,12 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 
 ## {Step 6}
 
-**Time for a celebration**<br/>
+**Time for pizzazz**<br/>
 🎉🎉🎉
 
 ---
 
-- :tree:  Add some pizzazz from the ``||scene:Scene||`` category by grabbing a
+- :tree:  Open the ``||scene:Scene||`` category and drag
 
 ```block
 effects.confetti.startScreenEffect()
@@ -166,7 +171,7 @@ effects.confetti.startScreenEffect()
 **Look at your creation!**
 
 - :binoculars: Take a look at the game window. Does the card look the way you want it to?  <br/><br/>
-Feel free to make edits until you are happy with it.
+Feel free to change it until you are happy with it.
 
 
 
@@ -179,7 +184,7 @@ Feel free to make edits until you are happy with it.
 
 ---
 
-- :headphones:  From the ``||music:Music||`` category, grab
+- :headphones:  From the ``||music:Music||`` category, drag
 
 ```block
 music.startSong(``, false)
@@ -188,7 +193,7 @@ music.startSong(``, false)
 into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
 
 
-- :mouse pointer:  In the new block, **click the empty rectangle** to open the music editor.<br/><br/>
+- :mouse pointer: **Click the empty rectangle** to open the music editor.<br/><br/>
 You can write your own song or switch to **My Assets** to pick one
 that we've written for you.
 

@@ -5,13 +5,14 @@ import configData from "../config.json"
 import "../Kiosk.css";
 import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
-import { generateKioskCodeAsync, getGameCodeAsync, isLocal } from "../BackendRequests";
+import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
+import { isLocal, tickEvent } from "../browserUtils";
 interface IProps {
     kiosk: Kiosk
   }
 
 const AddingGame: React.FC<IProps> = ({ kiosk }) => {
-    // TODO: update the urls to be more flexible for production code.
+    // TODO: try to add a tick for when someone scans the QR code with a phone, maybe this will be tracked with the dimensions of the screen
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
@@ -29,6 +30,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             }
         }
         if (menuButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.toMainMenu");
             kiosk.showMainMenu();
         }
         if (!renderQRCode && kiosk.gamepadManager.isUpPressed()) {
@@ -36,8 +38,14 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             setQrButtonState(true);
         }
         if (qrCodeButtonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.newKioskCode");
             setRenderQRCode(true);
         }
+    }
+
+    const kioskLinkClicked = () => {
+        tickEvent("kiosk.addGameLink");
+        return true;
     }
 
     useEffect(() => {
@@ -105,12 +113,12 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     await pollForGames(newKioskCode);
                 } catch (error) {
                     console.log("the promise rejected");
-                    // dispatch error for time out here
+                    // TODO: dispatch error for time out here
                 }
             }
             catch (error) {
                 throw new Error("Unable to generate kiosk code");
-                //too many set here
+                //TODO: too many set here
             }
         }
 
@@ -140,7 +148,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     <h1 className="kioskCode">{kioskCode}</h1>
                     <QRCodeSVG value={kioskUrl} />
                     <div className="kioskLink">
-                        <a target="_blank" href={kioskUrl}>{kioskUrl}</a>
+                        <a target="_blank" onClick={kioskLinkClicked} href={kioskUrl}>{kioskUrl}</a>
                     </div>
 
                 </div>

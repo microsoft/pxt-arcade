@@ -4,6 +4,7 @@ import AddGameButton from "./AddGameButton";
 import GameList from "./GameList";
 import configData from "../config.json"
 import HighScoresList from "./HighScoresList";
+import { tickEvent } from "../browserUtils";
 
 interface IProps {
     kiosk: Kiosk
@@ -21,6 +22,7 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
             setButtonState(false);
         }
         if (buttonSelected && kiosk.gamepadManager.isAButtonPressed()) {
+            tickEvent("kiosk.addGamePageLoaded");
             kiosk.launchAddGame();
         }
     }
@@ -38,6 +40,8 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                     clearInterval(intervalId);
                 }
             };
+        } else {
+            tickEvent("kiosk.locked");
         }
     });
 
@@ -47,11 +51,12 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                 <h1 className={`mainMenuHeader${lockedClassName}`}>Select a Game</h1>
                 {
                     !kiosk.locked &&
-                    <AddGameButton selected={buttonSelected} content="Add your game" />
+                    <div className="mainMenuButton">
+                        <AddGameButton selected={buttonSelected} content="Add your game" />
+                    </div>
                 }
             </nav>
             <GameList kiosk={kiosk} buttonSelected={buttonSelected} />
-            {/* <HighScoresList kiosk={kiosk} /> */}
         </div>
     )
 }
