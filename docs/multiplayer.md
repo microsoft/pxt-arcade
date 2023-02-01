@@ -121,11 +121,8 @@ After you press the **Enter** button, your game view will display and you can be
 For safe usage and interaction in the MakeCode online multiplayer environment, here are some important points to consider:
 
 * The "online multiplayer" mode is a user-controlled, self-contained sharing system that allows game creators to play their games with friends in a safe environment which does NOT include the exchange of any personal information.
-
 * Within a classroom setting, it is intended that students share their game join code with classmates directly, as this code isn't stored or available in the game galleries.
-
 * Once inside an online multiplayer session, MakeCode does not provide tools for messaging any players whether joined to a host's game or not. Also, we do not provide any way to share personal contact information that might lead to opening chat session communication outside of the tool, including names, usernames, and/or profile images.
-
 * The only form of communication inside of our online multiplayer tool is limited to sending just an allowed set of emojis:
 
 ![Multiplayer game emojis](/static/multiplayer/help/emojis.png)
