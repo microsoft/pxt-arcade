@@ -13,14 +13,12 @@ interface IProps {
     kiosk: Kiosk;
     addButtonSelected: boolean;
     deleteButtonSelected: boolean;
-    deleteTriggered: boolean;
   }
 
 
-const GameList: React.FC<IProps> = ({ kiosk, addButtonSelected, deleteButtonSelected, deleteTriggered }) => {
+const GameList: React.FC<IProps> = ({ kiosk, addButtonSelected, deleteButtonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
     const buttonSelected = addButtonSelected || deleteButtonSelected;
-    const [pressed, setPressed] = useState(false);
     const localSwiper = useRef<any>();
 
     const leftKeyEvent = (eventType: string) => {
@@ -159,9 +157,8 @@ const GameList: React.FC<IProps> = ({ kiosk, addButtonSelected, deleteButtonSele
                     const gameHighScores = kiosk.getHighScores(game.id);
                     return (
                         <SwiperSlide key={game.id}>
-                            <GameSlide highScores={gameHighScores} addButtonSelected={addButtonSelected} kiosk={kiosk}
-                                deleteButtonSelected={deleteButtonSelected} game={game} deleteTriggered={deleteTriggered} 
-                                onDeleteTriggered={setPressed} />
+                            <GameSlide highScores={gameHighScores} addButtonSelected={addButtonSelected}
+                                deleteButtonSelected={deleteButtonSelected} game={game} />
                         </SwiperSlide>
                     )
                 })}

@@ -6,6 +6,7 @@ import configData from "../config.json"
 import HighScoresList from "./HighScoresList";
 import { DeleteButton } from "./DeleteButton";
 import { tickEvent } from "../browserUtils";
+import DeletionModal from "./DeletionModal";
 
 interface IProps {
     kiosk: Kiosk
@@ -30,7 +31,6 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
         if (deleteButtonSelected && kiosk.gamepadManager.isUpPressed()) {
             setAddButtonState(false);
             setDeleteButtonState(false);
-            setDeleteTriggered(false);
         }
         if (addButtonSelected && (kiosk.gamepadManager.isAButtonPressed() || kiosk.gamepadManager.isBButtonPressed())) {
             tickEvent("kiosk.addGamePageLoaded");
@@ -45,8 +45,9 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
         if (!kiosk.locked) {
             let intervalId: any = null;
             intervalId = setInterval(() => {
-    
-                updateLoop();
+                if (!deleteTriggered) {
+                    updateLoop();
+                }
             }, configData.GamepadPollLoopMilli);
             
             return () => {
@@ -71,7 +72,9 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                 }
             </nav>
             <GameList kiosk={kiosk} addButtonSelected={addButtonSelected}
-                deleteButtonSelected={deleteButtonSelected} deleteTriggered={deleteTriggered} />
+                deleteButtonSelected={deleteButtonSelected} />
+            <DeletionModal kiosk={kiosk} displayed={deleteTriggered}
+                active={setDeleteTriggered} changeFocus={setDeleteButtonState} />
         </div>
     )
 }

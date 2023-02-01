@@ -15,6 +15,7 @@
     --game-selected-outline: #AFF1FFaa;
     --error-color: #ff7676;
     --black-color-transparent: #050505ab;
+    --modalFooterBackgroundColor: #f9fafb;
 }
 
 html, body {
@@ -418,7 +419,7 @@ h2 {
 }
 
 
-/* -------- GAME LIST  STYLING -------- */
+/* -------- GAME LIST STYLING -------- */
 /* ----------------------------------- */
 
 .carouselWrap {
@@ -668,4 +669,94 @@ h2 {
 
 .gameOverPage {
     margin-top: 15%;
+}
+
+
+/* -------- DELETE MODAL STYLING -------- */
+/* ------------------------------------- */
+
+.common-modal-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    color: var(--black-color);
+    font-family: 'Share';
+}
+
+.common-modal {
+    width: 50%;
+    max-width: 40rem;
+    border-radius: .285rem;
+    overflow: hidden;
+    position: fixed;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0.4rem var(--black-color-transparent);
+    border: 2px solid rgba(34, 36, 38, .15);
+}
+
+.common-modal-header {
+    background-color: var(--main-text-color);
+
+    display: flex;
+    font-size: 1.35rem;
+    font-weight: 600;
+    padding-left: 1.5rem;
+    border-bottom: 1px solid rgba(34, 36, 38, .15);
+    flex-shrink: 0;
+}
+
+.common-modal-title {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.common-modal-body {
+    background-color: var(--main-text-color);
+    min-height: 4rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.common-modal-footer {
+    background-color: var(--modalFooterBackgroundColor);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(34, 36, 38, .15);
+}
+
+.common-modal-button {
+    font-family: 'Share';
+    margin: 0 0.25rem 0 0;
+    padding: 0.8rem 2rem 0.95rem;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    letter-spacing: 0.1rem;
+}
+
+.common-modal-button.cancel {
+    grid-column: 1 / 1;
+    background-color: var(--main-text-color);
+    border: 2px solid var(--button-primary-color);
+}
+
+.common-modal-button.confirm {
+    grid-column: 2 / 2;
+    background-color: var(--button-primary-color);
+}
+
+.common-modal-button.selected {
+    border: 2px solid var(--high-score-selector-color);
 }

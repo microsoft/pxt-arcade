@@ -8,19 +8,13 @@ interface IProps {
     highScores: HighScore[];
     addButtonSelected: boolean;
     deleteButtonSelected: boolean;
-    deleteTriggered: boolean;
-    onDeleteTriggered: (p: boolean) => void;
     game: GameData;
-    kiosk: Kiosk;
 }
 const GameSlide: React.FC<IProps> = (
     {   highScores,
         addButtonSelected,
         deleteButtonSelected,
-        deleteTriggered,
-        onDeleteTriggered,
         game,
-        kiosk
     }) => {
     const buttonSelected = addButtonSelected || deleteButtonSelected;
     const carouselSelected = buttonSelected ? "unselected" : "selected";
@@ -44,9 +38,7 @@ const GameSlide: React.FC<IProps> = (
                     </div>
                 }
                 { game.userAdded &&
-                    <DeleteButton kiosk={kiosk} gameId={game.id}
-                        focused={deleteButtonSelected} pressed={deleteTriggered} onPressed={onDeleteTriggered}
-                        />
+                    <DeleteButton focused={deleteButtonSelected} />
                 }
             </div>
         </div>
