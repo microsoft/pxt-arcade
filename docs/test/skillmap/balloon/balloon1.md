@@ -1,4 +1,4 @@
-# Let's Get Clicking!
+# Create a Clicker
 
 ### @explicitHints true
 

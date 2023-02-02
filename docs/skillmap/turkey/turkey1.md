@@ -182,7 +182,7 @@ Let's move it to a special tile on the ground.
 - :tree: From ``||scene:Scene||``, drag <br/>
 
 ```block
-tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
+tiles.placeOnRandomTile(bigTurkey, assets.tile`transparency16`)
 ```
 
 <br/>into **the end** of the
