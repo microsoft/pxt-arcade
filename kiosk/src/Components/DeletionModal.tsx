@@ -6,11 +6,10 @@ import configData from "../config.json";
 
 interface IProps {
     kiosk: Kiosk;
-    displayed: boolean;
     active: (p: boolean) => void;
     changeFocus: (p: boolean) => void;
 }
-const DeletionModal: React.FC<IProps> = ({ kiosk, displayed, active, changeFocus }) => {
+const DeletionModal: React.FC<IProps> = ({ kiosk, active, changeFocus }) => {
     const [cancelButtonState, setCancelButtonState] = useState(true);
     const [confirmButtonState, setConfirmButtonState] = useState(false);
     const addedGamesLocalStorageKey: string = "UserAddedGames";
@@ -74,10 +73,6 @@ const DeletionModal: React.FC<IProps> = ({ kiosk, displayed, active, changeFocus
             }
         };
     });
-
-    if (!displayed) {
-        return null;
-    }
 
     return (
         <div className="common-modal-container">

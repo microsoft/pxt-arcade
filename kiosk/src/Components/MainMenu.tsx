@@ -73,8 +73,11 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
             </nav>
             <GameList kiosk={kiosk} addButtonSelected={addButtonSelected}
                 deleteButtonSelected={deleteButtonSelected} />
-            <DeletionModal kiosk={kiosk} displayed={deleteTriggered}
-                active={setDeleteTriggered} changeFocus={setDeleteButtonState} />
+            {
+                deleteTriggered &&
+                <DeletionModal kiosk={kiosk} active={setDeleteTriggered} changeFocus={setDeleteButtonState} />
+            }
+
         </div>
     )
 }
