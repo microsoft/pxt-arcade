@@ -53,7 +53,8 @@
                 "tags": [ "Hardware" ]
             },
             "jwunderl/pxt-button-combos": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Controller" ]
             },
             "jwunderl/pxt-color": {
                 "preferred": true,
@@ -72,10 +73,13 @@
                 "tags": [ "Utility" ],
                 "upgrades": "min:v0.0.6"
             },
-            "microsoft/arcade-grid": { "preferred": true },
-            "microsoft/arcade-minimap": {
+            "microsoft/arcade-grid": {
                 "preferred": true,
                 "tags": [ "Sprites" ]
+            },
+            "microsoft/arcade-minimap": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
             },
             "microsoft/arcade-timers": {
                 "preferred": true,
@@ -121,6 +125,56 @@
             "code-ninjas-home-office/game-building-session-tutorials": {},
             "microsoft/arcade-carnival": {}
         },
+        "builtinExtensionsLib": {
+            "controller": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller" ]
+            },
+            "animation": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
+            "multiplayer": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller", "Sprites" ]
+            },
+            "sprite-scaling": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
+            "corgio": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "darts": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "edge-connector": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "light": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "radio-broadcast": {
+                "preferred": true,
+                "tags": [ "Utility"]
+            },
+            "servo": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "sevenseg": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "feather": {
+                "preferred": true,
+                "tags": [ "Hardware", "Controller" ]
+            }
+        },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
@@ -136,7 +190,13 @@
             "S07439-34681-01269-56955",
             "S83499-96784-35479-44416",
             "S20979-80747-10645-55772",
-            "S42791-93051-00250-80367"
+            "S42791-93051-00250-80367",
+            "_1DogpPTpb8fK",
+            "_bz3CCuWFiepH",
+            "_C71PmfFaYDm2",
+            "_dCP7f8c3q5PJ",
+            "_cvxPm1WesYyi",
+            "_FdYfDwixRTAw"
         ]
     },
     "skillMap": {
@@ -161,25 +221,25 @@
     "multiplayer": {
         "games": [
             {
-                "shareId": "S07439-34681-01269-56955",
+                "shareId": "_bz3CCuWFiepH",
                 "title": "Perfect Fit",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/perfect-fit.png"
             },
             {
-                "shareId": "S83499-96784-35479-44416",
+                "shareId": "_C71PmfFaYDm2",
                 "title": "Galga",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/galga.png"
             },
             {
-                "shareId": "S20979-80747-10645-55772",
+                "shareId": "_FdYfDwixRTAw",
                 "title": "Painting Together",
                 "subtitle": "1-4 player",
                 "image": "/static/multiplayer/painting.png"
             },
             {
-                "shareId": "S42791-93051-00250-80367",
+                "shareId": "_1DogpPTpb8fK",
                 "title": "Horse Race",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/horse-race.png"
@@ -189,6 +249,7 @@
     "galleries": {
         "Skillmaps": "skillmaps",
         "Tutorials": "tutorials",
+        "Multiplayer Games": "multiplayer-games",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",

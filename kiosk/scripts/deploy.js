@@ -3,7 +3,6 @@
 const fs = require("fs");
 const path = require("path");
 const child_process = require("child_process");
-
 const configPath = path.resolve("./src/config.json");
 const outPath = path.resolve("../docs/static/kiosk/");
 const buildpath = path.resolve("./build");

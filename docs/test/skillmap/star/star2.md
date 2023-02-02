@@ -1,4 +1,5 @@
 # Join the Audience
+### @explicitHints true
 
 
 ## {Introduction @showdialog}
@@ -28,17 +29,18 @@ Let's add an audience!
 
 ---
 
-- :paper plane: From ``||sprites:Sprites||`` drag <br/>
-``||variables(sprites):set [mySprite2] to sprite [ ] of kind [Player]||`` <br/>
+- :paper plane: From ``||sprites:Sprites||`` drag 
+
+```block
+let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+```
 and snap it into **the bottom** of the <br/>
 ``||loops:on start||`` container.
-
-
-- :mouse pointer: Click ``||variables:mySprite2||`` and scroll to the bottom of the pop-up list to rename it ``||variables:audience||``.
 
 - :paint brush: Click the empty grey square and toggle to **My Assets**
 to choose the long audience sprite called **clap1**.
 
+#### ~ tutorialhint
 
 ```blocks
 scene.setBackgroundImage(assets.image`stage`)
@@ -59,28 +61,26 @@ repositioned the star of the show!
 ---
 
 - :paper plane: Grab <br/>
-``||sprites:set [mySprite] [x] to [0]||`` <br/>
+
+```block
+let audience: Sprite = null
+
+audience.bottom = 120
+```
 and snap it into **the end** of the <br/>
 ``||loops:on start||`` container.
 
-
-- :mouse pointer: Change ``||variables(noclick):mySprite||`` to
-``||variables(noclick):audience||``.
-
-- :mouse pointer: Change ``||sprites:x||`` to
-``||sprites:bottom||``.
-
-- :mouse pointer: Change **0** to **120** to put the bottom of the audience sprite at the bottom of the stage.
-
+#### ~ tutorialhint
 
 ```blocks
 scene.setBackgroundImage(assets.image`stage`)
-let mySprite = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-mySprite.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
-//@highlight
 let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+//@highlight
+audience.bottom = 120
 ```
 
 
@@ -104,15 +104,18 @@ with each click** <br/>
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, grab <br/>
-``||sprites: set [mySprite] image to [ ]||`` <br/>
+
+```block
+let audience: Sprite = null
+audience.setImage(img`.`)
+```
 and snap it into **the bottom** of the <br/>
 ``||controller:on [A] button [pressed]||`` container.
 
-- :mouse pointer: Click ``||variables(noclick):mySprite||`` and change it to
-``||variables(noclick):audience||`` so that the correct sprite is swapped during your clicks.
-
 - :paint brush: Click the grey square and toggle to **My Assets** and
 choose the other audience pose (called **clap2**.)
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -141,20 +144,27 @@ Right now, the audience only claps once. <br/>
 
 ---
 
-- :game: Drag another<br/>
-``||controller:on [A] button [pressed]||``<br/>
+- :game: Drag the<br/>
+
+```block
+let audience: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    audience.setImage(img`.`)
+})
+```
 container into an empty area of the workspace.
-
-- :mouse pointer: To change the audience image back when you release the
-(A) button, change ``||controller:[pressed]||`` to ``||controller:[released]||``
-using the dropdown menu.
-
-- :paper plane: Snap a new<br/>
-``||sprites: set [mySprite] image to [ ]||``<br/>
-block inside the empty container.
 
 - :mouse pointer:  Change the variable to ``||variables(noclick):audience||`` and click the empty grey square to choose the same
 **clap1** image that was used for the original sprite.
+
+```blockconfig.local
+let audience: Sprite = null
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    audience.setImage(img`.`)
+})
+```
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -179,15 +189,23 @@ It also automatically tells you that **you've lost** when time runs out. Let's c
 
 ---
 
-- :id card: From the ``||info:Info||`` category, grab an<br/>
-``||info:on countdown end||``<br/>
+- :id card: From the ``||info:Info||`` category, grab an
+
+```block
+info.onCountdownEnd(function () {
+    game.over(true, effects.confetti)
+})
+```
 container and drop it into an empty area of the workspace.
 
-- :circle: Now, open the ``||game:Game||`` category and pick<br/>
-``||game: game over <LOSE> ⊕||``.<br/>
-Snap it inside the empty **on countdown end** container.
 
-- :mouse pointer: Toggle **LOSE** to **WIN**.
+```blockconfig.local
+info.onCountdownEnd(function () {
+    game.over(true, effects.confetti)
+})
+```
+
+#### ~ tutorialhint
 
 ```blocks
 info.onCountdownEnd(function () {
@@ -195,27 +213,6 @@ info.onCountdownEnd(function () {
 })
 ```
 
-## {Step 9}
-
-**Fantastic!!**<br/>
-🎉 🎉 🎉
-
-Now add a final celebration with some **game over** effects!
-
----
-
-- :mouse pointer: Click the **+** icon to the right of the <br/>
-``||game: game over <WIN> ⊕||`` block.
-
-- :mouse pointer: If you want an effect other than confetti,
-click the word **confetti**
-and choose a new option from the dropdown.
-
-```blocks
-info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
-})
-```
 
 ## {Step 9}
 
@@ -227,6 +224,12 @@ Compete for the most clicks in 10 seconds! When you're finished, click **Done** 
 return to the main page where you can keep going and find out how to throw stars at the stage.
 
 
+```blockconfig.global
+game.over(true, effects.confetti)
+let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.setImage(assets.image`clap2`)
+audience.bottom = 120
+```
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -235,17 +238,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 scene.setBackgroundImage(assets.image`stage`)
-let mySprite = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-mySprite.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
 ```
 
-
-
-```package
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-```
 
 ```assetjson
 {
