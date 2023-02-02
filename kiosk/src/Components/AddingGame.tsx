@@ -61,7 +61,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         };
     });
 
-    const pollForGames =  (kioskCode: string) => {
+    const pollForGames = (kioskCode: string) => {
         const timeoutDuration = 570000; // wait for 9.5 minutes until the kiosk code expires
         const whenToPoll = 5000; // wait for 5 seconds to poll for game code data
         if (kiosk.state !== KioskState.AddingGame) {

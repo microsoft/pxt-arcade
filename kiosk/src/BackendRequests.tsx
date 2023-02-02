@@ -5,7 +5,7 @@ export const getGameCodeAsync = async (kioskCode: string) => {
     const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`; 
     let response = await fetch(getGameCodeUrl);
     if (!response.ok) {
-        const e =  new Error(response.statusText);
+        const e = new Error(response.statusText);
         e.name = "PollError";
         throw e;
 
