@@ -15,22 +15,28 @@ const DeletionModal: React.FC<IProps> = ({ kiosk, displayed, active, changeFocus
     const [confirmButtonState, setConfirmButtonState] = useState(false);
     const addedGamesLocalStorageKey: string = "UserAddedGames";
 
-    useEffect(() => {
-        let intervalId: any = null;
+    const deleteGame = () => {
+        const userAddedGames = kiosk.getAllAddedGames();
+        const gameId = kiosk.selectedGame?.id!;
+        if (gameId in userAddedGames) {
+            delete userAddedGames[gameId];
+            localStorage.setItem(addedGamesLocalStorageKey, JSON.stringify(userAddedGames));
+            kiosk.games.splice(kiosk.selectedGameIndex!, 1);
+        }
+    }
 
-        intervalId = setInterval(() => {
-            updateLoop();
-        }, configData.GamepadPollLoopMilli);
+    const cancelClicked = () => {
+        const modal = document.getElementsByClassName("common-modal-container")[0];
+        while (modal.firstChild) {
+            modal.removeChild(modal.firstChild);
+        }
+        active(false);
+        changeFocus(false);
+    }
 
-        return () => {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-        };
-    });
-
-    if (!displayed) {
-        return null;
+    const confirmClicked = () => {
+        deleteGame();
+        cancelClicked();
     }
 
     const updateLoop = () => {
@@ -55,30 +61,23 @@ const DeletionModal: React.FC<IProps> = ({ kiosk, displayed, active, changeFocus
         }
     }
 
-    const cancelClicked = () => {
-        const modal = document.getElementsByClassName("common-modal-container")[0];
-        while (modal.firstChild) {
-            modal.removeChild(modal.firstChild);
-        }
-        active(false);
-        changeFocus(false);
-    }
+    useEffect(() => {
+        let intervalId: any = null;
 
-    const confirmClicked = () => {
-        deleteGame();
-        cancelClicked();
-    }
+        intervalId = setInterval(() => {
+            updateLoop();
+        }, configData.GamepadPollLoopMilli);
 
-    const deleteGame = () => {
-        const userAddedGames = kiosk.getAllAddedGames();
-        const gameId = kiosk.selectedGame?.id!;
-        if (gameId in userAddedGames) {
-            delete userAddedGames[gameId];
-            localStorage.setItem(addedGamesLocalStorageKey, JSON.stringify(userAddedGames));
-            kiosk.games.splice(kiosk.selectedGameIndex!, 1);
-        }
-    }
+        return () => {
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        };
+    });
 
+    if (!displayed) {
+        return null;
+    }
 
     return (
         <div className="common-modal-container">

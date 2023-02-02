@@ -25,7 +25,7 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
         if (addButtonSelected && kiosk.gamepadManager.isDownPressed()) {
             setAddButtonState(false);
         }
-        if (!addButtonSelected && kiosk.gamepadManager.isDownPressed()) {
+        if (!addButtonSelected && kiosk.selectedGame?.userAdded && kiosk.gamepadManager.isDownPressed()) {
             setDeleteButtonState(true);
         }
         if (deleteButtonSelected && kiosk.gamepadManager.isUpPressed()) {
