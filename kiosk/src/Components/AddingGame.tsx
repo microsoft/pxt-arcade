@@ -7,10 +7,15 @@ import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
 import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
 import { isLocal, tickEvent } from "../browserUtils";
-// import { pollForGamesAsync } from "../PollForGames";
 interface IProps {
     kiosk: Kiosk
-  }
+}
+
+export async function delay(ms: number): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+        setTimeout(() => resolve(), ms);
+    })
+}
 
 const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     // TODO: try to add a tick for when someone scans the QR code with a phone, maybe this will be tracked with the dimensions of the screen
@@ -18,7 +23,9 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
-    const pollingStarted = useRef(false);
+    const generatingKioskCode = useRef(false);
+    const kioskCodeNextGenerationTime = useRef(0);
+    const nextSafePollTime = useRef(0);
     const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "https://arcade.makecode.com/kiosk";
 
     const updateLoop = () => {
@@ -60,129 +67,77 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         };
     });
 
+    useEffect(() => {
+        let pollTimer: any;
+        const pollDelay = 5000;
 
-    // useEffect(() => {
-    //     let pollFrequency: any;
-    //     let pollTimeout: any;
-    
-    //     const pollForGamesAsync =  (
-    //         kioskCode: string
-    //     ) => {
-    //     const timeoutDuration = 570000; // wait for 9.5 minutes until the kiosk code expires
-    //     const whenToPoll = 5000; // wait for 5 seconds to poll for game code data
+        const pollForGameCode = async () => {
+            const timeElapsed = nextSafePollTime.current - Date.now();
+            const timeToPoll = Math.max(Math.min(timeElapsed, pollDelay), 0);
+            nextSafePollTime.current = Date.now() + pollDelay;
 
-    //     return new Promise<void>(async (resolve, reject) => {
-    //         const getGameCode = async () => {
-    //             try {
-    //                 const gameCode: string = await getGameCodeAsync(kioskCode);
-    //                 await kiosk.saveNewGameAsync(gameCode);
-    //                 clearTimeout(pollFrequency);
-    //                 clearTimeout(pollTimeout);
-    //                 resolve();
-    //                 kiosk.launchGame(gameCode);
-    //             }
-    //             catch (error: any) {
-    //                 if (error.message === "Invalid game code") {
-    //                     console.log("polling");
-    //                     console.log(kioskCode);
-    //                     pollFrequency = setTimeout(async () => {
-    //                         await getGameCode();
-    //                     }, whenToPoll)
-    //                 } else {
-    //                     clearTimeout(pollTimeout);
-    //                     clearTimeout(pollFrequency);
-    //                     reject();
-    //                     return;
-    //                 }
-    
-    //             }
-    //         };
-    
-    //         pollTimeout = setTimeout(() => {
-    //             console.log("finished the ten minutes");
-    //             clearTimeout(pollTimeout);
-    //             clearTimeout(pollFrequency);
-    //             reject();
-    //             setRenderQRCode(false);
-    //         }, timeoutDuration)
-    
-    //         await getGameCode();
-    //     });
-    // }
-    //     const generateKioskCode = async () => {
-    //         try {
-    //             const newKioskCode: string = await generateKioskCodeAsync();
-    //             console.log("generated new code");
-    //             console.log(newKioskCode);
-    //             setKioskCode(newKioskCode);
-    //             try {
-    //                 if (kiosk.state !== KioskState.AddingGame) {
-    //                     return;
-    //                 }
-    //                 await pollForGamesAsync(newKioskCode);
-    //             } catch (error) {
-    //                 console.log("the promise rejected");
-    //                 // TODO: dispatch error for time out here
-    //             }
-    //         }
-    //         catch (error) {
-    //             throw new Error("Unable to generate kiosk code");
-    //             //TODO: too many set here
-    //         }
-    //     }
+            clearTimeout(pollTimer);
+            pollTimer = setTimeout(async () => {
+                try {
+                    // TODO: change for the multiple games added
+                    const gameCode: string = await getGameCodeAsync(kioskCode);
+                    await kiosk.saveNewGameAsync(gameCode);
+                    kiosk.launchGame(gameCode);
+                } catch (error: any) {
+                    if (kioskCode) {
+                        await pollForGameCode();
+                    }
+                }
+            }, timeToPoll)
+        }
 
-    //     if (renderQRCode) {
-    //         generateKioskCode();
-    //     }
+        if (kioskCode) {
+            pollForGameCode();
+        }
 
-    //     return () => {
-    //         console.log("cleaning up on unmount");
-    //         clearTimeout(pollTimeout);
-    //         clearTimeout(pollFrequency);
-    //         setRenderQRCode(false);
-    //     }
-
-    // }, [renderQRCode]);
+        return () => {
+            clearTimeout(pollTimer);
+        }
+    }, [kioskCode])
 
     useEffect(() => {
         let codeGenerationTimer: any;
-        const generatedCodeDuration = 30000;
-        // 570000; // wait for 9.5 minutes until the kiosk code expires
+        const generatedCodeDuration = 570000 * 0.80; // wait for 9.5 minutes until the kiosk code expires
 
         const generateKioskCode = async () => {
-            let newKioskCode: string
+            //spinner here to indicate work
+            let newKioskCode: string;
             try {
-                console.log("generating new kiosk code");
+                generatingKioskCode.current = true;
                 newKioskCode = await generateKioskCodeAsync();
-            } catch {
-                throw new Error("Unable to generate kiosk code");
+                kioskCodeNextGenerationTime.current = Date.now() + generatedCodeDuration;
+                setKioskCode(newKioskCode);
+            } catch (error) {
+                setRenderQRCode(false);
             }
-            console.log("generated new code");
-            console.log(newKioskCode);
-            setKioskCode(newKioskCode);
-
-            // after 10 minutes, set the kiosk code to nothing.
-            codeGenerationTimer = setTimeout(() => {
-                console.log(kioskCode)
-                clearTimeout(codeGenerationTimer);
-                setKioskCode("");
-                pollingStarted.current = false;
-                console.log("set the kiosk code to nothing");
-            }, generatedCodeDuration)
+            generatingKioskCode.current = false;
         }
 
-        if (!kioskCode && !pollingStarted.current) {
-            generateKioskCode();
+        if (!generatingKioskCode.current && renderQRCode) {
+            if (!kioskCode) {
+                generateKioskCode();
+            } else {
+                const timeElapsed = kioskCodeNextGenerationTime.current - Date.now();
+                const time = Math.max(Math.min(timeElapsed, generatedCodeDuration), 0);
+                codeGenerationTimer = setTimeout(() => {
+                    setKioskCode("");
+                    setRenderQRCode(false);
+                }, time)
+            }
         }
 
         return () => {
             clearTimeout(codeGenerationTimer);
-            pollingStarted.current = true;
         }
-    }, [kioskCode]);
+    }, [kioskCode, renderQRCode]);
 
     const qrDivContent = () => {
-        if (renderQRCode) {
+        if (renderQRCode && kioskCode) {
             const kioskUrl = `${kioskCodeUrl}#add-game:${kioskCode}`;
             return (
                 <div className="innerQRCodeContent">

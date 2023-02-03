@@ -30,7 +30,6 @@ export const generateKioskCodeAsync = async () => {
     } else {
         try {
             const newKioskCode = (await response.json()).code;
-            // console log here to see if this is the empty string
             return newKioskCode;
         }
         catch (error) {
