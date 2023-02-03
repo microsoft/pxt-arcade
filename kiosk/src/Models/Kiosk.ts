@@ -122,18 +122,6 @@ export class Kiosk {
         }
     }
 
-    removeGameFromList(): void {
-        const removedGame: GameData = this.games.splice(this.selectedGameIndex!, 1)[0];
-        const addedGameIds = this.getAllAddedGames();
-        console.log(addedGameIds);
-        delete addedGameIds[removedGame.id];
-
-        if (removedGame.id in addedGameIds) {
-            localStorage.removeItem(this.addedGamesLocalStorageKey);
-        }
-        //for removing added games: need to remove game from local storage AND the game list
-    }
-
     gamePadLoop(): void {
         const isDebug = true;
         if (isDebug) {
