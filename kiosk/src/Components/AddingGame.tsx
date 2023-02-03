@@ -18,7 +18,6 @@ export async function delay(ms: number): Promise<void> {
 }
 
 const AddingGame: React.FC<IProps> = ({ kiosk }) => {
-    // TODO: try to add a tick for when someone scans the QR code with a phone, maybe this will be tracked with the dimensions of the screen
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
@@ -105,7 +104,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         const generatedCodeDuration = 570000 * 0.80; // wait for 9.5 minutes until the kiosk code expires
 
         const generateKioskCode = async () => {
-            //spinner here to indicate work
+            //TODO: maybe? spinner here to indicate work
             let newKioskCode: string;
             try {
                 generatingKioskCode.current = true;
