@@ -11,12 +11,14 @@ import GameSlide from "./GameSlide";
 import { tickEvent } from "../browserUtils";
 interface IProps {
     kiosk: Kiosk;
-    buttonSelected: boolean;
+    addButtonSelected: boolean;
+    deleteButtonSelected: boolean;
   }
 
 
-const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
+const GameList: React.FC<IProps> = ({ kiosk, addButtonSelected, deleteButtonSelected }) => {
     const [games, setGames] = useState(kiosk.games);
+    const buttonSelected = addButtonSelected || deleteButtonSelected;
     const localSwiper = useRef<any>();
 
     const leftKeyEvent = (eventType: string) => {
@@ -155,7 +157,8 @@ const GameList: React.FC<IProps> = ({ kiosk, buttonSelected }) => {
                     const gameHighScores = kiosk.getHighScores(game.id);
                     return (
                         <SwiperSlide key={game.id}>
-                            <GameSlide highScores={gameHighScores} buttonSelected={buttonSelected} game={game} />
+                            <GameSlide highScores={gameHighScores} addButtonSelected={addButtonSelected}
+                                deleteButtonSelected={deleteButtonSelected} game={game} />
                         </SwiperSlide>
                     )
                 })}
