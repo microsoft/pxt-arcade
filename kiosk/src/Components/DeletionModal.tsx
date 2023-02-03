@@ -83,7 +83,7 @@ const DeletionModal: React.FC<IProps> = ({ kiosk, active, changeFocus }) => {
                     </div>
                     <div className="common-modal-body">
                         <p>
-                            Delete the game? The only way get the game back
+                            Delete the game? The only way to get the game back
                             is by re-uploading it.
                         </p>
                     </div>
