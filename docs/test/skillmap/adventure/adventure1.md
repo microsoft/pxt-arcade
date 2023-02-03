@@ -18,27 +18,33 @@ First, we'll code a 20-sided die that we'll call a **d20**.
 
 ---
 
-- :tree:  From the ``||scene:Scene||`` category in the toolbox,
-grab
+- :justify:  Open the ``||variables:Variables||`` category in the toolbox,
+and click <br/>
+"Make a Variable..."
 
-```block
-scene.setBackgroundImage(img`.`)
-```
 
-and drag it into the ``||loops(noclick):on start||`` container that's already in the workspace.
+- :mouse pointer: Enter **`roll`** as the new variable name, then click **Ok**.
 
-~hint Click here to see how 🕵🏽
+
+~hint What is a variable? 💡
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+A variable is a placeholder for information that might change later.
+
+Our game will use a number that changes every turn.
+Since we don't know what that number will be ahead of time,
+we need a placeholder to stand-in for the mystery number, otherwise we
+won't be able to keep writing our program.
+
+From now on, whenever we want to use the number that we get when the user rolls the d20,
+we'll access it using the word **roll**.
+
 hint~
 
 - :mouse pointer: Click **Next** to move on to the next step.
 
 
-
-
 #### ~ tutorialhint
 
 ```blocks
@@ -48,181 +54,58 @@ scene.setBackgroundImage(img`.`)
 
 
 
-## {Step 3}
+
+## {3. Set Roll}
 
 
-- :paint brush:  Click the empty grey square inside
+- :list: From the ``||sprites: Sprites||`` category in the toolbox, grab
 
 ```block
-scene.setBackgroundImage(img`.`)
+let myHammer = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-to open the **image editor**. <br/><br/>
-You can draw your own background or choose one from the **Gallery**.
-![This is where the gallery is located](/static/skillmap/assets/gallery.png "You can switch over to the gallery or make your own image." )
+and snap it inside and at the very **end** of the
+``||loops(noclick): on start||``
+block container that's already in your workspace.
+
+- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
+![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
+<br/>to select the **hammer** sprite.<br/>
+![Choose the image that looks like a hammer.](/static/skillmap/mole/hammer.png "Select the rubber hammer from My Assets.")
+<br/>Then click **Done**.
 
 
-~hint Click here to see how 🕵🏽
 
----
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+~hint Show me how! 🕵🏽
+
+![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
+
 hint~
+
+
 
 
 #### ~ tutorialhint
 
 ```blocks
+let myMole: Sprite = null
+let myHammer: Sprite = null
+scene.setBackgroundImage(assets.image`grid`)
+myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 //@highlight
-scene.setBackgroundImage(storySprites.halloween)
+myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 ```
 
 
 
 
 
-## {Step 4}
 
-**Look at your card.**
 
-- :binoculars: Take a look at the game window. <br/><br/>
-Do you see the background you chose?
 
 
 
-
-## {Step 5}
-
-**Add a heartfelt greeting**<br/>
-💛 💛 💛
-
----
-
-- :ticket:  From the ``||carnival:Carnival||`` category, drag
-
-```block
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
-
-- :mouse pointer: Change the message to whatever you would like.
-
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
-
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(storySprites.halloween)
-//@highlight
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-
-```
-
-
-
-
-## {Step 6}
-
-**Time for pizzazz**<br/>
-🎉🎉🎉
-
----
-
-- :tree:  Open the ``||scene:Scene||`` category and drag
-
-```block
-effects.confetti.startScreenEffect()
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
-
-- :mouse pointer: Change the effect to whatever you would like.
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(storySprites.halloween)
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-//@highlight
-effects.confetti.startScreenEffect()
-
-```
-
-
-
-
-## {Step 7}
-
-**Look at your creation!**
-
-- :binoculars: Take a look at the game window. Does the card look the way you want it to?  <br/><br/>
-Feel free to change it until you are happy with it.
-
-
-
-
-
-## {Step 8}
-
-**Let's add a personal note**<br/>
-🎵 🎵 🎵
-
----
-
-- :headphones:  From the ``||music:Music||`` category, drag
-
-```block
-music.startSong(``, false)
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
-
-
-- :mouse pointer: **Click the empty rectangle** to open the music editor.<br/><br/>
-You can write your own song or switch to **My Assets** to pick one
-that we've written for you.
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(storySprites.halloween)
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-effects.confetti.startScreenEffect()
-music.startSong(assets.song`birthday`, false)
-```
-
-
-
-
-## {Step 9}
-
-**Celebrate your work!**
-
-- :binoculars: Take a look at your finished card in the game window.<br/><br/>
-Feel free to go back and make changes until you are happy with it.
 
 
 
@@ -236,6 +119,9 @@ Click **Done** to return to the main skillmap page where you can keep going to m
 
 ```blockconfig.global
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+loggr.addImageToTextLog(img`.`)
+music.setVolume(20)
+info.setLife(20)
 ```
 
 
@@ -247,37 +133,21 @@ dd=github:kiki-lee/dnd-sprite-pack
 
 
 
-
-```template
+```ghost
 
 function rollDie () {
     loggr.addToTextlog(loggr.rollTextForLog(roll))
 }
 
-```
-
-
-
-
-
-```ghost
 function enounter1 () {
-    loggr.addImageToTextLog(assets.image`dd.gelatenousCube`)
     loggr.addToTextlog("You quickly turn the corner and are startled by a gelatinous cube in your path")
     loggr.addToTextlog("Press (A) to roll and see what happens next!")
+    pauseUntil(() => controller.A.isPressed())
     rollOnButton(1, 20)
-    if (roll == 20) {
-        loggr.addToTextlog("A nat-20! You see the cube and dodge it with plenty of time to carry-on with your mission...and you find $10 and a cheeseburger on the floor while doing it.")
+    if (roll >= 10) {
+        loggr.addToTextlog("Your roll was high enough to help you dodge the cube.")
         info.changeLifeBy(1)
         info.changeScoreBy(10)
-    } else if (roll == 1) {
-        loggr.addToTextlog("A nat-1! This is bad. By the time you see the cube, you're already fully inside of it.")
-        loggr.addToTextlog("You've had sunburns before, but this is a whole other level.")
-        loggr.addToTextlog("The world slowly fades away.")
-        info.changeLifeBy(0 - info.life())
-    } else if (roll >= 10) {
-        loggr.addToTextlog("Your roll was high enough to help you dodge the cube.")
-        loggr.addToTextlog("Phew! That was a close one!")
     } else {
         loggr.addToTextlog("That roll was too low to escape unharmed.")
         loggr.addToTextlog("You don't see the cube in time and it slowly starts absorbing your arm.")
@@ -286,40 +156,32 @@ function enounter1 () {
     }
 }
 function rollOnButton (lo: number, hi: number) {
-    while (!(controller.A.isPressed())) {
-        pause(25)
-    }
     roll = randint(lo, hi)
-    loggr.addToTextlog(loggr.multiTextForLog("You roll " + roll + "!"))
+    music.play(music.createSoundEffect(WaveShape.Noise, 3300, 1400, 255, 0, 150, SoundExpressionEffect.Warble, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+    loggr.addToTextlog("You roll " + roll + "!")
     return roll
+}
+function AorB () {
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.right.isPressed()) {
+        loggr.addToTextlog("You decide to keep going")
+    } else if (controller.left.isPressed()) {
+        loggr.addToTextlog("You try to turn and run")
+    } else {
+        loggr.addToTextlog("You didn't listen")
+    }
 }
 info.onLifeZero(function () {
     game.over(false)
 })
-function enounter2 () {
-    loggr.addImageToTextLog(img`
-        . . . . . c c c c c c c . . . .
-        . . . . c 6 7 7 7 7 7 6 c . . .
-        . . . c 7 c 6 6 6 6 c 7 6 c . .
-        . . c 6 7 6 f 6 6 f 6 7 7 c . .
-        . . c 7 7 7 7 7 7 7 7 7 7 c . .
-        . . f 7 8 1 f f 1 6 7 7 7 f . .
-        . . f 6 f 1 f f 1 f 7 7 7 f . .
-        . . . f f 2 2 2 2 f 7 7 6 f . .
-        . . c c f 2 2 2 2 7 7 6 f c . .
-        . c 7 7 7 7 7 7 7 7 c c 7 7 c .
-        c 7 1 1 1 7 7 7 7 f c 6 7 7 7 c
-        f 1 1 1 1 1 7 6 f c c 6 6 6 c c
-        f 1 1 1 1 1 1 6 6 c 6 6 6 c . .
-        f 6 1 1 1 1 1 6 6 6 6 6 6 c . .
-        . f 6 1 1 1 1 1 6 6 6 6 c . . .
-        . . f f c c c c c c c c . . . .
-        `)
-    loggr.addToTextlog("A snake slithers into your path")
-}
+let roll = 0
+roll = 0
+music.play(music.createSong(hex`0078000408020200001c00010a006400f4016400000400000000000000000000000000050000042a0000000400012504000800012708000c0001250c001000012210001400011e18002000011624003000011904001c00100500640000041e000004000000000000000000000000000a0400041e000000080003131e250800100003162025100020000310191e200030000116`), music.PlaybackMode.InBackground)
+loggr.addImageToTextLog(assets.image`gelatenousCube`)
 music.setVolume(20)
 info.setLife(20)
 enounter1()
+
 
 ```
 
