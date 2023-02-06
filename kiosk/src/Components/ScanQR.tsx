@@ -71,6 +71,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 tickEvent("kiosk.submitGameId.submitSuccess");
                 kiosk.navigate(KioskState.QrSuccess);
             } catch (error) {
+                // it's possible that if it reaches here, the kiosk id was invalid ( someone just puts something random in the url, we should have a toast for this)
                 console.log("Unable to add game to kiosk. Please try again later");
             }
         } else {
