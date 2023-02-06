@@ -11,12 +11,6 @@ interface IProps {
     kiosk: Kiosk
 }
 
-export async function delay(ms: number): Promise<void> {
-    return new Promise<void>((resolve, reject) => {
-        setTimeout(() => resolve(), ms);
-    })
-}
-
 const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [kioskCode, setKioskCode] = useState("");
     const [renderQRCode, setRenderQRCode] = useState(true);
