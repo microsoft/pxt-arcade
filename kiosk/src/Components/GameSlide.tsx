@@ -1,13 +1,22 @@
+import { useEffect, useState } from "react";
 import { GameData } from "../Models/GameData";
 import { HighScore } from "../Models/HighScore";
 import { Kiosk } from "../Models/Kiosk";
+import { DeleteButton } from "./DeleteButton";
 import HighScoresList from "./HighScoresList";
 interface IProps {
     highScores: HighScore[];
-    buttonSelected: boolean;
+    addButtonSelected: boolean;
+    deleteButtonSelected: boolean;
     game: GameData;
 }
-const GameSlide: React.FC<IProps> = ({ highScores, buttonSelected, game }) => {
+const GameSlide: React.FC<IProps> = (
+    {   highScores,
+        addButtonSelected,
+        deleteButtonSelected,
+        game,
+    }) => {
+    const buttonSelected = addButtonSelected || deleteButtonSelected;
     const carouselSelected = buttonSelected ? "unselected" : "selected";
 
     return (
@@ -28,7 +37,9 @@ const GameSlide: React.FC<IProps> = ({ highScores, buttonSelected, game }) => {
                         Added {game.date}
                     </div>
                 }
-
+                { game.userAdded &&
+                    <DeleteButton focused={deleteButtonSelected} />
+                }
             </div>
         </div>
     )
