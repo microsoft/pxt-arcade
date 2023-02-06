@@ -15,7 +15,7 @@ This game will test your speed as you click quickly as possible to earn points.<
 
 Let's start by setting the stage.
 
-![Choose a background](/static/skillmap/star/change-bg.gif "Click the grey square and choose the stage." )
+![Choose a background](/static/skillmap/star/choose-bg.gif "Click the grey square and choose the stage." )
 
 
 - :tree: Open the ``||scene:Scene||`` category and drag<br/>

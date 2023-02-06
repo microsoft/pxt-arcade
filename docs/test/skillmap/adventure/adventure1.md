@@ -1,4 +1,4 @@
-# Dungeons & Dragons: Honor Among Thieves - Your Adventure
+# Rolling Dice
 ### @explicitHints true
 
 
@@ -18,9 +18,9 @@ First, we'll code a 20-sided die that we'll call a **d20**.
 
 ---
 
-- :justify:  Open the ``||variables:Variables||`` category in the toolbox,
+- :align justify:  Open the ``||variables:Variables||`` category in the toolbox,
 and click <br/>
-"Make a Variable..."
+**`Make a Variable...`**
 
 
 - :mouse pointer: Enter **`roll`** as the new variable name, then click **Ok**.
@@ -45,65 +45,198 @@ hint~
 - :mouse pointer: Click **Next** to move on to the next step.
 
 
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-scene.setBackgroundImage(img`.`)
-```
-
 
 
 
 ## {3. Set Roll}
 
 
-- :list: From the ``||sprites: Sprites||`` category in the toolbox, grab
+- :align justify: Reopen the ``||variables: Variables||`` category and grab the <br/>
+``||variables:set [roll] to [0]||`` <br/>
+block. Snap it into the empty <br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
 
-```block
-let myHammer = sprites.create(img`.`, SpriteKind.Player)
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+//@highlight
+roll = 0
 ```
 
-and snap it inside and at the very **end** of the
-``||loops(noclick): on start||``
-block container that's already in your workspace.
-
-- :mouse pointer: Click the empty square and when the image editor opens, switch to **My Assets** <br/>
-![Switch to My Assets](/static/skillmap/mole/my-assets.gif "Change from the Editor to My Assets and select the grid.")
-<br/>to select the **hammer** sprite.<br/>
-![Choose the image that looks like a hammer.](/static/skillmap/mole/hammer.png "Select the rubber hammer from My Assets.")
-<br/>Then click **Done**.
 
 
 
+## {4. Roll Random}
 
-~hint Show me how! 🕵🏽
+**Pick a number**
 
-![Choose the hammer from My Assets](/static/skillmap/mole/choose-hammer.gif "Change from the Editor to My Assets and select the hammer.")
+Time to set the variable **`roll`** to a random number.
+
+- :calculator: From ``||math: Math||``, drag <br/>
+``||math:pick random [0] to [10]||`` <br/>
+in to replace the value **0** in the  <br/>
+``||variables(noclick):set [roll] to [0]||`` <br/>
+container already in the workspace.
+
+- :mouse pointer: To simulate the roll of a d20 (between 1 & 20), change
+the **0** to **1** and the **10** to **20**.
+
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+//@highlight
+roll = randint(1,20)
+```
+
+
+
+
+## {5. Read the Roll}
+
+**What did you roll?**
+
+The code to roll your number is in the workspace, but there's no way to see it.
+Let's change that.
+
+- :align left: From ``||loggr: Text Log||``, drag <br/>
+``||loggr:add ("You rolled [roll] !" to text log||`` <br/>
+into **the end** of the  <br/>
+``||loops(noclick):on start|`` <br/>
+container already in the workspace.
+
+This block will add your roll to the text log.
+
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+roll = randint(1,20)
+//@highlight
+loggr.addToTextlog(loggr.rollTextForLog(roll))
+```
+
+
+
+
+## {6. Check Your Game!}
+
+Take a look at what you made!
+
+- :binoculars: Look at your project in the game window to see how it has changed!
+
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
+
+Reload your game a few times and watch your number change over and over.
+
+
+
+## {7. Make it a function}
+
+**Let's make it reusable.**
+
+We're going to want to roll the d20 over and over again.
+Let's move it into a function so we can reuse the code we just wrote.
+
+
+
+- :function: Click on **Advanced** in the toolbox to show the
+``||function: Functions||`` category. <br/>
+
+- :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
+**`Make a Function...`**
+
+- :mouse pointer: Name your function **roll_d20** and click **Done**.
+
+
+~hint What is a function? 💡
+
+---
+
+A function is a chunk of code that you can name.
+Once it has a name, you can **call** it from other places in your program to run
+you function as many times as you want without having to rewrite it in each location.
+
 
 hint~
 
 
 
 
+## {8. Add your function}
+
+
+- :function: Reopen the ``||functions: Functions||`` category and drag the empty<br/>
+``||functions:function [roll_d20]||``<br/>
+container into **an empty** area of the workspace.
+
+
 #### ~ tutorialhint
 
 ```blocks
-let myMole: Sprite = null
-let myHammer: Sprite = null
-scene.setBackgroundImage(assets.image`grid`)
-myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 //@highlight
-myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
+function roll_d20() {}
+```
+
+
+
+
+## {9. Move the Code}
+
+**Fill the function.**
+
+- :mouse pointer: Now drag all of the code you
+just wrote out of the ``||loops(noclick):on start||`` and into the empty <br/>
+``||functions(noclick):function [roll_d20]||``<br/>
+container.
+
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+//@highlight
+function roll_d20() {
+//@highlight
+roll = randint(1,20)
+//@highlight
+loggr.addToTextlog(loggr.rollTextForLog(roll))}
 ```
 
 
 
 
 
+## {10. Call the Code}
+
+Did you notice that your roll stopped showing in the log?
+
+That's because we aren't calling the function anywhere.
+
+- :function: From the
+``||function: Functions||`` category, drag
+``||functions:call roll_d20||`` <br/>
+into the empty <br/>
+``||loops(noclick):on start||`` <br/>
+container in the workspace.
 
 
+You should see the results of your roll on your game screen again.
 
+
+#### ~ tutorialhint
+
+```blocks
+//@hide
+function roll_d20() {}
+//@highlight
+roll_d20()
+```
 
 
 
@@ -111,17 +244,19 @@ myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
 
 ## {Finish}
 
-**Congratulations, you've finished your greeting card!**<br/>
+**Congratulations, you've created a d20!**<br/>
 🥳 🥳 🥳
 
-Click **Done** to return to the main skillmap page where you can keep going to make an even more detailed card.
+Click **Done** to return to the main skillmap page where you can
+use that d20 to .
 
 
 ```blockconfig.global
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+let roll=20;
 loggr.addImageToTextLog(img`.`)
 music.setVolume(20)
 info.setLife(20)
+loggr.addToTextlog(loggr.rollTextForLog(roll))
 ```
 
 
@@ -190,7 +325,7 @@ enounter1()
 music.setVolume(20);
 
 
-//% color=#888888 icon="\uf036"
+//% color=#656565 icon="\uf036"
 //% block="Text Log"
 namespace loggr {
 
