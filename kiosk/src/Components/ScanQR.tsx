@@ -6,6 +6,7 @@ import { addGameToKioskAsync } from "../BackendRequests";
 import { KioskState } from "../Models/KioskState";
 import { Html5Qrcode } from "html5-qrcode";
 import { tickEvent } from "../browserUtils";
+import ErrorModal from "./ErrorModal";
 
 interface IProps {
     kiosk: Kiosk
@@ -20,6 +21,8 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const [scannerVisible, setScannerVisible] = useState(false);
     const [linkError, setLinkError] = useState(false);
     const [linkVisible, setLinkVisible] = useState(false);
+    const [addingError, setAddingError] = useState("");
+    const [errorDesc, setErrorDesc] = useState("");
     const qrReaderRendered = useRef(null);
     const [html5QrCode, setHtml5QrCode] = useState<undefined | Html5Qrcode>();
 
@@ -70,8 +73,13 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 await addGameToKioskAsync(kioskId, shareId);
                 tickEvent("kiosk.submitGameId.submitSuccess");
                 kiosk.navigate(KioskState.QrSuccess);
-            } catch (error) {
-                console.log("Unable to add game to kiosk. Please try again later");
+            } catch (error: any) {
+                setAddingError(error.toString());
+                if (error.includes("404")) {
+                    setErrorDesc("This is likely because the kiosk code no longer exists. Go back to the kiosk to make a new code.");
+                } else {
+                    setErrorDesc("Something went wrong on our end. Please try again later.");
+                }
             }
         } else {
             setLinkError(true);
@@ -124,6 +132,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                     How do I get a game's share link or QR code?
                 </a>
             </div>
+            <ErrorModal showing={!!addingError} errorType={addingError} errorDescription={errorDesc!} setShowing={setAddingError}/>
         </div>
     )
 }
