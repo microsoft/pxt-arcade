@@ -15,6 +15,7 @@ const ErrorModal: React.FC<IProps> = ({ errorType, errorDescription, showing, se
         while (modal.firstChild) {
             modal.removeChild(modal.firstChild);
         }
+        tickEvent("kiosk.scanError.dismissed");
         setShowing("");
     }
 
@@ -23,19 +24,19 @@ const ErrorModal: React.FC<IProps> = ({ errorType, errorDescription, showing, se
     }
 
     return (
-        <div className="common-modal-container">
+        <div className="common-modal-container error">
             <div className="common-modal">
                 <div>
-                    <div className="common-modal-header common-modal-title">
+                    <div className="common-modal-header common-modal-title error">
                         {errorType}
                     </div>
-                    <div className="common-modal-body">
+                    <div className="common-modal-body error">
                         <p>
                             {errorDescription}
                         </p>
                     </div>
                     <div className="common-modal-footer">
-                        <button className={`common-modal-button confirm`} onClick={cancelClicked}>Okay</button>
+                        <button className={`common-modal-button confirm error`} onClick={cancelClicked}>Okay</button>
                     </div>
                 </div>
             </div>

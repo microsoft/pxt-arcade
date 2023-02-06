@@ -15,12 +15,9 @@ interface IProps {
 const ScanQR: React.FC<IProps> = ({ kiosk }) => {
     const fullUrlHash = window.location.hash;
     const urlHashList = /add-game:((?:[a-zA-Z0-9]{6}))/.exec(fullUrlHash);
-    const screenWidth = window.screen.width;
-    const phoneWidth = screenWidth < 500;
     const kioskId = urlHashList?.[1];
     const [scannerVisible, setScannerVisible] = useState(false);
     const [linkError, setLinkError] = useState(false);
-    const [linkVisible, setLinkVisible] = useState(false);
     const [addingError, setAddingError] = useState("");
     const [errorDesc, setErrorDesc] = useState("");
     const qrReaderRendered = useRef(null);
@@ -28,7 +25,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
 
     const renderQrScanner = () => {
         tickEvent("kiosk.scanQrClicked");
-        play(kiosk, kioskId!, html5QrCode!);
+        play(kiosk, kioskId!, html5QrCode!, setAddingError, setErrorDesc);
         setScannerVisible(true);
     }
 
@@ -75,10 +72,10 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 kiosk.navigate(KioskState.QrSuccess);
             } catch (error: any) {
                 setAddingError(error.toString());
-                if (error.includes("404")) {
+                if (error.toString().includes("404")) {
                     setErrorDesc("This is likely because the kiosk code no longer exists. Go back to the kiosk to make a new code.");
                 } else {
-                    setErrorDesc("Something went wrong on our end. Please try again later.");
+                    setErrorDesc("Something went wrong. Please try again later.");
                 }
             }
         } else {
