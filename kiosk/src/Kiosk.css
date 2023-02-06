@@ -262,6 +262,12 @@ h2 {
     margin-bottom: 3%;
 }
 
+.innerQRCodeContent p {
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
 /* -------- QR PAGES STYLING -------- */
 /* ----------------------------------- */
 
