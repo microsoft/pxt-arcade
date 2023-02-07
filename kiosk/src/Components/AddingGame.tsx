@@ -109,6 +109,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 kioskCodeNextGenerationTime.current = Date.now() + generatedCodeDuration;
                 setKioskCode(newKioskCode);
             } catch (error) {
+                setKioskCode("");
                 setRenderQRCode(false);
             }
             generatingKioskCode.current = false;
