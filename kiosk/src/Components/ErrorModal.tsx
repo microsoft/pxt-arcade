@@ -10,10 +10,6 @@ interface IProps {
 }
 const ErrorModal: React.FC<IProps> = ({ errorType, errorDescription, setShowing }) => {
     const cancelClicked = () => {
-        const modal = document.getElementsByClassName("common-modal-container")[0];
-        while (modal.firstChild) {
-            modal.removeChild(modal.firstChild);
-        }
         tickEvent("kiosk.scanError.dismissed");
         setShowing("");
     }
