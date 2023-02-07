@@ -72,15 +72,13 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             clearTimeout(pollTimer);
             pollTimer = setTimeout(async () => {
                 try {
-                    // TODO: change for the multiple games added
                     const gameCodes: [string] = await getGameCodeAsync(kioskCode);
-                    console.log("the game codes");
-                    console.log(gameCodes);
                     if (gameCodes) {
                         await kiosk.saveNewGameAsync(gameCodes);
                     }
-                    console.log("about to poll again");
-                    pollForGameCode();
+                    if (kioskCode) {
+                        await pollForGameCode();
+                    }
                 } catch (error: any) {
                     clearTimeout(pollTimer);
                     setKioskCode("");

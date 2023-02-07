@@ -4,16 +4,14 @@ const kioskBackendEndpoint: string = stagingEndpoint;
 const apiBackendEndpoint: string = "https://makecode.com/api";
 
 export const getGameCodeAsync = async (kioskCode: string) => {
-    const getGameCodeUrl = `${stagingEndpoint}/code/${kioskCode}`; 
+    const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`;
     let response = await fetch(getGameCodeUrl);
     if (!response.ok) {
         const e =  new Error(response.statusText);
         e.name = "PollError";
         throw e;
     } else {
-        //something weird happening here
         const gameCodeList = JSON.parse((await response.json())?.shareIds);
-        console.log(gameCodeList);
         if (gameCodeList.length) {
             return gameCodeList;
         }
@@ -21,7 +19,7 @@ export const getGameCodeAsync = async (kioskCode: string) => {
 }
 
 export const generateKioskCodeAsync = async () => {
-    const codeGenerationUrl = `${stagingEndpoint}/newcode`;
+    const codeGenerationUrl = `${kioskBackendEndpoint}/newcode`;
     const response = await fetch(codeGenerationUrl);
     if (!response.ok) {
         const e =  new Error(response.statusText);

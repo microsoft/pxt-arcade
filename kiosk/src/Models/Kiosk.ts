@@ -82,13 +82,7 @@ export class Kiosk {
     async saveNewGameAsync(gameIds: [string]): Promise<GameData[]> {
         const allAddedGames = this.getAllAddedGames();
         let gamesToAdd: GameData[] = [];
-        console.log("game ids!");
-        console.log(gameIds);
-        console.log("games to add before everything");
-        console.log(gamesToAdd);
         for (const gameId of gameIds) {
-            console.log("a single game id");
-            console.log(gameId);
             if (!allAddedGames[gameId]) {
                 let gameName;
                 let gameDescription;
@@ -111,8 +105,6 @@ export class Kiosk {
 
             }
         }
-        console.log("games to add AFTER everything");
-        console.log(gamesToAdd);
         if (gamesToAdd.length) {
             localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
         }
