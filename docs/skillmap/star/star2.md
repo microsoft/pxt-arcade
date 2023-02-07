@@ -79,8 +79,9 @@ let mySprite = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
 mySprite.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
-//@highlight
 let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+//@highlight
+audience.bottom = 120
 ```
 
 
