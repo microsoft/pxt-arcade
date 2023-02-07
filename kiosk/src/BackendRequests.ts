@@ -5,13 +5,18 @@ export const getGameCodeAsync = async (kioskCode: string) => {
     const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`; 
     let response = await fetch(getGameCodeUrl);
     if (!response.ok) {
-        throw new Error("Unable to get data from the kiosk.");
+        const e =  new Error(response.statusText);
+        e.name = "PollError";
+        throw e;
+
     } else {
         const gameCode = (await response.json())?.code;
         if (gameCode !== "0") {
             return gameCode;
         }
-        throw new Error("Invalid game code");
+        const e =  new Error("Invalid game code");
+        e.name = "PollError";
+        throw e;
     }
 }
 
@@ -19,7 +24,9 @@ export const generateKioskCodeAsync = async () => {
     const codeGenerationUrl = `${kioskBackendEndpoint}/newcode`;
     const response = await fetch(codeGenerationUrl);
     if (!response.ok) {
-        throw new Error("Unable to generate kiosk code");
+        const e =  new Error(response.statusText);
+        e.name = "KioskCodeGenError";
+        throw e;
     } else {
         try {
             const newKioskCode = (await response.json()).code;
@@ -48,6 +55,7 @@ export const addGameToKioskAsync = async (kioskId: string | undefined, gameShare
         await response.json();
     }
     catch (error) {
+        //dispatch here
         throw new Error("Failed to post game to the kiosk");
     }
 }

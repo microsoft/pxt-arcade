@@ -1,4 +1,4 @@
-# Dungeons & Dragons: Honor Among Thieves - Your Adventure
+# Rolling Dice
 ### @explicitHints true
 
 
@@ -18,20 +18,28 @@ First, we'll code a 20-sided die that we'll call a **d20**.
 
 ---
 
-- :tree:  From the ``||scene:Scene||`` category in the toolbox,
-grab
+- :align justify:  Open the ``||variables:Variables||`` category in the toolbox,
+and click <br/>
+**`Make a Variable...`**
 
-```block
-scene.setBackgroundImage(img`.`)
-```
 
-and drag it into the ``||loops(noclick):on start||`` container that's already in the workspace.
+- :mouse pointer: Enter **`roll`** as the new variable name, then click **Ok**.
 
-~hint Click here to see how 🕵🏽
+
+~hint What is a variable? 💡
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+A variable is a placeholder for information that might change later.
+
+Our game will use a number that changes every turn.
+Since we don't know what that number will be ahead of time,
+we need a placeholder to stand-in for the mystery number, otherwise we
+won't be able to keep writing our program.
+
+From now on, whenever we want to use the number that we get when the user rolls the d20,
+we'll access it using the word **roll**.
+
 hint~
 
 - :mouse pointer: Click **Next** to move on to the next step.
@@ -39,203 +47,216 @@ hint~
 
 
 
+
+## {3. Set Roll}
+
+
+- :align justify: Reopen the ``||variables: Variables||`` category and grab the <br/>
+``||variables:set [roll] to [0]||`` <br/>
+block. Snap it into the empty <br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
+
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+//@highlight
+roll = 0
+```
+
+
+
+
+## {4. Roll Random}
+
+**Pick a number**
+
+Time to set the variable **`roll`** to a random number.
+
+- :calculator: From ``||math: Math||``, drag <br/>
+``||math:pick random [0] to [10]||`` <br/>
+in to replace the value **0** in the  <br/>
+``||variables(noclick):set [roll] to [0]||`` <br/>
+container already in the workspace.
+
+- :mouse pointer: To simulate the roll of a d20 (between 1 & 20), change
+the **0** to **1** and the **10** to **20**.
+
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+//@highlight
+roll = randint(1,20)
+```
+
+
+
+
+## {5. Read the Roll}
+
+**What did you roll?**
+
+The code to roll your number is in the workspace, but there's no way to see it.
+Let's change that.
+
+- :align left: From ``||loggr: Text Log||``, drag <br/>
+``||loggr:add ("You rolled [roll] !" to text log||`` <br/>
+into **the end** of the  <br/>
+``||loops(noclick):on start|`` <br/>
+container already in the workspace.
+
+This block will add your roll to the text log.
+
+
+#### ~ tutorialhint
+
+```blocks
+let roll = 0
+roll = randint(1,20)
+//@highlight
+loggr.addToTextlog(loggr.rollTextForLog(roll))
+```
+
+
+
+
+## {6. Check Your Game!}
+
+Take a look at what you made!
+
+- :binoculars: Look at your project in the game window to see how it has changed!
+
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
+
+Reload your game a few times and watch your number change over and over.
+
+
+
+## {7. Make it a function}
+
+**Let's make it reusable.**
+
+We're going to want to roll the d20 over and over again.
+Let's move it into a function so we can reuse the code we just wrote.
+
+
+
+- :function: Click on **Advanced** in the toolbox to show the
+``||function: Functions||`` category. <br/>
+
+- :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
+**`Make a Function...`**
+
+- :mouse pointer: Name your function **roll_d20** and click **Done**.
+
+
+~hint What is a function? 💡
+
+---
+
+A function is a chunk of code that you can name.
+Once it has a name, you can **call** it from other places in your program to run
+you function as many times as you want without having to rewrite it in each location.
+
+
+hint~
+
+
+
+
+## {8. Add your function}
+
+
+- :function: Reopen the ``||functions: Functions||`` category and drag the empty<br/>
+``||functions:function [roll_d20]||``<br/>
+container into **an empty** area of the workspace.
+
+
 #### ~ tutorialhint
 
 ```blocks
 //@highlight
-scene.setBackgroundImage(img`.`)
+function roll_d20() {}
 ```
 
 
 
-## {Step 3}
 
+## {9. Move the Code}
 
-- :paint brush:  Click the empty grey square inside
+**Fill the function.**
 
-```block
-scene.setBackgroundImage(img`.`)
-```
-
-to open the **image editor**. <br/><br/>
-You can draw your own background or choose one from the **Gallery**.
-![This is where the gallery is located](/static/skillmap/assets/gallery.png "You can switch over to the gallery or make your own image." )
-
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
+- :mouse pointer: Now drag all of the code you
+just wrote out of the ``||loops(noclick):on start||`` and into the empty <br/>
+``||functions(noclick):function [roll_d20]||``<br/>
+container.
 
 
 #### ~ tutorialhint
 
 ```blocks
+let roll = 0
 //@highlight
-scene.setBackgroundImage(storySprites.halloween)
-```
-
-
-
-
-
-## {Step 4}
-
-**Look at your card.**
-
-- :binoculars: Take a look at the game window. <br/><br/>
-Do you see the background you chose?
-
-
-
-
-## {Step 5}
-
-**Add a heartfelt greeting**<br/>
-💛 💛 💛
-
----
-
-- :ticket:  From the ``||carnival:Carnival||`` category, drag
-
-```block
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
-
-- :mouse pointer: Change the message to whatever you would like.
-
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
-
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(storySprites.halloween)
+function roll_d20() {
 //@highlight
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-
-```
-
-
-
-
-## {Step 6}
-
-**Time for pizzazz**<br/>
-🎉🎉🎉
-
----
-
-- :tree:  Open the ``||scene:Scene||`` category and drag
-
-```block
-effects.confetti.startScreenEffect()
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
-
-- :mouse pointer: Change the effect to whatever you would like.
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(storySprites.halloween)
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+roll = randint(1,20)
 //@highlight
-effects.confetti.startScreenEffect()
-
+loggr.addToTextlog(loggr.rollTextForLog(roll))}
 ```
 
 
 
 
-## {Step 7}
 
-**Look at your creation!**
+## {10. Call the Code}
 
-- :binoculars: Take a look at the game window. Does the card look the way you want it to?  <br/><br/>
-Feel free to change it until you are happy with it.
+Did you notice that your roll stopped showing in the log?
 
+That's because we aren't calling the function anywhere.
 
-
-
-
-## {Step 8}
-
-**Let's add a personal note**<br/>
-🎵 🎵 🎵
-
----
-
-- :headphones:  From the ``||music:Music||`` category, drag
-
-```block
-music.startSong(``, false)
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
+- :function: From the
+``||function: Functions||`` category, drag
+``||functions:call roll_d20||`` <br/>
+into the empty <br/>
+``||loops(noclick):on start||`` <br/>
+container in the workspace.
 
 
-- :mouse pointer: **Click the empty rectangle** to open the music editor.<br/><br/>
-You can write your own song or switch to **My Assets** to pick one
-that we've written for you.
+You should see the results of your roll on your game screen again.
 
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
 
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(storySprites.halloween)
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-effects.confetti.startScreenEffect()
-music.startSong(assets.song`birthday`, false)
+//@hide
+function roll_d20() {}
+//@highlight
+roll_d20()
 ```
 
 
-
-
-## {Step 9}
-
-**Celebrate your work!**
-
-- :binoculars: Take a look at your finished card in the game window.<br/><br/>
-Feel free to go back and make changes until you are happy with it.
 
 
 
 ## {Finish}
 
-**Congratulations, you've finished your greeting card!**<br/>
+**Congratulations, you've created a d20!**<br/>
 🥳 🥳 🥳
 
-Click **Done** to return to the main skillmap page where you can keep going to make an even more detailed card.
+Click **Done** to return to the main skillmap page where you can
+use that d20 to .
 
 
 ```blockconfig.global
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+let roll=20;
+loggr.addImageToTextLog(img`.`)
+music.setVolume(20)
+info.setLife(20)
+loggr.addToTextlog(loggr.rollTextForLog(roll))
 ```
 
 
@@ -247,37 +268,21 @@ dd=github:kiki-lee/dnd-sprite-pack
 
 
 
-
-```template
+```ghost
 
 function rollDie () {
     loggr.addToTextlog(loggr.rollTextForLog(roll))
 }
 
-```
-
-
-
-
-
-```ghost
 function enounter1 () {
-    loggr.addImageToTextLog(assets.image`dd.gelatenousCube`)
     loggr.addToTextlog("You quickly turn the corner and are startled by a gelatinous cube in your path")
     loggr.addToTextlog("Press (A) to roll and see what happens next!")
+    pauseUntil(() => controller.A.isPressed())
     rollOnButton(1, 20)
-    if (roll == 20) {
-        loggr.addToTextlog("A nat-20! You see the cube and dodge it with plenty of time to carry-on with your mission...and you find $10 and a cheeseburger on the floor while doing it.")
+    if (roll >= 10) {
+        loggr.addToTextlog("Your roll was high enough to help you dodge the cube.")
         info.changeLifeBy(1)
         info.changeScoreBy(10)
-    } else if (roll == 1) {
-        loggr.addToTextlog("A nat-1! This is bad. By the time you see the cube, you're already fully inside of it.")
-        loggr.addToTextlog("You've had sunburns before, but this is a whole other level.")
-        loggr.addToTextlog("The world slowly fades away.")
-        info.changeLifeBy(0 - info.life())
-    } else if (roll >= 10) {
-        loggr.addToTextlog("Your roll was high enough to help you dodge the cube.")
-        loggr.addToTextlog("Phew! That was a close one!")
     } else {
         loggr.addToTextlog("That roll was too low to escape unharmed.")
         loggr.addToTextlog("You don't see the cube in time and it slowly starts absorbing your arm.")
@@ -286,40 +291,32 @@ function enounter1 () {
     }
 }
 function rollOnButton (lo: number, hi: number) {
-    while (!(controller.A.isPressed())) {
-        pause(25)
-    }
     roll = randint(lo, hi)
-    loggr.addToTextlog(loggr.multiTextForLog("You roll " + roll + "!"))
+    music.play(music.createSoundEffect(WaveShape.Noise, 3300, 1400, 255, 0, 150, SoundExpressionEffect.Warble, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+    loggr.addToTextlog("You roll " + roll + "!")
     return roll
+}
+function AorB () {
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.right.isPressed()) {
+        loggr.addToTextlog("You decide to keep going")
+    } else if (controller.left.isPressed()) {
+        loggr.addToTextlog("You try to turn and run")
+    } else {
+        loggr.addToTextlog("You didn't listen")
+    }
 }
 info.onLifeZero(function () {
     game.over(false)
 })
-function enounter2 () {
-    loggr.addImageToTextLog(img`
-        . . . . . c c c c c c c . . . .
-        . . . . c 6 7 7 7 7 7 6 c . . .
-        . . . c 7 c 6 6 6 6 c 7 6 c . .
-        . . c 6 7 6 f 6 6 f 6 7 7 c . .
-        . . c 7 7 7 7 7 7 7 7 7 7 c . .
-        . . f 7 8 1 f f 1 6 7 7 7 f . .
-        . . f 6 f 1 f f 1 f 7 7 7 f . .
-        . . . f f 2 2 2 2 f 7 7 6 f . .
-        . . c c f 2 2 2 2 7 7 6 f c . .
-        . c 7 7 7 7 7 7 7 7 c c 7 7 c .
-        c 7 1 1 1 7 7 7 7 f c 6 7 7 7 c
-        f 1 1 1 1 1 7 6 f c c 6 6 6 c c
-        f 1 1 1 1 1 1 6 6 c 6 6 6 c . .
-        f 6 1 1 1 1 1 6 6 6 6 6 6 c . .
-        . f 6 1 1 1 1 1 6 6 6 6 c . . .
-        . . f f c c c c c c c c . . . .
-        `)
-    loggr.addToTextlog("A snake slithers into your path")
-}
+let roll = 0
+roll = 0
+music.play(music.createSong(hex`0078000408020200001c00010a006400f4016400000400000000000000000000000000050000042a0000000400012504000800012708000c0001250c001000012210001400011e18002000011624003000011904001c00100500640000041e000004000000000000000000000000000a0400041e000000080003131e250800100003162025100020000310191e200030000116`), music.PlaybackMode.InBackground)
+loggr.addImageToTextLog(assets.image`gelatenousCube`)
 music.setVolume(20)
 info.setLife(20)
 enounter1()
+
 
 ```
 
@@ -328,7 +325,7 @@ enounter1()
 music.setVolume(20);
 
 
-//% color=#888888 icon="\uf036"
+//% color=#656565 icon="\uf036"
 //% block="Text Log"
 namespace loggr {
 

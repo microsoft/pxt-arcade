@@ -71,6 +71,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                 tickEvent("kiosk.submitGameId.submitSuccess");
                 kiosk.navigate(KioskState.QrSuccess);
             } catch (error) {
+                // it's possible that if it reaches here, the kiosk id was invalid ( someone just puts something random in the url, we should have a toast for this)
                 console.log("Unable to add game to kiosk. Please try again later");
             }
         } else {
@@ -120,7 +121,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                         <p className="linkError">Incorrect format for a share link</p>
                     }
                 </div>
-                <a className="shareHelp" target="_blank" onClick={clickHelp} href="https://forum.makecode.com/t/pigeon-deliverance/11726/3?u=richard">
+                <a className="shareHelp" target="_blank" onClick={clickHelp} href="https://arcade.makecode.com/share">
                     How do I get a game's share link or QR code?
                 </a>
             </div>

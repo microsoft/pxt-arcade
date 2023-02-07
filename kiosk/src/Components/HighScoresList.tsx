@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { HighScore } from "../Models/HighScore";
-import { Kiosk } from "../Models/Kiosk";
 
 interface IProps {
     highScores: HighScore[];
