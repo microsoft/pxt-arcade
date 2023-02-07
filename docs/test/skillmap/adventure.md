@@ -1,13 +1,13 @@
 # Text-Adventure
 * name: Your Big Adventure
-* description: Code your own text-based adventure based on the movie Dungeons & Dragons: Honor Among Thieves
+* description: Code your own text-based adventure inspired by the movie Dungeons & Dragons: Honor Among Thieves
 * infoUrl: skillmap/educator-info/adventure-info
-* bannerUrl: /static/skillmap/adventure/adventure3.gif
-* backgroundurl: /static/skillmap/backgrounds/adventure-comp.gif
+* bannerUrl: https://media.giphy.com/media/oPp3DLbHzo8jSLyXYW/giphy.gif
+* backgroundurl: https://github.com/kiki-lee/beg-split/blob/master/adventure-comp1.png?raw=true
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
-* tertiarycolor: #82cd54
-* completednodecolor: #604c4e
+* tertiarycolor: #b1dcef
+* completednodecolor: #2f484d
 * highlightcolor: #ff0000
 * allowcodecarryover: true
 * tags: creative, intermediate, conditionals
@@ -22,24 +22,24 @@
 
 * name: Rolling Dice
 * type: tutorial
-* description: Use a roll of the die to figure out what adventures your player will have.
-* tags: random, conditionals
-* next: mole2
+* description: Code your own 20-sided die to begin your adventure.
+* tags: random, text
+* next: adventure2
 * url: /test/skillmap/adventure/adventure1
-* imageUrl: /static/skillmap/adventure/adventure1.gif
-* position: -1 1
+* imageUrl: https://media.giphy.com/media/XbidWpczmwrmtnJ01e/giphy.gif
+* position: 0 2
 
 
 
 ### adventure2
-* name: Rolling Dice
+* name: Start Your Journey
 * type: tutorial
 * description: Use a roll of the die to figure out what adventures your player will have.
 * tags: random, conditionals
-* next: mole3
+* next: adventure3
 * url: /test/skillmap/adventure/adventure2
-* imageUrl: /static/skillmap/adventure/adventure2.gif
-* position: 0 1
+* imageUrl: https://media.giphy.com/media/5Ur2TK63wEciypxyHG/giphy.gif
+* position: 1 2
 
 
 ### adventure3
@@ -47,7 +47,7 @@
 * type: tutorial
 * description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
-* next: mole4
+* next: adventure4
 * url: /test/skillmap/adventure/adventure3
 * imageUrl: /static/skillmap/adventure/adventure3.gif
 * position: 1 1
@@ -59,10 +59,10 @@
 * type: tutorial
 * description: Want to play with friends? A few simple changes will have you playing chase in no time!
 * tags: easy, clicker, multiplayer, buttons
-* next: mole-cert
+* next: adventure-cert
 * url: /test/skillmap/adventure/adventure4
 * imageUrl: /static/skillmap/adventure/adventure3.gif
-* position: 1 0
+* position: 2 1
 
 
 ### adventure-cert
@@ -82,4 +82,4 @@
         * preview: /static/skillmap/certificates/mole-cert.png
     * completion-badge:
         * image: /static/badges/badge-mole.png
-        * name: Whack-the-Mole
+        * name: Code Adventure
