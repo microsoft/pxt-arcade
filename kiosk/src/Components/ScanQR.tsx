@@ -73,7 +73,7 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
             } catch (error: any) {
                 setAddingError(error.toString());
                 if (error.toString().includes("404")) {
-                    setErrorDesc("This is likely because the kiosk code no longer exists. Go back to the kiosk to make a new code.");
+                    setErrorDesc("The kiosk code expired. Go back to the kiosk to make a new code.");
                 } else {
                     setErrorDesc("Something went wrong. Please try again later.");
                 }
