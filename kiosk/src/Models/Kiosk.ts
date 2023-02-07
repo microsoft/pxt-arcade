@@ -79,29 +79,44 @@ export class Kiosk {
         return desc;
     }
 
-    async saveNewGameAsync(gameId: string): Promise<GameData | undefined> {
+    async saveNewGameAsync(gameIds: [string]): Promise<GameData[]> {
         const allAddedGames = this.getAllAddedGames();
-        if (!allAddedGames[gameId]) {
-            let gameName;
-            let gameDescription;
+        let gamesToAdd: GameData[] = [];
+        console.log("game ids!");
+        console.log(gameIds);
+        console.log("games to add before everything");
+        console.log(gamesToAdd);
+        for (const gameId of gameIds) {
+            console.log("a single game id");
+            console.log(gameId);
+            if (!allAddedGames[gameId]) {
+                let gameName;
+                let gameDescription;
+    
+                try {
+                    const gameDetails = await getGameDetailsAsync(gameId);
+                    gameName = this.getGameName(gameDetails.name);
+                    gameDescription = this.getGameDescription(gameDetails.description);
+                } catch (error) {
+                    gameName = "Kiosk Game";
+                    gameDescription = this.defaultGameDescription;
+                }
+    
+                const gameUploadDate = (new Date()).toLocaleString()
+                const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate, true);
+    
+                this.games.push(newGame);
+                gamesToAdd.push(newGame);
+                allAddedGames[gameId] = newGame;
 
-            try {
-                const gameDetails = await getGameDetailsAsync(gameId);
-                gameName = this.getGameName(gameDetails.name);
-                gameDescription = this.getGameDescription(gameDetails.description);
-            } catch (error) {
-                gameName = "Kiosk Game";
-                gameDescription = this.defaultGameDescription;
             }
-
-            const gameUploadDate = (new Date()).toLocaleString()
-            const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate, true);
-
-            this.games.push(newGame);
-            allAddedGames[gameId] = newGame;
-            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
-            return newGame;
         }
+        console.log("games to add AFTER everything");
+        console.log(gamesToAdd);
+        if (gamesToAdd.length) {
+            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
+        }
+        return gamesToAdd;
     }
 
     getAllAddedGames(): { [index: string]: GameData } {

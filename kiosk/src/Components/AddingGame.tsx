@@ -73,13 +73,18 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             pollTimer = setTimeout(async () => {
                 try {
                     // TODO: change for the multiple games added
-                    const gameCode: string = await getGameCodeAsync(kioskCode);
-                    await kiosk.saveNewGameAsync(gameCode);
-                    kiosk.launchGame(gameCode);
-                } catch (error: any) {
-                    if (kioskCode) {
-                        await pollForGameCode();
+                    const gameCodes: [string] = await getGameCodeAsync(kioskCode);
+                    console.log("the game codes");
+                    console.log(gameCodes);
+                    if (gameCodes) {
+                        await kiosk.saveNewGameAsync(gameCodes);
                     }
+                    console.log("about to poll again");
+                    pollForGameCode();
+                } catch (error: any) {
+                    clearTimeout(pollTimer);
+                    setKioskCode("");
+                    setRenderQRCode(false);
                 }
             }, timeToPoll)
         }
