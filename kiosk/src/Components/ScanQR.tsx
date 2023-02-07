@@ -129,7 +129,10 @@ const ScanQR: React.FC<IProps> = ({ kiosk }) => {
                     How do I get a game's share link or QR code?
                 </a>
             </div>
-            <ErrorModal showing={!!addingError} errorType={addingError} errorDescription={errorDesc!} setShowing={setAddingError}/>
+            {
+                !!addingError &&
+                <ErrorModal errorType={addingError} errorDescription={errorDesc!} setShowing={setAddingError}/>
+            }
         </div>
     )
 }

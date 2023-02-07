@@ -6,10 +6,9 @@ import "../Kiosk.css";
 interface IProps {
     errorType: string;
     errorDescription: string;
-    showing: boolean;
     setShowing: (p: string) => void;
 }
-const ErrorModal: React.FC<IProps> = ({ errorType, errorDescription, showing, setShowing }) => {
+const ErrorModal: React.FC<IProps> = ({ errorType, errorDescription, setShowing }) => {
     const cancelClicked = () => {
         const modal = document.getElementsByClassName("common-modal-container")[0];
         while (modal.firstChild) {
@@ -17,10 +16,6 @@ const ErrorModal: React.FC<IProps> = ({ errorType, errorDescription, showing, se
         }
         tickEvent("kiosk.scanError.dismissed");
         setShowing("");
-    }
-
-    if (!showing) {
-        return null;
     }
 
     return (
