@@ -7,6 +7,8 @@ import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
 import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
 import { isLocal, tickEvent } from "../browserUtils";
+import { GameData } from "../Models/GameData";
+import KioskNotification from "./Notification";
 interface IProps {
     kiosk: Kiosk
 }
@@ -16,6 +18,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
+    const [notify, setNotify] = useState(false);
+    const [notifyContent, setNotifyContent] = useState("");
     const generatingKioskCode = useRef(false);
     const kioskCodeNextGenerationTime = useRef(0);
     const nextSafePollTime = useRef(0);
@@ -47,6 +51,13 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         return true;
     }
 
+    const displayGamesAdded = (addedGames: GameData[]): void => {
+        const games = addedGames.toString();
+        const notification = `games ${games} added to kiosk!`
+        setNotifyContent(notification);
+        setNotify(true);
+    }
+
     useEffect(() => {
         let intervalId: any = null;
         intervalId = setInterval(() => {
@@ -74,7 +85,10 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 try {
                     const gameCodes: [string] = await getGameCodeAsync(kioskCode);
                     if (gameCodes) {
-                        await kiosk.saveNewGameAsync(gameCodes);
+                        const justAddedGames = await kiosk.saveNewGameAsync(gameCodes);
+                        if (justAddedGames.length) {
+                            displayGamesAdded(justAddedGames);
+                        }
                     }
                     if (kioskCode) {
                         await pollForGameCode();
@@ -175,6 +189,10 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 </div>
             </div>
             <AddGameButton selected={menuButtonSelected} content="Return to menu" />
+            {
+                notify &&
+                <KioskNotification setActive={setNotify} content={notifyContent} />
+            }
         </div>
 
     )
