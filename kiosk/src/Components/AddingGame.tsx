@@ -8,7 +8,7 @@ import {QRCodeSVG} from 'qrcode.react';
 import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
 import { isLocal, tickEvent } from "../browserUtils";
 import { GameData } from "../Models/GameData";
-import KioskNotification from "./Notification";
+import KioskNotification from "./KioskNotification";
 interface IProps {
     kiosk: Kiosk
 }
@@ -51,9 +51,18 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         return true;
     }
 
+    const getGameNames = (gameList: GameData[]): string[] => {
+        const gameNames = [];
+        for (const game of gameList) {
+            gameNames.push(game.name);
+        }
+        return gameNames;
+    }
+
     const displayGamesAdded = (addedGames: GameData[]): void => {
-        const games = addedGames.toString();
-        const notification = `games ${games} added to kiosk!`
+        const gameNames = getGameNames(addedGames);
+        const games = gameNames.toString();
+        const notification = `Game(s) [ ${games} ] added to kiosk!`
         setNotifyContent(notification);
         setNotify(true);
     }
@@ -123,7 +132,6 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 kioskCodeNextGenerationTime.current = Date.now() + generatedCodeDuration;
                 setKioskCode(newKioskCode);
             } catch (error) {
-                setKioskCode("");
                 setRenderQRCode(false);
             }
             generatingKioskCode.current = false;

@@ -8,7 +8,7 @@ interface IProps {
     content: string;
 }
 
-const KioskNotification: React.FC<IProps> = ({ setActive, duration=3000, content }) => {
+const KioskNotification: React.FC<IProps> = ({ setActive, duration=5000, content }) => {
     useEffect(() => {
         let notificationLength = setTimeout(() => {
             setActive(false);

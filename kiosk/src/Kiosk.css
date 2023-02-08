@@ -775,25 +775,20 @@ h2 {
     display: flex;
     align-items: baseline;
     justify-content: right;
-    top: 0;
+    top: 85%;
     left: 0;
-    right: 0;
+    right: 2%;
     bottom: 0;
     z-index: 1000;
     color: var(--black-color);
     font-family: 'Share';
 }
 
-.notication-contents {
-    background-color: var(--main-text-color);
-    width: 50%;
-    max-width: 40rem;
+.notification-contents {
     border-radius: .285rem;
     overflow: hidden;
     position: fixed;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 0.4rem var(--black-color-transparent);
-    border: 2px solid rgba(34, 36, 38, .15);
+    padding: 0 1rem;
+    background-color: var(--button-primary-color);
+    border: 4px solid var(--high-score-selector-color);
 }
