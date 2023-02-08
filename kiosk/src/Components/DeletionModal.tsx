@@ -25,10 +25,6 @@ const DeletionModal: React.FC<IProps> = ({ kiosk, active, changeFocus }) => {
     }
 
     const cancelClicked = () => {
-        const modal = document.getElementsByClassName("common-modal-container")[0];
-        while (modal.firstChild) {
-            modal.removeChild(modal.firstChild);
-        }
         active(false);
         changeFocus(false);
     }

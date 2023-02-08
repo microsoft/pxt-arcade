@@ -16,6 +16,8 @@
     --error-color: #ff7676;
     --black-color-transparent: #050505ab;
     --modalFooterBackgroundColor: #f9fafb;
+    --error-modal-transparent: #340000ab;
+
 }
 
 html, body {
@@ -765,6 +767,23 @@ h2 {
 
 .common-modal-button.selected {
     border: 2px solid var(--high-score-selector-color);
+}
+
+.common-modal-title.error {
+    background-color: var(--error-color);
+}
+
+.common-modal-container.error {
+    background-color: var(--error-modal-transparent);
+}
+
+.common-modal-button.error {
+    border: 2px solid var(--error-color);
+    background-color: var(--error-color);
+}
+
+.common-modal-button.error:hover {
+    cursor: pointer;
 }
 
 /* -------- NOTIFICATION STYLING -------- */
