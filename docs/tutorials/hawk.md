@@ -940,7 +940,7 @@ You can customize any of the animations to make the game your own. Try remixing 
 
 When you're ready, click **Done** to share your game!
 
-**If you'd like to participate in the Atlanta Hawks & Microsoft Coded Dunk Challenge, click the share button to export your game, and follow the submission process on the Hawks website:**  [https://www.nba.com/hawks/code](https://www.nba.com/hawks/code)
+**If you'd like to participate in the Atlanta Hawks & Microsoft Coded Dunk Challenge, click the share button to export your game, and follow the submission process on the Hawks website:**  [https://www.microsofthawksdunk.com](https://www.microsofthawksdunk.com)
 
 
 
