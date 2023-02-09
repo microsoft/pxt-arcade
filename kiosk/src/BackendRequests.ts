@@ -1,6 +1,5 @@
 const stagingEndpoint = "https://staging.pxt.io/api/kiosk"
-const kioskBackendEndpoint = stagingEndpoint;
-//"https://makecode.com/api/kiosk";
+const kioskBackendEndpoint = "https://makecode.com/api/kiosk";
 const apiBackendEndpoint = "https://makecode.com/api";
 
 export const getGameCodeAsync = async (kioskCode: string) => {

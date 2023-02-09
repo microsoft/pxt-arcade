@@ -94,7 +94,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 try {
                     const gameCodes = await getGameCodeAsync(kioskCode);
                     if (gameCodes) {
-                        const justAddedGames = await kiosk.saveNewGameAsync(gameCodes);
+                        const justAddedGames = await kiosk.saveNewGamesAsync(gameCodes);
                         if (justAddedGames.length) {
                             displayGamesAdded(justAddedGames);
                         }
