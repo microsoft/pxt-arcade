@@ -61,8 +61,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
     const displayGamesAdded = (addedGames: GameData[]): void => {
         const gameNames = getGameNames(addedGames);
-        const games = gameNames.toString();
-        const notification = `Game(s) [ ${games} ] added to kiosk!`
+        const games = gameNames.join(", ");
+        const notification = `${games} added!`
         setNotifyContent(notification);
         setNotify(true);
     }
@@ -92,7 +92,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             clearTimeout(pollTimer);
             pollTimer = setTimeout(async () => {
                 try {
-                    const gameCodes: [string] = await getGameCodeAsync(kioskCode);
+                    const gameCodes = await getGameCodeAsync(kioskCode);
                     if (gameCodes) {
                         const justAddedGames = await kiosk.saveNewGameAsync(gameCodes);
                         if (justAddedGames.length) {

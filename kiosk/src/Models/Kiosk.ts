@@ -79,7 +79,7 @@ export class Kiosk {
         return desc;
     }
 
-    async saveNewGameAsync(gameIds: [string]): Promise<GameData[]> {
+    async saveNewGameAsync(gameIds: string[]): Promise<GameData[]> {
         const allAddedGames = this.getAllAddedGames();
         let gamesToAdd: GameData[] = [];
         for (const gameId of gameIds) {

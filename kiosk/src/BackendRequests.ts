@@ -1,7 +1,7 @@
-const stagingEndpoint: string = "https://staging.pxt.io/api/kiosk"
-const kioskBackendEndpoint: string = stagingEndpoint;
+const stagingEndpoint = "https://staging.pxt.io/api/kiosk"
+const kioskBackendEndpoint = stagingEndpoint;
 //"https://makecode.com/api/kiosk";
-const apiBackendEndpoint: string = "https://makecode.com/api";
+const apiBackendEndpoint = "https://makecode.com/api";
 
 export const getGameCodeAsync = async (kioskCode: string) => {
     const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`;
@@ -12,7 +12,7 @@ export const getGameCodeAsync = async (kioskCode: string) => {
         throw e;
     } else {
         const gameCodeList = JSON.parse((await response.json())?.shareIds);
-        if (gameCodeList.length) {
+        if (gameCodeList?.length) {
             return gameCodeList;
         }
     }
