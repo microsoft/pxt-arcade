@@ -5,7 +5,13 @@ import { addGameToKioskAsync } from "../BackendRequests";
 import { KioskState } from "../Models/KioskState";
 import { tickEvent } from "../browserUtils";
 
-export const play = async (kiosk: Kiosk, kioskId: string, html5QrCode: Html5Qrcode) => {
+export const play = async (
+        kiosk: Kiosk,
+        kioskId: string,
+        html5QrCode: Html5Qrcode,
+        setAddError: (p: string) => void,
+        setDesc: (p: string) => void
+    ) => {
     let devices: any[];
 
     async function onScanSuccess(decodedText: string, decodedResult: any) {
@@ -15,8 +21,13 @@ export const play = async (kiosk: Kiosk, kioskId: string, html5QrCode: Html5Qrco
             tickEvent("kiosk.gameQrScanned.success");
             await html5QrCode.stop();
             kiosk.navigate(KioskState.QrSuccess);
-        } catch (error) {
-            console.log("Unable to add game to kiosk. Please try again later");
+        } catch (error: any) {
+            setAddError(error.toString());
+            if (error.toString().includes("404")) {
+                setDesc("This is likely because the kiosk code is expired. Go back to the kiosk to make a new code.");
+            } else {
+                setDesc("Something went wrong. Please try again later.");
+            }
         }
     }
       
