@@ -20,7 +20,7 @@ and where the controller buttons are enabled?
 
 ---
 
-At the moment, the glove doesn't do anything when it overlaps quail. 
+At the moment, the glove doesn't do anything when it overlaps quail.
 
 We should fix that.
 
@@ -31,8 +31,8 @@ We should fix that.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, drag an  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``  
+- :paper plane:  From ``||sprites:Sprites||``, drag an
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``
 container into the workspace.
 
 - :mouse pointer:  Click the **second** ``||sprites:Player||`` dropdown and
@@ -54,8 +54,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 ---
 
-- :paper plane:  Also from ``||sprites:Sprites||``, grab   
-``||sprites:set [myEnemy] follow [mySprite] ||``   
+- :paper plane:  Also from ``||sprites:Sprites||``, grab
+``||sprites:set [myEnemy] follow [mySprite] ||``
 and drag it into the empty **overlaps** container.
 
 - :mouse pointer:  Grab the ``||variables(noclick):otherSprite||`` value block out of the title of the outer container and
@@ -80,7 +80,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Quail, function (sprite, otherSp
 
 ---
 
-What's happening?  
+What's happening?
 What's not happening?
 
 
@@ -90,8 +90,8 @@ What's not happening?
 
 ---
 
-- :tree:  From ``||scene:Scene||``, drag an  
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``  
+- :tree:  From ``||scene:Scene||``, drag an
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``
 container into the workspace.
 
 - :mouse pointer:  Change **Player** to **Quail**, and change the empty tile to the **coop** tile.
@@ -100,7 +100,7 @@ container into the workspace.
 namespace SpriteKind {
     export const Quail = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Quail, assets.tile`coop`, function (sprite, location) {
 
 })
 ```
@@ -108,8 +108,8 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 
 ## 7. Destroy
 
-- :paper plane:  From ``||sprites:Sprites||``, snap a  
-``||sprites:destroy [mySprite]||``  
+- :paper plane:  From ``||sprites:Sprites||``, snap a
+``||sprites:destroy [mySprite]||``
 block into the empty overlaps container.
 
 - :mouse pointer:  Grab the ``||variables(noclick):sprite||`` value block from the
@@ -124,7 +124,7 @@ block into the empty overlaps container.
 namespace SpriteKind {
     export const Quail = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Quail, assets.tile`coop`, function (sprite, location) {
     //@highlight
     sprite.destroy()
 })
@@ -136,13 +136,13 @@ scene.onOverlapTile(SpriteKind.Quail, assets.tile`myTile`, function (sprite, loc
 
 ---
 
-- :mouse pointer:  Right-click on your  
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Quail]||``  
+- :mouse pointer:  Right-click on your
+``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Quail]||``
 container and select **Duplicate** from the dropdown menu. Then change the second
 argument from **Quail** to **Egg**.
 
-- :mouse pointer:  Right-click on your  
-``||scene:on [sprite] of kind [Quail] overlaps [coop] at [location]||``  
+- :mouse pointer:  Right-click on your
+``||scene:on [sprite] of kind [Quail] overlaps [coop] at [location]||``
 container and select **Duplicate** from the dropdown menu.
 Then change the kind from **Quail** to **Egg**.
 
@@ -158,7 +158,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Egg, function (sprite, otherSpri
     otherSprite.follow(sprite)
 })
 
-scene.onOverlapTile(SpriteKind.Egg, assets.tile`myTile`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Egg, assets.tile`coop`, function (sprite, location) {
     sprite.destroy()
 })
 ```
@@ -205,8 +205,8 @@ controller.moveSprite(mySprite)
   "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable id=\"_IBKL^~yT2$W1U3D6v*s\">mySprite</variable><variable type=\"KIND_SpriteKind\" id=\";Xcb7$zV,_oi)g;tJQUQ\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"TNqB.-5qY@-1s=+VW{di\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"4/GGbI3A]We^*Uu4WtMK\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"#m652-$Asb--@{r,wN,t\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"VhqsXNXdC!%Oo*#$v7G2\">Quail</variable><variable type=\"KIND_SpriteKind\" id=\"F!}fL6;/Lo_ov,p,H@1,\">Egg</variable></variables><block type=\"pxt-on-start\" x=\"0\" y=\"0\"><statement name=\"HANDLER\"><block type=\"tilemap_editor\"><field name=\"tilemap\">tilemap`level1`</field><data>{\"commentRefs\":[],\"fieldData\":{\"tilemap\":\"level1\"}}</data></block></statement></block></xml>",
   "main.ts": "namespace SpriteKind {\n    export const Quail = SpriteKind.create()\n    export const Egg = SpriteKind.create()\n}\ntiles.setTilemap(tilemap`level1`)\n",
   "pxt.json": "{\n    \"name\": \"Quail Hatching\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.4.28\",\n        \"tag\": \"v1.4.28\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/9569656def042c35d28e981045e67afaa1feed7c\",\n        \"target\": \"1.4.28\",\n        \"pxt\": \"6.12.9\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n",
-  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAAC3zMzMzMz//6u7u6vMu7vLvLu7u/qZud+8u7u7+pm537y7u7v6mbnfvLu7u/qZud+8u7u7+pm537y7u7v6mbnfvLu7u/qZsd+8u7u7+hm537y7u7v6kbnfvLu7u/qZsd+8u7u7+hmx37y7u7v6Ebnfq7u7q8y7u8u3zMzMzMz//w==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAwYTAwMDgwMDAxMDIwMjAyMGEwMjAyMDIwMjAzMDcwOTA5MDkwOTA5MDkwOTA5MDgwNzA5MDkwOTA5MDkwOTA5MDkwODA3MDkwOTA5MDkwOTA5MDkwOTA4MDcwOTA5MDkwOTA5MDkwOTA5MDgwNzA5MDkwOTA5MDkwOTA5MDkwODA3MDkwOTA5MDkwOTA5MDkwOTA4MDUwNjA2MDYwNjA2MDYwNjA2MDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"sprites.castle.tilePath1\",\n            \"sprites.castle.tilePath2\",\n            \"sprites.castle.tilePath3\",\n            \"sprites.castle.tilePath9\",\n            \"sprites.castle.tilePath7\",\n            \"sprites.castle.tilePath8\",\n            \"sprites.castle.tilePath4\",\n            \"sprites.castle.tilePath6\",\n            \"sprites.castle.tilePath5\",\n            \"myTiles.tile1\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
-  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`0a000800010202020a020202020307090909090909090908070909090909090909080709090909090909090807090909090909090908070909090909090909080709090909090909090805060606060606060604`, img`\n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n`, [myTiles.transparency16,sprites.castle.tilePath1,sprites.castle.tilePath2,sprites.castle.tilePath3,sprites.castle.tilePath9,sprites.castle.tilePath7,sprites.castle.tilePath8,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.castle.tilePath5,myTiles.tile1], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"myTile\":\n            case \"tile1\":return tile1;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
+  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAAC3zMzMzMz//6u7u6vMu7vLvLu7u/qZud+8u7u7+pm537y7u7v6mbnfvLu7u/qZud+8u7u7+pm537y7u7v6mbnfvLu7u/qZsd+8u7u7+hm537y7u7v6kbnfvLu7u/qZsd+8u7u7+hmx37y7u7v6Ebnfq7u7q8y7u8u3zMzMzMz//w==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"coop\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAwYTAwMDgwMDAxMDIwMjAyMGEwMjAyMDIwMjAzMDcwOTA5MDkwOTA5MDkwOTA5MDgwNzA5MDkwOTA5MDkwOTA5MDkwODA3MDkwOTA5MDkwOTA5MDkwOTA4MDcwOTA5MDkwOTA5MDkwOTA5MDgwNzA5MDkwOTA5MDkwOTA5MDkwODA3MDkwOTA5MDkwOTA5MDkwOTA4MDUwNjA2MDYwNjA2MDYwNjA2MDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"sprites.castle.tilePath1\",\n            \"sprites.castle.tilePath2\",\n            \"sprites.castle.tilePath3\",\n            \"sprites.castle.tilePath9\",\n            \"sprites.castle.tilePath7\",\n            \"sprites.castle.tilePath8\",\n            \"sprites.castle.tilePath4\",\n            \"sprites.castle.tilePath6\",\n            \"sprites.castle.tilePath5\",\n            \"myTiles.tile1\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
+  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`0a000800010202020a020202020307090909090909090908070909090909090909080709090909090909090807090909090909090908070909090909090909080709090909090909090805060606060606060604`, img`\n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n. . . . . . . . . . \n`, [myTiles.transparency16,sprites.castle.tilePath1,sprites.castle.tilePath2,sprites.castle.tilePath3,sprites.castle.tilePath9,sprites.castle.tilePath7,sprites.castle.tilePath8,sprites.castle.tilePath4,sprites.castle.tilePath6,sprites.castle.tilePath5,myTiles.tile1], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"coop\":\n            case \"tile1\":return tile1;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
 

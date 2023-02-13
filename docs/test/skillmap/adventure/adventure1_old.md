@@ -1,75 +1,96 @@
-# Start Your Journey
+# Rolling Dice
 ### @explicitHints true
 
 
 ## {Intro @showdialog}
 
+This activity will show you how to make your own text-based adventure inspired by the movie Dungeons & Dragons: Honor Among Thieves
 
-Are you ready to create an adventure?
-
-The code for your d20 is already in the workspace. Let's add a reason to use it.
-
-![Let's go on an adventure!](https://media.giphy.com/media/5Ur2TK63wEciypxyHG/giphy.gif "Image of trunk trying to eat Barbarian" )
+![Let's go on an adventure!](https://media.giphy.com/media/XbidWpczmwrmtnJ01e/giphy.gif "Image of trunk trying to eat Barbarian" )
 
 
 
 ## {Step 2}
 
-**We need a quest!**<br/>
+**Let's get rolling!**<br/>
 
-Start by creating a reason to roll.  What issue is the player facing?
+First, we'll code a 20-sided die that we'll call a **d20**.
 
-Let's make another function to keep this first quest in.
+---
 
-
-
-- :function: Click **Advanced** in the toolbox to show the
-``||function: Functions||`` category. <br/>
-
-- :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
-**`Make a Function...`**
-
-- :mouse pointer: Call your new function **quest_1** and click **Done**.
+- :align justify:  Open the ``||variables:Variables||`` category in the toolbox,
+and click <br/>
+**`Make a Variable...`**
 
 
+- :mouse pointer: Enter **`roll`** as the new variable name, then click **Ok**.
+
+
+~hint What is a variable? 💡
+
+---
+
+A variable is a placeholder for information that might change later.
+
+Our game will use a number that changes every turn.
+Since we don't know what that number will be ahead of time,
+we need a placeholder to stand-in for the mystery number, otherwise we
+won't be able to keep writing our program.
+
+From now on, whenever we want to use the number that we get when the user rolls the d20,
+we'll access it using the word **roll**.
+
+hint~
+
+- :mouse pointer: Click **Next** to move on to the next step.
 
 
 
-## {3. Add function}
 
-- :function: Reopen the ``||functions: Functions||`` category and drag the empty<br/>
-``||functions:function [quest_1]||``<br/>
-container into **an empty** area of the workspace.
+
+## {3. Set Roll}
+
+
+- :align justify: Reopen the ``||variables: Variables||`` category and grab the <br/>
+``||variables:set [roll] to [0]||`` <br/>
+block. Snap it into the empty <br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
 
 
 #### ~ tutorialhint
 
 ```blocks
+let roll = 0
 //@highlight
-function quest_1() {}
+roll = 0
 ```
 
 
 
 
-## {4. Create Conflict}
+## {4. Roll Random}
 
-- :align left: From ``||loggr: Text Log||``, drag the<br/>
-``||loggr: add [" "] to text log||`` <br/>
-block into the empty<br/>
-``||functions:function [quest_1]||`` <br/>
+**Pick a number**
+
+Time to set the variable **`roll`** to a random number.
+
+- :calculator: From ``||math: Math||``, drag <br/>
+``||math:pick random [0] to [10]||`` <br/>
+in to replace the value **0** in the  <br/>
+``||variables(noclick):set [roll] to [0]||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Add your own text that sets up the problem that your player will face.
+- :mouse pointer: To simulate the roll of a d20 (between 1 & 20), change
+the **0** to **1** and the **10** to **20**.
 
 
 #### ~ tutorialhint
 
 ```blocks
-function quest_1() {
+let roll = 0
 //@highlight
-loggr.addToTextlog("Oh no! There is a dragon in your path!")
-}
+roll = randint(1,20)
 ```
 
 
@@ -82,7 +103,7 @@ loggr.addToTextlog("Oh no! There is a dragon in your path!")
 The code to roll your number is in the workspace, but there's no way to see it.
 Let's change that.
 
-- :calculator: From ``||loggr: Text Log||``, drag <br/>
+- :align left: From ``||loggr: Text Log||``, drag <br/>
 ``||loggr:add ("You rolled [roll] !" to text log||`` <br/>
 into **the end** of the  <br/>
 ``||loops(noclick):on start|`` <br/>
@@ -130,7 +151,7 @@ Let's move it into a function so we can reuse the code we just wrote.
 - :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
 **`Make a Function...`**
 
-- :mouse pointer: Call your function **roll_d20** and click **Done**.
+- :mouse pointer: Name your function **roll_d20** and click **Done**.
 
 
 ~hint What is a function? 💡
@@ -145,6 +166,16 @@ you function as many times as you want without having to rewrite it in each loca
 hint~
 
 
+
+
+## {8. Add your function}
+
+
+- :function: Reopen the ``||functions: Functions||`` category and drag the empty<br/>
+``||functions:function [roll_d20]||``<br/>
+container into **an empty** area of the workspace.
+
+
 #### ~ tutorialhint
 
 ```blocks
@@ -154,7 +185,8 @@ function roll_d20() {}
 
 
 
-## {8. Move the Code}
+
+## {9. Move the Code}
 
 **Fill the function.**
 
@@ -180,7 +212,7 @@ loggr.addToTextlog(loggr.rollTextForLog(roll))}
 
 
 
-## {9. Call the Code}
+## {10. Call the Code}
 
 Did you notice that your roll stopped showing in the log?
 
@@ -224,7 +256,7 @@ let roll=20;
 loggr.addImageToTextLog(img`.`)
 music.setVolume(20)
 info.setLife(20)
-loggr.addToTextlog("Oh no! There is a dragon in your path!")
+loggr.addToTextlog(loggr.rollTextForLog(roll))
 ```
 
 
@@ -234,18 +266,6 @@ carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 dd=github:kiki-lee/dnd-sprite-pack
 ```
 
-
-
-```template
-
-let roll = 0
-function roll_d20() {
-roll = randint(1,20)
-loggr.addToTextlog(loggr.rollTextForLog(roll))
-}
-
-roll_d20()
-```
 
 
 ```ghost
@@ -296,6 +316,7 @@ loggr.addImageToTextLog(assets.image`gelatenousCube`)
 music.setVolume(20)
 info.setLife(20)
 enounter1()
+
 
 ```
 

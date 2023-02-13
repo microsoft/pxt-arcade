@@ -23,7 +23,7 @@ This kind of game peeks in on the action from the side, and relies on a [__*tile
 
 - :binoculars: Look at your workspace to see that the **background image** and **tilemap** have already been set for the scene in this activity.
 
-_💡 Both blocks have been added to the ``||loops: on start||`` container so they load as soon as the game starts.)_
+_💡 Both blocks have been added to the ``||loops(noclick): on start||`` container so they load as soon as the game starts.)_
 
 
 
@@ -37,7 +37,7 @@ Our moving characters are called [__*sprites*__](#sprote "2-D images that move o
 
 - :paper plane: From the ``||sprites:Sprites||`` category, drag <br/>
 ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
-to **the end** of the ``||loops:on start||`` container.
+to **the end** of the ``||loops(noclick):on start||`` container.
 
 _💡  Having trouble finding the block you need? Look to the left of the instructions for the icon of the toolbox category where your block lives!_
 
@@ -62,7 +62,7 @@ let mySprite = sprites.create(assets.image`stand`, SpriteKind.Player)
 
 - :game: Drag <br/>
 ``||controller:move [mySprite] with buttons ➕||`` <br/>
-to **the end** of the ``||loops:on start||`` container.
+to **the end** of the ``||loops(noclick):on start||`` container.
 
 _💡  Remember, the icon to the left of the instructions shows the same icon as the toolbox category for the block you need._
 
@@ -98,7 +98,7 @@ to "pull down" on the sprite.
 - :paper plane:  Drag <br/>
 ``||sprites:set [mySprite] [x] to [0]||`` <br/>
 to **the end** of the <br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 - :mouse pointer: Click the dropdown to change **x** to **ay (acceleration y)**.
 
@@ -122,7 +122,7 @@ mySprite.ay = 500
 - :tree:  To keep the monkey in sight, drag <br/>
 ``||scene:camera follow sprite [mySprite]||`` <br/>
 to **the end** of the <br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 ```blocks
 scene.setBackgroundImage(assets.image`background`)
@@ -155,9 +155,9 @@ container into an empty area of the workspace.
 - :mouse pointer: Click the **A** option and change it to **up**.
 
 - :bolt: Inside of the <br/>
-``||controller:on [up] button [pressed]||`` <br/>
+``||controller(noclick):on [up] button [pressed]||`` <br/>
 container, add <br/>
-``||simplified:make [mySprite] gravity jump||``.
+``||sprites(simplified):make [mySprite] gravity jump||`` from the ``||simplified:Simplified||`` category.
 
 ```blocks
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {

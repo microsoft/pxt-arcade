@@ -18,12 +18,12 @@ of darts.
 
 ---
 
-- :chevron down: Expand the ``||statusbars:Advanced||`` category in the toolbox and click ``||arrays:Arrays||``.
+- :chevron down: Expand the ``||statusbars(arrays):Advanced||`` category in the toolbox and click ``||arrays:Arrays||``.
 
-- :list ol: Drag  
-``||variables:set [list] to array of [0] [1]||``  
-into **the top** of the  
-``||controller:on [A] button [pressed]||``   
+- :list ol: Drag
+``||variables(arrays):set [list] to array of [0] [1]||``
+into **the top** of the
+``||controller(noclick):on [A] button [pressed]||``
 container already in the workspace.
 
 
@@ -42,8 +42,8 @@ Right now, we have a **list** of numbers. Let's make it a list of darts.
 
 ---
 
-- :mouse pointer: Click the name **list** inside  
-``||variables:set [list] to array of [0] [1]||``   
+- :mouse pointer: Click the name **list** inside
+``||variables(noclick):set [list] to array of [0] [1]||``
 and choose "Rename variable..." from the dropdown menu.
 
 - :mouse pointer: Call your list **darts** and click **Ok**.
@@ -59,7 +59,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## 4. Prepare the Images
 
-- :image: Beneath the ``||statusbars:Advanced||`` category in the toolbox, click
+- :image: Beneath the ``||statusbars(images):Advanced||`` category in the toolbox, click
 ``||images:Images||``.
 
 - :image: Drag out **3** empty grey image boxes into the workspace (we'll use them in
@@ -67,10 +67,10 @@ the next step).
 
 
 
-## 5. Dart Images 
+## 5. Dart Images
 
-- :mouse pointer: Snap the first two grey image boxes into  
-``||variables:set [list] to array of [0] [1]||``  
+- :mouse pointer: Snap the first two grey image boxes into
+``||variables(noclick):set [list] to array of [0] [1]||``
 to replace the numbers **0** and **1**.
 
 - :mouse pointer: Add space for the new image box by clicking the ➕ symbol at the right of
@@ -127,11 +127,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ---
 
-- :align justify: From ``||arrays:Arrays||``, drag  
-``||arrays:get random value from [list]||``  
+- :align justify: From ``||arrays:Arrays||``, drag
+``||arrays:get random value from [list]||``
 in to replace the current
-dart image in the  
-``||variables(sprites):set [projectile] to ...||``  
+dart image in the
+``||variables(noclick):set [projectile] to ...||``
 block (just beneath the list you have created.)
 
 - :mouse pointer: Click **list** and change it to **darts** using the dropdown menu.
