@@ -14,8 +14,9 @@ ship from breaking down!
 
 
 ## 2. Add a Status Bar
-The code in the workspace is taking up a lot of room!
+The code in the workspace is taking up a lot of room! </br>
 😨 😨 😨
+
 Don't worry, the workspace will expand if you scroll up &
 over (or down & over) to keep building.
 
