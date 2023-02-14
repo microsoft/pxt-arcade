@@ -28,12 +28,26 @@ The color values in the default palette for the MakeCode UI are listed here:
 
 ![Default color chart](/static/developer/default-colors.jpg)
 
-### Changing the default palette
+### User palette settings
+
+Users can change the color palette used for their projects in the Asset Editor under the **Asset** tab. Pressing the **Colors** button will display the Color Palette window. Several predefined palettes are available to choose from. The user can create a new "custom" palette if desired and pick the 16 colors to fill it. This palette will be custom to the project and become its default palette.
+
+![User color palette settings](/static/developer/color-palette-window.png)
+
+### Changing the default palette manually
+
+A manual method of changing the default palette is described in this section. This is useful if you want to copy in all of the colors at once without entering each color in the Color Palette window.
+
+### ~ tip
+
+#### Changing colors from a program
 
 If you intend to use the MakeCode blocks editor to create or edit images
 but would like to change the colors, it is recommended
 that you set a default palette so that your sprites render correctly
 in the image editor/blocks.
+
+### ~
 
 To change the default palette of a project, go into the project
 settings in the MakeCode editor (under the cogwheel in the upper right).
