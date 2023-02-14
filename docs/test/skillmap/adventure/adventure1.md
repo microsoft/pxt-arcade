@@ -7,224 +7,282 @@
 
 Are you ready to create an adventure?
 
-The code for your d20 is already in the workspace. Let's add a reason to use it.
 
-![Let's go on an adventure!](https://media.giphy.com/media/5Ur2TK63wEciypxyHG/giphy.gif "Image of trunk trying to eat Barbarian" )
-
+![Let's go on an adventure!](https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif "Image of Bard" )
 
 
-## {Step 2}
+
+## {2. Explain the Issue}
 
 **We need a quest!**<br/>
 
-Start by creating a reason to roll.  What issue is the player facing?
+Start by creating some drama.  What issue is the player facing?
 
-Let's make another function to keep this first quest in.
-
-
-
-- :function: Click **Advanced** in the toolbox to show the
-``||function: Functions||`` category. <br/>
-
-- :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
-**`Make a Function...`**
-
-- :mouse pointer: Call your new function **quest_1** and click **Done**.
-
-
-
-
-
-## {3. Add function}
-
-- :function: Reopen the ``||functions: Functions||`` category and drag the empty<br/>
-``||functions:function [quest_1]||``<br/>
-container into **an empty** area of the workspace.
-
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-function quest_1() {}
-```
-
-
-
-
-## {4. Create Conflict}
 
 - :align left: From ``||loggr: Text Log||``, drag the<br/>
 ``||loggr: add [" "] to text log||`` <br/>
 block into the empty<br/>
-``||functions:function [quest_1]||`` <br/>
+``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Add your own text that sets up the problem that your player will face.
+- :mouse pointer: Change the text to set up the problem that your player will face.
 
 
 #### ~ tutorialhint
 
 ```blocks
-function quest_1() {
 //@highlight
-loggr.addToTextlog("Oh no! There is a dragon in your path!")
-}
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+
 ```
 
 
 
 
-## {5. Read the Roll}
+## {3. Check Your Project}
 
-**What did you roll?**
+Take a look at what you have so far.
 
-The code to roll your number is in the workspace, but there's no way to see it.
-Let's change that.
-
-- :calculator: From ``||loggr: Text Log||``, drag <br/>
-``||loggr:add ("You rolled [roll] !" to text log||`` <br/>
-into **the end** of the  <br/>
-``||loops(noclick):on start|`` <br/>
-container already in the workspace.
-
-This block will add your roll to the text log.
-
-
-#### ~ tutorialhint
-
-```blocks
-let roll = 0
-roll = randint(1,20)
-//@highlight
-loggr.addToTextlog(loggr.rollTextForLog(roll))
-```
-
-
-
-
-## {6. Check Your Game!}
-
-Take a look at what you made!
-
-- :binoculars: Look at your project in the game window to see how it has changed!
+- :binoculars: Look at your project in the game window to see what happens!
 
 ![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
 
-Reload your game a few times and watch your number change over and over.
+
+```blockconfig.local
+loggr.addToTextlog("Press (A) to join the fun." )
+```
 
 
 
-## {7. Make it a function}
 
-**Let's make it reusable.**
+## {4. Give option A}
 
-We're going to want to roll the d20 over and over again.
-Let's move it into a function so we can reuse the code we just wrote.
+**Time for a decision!**
+
+What options do you want to give the player?  Make sure that one option turns out well, and one turns out poorly.
+
+- :align left: From ``||loggr: Text Log||``, drag the<br/>
+``||loggr: add ["Press (A)..."] to text log||`` <br/>
+block into the **end of** the<br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
+
+- :mouse pointer: Change the text to let the user know the option they get
+by pressing the (A) button on the console.
+
+
+```blockconfig.local
+loggr.addToTextlog("Press (A) to join the fun." )
+```
+
+
+#### ~ tutorialhint
+
+```blocks
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+//@highlight
+loggr.addToTextlog("Press (A) to join the fun." )
+```
 
 
 
-- :function: Click on **Advanced** in the toolbox to show the
-``||function: Functions||`` category. <br/>
 
-- :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
-**`Make a Function...`**
+## {5. Give option B}
 
-- :mouse pointer: Call your function **roll_d20** and click **Done**.
+**Option B...**
+
+Add your second option. <br/>
+(This one won't turn out as well.)
+
+- :align left: From ``||loggr: Text Log||``, drag the<br/>
+``||loggr: add ["Press (B)..."]to text log||`` <br/>
+block into the **end of** the<br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
+
+- :mouse pointer: Change the text to let the user know the option they get
+by pressing the (B) button on the console.
 
 
-~hint What is a function? 💡
+```blockconfig.local
+loggr.addToTextlog("Press (B) to turn and run." )
+```
+
+
+
+#### ~ tutorialhint
+
+```blocks
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+loggr.addToTextlog("Press (A) to join the fun." )
+//@highlight
+loggr.addToTextlog("Press (B) to turn and run." )
+```
+
+
+
+
+## {6. Wait}
+
+**Wait for an answer.**
+
+Add code to wait for the players decision.
+
+- :redo: From ``||loops: Loops||``, drag<br/>
+``||loops: pause until <true>||`` <br/>
+into the **end of** the<br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
+
+- :game: From ``||controller: Controller||``, drag<br/>
+``||controller: <is [any] button pressed>||`` <br/>
+in to replace **`<true>`** in the<br/>
+``||loops(noclick):pause until <true>||`` <br/>
+block already in the workspace.
+
+
+
+```blockconfig.local
+loggr.addToTextlog("Press (B) to turn and run." )
+pauseUntil(() => controller.anyButton.isPressed())
+```
+
+
+
+#### ~ tutorialhint
+
+```blocks
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+loggr.addToTextlog("Press (A) to join the fun." )
+loggr.addToTextlog("Press (B) to turn and run." )
+//@highlight
+pauseUntil(() => controller.anyButton.isPressed())
+```
+
+
+
+
+
+
+## {7. Results}
+
+**Choose a path.**
+
+Now it's time to add the conditional that handles the path that was chosen.
+
+~hint What's a conditional? 💡
 
 ---
 
-A function is a chunk of code that you can name.
-Once it has a name, you can **call** it from other places in your program to run
-you function as many times as you want without having to rewrite it in each location.
+A **conditional** is a piece of code that runs only when a **condition** is met.
+
+We are going to add an **if/else** statement that runs the
+code inside the **if** container only if the player **presses (A)**.
+
+Otherwise, it will run the code inside of the **else** container.
+
+```block
+if (controller.A.isPressed()) { } else { }
+```
 
 
 hint~
 
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-function roll_d20() {}
-```
-
-
-
-## {8. Move the Code}
-
-**Fill the function.**
-
-- :mouse pointer: Now drag all of the code you
-just wrote out of the ``||loops(noclick):on start||`` and into the empty <br/>
-``||functions(noclick):function [roll_d20]||``<br/>
-container.
-
-
-#### ~ tutorialhint
-
-```blocks
-let roll = 0
-//@highlight
-function roll_d20() {
-//@highlight
-roll = randint(1,20)
-//@highlight
-loggr.addToTextlog(loggr.rollTextForLog(roll))}
-```
-
-
-
-
-
-## {9. Call the Code}
-
-Did you notice that your roll stopped showing in the log?
-
-That's because we aren't calling the function anywhere.
-
-- :function: From the
-``||function: Functions||`` category, drag
-``||functions:call roll_d20||`` <br/>
-into the empty <br/>
+- :shuffle: From ``||logic: Logic||``, drag<br/>
+``||logic: if <true> then / else||`` <br/>
+into the **end of** the<br/>
 ``||loops(noclick):on start||`` <br/>
-container in the workspace.
+container already in the workspace.
+
+- :game: From ``||controller: Controller||``, drag<br/>
+``||controller: <is [A] button pressed>||`` <br/>
+in to replace **`<true>`** in the<br/>
+``||logic(noclick):if <true> then||`` <br/>
+part of the block already in the workspace.
 
 
-You should see the results of your roll on your game screen again.
+
+```blockconfig.local
+loggr.addToTextlog("Press (B) to turn and run." )
+controller.A.isPressed()
+```
+
 
 
 #### ~ tutorialhint
 
 ```blocks
-//@hide
-function roll_d20() {}
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+loggr.addToTextlog("Press (A) to join the fun." )
+loggr.addToTextlog("Press (B) to turn and run." )
+pauseUntil(() => controller.anyButton.isPressed())
 //@highlight
-roll_d20()
+if (controller.A.isPressed()) { } else { }
+
 ```
 
 
+## {8. Outcomes}
+
+**The good and the bad...**
+
+For now, we'll end the game as a **win** when the user chooses (A)
+and end the game as a **lose** when the user chooses (B).
+
+
+- :circle: From ``||game: Game||``, drag<br/>
+``||game: game over <WIN>||`` <br/>
+into the empty<br/>
+``||logic(noclick):if <true> then||`` <br/>
+container that's already in your code.
+
+- :circle: From ``||game: Game||``, drag<br/>
+``||game: game over <LOSE>||`` <br/>
+into the empty<br/>
+``||logic(noclick):else||`` <br/>
+container that's already in your code.
+
+
+```blockconfig.local
+loggr.addToTextlog("Press (B) to turn and run." )
+controller.A.isPressed()
+```
+
+
+#### ~ tutorialhint
+
+```blocks
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+loggr.addToTextlog("Press (A) to join the fun." )
+loggr.addToTextlog("Press (B) to turn and run." )
+pauseUntil(() => controller.anyButton.isPressed())
+if (controller.A.isPressed()) {
+    //@highlight
+    game.gameOver(true)
+    } else {
+    //@highlight
+    game.over(false)}
+
+```
 
 
 
 ## {Finish}
 
-**Congratulations, you've created a d20!**<br/>
+**Congratulations, you've created the beginning of a text-based adventure!**<br/>
 🥳 🥳 🥳
 
 Click **Done** to return to the main skillmap page where you can
-use that d20 to .
+continue on to add more levels.
 
 
 ```blockconfig.global
-let roll=20;
-loggr.addImageToTextLog(img`.`)
 music.setVolume(20)
 info.setLife(20)
-loggr.addToTextlog("Oh no! There is a dragon in your path!")
+pauseUntil(() => controller.anyButton.isPressed())
+loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+    if (controller.A.isPressed()) { } else { }
+controller.anyButton.isPressed()
 ```
 
 
@@ -236,73 +294,52 @@ dd=github:kiki-lee/dnd-sprite-pack
 
 
 
-```template
-
-let roll = 0
-function roll_d20() {
-roll = randint(1,20)
-loggr.addToTextlog(loggr.rollTextForLog(roll))
-}
-
-roll_d20()
-```
-
-
 ```ghost
-
-function rollDie () {
-    loggr.addToTextlog(loggr.rollTextForLog(roll))
-}
-
-function enounter1 () {
-    loggr.addToTextlog("You quickly turn the corner and are startled by a gelatinous cube in your path")
-    loggr.addToTextlog("Press (A) to roll and see what happens next!")
-    pauseUntil(() => controller.A.isPressed())
-    rollOnButton(1, 20)
-    if (roll >= 10) {
-        loggr.addToTextlog("Your roll was high enough to help you dodge the cube.")
-        info.changeLifeBy(1)
-        info.changeScoreBy(10)
+function quest1 () {
+    music.play(music.createSong(assets.song`Merry Merry`), music.PlaybackMode.InBackground)
+    dnd.addImageToTextLog(assets.image`lute`)
+    dnd.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+    dnd.addToTextlog("Press (A) to join the fun.")
+    dnd.addToTextlog("Press (B) to turn and run.")
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.A.isPressed()) {
+        dnd.addToTextlog("You join the bard and are ready for a merry adventure. ")
+        quest2()
     } else {
-        loggr.addToTextlog("That roll was too low to escape unharmed.")
-        loggr.addToTextlog("You don't see the cube in time and it slowly starts absorbing your arm.")
-        loggr.addToTextlog("The pain is intense, but you're able to pull away and run to freedom.")
-        loggr.addToTextlog("Phew! That was a close one!")
+        dnd.addToTextlog("Your game ends before it has even begun!")
+        game.gameOver(false)
     }
 }
-function rollOnButton (lo: number, hi: number) {
-    roll = randint(lo, hi)
-    music.play(music.createSoundEffect(WaveShape.Noise, 3300, 1400, 255, 0, 150, SoundExpressionEffect.Warble, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
-    loggr.addToTextlog("You roll " + roll + "!")
-    return roll
-}
-function AorB () {
+function quest2 () {
+    music.play(music.createSong(assets.song`Suspense`), music.PlaybackMode.InBackground)
+    dnd.addImageToTextLog(assets.image`owlBear`)
+    dnd.addToTextlog("Out of the darkness, an Owlbear leaps toward your party.")
+    dnd.addToTextlog("Press (A) to flee.")
+    dnd.addToTextlog("Press (B) to attack.")
     pauseUntil(() => controller.anyButton.isPressed())
-    if (controller.right.isPressed()) {
-        loggr.addToTextlog("You decide to keep going")
-    } else if (controller.left.isPressed()) {
-        loggr.addToTextlog("You try to turn and run")
+    if (controller.A.isPressed()) {
+        dnd.addToTextlog("You scream and leap backward, stumbling to your feet before you turn and run.")
+        dnd.addToTextlog("The rest of the party breaks into laughter as the Owlbear transforms into Doric, the druid.")
+        dnd.addToTextlog("You continue to back away until the team offers you $20 to continue on the quest.")
+        info.changeScoreBy(20)
     } else {
-        loggr.addToTextlog("You didn't listen")
+        dnd.addToTextlog("You leap forward with your sword in hand, only to find yourself surrounded by the rest of the group.")
+        dnd.addToTextlog("They grab you and tie your hands.  How dare you attack their favorite druid, Doric?")
+        info.changeLifeBy(-1)
     }
 }
 info.onLifeZero(function () {
     game.over(false)
 })
-let roll = 0
-roll = 0
-music.play(music.createSong(hex`0078000408020200001c00010a006400f4016400000400000000000000000000000000050000042a0000000400012504000800012708000c0001250c001000012210001400011e18002000011624003000011904001c00100500640000041e000004000000000000000000000000000a0400041e000000080003131e250800100003162025100020000310191e200030000116`), music.PlaybackMode.InBackground)
-loggr.addImageToTextLog(assets.image`gelatenousCube`)
 music.setVolume(20)
 info.setLife(20)
-enounter1()
+quest1()
 
 ```
 
 ```customts
 
 music.setVolume(20);
-
 
 //% color=#656565 icon="\uf036"
 //% block="Text Log"
@@ -328,6 +365,12 @@ namespace loggr {
 
     class ImageEntry extends LogEntry {
         constructor(public image: Image) {
+            super(false);
+        }
+    }
+
+    class AnimEntry extends LogEntry {
+        constructor(public anim: Image[]) {
             super(false);
         }
     }
@@ -418,6 +461,13 @@ namespace loggr {
             this.finishedPrinting = false;
             this.printingTimer = pauseTime
         }
+
+        appendAnimToLog(anim: Image[]) {
+            this.log.push(new AnimEntry(anim));
+            this.printIndex = 0;
+            this.finishedPrinting = false;
+            this.printingTimer = pauseTime
+        }
     }
 
     function init() {
@@ -455,15 +505,25 @@ namespace loggr {
         pauseUntil(() => state().finishedPrinting)
     }
 
+/*
+    //% blockId=dnd_add_anim_to_text_log
+    //% block="add $anim to text log"
+    //% anim.shadow=animation_editor
+    export function addAnimToTextLog(anim: Image[]) {
+        state().appendAnimToLog(anim)
+        pauseUntil(() => state().finishedPrinting)
+    }
+*/
+
     //% color=#AAAAAA
     //% blockId=log_roll
-    //% block="“You rolled $rolled !”"
+    //% block=""You rolled $rolled !""
     //% inlineInputMode=inline
-    export function rollTextForLog(rolled:number):string {
+    export function rollTextForLog(rolled: number): string {
         return ("You rolled " + rolled.toString() + "!");
     }
-}
 
+}
 
 
 ```
