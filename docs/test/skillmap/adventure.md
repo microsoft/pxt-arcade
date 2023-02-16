@@ -26,8 +26,8 @@
 * tags: random, text
 * next: adventure2
 * url: /test/skillmap/adventure/adventure1
-* imageUrl: https://media.giphy.com/media/XbidWpczmwrmtnJ01e/giphy.gif
-* position: 0 2
+* imageUrl: https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif
+* position: 1 2
 
 
 
@@ -39,7 +39,7 @@
 * next: adventure3
 * url: /test/skillmap/adventure/adventure2
 * imageUrl: https://media.giphy.com/media/fYru9bLqxEeTqyBmRg/giphy.gif
-* position: 1 2
+* position: 1 1
 
 
 ### adventure3
@@ -47,10 +47,10 @@
 * type: tutorial
 * description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
-* next: adventure4
+* next: adventure-cert
 * url: /test/skillmap/adventure/adventure3
 * imageUrl: https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif
-* position: 1 1
+* position: 2 1
 
 
 
