@@ -30,7 +30,7 @@ into the **top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Click the empty grey box to draw an image that works well with your first adventure (or choose one from the gallery).
+- :mouse pointer: Click the empty grey box to draw an image that works well with your first adventure (or choose one from the **Gallery**).
 
 
 #### ~ tutorialhint
@@ -125,7 +125,7 @@ before we do, let's package this quest up into a **function** to make it easier 
 A **function** is a piece of code that has a name,
 which allows you to create it in one place and use it from another.
 
-Now, we're going to move all of our code out of the ``||loops(noclick):on start||`` container,
+Now, we're going to move all of our code out of the ``||loops(noclick):on start||`` container
 and into a function block.
 
 ```block

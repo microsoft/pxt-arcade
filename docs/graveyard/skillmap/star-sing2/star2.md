@@ -7,7 +7,7 @@ We've already started our Sing 2 clicker game.
 Now, let's use what we've learned to
 make it even more special!
 
-![Click away](/static/skillmap/star/star2.gif "Click away!" )
+![Click away](/static/skillmap/star-sing2/star2.gif "Click away!" )
 
 
 
