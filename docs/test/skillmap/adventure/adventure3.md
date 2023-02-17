@@ -47,7 +47,7 @@ quest1()
 
 ## {Step 3}
 
-Now **duplicate** another quest to create an option for when the player chooses (B) in **quest1**
+Now **duplicate** another quest to create an option for when the player chooses (B) that first time.
 
 ---
 
@@ -150,12 +150,12 @@ block, and delete it.
 - :id card: From ``||info:Info||`` , drag <br/>
 ``||info: change life by [-1]||`` <br/>
 into  ``||functions(noclick): quest1||`` <br/>
-where <br/>
+under **else**, where <br/>
 ``||game(noclick): game over <LOSE> +||`` <br/>
 used to be.
 
 
-- :function: From the ``||function: Functions||`` catecory, add
+- :function: From the ``||function: Functions||`` category, add
 ``||functions(noclcik):call quest3||`` <br/>
 right below <br/>
 ``||info: change life by [-1]||``. <br/>
@@ -214,10 +214,10 @@ function quest1() {
 
 **Shake it up!**
 
-Go through your functions and move things around.  Sometimes (A) should have the good outcome,
+Go through your functions and move things around.  Sometimes (A) should have a good outcome,
 but other times it should be the worst choice.
 
-💡 _The story can start to get confusing as you go.  Try mapping it out on paper
+💡 _These stories might start to get confusing as you go.  Try mapping it out on paper
 so you know exactly how many possibilities you want to create._
 
 
@@ -266,7 +266,7 @@ info.onLifeZero(function () {
 **Add gold.**
 
 Just like you removed lives from the bad choices,
-try adding gold (changing score) for the good choices.
+try adding gold (changing the score) for the good choices.
 
 ---
 
@@ -327,7 +327,9 @@ function quest1() {
 ``||info: on score [20]||`` <br/>
 bundle out into **an empty area** of the workspace.<br/>
 
-Now, when the player reaches 30 gold, the game will end as a win.
+Now, when the player reaches 20 gold, the game will end as a win.
+
+Try changing the amount of gold needed to win or the number of lives the player starts with.
 
 
 ```blockconfig.local
@@ -355,9 +357,10 @@ info.onScore(20, function () {
 
 **Take another look at your adventure!**
 
-- :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do?
+- :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do? <br/><br/>
+Do you have enough quests for your user to lose enough lives for a loss or earn enough gold for a win?
 
-You can keep adding more quests or more text to the quests you have until you're happy with your adventure.
+You can keep adding more quests or more text until you're happy with your adventure.
 
 
 

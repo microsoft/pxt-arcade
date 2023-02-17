@@ -20,7 +20,7 @@ Start by creating some drama.  What issue is the player facing?
 
 
 - :align left: From ``||loggr: Text Log||``, drag the<br/>
-``||loggr: add [" "] to text log||`` <br/>
+``||loggr: add ["A traveling..."] to text log||`` <br/>
 block into the empty<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
@@ -239,7 +239,7 @@ container that's already in your code.
 ``||game: game over <WIN>||`` <br/>
 into the same <br/>
 ``||logic(noclick):if <is [A] button pressed> then||`` <br/>
-container right below the new line of text.
+container, right below the new line of text.
 
 
 ```blockconfig.local
@@ -271,7 +271,7 @@ if (controller.A.isPressed()) {
 
 **The bad...**
 
-For now, we'll end the game as a **lose** when the user chooses (B).
+For now, we'll end the game as **lose** when the user chooses (B).
 
 
 - :align left: From ``||loggr: Text Log||``, drag<br/>
@@ -284,7 +284,7 @@ container that's already in your code.
 ``||game: game over <LOSE> +||`` <br/>
 into the same<br/>
 ``||logic(noclick):else||`` <br/>
-container right below the new line of text.
+container, right below the new line of text.
 
 
 ```blockconfig.local
