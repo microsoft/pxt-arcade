@@ -20,10 +20,10 @@
 ### adventure1
 * allowcodecarryover: false
 
-* name: Rolling Dice
+* name: Start Your Journey
 * type: tutorial
-* description: Code your own 20-sided die to begin your adventure.
-* tags: random, text
+* description: Create an adventure using conditionals.
+* tags: conditionals, text
 * next: adventure2
 * url: /test/skillmap/adventure/adventure1
 * imageUrl: https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif
@@ -32,10 +32,10 @@
 
 
 ### adventure2
-* name: Start Your Journey
+* name: Make it Spectacular
 * type: tutorial
-* description: Use a roll of the die to figure out what adventures your player will have.
-* tags: random, conditionals
+* description: Make your quests more memorable with music, images, and functions.
+* tags: music, functions
 * next: adventure3
 * url: /test/skillmap/adventure/adventure2
 * imageUrl: https://media.giphy.com/media/fYru9bLqxEeTqyBmRg/giphy.gif
@@ -43,10 +43,10 @@
 
 
 ### adventure3
-* name: Get Animated
+* name: Lives and Gold
 * type: tutorial
-* description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
-* tags: easy, clicker, sprite, buttons
+* description: Finish your game by adding more quests, complete with danger and rewards!
+* tags: lives, score, functions
 * next: adventure-cert
 * url: /test/skillmap/adventure/adventure3
 * imageUrl: https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif
@@ -59,8 +59,8 @@
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/mole-cert.pdf
-* imageUrl: /static/skillmap/certificates/mole-cert.png
+* url: /static/skillmap/certificates/adventure-cert.pdf
+* imageUrl: /static/skillmap/certificates/adventure-cert.png
 * showMultiplayerShare: true
 * position: 2 0
 * actions:
@@ -68,8 +68,8 @@
     * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/mole-cert.pdf
-        * preview: /static/skillmap/certificates/mole-cert.png
+        * url: /static/skillmap/certificates/adventure-cert.pdf
+        * preview: /static/skillmap/certificates/adventure-cert.png
     * completion-badge:
-        * image: /static/badges/badge-mole.png
+        * image: /static/badges/badge-adventure.png
         * name: Code Adventure
