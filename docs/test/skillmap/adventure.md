@@ -1,5 +1,5 @@
 # Text-Adventure
-* name: Your Big Adventure
+* name: Code an Adventure
 * description: Code your own text-based adventure inspired by the movie Dungeons & Dragons: Honor Among Thieves
 * infoUrl: skillmap/educator-info/adventure-info
 * bannerUrl: https://media.giphy.com/media/oPp3DLbHzo8jSLyXYW/giphy.gif
@@ -22,7 +22,7 @@
 
 * name: Start Your Journey
 * type: tutorial
-* description: Create an adventure using conditionals.
+* description: Create an adventure using conditionals
 * tags: conditionals, text
 * next: adventure2
 * url: /test/skillmap/adventure/adventure1
@@ -34,7 +34,7 @@
 ### adventure2
 * name: Make it Spectacular
 * type: tutorial
-* description: Make your quests more memorable with music, images, and functions.
+* description: Make your quests more memorable with music, images, and functions
 * tags: music, functions
 * next: adventure3
 * url: /test/skillmap/adventure/adventure2
@@ -45,7 +45,7 @@
 ### adventure3
 * name: Lives and Gold
 * type: tutorial
-* description: Finish your game by adding more quests, complete with danger and rewards!
+* description: Finish your game by adding more quests — including danger and rewards!
 * tags: lives, score, functions
 * next: adventure-cert
 * url: /test/skillmap/adventure/adventure3
