@@ -7,6 +7,8 @@
 
 Are you ready to create an adventure?
 
+Follow the steps of this tutorial to create your own text-based adventure game.
+
 
 ![Let's go on an adventure!](https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif "Image of Bard" )
 
@@ -67,7 +69,7 @@ block into the **end of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Change the text to let the user know the option they get
+- :mouse pointer: Change the text to let the player know the option they get
 by pressing the (A) button on the console.
 
 
@@ -168,7 +170,7 @@ pauseUntil(() => controller.anyButton.isPressed())
 
 **Choose a path.**
 
-Now it's time to add the conditional that handles the path that was chosen.
+Now it's time to add a conditional to handle the path that was chosen.
 
 ~hint What's a conditional? 💡
 
@@ -323,14 +325,15 @@ if (controller.A.isPressed()) {
 
 You should win the adventure if you click (A) and lose the adventure if you click (B).
 
+💡 _You can also use the **space bar** on your keyboard instead of the (A) button and the **enter key** instead of the (B) button!_
+
 
 ## {Finish}
 
 **Congratulations, you've created the beginning of a text-based adventure!**<br/>
 🥳 🥳 🥳
 
-Click **Done** to return to the main skillmap page where you can
-continue on to add some pizazz to your project.
+Click **Done** to return to the main skillmap to keep going and add some pizazz to your project.
 
 
 ```blockconfig.global

@@ -87,51 +87,8 @@ function quest3() {
 
 
 
+
 ## {Step 4}
-
-Now **duplicate** another quest to create an option for when the player chooses (B) in **quest1**
-
----
-
-- :mouse pointer: Right click on <br>
-``||functions(noclick): quest2||`` and choose
-**Duplicate** from the dropdown menu.
-
-- :binoculars: You have created a third function called ``||function: quest3||``!
-
-- :mouse pointer: Change the music, images, and text inside to create a new adventure!
-
-
-
-#### ~ tutorialhint
-
-```blocks
-
-//@highlight
-function quest3() {
-
-    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
-    loggr.addImageToTextLog(assets.image`mimic`)
-    loggr.addToTextlog("You pass up a treasure that appears to be just out of grasp.")
-    loggr.addToTextlog("Press (A) to turn around and go after the chest." )
-    loggr.addToTextlog("Press (B) to continue walking out of the forest." )
-    pauseUntil(() => controller.anyButton.isPressed())
-    if (controller.A.isPressed()) {
-        loggr.addToTextlog("The treasure is a mimic and it attacks without warning." )
-        game.gameOver(true)
-    } else {
-        loggr.addToTextlog("You reach the edge of the forest and something shiny catches your eye." )
-        game.over(false)
-    }
-
-}
-
-```
-
-
-
-
-## {Step 5}
 
 Now, instead of ending the game as a loss
 when the user presses (B) in **quest1**, you can remove a life and send the player on
@@ -199,7 +156,7 @@ function quest1() {
 
 
 
-## {6. Check Your Game!}
+## {5. Check Your Game!}
 
 **Take a look at your adventure!**
 
@@ -210,7 +167,7 @@ function quest1() {
 
 
 
-## {7. Add variety}
+## {6. Add variety}
 
 **Shake it up!**
 
@@ -230,7 +187,7 @@ info.onLifeZero(function () {
 ```
 
 
-## {8. End Game}
+## {7. End Game}
 
 **End the game when you run out of lives.**
 
@@ -261,7 +218,7 @@ info.onLifeZero(function () {
 
 
 
-## {9. Add Gold}
+## {8. Add Gold}
 
 **Add gold.**
 
@@ -317,7 +274,7 @@ function quest1() {
 
 
 
-## {10. Win Game}
+## {9. Win Game}
 
 **End the game when you get enough gold.**
 
@@ -353,7 +310,7 @@ info.onScore(20, function () {
 
 
 
-## {11. Check Your Game!}
+## {10. Check Your Game!}
 
 **Take another look at your adventure!**
 
