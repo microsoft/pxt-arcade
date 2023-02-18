@@ -24,7 +24,7 @@ Instead of ending the game when things go poorly, you can take away a life.
 
 
 - :id card: From ``||info: Info||``, drag <br/>
-``||info: set life to [20]||`` <br/>
+``||info: set life to [5]||`` <br/>
 into **the top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
@@ -37,7 +37,7 @@ container already in the workspace.
 function quest1(){}
 
 //@highlight
-info.setLife(20)
+info.setLife(4)
 quest1()
 
 ```
@@ -337,7 +337,7 @@ info.setScoreOverride(0)
 info.changeScoreOverride(1)
 loggr.addImageToTextLog(img`.`)
 music.setVolume(20)
-info.setLife(20)
+info.setLife(5)
 loggr.addToTextlog("Oh no! There is a dragon in your path!")
 music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
 ```
@@ -393,7 +393,7 @@ function quest2() {
 ```ghost
 info.setScoreOverride(0)
 info.changeScoreOverride(1)
-info.setLife(20)
+info.setLife(5)
 ```
 
 

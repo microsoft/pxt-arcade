@@ -2,7 +2,7 @@
 * name: Code an Adventure
 * description: Code your own text-based adventure inspired by the movie Dungeons & Dragons: Honor Among Thieves
 * infoUrl: skillmap/educator-info/adventure-info
-* bannerUrl: https://media.giphy.com/media/oPp3DLbHzo8jSLyXYW/giphy.gif
+* bannerUrl: https://media.giphy.com/media/loHinLFnLy6v6MqbAd/giphy.gif
 * backgroundurl: /static/skillmap/backgrounds/adventure-comp1.png
 * primarycolor: #ffffff
 * secondarycolor: #fff53d
@@ -61,7 +61,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/adventure-cert.pdf
 * imageUrl: /static/skillmap/certificates/adventure-cert.png
-* showMultiplayerShare: true
+* showMultiplayerShare: false
 * position: 2 0
 * actions:
     * map: [Try Burstin' Balloons](/skillmap/balloon)
