@@ -24,7 +24,7 @@ Instead of ending the game when things go poorly, you can take away a life.
 
 
 - :id card: From ``||info: Info||``, drag <br/>
-``||info: set life to [20]||`` <br/>
+``||info: set life to [5]||`` <br/>
 into **the top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
@@ -37,7 +37,7 @@ container already in the workspace.
 function quest1(){}
 
 //@highlight
-info.setLife(20)
+info.setLife(4)
 quest1()
 
 ```
@@ -47,7 +47,7 @@ quest1()
 
 ## {Step 3}
 
-Now **duplicate** another quest to create an option for when the player chooses (B) in **quest1**
+Now **duplicate** another quest to create an option for when the player chooses (B) that first time.
 
 ---
 
@@ -83,55 +83,12 @@ function quest3() {
 
 }
 ```
+
 
 
 
 
 ## {Step 4}
-
-Now **duplicate** another quest to create an option for when the player chooses (B) in **quest1**
-
----
-
-- :mouse pointer: Right click on <br>
-``||functions(noclick): quest2||`` and choose
-**Duplicate** from the dropdown menu.
-
-- :binoculars: You have created a third function called ``||function: quest3||``!
-
-- :mouse pointer: Change the music, images, and text inside to create a new adventure!
-
-
-
-#### ~ tutorialhint
-
-```blocks
-
-//@highlight
-function quest3() {
-
-    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
-    loggr.addImageToTextLog(assets.image`mimic`)
-    loggr.addToTextlog("You pass up a treasure that appears to be just out of grasp.")
-    loggr.addToTextlog("Press (A) to turn around and go after the chest." )
-    loggr.addToTextlog("Press (B) to continue walking out of the forest." )
-    pauseUntil(() => controller.anyButton.isPressed())
-    if (controller.A.isPressed()) {
-        loggr.addToTextlog("The treasure is a mimic and it attacks without warning." )
-        game.gameOver(true)
-    } else {
-        loggr.addToTextlog("You reach the edge of the forest and something shiny catches your eye." )
-        game.over(false)
-    }
-
-}
-
-```
-
-
-
-
-## {Step 5}
 
 Now, instead of ending the game as a loss
 when the user presses (B) in **quest1**, you can remove a life and send the player on
@@ -150,12 +107,12 @@ block, and delete it.
 - :id card: From ``||info:Info||`` , drag <br/>
 ``||info: change life by [-1]||`` <br/>
 into  ``||functions(noclick): quest1||`` <br/>
-where <br/>
+under **else**, where <br/>
 ``||game(noclick): game over <LOSE> +||`` <br/>
 used to be.
 
 
-- :function: From the ``||function: Functions||`` catecory, add
+- :function: From the ``||function: Functions||`` category, add
 ``||functions(noclcik):call quest3||`` <br/>
 right below <br/>
 ``||info: change life by [-1]||``. <br/>
@@ -199,7 +156,7 @@ function quest1() {
 
 
 
-## {6. Check Your Game!}
+## {5. Check Your Game!}
 
 **Take a look at your adventure!**
 
@@ -210,14 +167,14 @@ function quest1() {
 
 
 
-## {7. Add variety}
+## {6. Add variety}
 
 **Shake it up!**
 
-Go through your functions and move things around.  Sometimes (A) should have the good outcome,
+Go through your functions and move things around.  Sometimes (A) should have a good outcome,
 but other times it should be the worst choice.
 
-💡 _The story can start to get confusing as you go.  Try mapping it out on paper
+💡 _These stories might start to get confusing as you go.  Try mapping it out on paper
 so you know exactly how many possibilities you want to create._
 
 
@@ -230,7 +187,7 @@ info.onLifeZero(function () {
 ```
 
 
-## {8. End Game}
+## {7. End Game}
 
 **End the game when you run out of lives.**
 
@@ -261,12 +218,12 @@ info.onLifeZero(function () {
 
 
 
-## {9. Add Gold}
+## {8. Add Gold}
 
 **Add gold.**
 
 Just like you removed lives from the bad choices,
-try adding gold (changing score) for the good choices.
+try adding gold (changing the score) for the good choices.
 
 ---
 
@@ -317,7 +274,7 @@ function quest1() {
 
 
 
-## {10. Win Game}
+## {9. Win Game}
 
 **End the game when you get enough gold.**
 
@@ -327,7 +284,9 @@ function quest1() {
 ``||info: on score [20]||`` <br/>
 bundle out into **an empty area** of the workspace.<br/>
 
-Now, when the player reaches 30 gold, the game will end as a win.
+Now, when the player reaches 20 gold, the game will end as a win.
+
+Try changing the amount of gold needed to win or the number of lives the player starts with.
 
 
 ```blockconfig.local
@@ -351,13 +310,14 @@ info.onScore(20, function () {
 
 
 
-## {11. Check Your Game!}
+## {10. Check Your Game!}
 
 **Take another look at your adventure!**
 
-- :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do?
+- :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do? <br/><br/>
+Do you have enough quests for your user to lose enough lives for a loss or earn enough gold for a win?
 
-You can keep adding more quests or more text to the quests you have until you're happy with your adventure.
+You can keep adding more quests or more text until you're happy with your adventure.
 
 
 
@@ -377,7 +337,7 @@ info.setScoreOverride(0)
 info.changeScoreOverride(1)
 loggr.addImageToTextLog(img`.`)
 music.setVolume(20)
-info.setLife(20)
+info.setLife(5)
 loggr.addToTextlog("Oh no! There is a dragon in your path!")
 music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
 ```
@@ -433,7 +393,7 @@ function quest2() {
 ```ghost
 info.setScoreOverride(0)
 info.changeScoreOverride(1)
-info.setLife(20)
+info.setLife(5)
 ```
 
 

@@ -7,6 +7,8 @@
 
 Are you ready to create an adventure?
 
+Follow the steps of this tutorial to create your own text-based adventure game.
+
 
 ![Let's go on an adventure!](https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif "Image of Bard" )
 
@@ -20,7 +22,7 @@ Start by creating some drama.  What issue is the player facing?
 
 
 - :align left: From ``||loggr: Text Log||``, drag the<br/>
-``||loggr: add [" "] to text log||`` <br/>
+``||loggr: add ["A traveling..."] to text log||`` <br/>
 block into the empty<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
@@ -67,7 +69,7 @@ block into the **end of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Change the text to let the user know the option they get
+- :mouse pointer: Change the text to let the player know the option they get
 by pressing the (A) button on the console.
 
 
@@ -168,7 +170,7 @@ pauseUntil(() => controller.anyButton.isPressed())
 
 **Choose a path.**
 
-Now it's time to add the conditional that handles the path that was chosen.
+Now it's time to add a conditional to handle the path that was chosen.
 
 ~hint What's a conditional? 💡
 
@@ -239,7 +241,7 @@ container that's already in your code.
 ``||game: game over <WIN>||`` <br/>
 into the same <br/>
 ``||logic(noclick):if <is [A] button pressed> then||`` <br/>
-container right below the new line of text.
+container, right below the new line of text.
 
 
 ```blockconfig.local
@@ -271,7 +273,7 @@ if (controller.A.isPressed()) {
 
 **The bad...**
 
-For now, we'll end the game as a **lose** when the user chooses (B).
+For now, we'll end the game as **lose** when the user chooses (B).
 
 
 - :align left: From ``||loggr: Text Log||``, drag<br/>
@@ -284,7 +286,7 @@ container that's already in your code.
 ``||game: game over <LOSE> +||`` <br/>
 into the same<br/>
 ``||logic(noclick):else||`` <br/>
-container right below the new line of text.
+container, right below the new line of text.
 
 
 ```blockconfig.local
@@ -323,14 +325,15 @@ if (controller.A.isPressed()) {
 
 You should win the adventure if you click (A) and lose the adventure if you click (B).
 
+💡 _You can also use the **space bar** on your keyboard instead of the (A) button and the **enter key** instead of the (B) button!_
+
 
 ## {Finish}
 
 **Congratulations, you've created the beginning of a text-based adventure!**<br/>
 🥳 🥳 🥳
 
-Click **Done** to return to the main skillmap page where you can
-continue on to add some pizazz to your project.
+Click **Done** to return to the main skillmap to keep going and add some pizazz to your project.
 
 
 ```blockconfig.global

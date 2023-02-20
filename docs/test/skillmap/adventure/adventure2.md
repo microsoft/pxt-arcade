@@ -30,7 +30,7 @@ into the **top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Click the empty grey box to draw an image that works well with your first adventure (or choose one from the gallery).
+- :mouse pointer: Click the empty grey box to draw an image that works well with your first adventure (or choose one from the **Gallery**).
 
 
 #### ~ tutorialhint
@@ -73,7 +73,6 @@ container already in the workspace.
 - :mouse pointer: Click the empty grey box to create some music that works well with your first adventure
 (or choose music from **My Assets**).
 
-![Don't forget to turn on the sound]( /static/skillmap/adventure/sound-on.gif "Image of the sound button to the right of the game window" )
 
 
 
@@ -107,6 +106,8 @@ if (controller.A.isPressed()) {
 💡 _You may need to turn the sound on beside the game window to hear the music you added._
 
 
+![Don't forget to turn on the sound]( /static/skillmap/adventure/sound-on.gif "Image of the sound button to the right of the game window" )
+
 
 
 ## {5. Make it a function}
@@ -124,7 +125,7 @@ before we do, let's package this quest up into a **function** to make it easier 
 A **function** is a piece of code that has a name,
 which allows you to create it in one place and use it from another.
 
-Now, we're going to move all of our code out of the ``||loops(noclick):on start||`` container,
+Now, we're going to move all of our code out of the ``||loops(noclick):on start||`` container
 and into a function block.
 
 ```block
@@ -158,7 +159,7 @@ function quest1() {}
 
 **Fill the function.**
 
-- :mouse pointer: Now drag all the code you
+- :mouse pointer: Drag all the code you
 created out of the ``||loops(noclick):on start||`` container and into the empty <br/>
 ``||functions(noclick):function [quest1]||``<br/>
 function.
@@ -194,7 +195,7 @@ function quest1() {
 
 ## {7. Call the Code}
 
-Did you notice that your adventure stopped showing in the log?
+**Did you notice that your adventure stopped showing in the log?**
 
 That's because we aren't **calling** the function anywhere.
 
@@ -235,7 +236,7 @@ If we want to keep the adventure going when the player chooses option (A), we're
 
 - :mouse pointer: Change the music, images, and text inside to create a new adventure!
 
-💡 _You can also decide to add more lines of text anywhere that it makes sense for your story._
+💡 _You can also add extra lines of text anywhere that makes sense for your story._
 
 
 #### ~ tutorialhint
@@ -270,9 +271,9 @@ Instead of ending the game as a win, let's run **quest2** from the first quest w
 
 ---
 
-- :binoculars: Look inside of <br>
+- :binoculars: Go back to <br>
 ``||functions(noclick): quest1||`` <br/>
-for the <br/>
+and look for the <br/>
 ``||game(noclick): game over <WIN>||`` <br/>
 block, and delete it.
 
@@ -281,6 +282,9 @@ block, and delete it.
 where <br/>
 ``||game(noclick): game over <WIN>||`` <br/>
 used to be.
+
+💡 _Now, when the user presses (A), they will go on to see your second quest._
+
 
 ~hint How do I delete a block? 💡
 
@@ -310,6 +314,7 @@ function quest1() {
     pauseUntil(() => controller.anyButton.isPressed())
     if (controller.A.isPressed()) {
         loggr.addToTextlog("Great choice! Enjoy your adventure." )
+        //@highlight
         quest2()
     } else {
         loggr.addToTextlog("Your adventure is over before it has even begun." )
@@ -326,7 +331,7 @@ function quest1() {
 **Try your adventure!**
 
 - :binoculars: Try out your adventure! <br/><br/>
-You should see two quests if you press the (A) button both times,
+You should see two quests if you press the (A) button,
 and only one if you press (B).
 
 💡 _You may need to turn the sound on beside the game window to hear the music you added._

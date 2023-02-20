@@ -7,6 +7,8 @@ import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
 import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
 import { isLocal, tickEvent } from "../browserUtils";
+import { GameData } from "../Models/GameData";
+import KioskNotification from "./KioskNotification";
 interface IProps {
     kiosk: Kiosk
 }
@@ -16,6 +18,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const [renderQRCode, setRenderQRCode] = useState(true);
     const [menuButtonSelected, setMenuButtonState] = useState(false);
     const [qrCodeButtonSelected, setQrButtonState] = useState(false);
+    const [notify, setNotify] = useState(false);
+    const [notifyContent, setNotifyContent] = useState("");
     const generatingKioskCode = useRef(false);
     const kioskCodeNextGenerationTime = useRef(0);
     const nextSafePollTime = useRef(0);
@@ -47,6 +51,22 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         return true;
     }
 
+    const getGameNames = (gameList: GameData[]): string[] => {
+        const gameNames = [];
+        for (const game of gameList) {
+            gameNames.push(game.name);
+        }
+        return gameNames;
+    }
+
+    const displayGamesAdded = (addedGames: GameData[]): void => {
+        const gameNames = getGameNames(addedGames);
+        const games = gameNames.join(", ");
+        const notification = `${games} added!`
+        setNotifyContent(notification);
+        setNotify(true);
+    }
+
     useEffect(() => {
         let intervalId: any = null;
         intervalId = setInterval(() => {
@@ -72,14 +92,20 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             clearTimeout(pollTimer);
             pollTimer = setTimeout(async () => {
                 try {
-                    // TODO: change for the multiple games added
-                    const gameCode: string = await getGameCodeAsync(kioskCode);
-                    await kiosk.saveNewGameAsync(gameCode);
-                    kiosk.launchGame(gameCode);
-                } catch (error: any) {
+                    const gameCodes = await getGameCodeAsync(kioskCode);
+                    if (gameCodes) {
+                        const justAddedGames = await kiosk.saveNewGamesAsync(gameCodes);
+                        if (justAddedGames.length) {
+                            displayGamesAdded(justAddedGames);
+                        }
+                    }
                     if (kioskCode) {
                         await pollForGameCode();
                     }
+                } catch (error: any) {
+                    clearTimeout(pollTimer);
+                    setKioskCode("");
+                    setRenderQRCode(false);
                 }
             }, timeToPoll)
         }
@@ -171,6 +197,10 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 </div>
             </div>
             <AddGameButton selected={menuButtonSelected} content="Return to menu" />
+            {
+                notify &&
+                <KioskNotification setActive={setNotify} content={notifyContent} />
+            }
         </div>
 
     )
