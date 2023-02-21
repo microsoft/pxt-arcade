@@ -3,7 +3,7 @@
 Make the corgi's image change when it moves.
 
 ```sig
-corgio.updateSprite(true)
+corgio.create().updateSprite(true)
 ```
 
 If enabled, The corgi sprite image will change when it moves to make it appear that it's heading in the direction of movement.

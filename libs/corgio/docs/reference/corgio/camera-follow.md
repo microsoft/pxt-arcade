@@ -3,7 +3,7 @@
 Enable the scene camera to follow the corgi sprite.
 
 ```sig
-corgio.cameraFollow(true)
+corgio.create().cameraFollow(true)
 ```
 
 ## Parameters

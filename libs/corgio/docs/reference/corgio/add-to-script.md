@@ -3,7 +3,7 @@
 Add a phrase to the corgi's list of known phrases to speak.
 
 ```sig
-corgio.addToScript("")
+corgio.create().addToScript("")
 ```
 
 The corgi is "taught" new a phrase by adding a phrase script to its list of known phrases.

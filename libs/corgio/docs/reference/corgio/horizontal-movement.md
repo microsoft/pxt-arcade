@@ -3,7 +3,7 @@
 Enable horizonal movement of the corgi with the left and right arrow buttons.
 
 ```sig
-corgio.horizontalMovement()
+corgio.create().horizontalMovement()
 ```
 
 ## Parameters
@@ -23,7 +23,7 @@ myCorg.horizontalMovement(true)
 ## See also #seealso
 
 [vertical movement](/reference/corgio/vertical-movement),
-[camera follow](/reference/corgi/camera-follow)
+[camera follow](/reference/corgio/camera-follow)
 
 ```package
 corgio

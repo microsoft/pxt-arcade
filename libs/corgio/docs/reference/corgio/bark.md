@@ -3,7 +3,7 @@
 Make the corgi speak a phrase from it's list of known phrases.
 
 ```sig
-corgio.bark()
+corgio.create().bark()
 ```
 
 The corgi is "taught" new phrases by adding one with the [teach](/reference/corgio/add-to-script) block. A phrase to speak is chosen randomly.

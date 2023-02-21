@@ -3,7 +3,7 @@
 Enable jumping upwards of the corgi sprite with the up arrow button.
 
 ```sig
-corgio.verticalMovement()
+corgio.create().verticalMovement()
 ```
 
 ## Parameters
