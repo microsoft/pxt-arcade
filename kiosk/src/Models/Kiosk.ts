@@ -327,13 +327,13 @@ export class Kiosk {
 
         function createIFrame(src: string) {
             const iframe: HTMLIFrameElement = document.createElement("iframe");
-            iframe.className = "sim-embed";
+            iframe.id = "sim-embed";
             iframe.frameBorder = "0";
             iframe.setAttribute("sandbox", "allow-popups allow-forms allow-scripts allow-same-origin");
             iframe.src = src;
             return iframe;
         }
-        gamespace.appendChild(createIFrame(playUrlBase + playQueryParam));
+        gamespace.appendChild(createIFrame(playUrlBase + playQueryParam)).focus();
     }
 
     launchAddGame() {
