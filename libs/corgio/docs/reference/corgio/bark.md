@@ -1,6 +1,6 @@
 # bark
 
-Make the corgi speak a phrase from it's list of known phrases.
+Make the corgi speak a phrase from a list of known phrases.
 
 ```sig
 corgio.create().bark()
