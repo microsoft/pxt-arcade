@@ -164,6 +164,7 @@ namespace corgio {
     //% blockSetVariable=myCorg
     //% weight=100
     //% group="Create"
+    //% help=corgio/create
     export function create(kind: number,
                             x: number = 10,
                             y: number = 70): Corgio {
@@ -270,6 +271,7 @@ class Corgio extends sprites.ExtendableSprite {
     //% group="Movement"
     //% blockId=horizontalMovement block="make %corgio(myCorg) move left and right with arrow keys || %on=toggleOnOff"
     //% weight=100 blockGap=5
+    //% help=corgio/horizontal-movement
     horizontalMovement(on: boolean = true): void {
         this.updateFlags(on, corgio.CorgiFlags.HorizontalMovement);
 
@@ -289,6 +291,7 @@ class Corgio extends sprites.ExtendableSprite {
     //% group="Movement"
     //% blockId=verticalMovement block="make %corgio(myCorg) jump if up arrow key is pressed || %on=toggleOnOff"
     //% weight=100 blockGap=5
+    //% help=corgio/vertical-movement
     verticalMovement(on: boolean = true): void {
         this.updateFlags(on, corgio.CorgiFlags.VerticalMovement);
 
@@ -330,6 +333,7 @@ class Corgio extends sprites.ExtendableSprite {
     //% group="Movement"
     //% blockId=followCorgi block="make camera follow %corgio(myCorg) left and right || %on=toggleOnOff"
     //% weight=90 blockGap=5
+    //% help=corgio/camera-follow
     cameraFollow(on: boolean = true): void {
         this.updateFlags(on, corgio.CorgiFlags.CameraFollow);
 
@@ -341,11 +345,12 @@ class Corgio extends sprites.ExtendableSprite {
     }
 
     /**
-     * Make the character change sprites when moving.
+     * Make the character change sprite images when moving.
      */
     //% group="Movement"
     //% blockId=updateSprite block="change image when %corgio(myCorg) is moving || %on=toggleOnOff"
     //% weight=100 blockGap=5
+    //% help=corgio/update-sprite
     updateSprite(on: boolean = true): void {
         this.updateFlags(on, corgio.CorgiFlags.UpdateSprite);
         game.onUpdate(() => {
@@ -370,6 +375,7 @@ class Corgio extends sprites.ExtendableSprite {
     //% group="Speak"
     //% blockId=addScript block="teach %corgio(myCorg) the word %input"
     //% weight=95 blockGap=5
+    //% help=corgio/add-to-script
     addToScript(input: string): void {
         this.script.push(input);
     }
@@ -380,6 +386,7 @@ class Corgio extends sprites.ExtendableSprite {
     //% group="Speak"
     //% blockId=bark block="make %corgio(myCorg) bark!"
     //% weight=95 blockGap=5
+    //% help=corgio/bark
     bark(): void {
         this.say(Math.pickRandom(this.script), 250);
     }
