@@ -29,7 +29,7 @@ In the ``||scene:set background color||`` block, click on the grey color oval to
 
 ## {Step 3}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables:set mySprite||`` into the ``||loops:on start||`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables(sprites):set mySprite||`` into the ``||loops:on start||`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -57,13 +57,13 @@ mySprite = sprites.create(img`
 
 ## {Step 4}
 
-Draw your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables:set mySprite||`` block to open the Sprite Editor. Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
+Draw your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables(sprites):set mySprite||`` block to open the Sprite Editor. Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
 
 ![Image editor](/static/tutorials/chase-the-pizza/image-editor.gif)
 
 ## {Step 5}
 
-Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables:set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
+Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables(sprites):set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
 
 ```blocks
 let mySprite: Sprite = null
@@ -92,7 +92,7 @@ controller.moveSprite(mySprite)
 
 ## {Step 6}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag another ``||variables:set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **pizza** sprite in our game.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag another ``||variables(sprites):set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **pizza** sprite in our game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -140,7 +140,7 @@ mySprite2 = sprites.create(img`
 
 ## {Step 7}
 
-In the ``||variables:set mySprite2||`` block, click on ``||variables(noclick):mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``pizza`` as the new sprite name and click **Ok**.
+In the ``||variables(sprites):set mySprite2||`` block, click on ``||variables(noclick):mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``pizza`` as the new sprite name and click **Ok**.
 
 ![Rename mySprite2](/static/tutorials/chase-the-pizza/rename-mysprite2.gif)
 
@@ -152,7 +152,7 @@ In the ``||variables(noclick):set pizza||`` block, click on the ``||sprites:Play
 
 ## {Step 9}
 
-Click on the grey box for ``||variables:set pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
+Click on the grey box for ``||variables(noclick):set pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
 
 ![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.gif)
 
@@ -175,7 +175,7 @@ In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second
 
 ## {Step 12}
 
-When our ``||sprites:Player||`` overlaps with the ``||variables:pizza||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
+When our ``||sprites:Player||`` overlaps with the ``||variables(noclick):pizza||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
