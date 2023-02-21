@@ -153,7 +153,7 @@ namespace corgio {
     export let _corgi_right: Image[] = reflect(_corgi_left);
 
     /**
-     * Creates a new dart from an image and kind
+     * Creates a new corgi from an image and kind
      * @param kind the kind to make the corgi
      * @param x optional initial x position, eg: 10
      * @param y optional initial y position, eg: 70
