@@ -68,11 +68,11 @@ Please note that for security purposes, the Kiosk ID is only valid for 10 minute
 
 If you've added a game to the kiosk, you can also remove that game. When you're focused on a game that you added, you should see a delete button underneath. 
 
-![image](https://user-images.githubusercontent.com/49178322/220726573-14720e58-8ec7-4177-abbf-5817238069f7.png)
+![Delete button highlighted on select game](/static/hardware/kiosk/delete-button-highlighted.png)
 
 Use the joystick to navigate to the button. Press the **A** button to select. This will open a pop-up for confirming the deletion. 
 
-![image](https://user-images.githubusercontent.com/49178322/220729219-fa7914c4-c0c0-4645-9133-dbd75c29ba98.png)
+![Delete game dailogimage.png](/static/hardware/kiosk/delete-game-modal.png)
 
 
 Move the joystick left or right to select either option. Cancelling keeps the game list as is. Confirming will remove the game from the list of games. 
