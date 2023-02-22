@@ -333,7 +333,9 @@ export class Kiosk {
             iframe.src = src;
             return iframe;
         }
-        gamespace.appendChild(createIFrame(playUrlBase + playQueryParam)).focus();
+        const playerIFrame = createIFrame(playUrlBase + playQueryParam);
+        gamespace.appendChild(playerIFrame);
+        playerIFrame.focus();
     }
 
     launchAddGame() {
