@@ -72,10 +72,10 @@ To delete a game from the kiosk, first select it in the list of games. Use the d
 
 Press the **A** button to select. This will open a pop-up to confirm the deletion.
 
-![Delete game dailogimage.png](/static/hardware/kiosk/delete-game-modal.png)
+![Delete game dailog](/static/hardware/kiosk/delete-game-modal.png)
 
 
-Move the joystick left or right to select Cancel or Confirm. If you Confirm deletion, the game will be removed from the Kiosk.
+Move the joystick left or right to highlight Cancel or Confirm. Press the **A** button to select. If you Confirm deletion, the game will be removed from the Kiosk.
 
 ## Clearing the Kiosk
 
