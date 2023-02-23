@@ -17,6 +17,7 @@ namespace darts {
     //% blockSetVariable=myDart
     //% weight=100
     //% group="Create"
+    //% help=darts/create
     export function create(img: Image,
                             kind: number,
                             x: number = 10,
@@ -154,6 +155,7 @@ class Dart extends sprites.ExtendableSprite {
     //% blockId=setTrace block="trace %dart(myDart) path estimate || %on=toggleOnOff"
     //% weight=50
     //% group="Actions"
+    //% help=darts/set-trace
     public setTrace(on: boolean = true): void {
         this.trace = on;
     }
@@ -164,6 +166,7 @@ class Dart extends sprites.ExtendableSprite {
     //% blockId=throwDart block="throw %dart(myDart)"
     //% weight=50
     //% group="Actions"
+    //% help=darts/throw-dart
     public throwDart(): void {
         this.vx = darts.xComponent(this.angle, this.pow);
         this.vy = darts.yComponent(this.angle, this.pow);
@@ -177,6 +180,7 @@ class Dart extends sprites.ExtendableSprite {
     //% blockId=stopDart block="stop %dart(myDart)"
     //% weight=50
     //% group="Actions"
+    //% help=darts/stop-dart
     public stopDart(): void {
         this.ay = 0;
         this.ax = 0;
@@ -192,6 +196,7 @@ class Dart extends sprites.ExtendableSprite {
     //% blockId=controlKeys block="control %dart(myDart) with arrow keys || %on=toggleOnOff"
     //% weight=50
     //% group="Actions"
+    //% help=darts/control-with-arrow-keys
     public controlWithArrowKeys(on: boolean = true): void {
         this.controlKeys = on;
 
