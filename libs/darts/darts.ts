@@ -93,7 +93,7 @@ class Dart extends sprites.ExtendableSprite {
     //% weight=8
     public angleRate: number;
     //% group="Properties" blockSetVariable="myDart"
-    //% blockCombine block="wind"
+    //% blockCombine block="power adjust rate"
     //% weight=8
     public powerRate: number;
 
