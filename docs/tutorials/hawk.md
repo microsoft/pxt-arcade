@@ -34,7 +34,7 @@ block already in the workspace.
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/hawk/step-2.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/tutorials/hawk/step-2.gif "Add a sprite to your game.")
 
 hint~
 
@@ -115,7 +115,7 @@ block already in the workspace.
 
 ---
 
-![Look under Controller for the block](/static/skillmap/hawk/step-5-fast-speed.gif "Drag out the controller block to use later.")
+![Look under Controller for the block](/static/tutorials/hawk/step-5-fast-speed.gif "Drag out the controller block to use later.")
 
 hint~
 
