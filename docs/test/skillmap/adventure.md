@@ -26,7 +26,7 @@
 * tags: conditionals, text
 * next: adventure2
 * url: /test/skillmap/adventure/adventure1
-* imageUrl: https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif
+* imageUrl: /static/skillmap/adventure/bard.png
 * position: 1 2
 
 
@@ -38,7 +38,7 @@
 * tags: music, functions
 * next: adventure3
 * url: /test/skillmap/adventure/adventure2
-* imageUrl: https://media.giphy.com/media/fYru9bLqxEeTqyBmRg/giphy.gif
+* imageUrl: /static/skillmap/adventure/mimic.png
 * position: 1 1
 
 
@@ -49,7 +49,7 @@
 * tags: lives, score, functions
 * next: adventure-cert
 * url: /test/skillmap/adventure/adventure3
-* imageUrl: https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif
+* imageUrl: /static/skillmap/adventure/owlbear.png
 * position: 2 1
 
 
