@@ -64,6 +64,19 @@ Alternately, you can add a game to the kiosk through a shared game link. On the 
 
 Please note that for security purposes, the Kiosk ID is only valid for 10 minutes, after which time you will need to generate a new Kiosk ID. There is no limit to how many games can be added to a kiosk.
 
+## Deleting a game from the Kiosk
+
+To delete a game from the kiosk, first select it in the list of games. Use the down direction on the joystick to highlight the delete button on the bottom right below the game image.
+
+![Delete button highlighted on select game](/static/hardware/kiosk/delete-button-highlighted.png)
+
+Press the **A** button to select. This will open a pop-up to confirm the deletion.
+
+![Delete game dailog](/static/hardware/kiosk/delete-game-modal.png)
+
+
+Move the joystick left or right to highlight Cancel or Confirm. Press the **A** button to select. If you Confirm deletion, the game will be removed from the Kiosk.
+
 ## Clearing the Kiosk
 
 Instead of starting with the default game list in the MakeCode Arcade Kiosk, you can open Kiosk mode with no games in the game list. Use the **"clean=1"** flag to do this:
