@@ -34,42 +34,37 @@ music.startSong(assets.song`birthday`, false)
 
 ## {Step 3}
 
-Try adding text that
-shows up when the **A button** is pressed.
+Add some music that plays when the **A button** is pressed.
 
 ---
 
 - :game:  From the ``||controller: Controller||`` category, drag
-
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
 })
 ```
-
 into **an empty area** of the workspace.
 
-- :mouse pointer:  Change the message to make sense for your card.
+
+- :mouse pointer:  Click the grey box to open the music editor and create your own song!
+
 
 ~hint Click here to see how 🕵🏽
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![Add blocks to make music](/static/skillmap/story/step2-3.gif " " )
 
 hint~
 
 
-```blockconfig.local
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-})
-```
-
 #### ~ tutorialhint
 ``` blocks
+//@highlight
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
+    //@highlight
+    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
 })
 ```
 
@@ -80,8 +75,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **Give it a try.**
 
-- :binoculars: Take a look at the game window and press the **A button** (or space bar) to see your text.
+- :binoculars: Take a look at the game window and press the **A button** (or space bar) to hear your music.
 
+💡 _You may need to turn the sound on beside the game window to hear the music you added._
+
+
+![Don't forget to turn on the sound]( /static/skillmap/assets/sound-on.gif "Image of the sound button to the right of the game window" )
 
 
 
@@ -90,19 +89,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **What a nice surprise**
 
-Add a second message to show you care.
+Add another message to your card to show you care.
 
 ---
 
-- :mouse pointer:  From ``||game:Game||`` grab
-
+- :circle:  From ``||game:Game||`` grab
 ```block
     game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
 ```
-
-and snap it into **the bottom** of the<br/>
+and snap it in at **the top** of the<br/>
 ``||controller(noclick):on [A] button [pressed]||``<br/>
 container.
+
 
 - :mouse pointer:  Change this message to make sense with the rest of your project.
 
@@ -110,7 +108,7 @@ container.
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![Add a message from the game category](/static/skillmap/story/step2-5.gif " " )
 hint~
 
 ```blockconfig.local
@@ -121,8 +119,9 @@ game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
 ``` blocks
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    //@highlight
     game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-    game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
+    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
 })
 
 ```
@@ -130,40 +129,38 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 6}
 
-**🎨 Make it POP 🎨**
+**🎨 Make it POP 🎨**<br/>
 Customize the text frame to bring it all together.
 
 ---
 
-- :mouse pointer:  From ``||game:Game||``, grab
-
+- :circle:  From ``||game:Game||``, grab
 ```block
 game.setDialogFrame(sprites.dialog.mediumLeaf1)
 ```
-
 and snap it in at **the top** of the<br/>
 ``||controller(noclick):on [A] button [pressed]||``<br/>
 container that is already in your workspace.
 
-- :mouse pointer:  Choose a design by clicking on the box in the<br/>
-``||game(onclick):set dialog frame to [ ]||``<br/>
-block and switching to the **Gallery**.
+
+- :mouse pointer:  Choose a design by clicking on the leafy box and switching to something different.
 
 ~hint Click here to see how 🕵🏽
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![Change the frame](/static/skillmap/story/step2-6.gif " " )
 hint~
 
 
 #### ~ tutorialhint
 ``` blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    //@highlight
     game.setDialogFrame(sprites.dialog.mediumLeaf1)
     game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-    game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
-})
+    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
+    })
 
 ```
 
@@ -174,7 +171,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 **Try it again.**
 
 - :binoculars: Take a look at the game window and press the
-**A button** (or space bar) to see your text. Press the button again to see the next message.
+**A button** (or space bar) to see your text and hear your music.
 
 
 
@@ -184,41 +181,40 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **The final touch 🎀**
 
-Change the color of the text so it works with your background.
+Change the color of the text so it works well with your background.
 
 ---
 
 - :circle:  From ``||game:Game||``, grab
-
 ```block
 game.setDialogTextColor(1)
 ```
-
-and snap it into the top of the<br/>
-``||on [A] button [pressed]||``<br/>
+and snap it into **the top** of the<br/>
+``||controller(noclick):on [A] button [pressed]||``<br/>
 block in your workspace.
 
+
 - :mouse pointer:  **Click the box** and choose a color that looks good with your message.  <br/><br/>
-It's okay if you need to change it a few times before your text
-is just right.
+It's okay if you need to change it a few times before it looks right.
 
 
 ~hint Click here to see how 🕵🏽
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![The background gallery](/static/skillmap/story/step2-8.gif "Toggle between editor and gallery" )
 hint~
 
 
 #### ~ tutorialhint
 ``` blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    //@highlight
     game.setDialogTextColor(1)
     game.setDialogFrame(sprites.dialog.mediumLeaf1)
     game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-    game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
-})
+    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
+    })
 ```
 
 
@@ -229,7 +225,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Take a look at the game window and press the
 **A button** (or space bar) to see how your text looks now.
-<br/><br/>Press the button another time to see the next message.
 
 
 
@@ -249,6 +244,9 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 game.showLongText("Happy Earth Day", DialogLayout.Bottom)
 game.setDialogFrame(sprites.dialog.mediumLeaf1)
 game.setDialogTextColor(1)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+})
 ```
 
 
@@ -259,8 +257,48 @@ carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 
 ```template
 scene.setBackgroundImage(storySprites.world)
+carnival.addLabelTo("You Are Awesome", carnival.Areas.Bottom)
 effects.confetti.startScreenEffect()
-music.startSong(assets.song`birthday`, false)
+```
+
+```ghost
+    game.setDialogTextColor(1)
+    game.setDialogFrame(img`
+        88888..8888888888888888....88888.
+        87768888777877787778777888867778.
+        87777686767876767678767688777778.
+        87767767667676676676766786776768.
+        8677676767767767677677678676778..
+        .877768777686767776867678667768..
+        .886668888888888888888888886688..
+        .888888866666666666666668877768..
+        88677786666666666666666668766778.
+        87766686666666666666666668776678.
+        87667786666666666666666668677778.
+        87777686666666666666666668866888.
+        88866886666666666666666668677778.
+        87777686666666666666666668776678.
+        87667786666666666666666668666778.
+        87766786666666666666666668777688.
+        88677786666666666666666668766778.
+        87766686666666666666666668776678.
+        87667786666666666666666668677778.
+        87777686666666666666666668866888.
+        88866886666666666666666668677778.
+        87777686666666666666666668776678.
+        87667786666666666666666668666778.
+        87766786666666666666666668777688.
+        .867778866666666666666668888888..
+        .886688888888888888888888866688..
+        .867766876768677767686777867778..
+        .8776768767767767677677676767768.
+        86767768766767667667676676776778.
+        87777788676787676767876768677778.
+        87776888877787778777877788886778.
+        88888..88888888888888888....8888.
+        .................................
+        `)
+    game.showLongText("You are so special", DialogLayout.Bottom)
 ```
 
 

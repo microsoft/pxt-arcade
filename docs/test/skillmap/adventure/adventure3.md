@@ -12,6 +12,9 @@ We can keep adding to it.
 
 ![Let's go on an adventure!](https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif "Image of trunk trying to eat Barbarian" )
 
+_© 2023 Paramount Pictures. Hasbro, Dungeons &
+Dragons and all related characters are trademarks of
+Hasbro. © 2023 Hasbro._
 
 
 ## {Step 2}

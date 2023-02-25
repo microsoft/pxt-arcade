@@ -112,7 +112,7 @@ into **the end** of the ``||loops(noclick):on start||`` container that's already
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![The background gallery](/static/skillmap/story/step5.gif "Toggle between editor and gallery" )
 hint~
 
 
@@ -129,7 +129,42 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 
 
 
+
 ## {Step 6}
+
+**Change the text color**<br/>
+🎨 🎨 🎨
+
+---
+
+- :mouse pointer: If you want to change the color of your text, click the plus sign ( + ) inside of
+```block
+carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+```
+and choose whatever color you like.
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Click the plus to choose a color](/static/skillmap/story/step6.gif "Choose a color" )
+hint~
+
+
+
+#### ~ tutorialhint
+
+```blocks
+scene.setBackgroundImage(storySprites.halloween)
+//@highlight
+carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+
+```
+
+
+
+## {Step 7}
 
 **Time for pizzazz**<br/>
 🎉🎉🎉
@@ -150,7 +185,7 @@ into **the end** of the ``||loops(noclick):on start||`` container that's already
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![Add an effect from the scene category](/static/skillmap/story/step7.gif "Choose an effect" )
 hint~
 
 #### ~ tutorialhint
@@ -166,52 +201,12 @@ effects.confetti.startScreenEffect()
 
 
 
-## {Step 7}
+## {Step 8}
 
 **Look at your creation!**
 
 - :binoculars: Take a look at the game window. Does the card look the way you want it to?  <br/><br/>
 Feel free to change it until you are happy with it.
-
-
-
-
-
-## {Step 8}
-
-**Let's add a personal note**<br/>
-🎵 🎵 🎵
-
----
-
-- :headphones:  From the ``||music:Music||`` category, drag
-
-```block
-music.startSong(``, false)
-```
-
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
-
-
-- :mouse pointer: **Click the empty rectangle** to open the music editor.<br/><br/>
-You can write your own song or switch to **My Assets** to pick one
-that we've written for you.
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
-hint~
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(storySprites.halloween)
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
-effects.confetti.startScreenEffect()
-music.startSong(assets.song`birthday`, false)
-```
 
 
 
