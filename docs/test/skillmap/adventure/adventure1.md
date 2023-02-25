@@ -9,9 +9,11 @@ Are you ready to create an adventure?
 
 Follow the steps of this tutorial to create your own text-based adventure game.
 
+![Let's go on an adventure!](https://media.giphy.com/media/fYru9bLqxEeTqyBmRg/giphy.gif "Image of owlbear raging at red mage" )
 
-![Let's go on an adventure!](https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif "Image of Bard" )
-
+_© 2023 Paramount Pictures. Hasbro, Dungeons &
+Dragons and all related characters are trademarks of
+Hasbro. © 2023 Hasbro._
 
 
 ## {2. Explain the Issue}
@@ -333,7 +335,7 @@ You should win the adventure if you click (A) and lose the adventure if you clic
 **Congratulations, you've created the beginning of a text-based adventure!**<br/>
 🥳 🥳 🥳
 
-Click **Done** to return to the main skillmap to keep going and add some pizazz to your project.
+Click **Done** to return to the main skillmap and get ready to create music and images for your project.
 
 
 ```blockconfig.global

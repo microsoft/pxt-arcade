@@ -26,7 +26,7 @@
 * tags: conditionals, text
 * next: adventure2
 * url: /test/skillmap/adventure/adventure1
-* imageUrl: /static/skillmap/adventure/bard.png
+* imageUrl: /static/skillmap/adventure/owlbear.png
 * position: 1 2
 
 
@@ -34,11 +34,11 @@
 ### adventure2
 * name: Make it Spectacular
 * type: tutorial
-* description: Make your quests more memorable with music, images, and functions
+* description: Create your own music and images to enhance out your adventure!
 * tags: music, functions
 * next: adventure3
 * url: /test/skillmap/adventure/adventure2
-* imageUrl: /static/skillmap/adventure/mimic.png
+* imageUrl: /static/skillmap/adventure/bard.png
 * position: 1 1
 
 
@@ -49,7 +49,7 @@
 * tags: lives, score, functions
 * next: adventure-cert
 * url: /test/skillmap/adventure/adventure3
-* imageUrl: /static/skillmap/adventure/owlbear.png
+* imageUrl: /static/skillmap/adventure/mimic.png
 * position: 2 1
 
 
