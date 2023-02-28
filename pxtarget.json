@@ -553,6 +553,7 @@
         "selectLanguage": true,
         "availableLocales": [
             "en",
+            "ar",
             "zh-CN",
             "zh-TW",
             "de",

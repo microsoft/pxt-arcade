@@ -5,13 +5,16 @@
 ## {Intro @showdialog}
 
 
-Are you ready to add some excitement?
+Are you ready to add some music?
 
 The code for your first adventure is already in the workspace. <br/>
-Let's make it pop!
+Let's make it pop with music and images!
 
-![Let's go on an adventure!](https://media.giphy.com/media/fYru9bLqxEeTqyBmRg/giphy.gif "Image of owlbear raging at red mage" )
+![Animated image of the bard skipping and singing](https://media.giphy.com/media/q6X5yJOC1nupZmKdo9/giphy.gif "Image of Bard" )
 
+_© 2023 Paramount Pictures. Hasbro, Dungeons &
+Dragons and all related characters are trademarks of
+Hasbro. © 2023 Hasbro._
 
 
 ## {Step 2}
