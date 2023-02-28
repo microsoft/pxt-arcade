@@ -49,7 +49,11 @@ in the image editor/blocks.
 
 ### ~
 
-To change the default palette of a project, select the **JavaScript** tab at the top of the editor to edit project code in text. On the left of the editor's workspace is the **Explorer** control for the files in your project. Expand the Explorer control and find the `pxt.json` file. Click on this file and then go back to the workspace and click on the "Edit Settings As text" button. You can now edit your project settings. Add a `"palette"` entry like this:
+To change the default palette of a project, select the **(1) - JavaScript** tab at the top of the editor to edit project code in text. On the left of the editor's workspace is the **(2) - Explorer** control for the files in your project. Expand the Explorer control and find the `pxt.json` file. Click on this file and then go back to the workspace and click on the **(3) - Edit Settings As text** button.
+
+![Edit project settings as text](/static/developer/edit-settings.png)
+
+You can now edit your project settings. Add a `"palette"` entry with your color values like this:
 
 ```JSON
 {
