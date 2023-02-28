@@ -12,6 +12,9 @@ We can keep adding to it.
 
 ![Let's go on an adventure!](https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif "Image of trunk trying to eat Barbarian" )
 
+_© 2023 Paramount Pictures. Hasbro, Dungeons &
+Dragons and all related characters are trademarks of
+Hasbro. © 2023 Hasbro._
 
 
 ## {Step 2}
@@ -355,7 +358,7 @@ quest1()
 
 function quest1() {
 
-    music.play(music.createSong(assets.song`minstrel`), music.PlaybackMode.InBackground)
+    music.play(music.createSong( ), music.PlaybackMode.InBackground)
     loggr.addImageToTextLog(assets.image`lute`)
     loggr.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
     loggr.addToTextlog("Press (A) to join the fun." )
@@ -371,7 +374,7 @@ function quest1() {
 
 }
 function quest2() {
-    music.play(music.createSong(assets.song`minstrel`), music.PlaybackMode.InBackground)
+    music.play(music.createSong( ), music.PlaybackMode.InBackground)
     loggr.addImageToTextLog(assets.image`owlBear`)
     loggr.addToTextlog("Out of the darkness, an Owlbear leaps toward your party.")
     loggr.addToTextlog("Press (A) to back away slowly." )
