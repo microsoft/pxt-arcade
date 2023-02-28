@@ -85,7 +85,7 @@ To change the default palette of a project, select the **JavaScript** tab at the
 }
 ```
 
-If a `"palette"` entry already exists, it's possible that a another palette was applied previously in the Color Palette editor. You can set a new palette by overwriting the previous entry. You will have 15 colors that you set for color entries `1` - `15`. The first color, entry `0`, is reserved for transparency and can remain set as `#000000`. Be certain that there **exactly** 16 color entries, the first is the transparency color and the other 15 colors are the custom colors.
+If a `"palette"` entry already exists, it's possible that a another palette was applied previously in the Color Palette editor. You can set a new palette by overwriting the previous entry. You will have 15 colors that you set for color entries `1` - `15`. The first color, entry `0`, is reserved for transparency and can remain set as `#000000`. Be certain that there are **exactly** 16 color entries, the first is the transparency color and the other 15 colors are the custom colors.
 
 ### Changing the palette at runtime
 
