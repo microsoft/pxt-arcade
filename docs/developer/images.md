@@ -30,7 +30,7 @@ The color values in the default palette for the MakeCode UI are listed here:
 
 ### User palette settings
 
-Users can change the color palette used for their projects in the Asset Editor under the **Asset** tab. Pressing the **Colors** button will display the Color Palette window. Several predefined palettes are available to choose from. The user can create a new "custom" palette if desired and pick the 15 colors to fill it. This palette will be custom to the project can be set as the default palette by clicking **Apply**.
+Users can change the color palette used for their projects in the Asset Editor under the **Asset** tab. Pressing the **Colors** button will display the Color Palette window. Several predefined palettes are available to choose from. The user can create a new "custom" palette if desired and pick the 15 colors to fill it. This palette will be custom to the project and can be set as the default palette by clicking **Apply**.
 
 ![User color palette settings](/static/developer/color-palette-window.png)
 
