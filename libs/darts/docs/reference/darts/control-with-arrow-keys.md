@@ -6,7 +6,7 @@ If enabled, set force properties for a dart throw using the arrow keys.
 darts.create().controlWithArrowKeys()
 ```
 
-As a way to set the force properties of a dart during gameplay, you can us the arrow key to change them.
+As a way to set the force properties of a dart during gameplay, you can use the arrow keys to change them.
 
 The throw [angle](/reference/darts/properties#angle) is controlled with the left and right arrow keys. The right arrow key increases the angle and the left arrow key decreases the angle.
 
