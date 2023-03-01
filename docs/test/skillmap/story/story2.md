@@ -16,7 +16,7 @@ The code for a simple card is already in the workspace.<br/>
 
 ---
 
-- :mouse pointer:  You can keep adding to this card or change it to be something completely different.
+- :mouse pointer:  You can add to this card or change it to be something completely different.
 
 
 💡 **Tip:** _If your code isn't working and you can't figure out why, click "Replace my code" to replace the blocks in your workspace with new starter code._
@@ -34,7 +34,7 @@ music.startSong(assets.song`birthday`, false)
 
 ## {Step 3}
 
-Add some music that plays when the **A button** is pressed.
+Add some music that plays when the **(A) button** is pressed.
 
 ---
 
@@ -93,7 +93,7 @@ Add another message to your card to show you care.
 
 ---
 
-- :circle:  From ``||game:Game||`` grab
+- :circle:  From ``||game:Game||``, grab
 ```block
     game.showLongText("To the greatest Earth I know", DialogLayout.Bottom)
 ```
@@ -236,7 +236,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Finale}
 
-**🎊 Congrats 🎊**
+**✨ Congrats ✨**
 
 You have made a card that any friend would be excited to get!
 
