@@ -137,7 +137,7 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 
 ---
 
-- :mouse pointer: If you want to change the color of your text, click the plus sign ( + ) inside of
+- :mouse pointer: If you want to change the color of your text, click the plus sign (+) inside of
 ```block
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 ```
@@ -209,14 +209,6 @@ effects.confetti.startScreenEffect()
 Feel free to change it until you are happy with it.
 
 
-
-
-## {Step 9}
-
-**Celebrate your work!**
-
-- :binoculars: Take a look at your finished card in the game window.<br/><br/>
-Feel free to go back and make changes until you are happy with it.
 
 
 

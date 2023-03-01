@@ -13,7 +13,7 @@ Let's use what we've learned to make a short story to share with family and frie
 
 Before you start this lesson, you're going to need a story to tell.
 
-You can either write a short story of your own or use the one that we've added here:
+You can either write a story of your own or use this one:
 
 [**_Click here to copy lines from our story._**](#doc:/skillmap/story/story-example "Copy lines from our story here.")
 
@@ -132,7 +132,7 @@ Add another set of blocks with a new picture and a new line from your story.
 
 ---
 
-- :mouse pointer:  Keep adding sets of blocks until you get to the end of your story.
+- :mouse pointer:  Keep adding sets of blocks until you get to the end.
 ```block
 scene.setBackgroundImage(assets.image`page2`)
 pause(1000)
@@ -142,6 +142,37 @@ game.showLongText("Next door...", DialogLayout.Bottom)
 💡 _You don't always need to add the blocks in the same order.  Want to show some pictures without text? Want to change the text without changing the picture?  Play around and see what works for you!_
 
 
+#### ~ tutorialhint
+
+```blocks
+    scene.setBackgroundImage(assets.image`page1`)
+    pause(1000)
+    game.showLongText("Once upon a time, there was a lizard who lived beneath a toadstool.", DialogLayout.Bottom)
+    scene.setBackgroundImage(assets.image`page2`)
+    pause(1000)
+    game.showLongText("Next door, there lived a butterfly on a daisy.", DialogLayout.Bottom)
+    scene.setBackgroundImage(assets.image`page3`)
+    pause(1000)
+    game.showLongText("Every day, the butterfly would sweep past and taunt the lizard from the sky.", DialogLayout.Bottom)
+    game.showLongText("\"Ha ha!\" He would say. \"Your house doesn't smell as good as mine.\"", DialogLayout.Bottom)
+    scene.setBackgroundImage(assets.image`page4`)
+    pause(1000)
+    game.showLongText("Finally, one day, the lizard decided to find a daisy of her own.", DialogLayout.Bottom)
+    scene.setBackgroundImage(assets.image`page5`)
+    pause(2000)
+    scene.setBackgroundImage(assets.image`page6`)
+    pause(2000)
+    scene.setBackgroundImage(assets.image`page7`)
+    pause(2000)
+    game.showLongText("She tried and tried, but she just couldn't get comfortable.", DialogLayout.Bottom)
+    scene.setBackgroundImage(assets.image`page8`)
+    pause(1000)
+    game.showLongText("No matter what she did, the fragrant flower didn't make her happy.", DialogLayout.Bottom)
+    scene.setBackgroundImage(assets.image`page9`)
+    pause(1000)
+    game.showLongText("The next day, the lizard moved back to her toadstool and lived happily ever after.", DialogLayout.Bottom)
+    })
+```
 
 
 ## {Step 8}
@@ -165,9 +196,10 @@ Want to do something special to end your story?
 ```block
 effects.confetti.startScreenEffect()
 ```
-and snap it into **the end** of the < <br/>
+and snap it into **the end** of the <br/>
 ``||loops(noclick):on start||``<br/>
 container that's already in the workspace.
+
 
 - :mouse pointer:  Change **confetti** to whatever works best for your story!
 
@@ -188,7 +220,7 @@ container that's already in the workspace.
 
 You've written a story that you can be proud of!
 
-When you're done re-reading your story, click **Done** to return to the main page where you can share with everyone you know!
+When you're done reading your story, click **Done** to return to the main page where you can share with everyone you know!
 
 ```blockconfig.global
 carnival.addLabelTo(" ", carnival.Areas.Top)

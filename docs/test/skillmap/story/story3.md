@@ -75,7 +75,7 @@ We can add these characters as **sprites**.
 
 In Arcade, each character or image that does something is called a **SPRITE**.
 
-Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+Sprites have properties that you can use and change — things like scale, position, and lifespan are all properties of sprites.
 
 Our main characters will be sprites, too.
 
@@ -138,6 +138,38 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
 
 ## {Step 7}
 
+Add your first line to the joke.
+
+---
+
+
+- :cirlce:  From ``||game:Game||``, drag
+```block
+game.showLongText("", DialogLayout.Bottom)
+```
+into **the empty** <br/>
+``||controller(noclick):on [A] button [pressed]||`` <br/>
+container that you just added to the workspace.
+
+
+- :mouse pointer: Add the first line of your joke into the empty text area.
+
+💡 _You can also change where your text shows up by clicking ``||game: [bottom]||`` and switching that to a different area._
+
+
+
+#### ~ tutorialhint
+
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+//@highlight
+game.showLongText("Knock, knock...", DialogLayout.Bottom)
+})
+```
+
+
+## {Step 8}
+
 No matter how you split your joke, you're likely to get the biggest laugh if
 your punchline is presented separately at the end.
 
@@ -153,11 +185,13 @@ the last line, and it's the part that makes people laugh.
 
 
 
-## {Step 8}
+## {Step 9}
 
-Add whatever blocks you need into the empty <br/>
-``||controller:on [A] button [pressed]||``</br>
+Add whatever blocks you need into the  <br/>
+``||controller(noclick):on [A] button [pressed]||``</br>
 container already in the workspace.
+
+You can use only <br/>``||game:show long text " "||`` <br/>blocks, or switch it up with some other options.
 
 ~hint What are my text options? 💡
 
@@ -220,7 +254,7 @@ These are the most powerful storytelling options, but they take a little bit of 
 hint~
 
 
-- :mouse pointer:  Experiment with the different text blocks to create a joke that flows.
+- :mouse pointer:  Experiment with different text blocks to create a joke that flows.
 
 It might take a few tries to discover a layout that makes you laugh, so don't give up!
 
@@ -239,7 +273,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {Step 9}
+## {Step 10}
 
 **Take a minute to look at your joke on the game screen!**
 
@@ -247,7 +281,7 @@ Is it funny?  Does the text overlap anything important on the screen?
 
 ---
 
-- :mouse pointer:  If the block you're using has location options, try experimenting with text positions.
+- :mouse pointer:  If the blocks you're using have location options, try experimenting with text positions.
 
 Will the text flow better somewhere else?
 
@@ -261,7 +295,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## {Step 10}
+## {Step 11}
 
 **👏 Now take a bow 👏**
 
@@ -275,6 +309,7 @@ effects.confetti.startScreenEffect()
 ```
 and snap it into **the end** of the <br/>
  ``||controller:on [A] button [pressed]||``<br/> container.
+
 
 - :mouse pointer:  Change **confetti** to whatever gives your joke the biggest punch!
 
