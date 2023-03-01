@@ -16,15 +16,15 @@ add style.
 
 ## {Step 2}
 
-To prepare for the next steps,  
-[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),  
- or create your own!
+To prepare for the next steps,
+[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here.")
+...or create your own!
 
-```hint
+#### ~ tutorialhint
 Q: Why do tropical fish swim in saltwater?
 A: Because pepper makes them sneeze!
 
-```
+
 
 
 ## {Step 3}
@@ -32,20 +32,22 @@ A: Because pepper makes them sneeze!
 
 Do you have a joke?
 
-**Now design your scene**  <br/>
+**Design your scene**  <br/>
 🎨 🎨 🎨
 
 ---
 
-- :tree:  Snap  
-
+- :tree:  From ``||scene:Scene||``, snap
 ```block
 scene.setBackgroundImage(img`.`)
 ```
-into the
-``||loops:on start||`` container already in the workspace.
+into **the empty**<br/>
+``||loops(noclick):on start||`` <br/>
+container already in the workspace.
 
-- :paint brush:  Click the grey box to create a background that shows where your joke takes place. Is it the ocean? The sky? A kitchen?
+
+- :paint brush:  **Click the grey box** to draw a background that shows where your joke takes place. <br/>
+Is it the ocean? The sky? A kitchen?
 
 
 #### ~ tutorialhint
@@ -61,19 +63,32 @@ scene.setBackgroundImage(assets.image`aquatank`)
 
 **✨ Great ✨**
 
-Now think about the characters at the heart of your joke. Who will the reader
+Think about the characters at the heart of your joke. <br/>
+Who will the reader
 expect to see?  A fish? A sky diver? Two muffins?
 
-We can add these characters as [__*sprites*__](#sprotes "2-D images that moves on the screen").
+We can add these characters as **sprites**.
+
+~hint What's a sprite? 💡
 
 ---
 
-- :paper plane:  To add a character, look in the ``||sprites:Sprites||`` category for  
+In Arcade, each character or image that does something is called a **SPRITE**.
 
+Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+
+Our main characters will be sprites, too.
+
+hint~
+
+---
+
+- :paper plane:  From ``||sprites: Sprites||``, drag
 ```block
-let mySprite = sprites.create(assets.image`myImage1`, SpriteKind.Player)
+let mySprite = sprites.create(img`.`, SpriteKind.Player)
 ```
-and drag it into the bottom of the ``||loops:on start||`` container.
+it into **the end** of the ``||loops(noclick):on start||`` container.
+
 
 - :mouse pointer:  Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
 
@@ -86,42 +101,42 @@ let mySprite = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 
 ```
 
+
+
 ## {Step 5}
 
-One benefit of having text controlled by a button is that 
-the reader gets to choose the timing of the joke.
+**Take a look at the game screen.**
+
+- :binoculars: How does it look? Can you imagine how the joke is going to come together?
+
+
+
+
+
+## {Step 6}
+
+Use a controller block to let the reader control the flow of the joke.
 
 ---
 
 
-- :game:  From the ``||controller:Controller||`` category, drag an  
-
+- :game:  From ``||controller:Controller||``, drag
 ```block
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Muffin #1: Is it hot in here?", DialogLayout.Bottom)
-    game.showLongText("Muffin #2: Omigosh! A talking muffin!", DialogLayout.Bottom)
-})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
 ```
-container into the workspace. Now you have an example joke ready.
+into **an empty area** of the workspace.
 
 
-```blockconfig.local
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Muffin #1: Is it hot in here?", DialogLayout.Bottom)
-    game.showLongText("Muffin #2: Omigosh! A talking muffin!", DialogLayout.Bottom)
-})
-```
 
 #### ~ tutorialhint
 
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("Muffin #1: Is it hot in here?", DialogLayout.Bottom)
-    game.showLongText("Muffin #2: Omigosh! A talking muffin!", DialogLayout.Bottom)
-})
+//@highlight
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
 ```
 
-## {Step 5}
+
+## {Step 7}
 
 No matter how you split your joke, you're likely to get the biggest laugh if
 your punchline is presented separately at the end.
@@ -131,18 +146,100 @@ your punchline is presented separately at the end.
 - :pencil:  Write your joke on paper and circle the punchline. It's usually
 the last line, and it's the part that makes people laugh.
 
-- :mouse pointer:  Break the rest of the joke up into small sentences. How many long text boxes will you need?
+- :mouse pointer:  Break the rest of the joke up into small sentences. How many text blocks will you need?
 
-- :mouse pointer:  If you want more long text boxes, you can click and **duplicate** the
+
+
+
+
+
+## {Step 8}
+
+Add whatever blocks you need into the empty <br/>
+``||controller:on [A] button [pressed]||``</br>
+container already in the workspace.
+
+~hint What are my text options? 💡
+
+---
+
+There are lots of ways you can add text to your project.
+
+``||carnival:Carnival||``
 
 ```block
-game.showLongText("Muffin #1: Is it hot in here?", DialogLayout.Bottom)
+carnival.addLabelTo(" ", carnival.Areas.Top)
 ```
-block to add more of them.
+This is a great way to add "permanent" text to the top, middle, or bottom of the screen.  The problem is, there's not a way to remove the label if you want to change it.
+
+---
+
+
+``||game:Game||``
+
+```block
+game.splash("")
+```
+```block
+game.showLongText("", DialogLayout.Bottom)
+```
+Both of these are fantastic options, and they will each go away with another press of the (A) button.
+
+---
+
+
+``||story:Story||``
+
+```block
+let mySprite: Sprite = null
+story.spriteSayText(mySprite, " ")
+```
+
+```block
+story.startCutscene(function () { })
+```
+
+```block
+story.printText("  ", 0, 0)
+```
+
+```block
+story.setPagePauseLength(1000, 1000)
+```
+
+```block
+story.printCharacterText(" ")
+```
+
+```block
+story.setSoundEnabled(false)
+```
+These are the most powerful storytelling options, but they take a little bit of practice to get the hang of.  You'll learn more about them in the next level.
+
+
+hint~
+
+
+- :mouse pointer:  Experiment with the different text blocks to create a joke that flows.
+
+It might take a few tries to discover a layout that makes you laugh, so don't give up!
+
+
+#### ~ tutorialhint
+
+``` block
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+//@highlight
+    game.showLongText("If at first you don't succeed...", DialogLayout.Top)
+//@highlight
+    game.showLongText("...Maybe you shouldn't try skydiving!", DialogLayout.Top)
+})
+```
 
 
 
-## {Step 7}
+
+## {Step 9}
 
 **Take a minute to look at your joke on the game screen!**
 
@@ -150,20 +247,21 @@ Is it funny?  Does the text overlap anything important on the screen?
 
 ---
 
-- :mouse pointer:   Experiment with the location of the text by changing the location to
-the ``||game:top||``, ``||game:left||``, or ``||game:right||`` in the  
-``||game: show long text [" "] [bottom]||`` block.
+- :mouse pointer:  If the block you're using has location options, try experimenting with text positions.
 
-Does the text flow better somewhere else?
+Will the text flow better somewhere else?
 
 #### ~ tutorialhint
 
 ``` block
-game.showLongText("If at first you don't succeed...", DialogLayout.Top)
-game.showLongText("...you shouldn't try skydiving!", DialogLayout.Right)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("If at first you don't succeed...", DialogLayout.Top)
+//@highlight
+    game.showLongText("...Maybe you shouldn't try skydiving!", DialogLayout.Bottom)
+})
 ```
 
-## {Step 8}
+## {Step 10}
 
 **👏 Now take a bow 👏**
 
@@ -171,13 +269,12 @@ End on a high note with confetti or a screen full of smiles.
 
 ---
 
-- :mouse pointer:  Grab  
-
+- :mouse pointer:  From ``||scene:Scene||``, grab
 ```block
 effects.confetti.startScreenEffect()
 ```
-and snap it into **the end**
- of the ``||controller:on [A] button [pressed]||`` container.
+and snap it into **the end** of the <br/>
+ ``||controller:on [A] button [pressed]||``<br/> container.
 
 - :mouse pointer:  Change **confetti** to whatever gives your joke the biggest punch!
 
@@ -201,6 +298,56 @@ Now you have a hysterical joke to share!
 When you're done reviewing your joke on the game screen, click **Done** to return to the main page where you can share
 with family and friends!
 
+```blockconfig.global
+carnival.addLabelTo(" ", carnival.Areas.Top)
+```
+
+```package
+carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+story=github:microsoft/arcade-storytelling/
+```
+
+```ghost
+music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+
+scene.setBackgroundImage(storySprites.world)
+carnival.addLabelTo("You Are Awesome", carnival.Areas.Bottom)
+effects.confetti.startScreenEffect()
+    game.setDialogTextColor(1)
+    game.setDialogFrame(sprites.dialog.mediumLeaf1)
+    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
+    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
+    let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `, SpriteKind.Player)
+story.printText(":)", 0, 0)
+story.startCutscene(function () {
+    story.spriteSayText(mySprite, ":)")
+})
+story.setPagePauseLength(1000, 1000)
+story.printCharacterText("")
+story.setSoundEnabled(false)
+mySprite.sayText(":)")
+game.splash("")
+game.showLongText("", DialogLayout.Bottom)
+carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Top)
+
+```
 
 
 ```assetjson
