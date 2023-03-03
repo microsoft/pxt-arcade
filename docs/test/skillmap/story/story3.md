@@ -143,7 +143,7 @@ Add your first line to the joke.
 ---
 
 
-- :cirlce:  From ``||game:Game||``, drag
+- :circle:  From ``||game:Game||``, drag
 ```block
 game.showLongText("", DialogLayout.Bottom)
 ```

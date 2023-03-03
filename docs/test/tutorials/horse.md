@@ -18,9 +18,9 @@ The workspace has been pre-loaded with a function that will help set up your hor
 
 You don't need to know how <br/>
 ``||functions:set_up_for_players [num]||`` <br/>
-works, only that you call it using the number of players you want to consider.
+works, only that you call it using the number of players you want to add to the game.
 
-That said, if you'd like see what's inside, click the down arrow and it will expand.
+If you want see what's inside, click the down arrow to open the function.
 
 
 
@@ -117,6 +117,9 @@ You should see a background frame with your horses in front.
 ``||mp:on [A] button [pressed] for [player]||`` <br/>
 bundle into **an empty** area of the workspace. <br/>
 
+Now, when any player presses their (A) button, their horse will move 1.5 pixels to the right.
+
+
 
 
 #### ~ tutorialhint
@@ -210,19 +213,23 @@ function set_up_for_players (num: number) {
 
 - :binoculars: Play your game.
 
-You should see **player 1** move when you press the **A button**.
+You should see the red horse move when you press the **(A) button**.
 
-You can make **player 2** move by pressing the **U key** on your keyboard, or your can click the multiplayer icons to test any player you wish with the space bar.
+You can make **player 2** move by pressing the **U key** on your keyboard, or your can click the multiplayer icons to test any player with the space bar.
 
+![Play with the emulator buttons](/static/tutorials/horse/multi.png " ")
 
 
 ## {10. Overlap Finish Line}
 
-**We need a winner when they reach the finish line.**
+**We need a winner when someone reaches the finish line.**
 
 - :users: Open the ``||sprites:Sprites||`` category and drag the<br/>
 ``||sprites:on [sprite] of kind [Player] overlaps||``
 <br/>bundle into **an empty** area of the workspace.
+
+
+This event will call a custom "game over" screen, passing through the information of the player that touched the line first.
 
 
 
@@ -249,7 +256,7 @@ Play your game against yourself using the **space bar** and **U key** on your ke
 
 ## {12. Add the finishing touches!}
 
-To finish your game, let's add a screen that keeps the game from starting until everyone is ready.
+Let's add a screen that keeps the game from starting until everyone is ready.
 
 We can also add a label, and a tone to let everyone know when it's time to play!
 
@@ -452,7 +459,7 @@ namespace game{
   "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_SpriteKind\" id=\"[qb-zQFfixAE4ckWODEd\">Finish</variable><variable type=\"KIND_SpriteKind\" id=\"FeL6$3UG4?W3[y0S8O?j\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"1=d0MN[$z28j!1M30M-7\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"j`4!Khtge4DT|L/veUz`\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"V-;Ht3l@6;U2U`%TOr?Z\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"XD5r#j+_cD,hyr0g;cV}\">Text</variable><variable type=\"KIND_SpriteKind\" id=\"u/a*)wpmj+f@2Ba[ai4+\">StatusBar</variable><variable type=\"KIND_SpriteKind\" id=\"@KIdnoCqRN$6EqcyY!s[\">Ball</variable><variable type=\"KIND_SpriteKind\" id=\"6M[r.E7zB3hl2?Br5$;E\">Booth</variable><variable type=\"KIND_SpriteKind\" id=\"XR4`E[)Hz3.IP-M2mZtL\">Mouse</variable><variable type=\"KIND_SpriteKind\" id=\"]kw=%^Bzz#D)[$j@C8J(\">Crosshair</variable><variable type=\"KIND_SpriteKind\" id=\",Enp4W5;=AyDUyY]70*n\">Moon</variable><variable id=\"oEY;F0FKFA|lcn$#8ks{\">index</variable><variable id=\"4cTnj1es#Q*_;%pj9Bz:\">list</variable><variable id=\"8J;^^[FH*bbCle,,K_gD\">player2</variable><variable id=\"))xf;50ST$B9j,#VRU7a\">finish</variable><variable id=\"%BxSf_jSaCF}VU[+fgT}\">textSprite2</variable></variables></xml>",
   "main.ts": "",
   "pxt.json": "{\n    \"name\": \"horserace - assets\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.11.37\",\n        \"tag\": \"v1.11.37\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/bf992d35ca2baeaa26d773aac7caad5a152c45aa\",\n        \"target\": \"1.11.37\",\n        \"pxt\": \"8.4.30\"\n    },\n    \"preferredEditor\": \"tsprj\"\n}\n",
-  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
-  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
+  "tilemap.g.jres": "{\n    \"transparency18\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
+  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency18 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency18\":return transparency18;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```

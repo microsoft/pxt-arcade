@@ -131,7 +131,9 @@ bundles.wrap1(function () {
 
 hint~
 
-You should see your background image with a red/orange present on the left.  When you hover over the game window, the present should move up and down with the arrow keys, but should not move left or right.
+You should see your background image with a red/orange present on the left.
+
+When you hover over the game window, the present should move up and down with the arrow keys, but should not move left or right.
 
 
 

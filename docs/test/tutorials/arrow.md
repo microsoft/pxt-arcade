@@ -344,7 +344,7 @@ mp.onButtonEvent(mp.MultiplayerButton.Right, ControllerButtonEvent.Pressed, func
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Replace both of the empty grey boxes with **up arrows** from **My Assets**.
+- :mouse pointer: Replace both of the empty grey boxes with **right arrows** from **My Assets**.
 
 ```blockconfig.local
     let arrow: Sprite = null
@@ -429,7 +429,7 @@ Your player should change to whichever arrow you're pressing, and you should get
 
 To finish your game, let's add a game screen that keeps the game from starting until everyone is ready.  Also, we'll add a countdown timer and a tone that lets everyone know it's time to play!
 
-- :suitcase: Open the ``||bundles:Bundles||`` category and drag the
+- :suitcase: Open the ``||bundles:Bundles||`` category and scroll down until you see the
 ```block
 bundles.wrap4(function () {
     game.splash("Be the quickest to match", "arrow directions to win!")
@@ -437,7 +437,7 @@ bundles.wrap4(function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Triangle, 4750, 4783, 255, 0, 449, SoundExpressionEffect.None, InterpolationCurve.Curve), SoundExpressionPlayMode.UntilDone)
 })
 ```
-bundle into **the end** of the<br/>
+bundle. Drag it into **the end** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
@@ -490,7 +490,7 @@ You can play against someone else on the same keyboard using the arrow keys for 
 
 ## {11. Finale}
 
-**🎉 Way to Go 🎉**
+**✨ Way to Go ✨**
 
 You have finished your very own Arrow Battle!
 
@@ -676,7 +676,7 @@ namespace bundles{
   "main.ts": "\n",
   "pxt.json": "{\n    \"name\": \"Arrow-Assets\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\"\n    ],\n    \"testFiles\": [\n        \"test.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.12.17\",\n        \"tag\": \"v1.12.17\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/09d3f1e2b4272e6bee89fadd9a64254de01c8861\",\n        \"target\": \"1.12.17\",\n        \"pxt\": \"8.5.24\",\n        \"targetId\": \"arcade\"\n    },\n    \"supportedTargets\": [\n        \"arcade\"\n    ],\n    \"preferredEditor\": \"tsprj\"\n}\n",
   "test.ts": "// tests go here; this will not be compiled when this package is used as an extension.\n",
-  "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
-  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
+  "tilemap.g.jres": "{\n    \"transparency18\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
+  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency18 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency18\":return transparency18;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
