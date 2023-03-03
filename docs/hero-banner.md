@@ -12,12 +12,6 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://aka.ms/ArcadeSkillmap
 * cardType: link
 ---
-* name: Stand with Wakanda
-* buttonLabel: Make It Now
-* imageUrl: /static/hero-gallery/wakanda-banner.png
-* url: /tutorials/wakanda-forever
-* cardType: tutorial
----
 * name: Code a Carnival!
 * buttonLabel: Try Now
 * imageUrl: /static/hero-gallery/hoc-2022.png
