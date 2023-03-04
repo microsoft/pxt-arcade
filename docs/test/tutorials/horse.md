@@ -135,10 +135,10 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
 
 ## {7. Add the Finish Line}
 
-**Add an Finish Line!**
+**Add a finish line!**
 
 - :paper plane: Open the ``||sprites:Sprites||`` category and drag the<br/>
-``||variables: set [finish] to sprite of kind [Finish]||``
+``||variables(sprites): set [finish] to sprite of kind [Finish]||``
 <br/>block into **the end** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
