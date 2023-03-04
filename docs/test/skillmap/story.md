@@ -1,8 +1,8 @@
-# Tell a Story
+# Full of Stories
 * name: Tell a Story
 * description: Show off your creative side with greeting cards, jokes, and short stories.
 * infoUrl: skillmap/educator-info/story-map-info
-* bannerUrl: /static/skillmap/story/muffins.gif
+* bannerUrl: /static/skillmap/story/story-comp.png
 * backgroundurl: /static/skillmap/backgrounds/story-comp.png
 * primarycolor: #28f1f6
 * secondarycolor: #fff53d
@@ -14,7 +14,7 @@
 
 
 
-## story-activities
+## stories
 * layout: manual
 
 ### story1
@@ -24,7 +24,7 @@
 * type: tutorial
 * description: Make an amazing greeting card in minutes!
 * url: /test/skillmap/story/story1
-* imageUrl: /static/skillmap/story/story-comp.png
+* imageUrl: /static/skillmap/story/story1.gif
 * tags: easy, story, creative, card
 * next: story2
 * position: 0 3
@@ -34,10 +34,10 @@
 ### story2
 * name: Bigger Greeting
 * type: tutorial
-* description: Add to your greeting card for a gift that keeps on giving!
+* description: Add music to your greeting card for a gift that keeps on giving!
 * url: /test/skillmap/story/story2
-* imageUrl: /static/skillmap/story/story-activity-2.gif
-* tags: easy, card, creative, art
+* imageUrl: /static/skillmap/story/story2.gif
+* tags: easy, card, music, art
 * next: story3
 * position: 1 2
 
