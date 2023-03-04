@@ -4,15 +4,15 @@
 
 ## {Intro @showdialog}
 
-Follow these quick steps to make greeting cards for your friends and family!
+Follow these quick steps to make greeting cards that you can share with friends and family!
 
-![Greetings](/static/skillmap/story/card.gif "Happy birthday to you!" )
+![Greetings](/static/skillmap/story/story2.png "Happy birthday to you!" )
 
 
 
 ## {Step 2}
 
-**Let's make a card to share!**<br/>
+**Set the Background**<br/>
 🎨 🎨 🎨
 
 ---
@@ -30,7 +30,7 @@ and drag it into the ``||loops(noclick):on start||`` container that's already in
 
 ---
 
-![The background gallery](/static/skillmap/story/story-bg-select.gif "Toggle between editor and gallery" )
+![The background gallery](/static/skillmap/story/choose-bg.gif "Toggle between editor and gallery" )
 hint~
 
 - :mouse pointer: Click **Next** to move on to the next step.
@@ -217,7 +217,24 @@ Feel free to change it until you are happy with it.
 **Congratulations, you've finished your greeting card!**<br/>
 🥳 🥳 🥳
 
+
+
+~hint How do I share my card?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/assets/share.gif )
+
+hint~
+
+
+
 Click **Done** to return to the main skillmap page where you can keep going to make an even more detailed card.
+
 
 
 ```blockconfig.global

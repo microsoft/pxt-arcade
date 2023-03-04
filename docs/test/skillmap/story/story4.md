@@ -214,11 +214,54 @@ container that's already in the workspace.
 })
 ```
 
+
+## {Step 10}
+
+**🎹 Sound Effects 🎹**
+
+Does your story need a soundtrack?
+
+---
+
+- :mouse pointer:  From ``||music:Music||``, grab any of the <br/>
+``||music: play [ ]||`` blocks <br/>
+and add them to your project.
+
+
+- :mouse pointer:  Experiment with the sounds and where to put them to create the biggest impact.
+
+#### ~ tutorialhint
+
+```blocks
+    //@highlight
+    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+    scene.setBackgroundImage(assets.image`page9`)
+    pause(1000)
+    game.showLongText("...happily ever after", DialogLayout.Bottom)
+    effects.bubbles.startScreenEffect()
+})
+```
+
+
 ## {Finale}
 
 **🤣 Congrats 🤣**
 
 You've written a story that you can be proud of!
+
+
+~hint How do I share my story?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/assets/share.gif )
+
+hint~
+
 
 When you're done reading your story, click **Done** to return to the main page where you can share with everyone you know!
 
@@ -226,6 +269,7 @@ When you're done reading your story, click **Done** to return to the main page w
 carnival.addLabelTo(" ", carnival.Areas.Top)
 pause(1000)
 game.showLongText("Once upon a time...", DialogLayout.Bottom)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 ```
 
 ```package
@@ -234,6 +278,8 @@ story=github:microsoft/arcade-storytelling/
 ```
 
 ```ghost
+    music.stopAllSounds()
+
 scene.setBackgroundImage(assets.image`page1`)
 pause(1000)
 game.showLongText("Once upon a time, there was a lizard who lived beneath a toadstool.", DialogLayout.Bottom)
