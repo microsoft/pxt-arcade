@@ -53,6 +53,7 @@
     * [Save](/save)
     * [Sign In](/identity/sign-in)
     * [Cloud Sync](/identity/cloud-sync)
+    * [VS Code](/vscode)
 
 ## Hardware
 
