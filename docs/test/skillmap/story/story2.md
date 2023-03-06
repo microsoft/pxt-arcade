@@ -137,14 +137,15 @@ Customize the text frame to bring it all together.
 
 - :circle:  From ``||game:Game||``, grab
 ```block
-game.setDialogFrame(sprites.dialog.mediumLeaf1)
+game.setDialogFrame(img`.`)
 ```
 and snap it in at **the top** of the<br/>
 ``||controller(noclick):on [A] button [pressed]||``<br/>
 container that is already in your workspace.
 
 
-- :mouse pointer:  Choose a design by clicking on the leafy box and switching to something different.
+- :mouse pointer:  Choose a design by clicking on the empty box and picking
+something else from the **Gallery**.
 
 ~hint Click here to see how 🕵🏽
 
@@ -240,13 +241,28 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 You have made a card that any friend would be excited to get!
 
+
+
+~hint How do I share my card?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/assets/share.gif )
+
+hint~
+
+
+
 Click **Done** to return to the main skillmap to share your card with a friend, then move on to the next level where you will create a joke!
 
 
 ```blockconfig.global
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-game.setDialogFrame(sprites.dialog.mediumLeaf1)
 game.setDialogTextColor(1)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)

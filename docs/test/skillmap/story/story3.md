@@ -46,8 +46,11 @@ into **the empty**<br/>
 container already in the workspace.
 
 
-- :paint brush:  **Click the grey box** to draw a background that shows where your joke takes place. <br/>
+- :paint brush:  **Click the empty box** to draw a background that shows where your joke takes place. <br/>
 Is it the ocean? The sky? A kitchen?
+
+
+
 
 
 #### ~ tutorialhint
@@ -87,7 +90,9 @@ hint~
 ```block
 let mySprite = sprites.create(img`.`, SpriteKind.Player)
 ```
-it into **the end** of the ``||loops(noclick):on start||`` container.
+it into **the end** of the<br/>
+ ``||loops(noclick):on start||`` <br/>
+ container.
 
 
 - :mouse pointer:  Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
@@ -199,6 +204,19 @@ You can use only <br/>``||game:show long text " "||`` <br/>blocks, or switch it 
 
 There are lots of ways you can add text to your project.
 
+---
+
+``||sprites:Sprites||``
+
+```block
+    let mySprite: Sprite = null
+    mySprite.sayText("What's a punchline?")
+```
+This the best way to make it look like your character is speaking. Use this block to have text appear as a bubble coming from the sprite.
+
+
+---
+
 ``||carnival:Carnival||``
 
 ```block
@@ -220,35 +238,6 @@ game.showLongText("", DialogLayout.Bottom)
 Both of these are fantastic options, and they will each go away with another press of the (A) button.
 
 ---
-
-
-``||story:Story||``
-
-```block
-let mySprite: Sprite = null
-story.spriteSayText(mySprite, " ")
-```
-
-```block
-story.startCutscene(function () { })
-```
-
-```block
-story.printText("  ", 0, 0)
-```
-
-```block
-story.setPagePauseLength(1000, 1000)
-```
-
-```block
-story.printCharacterText(" ")
-```
-
-```block
-story.setSoundEnabled(false)
-```
-These are the most powerful storytelling options, but they take a little bit of practice to get the hang of.  You'll learn more about them in the next level.
 
 
 hint~
@@ -297,6 +286,33 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 11}
 
+**🎹 Sound Effects 🎹**
+
+Consider adding sounds or music for more drama.
+
+---
+
+- :mouse pointer:  From ``||music:Music||``, grab any of the <br/>
+``||music: play [ ]||`` blocks <br/>
+and add them to your project.
+
+
+- :mouse pointer:  Experiment with the sounds and where to put them to create the biggest impact.
+
+#### ~ tutorialhint
+
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("Why do tropical fish swim in saltwater?", DialogLayout.Top)
+    //@highlight
+    music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
+game.showLongText("Because, pepper makes them sneeze!", DialogLayout.Bottom)
+    })
+```
+
+
+## {Step 12}
+
 **👏 Now take a bow 👏**
 
 End on a high note with confetti or a screen full of smiles.
@@ -318,8 +334,9 @@ and snap it into **the end** of the <br/>
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     game.showLongText("Why do tropical fish swim in saltwater?", DialogLayout.Top)
-    game.showLongText("Because, pepper makes them sneeze!", DialogLayout.Bottom)
-    //@highlight
+            music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
+game.showLongText("Because, pepper makes them sneeze!", DialogLayout.Bottom)
+//@highlight
     effects.bubbles.startScreenEffect()
 })
 ```
@@ -330,58 +347,81 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Now you have a hysterical joke to share!
 
+
+~hint How do I share my joke?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/assets/share.gif )
+
+hint~
+
 When you're done reviewing your joke on the game screen, click **Done** to return to the main page where you can share
 with family and friends!
 
 ```blockconfig.global
+let mySprite: Sprite = null
 carnival.addLabelTo(" ", carnival.Areas.Top)
+    mySprite.sayText("What's a punchline?")
 ```
 
 ```package
 carnival=github:microsoft/arcade-tutorial-extensions/carnival/
-story=github:microsoft/arcade-storytelling/
+arcade-animations=github:microsoft/arcade-character-animations
 ```
 
 ```ghost
-music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
-
-scene.setBackgroundImage(storySprites.world)
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Bottom)
-effects.confetti.startScreenEffect()
-    game.setDialogTextColor(1)
-    game.setDialogFrame(sprites.dialog.mediumLeaf1)
-    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
-    game.showLongText("Happy Earth Day", DialogLayout.Bottom)
-    let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `, SpriteKind.Player)
-story.printText(":)", 0, 0)
-story.startCutscene(function () {
-    story.spriteSayText(mySprite, ":)")
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    characterAnimations.loopFrames(
+    mySprite,
+    [img`
+        .
+        `],
+    500,
+    characterAnimations.rule(Predicate.NotMoving)
+    )
+    game.splash("")
+    game.setDialogCursor(img`
+        .
+        `)
+    game.setDialogFrame(img`
+        .
+        `)
+    game.setDialogTextColor(0)
+    mySprite.setStayInScreen(true)
+    mySprite.setBounceOnWall(true)
+    music.setVolume(20)
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("- - - - - - - - ", 120), music.PlaybackMode.UntilDone)
+    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
+    music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+    music.stopAllSounds()
 })
-story.setPagePauseLength(1000, 1000)
-story.printCharacterText("")
-story.setSoundEnabled(false)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("Why do tropical fish swim in saltwater?", DialogLayout.Top)
+    game.showLongText("Because, pepper makes them sneeze!", DialogLayout.Bottom)
+    effects.bubbles.startScreenEffect()
+    mySprite.setVelocity(-20, 0)
+})
+let mySprite: Sprite = null
+scene.setBackgroundImage(img`.`)
+mySprite = sprites.create(img`.`, SpriteKind.Player)
 mySprite.sayText(":)")
-game.splash("")
-game.showLongText("", DialogLayout.Bottom)
-carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Top)
-
+mySprite.startEffect(effects.spray)
+mySprite.setImage(img`.`)
+animation.runImageAnimation(
+mySprite,
+[img`
+    .],
+100,
+true
+)
+carnival.addLabelTo("Press (A) for a joke", carnival.Areas.Top, 2)
+scene.cameraShake(4, 500)
 ```
 
 
