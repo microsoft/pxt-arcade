@@ -49,7 +49,7 @@
 * type: tutorial
 * description: Create your first Arcade story using a two-line joke!
 * url: /test/skillmap/story/story3
-* imageUrl: /static/skillmap/story/muffins.gif
+* imageUrl: /static/skillmap/story/story3.gif
 * tags: easy, story, joke, share
 * next: story4
 * position: 2 1
@@ -62,7 +62,7 @@
 * type: tutorial
 * description: Code your own short story in MakeCode Arcade!
 * url: /test/skillmap/story/story4
-* imageUrl: /static/skillmap/story/story-activity-4.gif
+* imageUrl: /static/skillmap/story/story4.png
 * tags: easy, story, share
 * next: beginner-cert-1
 * position: 3 0

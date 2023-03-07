@@ -29,7 +29,7 @@ container that's already in the workspace.
 
 ~hint Click here to see how 🕵🏽
 
-![Grab background block](/static/skillmap/star/set-bg.gif "Pull in the block to set the background image." )
+![Grab background block](/static/skillmap/assets/choose-bg.gif "Pull in the block to set the background image." )
 
 hint~
 
@@ -49,13 +49,13 @@ scene.setBackgroundImage(img`.`)
 ---
 
 
-- :paint brush: Click the grey box inside<br/>
-
+- :paint brush: Click the grey box inside
 ```block
 scene.setBackgroundImage(img`.`)
 ```
 to open the
 image editor and click the **My Assets** tab.
+
 
 ![My Assets](/static/skillmap/assets/my-assets-three.png "Toggle to see the images for this game" )
 
@@ -64,6 +64,11 @@ image editor and click the **My Assets** tab.
 
 ![The world is a stage](/static/skillmap/star/stage.png "Find your stage" )
 
+~hint Click here to see how 🕵🏽
+
+![Grab background image](/static/skillmap/star/star1-3.gif )
+
+hint~
 
 
 #### ~ tutorialhint
@@ -78,10 +83,12 @@ scene.setBackgroundImage(assets.image`stage`)
 
 ## {Step 4}
 
-**Take a look at the game window**
+- :binoculars: Take a look at the game window.
 
 Do you see the background you chose?
 
+
+![Look at your game in the game window](/static/skillmap/star/game-window.png )
 
 
 ## {Step 5}
@@ -89,17 +96,17 @@ Do you see the background you chose?
 **Choose your superstar!**<br/>
 ⭐ ⭐ ⭐
 
-Which talent will the audience be cheering for today?
+Which talent will you be cheering for today?
 
 
-- :paper plane: From ``||sprites: Sprites||``, drag a
-
+- :paper plane: From ``||sprites: Sprites||``, drag
 ```block
 let talent = sprites.create(img`.`, SpriteKind.Player)
 ```
-block into **the end** of the ``||loops(noclick): on start||`` container.
+into **the end** of the ``||loops(noclick): on start||`` container already in the workspace.
 
-- :paint brush: Click the empty grey box and toggle to **My Assets** to
+
+- :paint brush: Click the empty box and switch to **My Assets** to
  select a character for your project.
 
 ~hint Click here to see how 🕵🏽
@@ -126,13 +133,12 @@ Now we need to put our character exactly where we want them.
 
 
 - :paper plane: From ``||sprites: Sprites||``, grab
-
 ```block
 let talent: Sprite = null
-
 talent.bottom = 115
 ```
 and snap it into **the end** of the ``||loops(noclick): on start||`` container.
+
 
 ~hint Click here to see how 🕵🏽
 
@@ -142,7 +148,6 @@ hint~
 
 ```blockconfig.local
 let talent: Sprite = null
-
 talent.bottom = 115
 ```
 
@@ -162,7 +167,7 @@ talent.bottom = 115
 
 **Check your scene**<br/>
 
-Look at the game window to see how your scene looks so far.
+- :binoculars: Look at the game window to see how your scene looks so far.
 
 You should see your character posing in the spotlight on stage.
 
@@ -182,13 +187,13 @@ hint~
 
 
 - :circle: Open the ``||game:Game||`` category and
-drag the
-
+drag
 ```block
 game.splash("Press (A) to play!")
 ```
-block into the bottom of the<br/>
-``||loops(noclick):on start||`` container.
+into **the end** of the<br/>
+``||loops(noclick):on start||`` container that's already in the workspace.
+
 
 ```blockconfig.local
 game.splash("Press (A) to play!")
@@ -215,23 +220,21 @@ game.splash("Press (A) to play!")
 
 **⚡ Here comes the action ⚡**
 
-Now the game needs the code that
-adds to the score when the (A) button is clicked.
+The game needs code that makes the score go up by one
+when the (A) button is clicked.
 
 
 - :game: From the ``||controller:Controller||`` category, grab the
-
 ```block
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
 ```
-container and drop it into an
-empty spot in the workspace.
+bundle and drop it into **an empty area** of the workspace.
 
 ~hint Click here to see how 🕵🏽
 
-![Add a container to hold the code for points](/static/skillmap/star/add-point.gif "On A button pressed")
+![Add a container to hold the code for points](/static/skillmap/star/star1-9.gif "On A button pressed")
 
 hint~
 
@@ -253,7 +256,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ## {Step 10}
 
 **Play your game on the game screen**<br/>
-🎮 🎮 🎮 
+🎮 🎮 🎮
 
 Do you see your score go up each time you press the (A) button?
 

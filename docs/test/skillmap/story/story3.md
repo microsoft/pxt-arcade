@@ -11,7 +11,7 @@ Making a joke (or a short story) in Arcade is a lot like creating a greeting car
 You can use a background and text to convey a sense of emotion and
 add style.
 
-![Here's the story](/static/skillmap/story/saltwater.gif "Why do tropical fish like saltwater?" )
+![Here's the story](/static/skillmap/story/story3.gif "Why do tropical fish like saltwater?" )
 
 
 ## {Step 2}
@@ -422,6 +422,8 @@ true
 )
 carnival.addLabelTo("Press (A) for a joke", carnival.Areas.Top, 2)
 scene.cameraShake(4, 500)
+    mySprite.setVelocity(-20, 0)
+
 ```
 
 
