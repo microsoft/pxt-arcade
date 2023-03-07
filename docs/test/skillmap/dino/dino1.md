@@ -6,7 +6,7 @@
 
 Ready to test your agility?
 
-Let's create a game where Mama Dino needs to get to her hoard of babies!
+Let's create a game where you help Mama Dino needs rescue her hoard of babies!
 
 ![Code a Collector Game](/static/skillmap/collector/collectort1.gif "Grab the baby before it runs away!" )
 
@@ -31,18 +31,16 @@ Our dino will be a sprite, too.
 
 hint~
 
-- :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab <br/>
-
+- :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab
 ```block
 let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 ```
-
 and snap it inside at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/dino/dino1-2.gif "Add a sprite to your game.")
 
 hint~
 
@@ -54,24 +52,33 @@ hint~
 let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 ```
 
+
+
 ## {Step 3}
 
-- :paint brush: Click the grey box inside
+- :paint brush: Click the empty image box inside
 ```block
 let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 ```
 to open the
-image editor and then click the **My Assets** tab.
+image editor and click the **My Assets** tab.
 
 
-![My Assets](/static/skillmap/assets/my-assets-three.png "Toggle to see the images for this game" )
+![My Assets tab](/static/skillmap/dino/my-assets-three.png )
 
 
 - :mouse pointer: Choose **Mama** dino and click **Done**.
 
-![Choose mama dino from My Assets gallery](/static/skillmap/collector/mama.png " " )
+![Choose mama dino from My Assets gallery](/static/skillmap/dino/mama-dino.png " " )
 
 
+~hint Click here to see how 🕵🏽
+
+---
+
+![Look in My Assets for Mama Dino](/static/skillmap/dino/dino1-3.gif )
+
+hint~
 
 
 #### ~ tutorialhint
@@ -80,12 +87,12 @@ image editor and then click the **My Assets** tab.
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 ```
 
-## {3. Look at Your Game}
+## {4. Look at Your Game}
 
 
 **Look at the game window.**
 
-- :binoculars: Look at your project in the game window to see what your code is doing.
+- :binoculars: Look at your project in the game window to see what your code has done.
 
 You should see Mama Dino in the middle of the screen.
 
@@ -93,25 +100,25 @@ You should see Mama Dino in the middle of the screen.
 
 
 
-## {Step 4}
+## {Step 5}
 
 **Mama Dino needs to be able to move up and down on the screen.**
 
 
 - :game: From the ``||controller: Controller||`` category, grab
-
 ```block
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 ```
-
-and snap it in at **the end** of the ``||loops(noclick): on start||`` block already in the workspace.
+and snap it in at **the end** of the<br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
 
 
 ~hint Click here to see how 🕵🏽
 
 ---
 
-![Look under Controller for the block](/static/skillmap/mole/add-controller.gif "Drag out the controller block to use later.")
+![Look under Controller for the block](/static/skillmap/dino/dino1-5.gif "Drag out the controller block to use later.")
 
 hint~
 
@@ -125,91 +132,108 @@ controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 ```
 
 
-## {Step 4}
+## {Step 6}
 
-**🎮  Try your project using the game screen**
+- :binoculars: Look at your project on the game screen.
 
-Make sure your ``||sprites:Player||`` moves up and down with the joypad,
+Try moving Mama Dino up and down with the joypad,
 arrow keys, or **W** and **S** keys.
 
 
 
-## {Step 6}
+## {Step 7}
 
 **Let's set the scene**<br/>
 🖼️ 🖼️ 🖼️
 
 ---
 
-- :paper plane:  From ``||scene:Scene||``, grab
-
+- :tree:  From ``||scene:Scene||``, grab
 ```block
 scene.setBackgroundImage(img`.`)
 ```
-
-and snap it into **the top**
-of the ``||loops:on start||`` container.
-
-- :paint brush:  Click the **grey square** and toggle to **My Assets** to choose the **Freeway** background
-
-![Choose the freeway from My Assets gallery](/static/skillmap/collector/freeway.png " " )
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-scene.setBackgroundImage(assets.image`Freeway`)
-let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
-```
+and snap it into **the end of**
+of the ``||loops(noclick):on start||`` container.
 
 
-## {Step 7}
+- :paint brush:  Click the **empty image square** and switch to **My Assets** to choose the **Freeway** background
 
-**Add movement to the scene**
+![Choose the freeway from My Assets gallery](/static/skillmap/dino/freeway.png " " )
+
+
+
+~hint Click here to see how 🕵🏽
 
 ---
 
-- :arrows alternate:  To make it look like the dino is walking along the road,
-go to ``||scroller:Scroller||`` and drag
+![Look in My Assets for the freeway](/static/skillmap/dino/dino1-7.gif )
 
-```block
-scroller.scrollBackgroundWithSpeed(-50, 0)
-```
+hint~
 
-into **the end**
-of the ``||loops:on start||`` container.
+
 
 #### ~ tutorialhint
 
 ```blocks
+//@highlight
 scene.setBackgroundImage(assets.image`Freeway`)
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
-//@highlight
-scroller.scrollBackgroundWithSpeed(-50, 0)
 ```
-
 
 
 ## {Step 8}
 
-**🎮  Take a look at the game screen 🎮**
+**Add movement to the scene**
+
+Make it look like the dino is walking along the road.
+
+---
+
+- :arrows alternate:  Go to ``||scroller:Scroller||`` and drag
+```block
+scroller.scrollBackgroundWithSpeed(-50, 0)
+```
+into **the end**
+of the ``||loops(noclick):on start||`` container.
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Add a scroller block](/static/skillmap/dino/dino1-8.gif )
+
+hint~
+
+#### ~ tutorialhint
+
+```blocks
+scene.setBackgroundImage(assets.image`Freeway`)
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
+//@highlight
+scroller.scrollBackgroundWithSpeed(-50, 0)
+```
+
+
+
+## {Step 9}
+
+- :binoculars: Take a look at the game screen again.
 
 Your background should move right-to-left across the screen on its own,
 and you should be able to move your dino up and down with the joypad or arrow keys.
 
 
 
-## {Step 9}
+## {Step 10}
 
-**The sprite needs something to collect!**
-Let's add some baby dinos for the mama dinosaur to rescue 💚
+Let's add some baby dinos for Mama to rescue 💚
 
 ---
 
 - :redo:  From ``||loops:Loops||``, grab the
-
 ```block
 forever(function () {
     let babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
@@ -217,10 +241,25 @@ forever(function () {
     pause(1000)
 })
 ```
-loop container and drag it into an empty spot on the workspace.
+bundle and drag it into an empty spot on the workspace.
+
+
+- :paint brush:  Click the **empty image square** and switch to **My Assets** to choose the **Baby** sprite image.
+
+
+![Choose the baby dino from My Assets gallery](/static/skillmap/dino/baby.png " " )
+
 This will create a new baby dino every second at a random starting height.
 
-- :paint brush:  Click the **grey square** in the ``||sprites:projectile [ ] from side||`` block for ``||variables(noclick):babyDino||`` and toggle to **My Assets** to choose the **Baby** sprite image.
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Add a scroller block](/static/skillmap/dino/dino1-10.gif )
+
+hint~
+
 
 ```blockconfig.local
 forever(function () {
@@ -243,13 +282,25 @@ forever(function () {
 ```
 
 
-## {Step 10}
+## {Finale}
 
-**🎆 Congrats 🎆**
+**💫 Congrats 💫**
 
 ---
 
 You've built the foundation for a great game. Give it a try on the game screen!
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/dino/share.gif )
+
+hint~
 
 When you're done playing, click **Done** to return to the main page and continue the next tutorial where we'll add points and a game timer!
 

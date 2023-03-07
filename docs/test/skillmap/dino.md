@@ -1,9 +1,9 @@
 # Save the Baby Dinos
 * name: Beginner's Guide to Arcade Games
 * description: Learn to create a collector-style game starring a dinosuar that's determined to save dino babies!
-* infoUrl: skillmap/educator-info/basic-map-info
-* bannerUrl: /static/skillmap/backgrounds/beg-map-tile.png
-* backgroundurl: /static/skillmap/backgrounds/beg-comp.png
+* infoUrl: skillmap/educator-info/dino-map-info
+* bannerUrl: /static/skillmap/dino/dino4.gif
+* backgroundurl: /static/skillmap/backgrounds/dino-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
 * tertiarycolor: #87f2ff
@@ -22,7 +22,7 @@
 * type: tutorial
 * description: Create a swarm of baby dinosaurs to run down the city streets.
 * url: /test/skillmap/dino/dino1
-* imageUrl: /static/skillmap/collector/collector-comp.png
+* imageUrl: /static/skillmap/dino/dino1.gif
 * tags: easy, collector, game
 * next: dino2
 * position: 0 0
@@ -34,7 +34,7 @@
 * type: tutorial
 * description: Make a few simple changes to create a game where Momma Dino collects her babies to take them home.
 * url: /test/skillmap/dino/dino2
-* imageUrl: /static/skillmap/collector/collectort2.gif
+* imageUrl: /static/skillmap/dino/dino2.gif
 * tags: easy, collector, game, projectiles
 * next: dino3
 * position: 1 1
@@ -46,7 +46,7 @@
 * type: tutorial
 * description: Save the baby dinos before the cars get in the way!
 * url: /test/skillmap/dino/dino3
-* imageUrl: /static/skillmap/collector/collectort3.gif
+* imageUrl: /static/skillmap/dino/dino3.gif
 * tags: easy, collector, game, collisions
 * next: dino4
 * position: 2 1
@@ -57,7 +57,7 @@
 * type: tutorial
 * description: Animate your characters to give them life!
 * url: /test/skillmap/dino/dino4
-* imageUrl: /static/skillmap/collector/collectort4.gif
+* imageUrl: /static/skillmap/dino/dino4.gif
 * tags: easy, game, animation
 * next: beginner-cert-3
 * position: 3 1
@@ -69,8 +69,10 @@
 * type: certificate
 * url: /static/skillmap/certificates/beginner-cert-03.pdf
 * imageUrl: /static/skillmap/certificates/beginner-cert-03.png
-* position: 4 1
-
+* position: 3 2
+* actions:
+    * map: [Try Turkey Day](/skillmap/turkey)
+    * editor: [Edit in Creative Mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/beginner-cert-03.pdf

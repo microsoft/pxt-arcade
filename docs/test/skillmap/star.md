@@ -72,8 +72,8 @@
 * imageUrl: /static/skillmap/certificates/star-cert.png
 * position: 3 1
 * actions:
-    * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * map: [Try Mama Dino](/skillmap/dino)
+    * editor: [Edit in creative mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/star-cert.pdf
