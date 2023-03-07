@@ -6,31 +6,39 @@
 
 There's more to explore with our clicker game.
 
-Let's create a spray of stars that flies toward the stage as we click.
+Let's create a spray of stars that fly toward the stage as we click.
 
 ![Click away](/static/skillmap/star/star3.gif "You're a star!" )
 
 
 ## {Step 2}
 
-Watching the points increase each time we click is fun...but let's add
-some flying star [__*projectiles*__](#projected "sprites that moves on their own, often in large quantities") to make it even more interesting.
+It's fun to watch the points increase...but let's add
+star **projectiles** for more exitement.
+
+~hint What are projectiles?💡
 
 ---
 
-- :paper plane: From ``||sprites:Sprites||``, grab<br/>
+In MakeCode Arcade, projectiles are sprites that move on their own, often in large quantities.
 
+Projectiles have extra properties that normal sprites don't have. For example, they destroy themselves once they leave the screen so the user's computer doesn't get overwhelmed.
+
+hint~
+
+- :paper plane: From ``||sprites:Sprites||``, grab
 ```block
 let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
 ```
 and drop it into **the end** of the<br/>
-``||controller:on [A] button [pressed]||`` container
+``||controller(noclick):on [A] button [pressed]||`` container
 already in the workspace.
 
-- :paint brush: Click the empty grey square and toggle to **My Assets**
-to choose the long audience sprite called **star**.
 
-- :mouse pointer: Click **Next** to move on to the next instruction.
+- :paint brush: Click the empty image square and switch to **My Assets**
+to choose the sprite called **star**.
+
+![Choose the yellow star](/static/skillmap/star/star.png )
 
 
 #### ~ tutorialhint
@@ -46,28 +54,43 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
+## {Step 3}
+
+- :binoculars: Look at your project on the game screen to see what you think.
+
+Does a star come from the audience each time you press the **(A) button** (or space bar)?
+
+
+
 ## {Step 4}
 
-**Try your project on the game screen to see what you think**
-
-Does a star come from the audience each time you press the **Ⓐ** button?
-
-## {Step 5}
-
-**🌟 Let's make the star projectiles shoot up 🌟**
+**Let's make the star projectiles fly randomly across the stage**<br/>
+🌟 🌟 🌟
 
 ---
 
-- :calculator: From the ``||math:Math||`` category, drag out the<br/>
-
+- :calculator: From the ``||math:Math||`` category, drag<br/>
 ```block
 randint(-80, 80)
 ```
-block.
+in to replace **0** as the  **vx** value inside<br/>
+```block
+    //@highlight
+    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, 0, 50)
+```
 
-- :mouse pointer: Add this block to the  [__*vx*__](#whatVX "horizontal velocity") value of the<br/>
-``||variables(sprites):set [star] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``<br/>
-block.
+
+~hint What is vx?💡
+
+---
+
+In MakeCode Arcade, **vx** stands for the "velocity in the direction of x"...which is a
+complicated way of saying "the speed from side to side."
+
+The larger your **vx** value is, the faster something will travel to the right.  The lower your **vx**, the faster it will travel to the left.  If your **vx** is 0, the item won't move from side to side at all.
+
+hint~
+
 
 ```blockconfig.local
 randint(-80, 80)
@@ -81,22 +104,36 @@ let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
+    //@highlight
     projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
 })
 ```
 
-## {Step 6}
+## {Step 5}
 
-- :calculator: Now, drag out the e<br/>
 
+- :calculator: Now, drag<br/>
 ```block
 randint(-50, -100)
 ```
-block
+in to replace **-50** as the  **vy** value inside<br/>
+```block
+    //@highlight
+    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
+```
 
-- :mouse pointer: Add this block to the  [__*vy*__](#whatVY "horizontal velocity") value of the<br/>
-``||variables(sprites):set [star] to projectile [⭐] from [mySprite] with vx [pick random] vy [50]||``<br/>
-block.
+
+~hint What is vy?💡
+
+---
+
+In MakeCode Arcade, **vy** stands for the "velocity in the direction of y"...which is a
+complicated way of saying "the speed top to bottom."
+
+The larger your **vy** value is, the faster something will travel downward.  The lower your **vy**, the faster it will travel upward.  If your **vy** is 0, the item won't move either up or down.
+
+hint~
+
 
 ```blockconfig.local
 randint(-50, -100)
@@ -110,28 +147,43 @@ let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
+    //@highlight
     projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
 
-## {Congrats @showdialog}
-**There you have it!**<br/>
-🎇 🎇 🎇
 
----
 
-Now, every time you click **Ⓐ** you create a shower of stars!
+## {Step 11}
+
+- :binoculars: Play your game!
+
+Click as fast as you can to see how many stars you can get on the screen at one time.
+
+**Can you get more than 50 points before time runs out?**
 
 
 
 ## {Finale}
 
-Play your game to see how many stars you can toss to the talent show acts in 10 seconds.
+🤩 **Way to go!** 🤩
 
 When you're finished, click **Done** to return to the main page where you can
-continue on to figure out how to toss roses!
+keep going to add roses to your project!
 
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/star/share.gif )
+
+hint~
 
 
 
@@ -140,7 +192,7 @@ game.over(true, effects.confetti)
 let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.setImage(assets.image`clap2`)
 audience.bottom = 120
-let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
+let star = sprites.createProjectileFromSprite(img`.`, audience, 0, -50)
 ```
 
 

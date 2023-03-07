@@ -112,7 +112,7 @@ let audience: Sprite = null
 audience.setImage(img`.`)
 ```
 and snap it into **the bottom** of the <br/>
-``||controller:on [A] button [pressed]||`` container.
+``||controller(noclick):on [A] button [pressed]||`` container.
 
 
 - :paint brush: Click the empty square and switch to **My Assets** to

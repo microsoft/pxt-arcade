@@ -4,29 +4,26 @@
 
 ## {Introduction @showdialog}
 
-Let's add some variety!  Show your talent love with roses.
+Let's add some variety!  Show your love with roses.
 
 ![Click away](/static/skillmap/star/star4.gif "Evrything's coming up roses!" )
 
 
 ## {Step 2}
 
-Instead of always throwing stars, we can put a whole list of items inside the **projectile** block to choose from.
+Instead of always throwing stars, we can put a whole list of items inside the **projectile** block.
 
 ---
 
-- :mouse pointer: Open the ``||simplified:Simplified||`` category.
-
-- :puzzle: Grab<br/>
-
+- :lightning: From the ``||simplified:Simplified||`` category, grab
 ```block
 simplified.chooseRandomImage(img`.`, img`.`)
 ```
-and use it to replace the image of the star in the **projectile**
-block (inside of <br/>
-``||controller:on [A] button [pressed]||``).
+and use it to replace the image of the star inside
+```block
+let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
+```
 
-- :mouse pointer: Click **Next** to move on to the next instruction.
 
 #### ~ tutorialhint
 
@@ -43,8 +40,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 3}
 
-- :paint brush: Click the empty grey squares and toggle to **My Assets**
-to grab a star for the first box and a rose for the second one.
+- :paint brush: Click the empty image squares inside
+```block
+simplified.chooseRandomImage(img`.`, img`.`)
+```
+and switch to **My Assets**
+to grab a **star** for the first box and a **rose** for the second one.
+
 
 #### ~ tutorialhint
 
@@ -61,27 +63,31 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 4}
 
-**Try your project on the game screen!**
+- :binoculars: Try your project on the game screen!
 
-Does the audience now throw a random number of stars and roses?
+Does the audience randomly throw stars and roses when you press the (A) button?
 
 
 ## {Step 5}
 
 **🌟 Encore!🌟**
 
+Ready for more?
+
 ---
 
-- :mouse pointer: Click the white **plus** at the right of <br/>
-
+- :mouse pointer: Click the white **plus** at the right of
 ```block
-simplified.chooseRandomImage(assets.image`star`, assets.image`rose`, img`.`)
+simplified.chooseRandomImage(assets.image`star`, assets.image`rose`)
 ```
 to create a new empty box.
 
+
 - :paint brush: Click the new empty box and draw another item for the audience to send to the stage (like hearts or flower petals.)
 
+
 _💡 You can choose up to **5** things!_
+
 
 #### ~ tutorialhint
 
@@ -121,7 +127,20 @@ Now you have a full-featured talent show clicker game!
 
 ---
 
-Play your game to see how many items you can toss before time runs out. Can you get to **60**?
+Play your game to see how many items you can toss before time runs out. <br/>
+**Can you get to 60?**
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/star/share.gif )
+
+hint~
 
 When you're finished, click **Done** to return to the main page where you can
 collect your badge and share your final game with family and friends.

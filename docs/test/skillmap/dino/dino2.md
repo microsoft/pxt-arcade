@@ -5,7 +5,9 @@
 
 ## {Intro @showdialog}
 
-The start of a collector game is in your workspace. Let's take it even further by adding points when you collect baby dinos!
+The start of a your game is in your workspace.
+
+Take it even further by adding points when you collect baby dinos!
 
 ![Saving babies](/static/skillmap/collector/collectort2.gif "Let's make it even cooler!" )
 
@@ -15,36 +17,41 @@ The start of a collector game is in your workspace. Let's take it even further b
 
 ## {Step 2}
 
-**Play the game in the workspace before you begin** <br/>
+- :binoculars: Play the game in the workspace before you begin <br/>
 🎮 🎮 🎮
 
-Can you move Mama Dino around the screen? Do baby dinos walk toward you?
+Can you move Mama Dino up and down? Do the baby dinos walk toward you?
 
 
 
 ## {Step 3}
 
 **We're off to a great start!!**
-Let's add some code that tells the game what to do when mama reaches her baby.
+Add code that tells the game what to do when mama reaches her baby.
 
 ---
 
-- :paper plane:  From ``||sprites:Sprites||``, grab the
-
+- :paper plane:  From ``||sprites:Sprites||``, grab
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
 })
 ```
-container and drop it into an empty area of the workspace.
+and drop it into an **empty area** of the workspace.
 
-- :paper plane: To show that mama collected her baby, we want the baby dino to go off the screen when they reach each other. The ``||variables(noclick):sprite||`` variable is a ``||sprites:Player||`` sprite, or **mamaDino**, and ``||variables(noclick):otherSprite||`` is the ``||variables(noclick):projectile||`` sprite which is a **babyDino**.
 
-```blockconfig.local
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-})
-```
+This bundle watches for the player (Mama Dino) to overlap a
+projectile (baby dino), then it destroys the projectile to make it look like it's been collected.
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Add the on overlap bundle](/static/skillmap/dino/dino2-3.gif )
+
+hint~
+
 
 #### ~ tutorialhint
 
@@ -55,21 +62,31 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## {Step 5}
+## {Step 4}
 
 **🏆 Keeping score 🏆**
 
-Let's add a point to your score each time you save a baby.
+Add a point to your score each time you save a baby.
 
 ---
 
 - :id card:  From ``||info:Info||``, grab
-
 ```block
 info.changeScoreBy(1)
 ```
-and snap it into **the bottom** of
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Projectile]||``.
+and snap it in at **the end** of the<br/>
+``||sprites(noclick):on [sprite] ... overlaps [otherSprite] ...||`` <br/>
+container that's already in the workspace.
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Add the score block](/static/skillmap/dino/dino2-4.gif )
+
+hint~
+
 
 #### ~ tutorialhint
 
@@ -82,48 +99,26 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 ```
 
 
-## {Step 6}
+## {Step 5}
 
-**Now try it out on the game screen** <br/>
-🎮 🎮 🎮
+- :binoculars: Try your project on the game screen.
 
 How do you like your game so far?
 
-When Mama Dino overlaps with the babies, you should see them disappear and have a point get added to your score.  If something doesn’t look right, check your work by clicking on the hint.
+When Mama Dino overlaps with the babies, you should see them disappear and earn a point.
 
-#### ~ tutorialhint
-
-```blocks
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy()
-    info.changeScoreBy(1)
-})
-
-let babyDino: Sprite = null
-scene.setBackgroundImage(assets.image`Freeway`)
-let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-
-forever(function () {
-    babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    babyDino.y = randint(15, 115)
-    pause(1000)
-})
-```
+If something doesn’t look right, check your work by clicking on the hints earlier in the level.
 
 
 
 
-
-## {Step 7}
+## {Step 6}
 
 **Does this game feel long to you?**<br/>
 🕔 🕔 🕔
 
 We haven't added a way to win or lose.
-Let's do that now by adding a countdown timer.
+Let's add a countdown timer.
 
 ---
 
@@ -131,8 +126,18 @@ Let's do that now by adding a countdown timer.
 ```block
 info.startCountdown(15)
 ```
-and snap it into the end of the
+and snap it into the end of the<br/>
 ``||loops:on start||`` container.
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Add the start countdown](/static/skillmap/dino/dino2-6.gif )
+
+hint~
+
 
 #### ~ tutorialhint
 
@@ -146,7 +151,7 @@ info.startCountdown(15)
 ```
 
 
-## {Step 8}
+## {Step 7}
 
 **🥇 Everyone's a winner**
 
@@ -154,14 +159,23 @@ Right now, when time runs out, you lose the game. We can change that!
 
 ---
 
-- :id card:  From ``||info:Info||``,  grab the
-
+- :id card:  From ``||info:Info||``,  grab
 ```block
 info.onCountdownEnd(function () {
     game.over(true)
 })
 ```
-container and drop it into a blank area of the workspace.
+and drop it into a blank area of the workspace.
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Add the counntdown end](/static/skillmap/dino/dino2-7.gif )
+
+hint~
+
 
 ```blockconfig.local
 info.onCountdownEnd(function () {
@@ -179,14 +193,27 @@ info.onCountdownEnd(function () {
 
 
 
-## {Step 9}
+## {Step 8}
 
 **Now play your winning creation**<br/>
 🏆 🏆 🏆
 
-Mama Dino can collect her babies and earn points!  How many babies can you collect in **15 seconds**?
+How many babies can you collect in **15 seconds**?
 
-Challenge your friends and family by clicking "Done" and sharing the link from the main skillmap page.
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click **Done** to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/dino/share.gif )
+
+hint~
+
+
+Click "Done" to share with your friends and family from the main skillmap page, or visit the next level to add animations to your game.
 
 
 ```package
@@ -194,7 +221,9 @@ arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```
 
 ```blockconfig.global
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
 scroller.scrollBackgroundWithSpeed(-50, 0)
