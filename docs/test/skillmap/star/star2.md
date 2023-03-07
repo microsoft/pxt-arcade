@@ -14,7 +14,7 @@ make it even more special!
 
 ## {Step 2}
 
-Prepare for this activity by playing the game already in the workspace.
+- :binoculars: Prepare for this activity by playing the game already in the workspace.
 
 Does your score go up when you click the (A) button? Does the game end when time runs out?
 
@@ -29,16 +29,20 @@ Let's add an audience!
 
 ---
 
-- :paper plane: From ``||sprites:Sprites||`` drag 
-
+- :paper plane: From ``||sprites:Sprites||`` drag
 ```block
-let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+let audience = sprites.create(img`.`, SpriteKind.Player)
 ```
-and snap it into **the bottom** of the <br/>
-``||loops:on start||`` container.
+into **the bottom** of the <br/>
+``||loops(noclick):on start||`` <br/>
+container that's already in the workspace.
 
-- :paint brush: Click the empty grey square and toggle to **My Assets**
+
+- :paint brush: Click the empty square and switch to **My Assets**
 to choose the long audience sprite called **clap1**.
+
+![Choose the audience image where you can't see the giraffe's neck](/static/skillmap/star/clap1.png )
+
 
 #### ~ tutorialhint
 
@@ -60,15 +64,14 @@ repositioned the star of the show!
 
 ---
 
-- :paper plane: Grab <br/>
-
+- :paper plane: From ``||sprites:Sprites||``, grab
 ```block
 let audience: Sprite = null
-
 audience.bottom = 120
 ```
 and snap it into **the end** of the <br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container that's already in the workspace.
+
 
 #### ~ tutorialhint
 
@@ -91,7 +94,7 @@ audience.bottom = 120
 
 ---
 
-Give your game a try. Do you see your audience at the bottom of the stage?
+- :binoculars: Give your game a try. Do you see your audience at the bottom of the stage after you press the **(A) button** (or space bar)?
 
 
 
@@ -103,8 +106,7 @@ with each click** <br/>
 
 ---
 
-- :paper plane: From ``||sprites:Sprites||``, grab <br/>
-
+- :paper plane: From ``||sprites:Sprites||``, grab
 ```block
 let audience: Sprite = null
 audience.setImage(img`.`)
@@ -112,8 +114,14 @@ audience.setImage(img`.`)
 and snap it into **the bottom** of the <br/>
 ``||controller:on [A] button [pressed]||`` container.
 
-- :paint brush: Click the grey square and toggle to **My Assets** and
+
+- :paint brush: Click the empty square and switch to **My Assets** to
 choose the other audience pose (called **clap2**.)
+
+
+![Choose the audience image where you CAN see the giraffe's neck](/static/skillmap/star/clap2.png )
+
+
 
 #### ~ tutorialhint
 
@@ -127,17 +135,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ```
 
-## Play!
+## {7.Play!}
 
-**🎮 Try it out on the game screen 🎮**
+**Try it out on the game screen**<br/>
+🎮 🎮 🎮
 
-Does it look like the audience claps a single time when (A) is pressed?
+- :binoculars: Does it look like the audience cheers a single time, even when (A) is pressed over and over?
 
 Step to the next set of instructions to discover how to keep the applause going.
 
 
 
-## {Step 7}
+## {Step 8}
 
 Right now, the audience only claps once. <br/>
 **Let's change that!**
@@ -145,17 +154,23 @@ Right now, the audience only claps once. <br/>
 ---
 
 - :game: Drag the<br/>
-
 ```block
 let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     audience.setImage(img`.`)
 })
 ```
-container into an empty area of the workspace.
+bundle into an empty area of the workspace.
 
-- :mouse pointer:  Change the variable to ``||variables(noclick):audience||`` and click the empty grey square to choose the same
+
+- :mouse pointer:  Click the empty square to choose the same
 **clap1** image that was used for the original sprite.
+
+![Choose the audience image where you can't see the giraffe's neck](/static/skillmap/star/clap1.png )
+
+Now, when you let go of the (A) button (or space bar), the audience will go back to its original image.
+
+
 
 ```blockconfig.local
 let audience: Sprite = null
@@ -174,29 +189,29 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```
 
-## {Step 7}
+## {Step 9}
 
-Now test again on the game screen to make sure the audience
-claps with each press of the (A) button.
+- :binoculars: Test again on the game screen to make sure the audience
+claps with each press and release of the (A) button.
 
 
 
-## {Step 8}
+## {Step 10}
 
-**Did you notice that your game automatically keeps track of your highest score?**
+**Did you notice that your game keeps track of your high score?**
 
-It also automatically tells you that **you've lost** when time runs out. Let's change that.
+It also tells you that **you've lost** when time runs out. Let's change that.
 
 ---
 
-- :id card: From the ``||info:Info||`` category, grab an
+- :id card: From ``||info:Info||``, grab
 
 ```block
 info.onCountdownEnd(function () {
     game.over(true, effects.confetti)
 })
 ```
-container and drop it into an empty area of the workspace.
+and drop it into **an empty area** of the workspace.
 
 
 ```blockconfig.local
@@ -214,20 +229,44 @@ info.onCountdownEnd(function () {
 ```
 
 
-## {Step 9}
+
+## {Step 11}
+
+- :binoculars: Play your game!
+
+Click as fast as you can to see how many points you can get in 10 seconds.
+
+**Can you get more than 45 points?**
+
+
+
+## {Finale}
 
 **That's it!**
 
-Play your game to see how you did.
+---
 
 Compete for the most clicks in 10 seconds! When you're finished, click **Done** to
 return to the main page where you can keep going and find out how to throw stars at the stage.
 
 
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/star/share.gif )
+
+hint~
+
+
 ```blockconfig.global
 game.over(true, effects.confetti)
-let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
-audience.setImage(assets.image`clap2`)
+let audience = sprites.create(img`.`, SpriteKind.Player)
+audience.setImage(img`.`)
 audience.bottom = 120
 ```
 

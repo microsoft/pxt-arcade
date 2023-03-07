@@ -6,7 +6,7 @@
 
 You've created a card, now let's make it extra special!
 
-![Send our love](/static/skillmap/story/story-activity-2.gif "Why do tropical fish like saltwater?" )
+![Send our love](/static/skillmap/story/story2.gif "Why do tropical fish like saltwater?" )
 
 
 ## {Step 2}

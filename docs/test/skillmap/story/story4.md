@@ -186,13 +186,95 @@ game.showLongText("Next door...", DialogLayout.Bottom)
 
 ## {Step 9}
 
+**Need more action?**<br/>
+🎥 🎥 🎥
+
+You can use what you learned in the last level to add sprites to your story.
+
+---
+
+- :paper plane:  From ``||sprites:Sprites||``, grab
+```block
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `, SpriteKind.Player)
+```
+and snap it in to the <br/>
+``||loops(noclick):on start||``<br/>
+container wherever it works best for your story.
+
+
+- :mouse pointer: Choose your sprite, then check out the  ``||scene:Scene||`` category to find other blocks that
+let you perfectly position your sprite or add movement.
+
+
+
+
+#### ~ tutorialhint
+
+```blocks
+    scene.setBackgroundImage(assets.image`page9`)
+    //@highlight
+   let mySprite = sprites.create(img`
+    ........................
+    ............cc..........
+    ............ccc.........
+    ........ccc.ccccccc.....
+    ........ccccc555555cc...
+    ........ccb5555555555c..
+    .....ccc.b55555ff15555c.
+    .....cccb5555555ff55555c
+    ......cb555555555555d55c
+    ....c.b555555555bb55555c
+    ....ccb555ddd5555b13bbc.
+    ....ccd55ddddd555b3335c.
+    .....cdd5ddddddd55b335c.
+    ...c.bddddb555bbbd555c..
+    ...ccdddddb555555bccc...
+    ..cccddddddcc5555bcc....
+    .cdccddddddddbcccbcccc..
+    .cddbdddddddddbbbbc55c..
+    .cdddddddddd55dbbbc5c...
+    .cbddddbbbbd55ddbccc....
+    ..cbdddbbbbd555dccc.....
+    ...cccbbbbbbddd555c.....
+    .....ccccccbd55555c.....
+    ...........cc5555c......
+    `, SpriteKind.Player)
+    //@highlight
+mySprite.setPosition(80, 90)
+    pause(1000)
+    game.showLongText("...happily ever after", DialogLayout.Bottom)
+
+```
+
+
+
+
+## {Step 9}
+
 **👏 Happily ever after 👏**
 
 Want to do something special to end your story?
 
 ---
 
-- :mouse pointer:  From ``||scene:Scene||``, grab
+- :tree:  From ``||scene:Scene||``, grab
 ```block
 effects.confetti.startScreenEffect()
 ```
@@ -203,15 +285,43 @@ container that's already in the workspace.
 
 - :mouse pointer:  Change **confetti** to whatever works best for your story!
 
+
 #### ~ tutorialhint
 
 ```blocks
     scene.setBackgroundImage(assets.image`page9`)
+   let mySprite = sprites.create(img`
+    ........................
+    ............cc..........
+    ............ccc.........
+    ........ccc.ccccccc.....
+    ........ccccc555555cc...
+    ........ccb5555555555c..
+    .....ccc.b55555ff15555c.
+    .....cccb5555555ff55555c
+    ......cb555555555555d55c
+    ....c.b555555555bb55555c
+    ....ccb555ddd5555b13bbc.
+    ....ccd55ddddd555b3335c.
+    .....cdd5ddddddd55b335c.
+    ...c.bddddb555bbbd555c..
+    ...ccdddddb555555bccc...
+    ..cccddddddcc5555bcc....
+    .cdccddddddddbcccbcccc..
+    .cddbdddddddddbbbbc55c..
+    .cdddddddddd55dbbbc5c...
+    .cbddddbbbbd55ddbccc....
+    ..cbdddbbbbd555dccc.....
+    ...cccbbbbbbddd555c.....
+    .....ccccccbd55555c.....
+    ...........cc5555c......
+    `, SpriteKind.Player)
+mySprite.setPosition(80, 90)
     pause(1000)
     game.showLongText("...happily ever after", DialogLayout.Bottom)
     //@highlight
     effects.bubbles.startScreenEffect()
-})
+
 ```
 
 
@@ -236,6 +346,33 @@ and add them to your project.
     //@highlight
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
     scene.setBackgroundImage(assets.image`page9`)
+   let mySprite = sprites.create(img`
+    ........................
+    ............cc..........
+    ............ccc.........
+    ........ccc.ccccccc.....
+    ........ccccc555555cc...
+    ........ccb5555555555c..
+    .....ccc.b55555ff15555c.
+    .....cccb5555555ff55555c
+    ......cb555555555555d55c
+    ....c.b555555555bb55555c
+    ....ccb555ddd5555b13bbc.
+    ....ccd55ddddd555b3335c.
+    .....cdd5ddddddd55b335c.
+    ...c.bddddb555bbbd555c..
+    ...ccdddddb555555bccc...
+    ..cccddddddcc5555bcc....
+    .cdccddddddddbcccbcccc..
+    .cddbdddddddddbbbbc55c..
+    .cdddddddddd55dbbbc5c...
+    .cbddddbbbbd55ddbccc....
+    ..cbdddbbbbd555dccc.....
+    ...cccbbbbbbddd555c.....
+    .....ccccccbd55555c.....
+    ...........cc5555c......
+    `, SpriteKind.Player)
+mySprite.setPosition(80, 90)
     pause(1000)
     game.showLongText("...happily ever after", DialogLayout.Bottom)
     effects.bubbles.startScreenEffect()
@@ -266,15 +403,19 @@ hint~
 When you're done reading your story, click **Done** to return to the main page where you can share with everyone you know!
 
 ```blockconfig.global
+let mySprite: Sprite = null
 carnival.addLabelTo(" ", carnival.Areas.Top)
 pause(1000)
 game.showLongText("Once upon a time...", DialogLayout.Bottom)
 music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+mySprite.setFlag(SpriteFlag.StayInScreen, true)
+
 ```
 
 ```package
 carnival=github:microsoft/arcade-tutorial-extensions/carnival/
 story=github:microsoft/arcade-storytelling/
+arcade-animations=github:microsoft/arcade-character-animations
 ```
 
 ```ghost
@@ -341,6 +482,35 @@ mySprite.setPosition(0, 0)
 story.cancelCurrentCutscene()
 story.cancelSpriteMovement(mySprite)
 story.spriteMoveToLocation(mySprite, 0, 0, 100)
+music.setVolume(20)
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("- - - - - - - - ", 120), music.PlaybackMode.UntilDone)
+    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
+    music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+    music.stopAllSounds()
+    animation.runImageAnimation(
+mySprite,
+[img`
+    .],
+100,
+true
+)
+
+    characterAnimations.loopFrames(
+    mySprite,
+    [img`
+        .
+        `],
+    500,
+    characterAnimations.rule(Predicate.NotMoving)
+    )
+
+    mySprite.startEffect(effects.spray)
+mySprite.setImage(img`.`)
+scene.cameraShake(4, 500)
+mySprite.setVelocity(-20, 0)
+mySprite.x = 0
+mySprite.setFlag(SpriteFlag.StayInScreen, false)
 ```
 
 

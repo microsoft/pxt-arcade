@@ -6,7 +6,7 @@
 
 Follow these quick steps to make greeting cards that you can share with friends and family!
 
-![Greetings](/static/skillmap/story/story2.png "Happy birthday to you!" )
+![Greetings](/static/skillmap/story/story1.gif "Happy birthday to you!" )
 
 
 
