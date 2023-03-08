@@ -425,7 +425,7 @@ carnival.startCountdownGame(60, carnival.WinTypes.Multi)
 
 ```package
 multiplayer
-arcade-carnival=github:microsoft/arcade-carnival
+arcade-carnival=github:microsoft/arcade-carnival#v0.0.7
 ```
 
 ```ghost

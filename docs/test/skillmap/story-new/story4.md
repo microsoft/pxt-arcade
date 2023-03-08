@@ -40,7 +40,7 @@ into **the empty**<br/>
 container already in the workspace.
 
 
-- :paint brush:  **Click the grey box** to draw a the first picture for your story.
+- :paint brush:  **Click the empty image box** to draw a the first picture for your story.
 
 💡 _Don't have a story in mind? You can use one of our backgrounds._
 
@@ -106,7 +106,7 @@ into **the end** of the <br/>
 container that's already in the workspace.
 
 
-- :mouse pointer: Change the text to whatever works as the first line of your story. You can also change the location of your text from ``||game:[bottom]||`` to another area of the screen.
+- :mouse pointer: Change the text to whatever works as the first line of your story. You can also change the location of your text from ``||game(noclick):bottom||`` to another area of the screen.
 
 
 💡 _Did you find a different way to add text in another level that you like better? Feel free to use that instead!_
@@ -413,60 +413,24 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 ```
 
 ```package
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival#v0.0.7
 story=github:microsoft/arcade-storytelling/
 arcade-animations=github:microsoft/arcade-character-animations
 ```
 
 ```ghost
-    music.stopAllSounds()
-
+music.stopAllSounds()
 scene.setBackgroundImage(assets.image`page1`)
 pause(1000)
-game.showLongText("Once upon a time, there was a lizard who lived beneath a toadstool.", DialogLayout.Bottom)
+game.showLongText("Once upon a time", DialogLayout.Bottom)
 scene.setBackgroundImage(assets.image`page2`)
-pause(1000)
-game.showLongText("Next door, there lived a butterfly on a daisy.", DialogLayout.Bottom)
-scene.setBackgroundImage(assets.image`page3`)
-pause(1000)
-game.showLongText("Every day, the butterfly would sweep past and taunt the lizard from the sky.", DialogLayout.Bottom)
-game.showLongText("\"Ha ha!\" He would say. \"Your house doesn't smell as good as mine.\"", DialogLayout.Bottom)
 scene.setBackgroundImage(assets.image`page4`)
 pause(1000)
 game.showLongText("Finally, one day, the lizard decided to find a daisy of her own.", DialogLayout.Bottom)
 scene.setBackgroundImage(assets.image`page5`)
-pause(2000)
-scene.setBackgroundImage(assets.image`page6`)
-pause(2000)
-scene.setBackgroundImage(assets.image`page7`)
-pause(2000)
-game.showLongText("She tried and tried, but she just couldn't get comfortable.", DialogLayout.Bottom)
-scene.setBackgroundImage(assets.image`page8`)
-pause(1000)
-game.showLongText("No matter what she did, the fragrant flower didn't make her happy.", DialogLayout.Bottom)
-scene.setBackgroundImage(assets.image`page9`)
-pause(1000)
-game.showLongText("The next day, the lizard moved back to her toadstool and lived happily ever after.", DialogLayout.Bottom)
 music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
-    music.play(music.createSong(hex`0078000408020108001c000e050046006603320000040a002d000000640014000132000201000244000000040002222c04000800012508000c000220250c00100002222a10001400031d242a14001800012518001c00021b221c002000012720002400012a24002800031d2427`), music.PlaybackMode.InBackground)
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `, SpriteKind.Player)
+music.play(music.createSong(hexhex`00780004080200`), music.PlaybackMode.InBackground)
+let mySprite = sprites.create(img`.`, SpriteKind.Player)
 story.printText(":)", 0, 0)
 story.startCutscene(function () {
     story.spriteSayText(mySprite, ":)")
@@ -474,7 +438,7 @@ story.startCutscene(function () {
 story.setPagePauseLength(1000, 1000)
 story.printCharacterText("")
 story.setSoundEnabled(false)
-mySprite.sayText(":)")
+mySprite.sayText(" ")
 game.splash("")
 game.showLongText("", DialogLayout.Bottom)
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Top)
@@ -490,22 +454,19 @@ music.setVolume(20)
     music.stopAllSounds()
     animation.runImageAnimation(
 mySprite,
-[img`
-    .],
+[img`.`],
 100,
 true
 )
 
-    characterAnimations.loopFrames(
-    mySprite,
-    [img`
-        .
-        `],
-    500,
-    characterAnimations.rule(Predicate.NotMoving)
-    )
+characterAnimations.loopFrames(
+mySprite,
+[img`.`],
+500,
+characterAnimations.rule(Predicate.NotMoving)
+)
 
-    mySprite.startEffect(effects.spray)
+mySprite.startEffect(effects.spray)
 mySprite.setImage(img`.`)
 scene.cameraShake(4, 500)
 mySprite.setVelocity(-20, 0)

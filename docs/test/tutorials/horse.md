@@ -424,7 +424,7 @@ carnival.startTimer()
 
 ```package
 multiplayer
-arcade-carnival=github:microsoft/arcade-carnival
+arcade-carnival=github:microsoft/arcade-carnival#v0.0.7
 horserace-images=github:kiki-lee/horserace-images
 ```
 
