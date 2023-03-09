@@ -351,7 +351,7 @@ controller.anyButton.isPressed()
 
 ```package
 arcade-text=github:microsoft/arcade-text
-dd=github:kiki-lee/dnd-sprite-pack
+dd=github:kiki-lee/dnd-sprite-pack#v0.2.2
 ```
 
 

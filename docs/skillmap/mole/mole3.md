@@ -246,7 +246,7 @@ simplified.moveToRandomHoleOnGrid(myMole)
 
 ```package
 carnival=github:microsoft/arcade-carnival#v0.0.7
-mole-images=github:kiki-lee/mole-images#v0.0.2
+mole-images=github:kiki-lee/mole-images#v0.0.3
 ```
 
 

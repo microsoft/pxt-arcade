@@ -10,7 +10,7 @@ Let's add some gold to your quest.
 The code for your adventure is already in the workspace. <br/>
 We can keep adding to it.
 
-![Let's go on an adventure!](https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif "Image of trunk trying to eat Barbarian" )
+![Let's go on an adventure!](https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif "Image of mimic giving Holga a tongue lashing" )
 
 _© 2023 Paramount Pictures. Hasbro, Dungeons &
 Dragons and all related characters are trademarks of
@@ -348,7 +348,7 @@ music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackgroun
 
 ```package
 arcade-text=github:microsoft/arcade-text
-dd=github:kiki-lee/dnd-sprite-pack
+dd=github:kiki-lee/dnd-sprite-pack#v0.2.2
 ```
 
 

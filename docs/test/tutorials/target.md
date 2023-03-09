@@ -27,7 +27,7 @@ Click  "Pop out video" to resize the video window or move it around the screen.
 
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-carnival=github:microsoft/arcade-carnival
+carnival=github:microsoft/arcade-carnival#v0.0.7
 ```
 
 

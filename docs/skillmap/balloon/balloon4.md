@@ -335,7 +335,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
 sprite-scaling
 carnival=github:microsoft/arcade-carnival#v0.0.7
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
-balloon-images=github:kiki-lee/balloon-images#v0.0.1
+balloon-images=github:kiki-lee/balloon-images#v0.0.2
 ```
 
 

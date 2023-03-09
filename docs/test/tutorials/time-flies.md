@@ -410,8 +410,6 @@ list = sprites.allOfKind(SpriteKind.Food)
     music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.UntilDone)
 music.play(music.createSong(hex`0078000408020100001c00010a006400f4016400000400000000000000000000000000050000041e0000000400012a04000800012708000c00012410001400012218001c000120`), music.PlaybackMode.UntilDone)
 music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
-
-
 ```
 
 ```assetjson

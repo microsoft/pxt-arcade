@@ -620,7 +620,7 @@ game.onUpdateInterval(500, function () {
 multiplayer
 sprite-scaling
 arcade-carnival=github:microsoft/arcade-carnival#v0.0.7
-arrow-images=github:kiki-lee/arrow-images
+arrow-images=github:kiki-lee/arrow-images#v0.0.2
 ```
 
 ```customts
