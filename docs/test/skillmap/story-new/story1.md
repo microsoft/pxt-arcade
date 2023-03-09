@@ -244,7 +244,7 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 
 
 ```package
-carnival=github:microsoft/arcade-carnival
+carnival=github:microsoft/arcade-carnival#v0.0.7
 ```
 
 

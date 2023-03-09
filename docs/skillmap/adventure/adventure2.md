@@ -366,7 +366,7 @@ music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackgroun
 
 ```package
 arcade-text=github:microsoft/arcade-text
-dd=github:kiki-lee/dnd-sprite-pack
+dd=github:kiki-lee/dnd-sprite-pack#v0.2.2
 ```
 
 

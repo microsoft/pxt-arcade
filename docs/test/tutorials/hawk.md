@@ -508,7 +508,7 @@ forever(function () {
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll/
-hawk=github:kiki-lee/hawks-graphics
+hawk=github:kiki-lee/hawks-graphics#v0.0.1
 ```
 
 
