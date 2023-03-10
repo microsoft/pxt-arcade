@@ -123,3 +123,8 @@
 
 @soundEffectHeaderColor: #E30FC0;
 @soundPreviewBackgroundColor: #F7EEF5;
+
+/*---------------------------
+   Cloud Status
+----------------------------*/
+@cloudStatusColor: @teal;
