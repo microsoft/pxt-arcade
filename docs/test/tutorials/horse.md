@@ -217,7 +217,7 @@ You should see the red horse move when you press the **(A) button**.
 
 You can make **player 2** move by pressing the **U key** on your keyboard, or your can click the multiplayer icons to test any player with the space bar.
 
-![Play with the emulator buttons](/static/tutorials/horse/multi.png " ")
+![Play with the emulator buttons](/static/tutorials/assets/multi.png " ")
 
 
 ## {10. Overlap Finish Line}
@@ -425,7 +425,7 @@ carnival.startTimer()
 ```package
 multiplayer
 arcade-carnival=github:microsoft/arcade-carnival#v0.0.7
-horserace-images=github:kiki-lee/horserace-images#v0.0.1
+horserace-images=github:microsoft/arcade-tutorial-extensions/horserace-images#v0.0.8
 ```
 
 ```customts
