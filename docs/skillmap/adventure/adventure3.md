@@ -5,7 +5,7 @@
 ## {Intro @showdialog}
 
 
-Let's add some gold to your quest.
+Let's add some rewards to your quest.
 
 The code for your adventure is already in the workspace. <br/>
 We can keep adding to it.
@@ -51,7 +51,7 @@ quest1()
 
 ## {Step 3}
 
-Now **duplicate** another quest to create an option for when the player chooses (B) that first time.
+**Duplicate** another quest to create an option for when the player chooses (B) that first time.
 
 ---
 
@@ -94,7 +94,7 @@ function quest3() {
 
 ## {Step 4}
 
-Now, instead of ending the game as a loss
+Instead of ending the game as a loss
 when the user presses (B) in **quest1**, you can remove a life and send the player on
 a different quest.
 
@@ -178,7 +178,7 @@ function quest1() {
 Go through your functions and move things around.  Sometimes (A) should have a good outcome,
 but other times it should be the worst choice.
 
-💡 _These stories might start to get confusing as you go.  Try mapping it out on paper
+💡 _These stories might start to get confusing as you go.  Try mapping the plot on paper
 so you know exactly how many possibilities you want to create._
 
 
@@ -227,7 +227,7 @@ info.onLifeZero(function () {
 **Add gold.**
 
 Just like you removed lives from the bad choices,
-try adding gold (changing the score) for the good choices.
+try adding gold for the good choices.
 
 ---
 
@@ -238,8 +238,8 @@ for the <br/>
 block.
 
 
-- :id card: From ``||info:Info||`` , drag <br/>
-``||info: change score by [1]||`` <br/>
+- :compass: From ``||adventure:Adventure||`` , drag <br/>
+``||adventure: change [coins] by [5]||`` <br/>
 in **just above** the <br/>
 ``||functions(noclick): call quest2||`` <br/>
 block.
@@ -264,7 +264,7 @@ function quest1() {
     if (controller.A.isPressed()) {
         adventure.addToTextlog("Great choice! Enjoy your adventure." )
         //@highlight
-        adventure.changeScoreOverride(img`.`, 1)
+       adventure.changeScoreOverride(adventure.Currency.Coins, 5)
         quest2()
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun." )
@@ -293,15 +293,7 @@ Now, when the player reaches 20 gold, the game will end as a win.
 Try changing the amount of gold needed to win or the number of lives the player starts with.
 
 
-```blockconfig.local
-info.onLifeZero(function () {
-    game.over(false)
-})
 
-info.onScore(20, function () {
-    game.gameOver(true)
-})
-```
 
 #### ~ tutorialhint
 
@@ -319,7 +311,7 @@ info.onScore(20, function () {
 **Take another look at your adventure!**
 
 - :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do? <br/><br/>
-Do you have enough quests for your user to lose enough lives for a loss or earn enough gold for a win?
+Do you have enough quests for your user to lose enough lives for a loss or **earn enough gold** for a win?
 
 You can keep adding more quests or more text until you're happy with your adventure.
 
@@ -329,9 +321,9 @@ You can keep adding more quests or more text until you're happy with your advent
 ## {Finish}
 
 **Way to go!**<br/>
-🗺️
+🧭
 
-~hint How do I share my story?💡
+~hint How do I share my game?💡
 
 ---
 
@@ -344,12 +336,21 @@ Click "Done" to get back out to the skillmap, then look in the lower-right corne
 hint~
 
 Once you're happy with your adventure, click **Done** to return to the main skillmap
-where you can share your final story with family and friends.
+where you can share your final game with family and friends.
 
 
 
 ```blockconfig.global
+
+info.onLifeZero(function () {
+    game.over(false)
+})
+
+info.onScore(20, function () {
+    game.gameOver(true)
+})
 adventure.addImageToTextLog(img`.`)
+adventure.changeScoreOverride(adventure.Currency.Coins, 5)
 music.setVolume(20)
 info.setLife(5)
 adventure.addToTextlog("Oh no! There is a dragon in your path!")
@@ -412,6 +413,7 @@ scene.setBackgroundColor(1)
 adventure.setScoreOverride(adventure.Currency.Coins, 100)
 adventure.changeScoreOverride(adventure.Currency.Coins, 1)
 adventure.changeLogColors(2, 6)
+info.onScore(30, function () { })
 ```
 
 
