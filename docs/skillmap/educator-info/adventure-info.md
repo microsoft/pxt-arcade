@@ -65,17 +65,12 @@ After completing Code an Adventure, students will have gained exposure to all th
 
 
 
-
-
-
-
 ##### Game Mod Ideas
 
 After students complete Code an Adventure they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
-- Change the mole to a different character. Try a monster, an alien, or a star!
-- Animate your character each time it's tagged by the rubber hammer.
-- Add background music.
+- Add sound effects that happen when the player makes a good or bad choice
+- Give your story more choices using the up, down, left, and right keys instead of A & B
 
 
 ### What's Next?
@@ -83,4 +78,9 @@ After students complete Code an Adventure they can head back to the skillmap and
 After completing Code an Adventure, students can move on to the following activities:
 
 * [Burstin' Balloons](https://arcade.makecode.com/--skillmap#docs:/skillmap/balloon)
-* [Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
+* [Turkey Day](https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey)
+
+
+```package
+pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
+```
