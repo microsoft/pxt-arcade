@@ -20,14 +20,13 @@ Hasbro. © 2023 Hasbro._
 ## {Step 2}
 
 **Add a visual!**<br/>
-👀
-
+👀<br/>
 Add an image to the scrolling log.
 
 ---
 
 
-- :align left: From ``||adventure: Text Log||``, drag <br/>
+- :compass: From ``||adventure: Adventure||``, drag <br/>
 ``||adventure: add image [ ] to text log||`` <br/>
 into the **top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
@@ -67,7 +66,7 @@ Add a sound to set the mood.
 ---
 
 
-- :align left: From ``||music: Music||``, drag the<br/>
+- :headphones: From ``||music: Music||``, drag the<br/>
 ``||music: play song [ ] in background||`` <br/>
 block into the **top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
@@ -77,6 +76,7 @@ container already in the workspace.
 (or choose music from **My Assets**).
 
 
+💡 _Make sure that_ ``||music:in background||`` _is selected, or the rest of your game won't run until the music finishes._
 
 
 #### ~ tutorialhint
@@ -118,7 +118,8 @@ if (controller.A.isPressed()) {
 **Let's do more!**
 
 It's time to link some adventures together...but
-before we do, let's package this quest up into a **function** to make it easier to copy.
+before we do, let's package this quest up into a **function** to make it easier to
+copy and reuse.
 
 
 ~hint What's a Function? 💡
@@ -128,17 +129,19 @@ before we do, let's package this quest up into a **function** to make it easier 
 A **function** is a piece of code that has a name,
 which allows you to create it in one place and use it from another.
 
-Now, we're going to move all of our code out of the ``||loops(noclick):on start||`` container
-and into a function block.
+The next few steps will show us how to move all of our code out of the ``||loops(noclick):on start||`` container
+and into a function block called **quest1**.
 
 ```block
 function quest1() {}
 ```
 
+![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/function.gif)
+
 hint~
 
 
-- :function: Click on **Advanced** in the toolbox to show the
+- :function: Click **Advanced** in the toolbox to show the
 ``||function: Functions||`` category. <br/>
 
 - :mouse pointer: Open the ``||function: Functions||`` category and click <br/>
@@ -169,6 +172,13 @@ function.
 
 💡 _To grab all of your code, make sure you click on the top block before you drag.
 That way, all of the blocks beneath will follow._
+
+
+~hint Show me 🕵🏽‍♀️
+
+![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/function.gif)
+
+hint~
 
 
 #### ~ tutorialhint
@@ -270,7 +280,7 @@ function quest2() {
 
 ## {9. Call Quest 2}
 
-Instead of ending the game as a win, let's run **quest2** from the first quest when the (A) button is pressed.
+In ``||functions:quest1||``, Instead of ending the game as a win, let's run **quest2** when the (A) button is pressed.
 
 ---
 
@@ -280,7 +290,7 @@ and look for the <br/>
 ``||game(noclick): game over <WIN>||`` <br/>
 block, and delete it.
 
-- :function: From the ``||function: Functions||`` catecory, add
+- :function: From the ``||function: Functions||`` category, add
 ``||functions:call quest2||`` <br/>
 where <br/>
 ``||game(noclick): game over <WIN>||`` <br/>

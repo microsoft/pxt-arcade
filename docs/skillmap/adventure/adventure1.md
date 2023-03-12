@@ -20,16 +20,55 @@ Hasbro. © 2023 Hasbro._
 
 **We need a quest!**<br/>
 
-Start by creating some drama.  What issue is the player facing?
+
+~hint What am I doing? 🤷🏽‍♂️
+
+---
+
+**We are coding a game!**
+
+Modeled after an old-school text-based adventure, you're about to code a game using your own artwork, theme music, and storyline!
+
+But first, you need to learn how MakeCode Arcade works.
+
+We will use the formatted text:<br/>
+``||adventure: add ["A traveling..."] to text log||``
 
 
-- :align left: From ``||adventure: Text Log||``, drag the<br/>
+To tell you to grab the block:
+```block
+adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+```
+
+So you can snap it inside the <br/>
+``||loops(noclick):on start||`` <br/>
+container in the workspace and start your program.
+
+```blocks
+//@highlight
+adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+```
+
+
+![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/how-to-adventure.gif)
+
+hint~
+
+
+- :compass: Open the <br/>
+``||adventure: Adventure||``<br/>
+category in the toolbox and grab<br/>
 ``||adventure: add ["A traveling..."] to text log||`` <br/>
-block into the empty<br/>
+to connect inside the empty<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
 - :mouse pointer: Change the text to set up the problem that your player will face.
+
+---
+
+- :arrow right: When you're ready to move to the next step, click the **Next** button.
+
 
 
 #### ~ tutorialhint
@@ -65,14 +104,13 @@ adventure.addToTextlog("Press (A) to join the fun." )
 
 What options do you want to give the player?  Make sure that one option turns out well, and one turns out poorly.
 
-- :align left: From ``||adventure: Text Log||``, drag the<br/>
+- :compass: From ``||adventure: Adventure||``, drag the<br/>
 ``||adventure: add ["Press (A)..."] to text log||`` <br/>
 block into the **end of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Change the text to let the player know the option they get
-by pressing the (A) button on the console.
+- :mouse pointer: Change the text to let the player know the story will have a good outcome if they press the (A) button (or space bar).
 
 
 ```blockconfig.local
@@ -98,14 +136,15 @@ adventure.addToTextlog("Press (A) to join the fun." )
 Add your second option. <br/>
 (This one won't turn out as well.)
 
-- :align left: From ``||adventure: Text Log||``, drag the<br/>
+- :compass: From ``||adventure: Adventure||``, drag the<br/>
 ``||adventure: add ["Press (B)..."]to text log||`` <br/>
 block into the **end of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Change the text to let the user know the option they get
-by pressing the (B) button on the console.
+- :mouse pointer: Change the text to hint that the story will take a bad turn if they press the (B) button (or enter key).
+
+💡 _Not sure if you have all the right blocks? Click the lightbulb button below the instructions to see what should have happened in this step._
 
 
 ```blockconfig.local
@@ -181,9 +220,9 @@ Now it's time to add a conditional to handle the path that was chosen.
 A **conditional** is a piece of code that runs only when a **condition** is met.
 
 We are going to add an **if/else** statement that runs the
-code inside the **if** container only if the player **presses (A)**.
+code inside the **if** section only if the player **presses (A)**.
 
-Otherwise, it will run the code inside of the **else** container.
+Otherwise, it will run the code inside the **else** section.
 
 ```block
 if (controller.A.isPressed()) { } else { }
@@ -233,7 +272,7 @@ if (controller.A.isPressed()) { } else { }
 For now, we'll end the game as a **win** when the user chooses (A).
 
 
-- :align left: From ``||adventure: Text Log||``, drag<br/>
+- :compass: From ``||adventure: Adventure||``, drag<br/>
 ``||adventure:add ["Great Choice..."] to text log||`` <br/>
 into the empty<br/>
 ``||logic(noclick):if <is [A] button pressed> then||`` <br/>
@@ -243,7 +282,7 @@ container that's already in your code.
 ``||game: game over <WIN>||`` <br/>
 into the same <br/>
 ``||logic(noclick):if <is [A] button pressed> then||`` <br/>
-container, right below the new line of text.
+container, **right below** the new line of text.
 
 
 ```blockconfig.local
@@ -278,7 +317,7 @@ if (controller.A.isPressed()) {
 For now, we'll end the game as **lose** when the user chooses (B).
 
 
-- :align left: From ``||adventure: Text Log||``, drag<br/>
+- :compass: From ``||adventure: Adventure||``, drag<br/>
 ``||adventure:add ["Your adventure..."] to text log||`` <br/>
 into the empty<br/>
 ``||logic(noclick):else||`` <br/>
@@ -325,7 +364,7 @@ if (controller.A.isPressed()) {
 
 - :binoculars: Look at your project in the game window and choose a path!
 
-You should win the adventure if you click (A) and lose the adventure if you click (B).
+You should win the adventure if you press the (A) buttonn and lose the adventure if you press the (B) button.
 
 💡 _You can also use the **space bar** on your keyboard instead of the (A) button and the **enter key** instead of the (B) button!_
 
