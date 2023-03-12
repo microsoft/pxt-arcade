@@ -311,7 +311,7 @@ info.onScore(20, function () {
 **Take another look at your adventure!**
 
 - :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do? <br/><br/>
-Do you have enough quests for your user to lose enough lives for a loss or **earn enough gold** for a win?
+Do you have enough quests for your user to lose all of their lives or **earn enough gold** for a win?
 
 You can keep adding more quests or more text until you're happy with your adventure.
 
@@ -321,7 +321,7 @@ You can keep adding more quests or more text until you're happy with your advent
 ## {Finish}
 
 **Way to go!**<br/>
-🧭
+💰 🧭 💰
 
 ~hint How do I share my game?💡
 

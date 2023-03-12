@@ -10,28 +10,27 @@ Let's make a **Talent Show** clicker game where you decide who is on stage!
 
 
 ## {Step 2}
-This game will test your speed as you click quickly as possible to earn points.<br/>
-⭐ ⭐ ⭐
-
 
 Let's start by setting the stage.
 
 
 - :tree: Open the ``||scene:Scene||`` category and drag
-
 ```block
 scene.setBackgroundImage(img`.`)
 ```
 into the ``||loops(noclick):on start||``<br/>
 container that's already in the workspace.
 
-- :mouse pointer: When you're done, click **Next** to see the next step.
 
 ~hint Click here to see how 🕵🏽
 
 ![Grab background block](/static/skillmap/assets/choose-bg.gif "Pull in the block to set the background image." )
 
 hint~
+
+
+- :right arrow: When you're done, click **Next** to see the next step.
+
 
 #### ~ tutorialhint
 
@@ -55,14 +54,12 @@ scene.setBackgroundImage(img`.`)
 ```
 to open the
 image editor and click the **My Assets** tab.
-
-
 ![My Assets](/static/skillmap/assets/my-assets-three.png "Toggle to see the images for this game" )
 
 
 - :mouse pointer: Choose the **stage** background and click **Done**.
-
 ![The world is a stage](/static/skillmap/star/stage.png "Find your stage" )
+
 
 ~hint Click here to see how 🕵🏽
 
@@ -96,7 +93,7 @@ Do you see the background you chose?
 **Choose your superstar!**<br/>
 ⭐ ⭐ ⭐
 
-Which talent will you be cheering for today?
+Who will you be cheering for today?
 
 
 - :paper plane: From ``||sprites: Sprites||``, drag
@@ -185,6 +182,7 @@ It's time to add a splash screen to let the user know to press the
 In video games, a splash screen is a message that shows while a program or level is loading.
 hint~
 
+---
 
 - :circle: Open the ``||game:Game||`` category and
 drag
@@ -220,7 +218,7 @@ game.splash("Press (A) to play!")
 
 **⚡ Here comes the action ⚡**
 
-The game needs code that makes the score go up by one
+The game needs code to make the score go up
 when the (A) button is clicked.
 
 
@@ -264,16 +262,16 @@ Do you see your score go up each time you press the (A) button?
 ## {Step 11}
 
 This game is off to a great start...but it goes on forever! Add a countdown timer to give
-the player a clear endpoint.
+the game an ending.
 
 - :id card: Open the ``||info:Info||`` category and
 drag the
-
 ```block
 info.startCountdown(10)
 ```
 block into **the bottom** of the<br/>
 ``||loops(noclick):on start||`` container.
+
 
 ~hint Click here to see how 🕵🏽
 
@@ -300,6 +298,21 @@ info.startCountdown(10)
 You have started your very own clicker game!
 
 Play it on the game screen and see if you can get more than **40 clicks**.
+
+
+
+~hint How do I share my card?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your game](/static/skillmap/star/share.gif )
+
+hint~
+
 
 When you're finished, click **Done** to return to the main page to move forward and see how to add an audience!
 

@@ -59,9 +59,8 @@ if (controller.A.isPressed()) {
 ## {Step 3. Add Sounds}
 
 **Make some noise!**<br/>
-🎶
-
-Add a sound to set the mood.
+🎶<br/>
+Add sound to set the mood.
 
 ---
 
@@ -136,7 +135,7 @@ and into a function block called **quest1**.
 function quest1() {}
 ```
 
-![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/function.gif)
+![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/functions.gif)
 
 hint~
 
@@ -176,7 +175,7 @@ That way, all of the blocks beneath will follow._
 
 ~hint Show me 🕵🏽‍♀️
 
-![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/function.gif)
+![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/functions.gif)
 
 hint~
 

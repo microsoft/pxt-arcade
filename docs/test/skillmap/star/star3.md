@@ -26,6 +26,8 @@ Projectiles have extra properties that normal sprites don't have. For example, t
 
 hint~
 
+---
+
 - :paper plane: From ``||sprites:Sprites||``, grab
 ```block
 let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
@@ -37,7 +39,6 @@ already in the workspace.
 
 - :paint brush: Click the empty image square and switch to **My Assets**
 to choose the sprite called **star**.
-
 ![Choose the yellow star](/static/skillmap/star/star.png )
 
 
@@ -84,10 +85,12 @@ in to replace **0** as the  **vx** value inside<br/>
 
 ---
 
-In MakeCode Arcade, **vx** stands for the "velocity in the direction of x"...which is a
+In MakeCode Arcade, **vx** stands for the "velocity in the direction of x" — which is a
 complicated way of saying "the speed from side to side."
 
-The larger your **vx** value is, the faster something will travel to the right.  The lower your **vx**, the faster it will travel to the left.  If your **vx** is 0, the item won't move from side to side at all.
+- The larger your **vx** value is, the faster something will travel to the right.
+- The lower your **vx**, the faster it will travel to the left.
+- If your **vx** is 0, the item won't move from side to side at all.
 
 hint~
 
@@ -127,10 +130,12 @@ in to replace **-50** as the  **vy** value inside<br/>
 
 ---
 
-In MakeCode Arcade, **vy** stands for the "velocity in the direction of y"...which is a
+In MakeCode Arcade, **vy** stands for the "velocity in the direction of y" — which is a
 complicated way of saying "the speed top to bottom."
 
-The larger your **vy** value is, the faster something will travel downward.  The lower your **vy**, the faster it will travel upward.  If your **vy** is 0, the item won't move either up or down.
+- The larger your **vy** value is, the faster something will travel downward.
+- The lower your **vy**, the faster it will travel upward.
+- If your **vy** is 0, the item won't move either up or down.
 
 hint~
 
@@ -169,21 +174,25 @@ Click as fast as you can to see how many stars you can get on the screen at one 
 
 🤩 **Way to go!** 🤩
 
-When you're finished, click **Done** to return to the main page where you can
-keep going to add roses to your project!
-
 
 ~hint How do I share my game?💡
 
 ---
 
-**Want to share your project?**
+**Want to share your game?**
 
 Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
 
-![Share your card](/static/skillmap/star/share.gif )
+![Share your game](/static/skillmap/star/share.gif )
 
 hint~
+
+
+When you're finished, click **Done** to return to the main page where you can
+keep going to add roses to your project!
+
+
+
 
 
 
