@@ -95,7 +95,7 @@ it into **the end** of the<br/>
  container.
 
 
-- :mouse pointer:  Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
+- :mouse pointer:  Create the perfect character for your joke by clicking the empty grey box so you can draw something in the image editor.
 
 #### ~ tutorialhint
 
@@ -196,7 +196,7 @@ Add whatever blocks you need into the  <br/>
 ``||controller(noclick):on [A] button [pressed]||``</br>
 container already in the workspace.
 
-You can use only <br/>``||game:show long text " "||`` <br/>blocks, or switch it up with some other options.
+You can use <br/>``||game:show long text " "||`` <br/>blocks, or switch it up with some other options.
 
 ~hint What are my text options? 💡
 
@@ -367,6 +367,7 @@ with family and friends!
 let mySprite: Sprite = null
 carnival.addLabelTo(" ", carnival.Areas.Top)
     mySprite.sayText("What's a punchline?")
+pauseUntil(() => controller.anyButton.isPressed())
 ```
 
 ```package
@@ -375,6 +376,8 @@ arcade-animations=github:microsoft/arcade-character-animations
 ```
 
 ```ghost
+pause(1000)
+pauseUntil(() => controller.anyButton.isPressed())
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     characterAnimations.loopFrames(
     mySprite,

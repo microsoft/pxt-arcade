@@ -22,7 +22,7 @@
 
 * name: Start Your Journey
 * type: tutorial
-* description: Create an adventure using conditionals
+* description: Create an adventure story using conditionals!
 * tags: conditionals, text
 * next: adventure2
 * url: /skillmap/adventure/adventure1

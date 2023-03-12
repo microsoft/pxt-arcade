@@ -20,7 +20,7 @@ The code for a simple card is already in the workspace.<br/>
 
 
 💡 **Tip:** _If your code isn't working and you can't figure out why, click_<br/>
-_"Replace my code"_ <br/>
+**"Replace my code"**<br/>
 _to replace the blocks in your workspace with new starter code._
 
 
@@ -49,7 +49,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 into **an empty area** of the workspace.
 
 
-- :mouse pointer:  Click the grey box to open the music editor and create your own song!
+- :mouse pointer:  Click the empty grey box to open the music editor and create your own song!
 
 
 ~hint Click here to see how 🕵🏽

@@ -65,7 +65,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Try your project on the game screen!
 
-Does the audience randomly throw stars and roses when you press the (A) button?
+Does the audience change between throwing stars and roses when you
+press the (A) button (or space bar)?
 
 
 ## {Step 5}

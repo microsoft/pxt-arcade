@@ -144,7 +144,7 @@ container already in the workspace.
 
 - :mouse pointer: Change the text to hint that the story will take a bad turn if they press the (B) button (or enter key).
 
-💡 _Not sure if you have all the right blocks? Click the lightbulb button below the instructions to see what should have happened in this step._
+💡 _Not sure if you have all the right blocks? **Click the lightbulb button below** the instructions to see what should have happened in this step._
 
 
 ```blockconfig.local
@@ -274,9 +274,9 @@ For now, we'll end the game as a **win** when the user chooses (A).
 
 - :compass: From ``||adventure: Adventure||``, drag<br/>
 ``||adventure:add ["Great Choice..."] to text log||`` <br/>
-into the empty<br/>
+into top section of the empty<br/>
 ``||logic(noclick):if <is [A] button pressed> then||`` <br/>
-container that's already in your code.
+container in your code.
 
 - :circle: From ``||game: Game||``, drag<br/>
 ``||game: game over <WIN>||`` <br/>
@@ -319,15 +319,15 @@ For now, we'll end the game as **lose** when the user chooses (B).
 
 - :compass: From ``||adventure: Adventure||``, drag<br/>
 ``||adventure:add ["Your adventure..."] to text log||`` <br/>
-into the empty<br/>
+into the empty bottom section of the<br/>
 ``||logic(noclick):else||`` <br/>
-container that's already in your code.
+container in your code.
 
 - :circle: From ``||game: Game||``, drag<br/>
 ``||game: game over <LOSE> +||`` <br/>
 into the same<br/>
 ``||logic(noclick):else||`` <br/>
-container, right below the new line of text.
+container, **right below** the new line of text.
 
 
 ```blockconfig.local
