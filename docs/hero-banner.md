@@ -12,6 +12,12 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://aka.ms/ArcadeSkillmap
 * cardType: link
 ---
+* name: Code an Adventure
+* buttonLabel: Try Now
+* imageUrl: /static/hero-gallery/adventure.png
+* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/adventure
+* cardType: link
+---
 * name: Code a Carnival!
 * buttonLabel: Try Now
 * imageUrl: /static/hero-gallery/hoc-2022.png
