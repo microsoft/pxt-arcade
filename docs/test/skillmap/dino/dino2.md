@@ -26,7 +26,7 @@ Can you move Mama Dino up and down? Do the baby dinos walk toward you?
 
 ## {Step 3}
 
-**We're off to a great start!!**
+**We're off to a great start!!**<br/>
 Add code that tells the game what to do when mama reaches her baby.
 
 ---
@@ -41,7 +41,7 @@ and drop it into an **empty area** of the workspace.
 
 
 This bundle watches for the player (Mama Dino) to overlap a
-projectile (baby dino), then it destroys the projectile to make it look like it's been collected.
+projectile (Baby Dino), then it destroys the projectile to make it look like it's been collected.
 
 
 ~hint Click here to see how 🕵🏽
@@ -107,7 +107,7 @@ How do you like your game so far?
 
 When Mama Dino overlaps with the babies, you should see them disappear and earn a point.
 
-If something doesn’t look right, check your work by clicking on the hints earlier in the level.
+If something doesn’t look right, check your work by clicking on the hints earlier in the levels.
 
 
 

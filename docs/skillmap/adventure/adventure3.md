@@ -90,6 +90,57 @@ function quest3() {
 
 
 
+## {Step 4}
+
+**Too many functions?**
+
+---
+
+Are your functions taking up too much of the workspace?  Try collapsing them!
+
+![Collapse your functions](/static/skillmap/adventure/collapse.gif)
+
+
+~hint Other space-saving options 💡
+
+---
+
+There's more to the workspace than what you see.
+
+Try clicking an empty area of the workspace to **drag it around**, or scroll up and down or left to right.
+
+You can also **zoom the workspace** in and out using the plus and minus buttons.
+
+![Zoom the workspace](/static/skillmap/adventure/zoom.gif)
+
+
+hint~
+
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+function quest3() {
+
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+    adventure.addImageToTextLog(assets.image`mimic`)
+    adventure.addToTextlog("You pass up a treasure that appears to be just out of grasp.")
+    adventure.addToTextlog("Press (A) to turn around and go after the chest." )
+    adventure.addToTextlog("Press (B) to continue walking out of the forest." )
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.A.isPressed()) {
+        adventure.addToTextlog("The treasure is a mimic and it attacks without warning." )
+        game.gameOver(true)
+    } else {
+        adventure.addToTextlog("You reach the edge of the forest and something shiny catches your eye." )
+        game.over(false)
+    }
+
+}
+```
+
+
 
 
 ## {Step 4}

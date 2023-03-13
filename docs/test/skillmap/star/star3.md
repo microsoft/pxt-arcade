@@ -226,6 +226,10 @@ game.splash("Press (A) to play!")
 info.startCountdown(10)
 ```
 
+```ghost
+scene.setBackgroundColor(1)
+```
+
 
 ```assetjson
 {
