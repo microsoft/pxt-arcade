@@ -215,7 +215,8 @@
             "turkey": "docs:/skillmap/turkey",
             "star": "docs:/skillmap/star",
             "mole": "docs:/skillmap/mole",
-            "balloon": "docs:/skillmap/balloon"
+            "balloon": "docs:/skillmap/balloon",
+            "adventure": "docs:/skillmap/adventure"
         }
     },
     "multiplayer": {
