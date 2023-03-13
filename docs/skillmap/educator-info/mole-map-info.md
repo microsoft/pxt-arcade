@@ -53,7 +53,7 @@ After completing Whack-the-Mole, students will have gained exposure to all the e
 | Activity | Hammer Time (12 min) |
 |---|---|
 | ![Hammer Time thumbnail](/static/skillmap/mole/mole2.gif) | Add a rubber hammer to tag the mole and earn points! |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[sprites.move_to_random_hole_on_grid(mySprite)]`` <br/> ``[controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]`` <br/> ``[info.startCountdownGame(20, winTypes.Score, effects.confetti)]`` <br/> ``[info.changeScoreBy(1)]`` <br/> ``[sprites.move_to_random_hole_on_grid(mySprite)]`` |
+| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[simplified.moveToRandomHoleOnGrid(myMole)]`` <br/> ``[simplified.moveOnlyOnscreenWithArrows(myHammer, simplified.Speeds.Fast)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]`` <br/> ``[carnival.startCountdownGame(15, carnival.WinTypes.Score)]`` <br/> ``[info.changeScoreBy(1)]`` |
 | Solution option | [Hammer Time Project](https://makecode.com/_3kzWrvbA51PL) |
 
 #### 3. Get Animated
@@ -61,9 +61,17 @@ After completing Whack-the-Mole, students will have gained exposure to all the e
 | Activity | Get Animated (15 min) |
 |---|---|
 | ![Get Animated thumbnail](/static/skillmap/mole/mole3.gif) | Add sound and animation to polish your game! |
-| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimationHammer(myHammer,[img`.`],100,false)]`` <br/>``[scene.add_label_to("Whack-the-Mole", areas.Bottom)]`` |
+| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimation(myHammer,assets.animation`hammerAnimation`,50,false)})]`` <br/>``[carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom))]`` |
 | Solution option | [Get Animated Project](https://makecode.com/_PCKW94TVLMpA) |
 
+
+#### 4. Play with Friends
+
+| Activity | Get Animated (15 min) |
+|---|---|
+| ![Play with Friends thumbnail](/static/skillmap/mole/mole4.gif) | A few simple changes will have you playing chase in no time! |
+| Blocks used | ``[game.showLongText(" ", DialogLayout.Center)]`` <br/> ``[carnival.startCountdownGame(15, carnival.WinTypes.Multi)]`` <br/>``[simplified.checkMoleEscape(mp.playerSelector(mp.PlayerNumber.Two), 1)]`` |
+| Solution option | [Play with Friends Project](https://makecode.com/_Hvte8pVtoDft) |
 
 
 
@@ -85,3 +93,10 @@ After completing Whack-the-Mole, students can move on to the following activitie
 
 * [Burstin' Balloons](https://arcade.makecode.com/--skillmap#docs:/skillmap/balloon)
 * [Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
+
+
+
+```package
+mole-images=github:microsoft/arcade-tutorial-extensions/mole-images#v0.0.11
+carnival=github:microsoft/arcade-carnival
+```

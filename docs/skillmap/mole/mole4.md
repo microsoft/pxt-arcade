@@ -205,8 +205,8 @@ let myMole: Sprite = null
 scene.setBackgroundImage(assets.image`grid`)
 myMole = sprites.create(assets.image`mole`, SpriteKind.Enemy)
 let myHammer = sprites.create(assets.image`hammer`, SpriteKind.Player)
-//@highlight
 simplified.moveOnlyOnscreenWithArrows(myHammer, simplified.Speeds.Fast)
+//@highlight
 carnival.startCountdownGame(15, carnival.WinTypes.Multi)
 carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom)
 ```
