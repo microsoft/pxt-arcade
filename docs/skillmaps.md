@@ -16,9 +16,17 @@
   "directOpen": true
 },
 {
+  "name": "Code an Adventure",
+  "cardType": "link",
+  "description": "Code a text-based adventure game using your own images, storyline, and music score!",
+  "imageUrl": "/static/skillmap/backgrounds/adventure-map.png",
+  "url": "https://arcade.makecode.com/--skillmap#adventure",
+  "directOpen": true
+},
+{
   "name": "Whack-the-Mole",
   "cardType": "link",
-  "description": "Create your own mole whacking carnival game. Double-click the first level to start.",
+  "description": "Create your own mole whacking carnival game.",
   "imageUrl": "/static/skillmap/backgrounds/mole.gif",
   "url": "https://arcade.makecode.com/--skillmap#mole",
   "directOpen": true

@@ -219,6 +219,20 @@ When your rubber hammer overlaps the mole, points should show up in the top-righ
 
 You've created a Whack-the-Mole game!
 
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/mole/share.gif )
+
+hint~
+
+
 When you're ready, click **Done** to return to the skillmap so you can turn it into a game for two players!
 
 
@@ -246,7 +260,7 @@ simplified.moveToRandomHoleOnGrid(myMole)
 
 ```package
 carnival=github:microsoft/arcade-carnival#v0.0.7
-mole-images=github:kiki-lee/mole-images#v0.0.3
+mole-images=github:microsoft/arcade-tutorial-extensions/mole-images#v0.0.11
 ```
 
 

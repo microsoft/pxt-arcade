@@ -12,19 +12,18 @@ Follow these quick steps to make greeting cards that you can share with friends 
 
 ## {Step 2}
 
-**Set the Background**<br/>
-🎨 🎨 🎨
+**Set the background**
 
 ---
 
 - :tree:  From the ``||scene:Scene||`` category in the toolbox,
 grab
-
 ```block
 scene.setBackgroundImage(img`.`)
 ```
-
-and drag it into the ``||loops(noclick):on start||`` container that's already in the workspace.
+and drag it into the empty<br/>
+``||loops(noclick):on start||``<br/>
+container in the workspace.
 
 ~hint Click here to see how 🕵🏽
 
@@ -33,9 +32,9 @@ and drag it into the ``||loops(noclick):on start||`` container that's already in
 ![The background gallery](/static/skillmap/story/choose-bg.gif "Toggle between editor and gallery" )
 hint~
 
-- :mouse pointer: Click **Next** to move on to the next step.
+<br/><br/>
 
-
+- :right arrow: Click **Next** to move on to the next step.
 
 
 #### ~ tutorialhint
@@ -47,15 +46,14 @@ scene.setBackgroundImage(img`.`)
 
 
 
+
 ## {Step 3}
 
 
 - :paint brush:  Click the empty grey square inside
-
 ```block
 scene.setBackgroundImage(img`.`)
 ```
-
 to open the **image editor**. <br/><br/>
 You can draw your own background or choose one from the **Gallery**.
 ![This is where the gallery is located](/static/skillmap/assets/gallery.png "You can switch over to the gallery or make your own image." )
@@ -98,12 +96,13 @@ Do you see the background you chose?
 ---
 
 - :ticket:  From the ``||carnival:Carnival||`` category, drag
-
 ```block
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 ```
+into **the end** of the <br/>
+``||loops(noclick):on start||``<br/>
+container that's already in the workspace.
 
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
 
 - :mouse pointer: Change the message to whatever you would like.
 
@@ -158,7 +157,7 @@ hint~
 ```blocks
 scene.setBackgroundImage(storySprites.halloween)
 //@highlight
-carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
+carnival.addLabelTo("You Are Awesome", carnival.Areas.Top, 1)
 
 ```
 
@@ -172,12 +171,13 @@ carnival.addLabelTo("You Are Awesome", carnival.Areas.Top)
 ---
 
 - :tree:  Open the ``||scene:Scene||`` category and drag
-
 ```block
 effects.confetti.startScreenEffect()
 ```
+into **the end** of the <br/>
+``||loops(noclick):on start||``<br/>
+ container that's already in the workspace.
 
-into **the end** of the ``||loops(noclick):on start||`` container that's already in the workspace.
 
 - :mouse pointer: Change the effect to whatever you would like.
 
@@ -249,6 +249,7 @@ carnival=github:microsoft/arcade-carnival#v0.0.7
 
 
 ```ghost
+scene.setBackgroundColor(1)
 scene.setBackgroundImage(img`.`)
 effects.confetti.startScreenEffect()
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Bottom)

@@ -287,6 +287,20 @@ carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
 
 You've finished your two-player game!
 
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/balloon/share.gif )
+
+hint~
+
+
 When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
 
 
@@ -335,7 +349,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
 sprite-scaling
 carnival=github:microsoft/arcade-carnival#v0.0.7
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
-balloon-images=github:kiki-lee/balloon-images#v0.0.2
+balloon-images=github:microsoft/arcade-tutorial-extensions/balloon-images#v0.0.11
 ```
 
 
