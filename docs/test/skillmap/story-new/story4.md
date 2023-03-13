@@ -420,6 +420,7 @@ arcade-animations=github:microsoft/arcade-character-animations
 
 ```ghost
 music.stopAllSounds()
+scene.setBackgroundColor(1)
 pauseUntil(() => controller.anyButton.isPressed())
 scene.setBackgroundImage(assets.image`page1`)
 pause(1000)

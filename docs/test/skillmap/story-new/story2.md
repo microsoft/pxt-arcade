@@ -284,6 +284,7 @@ effects.confetti.startScreenEffect()
 ```
 
 ```ghost
+scene.setBackgroundColor(1)
     game.setDialogTextColor(1)
     game.setDialogFrame(img`
         88888..8888888888888888....88888.

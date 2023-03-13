@@ -48,7 +48,7 @@ scene.setBackgroundImage(img`.`)
 ---
 
 
-- :paint brush: Click the grey box inside
+- :paint brush: Click the empty box inside
 ```block
 scene.setBackgroundImage(img`.`)
 ```
@@ -143,9 +143,11 @@ and snap it into **the end** of the ``||loops(noclick): on start||`` container.
 
 hint~
 
+
 ```blockconfig.local
 let talent: Sprite = null
 talent.bottom = 115
+scene.setBackgroundColor(1)
 ```
 
 #### ~ tutorialhint
@@ -169,6 +171,11 @@ talent.bottom = 115
 You should see your character posing in the spotlight on stage.
 
 
+```blockconfig.local
+let talent: Sprite = null
+talent.bottom = 115
+scene.setBackgroundColor(1)
+```
 
 
 ## {Step 8}
@@ -203,6 +210,13 @@ game.splash("Press (A) to play!")
 
 hint~
 
+
+```blockconfig.local
+let talent: Sprite = null
+talent.bottom = 115
+scene.setBackgroundColor(1)
+```
+
 #### ~ tutorialhint
 
 ```blocks
@@ -236,7 +250,10 @@ bundle and drop it into **an empty area** of the workspace.
 
 hint~
 
+
+
 ```blockconfig.local
+scene.setBackgroundColor(1)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
@@ -279,6 +296,14 @@ block into **the bottom** of the<br/>
 
 hint~
 
+
+```blockconfig.local
+scene.setBackgroundColor(1)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+})
+```
+
 #### ~ tutorialhint
 
 ```blocks
@@ -318,9 +343,11 @@ When you're finished, click **Done** to return to the main page to move forward 
 
 
 
-```blockconfig.global
-let talent = sprites.create(img`.`, SpriteKind.Player)
-talent.bottom = 115
+```blockconfig.local
+scene.setBackgroundColor(1)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+})
 ```
 
 

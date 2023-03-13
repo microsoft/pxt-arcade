@@ -4,7 +4,7 @@
 
 ## {Intro @showdialog}
 
-A fantastic game can be made even better by adding small details.
+A fantastic game can get even better with extra details.
 
 This tutorial will show you how to animate your characters.
 
@@ -56,8 +56,9 @@ animation.runImageAnimation(mamaDino, [img`.`], 100, true)
 
 ---
 
-- :paint brush:  To select an animation, click the empty box in
-``||animation(noclick):animate [mamaDino]||`` and toggle to **My Assets**.
+- :paint brush:  To select an animation, click the empty box in<br/>
+``||animation(noclick):animate [mamaDino]||``<br/>
+ and swith to **My Assets**.
 
 - :mouse pointer:  Select **Mama Moving** and click **Done**.
 
@@ -102,7 +103,9 @@ into the ``||loops(noclick):forever||`` loop where your main
 and snap it **just above** the ``||loops:pause [1000]||`` block.
 
 
-- :mouse pointer:  Choose the **Animated Baby** animation and select the interval.
+- :mouse pointer:  Click the empty box and choose **Animated Baby** from **My Assets**.
+
+
 ```blockconfig.local
 animation.runImageAnimation(babyDino, img`.`, 100, true)
 ```
@@ -129,9 +132,10 @@ true
 ## {Step 7}
 
 
-- :binoculars: Play your game again.
+- :binoculars: Play your game again.<br/><br/>
+**Looking good!**
 
-Looking good!
+
 
 
 
@@ -152,7 +156,9 @@ into the ``||loops(noclick):forever||`` loop where
 and snap it **just above** the ``||loops:pause [2100]||`` block.
 
 
-- :mouse pointer:  Choose the **Animated Tourist** and select the interval.
+- :mouse pointer:  Click the empty box and choose **Animated Tourist** from **My Assets**.
+
+
 ```blockconfig.local
 animation.runImageAnimation(tourist, img`.`, 100, true)
 ```

@@ -426,7 +426,7 @@ true
 carnival.addLabelTo("Press (A) for a joke", carnival.Areas.Top, 2)
 scene.cameraShake(4, 500)
     mySprite.setVelocity(-20, 0)
-
+scene.setBackgroundColor(1)
 ```
 
 

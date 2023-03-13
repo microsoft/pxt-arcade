@@ -27,9 +27,7 @@ Let's add a new kind of projectile, an ``||sprites:Enemy||``!
 
 ---
 
-- :paper plane:  Grab the
-``||loops:forever||``
-loop container and drop it into an empty area of the workspace.
+- :redo:  From the ``||loops:Loops|`` category, grab
 ```block
 forever(function () {
     let tourist = sprites.createProjectileFromSide(img`.`, -90, 0)
@@ -37,12 +35,12 @@ forever(function () {
     pause(2100)
 })
 ```
+and drop it into an empty area of the workspace.
 
-
-- :paint brush:  Click the empty grey box in the <br/>
+- :paint brush:  Click the empty box in the <br/>
 ``||sprites:projectile [ ] from side||`` <br/>
 block for ``||variables(noclick):tourist||``
-and switch to **My Assets** to select the blue car.
+and switch to **My Assets** to select the blue car called **tourist**.
 
 
 ```blockconfig.local
@@ -72,14 +70,14 @@ We still have to set the vertical positions on the screen.
 
 ---
 
-- :paper plane:  We'll need to grab
+- :paper plane:  From ``||sprites:Sprites||``, grab
 ```block
 let tourist: Sprite = null
 tourist.y = randint(15, 115)
 ```
-and snap it **right below** the **projectile block**.
+and snap it **right below** the ``||variables(noclick):tourist||`` **set projectile** block.
 
-This causes our ``||sprites:Enemy||`` sprites to start at a different height each time.
+This causes our ``||sprites(noclick):Enemy||`` sprites to start at a different height each time.
 
 #### ~ tutorialhint
 
@@ -96,8 +94,7 @@ forever(function () {
 ## {Step 6}
 
 
-**Try your game on the game screen**<br/>
-🎮 🎮 🎮
+- :binoculars: Try your game on the game screen.
 
 How is it working?
 
@@ -113,14 +110,14 @@ What are we going to do about it?
 ---
 
 
-- :paper plane:  From ``||sprites:Sprites||``, grab the
+- :paper plane:  From ``||sprites:Sprites||``, grab
 ```block
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(-1)
 })
 ```
-bundle and drop it into an **empty area** of the workspace.
+and drop it into an **empty area** of the workspace.
 
 This has code to reduce our life points when Mama gets hit by a tourist.
 
@@ -151,15 +148,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 This game has it all...drama, enemies, winning, and losing!
 
-Play until the end before moving along.
-
 **Can you get more than 15 points before time runs out?**
 
 
 
 ## {Finale}
 
-**What an amazing creation!**
+**What an amazing creation!**<br/>
 🚗 🚗 🚗
 
 

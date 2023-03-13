@@ -139,7 +139,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Does it look like the audience only cheers one time, even when (A) is pressed over and over?
 
-Step to the next set of instructions to discover how to keep the applause going.
+Click **Next** to discover how to keep the applause going.
 
 
 
@@ -188,7 +188,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 ## {Step 9}
 
 - :binoculars: Test again on the game screen to make sure the audience
-claps with each press and release of the (A) button (or space bar).
+cheers with each press and release of the (A) button (or space bar).
 
 
 
@@ -283,6 +283,10 @@ let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
 talent.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
+```
+
+```ghost
+scene.setBackgroundColor(1)
 ```
 
 

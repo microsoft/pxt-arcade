@@ -249,6 +249,7 @@ carnival=github:microsoft/arcade-carnival#v0.0.7
 
 
 ```ghost
+scene.setBackgroundColor(1)
 scene.setBackgroundImage(img`.`)
 effects.confetti.startScreenEffect()
 carnival.addLabelTo("You Are Awesome", carnival.Areas.Bottom)
