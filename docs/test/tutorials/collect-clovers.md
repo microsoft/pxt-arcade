@@ -790,7 +790,7 @@ bee.setKind(SpriteKind.Enemy)
 
 
 ```package
-clover=github:kiki-lee/clover-images
+clover=github:microsoft/arcade-tutorial-extensions/clover-images#v0.0.11
 ```
 
 
