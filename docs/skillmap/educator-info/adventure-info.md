@@ -44,7 +44,7 @@ After completing Code an Adventure, students will have gained exposure to all th
 | Activity | Start Your Journey (20 min) |
 |---|---|
 | ![Start Your Journey thumbnail](/static/skillmap/adventure/adventure1.png) | Create an adventure story using conditionals! |
-| Blocks used |  ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[let mySprite = sprites.create(img`.`, SpriteKind.Enemy)]`` <br/> ``[game.onUpdateInterval(1000, function () {}]``|
+| Blocks used |  ``[adventure.addToTextlog(" ")]`` <br/> ``[pauseUntil(() => controller.anyButton.isPressed())]``  <br/> ``[if (controller.A.isPressed()) {}else{}]`` <br/> ``[game.gameOver(true)]``|
 | Solution option | [Start Your Journey Project](https://makecode.com/_4mm41U3qkcAE) |
 
 #### 2. Make it Spectacular
@@ -52,7 +52,7 @@ After completing Code an Adventure, students will have gained exposure to all th
 | Activity | Make it Spectacular (25 min) |
 |---|---|
 | ![Make it Spectacular thumbnail](/static/skillmap/adventure/adventure2.gif) | Create your own music and images to enhance out your adventure!|
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[sprites.move_to_random_hole_on_grid(mySprite)]`` <br/> ``[controller.move_only_onscreen_with_arrows(myHammer, speeds.Fast)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]`` <br/> ``[info.startCountdownGame(20, winTypes.Score, effects.confetti)]`` <br/> ``[info.changeScoreBy(1)]`` <br/> ``[sprites.move_to_random_hole_on_grid(mySprite)]`` |
+| Blocks used | ``[function quest1() {} quest1()]`` <br/> ``[music.play( (music.createSong(hex`00780004080200`)), music.PlaybackMode.InBackground)]`` <br/> ``[ adventure.addImageToTextLog()]`` |
 | Solution option | [Make it Spectacular Project](https://makecode.com/_f2cRsVFCzT27) |
 
 #### 3. Lives and Gold
@@ -60,7 +60,7 @@ After completing Code an Adventure, students will have gained exposure to all th
 | Activity | Lives and Gold (30 min) |
 |---|---|
 | ![Lives and Gold thumbnail](/static/skillmap/adventure/adventure3.gif) | Finish your game with functions by adding more quests — including danger and rewards! |
-| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimationHammer(myHammer,[img`.`],100,false)]`` <br/>``[scene.add_label_to("Code an Adventure", areas.Bottom)]`` |
+| Blocks used | ``[info.setLife(5)]`` <br/> ``[info.changeLifeBy(-1)]`` <br/>``[adventure.changeScoreOverride(adventure.Currency.Coins, 5)]`` |
 | Solution option | [Lives and Gold Project](https://makecode.com/_RoPfKtCDXEf9) |
 
 
