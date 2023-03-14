@@ -20,13 +20,13 @@ music.melodyPlayable(music.baDing)
 ```cards
 music.play(null, music.PlaybackMode.UntilDone)
 music.tonePlayable(262, music.beat(BeatFraction.Whole))
-music.ringTone(0);
-music.rest(0);
-music.noteFrequency(Note.C);
-music.beat(BeatFraction.Whole);
-music.tempo();
-music.changeTempoBy(20);
-music.setTempo(120);
+music.ringTone(0)
+music.rest(0)
+music.noteFrequency(Note.C)
+music.beat(BeatFraction.Whole)
+music.tempo()
+music.changeTempoBy(20)
+music.setTempo(120)
 music.setVolume(0)
 music.stopAllSounds()
 ```
