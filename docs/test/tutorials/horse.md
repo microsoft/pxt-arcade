@@ -18,22 +18,22 @@ The workspace has been pre-loaded with a function that will help set up your hor
 
 You don't need to know how <br/>
 ``||functions:set_up_for_players [num]||`` <br/>
-works, only that you call it using the number of players you want to add to the game.
+works...only that you call it using the number of players you want to add to the game.
 
 If you want see what's inside, click the down arrow to open the function.
 
-
+![Look inside the function](/static/tutorials/horse/expand.gif )
 
 
 ## {3. Your First Block}
 
 **Ready to start coding?**
 
-Let's set the scene with a background.
+Set the scene with a background.
 
 
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab
-<br/>``||scene:set background to [ ]||``<br/>
+<br/>``||scene:set background image to [ ]||``<br/>
 then snap it into **the end** of the <br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
@@ -106,6 +106,8 @@ function set_up_for_players (num: number) {
 
 You should see a background frame with your horses in front.
 
+![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
+
 
 
 
@@ -133,7 +135,17 @@ mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function
 
 
 
-## {7. Add the Finish Line}
+## {7. Play Game!}
+
+
+- :binoculars: Try playing in the game window.
+
+Your horses should move forward when you press the space bar.
+
+
+
+
+## {8. Add the Finish Line}
 
 **Add a finish line!**
 
@@ -146,7 +158,7 @@ container already in the workspace.
 
 - :mouse pointer: Click the empty grey square and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
-Choose the background called **finish**.
+Choose the image called **finish**.
 ![Choose the background](/static/tutorials/horse/finish.png " ")
 
 
@@ -174,7 +186,7 @@ function set_up_for_players (num: number) {
 
 
 
-## {8. Move the Finish Line}
+## {9. Move the Finish Line}
 
 **Move the finish line to the end.**
 
@@ -208,7 +220,7 @@ function set_up_for_players (num: number) {
 
 
 
-## {9. Check Your Game!}
+## {10. Check Your Game!}
 
 
 - :binoculars: Play your game.
@@ -217,10 +229,10 @@ You should see the red horse move when you press the **(A) button**.
 
 You can make **player 2** move by pressing the **U key** on your keyboard, or your can click the multiplayer icons to test any player with the space bar.
 
-![Play with the emulator buttons](/static/tutorials/horse/multi.png " ")
+![Play with the emulator buttons](/static/tutorials/assets/multi.png " ")
 
 
-## {10. Overlap Finish Line}
+## {11. Overlap Finish Line}
 
 **We need a winner when someone reaches the finish line.**
 
@@ -245,7 +257,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Finish, function (sprite, otherS
 
 
 
-## {11. Play Again!}
+## {12. Play Again!}
 
 
 - :binoculars: Go for the win!
@@ -254,7 +266,7 @@ Play your game against yourself using the **space bar** and **U key** on your ke
 
 
 
-## {12. Add the finishing touches!}
+## {13. Add the finishing touches!}
 
 Let's add a screen that keeps the game from starting until everyone is ready.
 
@@ -298,7 +310,7 @@ game.wrap(function () {
 
 
 
-## {13. Play Game!}
+## {14. Play Game!}
 
 
 - :binoculars: Play your finished game!
@@ -311,7 +323,7 @@ You can play against someone else on the same keyboard using the **space bar** f
 
 
 
-## {14. Finale}
+## {15. Finale}
 
 **🎉 Way to Go 🎉**
 
@@ -425,7 +437,7 @@ carnival.startTimer()
 ```package
 multiplayer
 arcade-carnival=github:microsoft/arcade-carnival#v0.0.7
-horserace-images=github:kiki-lee/horserace-images#v0.0.1
+horserace-images=github:microsoft/arcade-tutorial-extensions/horserace-images#v0.0.8
 ```
 
 ```customts

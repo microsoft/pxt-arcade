@@ -20,7 +20,7 @@ Does your score go up when you click the (A) button? Does the game end when time
 
 ---
 
-- :mouse pointer: Click **Next** when you're ready to edit the game.
+- :right arrow: Click **Next** when you're ready to edit the game.
 
 
 ## {Step 3}
@@ -40,7 +40,6 @@ container that's already in the workspace.
 
 - :paint brush: Click the empty square and switch to **My Assets**
 to choose the long audience sprite called **clap1**.
-
 ![Choose the audience image where you can't see the giraffe's neck](/static/skillmap/star/clap1.png )
 
 
@@ -117,8 +116,6 @@ and snap it into **the bottom** of the <br/>
 
 - :paint brush: Click the empty square and switch to **My Assets** to
 choose the other audience pose (called **clap2**.)
-
-
 ![Choose the audience image where you CAN see the giraffe's neck](/static/skillmap/star/clap2.png )
 
 
@@ -140,9 +137,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 **Try it out on the game screen**<br/>
 🎮 🎮 🎮
 
-- :binoculars: Does it look like the audience cheers a single time, even when (A) is pressed over and over?
+- :binoculars: Does it look like the audience only cheers one time, even when (A) is pressed over and over?
 
-Step to the next set of instructions to discover how to keep the applause going.
+Click **Next** to discover how to keep the applause going.
 
 
 
@@ -165,7 +162,6 @@ bundle into an empty area of the workspace.
 
 - :mouse pointer:  Click the empty square to choose the same
 **clap1** image that was used for the original sprite.
-
 ![Choose the audience image where you can't see the giraffe's neck](/static/skillmap/star/clap1.png )
 
 Now, when you let go of the (A) button (or space bar), the audience will go back to its original image.
@@ -192,7 +188,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 ## {Step 9}
 
 - :binoculars: Test again on the game screen to make sure the audience
-claps with each press and release of the (A) button.
+cheers with each press and release of the (A) button (or space bar).
 
 
 
@@ -205,13 +201,13 @@ It also tells you that **you've lost** when time runs out. Let's change that.
 ---
 
 - :id card: From ``||info:Info||``, grab
-
 ```block
 info.onCountdownEnd(function () {
     game.over(true, effects.confetti)
 })
 ```
 and drop it into **an empty area** of the workspace.
+
 
 
 ```blockconfig.local
@@ -246,21 +242,27 @@ Click as fast as you can to see how many points you can get in 10 seconds.
 
 ---
 
-Compete for the most clicks in 10 seconds! When you're finished, click **Done** to
-return to the main page where you can keep going and find out how to throw stars at the stage.
+Compete for the most clicks in 10 seconds!
+
 
 
 ~hint How do I share my game?💡
 
 ---
 
-**Want to share your project?**
+**Want to share your game?**
 
 Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
 
-![Share your card](/static/skillmap/star/share.gif )
+![Share your game](/static/skillmap/star/share.gif )
 
 hint~
+
+When you're finished, click **Done** to
+return to the main page where you can keep going and find out how to throw stars at the stage.
+
+
+
 
 
 ```blockconfig.global
@@ -281,6 +283,10 @@ let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
 talent.bottom = 115
 game.splash("Press (A) to play!")
 info.startCountdown(10)
+```
+
+```ghost
+scene.setBackgroundColor(1)
 ```
 
 

@@ -65,7 +65,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Try your project on the game screen!
 
-Does the audience randomly throw stars and roses when you press the (A) button?
+Does the audience switch between throwing stars and roses when you
+press the (A) button (or space bar)?
 
 
 ## {Step 5}
@@ -127,7 +128,7 @@ Now you have a full-featured talent show clicker game!
 
 ---
 
-Play your game to see how many items you can toss before time runs out. <br/>
+Play your game to see how many points you can get before time runs out. <br/>
 **Can you get to 60?**
 
 ~hint How do I share my game?💡
@@ -174,6 +175,10 @@ audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.bottom = 120
 game.splash("Press (A) to play!")
 info.startCountdown(10)
+```
+
+```ghost
+scene.setBackgroundColor(1)
 ```
 
 

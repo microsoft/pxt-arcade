@@ -308,6 +308,20 @@ You should see the instructions before the game starts.  Press the A button to c
 
 You've finished your Whack-the-Mole game!
 
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/mole/share.gif )
+
+hint~
+
+
 When you're ready, click **Done** to return to the skillmap to claim your badge and share your game with friends and family.
 
 
@@ -351,7 +365,7 @@ simplified.moveToRandomHoleOnGrid(myMole)
 
 ```package
 carnival=github:microsoft/arcade-carnival#v0.0.7
-mole-images=github:kiki-lee/mole-images#v0.0.3
+mole-images=github:microsoft/arcade-tutorial-extensions/mole-images#v0.0.11
 ```
 
 

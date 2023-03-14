@@ -219,7 +219,7 @@ and snap it in to the <br/>
 container wherever it works best for your story.
 
 
-- :mouse pointer: Choose your sprite, then check out the  ``||scene:Scene||`` category to find other blocks that
+- :mouse pointer: Choose your sprite, then check out the  ``||sprites:Sprites||`` category to find other blocks that
 let you perfectly position your sprite or add movement.
 
 
@@ -266,7 +266,7 @@ mySprite.setPosition(80, 90)
 
 
 
-## {Step 9}
+## {Step 10}
 
 **👏 Happily ever after 👏**
 
@@ -403,9 +403,9 @@ hint~
 When you're done reading your story, click **Done** to return to the main page where you can share with everyone you know!
 
 ```blockconfig.global
+pause(1000)
 let mySprite: Sprite = null
 carnival.addLabelTo(" ", carnival.Areas.Top)
-pause(1000)
 game.showLongText("Once upon a time...", DialogLayout.Bottom)
 music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 mySprite.setFlag(SpriteFlag.StayInScreen, true)
@@ -420,6 +420,8 @@ arcade-animations=github:microsoft/arcade-character-animations
 
 ```ghost
 music.stopAllSounds()
+scene.setBackgroundColor(1)
+pauseUntil(() => controller.anyButton.isPressed())
 scene.setBackgroundImage(assets.image`page1`)
 pause(1000)
 game.showLongText("Once upon a time", DialogLayout.Bottom)

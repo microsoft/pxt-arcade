@@ -1,378 +1,335 @@
-# Start Your Journey
+# Lives and Gold
 ### @explicitHints true
 
 
 ## {Intro @showdialog}
 
 
-Are you ready to create an adventure?
+Let's add some gold to your quest.
 
-Follow the steps of this tutorial to create your own text-based adventure game.
+The code for your adventure is already in the workspace. <br/>
+We can keep adding to it.
 
-![Let's go on an adventure!](https://media.giphy.com/media/fYru9bLqxEeTqyBmRg/giphy.gif "Image of owlbear raging at red mage" )
+![Let's go on an adventure!](https://media.giphy.com/media/zRW20g1KJpzQg8rbcE/giphy.gif "Image of mimic giving Holga a tongue lashing" )
 
 _© 2023 Paramount Pictures. Hasbro, Dungeons &
 Dragons and all related characters are trademarks of
 Hasbro. © 2023 Hasbro._
 
 
-## {2. Explain the Issue}
+## {Step 2}
 
-**We need a quest!**<br/>
+**Set a starting number of lives**<br/>
+❤️ ❤️ ❤️
 
-
-~hint What am I doing? 🤷🏽‍♂️
-
----
-
-**We are coding a game!**
-
-Modeled after an old-school text-based adventure, you're about to code a game using your own artwork, theme music, and storyline!
-
-But first, you need to learn how MakeCode Arcade works.
-
-We will use the formatted text:<br/>
-``||adventure: add ["A traveling..."] to text log||``
-
-
-To tell you to grab the block:
-```block
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-```
-
-So you can snap it inside the <br/>
-``||loops(noclick):on start||`` <br/>
-container in the workspace and start your program.
-
-```blocks
-//@highlight
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-```
-
-
-![Drag the block from the toolbox in the workspace](/static/skillmap/adventure/how-to-adventure.gif)
-
-hint~
-
-
-- :compass: Open the <br/>
-``||adventure: Adventure||``<br/>
-category in the toolbox and grab<br/>
-``||adventure: add ["A traveling..."] to text log||`` <br/>
-to connect inside the empty<br/>
-``||loops(noclick):on start||`` <br/>
-container already in the workspace.
-
-- :mouse pointer: Change the text to set up the problem that your player will face.
+Instead of ending the game when things go poorly, you can take away a life.
 
 ---
 
-- :arrow right: When you're ready to move to the next step, click the **Next** button.
 
-
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-
-```
-
-
-
-
-## {3. Check Your Project}
-
-Take a look at what you have so far.
-
-- :binoculars: Look at your project in the game window to see what happens!
-
-![Look for the game window in the lower right](/static/skillmap/mole/game1.png "Click the mini game window to pop open the bigger game window.")
-
-
-```blockconfig.local
-adventure.addToTextlog("Press (A) to join the fun." )
-```
-
-
-
-
-## {4. Give option A}
-
-**Time for a decision!**
-
-What options do you want to give the player?  Make sure that one option turns out well, and one turns out poorly.
-
-- :compass: From ``||adventure: Adventure||``, drag the<br/>
-``||adventure: add ["Press (A)..."] to text log||`` <br/>
-block into the **end of** the<br/>
+- :id card: From ``||info: Info||``, drag <br/>
+``||info: set life to [5]||`` <br/>
+into **the top of** the<br/>
 ``||loops(noclick):on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Change the text to let the player know the story will have a good outcome if they press the (A) button (or space bar).
-
-
-```blockconfig.local
-adventure.addToTextlog("Press (A) to join the fun." )
-```
-
 
 #### ~ tutorialhint
 
 ```blocks
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+//@hide
+function quest1(){}
+
 //@highlight
-adventure.addToTextlog("Press (A) to join the fun." )
+info.setLife(4)
+quest1()
+
 ```
 
 
 
 
-## {5. Give option B}
+## {Step 3}
 
-**Option B...**
-
-Add your second option. <br/>
-(This one won't turn out as well.)
-
-- :compass: From ``||adventure: Adventure||``, drag the<br/>
-``||adventure: add ["Press (B)..."]to text log||`` <br/>
-block into the **end of** the<br/>
-``||loops(noclick):on start||`` <br/>
-container already in the workspace.
-
-- :mouse pointer: Change the text to hint that the story will take a bad turn if they press the (B) button (or enter key).
-
-💡 _Not sure if you have all the right blocks? **Click the lightbulb button below** the instructions to see what should have happened in this step._
-
-
-```blockconfig.local
-adventure.addToTextlog("Press (B) to turn and run." )
-```
-
-
-
-#### ~ tutorialhint
-
-```blocks
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-adventure.addToTextlog("Press (A) to join the fun." )
-//@highlight
-adventure.addToTextlog("Press (B) to turn and run." )
-```
-
-
-
-
-## {6. Wait}
-
-**Wait for an answer.**
-
-Add code to wait for the players decision.
-
-- :redo: From ``||loops: Loops||``, drag<br/>
-``||loops: pause until <true>||`` <br/>
-into the **end of** the<br/>
-``||loops(noclick):on start||`` <br/>
-container already in the workspace.
-
-- :game: From ``||controller: Controller||``, drag<br/>
-``||controller: <is [any] button pressed>||`` <br/>
-in to replace **`<true>`** in the<br/>
-``||loops(noclick):pause until <true>||`` <br/>
-block already in the workspace.
-
-
-
-```blockconfig.local
-adventure.addToTextlog("Press (B) to turn and run." )
-pauseUntil(() => controller.anyButton.isPressed())
-```
-
-
-
-#### ~ tutorialhint
-
-```blocks
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-adventure.addToTextlog("Press (A) to join the fun." )
-adventure.addToTextlog("Press (B) to turn and run." )
-//@highlight
-pauseUntil(() => controller.anyButton.isPressed())
-```
-
-
-
-
-
-
-## {7. Results}
-
-**Choose a path.**
-
-Now it's time to add a conditional to handle the path that was chosen.
-
-~hint What's a conditional? 💡
+Now **duplicate** another quest to create an option for when the player chooses (B) that first time.
 
 ---
 
-A **conditional** is a piece of code that runs only when a **condition** is met.
+- :mouse pointer: Right click on <br>
+``||functions(noclick): quest2||`` and choose
+**Duplicate** from the dropdown menu.
 
-We are going to add an **if/else** statement that runs the
-code inside the **if** section only if the player **presses (A)**.
+- :binoculars: You have created a third function called ``||function: quest3||``!
 
-Otherwise, it will run the code inside the **else** section.
-
-```block
-if (controller.A.isPressed()) { } else { }
-```
-
-
-hint~
-
-- :shuffle: From ``||logic: Logic||``, drag<br/>
-``||logic: if <true> then / else||`` <br/>
-into the **end of** the<br/>
-``||loops(noclick):on start||`` <br/>
-container already in the workspace.
-
-- :game: From ``||controller: Controller||``, drag<br/>
-``||controller: <is [A] button pressed>||`` <br/>
-in to replace **`<true>`** in the<br/>
-``||logic(noclick):if <true> then||`` <br/>
-part of the block already in the workspace.
-
-
-
-```blockconfig.local
-adventure.addToTextlog("Press (B) to turn and run." )
-controller.A.isPressed()
-```
+- :mouse pointer: Change the music, images, and text inside to create a new adventure!
 
 
 
 #### ~ tutorialhint
 
 ```blocks
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-adventure.addToTextlog("Press (A) to join the fun." )
-adventure.addToTextlog("Press (B) to turn and run." )
-pauseUntil(() => controller.anyButton.isPressed())
 //@highlight
-if (controller.A.isPressed()) { } else { }
+function quest3() {
 
-```
-
-
-## {8. Outcomes A}
-
-**The good...**
-
-For now, we'll end the game as a **win** when the user chooses (A).
-
-
-- :compass: From ``||adventure: Adventure||``, drag<br/>
-``||adventure:add ["Great Choice..."] to text log||`` <br/>
-into top section of the empty<br/>
-``||logic(noclick):if <is [A] button pressed> then||`` <br/>
-container in your code.
-
-- :circle: From ``||game: Game||``, drag<br/>
-``||game: game over <WIN>||`` <br/>
-into the same <br/>
-``||logic(noclick):if <is [A] button pressed> then||`` <br/>
-container, **right below** the new line of text.
-
-
-```blockconfig.local
-adventure.addToTextlog("Great choice! Enjoy your adventure." )
-controller.A.isPressed()
-```
-
-
-#### ~ tutorialhint
-
-```blocks
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-adventure.addToTextlog("Press (A) to join the fun." )
-adventure.addToTextlog("Press (B) to turn and run." )
-pauseUntil(() => controller.anyButton.isPressed())
-if (controller.A.isPressed()) {
-    //@highlight
-    adventure.addToTextlog("Great choice! Enjoy your adventure." )
-    //@highlight
-    game.gameOver(true)
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+    adventure.addImageToTextLog(assets.image`mimic`)
+    adventure.addToTextlog("You pass up a treasure that appears to be just out of grasp.")
+    adventure.addToTextlog("Press (A) to turn around and go after the chest." )
+    adventure.addToTextlog("Press (B) to continue walking out of the forest." )
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.A.isPressed()) {
+        adventure.addToTextlog("The treasure is a mimic and it attacks without warning." )
+        game.gameOver(true)
     } else {
+        adventure.addToTextlog("You reach the edge of the forest and something shiny catches your eye." )
+        game.over(false)
+    }
 
-
+}
 ```
 
 
 
-## {9. Outcomes B}
-
-**The bad...**
-
-For now, we'll end the game as **lose** when the user chooses (B).
 
 
-- :compass: From ``||adventure: Adventure||``, drag<br/>
-``||adventure:add ["Your adventure..."] to text log||`` <br/>
-into the empty bottom section of the<br/>
-``||logic(noclick):else||`` <br/>
-container in your code.
+## {Step 4}
 
-- :circle: From ``||game: Game||``, drag<br/>
-``||game: game over <LOSE> +||`` <br/>
-into the same<br/>
-``||logic(noclick):else||`` <br/>
-container, **right below** the new line of text.
+Now, instead of ending the game as a loss
+when the user presses (B) in **quest1**, you can remove a life and send the player on
+a different quest.
+
+---
+
+
+- :binoculars: Look inside of <br>
+``||functions(noclick): quest1||`` <br/>
+for the <br/>
+``||game(noclick): game over <LOSE> +||`` <br/>
+block, and delete it.
+
+
+- :id card: From ``||info:Info||`` , drag <br/>
+``||info: change life by [-1]||`` <br/>
+into  ``||functions(noclick): quest1||`` <br/>
+under **else**, where <br/>
+``||game(noclick): game over <LOSE> +||`` <br/>
+used to be.
+
+
+- :function: From the ``||function: Functions||`` category, add
+``||functions(noclcik):call quest3||`` <br/>
+right below <br/>
+``||info: change life by [-1]||``. <br/>
+
 
 
 ```blockconfig.local
-adventure.addToTextlog("Your adventure is over before it has even begun." )
-controller.A.isPressed()
-```
-
-
-#### ~ tutorialhint
-
-```blocks
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-adventure.addToTextlog("Press (A) to join the fun." )
-adventure.addToTextlog("Press (B) to turn and run." )
-pauseUntil(() => controller.anyButton.isPressed())
-if (controller.A.isPressed()) {
-    adventure.addToTextlog("Great choice! Enjoy your adventure." )
-    game.gameOver(true)
-    } else {
-    //@highlight
-    adventure.addToTextlog("Your adventure is over before it has even begun." )
-    //@highlight
+info.onLifeZero(function () {
     game.over(false)
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+//@hide
+function quest2(){}
+//@hide
+function quest3(){}
+
+function quest1() {
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+    adventure.addImageToTextLog(assets.image`lute`)
+    adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+    adventure.addToTextlog("Press (A) to join the fun." )
+    adventure.addToTextlog("Press (B) to turn and run." )
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.A.isPressed()) {
+        adventure.addToTextlog("Great choice! Enjoy your adventure." )
+        quest2()
+    } else {
+        adventure.addToTextlog("Your adventure is over before it has even begun." )
+        //@highlight
+        info.changeLifeBy(-1)
+        //@highlight
+        quest3()
+    }
 }
 
 ```
 
 
 
+## {5. Check Your Game!}
 
-## {10. Check Your Project}
+**Take a look at your adventure!**
 
-**Check out your adventure!**
+- :binoculars: Look at your project in the game window to see how it has changed!
 
-- :binoculars: Look at your project in the game window and choose a path!
+💡 _You may need to turn the sound on beside the game window to hear the music you added._
 
-You should win the adventure if you press the (A) buttonn and lose the adventure if you press the (B) button.
 
-💡 _You can also use the **space bar** on your keyboard instead of the (A) button and the **enter key** instead of the (B) button!_
+
+
+## {6. Add variety}
+
+**Shake it up!**
+
+Go through your functions and move things around.  Sometimes (A) should have a good outcome,
+but other times it should be the worst choice.
+
+💡 _These stories might start to get confusing as you go.  Try mapping it out on paper
+so you know exactly how many possibilities you want to create._
+
+
+
+
+```blockconfig.local
+info.onLifeZero(function () {
+    game.over(false)
+})
+```
+
+
+## {7. End Game}
+
+**End the game when you run out of lives.**
+
+---
+
+- :id card: From ``||info:Info||`` drag the<br>
+``||info: on life zero||`` <br/>
+bundle out into **an empty area** of the workspace.<br/>
+
+Now, when the player runs out of lives, the game will end as a loss.
+
+
+```blockconfig.local
+info.onLifeZero(function () {
+    game.over(false)
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+info.onLifeZero(function () {
+    game.over(false)
+})
+```
+
+
+
+
+## {8. Add Gold}
+
+**Add gold.**
+
+Just like you removed lives from the bad choices,
+try adding gold (changing the score) for the good choices.
+
+---
+
+- :binoculars: Look inside of <br>
+``||functions(noclick): quest1||`` <br/>
+for the <br/>
+``||functions(noclick): call quest2||`` <br/>
+block.
+
+
+- :id card: From ``||info:Info||`` , drag <br/>
+``||info: change score by [1]||`` <br/>
+in **just above** the <br/>
+``||functions(noclick): call quest2||`` <br/>
+block.
+
+
+#### ~ tutorialhint
+
+```blocks
+
+//@hide
+function quest2(){}
+//@hide
+function quest3(){}
+
+function quest1() {
+    music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+    adventure.addImageToTextLog(assets.image`lute`)
+    adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+    adventure.addToTextlog("Press (A) to join the fun." )
+    adventure.addToTextlog("Press (B) to turn and run." )
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.A.isPressed()) {
+        adventure.addToTextlog("Great choice! Enjoy your adventure." )
+        //@highlight
+        adventure.changeScoreOverride(img`.`, 1)
+        quest2()
+    } else {
+        adventure.addToTextlog("Your adventure is over before it has even begun." )
+        info.changeLifeBy(-1)
+        quest3()
+    }
+}
+```
+
+
+
+
+
+## {9. Win Game}
+
+**End the game when you get enough gold.**
+
+---
+
+- :id card: From ``||info:Info||`` drag the<br>
+``||info: on score [20]||`` <br/>
+bundle out into **an empty area** of the workspace.<br/>
+
+Now, when the player reaches 20 gold, the game will end as a win.
+
+Try changing the amount of gold needed to win or the number of lives the player starts with.
+
+
+```blockconfig.local
+info.onLifeZero(function () {
+    game.over(false)
+})
+
+info.onScore(20, function () {
+    game.gameOver(true)
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+info.onScore(20, function () {
+    game.gameOver(true)
+})
+```
+
+
+
+## {10. Check Your Game!}
+
+**Take another look at your adventure!**
+
+- :binoculars: Take a journey through all of your quests!  Is there more you want to say? More you want to do? <br/><br/>
+Do you have enough quests for your user to lose enough lives for a loss or earn enough gold for a win?
+
+You can keep adding more quests or more text until you're happy with your adventure.
+
+
 
 
 ## {Finish}
 
-**Congratulations, you've created the beginning of a text-based adventure!**<br/>
-🥳 🥳 🥳
+**Way to go!**<br/>
+🗺️
 
 ~hint How do I share my story?💡
 
@@ -386,18 +343,18 @@ Click "Done" to get back out to the skillmap, then look in the lower-right corne
 
 hint~
 
-Click **Done** to return to the main skillmap and get ready to create music and images for your project.
+Once you're happy with your adventure, click **Done** to return to the main skillmap
+where you can share your final story with family and friends.
+
 
 
 ```blockconfig.global
+adventure.addImageToTextLog(img`.`)
 music.setVolume(20)
-info.setLife(20)
-pauseUntil(() => controller.anyButton.isPressed())
-adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
-    if (controller.A.isPressed()) { } else { }
-controller.anyButton.isPressed()
+info.setLife(5)
+adventure.addToTextlog("Oh no! There is a dragon in your path!")
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
 ```
-
 
 
 ```package
@@ -407,17 +364,55 @@ dd=github:microsoft/arcade-tutorial-extensions/dnd-sprite-pack#v0.0.10
 
 
 
+```template
+quest1()
+
+function quest1() {
+
+    music.play(music.createSong( ), music.PlaybackMode.InBackground)
+    adventure.addImageToTextLog(assets.image`lute`)
+    adventure.addToTextlog("A traveling bard approaches and asks you to join his adventure.")
+    adventure.addToTextlog("Press (A) to join the fun." )
+    adventure.addToTextlog("Press (B) to turn and run." )
+    pauseUntil(() => controller.anyButton.isPressed())
+    if (controller.A.isPressed()) {
+        adventure.addToTextlog("Great choice! Enjoy your adventure." )
+        quest2()
+    } else {
+        adventure.addToTextlog("Your adventure is over before it has even begun." )
+        game.over(false)
+    }
+
+}
+function quest2() {
+    music.play(music.createSong( ), music.PlaybackMode.InBackground)
+    adventure.addImageToTextLog(assets.image`owlBear`)
+    adventure.addToTextlog("Out of the darkness, an Owlbear leaps toward your party.")
+    adventure.addToTextlog("Press (A) to back away slowly." )
+    adventure.addToTextlog("Press (B) to attack." )
+    pauseUntil(() => controller.anyButton.isPressed())
+   if (controller.A.isPressed()) {
+    adventure.addToTextlog("The group begins to laugh." )
+    adventure.addToTextlog("That's just Doric. She won't hurt you." )
+    game.gameOver(true)
+    } else {
+        adventure.addToTextlog("The group surrounds you with weapons drawn." )
+        adventure.addToTextlog("You're going to regret attacking Doric!" )
+        game.over(false)
+    }
+}
+
+```
+
+
 ```ghost
 info.setLife(3)
 info.changeLifeBy(-1)
-info.setScoreOverride(100)
 scene.setBackgroundColor(1)
-adventure.changeLogColors(2, 6)
-info.changeScoreOverride(1)
 adventure.setScoreOverride(adventure.Currency.Coins, 100)
 adventure.changeScoreOverride(adventure.Currency.Coins, 1)
+adventure.changeLogColors(2, 6)
 ```
-
 
 
 

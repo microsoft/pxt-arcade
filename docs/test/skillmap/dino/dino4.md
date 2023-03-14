@@ -4,7 +4,7 @@
 
 ## {Intro @showdialog}
 
-A fantastic game can be made even better by adding small details.
+A fantastic game can get even better with extra details.
 
 This tutorial will show you how to animate your characters.
 
@@ -13,36 +13,29 @@ This tutorial will show you how to animate your characters.
 
 ## {Step 2}
 
-The code for **Dino Mama** is already in the workspace.  
+The code for **Mama Dino** is already in the workspace.
 
 Play your game to make sure you're getting points when you grab a baby dino and that you're losing points if you run into a car.
 
 
 
-## {Step 3 @showdialog}
+## {Step 3}
 
 Let's animate Mama Dino!
 
----
 
-![Select an animation from the gallery](/static/skillmap/collector/select-anigif.gif "Or use My Assets" )
-
-
-
-
-## {Step 4}
+- :chevron down:  In the toolbox, click <br/>
+**Advanced**<br/>
+ to reveal the ``||animation:Animation||`` category.
 
 
-- :chevron down:  In the toolbox, click **Advanced** to reveal the  
-``||animation:Animation||`` category.
-
-- :sync:  Drag  
-
+- :sync: From ``||animation:Animation||`` , drag
 ```block
 animation.runImageAnimation(mamaDino, [img`.`], 100, true)
 ```
-into **the bottom** of the  
-``||loops:on start||`` container.
+into **the bottom** of the
+``||loops(noclick):on start||`` container.
+
 
 #### ~ tutorialhint
 
@@ -57,14 +50,15 @@ animation.runImageAnimation(mamaDino, [img`.`], 100, true)
 ```
 
 
-## {Step 5}
+## {Step 4}
 
 **🎥 Let's get animating 🎥**
 
 ---
 
-- :paint brush:  To select an animation, click the grey box in  
-``||animation:animate [mamaDino]||`` and toggle to **My Assets**.
+- :paint brush:  To select an animation, click the empty box in<br/>
+``||animation(noclick):animate [mamaDino]||``<br/>
+ and swith to **My Assets**.
 
 - :mouse pointer:  Select **Mama Moving** and click **Done**.
 
@@ -76,44 +70,23 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 info.startCountdown(15)
+//@highlight
 animation.runImageAnimation(mamaDino, assets.animation`Mama Moving`, 100, true)
 ```
 
-## {Step 6}
-
-**Watch your speed!**
-
----
-
-- :mouse pointer:  You can make your animation faster by changing the 
-**interval** to a lower number. Try using **100** or **200**.
-
-- :mouse pointer:  If you'd like to slow your animation down, 
-choose a longer **interval**.
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(assets.image`Freeway`)
-scroller.scrollBackgroundWithSpeed(-50, 0)
-let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
-controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
-info.startCountdown(15)
-//@highlight
-animation.runImageAnimation(mamaDino, assets.animation`Mama Moving`, 500, true)
-```
-
-## {Step 7}
 
 
-**Now try your game on the game screen**<br/>
-🎮 🎮 🎮 
+
+## {Step 5}
+
+
+- :binoculars: Play your game again.
 
 How cool is that?!?
 
 
 
-## {Step 8}
+## {Step 6}
 
 **Let's do it again**
 
@@ -121,15 +94,17 @@ You can follow the same steps to animate the baby.
 
 ---
 
-- :sync:  Drag  
-
+- :sync:  From ``||animation:Animation||``, drag
 ```block
 animation.runImageAnimation(babyDino, [img`.`], 100, true)
 ```
-into the ``||loops:forever||`` loop where your main ``||variables(noclick):babyDino||`` is created, 
+into the ``||loops(noclick):forever||`` loop where your main
+``||variables(noclick):babyDino||`` is created,
 and snap it **just above** the ``||loops:pause [1000]||`` block.
 
-- :mouse pointer:  Choose the **Animated Baby** animation and select the interval.
+
+- :mouse pointer:  Click the empty box and choose **Animated Baby** from **My Assets**.
+
 
 ```blockconfig.local
 animation.runImageAnimation(babyDino, img`.`, 100, true)
@@ -140,7 +115,7 @@ animation.runImageAnimation(babyDino, img`.`, 100, true)
 ```blocks
 forever(function () {
    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
-    projectile.y = randint(0, 120)
+    babyDino.y = randint(0, 120)
     //@highlight
     animation.runImageAnimation(
 projectile,
@@ -154,32 +129,35 @@ true
 ```
 
 
-## {Step 9}
+## {Step 7}
 
 
-**Try your project on the game screen!**  
-🎮 🎮 🎮 
-
-Looking good!
+- :binoculars: Play your game again.<br/><br/>
+**Looking good!**
 
 
 
-## {Step 10}
 
-**😈 Wicked 😈**
 
-Now you can do the same thing for your enemy sprite!
+## {Step 8}
+
+
+Now you can do the same thing for your enemy sprite!<br/>
+😈 😈 😈
 
 ---
 
-- :sync:  Drag  
-
+- :sync: From ``||animation:Animation||``, drag
 ```block
 animation.runImageAnimation(tourist, img`.`, 100, true)
 ```
-into the ``||loops:forever||`` loop where ``||variables(noclick):tourist||`` is created, and snap it **just above** the ``||loops:pause [2100]||`` block.
+into the ``||loops(noclick):forever||`` loop where
+``||variables(noclick):tourist||`` is created,
+and snap it **just above** the ``||loops:pause [2100]||`` block.
 
-- :mouse pointer:  Choose the **Animated Tourist** and select the interval.
+
+- :mouse pointer:  Click the empty box and choose **Animated Tourist** from **My Assets**.
+
 
 ```blockconfig.local
 animation.runImageAnimation(tourist, img`.`, 100, true)
@@ -205,13 +183,26 @@ true
 
 
 
-## {Step 8}
+## {Finale}
 
 **Now that's an exciting game!**
 
-Play through your game a few times to appreciate how much you've done!
 
-When you're ready, click **Done** to return to the main page where you can share your game with family and friends!
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click **Done** to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/dino/share.gif )
+
+hint~
+
+
+When you're ready, click **Done** to return to the main page
+to share your game with family and friends!
 
 
 
@@ -228,7 +219,7 @@ game.over(true)
 tourist.y = randint(15, 115)
 tourist.destroy()
 tourist.setKind(SpriteKind.Enemy)
-animation.runImageAnimation(mamaDino, [img`.`], 500, true)
+animation.runImageAnimation(mamaDino, [img`.`], 100, true)
 ```
 
 ```template
