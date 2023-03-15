@@ -2,41 +2,46 @@
 
 Make music. Play melodies and tones.
 
+## Songs
+
+```cards
+music.createSong(hex`00780004080200`)
+```
+
 ## Melodies
 
 ```cards
-music.baDing.play()
-music.baDing.playUntilDone()
-music.baDing.loop()
-music.baDing.stop()
+music.stringPlayable("", 120)
+music.melodyPlayable(music.baDing)
 ```
 
-## Tones and Music
+## Sound
 
 ```cards
-music.playTone(Note.C, BeatFraction.Half)
-music.ringTone(Note.C)
-music.rest(BeatFraction.Half)
+music.play(null, music.PlaybackMode.UntilDone)
+music.tonePlayable(262, music.beat(BeatFraction.Whole))
+music.ringTone(0)
+music.rest(0)
 music.noteFrequency(Note.C)
+music.beat(BeatFraction.Whole)
+music.tempo()
 music.changeTempoBy(20)
 music.setTempo(120)
-music.tempo()
-music.beat()
-music.setVolume(128)
+music.setVolume(0)
+music.stopAllSounds()
 ```
 
-## See also #seealso
+## See Also
 
-[play](/reference/music/melodies/play),
-[play until done](/reference/music/melodies/play-until-done),
-[loop](/reference/music/melodies/loop),
-[stop](/reference/music/melodies/stop),
-[playTone](/reference/music/play-tone),
-[ringTone](/reference/music/ring-tone),
+[play](/reference/music/play),
+[tone playable](/reference/music/tone-playable),
+[string playable](/reference/music/string-playable),
+[melody playable](/reference/music/melody-playable),
+[create song](/reference/music/create-song),
+[ring tone](/reference/music/ring-tone), 
 [rest](/reference/music/rest),
-[note frequency](/reference/music/note-frequency),
+[beat](/reference/music/beat), 
+[tempo](/reference/music/tempo),
 [change tempo by](/reference/music/change-tempo-by),
 [set tempo](/reference/music/set-tempo),
-[beat](/reference/music/beat),
-[tempo](/reference/music/tempo),
-[set volume](/reference/music/set-volume)
+[set voluime](/reference/music/set-volume)
