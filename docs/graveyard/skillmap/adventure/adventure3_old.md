@@ -359,7 +359,7 @@ music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackgroun
 
 ```package
 adventure=github:microsoft/arcade-tutorial-extensions/adventure#v0.0.10
-dd=github:microsoft/arcade-tutorial-extensions/dnd-sprite-pack#v0.0.10
+dd=github:kiki-lee/dnd-sprite-pack#v0.1.0
 ```
 
 
