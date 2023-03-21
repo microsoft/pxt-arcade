@@ -58,7 +58,7 @@ for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
 
 ## {Step 5}
 
-Find ``||sprites(sprites):set mySprite to sprite of kind player||`` in ``||sprites:Sprites||``
+Find ``||variables(sprites):set mySprite to sprite of kind player||`` in ``||sprites:Sprites||``
 and drag it into the ``||loops:for element||`` loop.
 Draw breadcrumbs for the image of the sprite.
 This will create a new ``||sprites:Sprite||`` for every one of the
@@ -92,9 +92,9 @@ for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
 ## {Step 6}
 
 Find ``||scene:place mySprite on top of tilemap col row||``
-and place it after ``||sprites(sprites):set mySprite to||``.
+and place it after ``||variables(sprites):set mySprite to||``.
 Drag ``||variables:value||`` from the ``||loops:for loop||`` to ``||variables:tilemap col row||``.
-Make sure ``||variables:mySprite||`` is the ``||variables:variable||`` for the
+Make sure ``||variables(noclick):mySprite||`` is the ``||variables:variable||`` for the
 ``||sprites:sprite||`` you just created.
 This will place the breadcrumbs on each ``||scene:tile||`` of the diagonal line.
 
