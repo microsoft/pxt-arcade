@@ -84,7 +84,7 @@ simplified.chooseRandomImage(assets.image`star`, assets.image`rose`)
 to create a new empty box.
 
 
-- :paint brush: Click the new empty box and draw another item for the audience to send to the stage (like hearts or flower petals.)
+- :paint brush: Click the new box and draw another item for the audience to send to the stage (like hearts or flower petals.)
 
 
 _💡 You can choose up to **5** things!_
@@ -120,6 +120,54 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
+## {Step 6}
+
+**🎹 Set it to music! 🎹**
+
+Let's give the talent some music for their performance.
+
+---
+
+- :headphones: From ``||music:Music||``, grab
+```block
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+```
+and drag it into **the end** of the <br/>
+``||loops(noclick):on start||``<br/>
+container in the workspace.
+
+
+- :mouse pointer: Click the empty box and play with the
+music editor to create a song for your game. It can be as long or as short as you like.
+
+
+
+#### ~ tutorialhint
+
+```blocks
+let audience: Sprite = null
+scene.setBackgroundImage(assets.image`stage`)
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
+audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.bottom = 120
+game.splash("Press (A) to play!")
+info.startCountdown(10)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+
+```
+
+
+
+## {Step 7}
+
+- :binoculars: Try your project one last time!
+
+**A song should play** as your audience cheers and throws random objects at the stage.
+
+**Can you get 60 points before time runs out?**
+
+
 ## {Finale}
 
 **🌹 You did it!! 🌹**
@@ -128,8 +176,6 @@ Now you have a full-featured talent show clicker game!
 
 ---
 
-Play your game to see how many points you can get before time runs out. <br/>
-**Can you get to 60?**
 
 ~hint How do I share my game?💡
 
@@ -153,6 +199,8 @@ let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.setImage(assets.image`clap2`)
 audience.bottom = 120
 let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+
 ```
 
 ```template
@@ -179,6 +227,9 @@ info.startCountdown(10)
 
 ```ghost
 scene.setBackgroundColor(1)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 ```
 
 
