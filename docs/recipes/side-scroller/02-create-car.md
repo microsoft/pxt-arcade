@@ -8,7 +8,7 @@ Create motion sprite to move a race car along a race track tilemap.
 
 ## {Step 1 - Create a player sprite}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||`` block into the ``||loops:on start||`` block after the ``||scene:set tilemap||`` block.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables(sprites):set mySprite||`` block into the ``||loops:on start||`` block after the ``||scene:set tilemap||`` block.
 
 ```blocks
 scene.setBackgroundColor(6)
@@ -64,7 +64,7 @@ let mySprite = sprites.create(img`
 
 Let’s add code to simulate gravity pulling our car down. We can do this by adding an acceleration force to our car.
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block and drop after the ``||variables:set mySprite||`` block.
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set mySprite x to 0||`` block and drop after the ``||variables(sprites):set mySprite||`` block.
 
 ## {Step 4 - Set acceleration}
 

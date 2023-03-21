@@ -17,7 +17,7 @@ scene.setBackgroundColor(8)
 
 ## {Draw your hero}
 
-From ``||sprites:Sprites||``, drag the ``||variables:set mySprite to||`` block into ``||loops:on start|``. Click on the grey box in ``||variables:set mySprite to||`` and then select **Gallery** in the image editor. Choose your hero!
+From ``||sprites:Sprites||``, drag the ``||variables(sprites):set mySprite to||`` block into ``||loops:on start|``. Click on the grey box in ``||variables(sprites):set mySprite to||`` and then select **Gallery** in the image editor. Choose your hero!
 
 ```blocks
 scene.setBackgroundColor(8)
@@ -44,7 +44,7 @@ let mySprite = sprites.create(img`
 
 ## {Control your hero}
 
-From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables:set mySprite to||``. This will allow you to move your sprite around the screen. Try it out in the simulator using the arrow keys on your keyboard or by clicking the joystick.
+From ``||controller:Controller||``, drag the ``||controller:move mySprite with buttons||`` block **after** ``||variables(sprites):set mySprite to||``. This will allow you to move your sprite around the screen. Try it out in the simulator using the arrow keys on your keyboard or by clicking the joystick.
 
 ```blocks
 scene.setBackgroundColor(8)
@@ -82,7 +82,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Draw your projectile}
 
-From ``||sprites:Sprites||`` drag ``||variables:projectile from mySprite||`` into the ``||controller:on A button pressed||``. Set the ``||sprites:vy||`` value to `0`, then click on the grey square to open the image editor and draw your projectile. Try shooting the projectile in the simulator using your keyboard or click the **A** button.
+From ``||sprites:Sprites||`` drag ``||variables(sprites):projectile from mySprite||`` into the ``||controller:on A button pressed||``. Set the ``||sprites:vy||`` value to `0`, then click on the grey square to open the image editor and draw your projectile. Try shooting the projectile in the simulator using your keyboard or click the **A** button.
 
 ```blocks
 let mySprite: Sprite = null

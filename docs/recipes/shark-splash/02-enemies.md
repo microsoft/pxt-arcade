@@ -17,8 +17,8 @@ game.onUpdateInterval(500, function () {
 
 ## {Step 2}
 
-Inside the ``||game:on game update every||`` event, place a ``||variables:set mySprite to||`` ``||sprites:sprite||`` block.
-Rename the variable to ``||variables:enemySprite||`` and change the ``||sprites:Player||`` kind to ``||sprites:Enemy||``. Click on the
+Inside the ``||game:on game update every||`` event, place a ``||variables(sprites):set mySprite to||`` ``||sprites:sprite||`` block.
+Rename the variable to ``||variables(noclick):enemySprite||`` and change the ``||sprites:Player||`` kind to ``||sprites:Enemy||``. Click on the
 grey square to open the sprite editor and draw an image for the enemy.
 
 ```blocks
@@ -48,8 +48,8 @@ game.onUpdateInterval(500, function () {
 
 ## {Step 3}
 
-Place a ``||sprites:set position to||`` block right below the ``||variables:set enemySprite to||`` ``||sprites:sprite||`` block. Change
-the variable to ``||variables:enemySprite||`` in the dropdown list.
+Place a ``||sprites:set position to||`` block right below the ``||variables(sprites):set enemySprite to||`` ``||sprites:sprite||`` block. Change
+the variable to ``||variables(noclick):enemySprite||`` in the dropdown list.
 
 ```blocks
 let enemySprite: Sprite = null
@@ -174,7 +174,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 ## {Step 7}
 
 Inside the ``||sprites:on overlaps||`` block, place a ``||sprites:destroy sprite||`` block. Drag the
-``||variables:otherSprite||`` variable from the ``||sprites:on overlaps||`` block and place it inside
+``||variables(noclick):otherSprite||`` variable from the ``||sprites:on overlaps||`` block and place it inside
 the  ``||sprites:destroy sprite||``.
 
 

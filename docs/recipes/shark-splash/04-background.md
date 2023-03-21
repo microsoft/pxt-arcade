@@ -138,7 +138,7 @@ scene.setBackgroundImage(img`
 
 ## {Decorative sprites}
 
-Next, let's add some sprites to decorate your game. From ``||loops:Loops||``, drag the ``||loops:for index from||`` block into ``||loops:on start|`` and set the ``||variables:index||`` range to `10`.
+Next, let's add some sprites to decorate your game. From ``||loops:Loops||``, drag the ``||loops:for index from||`` block into ``||loops:on start|`` and set the ``||variables(noclick):index||`` range to `10`.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -269,7 +269,7 @@ for (let index = 0; index <= 10; index++) {
 
 ## {Add background sprite}
 
- From ``||sprites:Sprites||``, drag the ``||variables:set mySprite to||`` block into ``||loops:for index from 0 to 10|``. Click on the grey box and in the image editor gallery, select a background object like a rock or some seaweed.
+ From ``||sprites:Sprites||``, drag the ``||variables(sprites):set mySprite to||`` block into ``||loops:for index from 0 to 10|``. Click on the grey box and in the image editor gallery, select a background object like a rock or some seaweed.
 
 ```blocks
 scene.setBackgroundImage(img`
@@ -634,7 +634,7 @@ for (let index = 0; index <= 10; index++) {
 
 ## {Update sprite x-position}
 
-From ``||math:Math||``, drag the ``||math:0 x 0||`` block in as the ``||sprites:x||`` value of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables:index||`` block for the second number. Continue adding decorations until you are satisifed with your scene!
+From ``||math:Math||``, drag the ``||math:0 x 0||`` block in as the ``||sprites:x||`` value of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables(noclick):index||`` block for the second number. Continue adding decorations until you are satisifed with your scene!
 
 ```blocks
 scene.setBackgroundImage(img`

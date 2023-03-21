@@ -58,7 +58,7 @@ for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
 
 ## {Step 5}
 
-Find ``||sprites:set mySprite to sprite of kind player||`` in ``||sprites:Sprites||``
+Find ``||sprites(sprites):set mySprite to sprite of kind player||`` in ``||sprites:Sprites||``
 and drag it into the ``||loops:for element||`` loop.
 Draw breadcrumbs for the image of the sprite.
 This will create a new ``||sprites:Sprite||`` for every one of the
@@ -92,7 +92,7 @@ for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
 ## {Step 6}
 
 Find ``||scene:place mySprite on top of tilemap col row||``
-and place it after ``||sprites:set mySprite to||``.
+and place it after ``||sprites(sprites):set mySprite to||``.
 Drag ``||variables:value||`` from the ``||loops:for loop||`` to ``||variables:tilemap col row||``.
 Make sure ``||variables:mySprite||`` is the ``||variables:variable||`` for the
 ``||sprites:sprite||`` you just created.
@@ -129,7 +129,7 @@ for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
 If you want to make the tile below the sprite look the same as the others
 so that it doesn't stand out from other tiles,
 find ``||scene:set at tilemap col row||`` in ``||scene:Scene||``
-and place it after ``||variables:set mySprite to||``.
+and place it after ``||variables(sprites):set mySprite to||``.
 Drag ``||variables:value||`` on top of ``||scene:tilemap col row||``,
 and select the tile you want the tile to become (in this case, the same as the other tiles).
 
