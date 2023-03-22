@@ -139,7 +139,7 @@ scene.setBackgroundImage(img`
 
 ## {Step 2 - Create the Player Character}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables:set mySprite||`` block and drop
+From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||variables(sprites):set mySprite||`` block and drop
 after the ``||scene:set background image||`` block. Click on the grey oval to open the sprite image
 editor, and draw or select a Gallery image for your player.
 
@@ -602,7 +602,7 @@ mySprite.setBounceOnWall(true)
 
 ## {Step 6 - Create the Basketball Hoop}
 
-From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||variables:set mySprite||`` block and drop
+From the ``||sprites:Sprites||`` Toolbox drawer, drag another ``||variables(sprites):set mySprite||`` block and drop
 after the ``||sprites:set||`` ``||variables(noclick):mySprite||`` ``||sprites:bounce on wall||`` block. Click on the
 grey oval to open the sprite image editor, and draw an image of a basketball hoop.
 
@@ -772,7 +772,7 @@ let mySprite2 = sprites.create(img`
 
 ## {Step 7 - Set the Basketball Hoop Kind}
 
-In the ``||variables:set mySprite2||`` block, click on ``||sprites:Player||`` from the kind
+In the ``||variables(sprites):set mySprite2||`` block, click on ``||sprites:Player||`` from the kind
 drop-down menu, select **Add a new kind**, and type in **Hoop**.
 
 ![Change from Player kind](/static/tutorials/free-throw/player-kind.png)
@@ -780,7 +780,7 @@ drop-down menu, select **Add a new kind**, and type in **Hoop**.
 ## {Step 8 - Set the Position of the Basketball Hoop to the top of the screen}
 
 From the ``||sprites:Sprites||`` Toolbox drawer, drag a ``||sprites:set||`` ``||variables(noclick):mySprite||``
-``||sprites:position||`` block and drop after the ``||variables:set mySprite2||`` block. In the
+``||sprites:position||`` block and drop after the ``||variables(sprites):set mySprite2||`` block. In the
 ``||sprites:set||`` ``||variables(noclick):mySprite||`` ``||sprites:position||`` block, click on the ``||variables(noclick):mySprite||``
 drop-down menu, and select ``||variables(noclick):mySprite2||``. Then click on the **x** coordinate, and using the coordinate
 picker, select a location at the top center of the screen.

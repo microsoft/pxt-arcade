@@ -6,7 +6,7 @@ Make an action game where the player has to react quickly to avoid fast moving b
 
 ## Step 1
 
-OK, let's get started by making our ``Player`` sprite. Start by placing a ``||variables:set mySprite to||`` block in an ``||loops:on start||`` block to create your sprite.
+OK, let's get started by making our ``Player`` sprite. Start by placing a ``||variables(sprites):set mySprite to||`` block in an ``||loops:on start||`` block to create your sprite.
 
 ```blocks
 let mySprite: Sprite = sprites.create(img``, SpriteKind.Player)
@@ -46,7 +46,7 @@ mySprite.setPosition(20, 70)
 
 ## Step 4
 
-Drag a ``||sprites:set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``ay (acceleration y)``. Set the value to `500` so that character is pulled down by "gravity".
+Drag a ``||variables(sprites):set mySprite x||`` into the ``||loops:on start||``, click the dropdown, and select ``ay (acceleration y)``. Set the value to `500` so that character is pulled down by "gravity".
 
 ```blocks
 let mySprite: Sprite = sprites.create(img`
@@ -149,7 +149,7 @@ game.onUpdateInterval(1500, function () {
 
 Find ``||scene:place mySprite on top of tilemap col row||`` and drag it into the ``||game:on game update interval||`` after ``||variables:set projectile to||``.
 Set the ``||scene:col||`` to 9 and the ``||scene:row||`` to 5, which is the tile on the right side of the screen directly above the wall.
-Change ``||variables:mySprite||`` to ``||variables:projectile||``, so that it refers to the sprite that was just created.
+Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``, so that it refers to the sprite that was just created.
 
 ```blocks
 game.onUpdateInterval(1500, function () {

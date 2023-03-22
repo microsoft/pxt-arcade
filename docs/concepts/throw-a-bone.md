@@ -10,7 +10,7 @@ This allows you to easily create things like asteroids that move across the scre
 
 ## {Step 1 @fullscreen}
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||``. Open the image editor for ``||variables:mySprite||`` and select or create an image of a skeleton.
+Find ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||``. Open the image editor for ``||variables(noclick):mySprite||`` and select or create an image of a skeleton.
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -43,7 +43,7 @@ let mySprite = sprites.create(img`
 
 ## {Step 2 @fullscreen}
 
-Find ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||`` **after** ``||variables:set mySprite to||``.
+Find ``||sprites:projectile from mySprite||`` in ``||sprites:Sprites||`` and drag it into the ``||loops:on start||`` **after** ``||variables(sprites):set mySprite to||``.
 
 This will create a ``||sprites:Sprite||`` that starts in the same location as ``||sprites:mySprite||``, no matter where it is on the screen.
 
@@ -96,7 +96,7 @@ let projectile = sprites.createProjectileFromSprite(img`
 
 ## {Step 3 @fullscreen}
 
-Open the image editor for ``||variables:projectile||`` and draw an image of a bone.
+Open the image editor for ``||variables(sprites):projectile||`` and draw an image of a bone.
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -198,9 +198,9 @@ let projectile = sprites.createProjectileFromSprite(img`
 
 ## {Step 5 @fullscreen}
 
-Find ``||controller:on A button pressed||`` in ``||controller:Controller||`` and drag it into the workspace. Drag ``||variables:set projectile to||`` from ``||loops:on start||`` into ``||controller:on A button pressed||``.
+Find ``||controller:on A button pressed||`` in ``||controller:Controller||`` and drag it into the workspace. Drag ``||variables(sprites):set projectile to||`` from ``||loops:on start||`` into ``||controller:on A button pressed||``.
 
-This will create an event that occurs whenever the person playing the game presses the ``||controller:A||`` button. Whenever that event occurs, ``||variables:mySprite||`` will 'throw' a new bone up and to the right.
+This will create an event that occurs whenever the person playing the game presses the ``||controller:A||`` button. Whenever that event occurs, ``||variables(noclick):mySprite||`` will 'throw' a new bone up and to the right.
 
 ```blocks
 let mySprite = sprites.create(img`

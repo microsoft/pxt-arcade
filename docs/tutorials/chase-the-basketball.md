@@ -152,7 +152,7 @@ scene.setBackgroundImage(img`ddddd111ddddddddddddddddddddddddddddddddddd111ddddd
 
 ## {Step 3}
 
-Open the `||sprites:Sprites||` Toolbox drawer and drag the first block you see, `||variables:set mySprite||`, into the `||loops:on start|` block on your Workspace. This will create a new `||sprites:Player||` character for your game.
+Open the `||sprites:Sprites||` Toolbox drawer and drag the first block you see, `||variables(sprites):set mySprite||`, into the `||loops:on start|` block on your Workspace. This will create a new `||sprites:Player||` character for your game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -466,7 +466,7 @@ mySprite = sprites.create(img`
 
 ## {Step 5}
 
-Open the `||controller:Controller||` Toolbox drawer and drag the `||controller:move mySprite with buttons||` block after the `||variables:set mySprite||` block. This will allow you to move your `||sprites:Player||` sprite around the screen with the arrow keys. Try it out in the Game Simulator!
+Open the `||controller:Controller||` Toolbox drawer and drag the `||controller:move mySprite with buttons||` block after the `||variables(sprites):set mySprite||` block. This will allow you to move your `||sprites:Player||` sprite around the screen with the arrow keys. Try it out in the Game Simulator!
 
 ```blocks
 let mySprite: Sprite = null
@@ -634,7 +634,7 @@ controller.moveSprite(mySprite)
 
 ## {Step 6}
 
-Open the `||sprites:Sprites||` Toolbox drawer and drag another `||variables:set mySprite2||` block into the `||loops:on start||` block on your Workspace. This will be the **basketball** sprite in our game.
+Open the `||sprites:Sprites||` Toolbox drawer and drag another `||variables(sprites):set mySprite2||` block into the `||loops:on start||` block on your Workspace. This will be the **basketball** sprite in our game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -819,7 +819,7 @@ mySprite2 = sprites.create(img`
 
 ## {Step 7}
 
-In the `||variables:set mySprite2||` block, click on the `||sprites:Player||` kind to open the menu of different Sprite kinds. Select `||sprites:Add a new kind...||`, enter "Basketball" in the text field, and hit "OK".
+In the `||variables(sprites):set mySprite2||` block, click on the `||sprites:Player||` kind to open the menu of different Sprite kinds. Select `||sprites:Add a new kind...||`, enter "Basketball" in the text field, and hit "OK".
 
 ```blocks
 namespace SpriteKind {
@@ -1007,7 +1007,7 @@ mySprite2 = sprites.create(img`
 
 ## {Step 8}
 
-Click on the grey box for `||variables:set mySprite2||` and then select the **Gallery** view. Find and select a basketball sprite (scroll to the bottom of the gallery).
+Click on the grey box for `||variables(sprites):set mySprite2||` and then select the **Gallery** view. Find and select a basketball sprite (scroll to the bottom of the gallery).
 
 ```blocks
 namespace SpriteKind {

@@ -12,7 +12,7 @@ A ``||sprites:y||`` position of 0 will place the sprite at the **top** of the sc
 
 ## {Step 1}
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``rename variable...``, and change the name from ``||variables:mySprite||`` to ``||variables:cherry||``.
+Find ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Click on ``||variables(noclick):mySprite||``, select ``rename variable...``, and change the name from ``||variables(noclick):mySprite||`` to ``||variables(noclick):cherry||``.
 
 ```blocks
 let cherry = sprites.create(img`
@@ -37,7 +37,7 @@ let cherry = sprites.create(img`
 
 ## {Step 2 @fullscreen}
 
-Open the image editor for ``||variables:cherry||``. You can either draw your own image of a cherry, or open the Gallery and find a premade picture in there.
+Open the image editor for ``||variables(noclick):cherry||``. You can either draw your own image of a cherry, or open the Gallery and find a premade picture in there.
 
 ```blocks
 let cherry: Sprite = null
@@ -63,9 +63,9 @@ c 2 e e 2 2 2 2 e 2 5 4 2 c 8 .
 
 ## {Step 3 @fullscreen}
 
-Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``. Change ``||variables:mySprite||`` to ``||variables:cherry||``, and change ``||sprites:x||`` to 25.
+Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``. Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):cherry||``, and change ``||sprites:x||`` to 25.
 
-This will place the ``||variables:cherry||`` at the top of the screen, a little bit away (25 pixels) from the left side.
+This will place the ``||variables(noclick):cherry||`` at the top of the screen, a little bit away (25 pixels) from the left side.
 
 ```blocks
 let cherry: Sprite = null
@@ -121,7 +121,7 @@ cherry.setPosition(25, 45)
 
 ## {Step 5}
 
-Create another ``||sprites:Sprite||``, and rename it ``||variables:chicken||``. Find (or create) an image of chicken to represent it.
+Create another ``||sprites:Sprite||``, and rename it ``||variables(noclick):chicken||``. Find (or create) an image of chicken to represent it.
 
 ```blocks
 let chicken: Sprite = null
@@ -167,7 +167,7 @@ chicken = sprites.create(img`
 
 ## {Step 6}
 
-Set the ``||variables:chicken||``'s ``||sprites:x||`` position 120, and it's ``||sprites:y||`` position to 80.
+Set the ``||variables(noclick):chicken||``'s ``||sprites:x||`` position 120, and it's ``||sprites:y||`` position to 80.
 
 ```blocks
 let chicken: Sprite = null

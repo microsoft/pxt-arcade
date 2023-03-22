@@ -10,7 +10,7 @@ In this tutorial, you will create the main character for a game, and allow them 
 
 ## {Step 1 @fullscreen}
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
+Find ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``.
 
 This ``||sprites:Sprite||`` will represent the main character in the game; for now, it has no image and doesn't do anything, though.
 
@@ -37,7 +37,7 @@ let mySprite = sprites.create(img`
 
 ## {Step 2 @fullscreen}
 
-Click on the grey box in ``||variables:set mySprite to||`` to open the image editor. Use it to draw an image to represent your new sprite on the screen.
+Click on the grey box in ``||variables(sprites):set mySprite to||`` to open the image editor. Use it to draw an image to represent your new sprite on the screen.
 
 When you close the image editor by clicking outside of it, the image you drew will show up in the center of the screen in the simulator.
 
@@ -67,7 +67,7 @@ mySprite = sprites.create(img`
 
 This ``||sprites:Sprite||`` represents the main character in our game, so it should move when the player presses buttons.
 
-Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||``. Place it after ``||variables:set mySprite to||``.
+Find ``||controller:move mySprite with buttons||`` in ``||controller:Controller||``. Place it after ``||variables(sprites):set mySprite to||``.
 
 ```blocks
 let mySprite: Sprite = null
