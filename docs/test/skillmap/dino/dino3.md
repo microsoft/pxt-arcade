@@ -37,6 +37,7 @@ forever(function () {
 ```
 and drop it into an empty area of the workspace.
 
+
 - :paint brush:  Click the empty box in the <br/>
 ``||sprites:projectile [ ] from side||`` <br/>
 block for ``||variables(noclick):tourist||``
