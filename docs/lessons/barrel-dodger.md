@@ -179,7 +179,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 9
 
-We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||variables(sprites):set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-250`.
+We need to make sure that the sprite is on the ground before jumping, so drag an ``||logic:if then||`` conditional into the ``||controller:on A button pressed||``. Replace `true` with ``||scene:is mySprite hitting wall||`` and change ``left`` side ``bottom``. Finally, put in a ``||sprites:set mySprite x||`` and choose ``||sprites:vy (velocity y)||`` from the dropdown. Set the value to `-250`.
 
 ```blocks
 let mySprite = sprites.create(img`
