@@ -214,6 +214,9 @@ and drop it into **an empty area** of the workspace.
 info.onCountdownEnd(function () {
     game.over(true, effects.confetti)
 })
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    audience.setImage(img`.`)
+})
 ```
 
 #### ~ tutorialhint
@@ -264,13 +267,13 @@ return to the main page where you can keep going and find out how to throw stars
 
 
 
-
 ```blockconfig.global
 game.over(true, effects.confetti)
 let audience = sprites.create(img`.`, SpriteKind.Player)
 audience.setImage(img`.`)
 audience.bottom = 120
 ```
+
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
