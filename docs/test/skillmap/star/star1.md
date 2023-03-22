@@ -144,11 +144,7 @@ and snap it into **the end** of the ``||loops(noclick): on start||`` container.
 hint~
 
 
-```blockconfig.local
-let talent: Sprite = null
-talent.bottom = 115
-scene.setBackgroundColor(1)
-```
+
 
 #### ~ tutorialhint
 
@@ -171,11 +167,6 @@ talent.bottom = 115
 You should see your character posing in the spotlight on stage.
 
 
-```blockconfig.local
-let talent: Sprite = null
-talent.bottom = 115
-scene.setBackgroundColor(1)
-```
 
 
 ## {Step 8}
@@ -200,9 +191,6 @@ into **the end** of the<br/>
 ``||loops(noclick):on start||`` container that's already in the workspace.
 
 
-```blockconfig.local
-game.splash("Press (A) to play!")
-```
 
 ~hint Click here to see how 🕵🏽
 
@@ -211,11 +199,7 @@ game.splash("Press (A) to play!")
 hint~
 
 
-```blockconfig.local
-let talent: Sprite = null
-talent.bottom = 115
-scene.setBackgroundColor(1)
-```
+
 
 #### ~ tutorialhint
 
@@ -227,6 +211,7 @@ talent.bottom = 115
 game.splash("Press (A) to play!")
 
 ```
+
 
 ## {Step 9}
 
@@ -252,12 +237,6 @@ hint~
 
 
 
-```blockconfig.local
-scene.setBackgroundColor(1)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(1)
-})
-```
 
 #### ~ tutorialhint
 
@@ -297,12 +276,6 @@ block into **the bottom** of the<br/>
 hint~
 
 
-```blockconfig.local
-scene.setBackgroundColor(1)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(1)
-})
-```
 
 #### ~ tutorialhint
 
@@ -343,8 +316,11 @@ When you're finished, click **Done** to return to the main page to move forward 
 
 
 
-```blockconfig.local
+```blockconfig.global
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
 scene.setBackgroundColor(1)
+game.splash("Press (A) to play!")
+talent.bottom = 115
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
 })
