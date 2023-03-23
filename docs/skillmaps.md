@@ -21,6 +21,8 @@
   "description": "Code a text-based adventure game using your own images, storyline, and music score!",
   "imageUrl": "/static/skillmap/backgrounds/adventure-map.png",
   "url": "https://arcade.makecode.com/--skillmap#adventure",
+  "label": "Limited time only",
+  "labelClass": "purple ribbon",
   "directOpen": true
 },
 {
