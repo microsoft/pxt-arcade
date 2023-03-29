@@ -574,7 +574,7 @@
         "homeScreenHero": {
             "imageUrl": "/static/hero-gallery/multiplayer-banner.png",
             "name": "Multiplayer Games!",
-            "url": "https://arcade.makecode.com/--multiplayer",
+            "url": "/--multiplayer",
             "buttonLabel": "Try Now",
             "description": "Multiplayer Games!",
             "cardType": "link"
