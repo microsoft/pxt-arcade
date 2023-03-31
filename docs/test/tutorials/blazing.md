@@ -117,8 +117,20 @@ This makes sure that each sprite doesn't drop off the screen once gravity is app
 
 - :binoculars: Look at your project in the game window to see what your code has done.
 
-You should three ducks all in a row.
+You should three sprites all in a row.
 
+
+~hint What's a sprite? 💡
+
+---
+
+In Arcade, each character or image that does something is called a **SPRITE**.
+
+Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+
+Our players will be sprites, too.
+
+hint~
 
 
 
@@ -175,7 +187,7 @@ game.onUpdateInterval(900, function () {
 
 ## {8. Add the Finish Line}
 
-**Add an ending line**
+**Add an end point**
 
 We need to know when the projectiles reach the left side of the screen so the players can get a point.
 
@@ -254,7 +266,7 @@ The first player should jump when you press the **(A) button** or space bar.
 You can make **player 2** jump by pressing the **U key** on your keyboard,
 or your can click the multiplayer icons to test any player with the space bar.
 
-![Play with the emulator buttons](/static/tutorials/horse/multi.png " ")
+![Play with the emulator buttons](/static/tutorials/assets/multi.png " ")
 
 
 
@@ -355,10 +367,9 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, ot
 
 Use the multiplayer icons to test your game with each player.
 
-![Play with the emulator buttons](/static/tutorials/horse/multi.png " ")
+![Play with the emulator buttons](/static/tutorials/assets/multi.png " ")
 
 You should lose a life when a fireball hits anyone on the team, but gain a point when all players avoid a fireball.
-
 
 
 
@@ -370,6 +381,8 @@ You should lose a life when a fireball hits anyone on the team, but gain a point
 You have finished your multiplayer game!
 
 When you're ready, sign-in and click **Done** to work together with friends online to win your game.
+
+**Can your team score 20 points before they're out of lives?**
 
 
 

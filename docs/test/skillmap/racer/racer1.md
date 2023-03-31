@@ -11,36 +11,68 @@ In this tutorial, you'll add a truck to your game and make it move through a cav
 
 
 
-## {4. Add the Truck}
+## {2. Add the Truck}
 
-First, let's set up your monster truck. To do this, we'll need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
+Before we can add a truck, we need to create a [__*sprite*__](#sprote "a 2-D image that moves on the screen").
 
----
-
-- :paper plane:  From the ``||sprites:Sprites||`` category, drag <br/>
-
-```block
-let truck = sprites.create(img`.`, SpriteKind.Player)
-```
-to **the end** of the <br/>
-``||loops:on start||`` <br/>
-container.
-
-- :paint brush:  To choose a truck, click the empty grey box to display the image editor, then select **My Assets**.
-
-![Choose a truck sprite](/static/skillmap/racer/truck2.png "Choose a truck image from the gallery")
-
-_💡 This image shows the **truck2** sprite, but you can use whichever one you want._
+~hint What's a sprite? 💡
 
 ---
 
-~hint Click here to see how 🕵🏽
+In Arcade, each character or image that does something is called a **SPRITE**.
 
-![Set your sprite](/static/skillmap/racer/pick-truck.gif "Choose your image from the gallery")
+Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
+
+Our truck will be a sprite, too.
 
 hint~
 
-- :mouse pointer: When you're ready to continue, click **Next**.
+- :paper plane:  From the ``||sprites:Sprites||`` category, drag<br/>
+``||variables(sprites):set [truck] to sprite [ ] of kind [Player]||``<br/>
+to **the end** of the empty<br/>
+``||loops(noclick):on start||`` <br/>
+container in the workspace.
+
+
+~hint What does that mean? 🤷🏽
+
+---
+
+In this tutorial, we'll use formatted text to help you know which blocks you need. For example, when we ask you to look for: <br/>
+``||variables(sprites):set [truck] to sprite [ ] of kind [Player]||``<br/>
+we're talking about this block:<br/>
+```block
+let truck = sprites.create(img`.`, SpriteKind.Player)
+```
+Need help finding the category? Click on the highlighted text and we'll open the drawer for you.
+
+hint~
+
+
+#### ~ tutorialhint
+
+```blocks
+// @highlight
+let truck = sprites.create(img`.`, SpriteKind.Player)
+```
+
+
+
+
+## {3. Add the Truck}
+
+**Choose your truck**
+
+- :paint brush:  To choose a truck, click the empty box inside<br/>
+``||variables(noclick):set [truck] to sprite [ ] of kind [Player]||``<br/>
+then switch to **My Assets**
+![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
+and choose a truck.<br/><br/>
+_💡 This image shows the **truck2** sprite, but you can use whichever truck you want._
+![Choose a truck sprite](/static/skillmap/racer/truck2.png "Choose a truck image from the gallery")
+
+
+
 
 #### ~ tutorialhint
 
@@ -51,38 +83,39 @@ let truck = sprites.create(assets.image`truck2`, SpriteKind.Player)
 
 
 
+
+## {Step 4}
+
+- :binoculars: Take a look at the game window.
+
+Do you see the truck hovering in the cave?
+
+
+![Look at your game in the game window](/static/skillmap/star/game-window.png )
+
+
+
+
 ## {5. Add Gravity}
 
-To make the game feel more realistic, it needs gravity.
+To get your game going, it needs gravity.
 
 ~hint How do I add gravity? 📥
 
+---
+
 For gravity, we'll add [__*acceleration*__](#accel "increased speed in a direction")
-to "pull down" on the sprite. This is done by setting the sprite's vertical
-acceleration, **ay**, value.
+to "pull down" on the sprite. This is done by setting the sprite's **ay** (acceleration in the direction of 'y').
 
 hint~
 
----
 
 - :paper plane:  From the ``||sprites:Sprites||`` category, drag <br/>
-
-```block
-let truck: Sprite = null
-truck.ay = 500
-```
+``||sprites:set [truck] [ay (acceleration y) to [500]||``<br/>
 to **the end** of the <br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
----
 
-~hint Click here to see how 🕵🏽
-
-![Set the gravity](/static/skillmap/racer/acceleration.gif "Choose ay(acceleration y)")
-
-hint~
-
-- :mouse pointer: When you're ready to continue, click **Next**.
 
 ```blockconfig.local
 let truck: Sprite = null
@@ -92,8 +125,6 @@ truck.ay = 500
 #### ~ tutorialhint
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-scene.setBackgroundImage(assets.image`background`)
 let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
 // @highlight
 truck.ay = 500
@@ -101,17 +132,13 @@ truck.ay = 500
 
 
 
-## {6. Take a Look!}
 
-Click back to the game window to see how everything is coming together.
+## {Step 6}
 
----
+- :binoculars: Look at the game window again.
 
-The truck should drop to the ground inside the cave.
+Did the truck fall to the ground?
 
----
-
-- :mouse pointer: When you're ready to continue, click **Next**.
 
 
 
@@ -119,32 +146,21 @@ The truck should drop to the ground inside the cave.
 
 In this game, your truck needs to start rolling as soon as the game starts.
 
-~hint How do I make the truck move? 🚚
-
-To make the truck move, you need to set its **vx** or _horizontal velocity_ (speed from side to side).
-
-hint~
+~hint How do I make it move? 🛻
 
 ---
 
-- :paper plane:  Drag a new <br/>
+To make the truck move to the right, you need to set its **vx** (velocity in the direction of 'x') to a positive number.
 
-```block
-let truck: Sprite = null
-truck.vx = 100
-```
+hint~
+
+
+- :paper plane:  From ``||sprites:Sprites||``, drag<br/>
+``||sprites:set [truck] [vx (velocity x)] to [100]||``<br/>
 to **the end** of the <br/>
-``||loops:on start||`` container.
+``||loops(onclick):on start||`` container.
 
----
 
-- :mouse pointer: When you're ready to continue, click **Next**.
-
-~hint Click here to see how 🕵🏽
-
-![Set the speed](/static/skillmap/racer/velocity.gif "Choose vx(velocity x)")
-
-hint~
 
 ```blockconfig.local
 let truck: Sprite = null
@@ -160,37 +176,28 @@ truck.ay = 500
 truck.vx = 100
 ```
 
-## {8. Try It!}
 
-Open the game window again and check out the game you have so far.
 
-Notice that the **arrow** keys and **(A)** button don't work yet.
-The game only does what you've coded it to do.
+## {Step 8}
 
----
+- :binoculars: Look at the game window again and watch your truck mosey.
 
-- :mouse pointer: When you're ready to continue, click **Next**.
+
 
 
 ## {9. Follow that Sprite}
 
-Did you notice that your truck quickly drives off-screen?
+**Did you notice that your truck drives off-screen?**
 
-Let's make the "camera" follow the sprite so you can always see it.
+Let's make the game "camera" follow the sprite so you can always see it.
 
 ---
 
 - :tree:  To keep the truck in sight, go to ``||scene:Scene||`` and drag <br/>
-
-```block
-scene.cameraFollowSprite(truck)
-```
+``||scene:camera follow sprite [truck]||``<br/>
 to **the end** of the <br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
----
-
-- :mouse pointer: When you're ready to continue, click **Next**.
 
 
 #### ~ tutorialhint
@@ -207,11 +214,13 @@ scene.cameraFollowSprite(truck)
 
 ## {Finale}
 
-Well done!
+**✨Woohoo!✨**
 
-Take a look at the experience that you've created so far. Your truck should start rolling as soon as the game loads and keep going until it gets to the end of the first pit!
+Take a look at what you've done so far.
 
-When you're ready, click **Done** to head back out to the skillmap where you can play the next level to find out how to control your truck with arrows and buttons!
+Your truck should start rolling as soon as the game loads and keep going until it gets to the end of the first pit!
+
+When you're ready, click **Done** to head back out to the skillmap and keep going to find out how to control your truck with arrows and buttons!
 
 
 ```blockconfig.global

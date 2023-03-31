@@ -12,7 +12,7 @@ Now that you have a truck that moves, let's add the ability to jump and navigate
 
 ## {2. Remember}
 
-Take a look at the code that's already in your workspace.
+**Take a look at the code that's already in your workspace.**
 
 You should see the blocks that add gravity, make your truck start moving, and set the camera to follow you through the cave.
 
@@ -21,30 +21,20 @@ You should see the blocks that add gravity, make your truck start moving, and se
 
 ## {3. Make the Jump}
 
-You'll notice some pits of acid in the road. Help your truck avoid them when you press the (A) button.
+**See the pits of acid in the road?**
+
+Make your truck avoid them when you press the (A) button (or space bar).
 
 ---
 
 
-- :game: From ``||controller:Controller||``, drag the <br/>
+- :game: From ``||controller:Controller||``, drag the<br/>
+``||controller:on [A] button [pressed]||``<br/>
+bundle into an **empty area** of the workspace.
 
-```block
-let truck: Sprite = null
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    truck.vy = 0
-})
-```
-container into an empty area of the workspace.
+Now, each time you press the (A) button, the truck will jump until gravity pulls it back down.
 
-- :mouse pointer: Change **0** to **-200** to send the truck upward with each press of the (A) button.
-
-```blockconfig.local
-let truck: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    truck.vy = 0
-})
-```
 
 #### ~ tutorialhint
 
@@ -57,41 +47,27 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
+## {Step 4}
 
-## {4. Play it Again}
-
-Remember to play your game again each time you make a change.
-
-Can you see the effects of the code you just wrote?
-
+- :binoculars: Remember to keep looking back at the game window to see how your game changes with each bit of code you add.
 
 
 
 ## {5. The Pits}
 
 
-Now that you can jump the pits, let's make them dangerous.
+**Now that you can jump the pits, let's make them dangerous.**
 
 ---
 
 - :tree: From ``||scene:Scene||``, drag the <br/>
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
+bundle into an **empty area** of the workspace.
 
-```block
-scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
-    game.over(false)
-})
-```
-container into an empty area of the workspace.
-
-- :paint brush: Click the checkerboard image and change it to the **acid** tile.<br/>
+- :paint brush: Click the empty tile image and change it to the **acid** tile.<br/>
 ![Make your truck jump dangerous pits of acid](/static/skillmap/racer/acid.png "Avoid the acid tiles")
 
 
-```blockconfig.local
-scene.onOverlapTile(SpriteKind.Player, img`.`, function (sprite, location) {
-    game.over(false)
-})
-```
 
 #### ~ tutorialhint
 
@@ -105,21 +81,21 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, loca
 
 ## {6. The Spikes}
 
-Pressing the **(A)** button more than once might send you into a spike. Let's make the spikes dangerous, too.
+**Don't fly into a spike!**
+
+Let's make the spikes dangerous, too.
 
 
 ---
 
-- :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the **spikes** as you did for the **acid** tile. <br/>
+- :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the **spikes**
 ![Avoid the spikes!](/static/skillmap/racer/spikes.png "Avoid the spike tiles")
+as you did for the **acid** tile.
+
 
 _💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
 
-```blockconfig.local
-scene.onOverlapTile(SpriteKind.Player, img`.`, function (sprite, location) {
-    game.over(false)
-})
-```
+
 
 #### ~ tutorialhint
 
@@ -131,19 +107,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, lo
 
 
 
-## {7. Take a Look!}
+## {Step 7}
 
-Click back to the game window to see how everything is coming together.
+- :binoculars: Take a look at the game window.
 
----
-
-You should be able to jump the acid pits by pressing the (A) button and the game should end when you hit the acid or a spike.
+You should be able to jump the acid pits by pressing the (A) button (or space bar) and the game should end when you hit the acid or a spike.
 
 
 
 ## {8. End of the Tunnel}
 
-We have a way to lose, now we need a way to win.
+**We have a way to lose, now we need a way to win.**
 
 At the end of the cave, there is a set of pure black **empty cave** tiles.
 
@@ -153,6 +127,13 @@ At the end of the cave, there is a set of pure black **empty cave** tiles.
 an **empty cave** tile as you did for the **acid** tile.
 <br/>
 ![Get to the cave](/static/skillmap/racer/cave.png "Choose the cave tile")
+
+
+- :mouse pointer:  This time, make sure the switch inside of the<br/>
+``||game:game over < >||`` block is set to **`<WIN>`**.
+
+
+_💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
 
 
 ```blockconfig.local
@@ -169,22 +150,36 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite
 })
 ```
 
+## {Step 7}
+
+- :binoculars: Play your game!
+
+Can you make it all the way to the end and win?
+
+
 
 ## {Finale}
 
 Congratulations!
 
-You've created your own Monster Racer game!
+You've created a Monster Racer game!
 
-Race to the end of the cave and once you're finished playing,
-click **Done** to head back out to the skillmap where you can
-play the next level and add customizations to your game.
+Once you're finished playing,
+click **Done** to head back out to the skillmap, then keep going to add
+fun customizations to your game.
+
 
 
 ```blockconfig.global
 let truck = sprites.create(img`.`, SpriteKind.Player)
 truck.x = 0
 scene.cameraFollowSprite(truck)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    truck.vy = -200
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
+    game.over(false)
+})
 ```
 
 ```template
