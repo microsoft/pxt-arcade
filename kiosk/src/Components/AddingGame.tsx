@@ -24,6 +24,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const kioskCodeNextGenerationTime = useRef(0);
     const nextSafePollTime = useRef(0);
     const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "https://arcade.makecode.com/kiosk";
+    const kioskTimeOutInMinutes = 30;
 
     const updateLoop = () => {
         if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
@@ -121,7 +122,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
 
     useEffect(() => {
         let codeGenerationTimer: any;
-        const generatedCodeDuration = 570000 * 0.80; // wait for 9.5 minutes until the kiosk code expires
+        const generatedCodeDuration = kioskTimeOutInMinutes * 60 * 1000; // wait for kioskTimeOutInMinutes a.k.a until the kiosk code expires, backend has extra buffer
 
         const generateKioskCode = async () => {
             //TODO: maybe? spinner here to indicate work
@@ -160,7 +161,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             const kioskUrl = `${kioskCodeUrl}#add-game:${kioskCode}`;
             return (
                 <div className="innerQRCodeContent">
-                    <h3>10 minute Kiosk ID</h3>
+                    <h3>{kioskTimeOutInMinutes} minute Kiosk ID</h3>
                     <h1 className="kioskCode">{kioskCode}</h1>
                     <QRCodeSVG value={kioskUrl} />
                     <div className="kioskLink">
