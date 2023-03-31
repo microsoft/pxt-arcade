@@ -95,7 +95,7 @@ bundles.wrap1(function () {
 ## {5. Set player 1}
 
 - :mouse pointer: Click the empty grey square inside the <br/>
-``||variables(noclick):set player 1||`` <br/>
+``||mp(noclick):set player 1||`` <br/>
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
 Choose the red/orange present called **p1**.
@@ -204,7 +204,7 @@ container already in the workspace.
 
 
 - :mouse pointer: Click the empty grey square inside the <br/>
-``||variables(noclick):set player 2||`` <br/>
+``||mp(noclick):set player 2||`` <br/>
 block and switch to the **My Assets** library.<br/>
 ![Switch to My Assets](/static/skillmap/assets/my-assets-three.png " ")
 Choose the blue present called **p2**.
