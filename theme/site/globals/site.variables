@@ -81,8 +81,8 @@
 @simulatorBackground: @blue;
 @editorToolsBackground: @beige;
 @blocklySvgColor: @beige;
-
 @homeScreenBackground: @beige;
+@cloudCardBackground: lighten(desaturate(@teal, 56), 23);
 
 /*-------------------
    Full screen
