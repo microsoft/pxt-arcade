@@ -63,6 +63,7 @@ to open the image editor.
 - :mouse pointer: Here, you can create your own artwork, or you can click the **My Assets** tab
 ![My Assets](/static/skillmap/assets/my-assets-three.png "Toggle to see the images for this game" )
 to choose our **Zune** screen.
+![Choose the Zune Background Screen to start](/static/tutorial/music/splash.png " " )
 
 
 
