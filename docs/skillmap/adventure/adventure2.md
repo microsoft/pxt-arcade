@@ -385,7 +385,7 @@ music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackgroun
 
 
 ```package
-adventure=github:microsoft/arcade-tutorial-extensions/adventure#v0.0.10
+adventure=github:microsoft/arcade-tutorial-extensions/adventure#v0.0.12
 dd=github:microsoft/arcade-tutorial-extensions/dnd-sprite-pack#v0.0.10
 ```
 
@@ -410,6 +410,7 @@ if (controller.A.isPressed()) {
 
 
 ```ghost
+adventure.clearTextLog()
 info.setLife(3)
 info.changeLifeBy(-1)
 adventure.setScoreOverride(adventure.Currency.Coins, 100)
