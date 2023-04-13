@@ -1,29 +1,48 @@
 # The Biggest Star
+### @explicitHints true
 
 
 ## {Introduction @showdialog}
 
 There's more to explore with our clicker game.
 
-Let's create a spray of stars that flies toward the stage as we click.
+Let's create a spray of stars that fly toward the stage as we click.
 
 ![Click away](/static/skillmap/star/star3.gif "You're a star!" )
 
 
 ## {Step 2}
 
-Watching the points increase each time we click is fun...but let's add
-some flying star [__*projectiles*__](#projected "sprites that moves on their own, often in large quantities") to make it even more interesting.
+It's fun to watch the points increase...but let's add
+star **projectiles** for more exitement.
+
+~hint What are projectiles?💡
 
 ---
 
-- :paper plane: From ``||sprites:Sprites||``, grab<br/>
-``||variables(sprites):set [projectile] to projectile [ ] from [mySprite] with vx [50] vy [50]||``<br/>
+In MakeCode Arcade, projectiles are sprites that move on their own, often in large quantities.
+
+Projectiles have extra properties that normal sprites don't have. For example, they destroy themselves once they leave the screen so the user's computer doesn't get overwhelmed.
+
+hint~
+
+---
+
+- :paper plane: From ``||sprites:Sprites||``, grab
+```block
+let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
+```
 and drop it into **the end** of the<br/>
-``||controller:on [A] button [pressed]||`` container
+``||controller(noclick):on [A] button [pressed]||`` container
 already in the workspace.
 
-- :mouse pointer: Click **Next** to move on to the next instruction.
+
+- :paint brush: Click the empty image square and switch to **My Assets**
+to choose the sprite called **star**.
+![Choose the yellow star](/static/skillmap/star/star.png )
+
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -31,23 +50,56 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    projectile = sprites.createProjectileFromSprite(img`
-. . . .
-. . . .
-. . . .
-. . . .
-`, mySprite, 50, 50)
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, 50, 50)
 })
 ```
 
 
 ## {Step 3}
 
-- :paint brush: Click the empty grey square and toggle to **My Assets**
-to select the star.
+- :binoculars: Look at your project on the game screen to see what you think.
 
-- :mouse pointer: Click ``||variables(noclick): mySprite||`` and change it to ``||variables(noclick): audience||``.
+Does a star come from the audience each time you press the **(A) button** (or space bar)?
 
+
+
+## {Step 4}
+
+**Let's make the star projectiles fly randomly across the stage**<br/>
+🌟 🌟 🌟
+
+---
+
+- :calculator: From the ``||math:Math||`` category, drag<br/>
+```block
+randint(-80, 80)
+```
+in to replace **0** as the  **vx** value inside<br/>
+```block
+    //@highlight
+    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, 0, 50)
+```
+
+
+~hint What is vx?💡
+
+---
+
+In MakeCode Arcade, **vx** stands for the "velocity in the direction of x" — which is a
+complicated way of saying "the speed from side to side."
+
+- The larger your **vx** value is, the faster something will travel to the right.
+- The lower your **vx**, the faster it will travel to the left.
+- If your **vx** is 0, the item won't move from side to side at all.
+
+hint~
+
+
+```blockconfig.local
+randint(-80, 80)
+```
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -56,33 +108,43 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, 50, 50)
+    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
 })
 ```
-
-## {Step 4}
-
-**Try your project on the game screen to see what you think**
-
-Does a star come from the audience each time you press the (A) button?
-
 
 ## {Step 5}
 
-**🌟 Let's make the star projectiles float 🌟**
+
+- :calculator: Now, drag<br/>
+```block
+randint(-50, -100)
+```
+in to replace **-50** as the  **vy** value inside<br/>
+```block
+    //@highlight
+    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
+```
+
+
+~hint What is vy?💡
 
 ---
 
-- :calculator: From the ``||math:Math||`` category, drag out **TWO**<br/>
-``||math: pick random [0] to [10]||``<br/>
-blocks.
+In MakeCode Arcade, **vy** stands for the "velocity in the direction of y" — which is a
+complicated way of saying "the speed from top to bottom."
 
-- :mouse pointer: Add the first to the [__*vx*__](#whatVX "horizontal velocity") argument of the<br/>
-``||variables(sprites):set [projectile] to projectile [⭐] from [mySprite] with vx [50] vy [50]||``<br/>
-block.
+- The larger your **vy** value is, the faster something will travel downward.
+- The lower your **vy**, the faster it will travel upward.
+- If your **vy** is 0, the item won't move either up or down.
 
-- :mouse pointer: Add the second to the [__*vy*__](#whatVY "vertical velocity") argument.
+hint~
 
+
+```blockconfig.local
+randint(-50, -100)
+```
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -90,58 +152,57 @@ let audience: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(0, 10), randint(0, 10))
+    //@highlight
+    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
 
-## {Step 6}
 
 
-- :mouse pointer: Change the range of the first<br/>
-``||math: pick random [0] to [10]||``<br/>
-block (next to **vx**) to pick between
-**-100** and **100**.<br/>This will scatter stars randomly from side to side.
+## {Step 11}
 
-- :mouse pointer: Change the range of the second<br/>
-``||math: pick random [0] to [10]||``<br/>
-block (next to **vy**) to pick between
-**-50** and **-100**.<br/>
-This will make sure the stars only move upward.
+- :binoculars: Play your game!
 
+Click as fast as you can to see how many stars you can get on the screen at one time.
 
-
-```blocks
-let audience: Sprite = null
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(1)
-    audience.setImage(assets.image`clap1`)
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-100, 100), randint(-50, -100))
-})
-```
-
-
-## {Congrats @showdialog}
-**There you have it!**<br/>
-🎇 🎇 🎇
-
----
-
-Now, every time you click **Ⓐ** you create a shower of stars!
+**Can you get more than 50 points before time runs out?**
 
 
 
 ## {Finale}
 
-Play your game to see how many stars you can toss to the talent show acts in 10 seconds.
+🤩 **Way to go!** 🤩
+
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your game](/static/skillmap/star/share.gif )
+
+hint~
+
 
 When you're finished, click **Done** to return to the main page where you can
-continue on to figure out how to toss roses!
+keep going to add roses to your project!
 
 
 
 
+
+
+```blockconfig.global
+game.over(true, effects.confetti)
+let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.setImage(assets.image`clap2`)
+audience.bottom = 120
+let star = sprites.createProjectileFromSprite(img`.`, audience, 0, -50)
+```
 
 
 ```template
@@ -157,19 +218,18 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 })
 let audience: Sprite = null
 scene.setBackgroundImage(assets.image`stage`)
-let mySprite = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-mySprite.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.bottom = 120
 game.splash("Press (A) to play!")
 info.startCountdown(10)
 ```
 
-
-
-```package
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
+```ghost
+scene.setBackgroundColor(1)
 ```
+
 
 ```assetjson
 {

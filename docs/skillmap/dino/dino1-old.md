@@ -4,7 +4,7 @@
 
 ## {Intro @showdialog}
 
-Ready to save the day?
+Ready to test your agility?
 
 Let's create a game where you help Mama Dino rescue her hoard of babies!
 
@@ -12,93 +12,14 @@ Let's create a game where you help Mama Dino rescue her hoard of babies!
 
 
 
-
 ## {Step 2}
 
-**Set the background**
+
+
+**Start by adding the Mama Dino _SPRITE_ to your game!**<br/>
+🦖 🦖 🦖
 
 ---
-
-- :tree:  From the ``||scene:Scene||`` category in the toolbox,
-grab
-```block
-scene.setBackgroundImage(img`.`)
-```
-and drag it into the empty<br/>
-``||loops(noclick):on start||``<br/>
-container in the workspace.
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/dino/dino-scene.gif "Toggle between editor and gallery" )
-hint~
-
----
-
-- :right arrow: Click **Next** to move on to the next step.
-
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-scene.setBackgroundImage(img`.`)
-```
-
-
-
-
-## {Step 3}
-
-
-- :paint brush:  Click the empty grey square inside
-```block
-scene.setBackgroundImage(img`.`)
-```
-to open the **image editor**. <br/><br/>
-You can draw your own background or choose the freeway from the **Gallery**.
-<!-- ![This is where the gallery is located](/static/skillmap/assets/gallery.png "You can switch over to the gallery or make your own image." ) -->
-![Choose the freeway from My Assets gallery](/static/skillmap/dino/freeway.png " " )
-
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/dino/choose-bg.gif "Toggle between editor and gallery" )
-hint~
-
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-scene.setBackgroundImage(sprites.background.cityscape2)
-```
-
-
-
-
-## {Step 4}
-
-**Look at your project**
-
-- :binoculars: Take a look at the game window. <br/><br/>
-Do you see the background you chose?
-
-
-![Look for the game window in the lower right](/static/skillmap/assets/game-window.png "Click the mini game window to pop open the bigger game window.")
-
-
-
-
-
-## {Step 5}
-
-
-**Add a Mama Dino sprite**<br/>
 
 ~hint What's a sprite? 💡
 
@@ -112,20 +33,18 @@ Our dino will be a sprite, too.
 
 hint~
 
----
-
 - :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab
 ```block
 let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 ```
-and snap it in at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
+and snap it inside at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
 ---
 
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/dino/dino1-5.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/dino/dino1-2.gif "Add a sprite to your game.")
 
 hint~
 
@@ -133,14 +52,13 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(sprites.background.cityscape2)
 //@highlight
 let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 
 
-## {Step 6}
+## {Step 3}
 
 - :paint brush: Click the empty image box inside
 ```block
@@ -150,10 +68,10 @@ to open the
 image editor and click the **My Assets** tab.
 
 
-![My Assets tab](/static/skillmap/assets/my-assets-three.png )
+![My Assets tab](/static/skillmap/dino/my-assets-three.png )
 
 
-- :mouse pointer: Choose **Mama** and click **Done**.
+- :mouse pointer: Choose **Mama** dino and click **Done**.
 
 ![Choose mama dino from My Assets gallery](/static/skillmap/dino/mama-dino.png " " )
 
@@ -162,7 +80,7 @@ image editor and click the **My Assets** tab.
 
 ---
 
-![Look in My Assets for Mama Dino](/static/skillmap/dino/dino1-6.gif )
+![Look in My Assets for Mama Dino](/static/skillmap/dino/dino1-3.gif )
 
 hint~
 
@@ -170,23 +88,23 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(sprites.background.cityscape2)
-//@highlight
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 ```
 
-## {7. Look at Your Game}
+## {4. Look at Your Game}
 
 
 **Look at the game window.**
 
-- :binoculars: Look at your project again.
+- :binoculars: Look at your project in the game window to see what your code has done.
 
 You should see Mama Dino in the middle of the screen.
 
+![Look at the game window](/static/skillmap/mole/game1.png " ")
 
 
-## {Step 8}
+
+## {Step 5}
 
 **Mama Dino needs to be able to move up and down on the screen.**
 
@@ -204,14 +122,13 @@ block already in the workspace.
 
 ---
 
-![Look under Controller for the block](/static/skillmap/dino/dino1-7.gif "Drag out the controller block to use later.")
+![Look under Controller for the block](/static/skillmap/dino/dino1-5.gif "Drag out the controller block to use later.")
 
 hint~
 
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(sprites.background.cityscape2)
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 //@highlight
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
@@ -219,18 +136,57 @@ controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 ```
 
 
-## {Step 9}
+## {Step 6}
 
-**Give it a try!**
-
-- :binoculars: Bring your mouse over to the game screen.
+- :binoculars: Look at your project on the game screen.
 
 Try moving Mama Dino up and down with the joypad,
 arrow keys, or **W** and **S** keys.
 
 
 
-## {Step 10}
+## {Step 7}
+
+**Let's set the scene**<br/>
+🖼️ 🖼️ 🖼️
+
+---
+
+- :tree:  From ``||scene:Scene||``, grab
+```block
+scene.setBackgroundImage(img`.`)
+```
+and snap it into **the end of**
+of the ``||loops(noclick):on start||`` container.
+
+
+- :paint brush:  Click the **empty image square** and switch to **My Assets** to choose the **Freeway** background
+
+![Choose the freeway from My Assets gallery](/static/skillmap/dino/freeway.png " " )
+
+
+
+~hint Click here to see how 🕵🏽
+
+---
+
+![Look in My Assets for the freeway](/static/skillmap/dino/dino1-7.gif )
+
+hint~
+
+
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+scene.setBackgroundImage(assets.image`Freeway`)
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
+```
+
+
+## {Step 8}
 
 **Add movement to the scene**
 
@@ -266,7 +222,7 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 
 
-## {Step 11}
+## {Step 9}
 
 - :binoculars: Take a look at the game screen again.
 
@@ -275,7 +231,7 @@ and you should be able to move your dino up and down with the joypad or arrow ke
 
 
 
-## {Step 12}
+## {Step 10}
 
 Let's add some baby dinos for Mama to rescue 💚
 
@@ -293,16 +249,18 @@ bundle and drag it into an empty spot on the workspace.
 
 
 - :paint brush:  Click the **empty image square** and switch to **My Assets** to choose the **Baby** sprite image.
+
+
 ![Choose the baby dino from My Assets gallery](/static/skillmap/dino/baby.png " " )
 
-This will create a new baby dino every second (1000ms) at a random starting height (y).
+This will create a new baby dino every second at a random starting height.
 
 
 ~hint Click here to see how 🕵🏽
 
 ---
 
-![Add baby dinos](/static/skillmap/dino/dino1-10.gif )
+![Add a scroller block](/static/skillmap/dino/dino1-10.gif )
 
 hint~
 
@@ -318,8 +276,8 @@ forever(function () {
 #### ~ tutorialhint
 
 ```blocks
-//@highlight
 forever(function () {
+    //@highlight
     let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     babyDino.y = randint(15, 115)
     pause(1000)
@@ -328,28 +286,15 @@ forever(function () {
 ```
 
 
-
-
-## {Step 13}
-
-- :binoculars: Take a look at the game screen again.
-
-You should see a hoard of baby dinos running toward their mama.
-
-Right now, nothing happens when they overlap. You'll need to move on to **Level 2** if you want that code!
-
-
-
-
 ## {Finale}
 
-**🦖 Congrats 🦖**
+**💫 Congrats 💫**
 
 ---
 
-You've built the start of a great game.
+You've built the foundation for a great game. Give it a try on the game screen!
 
-~hint How do I share my project?💡
+~hint How do I share my game?💡
 
 ---
 
@@ -361,7 +306,7 @@ Click "Done" to get back out to the skillmap, then look in the lower-right corne
 
 hint~
 
-Click **Done** to return to the main map so you can keep going to add points and a game timer!
+When you're done playing, click **Done** to return to the main page and continue the next tutorial where we'll add points and a game timer!
 
 
 ```blockconfig.global
