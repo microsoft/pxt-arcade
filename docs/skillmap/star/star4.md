@@ -1,28 +1,31 @@
 # Coming Up Roses
+### @explicitHints true
 
 
 ## {Introduction @showdialog}
 
-Let's add some variety!  Show your performer love with roses.
+Let's add some variety!  Show your love with roses.
 
 ![Click away](/static/skillmap/star/star4.gif "Evrything's coming up roses!" )
 
 
 ## {Step 2}
 
-Instead of always throwing stars, we can put a whole list of items inside the **projectile** block to choose from.
+Instead of always throwing stars, we can put a whole list of items inside the **projectile** block.
 
 ---
 
-- :mouse pointer: Open the ``||simplified:Simplified||`` category.
+- :lightning: From the ``||simplified:Simplified||`` category, grab
+```block
+simplified.chooseRandomImage(img`.`, img`.`)
+```
+and use it to replace the image of the star inside
+```block
+let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
+```
 
-- :puzzle: Grab<br/>
-``||simplified:choose one of [ ] [ ] +||``<br/>
-and use it to replace the image of the star in the **projectile**
-block (inside of <br/>
-``||controller:on [A] button [pressed]||``).
 
-- :mouse pointer: Click **Next** to move on to the next instruction.
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -30,16 +33,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(simplified.chooseRandomImage(img`.`, img`.`), audience, randint(-100, 100), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(simplified.chooseRandomImage(img`.`, img`.`), audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
 
 ## {Step 3}
 
-- :paint brush: Click the empty grey squares and toggle to **My Assets**
-to grab a star for the first box and a rose for the second one.
+- :paint brush: Click the empty image squares inside
+```block
+simplified.chooseRandomImage(img`.`, img`.`)
+```
+and switch to **My Assets**
+to grab a **star** for the first box and a **rose** for the second one.
 
+
+#### ~ tutorialhint
 
 ```blocks
 let audience: Sprite = null
@@ -47,39 +56,48 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`), audience, randint(-100, 100), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`), audience, randint(-80, 80), randint(-50, -100))
 
 })
 ```
 
 ## {Step 4}
 
-**Try your project on the game screen!**
+- :binoculars: Try your project on the game screen!
 
-Does the audience now throw a random number of stars and roses?
+Does the audience switch between throwing stars and roses when you
+press the (A) button (or space bar)?
 
 
 ## {Step 5}
 
 **🌟 Encore!🌟**
 
+Ready for more?
+
 ---
 
-- :mouse pointer: Click the white **plus** at the right of <br/>
-``||simplified:choose one of [⭐] [🌹] +||`` <br/>
+- :mouse pointer: Click the white **plus** at the right of
+```block
+simplified.chooseRandomImage(assets.image`star`, assets.image`rose`)
+```
 to create a new empty box.
 
-- :paint brush: Click the new empty box and draw another item for the audience to send to the stage (like hearts or flower petals.)
+
+- :paint brush: Click the new box and draw another item for the audience to send to the stage (like hearts or flower petals.)
+
 
 _💡 You can choose up to **5** things!_
 
+
+#### ~ tutorialhint
 
 ```blocks
 let mySprite: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     mySprite.setImage(assets.image`clap1`)
-    projectile = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`, img`
+    let star = sprites.createProjectileFromSprite(simplified.chooseRandomImage(assets.image`star`, assets.image`rose`, img`
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
@@ -96,10 +114,58 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . . 2 . . . . . . .
 . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . .
-`), audience, randint(-100, 100), randint(-50, -100))
+`), audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 
+
+
+## {Step 6}
+
+**🎹 Set it to music! 🎹**
+
+Let's give the talent some music for their performance.
+
+---
+
+- :headphones: From ``||music:Music||``, grab
+```block
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+```
+and drag it into **the end** of the <br/>
+``||loops(noclick):on start||``<br/>
+container in the workspace.
+
+
+- :mouse pointer: Click the empty box and play with the
+music editor to create a song for your game. It can be as long or as short as you like.
+
+
+
+#### ~ tutorialhint
+
+```blocks
+let audience: Sprite = null
+scene.setBackgroundImage(assets.image`stage`)
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
+audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.bottom = 120
+game.splash("Press (A) to play!")
+info.startCountdown(10)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+
+```
+
+
+
+## {Step 7}
+
+- :binoculars: Try your project one last time!
+
+**A song should play** as your audience cheers and throws random objects at the stage.
+
+**Can you get 60 points before time runs out?**
 
 
 ## {Finale}
@@ -110,18 +176,38 @@ Now you have a full-featured talent show clicker game!
 
 ---
 
-Play your game to see how many items you can toss before time runs out. Can you get to **60**?
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/star/share.gif )
+
+hint~
 
 When you're finished, click **Done** to return to the main page where you can
 collect your badge and share your final game with family and friends.
 
 
+```blockconfig.global
+game.over(true, effects.confetti)
+let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.setImage(assets.image`clap2`)
+audience.bottom = 120
+let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+
+```
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap2`)
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-100, 100), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 info.onCountdownEnd(function () {
     game.over(true, effects.hearts)
@@ -131,12 +217,19 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 })
 let audience: Sprite = null
 scene.setBackgroundImage(assets.image`stage`)
-let mySprite = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-mySprite.bottom = 115
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
 audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.bottom = 120
 game.splash("Press (A) to play!")
 info.startCountdown(10)
+```
+
+```ghost
+scene.setBackgroundColor(1)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
+music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 ```
 
 

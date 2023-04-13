@@ -16,7 +16,7 @@ Today, you'll see what it might have been like to be on the prototype team for Z
 
 A prototype is an early model of something that has not yet been mass produced.
 
-Prototypes don't always look or work the way the final product does, but they do allow inventors to see how their ideas will work in the real world.
+Prototypes don't always work like the final product, but they allow inventors to see how ideas will work in the real world.
 
 hint~
 
@@ -63,8 +63,7 @@ to open the image editor.
 - :mouse pointer: Here, you can create your own artwork, or you can click the **My Assets** tab
 ![My Assets](/static/skillmap/assets/my-assets-three.png "Toggle to see the images for this game" )
 to choose our **Zune** screen.
-![Choose the Zune Background Screen to start](/static/tutorial/music/splash.png " " )
-
+![Choose the Zune Background Screen to start](/static/tutorials/music/splash.png " " )
 
 
 #### ~ tutorialhint
@@ -315,11 +314,13 @@ When you're finished, click **Done** to return to the main page to move forward 
 
 
 ```blockconfig.global
+let thisSong: music.Playable = null
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+     thisSong = music.createSong(assets.song`into_the_forever`)
     music.play(thisSong, music.PlaybackMode.LoopingInBackground)
 })
-let thisSong: music.Playable = null
-thisSong = music.createSong(assets.song`pop_goes_the_synth`)
+
 ```
 
 ```simtheme
@@ -329,12 +330,10 @@ thisSong = music.createSong(assets.song`pop_goes_the_synth`)
 ```
 
 
-
-
 ```ghost
+
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    albumArt = assets.image`into_forever_album_cover`
-    scene.setBackgroundImage(albumArt)
+    scene.setBackgroundImage(assets.image`into_forever_album_cover`)
     thisSong = music.createSong(assets.song`into_the_forever`)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -344,57 +343,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.play(thisSong, music.PlaybackMode.LoopingInBackground)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    albumArt = assets.image`perfect_society_album_cover`
-    scene.setBackgroundImage(albumArt)
+    scene.setBackgroundImage(assets.image`perfect_society_album_cover`)
     thisSong = music.createSong(assets.song`perfectSociety`)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    albumArt = assets.image`pop_synth_album_art`
-    scene.setBackgroundImage(albumArt)
+    scene.setBackgroundImage(assets.image`pop_synth_album_art`)
     thisSong = music.createSong(assets.song`pop_goes_the_synth`)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    albumArt = assets.image`such_a_long_time_album_cover`
-    scene.setBackgroundImage(albumArt)
+    scene.setBackgroundImage(assets.image`such_a_long_time_album_cover`)
     thisSong = music.createSong(assets.song`running_such_a_long_time`)
 })
-/**
- * Press arrow keys to select a song.
- *
- * Press (A) to play and (B) to stop.
- */
-let albumArt: Image = null
-let thisSong: music.Playable = null
-thisSong = music.createSong(assets.song`pop_goes_the_synth`)
-albumArt = assets.image`Zune`
-scene.setBackgroundImage(albumArt)
+let thisSong = music.createSong(assets.song`pop_goes_the_synth`)
+scene.setBackgroundImage(assets.image`Zune`)
 
 ```
 
-
-```customts
-
-//% color=#d6007b icon="\uf001"
-//% block="Music Player"
-namespace musicplayer{
-    export let thisSong: music.Playable = null
-    thisSong = music.createSong(assets.song`pop_goes_the_synth`)
-
-
-    /**
-    * Simple package for setting loaded song
-    */
-    //% blockId=set_loaded_song
-    //% block="set loaded song to $thisSong"
-    //% $thisSong.shadow=music_melody_playable
-    //% $thisSong.defl=music.createSong()
-    export function setLoadedSong($thisSong:music.Playable) {
-
-    }
-
-}
-
-```
 
 
 
