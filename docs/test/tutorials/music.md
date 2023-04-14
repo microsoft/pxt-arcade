@@ -87,7 +87,7 @@ Do you see the screen you chose?
 
 ## {Step 5}
 
-**Set a song**<br/>
+**Set a Song**<br/>
 🎵 🎵 🎵
 
 Load a song when the music player starts.
@@ -119,12 +119,16 @@ let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
 
 
 
+## {Step 4}
+
+- :binoculars: Look at your music player again.
+
+Do you see the screen change when you press the up arrow?
 
 
 ## {Step 6}
 
-Now we need to put our character exactly where we want them.
-
+**▶️ Press Play**
 
 - :paper plane: From ``||sprites: Sprites||``, grab
 ```block
@@ -141,6 +145,14 @@ and snap it into **the end** of the ``||loops(noclick): on start||`` container.
 hint~
 
 
+```blockconfig.local
+let thisSong: music.Playable = null
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+})
+
+```
 
 
 #### ~ tutorialhint
@@ -316,12 +328,23 @@ When you're finished, click **Done** to return to the main page to move forward 
 ```blockconfig.global
 let thisSong: music.Playable = null
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-     thisSong = music.createSong(assets.song`into_the_forever`)
-    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    scene.setBackgroundImage(img`.`)
+    thisSong = music.createSong()
 })
 
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+})
+    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    thisSong = music.createSong()
+
 ```
+
+```customts
+music.setVolume(20)
+```
+
 
 ```simtheme
 {
