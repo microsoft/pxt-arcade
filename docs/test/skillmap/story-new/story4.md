@@ -49,7 +49,11 @@ container already in the workspace.
 
 ```blocks
 // @highlight
-scene.setBackgroundImage(assets.image`page1`)
+scene.setBackgroundImage(img`
+9 9 9 9
+9 9 9 9
+7 7 7 7
+`)
 ```
 
 
@@ -84,7 +88,11 @@ container that's already in the workspace.
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`page1`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
 // @highlight
 pause(1000)
 
@@ -117,7 +125,11 @@ container that's already in the workspace.
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`page1`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
 pause(1000)
 //@highlight
 game.showLongText("Once upon a time...", DialogLayout.Bottom)
@@ -134,7 +146,11 @@ Add another set of blocks with a new picture and a new line from your story.
 
 - :mouse pointer:  Keep adding sets of blocks until you get to the end.
 ```block
-scene.setBackgroundImage(assets.image`page2`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
 pause(1000)
 game.showLongText("Next door...", DialogLayout.Bottom)
 ```
@@ -145,30 +161,66 @@ game.showLongText("Next door...", DialogLayout.Bottom)
 #### ~ tutorialhint
 
 ```blocks
-    scene.setBackgroundImage(assets.image`page1`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(1000)
     game.showLongText("Once upon a time, there was a lizard who lived beneath a toadstool.", DialogLayout.Bottom)
-    scene.setBackgroundImage(assets.image`page2`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(1000)
     game.showLongText("Next door, there lived a butterfly on a daisy.", DialogLayout.Bottom)
-    scene.setBackgroundImage(assets.image`page3`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(1000)
     game.showLongText("Every day, the butterfly would sweep past and taunt the lizard from the sky.", DialogLayout.Bottom)
     game.showLongText("\"Ha ha!\" He would say. \"Your house doesn't smell as good as mine.\"", DialogLayout.Bottom)
-    scene.setBackgroundImage(assets.image`page4`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(1000)
     game.showLongText("Finally, one day, the lizard decided to find a daisy of her own.", DialogLayout.Bottom)
-    scene.setBackgroundImage(assets.image`page5`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(2000)
-    scene.setBackgroundImage(assets.image`page6`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(2000)
-    scene.setBackgroundImage(assets.image`page7`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(2000)
     game.showLongText("She tried and tried, but she just couldn't get comfortable.", DialogLayout.Bottom)
-    scene.setBackgroundImage(assets.image`page8`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(1000)
     game.showLongText("No matter what she did, the fragrant flower didn't make her happy.", DialogLayout.Bottom)
-    scene.setBackgroundImage(assets.image`page9`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     pause(1000)
     game.showLongText("The next day, the lizard moved back to her toadstool and lived happily ever after.", DialogLayout.Bottom)
     })
@@ -228,7 +280,11 @@ let you perfectly position your sprite or add movement.
 #### ~ tutorialhint
 
 ```blocks
-    scene.setBackgroundImage(assets.image`page9`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
     //@highlight
    let mySprite = sprites.create(img`
     ........................
@@ -289,7 +345,11 @@ container that's already in the workspace.
 #### ~ tutorialhint
 
 ```blocks
-    scene.setBackgroundImage(assets.image`page9`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
    let mySprite = sprites.create(img`
     ........................
     ............cc..........
@@ -345,7 +405,11 @@ and add them to your project.
 ```blocks
     //@highlight
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
-    scene.setBackgroundImage(assets.image`page9`)
+    scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
    let mySprite = sprites.create(img`
     ........................
     ............cc..........
@@ -424,14 +488,30 @@ story-one=github:kiki-lee/short-story-assets-1#v0.0.5
 music.stopAllSounds()
 scene.setBackgroundColor(1)
 pauseUntil(() => controller.anyButton.isPressed())
-scene.setBackgroundImage(assets.image`page1`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
 pause(1000)
 game.showLongText("Once upon a time", DialogLayout.Bottom)
-scene.setBackgroundImage(assets.image`page2`)
-scene.setBackgroundImage(assets.image`page4`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
 pause(1000)
 game.showLongText("Finally, one day, the lizard decided to find a daisy of her own.", DialogLayout.Bottom)
-scene.setBackgroundImage(assets.image`page5`)
+scene.setBackgroundImage(img`
+9 9 9 9 
+9 9 9 9 
+7 7 7 7 
+`)
 music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
 music.play(music.createSong(hexhex`00780004080200`), music.PlaybackMode.InBackground)
 let mySprite = sprites.create(img`.`, SpriteKind.Player)
