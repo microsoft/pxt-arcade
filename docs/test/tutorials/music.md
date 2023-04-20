@@ -60,7 +60,7 @@ scene.setBackgroundImage(img`.`)
 to open the image editor.
 
 
-- :mouse pointer: Here, you can create your own artwork, or you can click the **My Assets** tab
+- :mouse pointer: Here, you can create your own artwork, or you can click the **Gallery** tab
 ![Gallery](/static/skillmap/assets/gallery.png "Toggle to see the images for this activity" )
 to choose our **Zune** screen.
 ![Choose the Zune Background Screen to start](/static/tutorials/music/splash.png " " )
@@ -237,13 +237,13 @@ Press the up-arrow to load your song and then press the (A) button to play it!
 
 ---
 
-There are a few reasons you might not be able to hear your song, even if the code is correct.
+There are a few reasons you might not be able to hear your song even if the code is correct.
 
 - Make sure the music player is unmuted (🔊)
 - Try turning up the volume on your computer
 - Add a ``||music:set volume [100]||`` block to your ``||loops(noclick):on start||`` container.
 
-If you still can't hear your song, go back and look at the instructions to make sure your code is as expected.
+If you still can't hear your song, go back and look at the instructions to make sure your code matches the instructions.
 
 
 hint~
@@ -339,9 +339,9 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Test your songs on the music player.
 
-Press the uany arrow to load your song and then press the (A) button to play.
+Press an arrow to load your song and then press the (A) button to play.
 
-Now try another arrow. Do you notice that the new songs play right over top the old ones? Let's fix that.
+Now try another arrow. Do you notice that the new song plays right over top of the old one? Let's fix that.
 
 
 ```blockconfig.local
@@ -448,7 +448,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 You have made your own prototype Zune!
 
-This doesn't work quite like the first Zune, but when you click **Done**, your code will open in our project editor and you can use variables and arrays to make your player work more like the original.
+This doesn't work quite like the original, but when you click **Done**, your code will open in our project editor and you can use variables and arrays to make your player work more like a Zune would have.
 
 Don't forget to share your music with your friends and family!
 
