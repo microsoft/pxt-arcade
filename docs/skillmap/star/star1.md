@@ -299,7 +299,7 @@ Play it on the game screen and see if you can get more than **40 clicks**.
 
 
 
-~hint How do I share my card?💡
+~hint How do I share my game?💡
 
 ---
 
