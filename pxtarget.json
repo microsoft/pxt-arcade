@@ -670,6 +670,7 @@
         }
     ],
     "uploadDocs": true,
+    "noSimShims": true,
     "defaultBadges": [
         {
             "id": "skillmap-completion-save the forest",
