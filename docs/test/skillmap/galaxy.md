@@ -1,8 +1,8 @@
 # Save the Galaxy
 * name: Save the Galaxy
-* description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, design your outerspace view, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!
+* description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, dodge asteroids, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!
 * infoUrl: skillmap/educator-info/galaxy-map-info
-* bannerUrl: /static/skillmap/galaxy/galaxy6.gif
+* bannerUrl: /static/skillmap/galaxy/galaxy3.gif
 * backgroundurl: /static/skillmap/backgrounds/space-comp.png
 * primarycolor: #ffa000
 * secondarycolor: #ff07d9
@@ -28,35 +28,24 @@
 * position: 0 0
 
 ### galaxy2
-* name: Ready, Aim, Fire!
+* name: Communication is Key!
 * type: tutorial
-* description: Equip your ship with projectiles and special effects.
-* tags: easy, projectiles, kinds
+* description: Equip your ship with projectiles to update satellites.
+* tags: easy, projectiles, kinds, overlaps
 * next: galaxy3
 * url: /test/skillmap/galaxy/galaxy2
 * imageUrl: /static/skillmap/galaxy/galaxy2.gif
 * position: 0 3
 
 ### galaxy3
-* name: Communication is Key!
-* description: Make sure to transmit the information you need to send, but don't get hit by rogue satellites.
+* name: Here Comes Trouble
+* description: Make sure to transmit the information you need to send, but don't get hit by asteroids.
 * type: tutorial
-* tags: intermediate, collisions, kinds
-* next: galaxy4
+* tags: intermediate, collisions, kinds, animations
+* next: galaxy-cert-1
 * url: /test/skillmap/galaxy/galaxy3
 * imageUrl: /static/skillmap/galaxy/galaxy3.gif
-* position: 2 3
-
-### galaxy4
-* name: All Shook Up
-* type: tutorial
-* description: Animate your ship
-* tags: intermediate, animations
-* next: galaxy-cert-1
-* url: /test/skillmap/galaxy/galaxy4a
-* imageUrl: /static/skillmap/galaxy/galaxy4a.gif
 * position: 4 3
-
 
 
 
@@ -73,8 +62,8 @@
     * editor: [Mod This Project](/)
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/space-cert.pdf
-        * preview:  /static/skillmap/certificates/space-cert.png
+        * url: /static/skillmap/certificates/galaxy-cert.pdf
+        * preview:  /static/skillmap/certificates/galaxy-cert.png
     * completion-badge:
-        * image: /static/badges/badge-space.png
-        * name: Space Explorer
+        * image: /static/badges/badge-galaxy.png
+        * name: Save the Galaxy

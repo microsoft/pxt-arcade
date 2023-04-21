@@ -1,4 +1,4 @@
-# Here comes trouble!
+# Here Comes Trouble
 
 ## Introduction @showdialog
 
