@@ -2,7 +2,7 @@
 
 ## Introduction @showdialog
 
-Are you ready to add to your Adventure?
+Are you ready to add to your adventure?
 
 In this tutorial, you'll add the ability to make it look like you're sending
 information to satellites
