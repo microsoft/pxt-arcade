@@ -255,9 +255,12 @@ hint~
 
 ---
 
-If you try pressing play before you choose a song, you'll get a "sim error."  This just means that it couldn't find a song to play.
+If you try pressing play before you choose a song, you'll get a "sim error."
+This just means that it couldn't find a song to play. <br/>
+**(We'll fix this in the next step.)**
 
-You'll need to reload the music player and try again, but this time, make sure to press the up-arrow before pressing the (A) button.
+You'll need to reload the music player and try again,
+but this time, make sure to press the up-arrow before pressing the (A) button.
 
 
 hint~
@@ -276,7 +279,97 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
+
 ## {Step 11}
+
+**Avoid Overload**
+
+Add a code to make sure a song is loaded before you try to play it.
+
+---
+
+
+- :game: From ``||logic: Logic||`` drag <br/>
+``||logic: if <true> then||``<br/>
+into **the beginning** of the <br/>
+``||controller(noclick): on [A] button [pressed]||``<br/>
+container already in the workspace.
+
+- :mouse pointer: Move<br/>
+``||music(noclick): play [thisSong] [looping in background]||``<br/>
+into the <br/>
+``||logic(noclick): if <true> then||``<br/>
+container just added in the workspace.
+
+
+```blockconfig.local
+let thisSong: music.Playable = null
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+})
+
+```
+
+#### ~ tutorialhint
+
+```blocks
+let thisSong: music.Playable = null
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+//@highlight
+if (true) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
+})
+```
+
+
+
+
+
+## {Step 12}
+
+- :game: From ``||variables: Variables||`` drag <br/>
+``||variables: thisSong||``<br/>
+into **the top bar of**  <br/>
+``||logic(noclick): if <true> then||``<br/>
+to replace **`<true`>**.
+
+Now, when you press the (A) button,
+the code will check to see if there is a value inside **thisSong**
+before playing,
+
+
+```blockconfig.local
+let thisSong: music.Playable = null
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+if (true) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
+})
+
+```
+
+#### ~ tutorialhint
+
+```blocks
+let thisSong: music.Playable = null
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+//@highlight
+if (thisSong) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
+})
+```
+
+
+
+
+
+## {Step 13}
 
 
 - :game: You can add more songs by dragging out three more <br/>
@@ -335,7 +428,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {Step 12}
+## {Step 14}
 
 - :binoculars: Test your songs on the music player.
 
@@ -348,14 +441,16 @@ Now try another arrow. Do you notice that the new song plays right over top of t
 let thisSong: music.Playable = null
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+if (thisSong) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
 })
 
 ```
 
 
 
-## {Step 13}
+## {Step 15}
 
 
 - :headphones: From ``||music:Music||``, drag<br/>
@@ -372,11 +467,12 @@ Now the code will stop the old song before playing the new one.
 let thisSong: music.Playable = null
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+if (thisSong) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
 })
 
 ```
-
 
 
 #### ~ tutorialhint
@@ -385,12 +481,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     //@highlight
     music.stopAllSounds()
-    music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    if (thisSong) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
 })
 ```
 
 
-## {Step 14}
+## {Step 16}
 
 **⏹️ Stop the Music**
 
@@ -422,7 +520,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
-## {Step 15}
+## {Step 17}
 
 - :binoculars: Test your final music player.
 
@@ -442,7 +540,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {Step 16}
+## {Finale}
 
 **🎉 Way to Go 🎉**
 
@@ -468,6 +566,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
     music.play(thisSong, music.PlaybackMode.LoopingInBackground)
     music.setVolume(100)
+
+    if (thisSong) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
+
 
 ```
 
@@ -517,6 +620,10 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let thisSong: music.Playable = null
 scene.setBackgroundImage(assets.image`Zune`)
+
+    if (thisSong) {
+        music.play(thisSong, music.PlaybackMode.LoopingInBackground)
+    }
 
 ```
 
