@@ -8,7 +8,7 @@ In this tutorial, you'll add the ability to make it look like you're sending
 information to satellites
 when the (A) button is pressed.
 
-![Releasing projectiles](/static/skillmap/space/spacet2.gif "Here, enemy ship. Would you like to borrow a blaster?")
+![Releasing projectiles](/static/skillmap/galaxy/galaxy2.gif "Would you like my information?")
 
 
 ## {2. Try it Out}
@@ -77,12 +77,12 @@ Press the (A) button or space bar as fast as you can to send information flying 
 **Add the Satellites**<br/>
 🛰️ 🛰️ 🛰️
 
-Let's add code that will send in satellites every couple of seconds.
+Let's add code that will launch satellites every couple of seconds.
 
 ---
 
 - :circle: From ``||game: Game||``, drag the<br/>
-``||game:on game update every [500] ms||``<br/>
+``||game:on game update every [2000] ms||``<br/>
 bundle into **an empty area** of the workspace.
 
 
@@ -90,11 +90,16 @@ bundle into **an empty area** of the workspace.
 the **Satellite** image.
 
 
-Now, satellites will fall from the sky every 2000ms (2 seconds)
-from a random horizontal location. Each one will be of kind **Satellite**.
+Satellites should fall from the sky every 2000ms (2 seconds)
+from a random horizontal location.
 
 
 ```blocks
+
+    //% isKind
+    namespace SpriteKind {
+        export const Satellite = SpriteKind.create()
+    }
 game.onUpdateInterval(2000, function () {
     let mySat = sprites.createProjectileFromSide(img`
         . . . .
@@ -109,33 +114,130 @@ game.onUpdateInterval(2000, function () {
 
 
 
-## {8. Upload}
+## {6. Upload}
 
-**Upload and fly away. **
+**Information Received**
 
-When the information projectiles overlap the satellites,
-we want the satellites to register the upload, then fly away.
+Add the code that tells the computer what to do when the information projectile overlaps the satellite.
 
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, drag the<br/>
-``||sprites:on [sprite] of kind [Player] overlaps [othersprite] of kind [Player]||``<br/>
+``||sprites:on [sprite] of kind [Projectile] overlaps [othersprite] of kind [Satellite]||``<br/>
 bundle into **an empty area** of the workspace.
 
-- :mouse pointer: Change the last value from ``||sprites:Player||`z` to ``||sprites:Enemy||``.
+This bundle detects when an information **projectile overlaps the satellite**,
+then it destroys that projectile (as if the satellite uploaded the information)
+and adds **1** to your score.
 
----
-
-_💡 Don't try to change "sprite" → "mySprite" or "otherSprite" → "myEnemy".
-The variable "sprite" is the **Player** sprite (our Rocket) and the "otherSprite" variable is the specific **Enemy** sprite that our **Player** overlapped with._
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-
+    //% isKind
+    namespace SpriteKind {
+        export const Satellite = SpriteKind.create()
+    }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Satellite, function (sprite, otherSprite) {
+    sprite.destroy()
+    info.changeScoreBy(1)
 })
 ```
 
 
+
+## {7. Register the upload}
+
+**Upload and Fly Away**
+
+When information projectiles overlap the satellites,
+we want the satellites to register the upload, then fly away.
+
+---
+
+- :paper plane: From ``||sprites:Sprites||``, drag<br/>
+``||sprites:[otherSprite] say ["Uploading..."]||``<br/>
+bundle into **the end** of the<br/>
+``||sprites(noclick):on [sprite] of kind [Projectile] overlaps [othersprite] of kind [Satellite]||``<br/>
+bundle already in your workspace.
+
+
+This will cause your satellite to send the message "Uploading..." when it receives your information.
+
+~hint Why "otherSprite" ? 💡
+
+---
+
+You may have noticed that when satellites are created, they're given the name "mySat",
+but in our overlap event, we target them using the name "otherSprite".
+
+This is because the name **mySat** is passed around between all of the satellites.
+If you use that name, you won't know which one receives the command.
+
+In our program, when a specific projectile overlaps a specific satellite,
+we want to write code for those exact sprites.
+That's why the overlap event provides the nicknames **sprite** and **otherSprite**.
+
+The way we've written our code, **sprite** is the specific projectile we need and
+**otherSprite**
+is the specific satellite we need.
+
+hint~
+
+
+```blocks
+    //% isKind
+    namespace SpriteKind {
+        export const Satellite = SpriteKind.create()
+    }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Satellite, function (sprite, otherSprite) {
+    sprite.destroy()
+    info.changeScoreBy(1)
+    otherSprite.sayText("Uploading...")
+})
+```
+
+
+
+## {10. Fly Away}
+
+To get the satellite to fly away after upload, you'll need to change its velocity.
+
+---
+
+- :paper plane: From ``||sprites:Sprites||``, drag<br/>
+``||sprites:set [otherSprite] velocity to vx [-30] vy [-30]||``<br/>
+bundle into **the end** of the<br/>
+``||sprites(noclick):on [sprite] of kind [Projectile] overlaps [othersprite] of kind [Satellite]||``<br/>
+bundle already in your workspace.
+
+
+This will cause your satellite to fly upward and to the left when it
+receives your information.
+
+
+
+```blocks
+    //% isKind
+    namespace SpriteKind {
+        export const Satellite = SpriteKind.create()
+    }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Satellite, function (sprite, otherSprite) {
+    sprite.destroy()
+    info.changeScoreBy(1)
+    otherSprite.sayText("Uploading...")
+    otherSprite.setVelocity(-30, -30)
+})
+```
+
+
+
+## {Step 11}
+
+**Try your activity!**
+
+- :binoculars: Click on the game screen.
+
+You should be able to send information to the satellites using the (A) button and when the satellite
+receives information, it should say "Uploading..." and fly away while giving you a point.
 
 
 
@@ -143,10 +245,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 🎆 **Congratulations** 🎆
 
----
-
-You can now use the direction buttons to move your space plane and
-press **Ⓐ** to lauch projectiles!
+You can now earn points by sending information to satellites!
 
 ~hint How do I share my project?💡
 
@@ -160,7 +259,8 @@ Click "Done" to get back out to the skillmap, then look in the lower-right corne
 
 hint~
 
-Play your game on the game screen, then click **Done** to return to the main skillmap where you can carry on to find out how to add enemies to your project!
+When you're ready, click **Done** to return to the main skillmap where
+you can carry on to find out how to add asteroids to your project!
 
 
 ```blockconfig.global
