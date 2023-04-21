@@ -66,7 +66,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **Give it a try!**
 
-- :binoculars: Bring your mouse over to the game screen.
+- :binoculars: Click on the game screen.
 
 Press the (A) button or space bar as fast as you can to send information flying through the galaxy.
 
@@ -95,8 +95,6 @@ from a random horizontal location.
 
 
 ```blocks
-
-    //% isKind
     namespace SpriteKind {
         export const Satellite = SpriteKind.create()
     }
@@ -132,7 +130,6 @@ and adds **1** to your score.
 
 
 ```blocks
-    //% isKind
     namespace SpriteKind {
         export const Satellite = SpriteKind.create()
     }
@@ -184,7 +181,6 @@ hint~
 
 
 ```blocks
-    //% isKind
     namespace SpriteKind {
         export const Satellite = SpriteKind.create()
     }
@@ -216,7 +212,6 @@ receives your information.
 
 
 ```blocks
-    //% isKind
     namespace SpriteKind {
         export const Satellite = SpriteKind.create()
     }
@@ -264,8 +259,6 @@ you can carry on to find out how to add asteroids to your project!
 
 
 ```blockconfig.global
-
-    //% isKind
     namespace SpriteKind {
         export const Satellite = SpriteKind.create()
     }
@@ -305,7 +298,7 @@ otherSprite.setVelocity(-30, -30)
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
-galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.5
+galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.7
 ```
 
 
@@ -344,10 +337,6 @@ sprites.onOverlap(SpriteKind.Satellite, SpriteKind.Projectile, function (sprite,
 
 
 ```template
-    //% isKind
-    namespace SpriteKind {
-        export const Satellite = SpriteKind.create()
-    }
     let myShip: Sprite = null
     scene.setBackgroundImage(img`.`)
     scroller.scrollBackgroundWithSpeed(0, 10)
@@ -357,6 +346,12 @@ sprites.onOverlap(SpriteKind.Satellite, SpriteKind.Projectile, function (sprite,
 ```
 
 
+```customts
+    namespace SpriteKind {
+      //% isKind
+        export const Satellite = SpriteKind.create()
+    }
+```
 
 
 ```simtheme

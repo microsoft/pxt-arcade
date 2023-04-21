@@ -25,6 +25,14 @@ hint~
 ![Zune outline](/static/tutorials/music/zune_outline.png "This is what the original Zune looked like back in 2006" )
 
 
+---
+
+Age: 12+<br/>
+Exp: 🔴🔴⭕⭕⭕<br/>
+
+---
+
+
 ## {Step 2}
 
 **Create your loading screen**
@@ -151,7 +159,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 to open the image editor.
 
 
-- :mouse pointer: Create an album cover
+- :mouse pointer: Create an album cover for your song
 (or click the **Gallery** tab
 ![Gallery](/static/skillmap/assets/gallery.png "Toggle to see the images for this activity" )
 to choose pre-made album art.)
@@ -202,6 +210,21 @@ bundle into **an empty** of the workspace.
 Now when you press the (A) button, it will play whatever you have loaded into the **thisSong** variable.
 
 
+~hint I'm getting an error ⚠️
+
+---
+
+If you try pressing play before you choose a song, you'll get a "sim error."
+This just means that it couldn't find a song to play. <br/>
+**(We'll fix this in step 11.)**
+
+You'll need to reload the music player and try again,
+but this time, make sure to press the up-arrow before pressing the (A) button.
+
+
+hint~
+
+
 ```blockconfig.local
 let thisSong: music.Playable = null
 
@@ -243,7 +266,7 @@ There are a few reasons you might not be able to hear your song even if the code
 - Try turning up the volume on your computer
 - Add a ``||music:set volume [100]||`` block to your ``||loops(noclick):on start||`` container.
 
-If you still can't hear your song, go back and look at the instructions to make sure your code matches the instructions.
+If you still can't hear your song, go back and look at previous steps to make sure your code matches the instructions.
 
 
 hint~
@@ -284,7 +307,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 **Avoid Overload**
 
-Add a code to make sure a song is loaded before you try to play it.
+Add code to make sure a song is loaded before you try to play it.
 
 ---
 
@@ -377,7 +400,7 @@ if (thisSong) {
 bundles and changing ``||controller:up||`` to ``||controller:down||``, ``||controller:left||``, and ``||controller:right||``.
 
 
-- :mouse pointer: Add a new song and new album art to each option.
+- :mouse pointer: Add a **new song** and **new album art** to each option.
 
 
 
@@ -456,7 +479,7 @@ if (thisSong) {
 - :headphones: From ``||music:Music||``, drag<br/>
 ``||music: stop all sounds||``<br/>
 into **the top** of the <br/>
-``||controller: on [A] button [pressed]||``<br/>
+``||controller(noclick): on [A] button [pressed]||``<br/>
 container that's already in the workspace.
 
 
@@ -525,9 +548,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 - :binoculars: Test your final music player.
 
 
-- the arrows should load a song
-- the (A) button should play the loaded song
-- the (B) button should stop all songs
+- The arrows should load a song
+- The (A) button should play the loaded song
+- The (B) button should stop all songs
 
 
 
@@ -546,7 +569,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 You have made your own prototype Zune!
 
-This doesn't work quite like the original, but when you click **Done**, your code will open in our project editor and you can use variables and arrays to make your player work more like a Zune would have.
+This doesn't work quite like the original, but when you click **Done**, your code will open in our project editor and you can use variables and arrays to make your player work more like the first Zune did.
 
 Don't forget to share your music with your friends and family!
 
@@ -582,7 +605,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ```package
-zune-assets=github:kiki-lee/zune-assets#v0.0.3
+zune-assets=github:kiki-lee/zune-assets#v0.0.6
 ```
 
 

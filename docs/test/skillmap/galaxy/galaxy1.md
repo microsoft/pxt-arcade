@@ -13,6 +13,14 @@ Before any of that, you must code the program that will let you SAVE THE GALAXY!
 
 ![Flying through space](/static/skillmap/galaxy/galaxy3.gif "Blasting through space")
 
+---
+
+Age: 12+<br/>
+Exp: 🔴🔴⭕⭕⭕<br/>
+
+---
+
+
 
 ## {2. Set the scene}
 **Giving Space**
@@ -29,8 +37,8 @@ into the empty <br/>
 container already in the workspace.
 
 
-- :paint brush: Click the empty box and switch to **My Assets**
-![Toggle to My Assets](/static/skillmap/assets/my-assets-three.png "toggle to the My Assets Window")
+- :paint brush: Click the empty box and switch to **Gallery**
+![Toggle to Gallery](/static/skillmap/assets/gallery.png "toggle to the Gallery Window")
 to choose the **galaxy** background, then click **Done**.
 ![Choose the galaxy background](/static/skillmap/galaxy/galaxy-bg.png " ")
 
@@ -103,7 +111,7 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`Galaxy`)
+scene.setBackgroundImage(img`c`)
 // @highlight
 scroller.scrollBackgroundWithSpeed(0, 10)
 ```
@@ -135,7 +143,7 @@ hint~
 
 - :paint brush: Click the empty box in the middle of the <br/>
  ``||variables(sprites):set [myShip] to sprite [ ] of kind [Player]||``<br/>
- block, then switch to **My Assets** and choose the new Guardians' **Ship**.
+ block, then switch to **Gallery** and choose the new Guardians' **Ship**.
 ![Choose the galaxy background](/static/skillmap/galaxy/bowie.png " ")
 
 
@@ -143,7 +151,7 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`Galaxy`)
+scene.setBackgroundImage(img`c`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 // @highlight
 let myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
@@ -167,7 +175,7 @@ into **the end** of the
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`Galaxy`)
+scene.setBackgroundImage(img`c`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
 // @highlight
@@ -180,7 +188,7 @@ controller.moveSprite(myShip)
 
 **Give it a try!**
 
-- :binoculars: Bring your mouse over to the game screen.
+- :binoculars: Click the game screen.
 
 Try moving your ship with the joypad,
 arrow keys, or **W** and **S** keys.
@@ -203,7 +211,7 @@ What happens when you hold one arrow down for a long time?
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(assets.image`Galaxy`)
+scene.setBackgroundImage(img`c`)
 scroller.scrollBackgroundWithSpeed(0, 10)
 let myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
 controller.moveSprite(myShip)
@@ -247,7 +255,7 @@ Click "Done" to get back out to the skillmap, then look in the lower-right corne
 
 hint~
 
-Click **Done** to return to the main skillmap and move on to
+Click **Done** to return to the main skillmap and keep going to
 discover how to send information through space!
 
 
@@ -260,7 +268,7 @@ myShip.setStayInScreen(true)
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
-galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.2
+galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.7
 ```
 
 
@@ -278,13 +286,13 @@ myShip.y = 100
 
 ```
 
-
-```template
-    //% isKind
+```customts
     namespace SpriteKind {
+      //% isKind
         export const Satellite = SpriteKind.create()
     }
 ```
+
 
 ```simtheme
 {
