@@ -213,7 +213,7 @@ block into **the end of** of the ``||sprites(noclick):overlaps||`` container
 where your sprite is created.
 
 - :mouse pointer: Change ``||variables(noclick):myShip||`` to the name of the sprite you're
-trying to animate, then click the empty box to choose your animation.
+trying to animate, then click the empty box to **choose your animation**.
 
 
 ```blocks
@@ -237,7 +237,7 @@ game.onUpdateInterval(3000, function () {
 
 
 
-## {Step 8}
+## {Step 10}
 
 **You've done it!**
 
@@ -245,13 +245,13 @@ game.onUpdateInterval(3000, function () {
 
 Can you see your animations?
 
-Now, try to update all 20 satellites before you run out of lives!
+Try to update all 20 satellites before you run out of lives!
 
 
 
 
 
-## 13. Finale
+## {13. Finale}
 
 **Congratulations**
 
@@ -273,7 +273,7 @@ hint~
 
 
 When you're ready, click **Done** to return to the main skillmap
-where you can share your activity or modify it in an unrestricted project window!
+where you can share your activity or modify it with a full toolbox!
 
 
 
@@ -313,7 +313,7 @@ true
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
-galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.5
+galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.7
 ```
 
 
@@ -360,10 +360,6 @@ true
 
 
 ```template
-    //% isKind
-    namespace SpriteKind {
-        export const Satellite = SpriteKind.create()
-    }
     let myShip: Sprite = null
     scene.setBackgroundImage(img`.`)
     scroller.scrollBackgroundWithSpeed(0, 10)
@@ -397,6 +393,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 
+```customts
+    namespace SpriteKind {
+      //% isKind
+        export const Satellite = SpriteKind.create()
+    }
+```
 
 
 ```simtheme
