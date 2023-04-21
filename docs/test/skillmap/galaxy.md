@@ -2,14 +2,14 @@
 * name: Save the Galaxy
 * description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, dodge asteroids, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!
 * infoUrl: skillmap/educator-info/galaxy-map-info
-* bannerUrl: /static/skillmap/galaxy/galaxy3.gif
-* backgroundurl: /static/skillmap/backgrounds/space-comp.png
+* bannerUrl: /static/skillmap/galaxy/galaxy3-trimmed.gif
+* backgroundurl: /static/skillmap/backgrounds/galaxy-comp.png
 * primarycolor: #ffa000
 * secondarycolor: #ff07d9
 * tertiarycolor: #ffffff
 * highlightcolor: #ff0081
 * completednodecolor: #31125d
-* tags: intermediate, space, projectiles
+* tags: space, projectiles
 * alternatesources: github:https://github.com/microsoft/pxt-skillmap-sample/skillmap.md
 
 
@@ -24,7 +24,7 @@
 * tags: easy, sprites, scroller
 * next: galaxy2
 * url: /test/skillmap/galaxy/galaxy1
-* imageUrl: /static/skillmap/galaxy/galaxy1.gif
+* imageUrl: /static/skillmap/galaxy/galaxy1-trimmed.gif
 * position: 0 0
 
 ### galaxy2
@@ -34,7 +34,7 @@
 * tags: easy, projectiles, kinds, overlaps
 * next: galaxy3
 * url: /test/skillmap/galaxy/galaxy2
-* imageUrl: /static/skillmap/galaxy/galaxy2.gif
+* imageUrl: /static/skillmap/galaxy/galaxy2-trimmed.gif
 * position: 0 3
 
 ### galaxy3
@@ -44,7 +44,7 @@
 * tags: intermediate, collisions, kinds, animations
 * next: galaxy-cert-1
 * url: /test/skillmap/galaxy/galaxy3
-* imageUrl: /static/skillmap/galaxy/galaxy3.gif
+* imageUrl: /static/skillmap/galaxy/galaxy3-trimmed.gif
 * position: 4 3
 
 
