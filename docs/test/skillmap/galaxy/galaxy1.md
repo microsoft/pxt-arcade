@@ -11,7 +11,7 @@ sight so you can transmit data to fix them.
 
 Before any of that, you must code the program that will let you SAVE THE GALAXY!
 
-![Flying through space](/static/skillmap/space/spacet1.gif "Blasting through space")
+![Flying through space](/static/skillmap/galaxy/galaxy3.gif "Blasting through space")
 
 
 ## {2. Set the scene}
