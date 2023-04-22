@@ -3,7 +3,7 @@
 
 ## Introduction @showdialog
 
-You are onboard the new ship belonging to the Guardians of the Galaxy.
+You are aboard the new ship belonging to the Guardians of the Galaxy.
 
 Some of the satellites used in the Azure Space program have mysteriously gone offline
 and they need to be updated. In order to help, you have to be in their direct line of
