@@ -45,13 +45,14 @@ hint~
 
 ![Zune outline](/static/tutorials/music/zune_outline.png "This is what the original Zune looked like back in 2006" )
 
-
+<!--
 ---
 
 Age: 12+<br/>
 Exp: 🔴🔴⭕⭕⭕<br/>
 
 ---
+-->
 
 
 ## {Step 2}
