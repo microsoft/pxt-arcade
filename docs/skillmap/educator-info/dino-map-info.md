@@ -95,5 +95,5 @@ After students complete Animate It! they can head back to the skillmap and click
 
 After completing the Mama Dino Skillmap, students move on to the following activities:
 
-* Turkey Day
-* Jungle Jump
+* [Turkey Day](https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey)
+* [Jungle Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)

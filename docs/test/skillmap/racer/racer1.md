@@ -91,7 +91,7 @@ let truck = sprites.create(assets.image`truck2`, SpriteKind.Player)
 Do you see the truck hovering in the cave?
 
 
-![Look at your game in the game window](/static/skillmap/star/game-window.png )
+![Look at your game in the game window](/static/skillmap/assets/game-window.png )
 
 
 

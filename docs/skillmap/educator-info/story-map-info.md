@@ -92,8 +92,9 @@ After students complete **The Shortest Story** they can head back to the skillma
 
 After completing the **Full of Stories** skillmap, students can move on to the following activities:
 
-* Talent Show
-* Turkey Day
+* [Talent Show](https://arcade.makecode.com/--skillmap#docs:/skillmap/star)
+* [Turkey Day](https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey)
+
 
 
 ```package

@@ -90,5 +90,5 @@ After students complete Talent Show they can head back to the skillmap and click
 
 After completing Talent Show, students can move on to the following activities:
 
-* [Build a Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
-* [Jungle Monkey Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)
+* [Mama Dino](https://arcade.makecode.com/--skillmap#docs:/skillmap/dino)
+* [Jungle Jump](https://arcade.makecode.com/--skillmap#docs:/skillmap/jungle)

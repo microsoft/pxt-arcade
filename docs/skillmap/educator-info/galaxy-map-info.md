@@ -59,7 +59,7 @@ Specifically, they will experience the following topics:
 | Activity | Communication is Key! (15 min) |
 |---|---|
 | ![Communication is Key! thumbnail](/static/skillmap/galaxy/galaxy2.gif) | Equip your ship with projectiles and special effects. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect(effects.fire, 100)]`` |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect(effects.fire, 100)]`` <br/>``[info.changeLifeBy()]`` |
 | Solution option | [Communication is Key! Project](https://makecode.com/_gU3XY18mw6k9) |
 
 #### 3. Here Comes Trouble
@@ -67,7 +67,7 @@ Specifically, they will experience the following topics:
 | Activity | Here Comes Trouble (20 min) |
 |---|---|
 | ![Here Comes Trouble thumbnail](/static/skillmap/galaxy/galaxy3.gif) | Add enemies, enemy functionality, and enemy destruction into your game. |
-| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite: Sprite=null; projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect()]``<br/>``[sprites.onOverlap()]``<br/>``[let sprite: Sprite=null; sprite.destroy(effects.ashes, 0)]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[info.changeScoreBy()]``<br/>``[info.changeLifeBy()]`` |
+| Blocks used | ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[let mySprite: Sprite=null; projectile = sprites.createProjectileFromSprite(img`.`, mySprite, 0, 0)]``<br/>``[let projectile: Sprite=null; projectile.startEffect()]``<br/>``[sprites.onOverlap()]``<br/>``[let sprite: Sprite=null; sprite.destroy(effects.ashes, 0)]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[info.changeScoreBy()]`` |
 | Solution option | [Here Comes Trouble Project](https://makecode.com/_VuJha6i1FeWT) |
 
 

@@ -480,8 +480,8 @@ mySprite.setFlag(SpriteFlag.StayInScreen, true)
 carnival=github:microsoft/arcade-carnival#v0.0.7
 arcade-storytelling=github:microsoft/arcade-storytelling/
 arcade-animations=github:microsoft/arcade-character-animations
-story-two=github:kiki-lee/short-story-assets-2#v0.0.4
-story-one=github:kiki-lee/short-story-assets-1#v0.0.5
+short-story-assets-2=github:kiki-lee/short-story-assets-2#v0.0.5
+short-story-assets-1=github:kiki-lee/short-story-assets-1#v0.0.6
 ```
 
 ```ghost
