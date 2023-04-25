@@ -71,7 +71,7 @@ animation.runImageAnimation(truck, assets.animation`truck2 animated`, 100, true)
 
 ## {5. Play it Again}
 
-- :binoculars: Remember to keep looking back at the game window to see how your game changes with each bit of code you add.
+- :binoculars: Remember to keep looking back to the game window to see how your game changes with each bit of code you add.
 
 Can you see the effects of the code you just wrote?
 
@@ -140,7 +140,7 @@ animation.runImageAnimation(truck, assets.animation`truck2 animated`, 100, true)
 
 ## {9. Play it Again}
 
-- :binoculars: Once you've added all of your sound effects, play your game through one last tome.  Can you make it all the way to the end?
+- :binoculars: Once you've added all of your sound effects, play your game through one last time.  Can you make it all the way to the end?
 
 
 
@@ -228,7 +228,7 @@ assets.animation`truck1 animated`,
 100,
 true
 )
-
+tiles.setTilemap(tilemap`level1`)
 ```
 
 

@@ -46,8 +46,8 @@
 * next: racer3
 * position: 3 0
 * actions:
+    * activity: [Complete Optional Level](racer3)
     * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/racer-cert.pdf

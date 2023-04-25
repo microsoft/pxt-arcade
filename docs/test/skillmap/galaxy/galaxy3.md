@@ -165,7 +165,7 @@ into the end of the event where it is created.
 
 - :sync: From ``||animation:Animation||``, drop the<br/>
 ``||animation:animate [myShip]||``<br/>
-block inside and **at the end of** of the ``||loops(noclick):Loops||`` container already in the workspace.
+block inside and **at the end of** of the ``||loops(noclick):on start||`` container already in the workspace.
 
 - :mouse pointer: Click the empty box to choose your animated ship.
 
@@ -209,7 +209,7 @@ Can you figure out how to animate your satellites and asteroids?
 
 - :sync: From ``||animation:Animation||``, drop the<br/>
 ``||animation:animate [myShip]||``<br/>
-block into **the end of** of the ``||sprites(noclick):overlaps||`` container
+block into **the end of** of the ``||game(noclick):on game update||`` container
 where your sprite is created.
 
 - :mouse pointer: Change ``||variables(noclick):myShip||`` to the name of the sprite you're

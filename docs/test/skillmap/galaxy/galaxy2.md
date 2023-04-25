@@ -152,9 +152,9 @@ we want the satellites to register the upload, then fly away.
 
 - :paper plane: From ``||sprites:Sprites||``, drag<br/>
 ``||sprites:[otherSprite] say ["Uploading..."]||``<br/>
-bundle into **the end** of the<br/>
+into **the end** of the<br/>
 ``||sprites(noclick):on [sprite] of kind [Projectile] overlaps [othersprite] of kind [Satellite]||``<br/>
-bundle already in your workspace.
+container already in your workspace.
 
 
 This will cause your satellite to send the message "Uploading..." when it receives your information.
@@ -201,9 +201,9 @@ To get the satellite to fly away after upload, you'll need to change its velocit
 
 - :paper plane: From ``||sprites:Sprites||``, drag<br/>
 ``||sprites:set [otherSprite] velocity to vx [-30] vy [-30]||``<br/>
-bundle into **the end** of the<br/>
+into **the end** of the<br/>
 ``||sprites(noclick):on [sprite] of kind [Projectile] overlaps [othersprite] of kind [Satellite]||``<br/>
-bundle already in your workspace.
+container already in your workspace.
 
 
 This will cause your satellite to fly upward and to the left when it
