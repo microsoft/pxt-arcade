@@ -13,7 +13,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/perfect-fit.gif
 * url: /--multiplayer?host=_bz3CCuWFiepH
 * cardType: link
-* otherAction: /_bz3CCuWFiepH, , sharedExample
+* otherAction: _bz3CCuWFiepH, , sharedExample
 ---
 * name: Galga
 * description: Controlling a starship, up to 4 players can help destroy the Galga forces, while avoiding enemies. Each player has 3 lives, last player alive wins the game!
@@ -23,7 +23,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/galga.gif
 * url: /--multiplayer?host=_C71PmfFaYDm2
 * cardType: link
-* otherAction: /_C71PmfFaYDm2, , sharedExample
+* otherAction: _C71PmfFaYDm2, , sharedExample
 ---
 * name: Arrow Battle
 * description: 2-4 people can play to see who's the quickest at matching the arrow directions.
@@ -33,7 +33,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/arrow-battle-large.gif
 * url: /--multiplayer?host=_dCP7f8c3q5PJ
 * cardType: link
-* otherAction: /_dCP7f8c3q5PJ, , sharedExample
+* otherAction: _dCP7f8c3q5PJ, , sharedExample
 ---
 * name: Tag
 * description: When you're it, tag a friend and they will lose a life. Be careful, if time runs out you'll lose a life instead! Up to 4 people can play.
@@ -43,7 +43,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/tag.gif
 * url: /--multiplayer?host=_cvxPm1WesYyi
 * cardType: link
-* otherAction: /_cvxPm1WesYyi, , sharedExample
+* otherAction: _cvxPm1WesYyi, , sharedExample
 ---
 * name: Horse Race
 * description: Up to 4 players race their horse to the finish line.
@@ -53,7 +53,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/horse-race.gif
 * url: /--multiplayer?host=_1DogpPTpb8fK
 * cardType: link
-* otherAction: /_1DogpPTpb8fK, , sharedExample
+* otherAction: _1DogpPTpb8fK, , sharedExample
 ---
 * name: Painting Together
 * description: Up to 4 people can paint together. Paint by holding down the A button and moving the arrow keys. Change the brush size by clicking the B button.
@@ -63,6 +63,6 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/painting.gif
 * url: /--multiplayer?host=_FdYfDwixRTAw
 * cardType: link
-* otherAction: /_FdYfDwixRTAw, , sharedExample
+* otherAction: _FdYfDwixRTAw, , sharedExample
 
 ### ~
