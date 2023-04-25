@@ -7,7 +7,7 @@
 * primarycolor: #ffa000
 * secondarycolor: #ff07d9
 * tertiarycolor: #ffffff
-* highlightcolor: #ff0081
+* highlightcolor: #ffffff
 * completednodecolor: #31125d
 * tags: space, projectiles
 * alternatesources: github:https://github.com/microsoft/pxt-skillmap-sample/skillmap.md

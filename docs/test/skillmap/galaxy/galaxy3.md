@@ -112,7 +112,7 @@ bundle already in the workspace and click the plus (+) to the right of the <br/>
 ``||sprites:destroy [sprites] + ||`` <br/>
 block.
 
-- :mouse pointer: Choose an effect for your asteroid. Try having it disintigrate or disappear in fire.
+- :mouse pointer: Choose an effect for your asteroid. Try having it **disintigrate** or disappear in **fire**.
 
 - :mouse pointer: Change the effect time to **100** to keep it short and sweet.
 

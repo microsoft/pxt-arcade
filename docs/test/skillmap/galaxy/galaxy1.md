@@ -13,13 +13,14 @@ Before any of that, you must code the program that will let you SAVE THE GALAXY!
 
 ![Flying through space](/static/skillmap/galaxy/galaxy3.gif "Blasting through space")
 
+<!--
 ---
 
 Age: 12+<br/>
 Exp: 🔴🔴⭕⭕⭕<br/>
 
 ---
-
+-->
 
 
 ## {2. Set the scene}
