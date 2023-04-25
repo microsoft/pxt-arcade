@@ -128,3 +128,10 @@
    Cloud Status
 ----------------------------*/
 @cloudStatusColor: @teal;
+
+/*---------------------------
+   Teaching Bubble
+----------------------------*/
+@teachingBubbleBackgroundColor: @teal;
+@teachingBubbleTextColor: @white;
+@teachingBubbleStepsColor: @beige;

@@ -653,7 +653,10 @@
         "tutorialCodeValidation": true,
         "multiplayer": true,
         "songEditor": true,
-        "shareToKiosk": true
+        "shareToKiosk": true,
+        "tours": {
+            "editor": "/tours/editor-tour"
+        }
     },
     "queryVariants": {
         "skillsMap=1": {
