@@ -7,6 +7,15 @@
 [
 
 {
+  "name": "Intro to MakeCode Arcade",
+  "description": "Follow step-by-step instructions to learn the basics of using MakeCode Arcade tutorials!",
+  "url": "/tutorials/intro",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/interface/info.png",
+  "largeImageUrl": "/static/tutorials/interface/info.png",
+  "label": "New? Try This!",
+  "labelClass": "orange ribbon large"
+},{
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
@@ -24,12 +33,35 @@
     "cardType": "tutorial"
   }]
 }, {
-  "name": "Flee My Valentine",
-  "description": "Edit the code to make your own Valentine's game where your heart gets bigger and smaller as you go!",
-  "url": "/tutorials/valentine",
+  "name": "Create a Music Player",
+  "description": "Join the Zune prototyping crew and make your own music player with this tutorial from MakeCode Arcade!",
+  "url": "/tutorials/music",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/valentine/valentine.png",
-  "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
+  "imageUrl": "/static/tutorials/music/zune.png",
+  "largeImageUrl": "/static/tutorials/music/zune.png"
+},{
+  "name": "Collect the Clovers",
+  "description": "Create a garden to collect 4-leaf clovers, avoid the bees!",
+  "url": "/tutorials/collect-the-clovers",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/collect-the-clovers/clovers.png",
+  "largeImageUrl": "/static/tutorials/collect-the-clovers/collect-clovers-sim.gif"
+},{
+  "name": "Dunk",
+  "description": "Create animations to help your basketball superstar do tricks all the way to the hoop!",
+  "url": "/tutorials/dunk",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/hawk/dunk.png",
+  "largeImageUrl": "/static/tutorials/hawk/dunk.png"
+},{
+  "name": "Target Practice",
+  "description": "Follow a video to learn how to launch a ball at moving targets!",
+  "url": "/tutorials/target",
+  "cardType": "tutorial",
+  "imageUrl": "/static/skillmap/backgrounds/target-comp.gif",
+  "largeImageUrl": "/static/skillmap/backgrounds/target-comp.gif",
+  "label": "Video tutorial",
+  "labelClass": "ribbon"
 }, {
   "name": "Time Flies",
   "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
@@ -38,6 +70,13 @@
   "imageUrl": "/static/tutorials/froggy/card.png",
   "largeImageUrl": "/static/tutorials/froggy/frog.png"
 }, {
+  "name": "Flee My Valentine",
+  "description": "Edit the code to make your own Valentine's game where your heart gets bigger and smaller as you go!",
+  "url": "/tutorials/valentine",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/valentine/valentine.png",
+  "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
+},{
   "name": "Happy Flower",
   "description": "Create a flower that sends back happy bees",
   "url": "/tutorials/happy-flower",
@@ -103,15 +142,7 @@
   "imageUrl": "/static/tutorials/free-throw.png",
   "largeImageUrl": "/static/tutorials/free-throw.gif",
   "videoUrl": "/static/tutorials/free-throw.mp4"
-}, {
-  "name": "Collect the Clovers",
-  "description": "Create a garden to collect 4-leaf clovers, avoid the bees!",
-  "url": "/tutorials/collect-the-clovers",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/collect-the-clovers.png",
-  "largeImageUrl": "/static/tutorials/collect-the-clovers.gif",
-  "videoUrl": "/static/tutorials/collect-the-clovers.mp4"
-}, {
+},  {
   "name": "Barrel Dodger",
   "description": "Jump and run to avoid the barrels",
   "url": "/tutorials/barrel-dodger",
