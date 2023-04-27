@@ -656,7 +656,8 @@
         "shareToKiosk": true,
         "tours": {
             "editor": "/tours/editor-tour"
-        }
+        },
+        "showOpenInVscode": true
     },
     "queryVariants": {
         "skillsMap=1": {

@@ -64,10 +64,10 @@ scene.setBackgroundImage(assets.image`background`)
 - :suitcase: Open the ``||bundles:Bundles||`` category and drag the
 ```block
 bundles.wrap1(function () {
-    let player_1 = sprites.create(img`.`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`.`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
 ```
 bundle into **the end** of the<br/>
@@ -82,10 +82,10 @@ container already in the workspace.
 scene.setBackgroundImage(assets.image`background`)
 //@highlight
 bundles.wrap1(function () {
-    let player_1 = sprites.create(img`.`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`.`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
 ```
 
@@ -107,12 +107,12 @@ Choose the red/orange box called **p1**.
 
 ```blocks
 scene.setBackgroundImage(assets.image`background`)
-//@highlight
 bundles.wrap1(function () {
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    //@highlight
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
 ```
 
@@ -153,35 +153,33 @@ scene.setBackgroundImage(assets.image`background`)
 This block sets the background of the game window to the image that you chose.
 
 
-- :paper plane: ---
+- :users: ---
 ```block
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
+        mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
 ```
-This block creates a **sprite** named "player_1" and sets its **kind** to "Player1". It also assigns it the image of a red box.
+This block creates a **sprite** assigned to "player1" and sets its **kind** to "Player". It also assigns it the image of a red box.
 
 
 - :users:  ---
 ```block
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
 ```
-This block allows the first player to move the sprite called "player_1" with the arrow keys. The value of **vx** is set to **0** so that the buttons don't allow the user to move the box from side to side.
+This block allows the first player to move the sprite for "player1" with the arrow keys. The value of **vx** is set to **0** so that the buttons don't allow the user to move the box from side to side.
 
 
 
 - :paper plane: ---
 ```block
-    let player_1: Sprite = null
-    player_1.setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
 ```
-This block makes sure that the "player_1" sprite doesn't leave the screen when the buttons are pressed for too long.
+This block makes sure that the sprite belonging to "player1" doesn't leave the screen when the buttons are pressed for too long.
 
 
 - :paper plane: ---
 ```block
-    let player_1: Sprite = null
-    player_1.left = 15
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 ```
-This block sets the leftmost pixels of the "player_1" sprite to be 15 pixels away from the left edge of the screen.
+This block sets the leftmost pixels of the sprite belonging to "player1" to be 15 pixels away from the left edge of the screen.
 
 
 
@@ -194,10 +192,10 @@ This block sets the leftmost pixels of the "player_1" sprite to be 15 pixels awa
 - :suitcase: Open the ``||bundles:Bundles||`` category and drag the
 ```block
 bundles.wrap2(function () {
-    let player_2 = sprites.create(img`.`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`.`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).right = 145
 })
 ```
 bundle into **the end** of the<br/>
@@ -221,17 +219,17 @@ Choose the blue box called **p2**.
 scene.setBackgroundImage(assets.image`background`)
 
 bundles.wrap1(function () {
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
 //@highlight
 bundles.wrap2(function () {
-    let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).right = 145
 })
 ```
 
@@ -270,16 +268,16 @@ container already in the workspace.
 scene.setBackgroundImage(assets.image`background`)
 
 bundles.wrap1(function () {
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
 bundles.wrap2(function () {
-    let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).right = 145
 })
 
 //@highlight
@@ -293,20 +291,20 @@ sprites.launchBow()
 
 **Add points for each bow!**
 
-Let's add an overlap event to detect when the first player catches a bow.
+Let's add an overlap event to detect when a player catches a bow.
 
 - :paper plane: Open the ``||sprites:Sprites||`` category and drag the
 ```block
-sprites.onOverlap(SpriteKind.Player1, SpriteKind.Bow, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Bow, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.One, MultiplayerState.Score, 1)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
     sprites.launchBow()
 })
 ```
 bundle into **an empty area** of the workspace.
 
 
-Now, every time a bow overlaps with player 1, the bow will disappear in a burst of confetti, player 1 will get a point, and a new bow will spawn into the game window.
+Now, every time a bow overlaps with a player, the bow will disappear in a burst of confetti, the player will get a point, and a new bow will spawn into the game window.
 
 
 
@@ -314,93 +312,17 @@ Now, every time a bow overlaps with player 1, the bow will disappear in a burst 
 
 ```blocks
 
-scene.setBackgroundImage(assets.image`background`)
-
-bundles.wrap1(function () {
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
-})
-
-bundles.wrap2(function () {
-    let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
-})
-
 //@highlight
-sprites.onOverlap(SpriteKind.Player1, SpriteKind.Bow, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Bow, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.One, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
-```
-
-
-## {10. Add Points #2}
-
-Do the same thing, but for the second player.
-
-- :paper plane: Open the ``||sprites:Sprites||`` category and drag the
-```block
-sprites.onOverlap(SpriteKind.Player2, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.Two, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
-```
-bundle into **an empty area** of the workspace.
-
-
-Now, every time a bow overlaps with player 2, the bow will disappear in a burst of confetti, player 2 will get a point, and a new bow will spawn into the game window.
-
-```blockconfig.local
-sprites.onOverlap(SpriteKind.Player2, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.Two, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
-```
-
-
-#### ~ tutorialhint
-
-```blocks
-
-scene.setBackgroundImage(assets.image`background`)
- bundles.wrap1(function () {
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
-})
-
-bundles.wrap2(function () {
-    let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
-})
-
-sprites.onOverlap(SpriteKind.Player1, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.One, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
-
-//@highlight
-sprites.onOverlap(SpriteKind.Player2, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.Two, MultiplayerState.Score, 1)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
     sprites.launchBow()
 })
 ```
 
 
 
-## {11. Play Game!}
+## {10. Play Game!}
 
 
 - :binoculars: Play your game again!
@@ -438,31 +360,19 @@ Can you figure out how to make the game longer or shorter?
 scene.setBackgroundImage(assets.image`background`)
 
 bundles.wrap1(function () {
-    let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
-
 bundles.wrap2(function () {
-    let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
-})
-
-sprites.onOverlap(SpriteKind.Player1, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.One, MultiplayerState.Score, 1)
-    sprites.launchBow()
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).right = 145
 })
 
 
-sprites.onOverlap(SpriteKind.Player2, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.Two, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
 //@highlight
 carnival.startCountdownGame(60, carnival.WinTypes.Multi)
 
@@ -486,74 +396,68 @@ When you're ready, sign-in and click **Done** to challenge a friend to a multipl
 
 ```blockconfig.global
 
-scene.setBackgroundImage(assets.image`background`)
+scene.setBackgroundImage(img`.`)
 
 bundles.wrap1(function () {
-    let player_1 = sprites.create(img`.`, SpriteKind.Player1)
-    mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-    player_1.setStayInScreen(true)
-    player_1.left = 15
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(img`.`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
 })
 
-sprites.onOverlap(SpriteKind.Player1, SpriteKind.Bow, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Bow, function (sprite, otherSprite) {
     otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.One, MultiplayerState.Score, 1)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
     sprites.launchBow()
 })
 
 bundles.wrap2(function () {
-    let player_2 = sprites.create(img`.`, SpriteKind.Player2)
-    mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-    player_2.setStayInScreen(true)
-    player_2.right = 145
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(img`.`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).right = 145
 })
 
-
-carnival.startCountdownGame(60, carnival.WinTypes.Multi)
-
-```
-
-
-
-```ghost
-
-sprites.onOverlap(SpriteKind.Player1, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.One, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
-sprites.onOverlap(SpriteKind.Player2, SpriteKind.Bow, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 200)
-    mp.changePlayerStateBy(mp.PlayerNumber.Two, MultiplayerState.Score, 1)
-    sprites.launchBow()
-})
-
-scene.setBackgroundImage(assets.image`background`)
-let player_1 = sprites.create(assets.image`p1`, SpriteKind.Player1)
-mp.moveWithButtons(mp.PlayerNumber.One, player_1, 0, 150)
-player_1.setStayInScreen(true)
-player_1.left = 15
-let player_2 = sprites.create(assets.image`p2`, SpriteKind.Player2)
-mp.moveWithButtons(mp.PlayerNumber.Two, player_2, 0, 150)
-player_2.setStayInScreen(true)
-player_2.right = 145
-sprites.launchBow()
 carnival.startCountdownGame(60, carnival.WinTypes.Multi)
 
 ```
 
 
 ```package
-arcade-mp=github:riknoll/arcade-mp
-arcade-carnival=github:microsoft/arcade-carnival
+multiplayer
+arcade-carnival=github:microsoft/arcade-carnival#v0.0.7
 ```
+
+```ghost
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Bow, function (sprite, otherSprite) {
+    otherSprite.destroy(effects.confetti, 200)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
+    sprites.launchBow()
+})
+scene.setBackgroundImage(assets.image`background`)
+bundles.wrap1(function () {
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`p1`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).left = 15
+})
+bundles.wrap2(function () {
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`p2`, SpriteKind.Player))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 0, 150)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setStayInScreen(true)
+    mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).right = 145
+})
+sprites.launchBow()
+carnival.startCountdownGame(60, carnival.WinTypes.Multi)
+
+```
+
+
+
+
 
 ```customts
 namespace SpriteKind {
-    //% isKind
-    export const Player1 = SpriteKind.create()
-    //% isKind
-    export const Player2 = SpriteKind.create()
     //% isKind
     export const Bow = SpriteKind.create()
 }

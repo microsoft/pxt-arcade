@@ -4,9 +4,9 @@
 
 ## {Intro @showdialog}
 
-Ready to test your agility?
+Ready to test your agility? Let's create a game where your player speeds through the cones to get to the hoop.
 
-Let's create a game where your player speeds through the cones to get to the hoop.
+(This video will also be available in the next step.)
 
 ![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
 
@@ -32,11 +32,7 @@ and snap it inside the empty<br/>
 block already in the workspace.
 
 
-~hint See the Video 📺
-
 ![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
 
 
 #### ~ tutorialhint
@@ -65,11 +61,6 @@ gallery tab.
 - :mouse pointer: Choose **one of the available sprites, or make your own** and click **Done**.
 
 
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
 
 
 #### ~ tutorialhint
@@ -111,11 +102,6 @@ and snap it in at **the end** of the<br/>
 block already in the workspace.
 
 
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
 
 
 #### ~ tutorialhint
@@ -157,13 +143,6 @@ container already in the workspace.
 ![Choose the court from My Assets gallery](/static/tutorials/hawk/court.png " " )
 
 
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
 <!-- This is how you add the blocks that show up in the lightbulb hint -->
 
 #### ~ tutorialhint
@@ -189,13 +168,6 @@ scroller.scrollBackgroundWithSpeed(-90, 0)
 into **the end** of the<br/>
 ``||loops(noclick):on start||``<br/>
 container already in the workspace.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
 
 
 #### ~ tutorialhint
@@ -249,14 +221,6 @@ block and switch to the gallery to select the orange cone.
 
 
 
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
 #### ~ tutorialhint
 
 ```blocks
@@ -268,6 +232,8 @@ forever(function () {
     }
 })
 ```
+
+
 
 
 
@@ -284,14 +250,6 @@ info.startCountdown(30)
 ```
 and snap it in **at the end** of the
 ``||loops(noclick):on start||`` container that's already in the workspace.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
 
 #### ~ tutorialhint
 
@@ -318,12 +276,6 @@ Let's increase the pause to create some space.
 ```
 We recommend 500 and 1000, but you can adjust for difficulty!
 
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
 
 
 #### ~ tutorialhint
@@ -368,15 +320,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 bundle and drag it into an **empty area** of the workspace.
 
 This is the code that takes away a life when your player runs into a cone.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
 
 ```blockconfig.local
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -433,13 +376,6 @@ into **the bottom** of the
 ``||loops(noclick):on start||`` container.
 
 
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
 
 #### ~ tutorialhint
 
@@ -468,16 +404,6 @@ and switch to the gallery tab.
 
 
 - :mouse pointer:  Choose the **dribbling** animation and select **Done**.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
 
 #### ~ tutorialhint
 
@@ -521,16 +447,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 bundle and drag it into an **empty area** of the workspace.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
 
 #### ~ tutorialhint
 
@@ -585,16 +501,6 @@ and switch to the gallery tab.
 
 - :mouse pointer:  Select **any of the trick animations** and click **Done**.
 
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
-
 #### ~ tutorialhint
 
 ```blocks
@@ -616,7 +522,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 ```
-
 
 ## {Step 20}
 
@@ -640,16 +545,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 and switch to the gallery tab.
 
 - :mouse pointer:  Choose the **dribbling** animation and select **Done**.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
 
 #### ~ tutorialhint
 
@@ -682,17 +577,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 pause(850)
 ```
 pause block to match the timing of the animation. You may need to experiment to get it right. 🔬
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
-
 
 #### ~ tutorialhint
 
@@ -743,16 +627,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 bundle, and swap the **A** to **B**. After adding the animations, your player will perform your chosen trick when **pressing the B button**!
 
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
-
-
 #### ~ tutorialhint
 
 ```blocks
@@ -793,14 +667,6 @@ bundle from the Info category and drag it into an **empty area** of the workspac
 
 This code will remove any pylons, stop your player from moving across the court, and begin the dunk animation.
 
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
-
-
 #### ~ tutorialhint
 
 ```blocks
@@ -838,13 +704,6 @@ and switch to the gallery tab.
 
 
 - :mouse pointer:  Select the **dunk animation**.
-
-
-~hint See the Video 📺
-
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
-
-hint~
 
 
 #### ~ tutorialhint
