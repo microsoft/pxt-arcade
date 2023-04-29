@@ -21,8 +21,8 @@ Here are some cool activities to get you started with your @boardname@!
 * name: Create a Music Player
 * buttonLabel: Try Now
 * imageUrl: /static/hero-gallery/zune.png
-* url: aka.ms/zunePrototype
-* cardType: link
+* url: /tutorials/music
+* cardType: tutorial
 ---
 * name: How To Code a Video Game
 * imageUrl: /static/hero-gallery/how-to-code.png
