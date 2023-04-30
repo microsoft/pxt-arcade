@@ -216,7 +216,10 @@
             "star": "docs:/skillmap/star",
             "mole": "docs:/skillmap/mole",
             "balloon": "docs:/skillmap/balloon",
-            "adventure": "docs:/skillmap/adventure"
+            "adventure": "docs:/skillmap/adventure",
+            "story": "docs:/skillmap/story-new",
+            "dino": "docs:/skillmap/dino",
+            "galaxy": "docs:/skillmap/galaxy"
         }
     },
     "multiplayer": {
@@ -248,8 +251,10 @@
         ]
     },
     "galleries": {
-        "Skillmaps": "skillmaps",
+        "Beginner Skillmaps": "beginner-maps",
+        "Next Level Skillmaps": "inter-maps",
         "Tutorials": "tutorials",
+        "Multiplayer Tutorials": "multiplayer-tutorials",
         "Multiplayer Games": "multiplayer-games",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
