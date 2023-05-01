@@ -27,7 +27,7 @@
 * next: adventure2
 * url: /skillmap/adventure/adventure1
 * imageUrl: /static/skillmap/adventure/adventure1.gif
-* position: 1 2
+* position: 0 -2
 
 
 
@@ -39,7 +39,7 @@
 * next: adventure3
 * url: /skillmap/adventure/adventure2
 * imageUrl: /static/skillmap/adventure/adventure2.gif
-* position: 1 1
+* position: 1 -2
 
 
 ### adventure3
@@ -50,7 +50,7 @@
 * next: adventure-cert
 * url: /skillmap/adventure/adventure3
 * imageUrl: /static/skillmap/adventure/adventure3.gif
-* position: 2 1
+* position: 1 -1
 
 
 
@@ -62,7 +62,7 @@
 * url: /static/skillmap/certificates/adventure-cert.pdf
 * imageUrl: /static/skillmap/certificates/adventure-cert.png
 * showMultiplayerShare: false
-* position: 2 0
+* position: 2 -1
 * actions:
     * map: [Try Burstin' Balloons](/skillmap/balloon)
     * editor: [Open in Creative Mode](/)
