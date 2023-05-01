@@ -2,7 +2,7 @@
 * name: Talent Show
 * description: Learn to create a clicker game and quickly rack up the points as you applaud the most talented animals.
 * infoUrl: skillmap/educator-info/star-map-info
-* bannerUrl: /static/skillmap/star/star4.gif
+* bannerUrl: /static/skillmap/star/star4-trimmed.gif
 * backgroundurl: /static/skillmap/backgrounds/star-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
@@ -26,7 +26,7 @@
 * tags: easy, clicker, points
 * next: star-activity2
 * url: /test/skillmap/star/star1
-* imageUrl: /static/skillmap/star/star1.gif
+* imageUrl: /static/skillmap/star/star1-trimmed.gif
 * position: 0 0
 
 
@@ -38,7 +38,7 @@
 * tags: easy, clicker, game, events
 * next: star-activity3
 * url: /test/skillmap/star/star2
-* imageUrl: /static/skillmap/star/star2.gif
+* imageUrl: /static/skillmap/star/star2-trimmed.gif
 * position: 1 0
 
 
@@ -49,7 +49,7 @@
 * tags: easy, clicker, projectiles
 * next: star-activity4
 * url: /test/skillmap/star/star3
-* imageUrl: /static/skillmap/star/star3.gif
+* imageUrl: /static/skillmap/star/star3-trimmed.gif
 * position: 1 1
 
 
@@ -60,7 +60,7 @@
 * tags: easy, clicker, projectiles, arrays
 * next: star-cert
 * url: /test/skillmap/star/star4
-* imageUrl: /static/skillmap/star/star4.gif
+* imageUrl: /static/skillmap/star/star4-trimmed.gif
 * position: 2 1
 
 

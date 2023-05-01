@@ -1,14 +1,14 @@
 # Text-Adventure
 * name: Code an Adventure
-* description: Code your own text-based adventure inspired by the movie Dungeons & Dragons: Honor Among Thieves
+* description: Code your own text-based adventure complete with its own theme song!
 * infoUrl: skillmap/educator-info/adventure-info
-* bannerUrl: /static/skillmap/adventure/dd-logo.png
-* backgroundurl: /static/skillmap/backgrounds/adventure-comp1.png
-* primarycolor: #ffffff
-* secondarycolor: #fff53d
+* bannerUrl: /static/skillmap/adventure/adventure3.gif
+* backgroundurl: /static/skillmap/backgrounds/adventure-comp.png
+* primarycolor: #ffe19b
+* secondarycolor: #ff8eca
 * tertiarycolor: #b1dcef
-* completednodecolor: #2f484d
-* highlightcolor: #ff0000
+* completednodecolor: #00224b
+* highlightcolor: #ffffff
 * allowcodecarryover: true
 * tags: creative, intermediate, conditionals
 
@@ -22,11 +22,11 @@
 
 * name: Start Your Journey
 * type: tutorial
-* description: Create an adventure story using conditionals!
+* description: Create a text-based adventure using conditionals!
 * tags: conditionals, text
 * next: adventure2
 * url: /skillmap/adventure/adventure1
-* imageUrl: /static/skillmap/adventure/owlbear.png
+* imageUrl: /static/skillmap/adventure/adventure1.gif
 * position: 1 2
 
 
@@ -34,11 +34,11 @@
 ### adventure2
 * name: Make it Spectacular
 * type: tutorial
-* description: Create your own music and images to enhance out your adventure!
+* description: Create your own music and images to enhance your adventure!
 * tags: music, functions
 * next: adventure3
 * url: /skillmap/adventure/adventure2
-* imageUrl: /static/skillmap/adventure/bard.png
+* imageUrl: /static/skillmap/adventure/adventure2.gif
 * position: 1 1
 
 
@@ -49,7 +49,7 @@
 * tags: lives, score, functions
 * next: adventure-cert
 * url: /skillmap/adventure/adventure3
-* imageUrl: /static/skillmap/adventure/mimic.png
+* imageUrl: /static/skillmap/adventure/adventure3.gif
 * position: 2 1
 
 
