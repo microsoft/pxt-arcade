@@ -5,11 +5,11 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
-* name: Start Skillmap
-* buttonLabel: Start Skillmap
+* name: Start Coding
+* buttonLabel: Start Coding
 * description: New? Start here!
 * imageUrl: /static/hero-gallery/skillmap.png
-* url: https://aka.ms/ArcadeSkillmap
+* url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
 * name: Save the Galaxy
