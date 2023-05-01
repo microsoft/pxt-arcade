@@ -34,7 +34,7 @@ block already in the workspace.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=37)
 
 hint~
 
@@ -67,7 +67,7 @@ gallery tab.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=90)
 
 hint~
 
@@ -113,7 +113,7 @@ block already in the workspace.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=190)
 
 hint~
 
@@ -159,7 +159,7 @@ container already in the workspace.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=268)
 
 hint~
 
@@ -193,7 +193,7 @@ container already in the workspace.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=369)
 
 hint~
 
@@ -251,7 +251,7 @@ block and switch to the gallery to select the orange cone.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=428)
 
 hint~
 
@@ -288,7 +288,7 @@ and snap it in **at the end** of the
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=537)
 
 hint~
 
@@ -321,7 +321,7 @@ We recommend 500 and 1000, but you can adjust for difficulty!
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=560)
 
 hint~
 
@@ -372,7 +372,7 @@ This is the code that takes away a life when your player runs into a cone.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=648)
 
 hint~
 
@@ -435,7 +435,7 @@ into **the bottom** of the
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=704)
 
 hint~
 
@@ -472,7 +472,7 @@ and switch to the gallery tab.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=781)
 
 hint~
 
@@ -525,7 +525,7 @@ bundle and drag it into an **empty area** of the workspace.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=792)
 
 hint~
 
@@ -588,7 +588,7 @@ and switch to the gallery tab.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=836)
 
 hint~
 
@@ -644,7 +644,7 @@ and switch to the gallery tab.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=891)
 
 hint~
 
@@ -686,7 +686,7 @@ pause block to match the timing of the animation. You may need to experiment to 
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=952)
 
 hint~
 
@@ -746,7 +746,7 @@ bundle, and swap the **A** to **B**. After adding the animations, your player wi
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=1091)
 
 hint~
 
@@ -774,6 +774,8 @@ Now when you press the **A or B button**, your player will perform the tricks yo
 
 Try using some tricks while avoiding pylons for 30 seconds!
 
+
+
 ## {Step 24}
 
 **🏀 Time to dunk! 🏀**
@@ -796,7 +798,7 @@ This code will remove any pylons, stop your player from moving across the court,
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=1146)
 
 hint~
 
@@ -842,7 +844,7 @@ and switch to the gallery tab.
 
 ~hint See the Video 📺
 
-![Blaise Tutorial Video](youtube:e4OVA6Xpl18)
+![Blaise Tutorial Video](youtube:e4OVA6Xpl18?start=1189)
 
 hint~
 
