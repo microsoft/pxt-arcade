@@ -20,7 +20,7 @@
 * name: Ready, Set, Go!
 * type: tutorial
 * description: Get your monster truck moving and try to make it to the end of your cave.
-* url: /test/skillmap/racer/racer1
+* url: /skillmap/racer/racer1
 * tags: easy, sprites, design
 * imageUrl: /static/skillmap/racer/racer1.gif
 * next: racer2
@@ -30,7 +30,7 @@
 * name: Over and Under
 * type: tutorial
 * description: Code actions to help your racer survive the pits and perils of the cave.
-* url: /test/skillmap/racer/racer2
+* url: /skillmap/racer/racer2
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/racer/racer2.gif
 * next: racer-finish
@@ -63,7 +63,7 @@
 * name: Going Further (Optional)
 * type: tutorial
 * description: Customize your game and make it your own by adding animations and changing your tilemap.
-* url: /test/skillmap/racer/racer3
+* url: /skillmap/racer/racer3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/racer/racer3.gif
 * position: 4 0
