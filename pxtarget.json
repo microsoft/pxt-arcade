@@ -119,7 +119,8 @@
             "libs/hw",
             "libs/hw---n3",
             "libs/hw---samd51",
-            "libs/hw---stm32f401"
+            "libs/hw---stm32f401",
+            "libs/hw---rp2040"
         ],
         "extensions": [
             "libs/accelerometer",

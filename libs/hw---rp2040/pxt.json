@@ -34,7 +34,6 @@
             "DEVICE_WEBUSB": 1
         }
     },
-    "experimentalHw": true,
     "dalDTS": {
         "corePackage": "../core---rp2040"
     }
