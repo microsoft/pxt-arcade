@@ -64,5 +64,14 @@ Try these multiplayer games with your friends!
 * url: /--multiplayer?host=_FdYfDwixRTAw
 * cardType: link
 * otherAction: _FdYfDwixRTAw, , sharedExample
-
+---
+* name: Eat the Fruit
+* description: Who can eat the most fruit? Try to out eat the other players and eat up all the fruit that comes at you!
+* buttonLabel: Host Game
+* actionIcon: xicon multiplayer
+* imageUrl: /static/multiplayer/eat-the-fruit.png
+* largeImageUrl: /static/multiplayer/eat-the-fruit.gif
+* url: /--multiplayer?host=29996-31415-91597-12788
+* cardType: link
+* otherAction: 29996-31415-91597-12788, , sharedExample
 ### ~
