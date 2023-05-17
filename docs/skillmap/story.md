@@ -1,5 +1,5 @@
 # Full of Stories
-* name: Tell a Story
+* name: Full of Stories
 * description: Show off your creative side with greeting cards, jokes, and short stories.
 * infoUrl: skillmap/educator-info/story-map-info
 * bannerUrl: /static/skillmap/story/story-comp.png

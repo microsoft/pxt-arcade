@@ -17,7 +17,7 @@
 
 ### zoo-activity1
 * allowcodecarryover: false
-* name: Zookeeper Hut
+* name: First Day
 * type: tutorial
 * next: zoo-activity2, zoo-activity2-2
 * description: It's time to start your new job as a zookeeper.  What could go wrong?

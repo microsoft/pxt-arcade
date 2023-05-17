@@ -30,7 +30,7 @@ hint~
 
 - :paper plane: From ``||sprites:Sprites||``, grab
 ```block
-let star = sprites.createProjectileFromSprite(img`.`, audience, 50, 50)
+let star = sprites.createProjectileFromSprite(img`.`, audience, 0, -50)
 ```
 and drop it into **the end** of the<br/>
 ``||controller(noclick):on [A] button [pressed]||`` container
@@ -50,7 +50,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, 50, 50)
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, 0, -50)
 })
 ```
 
@@ -122,7 +122,7 @@ randint(-50, -100)
 in to replace **-50** as the  **vy** value inside<br/>
 ```block
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
+    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), -50)
 ```
 
 
