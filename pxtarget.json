@@ -667,6 +667,20 @@
                 "allowParentController": true,
                 "shareFinishedTutorials": false
             }
+        },
+        "clever=1": {
+            "cloud": {
+                "cloudProviders": {
+                    "clever": {
+                        "id": "clever",
+                        "name": "Clever",
+                        "icon": "/static/providers/clever-logo.png",
+                        "identity": true,
+                        "redirect": true,
+                        "order": 3
+                    }
+                }
+            }
         }
     },
     "unsupportedBrowsers": [
