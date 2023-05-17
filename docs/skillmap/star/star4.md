@@ -21,7 +21,7 @@ simplified.chooseRandomImage(img`.`, img`.`)
 ```
 and use it to replace the image of the star inside
 ```block
-let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
+let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 ```
 
 
