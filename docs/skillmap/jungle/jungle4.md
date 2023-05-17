@@ -34,7 +34,8 @@ container into an empty area of the workspace.
 
 - :mouse pointer: Click the letter A and change it to B.
 
-_ 💡 Move to the next step to learn how to spawn your explosive._
+
+*💡 Move to the next step to learn how to spawn your explosive.*
 
 
 ```blocks
