@@ -658,14 +658,16 @@
         "tours": {
             "editor": "/tours/editor-tour"
         },
-        "showOpenInVscode": true
+        "showOpenInVscode": true,
+        "hideReplaceMyCode": true
     },
     "queryVariants": {
         "skillsMap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
                 "allowParentController": true,
-                "shareFinishedTutorials": false
+                "shareFinishedTutorials": false,
+                "hideReplaceMyCode": false
             }
         },
         "clever=1": {
