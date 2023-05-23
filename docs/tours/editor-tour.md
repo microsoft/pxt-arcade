@@ -2,6 +2,12 @@
 * title: Editor tour
 * description: This tour shows the user around the Arcade editor, pointing out the toolbox, workspace, simulator, share button, and download button.
 
+## Welcome
+* title: Welcome!
+* description: New here? Take a tour of the editor!
+* highlight: nothing
+* location: center
+
 ## Arcade Simulator
 * title: Arcade Simulator
 * description: See what your code looks like running on the simulator!
