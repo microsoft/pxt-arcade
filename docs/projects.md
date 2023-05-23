@@ -3,16 +3,26 @@
 ```codecard
 [
     {
-        "name": "Skillmaps",
-        "url": "/skillmaps",
-        "imageUrl": "/static/skillmap/backgrounds/beginner.png"
+        "name": "Beginner Skillmaps",
+        "url": "/beginner-maps"
+    },
+    {
+        "name": "Next Level Skillmaps",
+        "url": "/inter-maps",
+        "imageUrl": "/static/skillmap/backgrounds/space.png"
     },
     {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/chase-the-pizza.png",
-        "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
+        "imageUrl": "/static/tutorials/interface/workspace.png",
+        "largeImageUrl": "/static/tutorials/interface/workspace.png",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
+    },
+    {
+        "name": "Multiplayer Tutorials",
+        "url": "/multiplayer-tutorials",
+        "imageUrl": "/static/tutorials/arrows/arrows.png",
+        "largeImageUrl": "/static/tutorials/arrows/battle.gif"
     },
     {
         "name": "Multiplayer Games",
@@ -110,8 +120,10 @@
 
 ## See Also
 
-[Skillmaps](/skillmaps),
+[Beginner Skillmaps](/beginner-maps),
+[Next Level Skillmaps](/inter-maps),
 [Tutorials](/tutorials),
+[Multiplayer Tutorials](/multiplayer-tutorials),
 [Multiplayer Games](/multiplayer-games),
 [Live Coding](/live-coding),
 [Blocks Games](/blocks-games),

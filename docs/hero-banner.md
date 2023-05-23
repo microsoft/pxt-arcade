@@ -5,24 +5,24 @@ Here are some cool activities to get you started with your @boardname@!
 ## Intro Content
 
 ### ~ codecard
-* name: Start Skillmap
-* buttonLabel: Start Skillmap
+* name: Start Coding
+* buttonLabel: Start Coding
 * description: New? Start here!
 * imageUrl: /static/hero-gallery/skillmap.png
-* url: https://aka.ms/ArcadeSkillmap
+* url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Code an Adventure
+* name: Save the Galaxy
 * buttonLabel: Try Now
-* imageUrl: /static/hero-gallery/adventure.png
-* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/adventure
+* imageUrl: /static/hero-gallery/galaxy.png
+* url: https://arcade.makecode.com/--skillmap#galaxy
 * cardType: link
 ---
-* name: Code a Carnival!
+* name: Create a Music Player
 * buttonLabel: Try Now
-* imageUrl: /static/hero-gallery/hoc-2022.png
-* url: https://arcade.makecode.com/hour-of-code-2022
-* cardType: link
+* imageUrl: /static/hero-gallery/zune.png
+* url: /tutorials/music
+* cardType: tutorial
 ---
 * name: How To Code a Video Game
 * imageUrl: /static/hero-gallery/how-to-code.png

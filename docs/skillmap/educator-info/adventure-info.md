@@ -43,9 +43,9 @@ After completing Code an Adventure, students will have gained exposure to all th
 
 | Activity | Start Your Journey (20 min) |
 |---|---|
-| ![Start Your Journey thumbnail](/static/skillmap/adventure/adventure1.png) | Create an adventure story using conditionals! |
+| ![Start Your Journey thumbnail](/static/skillmap/adventure/adventure1.gif) | Create an adventure story using conditionals! |
 | Blocks used |  ``[adventure.addToTextlog(" ")]`` <br/> ``[pauseUntil(() => controller.anyButton.isPressed())]``  <br/> ``[if (controller.A.isPressed()) {}else{}]`` <br/> ``[game.gameOver(true)]``|
-| Solution option | [Start Your Journey Project](https://makecode.com/_4mm41U3qkcAE) |
+| Solution option | [Start Your Journey Project](https://makecode.com/_iEp94zKPD4VX) |
 
 #### 2. Make it Spectacular
 
@@ -53,7 +53,7 @@ After completing Code an Adventure, students will have gained exposure to all th
 |---|---|
 | ![Make it Spectacular thumbnail](/static/skillmap/adventure/adventure2.gif) | Create your own music and images to enhance out your adventure!|
 | Blocks used | ``[function quest1() {} quest1()]`` <br/> ``[music.play( (music.createSong(hex`00780004080200`)), music.PlaybackMode.InBackground)]`` <br/> ``[ adventure.addImageToTextLog()]`` |
-| Solution option | [Make it Spectacular Project](https://makecode.com/_f2cRsVFCzT27) |
+| Solution option | [Make it Spectacular Project](https://makecode.com/_LW6JyKFvJMuA) |
 
 #### 3. Lives and Gold
 
@@ -61,7 +61,7 @@ After completing Code an Adventure, students will have gained exposure to all th
 |---|---|
 | ![Lives and Gold thumbnail](/static/skillmap/adventure/adventure3.gif) | Finish your game with functions by adding more quests — including danger and rewards! |
 | Blocks used | ``[info.setLife(5)]`` <br/> ``[info.changeLifeBy(-1)]`` <br/>``[adventure.changeScoreOverride(adventure.Currency.Coins, 5)]`` |
-| Solution option | [Lives and Gold Project](https://makecode.com/_RoPfKtCDXEf9) |
+| Solution option | [Lives and Gold Project](https://arcade.makecode.com/S86685-42080-20608-87423) |
 
 
 

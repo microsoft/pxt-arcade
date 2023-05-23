@@ -23,7 +23,7 @@
 * description: Get your spaceship ready for an adventure!
 * tags: easy, sprites, scroller
 * next: galaxy2
-* url: /test/skillmap/galaxy/galaxy1
+* url: /skillmap/galaxy/galaxy1
 * imageUrl: /static/skillmap/galaxy/galaxy1-trimmed.gif
 * position: 0 0
 
@@ -33,7 +33,7 @@
 * description: Equip your ship with projectiles to update satellites.
 * tags: easy, projectiles, kinds, overlaps
 * next: galaxy3
-* url: /test/skillmap/galaxy/galaxy2
+* url: /skillmap/galaxy/galaxy2
 * imageUrl: /static/skillmap/galaxy/galaxy2-trimmed.gif
 * position: 0 3
 
@@ -43,7 +43,7 @@
 * type: tutorial
 * tags: intermediate, collisions, kinds, animations
 * next: galaxy-cert-1
-* url: /test/skillmap/galaxy/galaxy3
+* url: /skillmap/galaxy/galaxy3
 * imageUrl: /static/skillmap/galaxy/galaxy3-trimmed.gif
 * position: 4 3
 
