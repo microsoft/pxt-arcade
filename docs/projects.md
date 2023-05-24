@@ -4,18 +4,19 @@
 [
     {
         "name": "Beginner Skillmaps",
-        "url": "/beginner-maps"
+        "url": "/beginner-maps",
+        "imageUrl": "/static/skillmap/backgrounds/story-map.png"
     },
     {
         "name": "Next Level Skillmaps",
         "url": "/inter-maps",
-        "imageUrl": "/static/skillmap/backgrounds/space.png"
+        "imageUrl": "/static/skillmap/backgrounds/galaxy-map.png"
     },
     {
         "name": "Tutorials",
         "url": "/tutorials",
-        "imageUrl": "/static/tutorials/interface/workspace.png",
-        "largeImageUrl": "/static/tutorials/interface/workspace.png",
+        "imageUrl": "/static/tutorials/interface/info.png",
+        "largeImageUrl": "/static/tutorials/interface/info.png",
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
