@@ -61,7 +61,7 @@ let mySprite = sprites.create(assets.image`shark`, SpriteKind.Player)
 
 Open the game window to take a look at the scene you've just set up.
 
-When you're ready to continue, click into the instructions tab again!
+When you're ready to continue, click **Next** to move on to the next step.
 
 
 ## 5. Make it Move
