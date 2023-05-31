@@ -24,7 +24,7 @@ over (or down and over) to keep building.
 
 
 ► Take a peek into the new ``||statusbars:Status Bars||`` category.
-You'll find ``||variables(sprites):set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
+You'll find ``||variables(statusbars):set [statusbar] to create status bar sprite width [20] height [4] kind [Health]||``.
 Drag one to the end of the ``||loops:on start||`` container.
 
 ► To keep track of how much *gas* is left, set the argument for
@@ -48,7 +48,7 @@ If we want the status bar to show the details of **mySprite**, we'll need to lin
 
 
 ► Drop ``||statusbars:attach [statusbar] to [mySprite] ⊕||``
-into the end of the ``||loops:on start||`` container.
+into the end of the ``||loops(noclick):on start||`` container.
 
 ► Click **⊕** on the new block to reveal options
  to change the position of the status bar in relation to **mySprite**.
@@ -160,7 +160,7 @@ for the fuel, grab a
 and connect it to replace the **0** argument in the
 ``||sprites:set [mySprite] [x] to [0]||`` block.
 
-► Update the minimum argument of the ``||Math:pick random [0] to [10]||`` block to **5** and the
+► Update the minimum argument of the ``||Math(noclick):pick random [0] to [10]||`` block to **5** and the
 maximum argument to **155**.
 
 ---

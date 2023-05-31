@@ -140,7 +140,7 @@ Make your way to the treasure chest. You should be transported to a new level!
 
 ## Finished
 
-**🥳 Congratulations 🥳** <br/>s
+**🥳 Congratulations 🥳** <br/>
 You did it!!  Can you play your game all the way to the end?
 
 ---
