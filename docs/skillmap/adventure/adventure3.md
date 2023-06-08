@@ -82,7 +82,7 @@ function quest3 () {
     } else {
         adventure.addToTextlog("You hide behind a large tree with a cavern in the trunk.")
         adventure.addToTextlog("Inside, you see something glimmer.  It's a treasure chest!")
-        ame.over(false)
+        game.over(false)
 
     }
 }
@@ -136,7 +136,7 @@ function quest3 () {
     } else {
         adventure.addToTextlog("You hide behind a large tree with a cavern in the trunk.")
         adventure.addToTextlog("Inside, you see something glimmer.  It's a treasure chest!")
-        ame.over(false)
+        game.over(false)
 
     }
 }

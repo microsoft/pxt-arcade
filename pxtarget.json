@@ -658,14 +658,30 @@
         "tours": {
             "editor": "/tours/editor-tour"
         },
-        "showOpenInVscode": true
+        "showOpenInVscode": true,
+        "hideReplaceMyCode": true
     },
     "queryVariants": {
         "skillsMap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
                 "allowParentController": true,
-                "shareFinishedTutorials": false
+                "shareFinishedTutorials": false,
+                "hideReplaceMyCode": false
+            }
+        },
+        "clever=1": {
+            "cloud": {
+                "cloudProviders": {
+                    "clever": {
+                        "id": "clever",
+                        "name": "Clever",
+                        "icon": "/static/providers/clever-logo.png",
+                        "identity": true,
+                        "redirect": true,
+                        "order": 3
+                    }
+                }
             }
         }
     },

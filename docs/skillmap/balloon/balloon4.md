@@ -1,4 +1,4 @@
-# Two Player
+# Two Player Party
 
 ### @explicitHints true
 
@@ -104,9 +104,9 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 myMouse.setPosition(50, 93)
 simplified.wrap(function () {
-    let myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+    let myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
     myBalloon2.setPosition(110, 93)
-    let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+    let myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
     myMouse2.setPosition(110, 93)
 })
 
