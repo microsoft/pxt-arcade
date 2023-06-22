@@ -14,12 +14,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@main
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@main
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install
@@ -28,7 +28,7 @@ jobs:
           sudo npm install -g pxt
           npm install
       - name: Checkout pxt-arcade-sim
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
         with:
           repository: microsoft/pxt-arcade-sim
           ref: v0.11.4
