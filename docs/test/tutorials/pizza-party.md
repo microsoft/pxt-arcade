@@ -11,8 +11,9 @@ Teenage Mutant Ninja Turtles: Mutant Mayhem, in theatres August 2.
 
 
 
-
 ![Play Pizza Party](/static/tutorials/pizza-party/tmnt.png "Teenage Mutant Ninja Turtles: Mutant Mayhem, in theatres August 2")
+
+©2023 Paramount Pictures. TEENAGE MUTANT NINJA TURTLES is a trademark of Viacom International Inc.
 
 
 
@@ -31,19 +32,18 @@ to assign to each player.
 
 ---
 
-In computer science, an **array** is an ordered list of items.
+In computer science, an **ARRAY** is an ordered list of items.
 
 We give this list a name, so that we can ask for items from this list later.
 
 For example, the list in our program is called **characters**.
-If we want to use the first image from this list, we can add a block
+If we want to flip the first image from this list, we can add a block
 like this to our program:
 
 
 ```block
-//@hide
 let characters: Image[] = []
-characters[1]
+characters[0].flipX()
 ```
 
 hint~
@@ -141,7 +141,7 @@ pizza.setPlayersWith (characters, 1)
 
 You should see a single sprite in the game window that looks like the first image in your array.
 
-**Hover over the game window and try moving your sprite using the arrow keys or joypad.**
+**Click on the game window and try moving your _sprite_ using the arrow keys or joypad.**
 
 
 ~hint What's a sprite? 💡
@@ -173,6 +173,8 @@ Now, when other players join, more sprites will appear in the game window.
 
 ![Test with the player buttons to the left of the game window](/static/tutorials/pizza-party/players.png "An image highlighting the player icons")
 
+📝 _Note: In actual game play, each player will join in order. To simulate this, make sure to test with **Player 1** first, then **Player 2**, then **Player 3**, etc._
+
 
 
 #### ~ tutorialhint
@@ -196,7 +198,7 @@ bundle into **an empty** area of the workspace.
 
 
 - :mouse pointer: Click the empty grey square inside the bundle to select an image.
-Switch to the **My Assets** to choose the **pizza**.
+<br/>Switch to the **My Assets** tab to choose the **pizza**.
 
 
 
@@ -288,7 +290,7 @@ hint~
 
 ---
 
-Events are things that might or might not happen while the code is running.
+**EVENTS** are things that might or might not happen while the code is running.
 A player might press a button, a timer might run out, or one sprite might overlap with another.
 
 Each of those things is an event that you can assign a special action to in Arcade.
@@ -300,7 +302,7 @@ hint~
 
 ---
 
-In MakeCode Arcade, projectiles are sprites that move on their own,
+In MakeCode Arcade, **PROJECTILES** are sprites that move on their own,
 often in large quantities.
 
 Projectiles have extra properties that normal sprites don't have.
@@ -314,7 +316,7 @@ hint~
 
 ---
 
-**Velocity** is the speed that something is moving in a certain direction.
+**VELOCITY** is the speed that something is moving in a certain direction.
 
 In MakeCode, we have velocity in two directions, **vx** and **vy**.
 
@@ -558,9 +560,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 ## {13. Test!}
 
 
-- :binoculars: Test your project again.
+- :binoculars: Test your project with two or more players.
 
-Try holding down the (A) button (or space bar) and running into another player.  What happens?
+As **Player 1**, try holding down the (A) button (or space bar) and running into another player.  What happens?
+
+
+📝 _Note: At the moment, a player can only bump someone with a higher number. We'll fix that in the next step._
 
 
 
@@ -570,7 +575,7 @@ Try holding down the (A) button (or space bar) and running into another player. 
 
 ## {14. Again}
 
-What if the other player is holding down _their_ (A) button?  Let's add code to that event that reverses the whammy.
+What if the other player is holding down _their_ (A) button?  Let's add code that reverses the whammy.
 
 - :mouse pointer: Right click on the ``||logic(noclick):if||`` statement and when the dropdown menu appears, select **Duplicate**.
 
@@ -700,7 +705,7 @@ container already in the workspace.
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Click the empty square in the<br/>
+- :mouse pointer: Click the empty rectagle in the<br/>
 ``||music(noclick):play song...||`` block and switch to **My Assets** to choose the **countdown**.
 
 
@@ -734,7 +739,7 @@ music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.UntilDon
 
 You should be able to rack up points as you grab pizza until you press the (A) button, then the pizza should fly right by you.
 
-For extra fun, login so you can play online with friends!
+**For extra fun, login so you can play online with friends!**
 
 
 
@@ -747,7 +752,7 @@ For extra fun, login so you can play online with friends!
 
 You have finished your multiplayer experience!
 
-When you're ready, sign-in and select **Done** to start an online multiplayer session with up to four friends.
+When you're ready, sign-in, then select **Done** to start an online multiplayer session with up to three friends.
 
 **Who will be the first to score 20 points?**
 
