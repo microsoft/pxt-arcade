@@ -97,8 +97,8 @@ You don't have to stick to these options.  Mix and match to get the right progra
 ## Resources
 
 * [Code a Carnival Webpage (HoC)](https://arcade.makecode.com/hour-of-code-2022)
+* [Getting Started with MakeCode Arcade](https://youtu.be/DE_-0flM324)
 * [Meet the micro:bit Video](https://youtu.be/iG-cRQXP7R8)
-* [Getting Started with MakeCode Arcade](https://youtu.be/-uLLa0ueDUI)
 * [Kiki's Corner MakeCode Arcade Blog](https://medium.com/kikis-corner)
 * [Homepage for Microsoft MakeCode Arcade](https://arcade.makecode.com/)
 * [Homepage for Microsoft MakeCode for micro:bit](https://makecode.microbit.org/)
