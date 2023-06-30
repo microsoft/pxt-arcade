@@ -20,7 +20,7 @@
                 "name": "GitHub",
                 "icon": "/static/providers/github-mark.png",
                 "identity": false,
-                "order": 3
+                "order": 4
             },
             "microsoft": {
                 "id": "microsoft",
@@ -37,6 +37,14 @@
                 "identity": true,
                 "redirect": true,
                 "order": 2
+            },
+            "clever": {
+                "id": "clever",
+                "name": "Clever",
+                "icon": "/static/providers/clever-logo.png",
+                "identity": true,
+                "redirect": true,
+                "order": 3
             }
         }
     },
