@@ -9,7 +9,7 @@ Some examples of good interpretations of this theme are:
 
 DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
 -- | --
-![](/static/gamejam/jams/prehistoric/assets/demo-1.gif) | ![](/static/gamejam/jams/prehistoric/assets/demo-1.gif) | ![](/static/gamejam/jams/prehistoric/assets/demo-1.gif)
+![](/static/gamejam/jams/prehistoric/assets/demo-1.gif) | ![](/static/gamejam/jams/prehistoric/assets/demo-2.gif) | ![](/static/gamejam/jams/prehistoric/assets/demo-1.gif)
 
 You can interpret "prehistoric" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
 
@@ -20,7 +20,7 @@ You will have roughly one month to build and submit your games for the competiti
 
 ## Getting started
 
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [game maker guide](https://arcade.makecode.com/--skillmap) to learn the basics of making a game!
+Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [beginner skillmaps](https://arcade.makecode.com/--skillmap#dino) to learn the basics of making a game!
 
 ## Rules
 
@@ -34,7 +34,7 @@ Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our 
 
 This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
 
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team, and hang out with the MakeCode team as well.
+Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team. You can hang out with the MakeCode team there too!
 
 ## Tips and tricks
 
