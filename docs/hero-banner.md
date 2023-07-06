@@ -20,7 +20,7 @@ Here are some cool activities to get you started with your @boardname@!
 ---
 * name: Mutant Mayhem!
 * buttonLabel: Code Now
-* description: Create a multiplayer game!
+* description: Create your own multiplayer game!
 * imageUrl: /static/hero-gallery/pizza-party.jpg
 * url: https://arcade.makecode.com/#tutorial:/tutorials/pizza-party
 * cardType: link
