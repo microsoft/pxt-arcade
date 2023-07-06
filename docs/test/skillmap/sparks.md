@@ -19,25 +19,25 @@
 
 ### sparks1
 * allowcodecarryover: false
-* name: Mole Hunt
+* name: Pile of Sticks
 * type: tutorial
-* description: Learn to use MakeCode Arcade and add a sneaky mole sprite to your project.
-* tags: easy, sprite, random
-* next: mole2
+* description: Learn to use MakeCode Arcade and add a classic firepit to the center of your clicker game.
+* tags: easy, sprite, effects, events
+* next: sparks2
 * url: /skillmap/sparks/sparks1
-* imageUrl: /static/skillmap/mole/mole1.gif
+* imageUrl: /static/skillmap/sparks/sparks1.gif
 * position: -1 1
 
 
 
 ### sparks2
-* name: Hammer Time
+* name: Win Some, Lose Some
 * type: tutorial
-* description: Add a rubber hammer to tag the mole and earn points! How many points can you get before time runs out?
-* tags: easy, sprite, overlap, points
-* next: mole3
+* description: Add code to include some win and loss options to your amazing clicker game.
+* tags: easy, events, win, loss
+* next: sparks3
 * url: /skillmap/sparks/sparks2
-* imageUrl: /static/skillmap/mole/mole2.gif
+* imageUrl: /static/skillmap/sparks/sparks2.gif
 * position: 0 1
 
 
@@ -46,9 +46,9 @@
 * type: tutorial
 * description: Finish your game by adding a thrilling carnival sound and real frame-by-frame animations!
 * tags: easy, clicker, sprite, buttons
-* next: mole4
+* next: sparks4
 * url: /skillmap/sparks/sparks3
-* imageUrl: /static/skillmap/mole/mole3.gif
+* imageUrl: /static/skillmap/sparks/sparks3.gif
 * position: 1 1
 
 
@@ -58,18 +58,18 @@
 * type: tutorial
 * description: Want to play with friends? A few simple changes will have you playing chase in no time!
 * tags: easy, clicker, multiplayer, buttons
-* next: mole-cert
+* next: sparks-cert
 * url: /skillmap/sparks/sparks4
-* imageUrl: /static/skillmap/mole/mole3.gif
+* imageUrl: /static/skillmap/sparks/sparks3.gif
 * position: 1 0
 
 
-### mole-cert
+### sparks-cert
 * name: Congrats!
 * kind: completion
 * type: certificate
-* url: /static/skillmap/certificates/mole-cert.pdf
-* imageUrl: /static/skillmap/certificates/mole-cert.png
+* url: /static/skillmap/certificates/sparks-cert.pdf
+* imageUrl: /static/skillmap/certificates/sparks-cert.png
 * showMultiplayerShare: true
 * position: 2 0
 * actions:
@@ -77,8 +77,8 @@
     * editor: [Open in Creative Mode](/)
 * rewards:
     * certificate:
-        * url: /static/skillmap/certificates/mole-cert.pdf
-        * preview: /static/skillmap/certificates/mole-cert.png
+        * url: /static/skillmap/certificates/sparks-cert.pdf
+        * preview: /static/skillmap/certificates/sparks-cert.png
     * completion-badge:
-        * image: /static/badges/badge-mole.png
-        * name: Whack-the-Mole
+        * image: /static/badges/sparks-mole.png
+        * name: Sparks Flying

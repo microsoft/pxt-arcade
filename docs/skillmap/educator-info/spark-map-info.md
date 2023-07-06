@@ -2,16 +2,16 @@
 
 **A page for Educators & Parents**
 
-The **Whack-the-Mole** skillmap introduces simple game design and computer science concepts through a fun, relatable carnival interface.
+The **Sparks Flying** skillmap introduces simple game design and computer science concepts through a simple and fun "clicker" style arcade game.
 
-In this set of activities, students will create a simple mole-chasing game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
+In this set of activities, students will create a 5-level clicker game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
-Designed for students between the ages of 8 & 13, this experience contains a total of 3 tutorials (approximating 45 minutes of instruction).  At the end of the learning path, students receive a certificate of completion and a badge.
+Designed for students between the ages of 10 & 16, this experience contains a total of 3 tutorials (approximating 45 minutes of instruction).  At the end of the learning path, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
-| Mole Hunt    |18  |  sprites, events, timer |
-| Hammer Time   |12 |  sprites, overlaps, events |
+| Pile of Sticks    |18  |  sprites, events, effects |
+| Win Some, Lose Some   |12 |  sprites, win, lose |
 | Get Animated   |15  |  sound, text, animations |
 
 
@@ -19,7 +19,7 @@ Designed for students between the ages of 8 & 13, this experience contains a tot
 
 ### Objectives
 
-After completing Whack-the-Mole, students will have gained exposure to all the elements they need to successfully create their own Whack-the-Mole game using MakeCode Arcade, including:
+After completing Sparks Flying, students will have gained exposure to all the elements they need to successfully create their own cliker game using MakeCode Arcade, including:
 
 #### Computer Science Concepts
 
@@ -61,7 +61,7 @@ After completing Whack-the-Mole, students will have gained exposure to all the e
 | Activity | Get Animated (15 min) |
 |---|---|
 | ![Get Animated thumbnail](/static/skillmap/mole/mole3.gif) | Add sound and animation to polish your game! |
-| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimation(myHammer,assets.animation`hammerAnimation`,50,false)})]`` <br/>``[carnival.addLabelTo("Whack-the-Mole", carnival.Areas.Bottom))]`` |
+| Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimation(myHammer,assets.animation`hammerAnimation`,50,false)})]`` <br/>``[carnival.addLabelTo("Sparks Flying", carnival.Areas.Bottom))]`` |
 | Solution option | [Get Animated Project](https://makecode.com/_PCKW94TVLMpA) |
 
 
@@ -80,7 +80,7 @@ After completing Whack-the-Mole, students will have gained exposure to all the e
 
 ##### Game Mod Ideas
 
-After students complete Whack-the-Mole they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
+After students complete Sparks Flying they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
 - Change the mole to a different character. Try a monster, an alien, or a star!
 - Animate your character each time it's tagged by the rubber hammer.
@@ -89,7 +89,7 @@ After students complete Whack-the-Mole they can head back to the skillmap and cl
 
 ### What's Next?
 
-After completing Whack-the-Mole, students can move on to the following activities:
+After completing Sparks Flying, students can move on to the following activities:
 
 * [Burstin' Balloons](https://arcade.makecode.com/--skillmap#docs:/skillmap/balloon)
 * [Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)

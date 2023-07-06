@@ -77,8 +77,6 @@ This will be the **ACTION** that goes with our **EVENT**.
 
 - :id card: From the ``||info: Info||`` category in the toolbox, grab <br/>
 ``||info: change player [1] score by [1]||`` <br/>
-
-
 and snap it into the empty <br/>
 ``||controller(noclick): on [A] button [pressed]||`` <br/>
 block that's already in the workspace.
