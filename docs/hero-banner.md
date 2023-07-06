@@ -18,17 +18,12 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/gamejam/prehistoric
 * cardType: link
 ---
-* name: Save the Galaxy
-* buttonLabel: Try Now
-* imageUrl: /static/hero-gallery/galaxy.png
-* url: https://arcade.makecode.com/--skillmap#galaxy
+* name: Mutant Mayhem!
+* buttonLabel: Code Now
+* description: Create your own multiplayer game!
+* imageUrl: /static/hero-gallery/pizza-party.jpg
+* url: https://arcade.makecode.com/#tutorial:/tutorials/pizza-party
 * cardType: link
----
-* name: Create a Music Player
-* buttonLabel: Try Now
-* imageUrl: /static/hero-gallery/zune.png
-* url: /tutorials/music
-* cardType: tutorial
 ---
 * name: How To Code a Video Game
 * imageUrl: /static/hero-gallery/how-to-code.png
