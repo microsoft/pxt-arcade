@@ -1,30 +1,28 @@
-# Mutant Mayhem
+# Pizza Party
 ### @explicitHints true
 
 
-## Mutant Mayhem Intro @showdialog
+## Pizza Party @showdialog
 
-Are you ready to code a Pizza Party for Donatello, Michelangelo, Leonardo, and Raphael?
+Are you ready to code a Pizza Party for your friends?
 
-Follow this tutorial to create your own multiplayer experience inspired by the movie
-Teenage Mutant Ninja Turtles: Mutant Mayhem, only in theatres August 2.
-
+Follow this tutorial to create your own multiplayer game where you scramble to grab as much pizza as possible before your opponents steal your points!
 
 
-![Play Pizza Party](/static/tutorials/pizza-party/tmnt.png "Teenage Mutant Ninja Turtles: Mutant Mayhem, in theatres August 2")
 
-©2023 Paramount Pictures. TEENAGE MUTANT NINJA TURTLES is a trademark of Viacom International Inc.
+![Play Pizza Party](/static/tutorials/pizza-party/pizza1.gif "Time for a pizza party!")
+
 
 
 
 
 ## {2. Your First Block}
 
-**Meet the Cast!**
+**Meet the crew!**
 
 We've already loaded the images of each character into an array.
 
-This is how the program wil know which image
+This is how the program will know which image
 to assign to each player.
 
 
@@ -52,10 +50,10 @@ hint~
 ```blocks
 //@highlight
 let characters = [
-assets.image`Raphael`,
-assets.image`Leonardo`,
-assets.image`Michelangelo`,
-assets.image`Donatello`
+assets.image`bird1`,
+assets.image`bird2`,
+assets.image`bird3`,
+assets.image`bird4`
 ]
 ```
 
@@ -65,10 +63,10 @@ assets.image`Donatello`
 ```blocks
 //@highlight
 let characters = [
-assets.image`Raphael`,
-assets.image`Leonardo`,
-assets.image`Michelangelo`,
-assets.image`Donatello`
+assets.image`bird1`,
+assets.image`bird2`,
+assets.image`bird3`,
+assets.image`bird4`
 ]
 ```
 
@@ -96,12 +94,12 @@ Switch to the **My Assets** window to select the **cityscape** background.
 
 ```blocks
 let characters = [
-assets.image`Raphael`,
-assets.image`Leonardo`,
-assets.image`Michelangelo`,
-assets.image`Donatello`
+assets.image`bird1`,
+assets.image`bird2`,
+assets.image`bird3`,
+assets.image`bird4`
 ]
-scene.setBackgroundImage(assets.image`Lab`)
+scene.setBackgroundImage(assets.image`cityscape`)
 ```
 
 
@@ -123,12 +121,12 @@ container already in the workspace.
 
 ```blocks
 let characters = [
-assets.image`Raphael`,
-assets.image`Leonardo`,
-assets.image`Michelangelo`,
-assets.image`Donatello`
+assets.image`bird1`,
+assets.image`bird2`,
+assets.image`bird3`,
+assets.image`bird4`
 ]
-scene.setBackgroundImage(assets.image`Lab`)
+scene.setBackgroundImage(assets.image`cityscape`)
 pizza.setPlayersWith (characters, 1)
 ```
 
@@ -359,7 +357,7 @@ Let's take a look at the blocks you just added.
 ---
 
 <br/>
-This **event** block triggers an action every time one of your Player sprites overlaps one of the projectile sprites. (Whenever a turtle overlaps the pizza.)
+This **event** block triggers an action every time one of your Player sprites overlaps one of the projectile sprites. (Whenever a player overlaps the pizza.)
 
 ```block
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) { })
@@ -485,7 +483,7 @@ Let's take a look at the blocks you just added.
 ---
 
 <br/>
-This **event** block triggers an action whenever two Players (turtles) overlap.
+This **event** block triggers an action whenever two Players (birds) overlap.
 
 ```block
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {  })
@@ -719,12 +717,12 @@ container already in the workspace.
 
 ```blocks
 let characters = [
-assets.image`Raphael`,
-assets.image`Leonardo`,
-assets.image`Michelangelo`,
-assets.image`Donatello`
+assets.image`bird1`,
+assets.image`bird2`,
+assets.image`bird3`,
+assets.image`bird4`
 ]
-scene.setBackgroundImage(assets.image`Lab`)
+scene.setBackgroundImage(assets.image`cityscape`)
 pizza.setPlayersWith (characters, 1)
 game.splash("Press (A) when everyone is", "ready to start the game")
 
@@ -815,10 +813,10 @@ game.splash("Press (A) when everyone is", "ready to start the game")
 let characters: Image[] = []
 
 characters = [
-assets.image`Raphael`,
-assets.image`Leonardo`,
-assets.image`Michelangelo`,
-assets.image`Donatello`
+assets.image`bird1`,
+assets.image`bird2`,
+assets.image`bird3`,
+assets.image`bird4`
 ]
 
 
