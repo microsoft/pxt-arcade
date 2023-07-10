@@ -3,15 +3,13 @@
 
 ## Introduction @showdialog
 
-You are aboard the new ship belonging to the Guardians of the Galaxy.
-
 Some of the satellites used in the Azure Space program have mysteriously gone offline
 and they need to be updated. In order to help, you have to be in their direct line of
 sight so you can transmit data to fix them.
 
 Before any of that, you must code the program that will let you SAVE THE GALAXY!
 
-![Flying through space](/static/skillmap/galaxy/galaxy3.gif "Blasting through space")
+![Flying through space](/static/skillmap/galaxy/galaxy1.gif "Blasting through space")
 
 <!--
 ---
@@ -49,7 +47,7 @@ to choose the **galaxy** background, then click **Done**.
 
 ```blocks
 // @highlight
-scene.setBackgroundImage(img`c`)
+scene.setBackgroundImage(galaxyimgs.Galaxy)
 ```
 
 
@@ -112,7 +110,7 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(img`c`)
+scene.setBackgroundImage(galaxyimgs.Galaxy)
 // @highlight
 scroller.scrollBackgroundWithSpeed(0, 10)
 ```
@@ -144,18 +142,18 @@ hint~
 
 - :paint brush: Click the empty box in the middle of the <br/>
  ``||variables(sprites):set [myShip] to sprite [ ] of kind [Player]||``<br/>
- block, then switch to **Gallery** and choose the new Guardians' **Ship**.
-![Choose the galaxy background](/static/skillmap/galaxy/bowie.png " ")
+ block, then switch to **Gallery** and choose a space ship.
+![Choose a ship](/static/skillmap/galaxy/bowie.png " ")
 
 
 
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(img`c`)
+scene.setBackgroundImage(galaxyimgs.Galaxy)
 scroller.scrollBackgroundWithSpeed(0, 10)
 // @highlight
-let myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
+let myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
 ```
 
 
@@ -176,9 +174,9 @@ into **the end** of the
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(img`c`)
+scene.setBackgroundImage(galaxyimgs.Galaxy)
 scroller.scrollBackgroundWithSpeed(0, 10)
-myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
+myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
 // @highlight
 controller.moveSprite(myShip)
 ```
@@ -212,9 +210,9 @@ What happens when you hold one arrow down for a long time?
 #### ~ tutorialhint
 
 ```blocks
-scene.setBackgroundImage(img`c`)
+scene.setBackgroundImage(galaxyimgs.Galaxy)
 scroller.scrollBackgroundWithSpeed(0, 10)
-let myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
+let myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
 controller.moveSprite(myShip)
 // @highlight
 myShip.setStayInScreen(true)
@@ -269,7 +267,7 @@ myShip.setStayInScreen(true)
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
-galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.7
+galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.9
 ```
 
 
@@ -280,7 +278,7 @@ let statusbar: StatusBarSprite = null
 let myShip: Sprite = null
 scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
-myShip = sprites.create(assets.image`Ship`, SpriteKind.Player)
+myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
 controller.moveSprite(myShip)
 myShip.setStayInScreen(true)
 myShip.y = 100

@@ -33,12 +33,7 @@ Do you see how similar this is to the code that created our satellites?
 ```blocks
 
 game.onUpdateInterval(3000, function () {
-    let myRock = sprites.createProjectileFromSide(img`
-        . . . .
-        . . . .
-        . . . .
-        . . . .
-        `, 0, 90)
+    let myRock = sprites.createProjectileFromSide(galaxyimgs.Asteroid, 0, 90)
     myRock.x = randint(5, 155)
     myRock.setKind(SpriteKind.Enemy)
 })
@@ -109,7 +104,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
 - :tree: Look inside of the<br/>
 ``||sprites(noclick):on [sprite] of kind [Enemy] overlaps [othersprite] of kind [Player]||``<br/>
 bundle already in the workspace and click the plus (+) to the right of the <br/>
-``||sprites:destroy [sprites] + ||`` <br/>
+``||sprites(noclick):destroy [sprites] + ||`` <br/>
 block.
 
 - :mouse pointer: Choose an effect for your asteroid. Try having it **disintigrate** or disappear in **fire**.
@@ -172,15 +167,38 @@ block inside and **at the end of** of the ``||loops(noclick):on start||`` contai
 
 ```blocks
     let myShip: Sprite = null
-    scene.setBackgroundImage(img`.`)
+    scene.setBackgroundImage(galaxyimgs.Galaxy)
     scroller.scrollBackgroundWithSpeed(0, 10)
-    myShip = sprites.create(img`.`, SpriteKind.Player)
+    myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
     controller.moveSprite(myShip, 100, 100)
     myShip.setStayInScreen(true)
     //@highlight
     animation.runImageAnimation(
         myShip,
-        [img`.`],
+        [img`
+    .......99.......
+    ......9119......
+    .....911119.....
+    .....116a11.....
+    .....16cca1.....
+    .....11cc11.....
+    ....11111111....
+    ....961111a9....
+    ...96f1111fa9...
+    ...9ff1111ff9...
+    ..96ff1111ffa9..
+    ..9fff1111fff9..
+    .96fff1111fffa9.
+    .96f.ffffff.fa9.
+    .d....aaaa....9.
+    ......4554......
+    .....4.44.4.....
+    ....4.5455.4....
+    ........4.......
+    ................
+    ................
+    ................
+    `],
         100,
         true
     )
@@ -218,18 +236,30 @@ trying to animate, then click the empty box to **choose your animation**.
 
 ```blocks
 game.onUpdateInterval(3000, function () {
-    let myRock = sprites.createProjectileFromSide(img`
-        . . . .
-        . . . .
-        . . . .
-        . . . .
-        `, 0, 90)
+    let myRock = sprites.createProjectileFromSide(galaxyimgs.Asteroid, 0, 90)
     myRock.x = randint(5, 155)
     myRock.setKind(SpriteKind.Enemy)
     //@highlight
     animation.runImageAnimation(
         myRock,
-        [img`.`],
+        [img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . c c c . . . . . .
+    . . . . . . a b a a . . . . . .
+    . . . . . c b a f c a c . . . .
+    . . . . c b b b f f a c c . . .
+    . . . . b b f a b b a a c . . .
+    . . . . c b f f b a f c a . . .
+    . . . . . c a a c b b a . . . .
+    . . . . . . c c c c . . . . . .
+    . . . . . . . c . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    `],
         100,
         true
     )
@@ -313,7 +343,7 @@ true
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
-galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.7
+galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.9
 ```
 
 
@@ -330,7 +360,7 @@ let statusbar: StatusBarSprite = null
 let myShip: Sprite = null
 scene.setBackgroundImage(assets.image`Galaxy`)
 scroller.scrollBackgroundWithSpeed(0, 10)
-myShip = sprites.create(assets.image`Rocket`, SpriteKind.Player)
+myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
 controller.moveSprite(myShip, 100, 100)
 myShip.setStayInScreen(true)
 
@@ -361,9 +391,9 @@ true
 
 ```template
     let myShip: Sprite = null
-    scene.setBackgroundImage(img`.`)
+    scene.setBackgroundImage(galaxyimgs.Galaxy)
     scroller.scrollBackgroundWithSpeed(0, 10)
-    myShip = sprites.create(img`.`, SpriteKind.Player)
+    myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
     controller.moveSprite(myShip, 100, 100)
     myShip.setStayInScreen(true)
 
@@ -376,18 +406,13 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Satellite, function (sprite,
 })
 
 game.onUpdateInterval(2000, function () {
-    let mySat = sprites.createProjectileFromSide(img`
-        . . . .
-        . . . .
-        . . . .
-        . . . .
-        `, 0, 50)
+    let mySat = sprites.createProjectileFromSide(galaxyimgs.Satellite, 0, 50)
     mySat.x = randint(5, 155)
     mySat.setKind(SpriteKind.Satellite)
 })
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(img`.`, myShip, 0, -150)
+    projectile = sprites.createProjectileFromSprite(galaxyimgs.p101, myShip, 0, -150)
 })
 
 ```

@@ -2,13 +2,13 @@
 * name: Sparks Flying
 * description: Set in prehistoric Israel, this tutorial will help you create a game that challenges you to light a fire to keep yourself warm, but be careful! It's not as easy as it sounds!  Double-click the first level to begin.
 * infoUrl: skillmap/educator-info/spark-map-info
-* bannerUrl: /static/skillmap/spark/spark4.gif
-* backgroundurl: /static/skillmap/backgrounds/spark-comp.gif
+* bannerUrl: /static/skillmap/sparks/sparks1.gif
+* backgroundurl: /static/skillmap/backgrounds/sparks-comp.png
 * primarycolor: #ffffff
-* secondarycolor: #fff53d
+* secondarycolor: #ffb200
 * tertiarycolor: #93fffb
-* completednodecolor: #604c4e
-* highlightcolor: #ff0000
+* completednodecolor: #267a85
+* highlightcolor: #ffff00
 * allowcodecarryover: true
 * tags: prehistoric, educational, clicker
 
@@ -24,7 +24,7 @@
 * description: Learn to use MakeCode Arcade and add a classic firepit to the center of your clicker game.
 * tags: easy, sprite, effects, events
 * next: sparks2
-* url: /skillmap/sparks/sparks1
+* url: /test/skillmap/sparks/sparks1
 * imageUrl: /static/skillmap/sparks/sparks1.gif
 * position: 0 -2
 
@@ -36,7 +36,7 @@
 * description: Add code to include some win and loss options to your amazing clicker game.
 * tags: easy, events, win, loss
 * next: sparks-cert
-* url: /skillmap/sparks/sparks2
+* url: /test/skillmap/sparks/sparks2
 * imageUrl: /static/skillmap/sparks/sparks2.gif
 * position: 1 -2
 
@@ -80,5 +80,5 @@
         * url: /static/skillmap/certificates/sparks-cert.pdf
         * preview: /static/skillmap/certificates/sparks-cert.png
     * completion-badge:
-        * image: /static/badges/sparks-mole.png
+        * image: /static/badges/badge-sparks.png
         * name: Sparks Flying

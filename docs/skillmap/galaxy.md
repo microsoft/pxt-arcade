@@ -2,7 +2,7 @@
 * name: Save the Galaxy
 * description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, dodge asteroids, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!
 * infoUrl: skillmap/educator-info/galaxy-map-info
-* bannerUrl: /static/skillmap/galaxy/galaxy3-trimmed.gif
+* bannerUrl: /static/skillmap/galaxy/galaxy3.gif
 * backgroundurl: /static/skillmap/backgrounds/galaxy-comp.png
 * primarycolor: #ffa000
 * secondarycolor: #ff07d9
@@ -24,8 +24,8 @@
 * tags: easy, sprites, scroller
 * next: galaxy2
 * url: /skillmap/galaxy/galaxy1
-* imageUrl: /static/skillmap/galaxy/galaxy1-trimmed.gif
-* position: 0 0
+* imageUrl: /static/skillmap/galaxy/galaxy1.gif
+* position: 0 1
 
 ### galaxy2
 * name: Communication is Key!
@@ -34,7 +34,7 @@
 * tags: easy, projectiles, kinds, overlaps
 * next: galaxy3
 * url: /skillmap/galaxy/galaxy2
-* imageUrl: /static/skillmap/galaxy/galaxy2-trimmed.gif
+* imageUrl: /static/skillmap/galaxy/galaxy2.gif
 * position: 0 3
 
 ### galaxy3
@@ -44,7 +44,7 @@
 * tags: intermediate, collisions, kinds, animations
 * next: galaxy-cert-1
 * url: /skillmap/galaxy/galaxy3
-* imageUrl: /static/skillmap/galaxy/galaxy3-trimmed.gif
+* imageUrl: /static/skillmap/galaxy/galaxy3.gif
 * position: 4 3
 
 
@@ -55,7 +55,7 @@
 * type: certificate
 * imageUrl: /static/skillmap/certificates/galaxy-cert.png
 * url: /static/skillmap/certificates/galaxy-cert.pdf
-* position: 4 0
+* position: 4 1
 * actions:
     * map: [Try 80s Rockstar Maze](/skillmap/rockstar)
     * map: [Try Jungle Jump](/skillmap/jungle)
