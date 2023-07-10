@@ -3,7 +3,7 @@
 * description: Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, dodge asteroids, create amazing animations, and MORE!  What are you waiting for?  Double-click the first level to begin!
 * infoUrl: skillmap/educator-info/galaxy-map-info
 * bannerUrl: /static/skillmap/galaxy/galaxy3.gif
-* backgroundurl: /static/skillmap/backgrounds/galaxy-comp.png
+* backgroundurl: /static/skillmap/backgrounds/galaxy-comp1.png
 * primarycolor: #ffa000
 * secondarycolor: #ff07d9
 * tertiarycolor: #ffffff
