@@ -24,7 +24,7 @@
 * description: Learn to use MakeCode Arcade and add a classic firepit to the center of your clicker game.
 * tags: easy, sprite, effects, events
 * next: sparks2
-* url: /test/skillmap/sparks/sparks1
+* url: /skillmap/sparks/sparks1
 * imageUrl: /static/skillmap/sparks/sparks1.gif
 * position: 0 -2
 
@@ -36,7 +36,7 @@
 * description: Add code to include some win and loss options to your amazing clicker game.
 * tags: easy, events, win, loss
 * next: sparks-cert
-* url: /test/skillmap/sparks/sparks2
+* url: /skillmap/sparks/sparks2
 * imageUrl: /static/skillmap/sparks/sparks2.gif
 * position: 1 -2
 

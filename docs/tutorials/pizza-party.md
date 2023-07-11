@@ -7,13 +7,12 @@
 Are you ready to code a Pizza Party for Donatello, Michelangelo, Leonardo, and Raphael?
 
 Follow this tutorial to create your own multiplayer experience inspired by the movie
-Teenage Mutant Ninja Turtles: Mutant Mayhem, only in theatres August 2.
+Teenage Mutant Ninja Turtles: Mutant Mayhem.
 
 
 
 ![Play Pizza Party](/static/tutorials/pizza-party/tmnt.png "Teenage Mutant Ninja Turtles: Mutant Mayhem, in theatres August 2")
 
-©2023 Paramount Pictures. TEENAGE MUTANT NINJA TURTLES is a trademark of Viacom International Inc.
 
 
 
