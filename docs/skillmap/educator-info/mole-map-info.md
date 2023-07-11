@@ -19,7 +19,7 @@ Designed for students between the ages of 8 & 13, this experience contains a tot
 
 ### Objectives
 
-After completing Whack-the-Mole, students will have gained exposure to all the elements they need to successfully create their own Whack-the-Mole game using MakeCode Arcade, including:
+After completing Whack-the-Mole, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade, including:
 
 #### Computer Science Concepts
 
