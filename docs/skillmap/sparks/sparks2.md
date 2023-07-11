@@ -298,8 +298,10 @@ Click "Done" to get back out to the skillmap, then look in the lower-right corne
 hint~
 
 
-When you're ready, click **Done** to return to the skillmap so you can
-add levels to your game!
+When you're ready, click **Done** to return to the skillmap to get your reward!
+
+<!--so you can
+add levels to your game! -->
 
 
 ```blockconfig.global
