@@ -13,8 +13,6 @@
   "description": "Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, dodge asteroids, create amazing animations, and MORE!",
   "imageUrl":  "/static/skillmap/backgrounds/galaxy-map.png",
   "url": "https://arcade.makecode.com/--skillmap#galaxy",
-  "label": "Limited time only",
-  "labelClass": "purple ribbon",
   "directOpen": true
 },
 {
@@ -31,6 +29,14 @@
   "description": "Code a text-based adventure game using your own images, storyline, and music score!",
   "imageUrl": "/static/skillmap/backgrounds/adventure-map.png",
   "url": "https://arcade.makecode.com/--skillmap#adventure",
+  "directOpen": true
+},
+{
+  "name": "Sparks Flying",
+  "cardType": "link",
+  "description": "Transport yourself back to prehistoric Israel at the turn of winter.  Follow these simple instructions to create a clicker game that sparks a fire for the win!",
+  "imageUrl":  "/static/skillmap/backgrounds/sparks-map.png",
+  "url": "https://arcade.makecode.com/--skillmap#sparks",
   "directOpen": true
 },
 {
