@@ -219,7 +219,8 @@
             "adventure": "docs:/skillmap/adventure",
             "story": "docs:/skillmap/story",
             "dino": "docs:/skillmap/dino",
-            "galaxy": "docs:/skillmap/galaxy"
+            "galaxy": "docs:/skillmap/galaxy",
+            "sparks": "docs:/skillmap/sparks"
         }
     },
     "multiplayer": {
