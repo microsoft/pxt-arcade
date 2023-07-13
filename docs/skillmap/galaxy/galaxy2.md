@@ -56,7 +56,7 @@ your ship will send information straight ahead.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(assets.image`101`, myShip, 0, -150)
+    projectile = sprites.createProjectileFromSprite(galaxyimgs.p101, myShip, 0, -150)
 })
 ```
 
@@ -99,12 +99,7 @@ from a random horizontal location.
         export const Satellite = SpriteKind.create()
     }
 game.onUpdateInterval(2000, function () {
-    let mySat = sprites.createProjectileFromSide(img`
-        . . . .
-        . . . .
-        . . . .
-        . . . .
-        `, 0, 50)
+    let mySat = sprites.createProjectileFromSide(galaxyimgs.Satellite, 0, 50)
     mySat.x = randint(5, 155)
     mySat.setKind(SpriteKind.Satellite)
 })
@@ -298,7 +293,7 @@ otherSprite.setVelocity(-30, -30)
 
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
-galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.7
+galaxy-imgs=github:kiki-lee/galaxy-imgs#v0.0.9
 ```
 
 

@@ -11,15 +11,15 @@ Designed for students between the ages of 10 & 16, this experience contains a to
 |                 | Minutes* |  Key Concepts |
 | --------------- | -------- |  ------------ |
 | Pile of Sticks    |18  |  sprites, events, effects |
-| Win Some, Lose Some   |12 |  sprites, win, lose |
-| Get Animated   |15  |  sound, text, animations |
+| Win Some, Lose Some   |22 |  sprites, win, lose |
+<!--| Get Animated   |15  |  sound, text, animations | -->
 
 
 \* Minutes are approximate, based on time to follow instructions as written. Providing extra time for creativity and debugging is encouraged.
 
 ### Objectives
 
-After completing Sparks Flying, students will have gained exposure to all the elements they need to successfully create their own cliker game using MakeCode Arcade, including:
+After completing Sparks Flying, students will have gained exposure to all the elements they need to successfully create their own clicker game using MakeCode Arcade, including:
 
 #### Computer Science Concepts
 
@@ -27,40 +27,46 @@ After completing Sparks Flying, students will have gained exposure to all the el
 - Events
 - User input
 
+<!--
+- Functions
+- Conditionals
+- Variables
+-->
+
 
 #### Game Design Concepts
 
 - Sprites
 - Design, Sounds, and Effects
-- Collision / overlap
-- Countdown timers
+- Timers
 - Game Score
 - Win/Loss Criteria
-- Animation
 
 
 
-#### 1. Mole Hunt
+#### 1. Pile of Sticks
 
-| Activity | Mole Hunt (18 min) |
+| Activity | Pile of Sticks (18 min) |
 |---|---|
-| ![Mole Hunt thumbnail](/static/skillmap/mole/mole1.gif) | Learn to use MakeCode Arcade and add a moving character sprite to your project. |
-| Blocks used |  ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[let mySprite = sprites.create(img`.`, SpriteKind.Enemy)]`` <br/> ``[game.onUpdateInterval(1000, function () {}]``|
-| Solution option | [Mole Hunt Project](https://makecode.com/_4WPAes5LMe9z) |
+| ![Pile of Sticks thumbnail](/static/skillmap/sparks/sparks1.gif) | Learn to use MakeCode Arcade and add fire pit sprite to your project. |
+| Blocks used |  ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[let kindling = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]`` <br/> ``[info.changeScoreBy(1)]`` <br/> ``[let kindling: Sprite = null; kindling.startEffect(effects.fire, 25)]``|
+| Solution option | [Pile of Sticks Project](https://makecode.com/_JM0UJi1ojWed) |
 
-#### 2. Hammer Time
+#### 2. Win Some, Lose Some
 
-| Activity | Hammer Time (12 min) |
+| Activity | Win Some, Lose Some (12 min) |
 |---|---|
-| ![Hammer Time thumbnail](/static/skillmap/mole/mole2.gif) | Add a rubber hammer to tag the mole and earn points! |
-| Blocks used | ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[simplified.moveToRandomHoleOnGrid(myMole)]`` <br/> ``[simplified.moveOnlyOnscreenWithArrows(myHammer, simplified.Speeds.Fast)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {})]`` <br/> ``[carnival.startCountdownGame(15, carnival.WinTypes.Score)]`` <br/> ``[info.changeScoreBy(1)]`` |
-| Solution option | [Hammer Time Project](https://makecode.com/_3kzWrvbA51PL) |
+| ![Win Some, Lose Some thumbnail](/static/skillmap/sparks/sparks2.gif) | Add win and loss conditions to your game using events. |
+| Blocks used | <br/> ``[game.onUpdateInterval(1000, function () {}]`` <br/>``[info.changeScoreBy(1)]`` <br/> ``[info.onScore(30, function () {})]`` <br/> ``[game.setGameOverScoringType(game.ScoringType.LowScore) ]`` <br/> ``[info.setScore(0)]`` <br/> ``[game.gameOver(true)]``|
+| Solution option | [Win Some, Lose Some Project](https://makecode.com/_RioVF8L3HbtA) |
 
+
+<!--
 #### 3. Get Animated
 
 | Activity | Get Animated (15 min) |
 |---|---|
-| ![Get Animated thumbnail](/static/skillmap/mole/mole3.gif) | Add sound and animation to polish your game! |
+| ![Get Animated thumbnail](/static/skillmap/sparks/sparks3.gif) | Add sound and animation to polish your game! |
 | Blocks used | ``[music.knock.play()]`` <br/> ``[animation.runImageAnimation(myHammer,assets.animation`hammerAnimation`,50,false)})]`` <br/>``[carnival.addLabelTo("Sparks Flying", carnival.Areas.Bottom))]`` |
 | Solution option | [Get Animated Project](https://makecode.com/_PCKW94TVLMpA) |
 
@@ -69,11 +75,11 @@ After completing Sparks Flying, students will have gained exposure to all the el
 
 | Activity | Get Animated (15 min) |
 |---|---|
-| ![Play with Friends thumbnail](/static/skillmap/mole/mole4.gif) | A few simple changes will have you playing chase in no time! |
+| ![Play with Friends thumbnail](/static/skillmap/sparks/sparks4.gif) | A few simple changes will have you playing chase in no time! |
 | Blocks used | ``[game.showLongText(" ", DialogLayout.Center)]`` <br/> ``[carnival.startCountdownGame(15, carnival.WinTypes.Multi)]`` <br/>``[simplified.checkMoleEscape(mp.playerSelector(mp.PlayerNumber.Two), 1)]`` |
 | Solution option | [Play with Friends Project](https://makecode.com/_Hvte8pVtoDft) |
 
-
+-->
 
 
 
@@ -82,21 +88,24 @@ After completing Sparks Flying, students will have gained exposure to all the el
 
 After students complete Sparks Flying they can head back to the skillmap and click "SAVE TO MY PROJECTS", which will open the game in a window with a full-featured toolbox. Here are some modifications they can try:
 
-- Change the mole to a different character. Try a monster, an alien, or a star!
-- Animate your character each time it's tagged by the rubber hammer.
-- Add background music.
+- Change the scene to something new.  Try making a water fountain in Greece or a raining cloud
+- Make it a two player game where one person plays as a fire and the other as a sprinkler
+- Add sound effects and/or background music
 
 
 ### What's Next?
 
 After completing Sparks Flying, students can move on to the following activities:
 
-* [Burstin' Balloons](https://arcade.makecode.com/--skillmap#docs:/skillmap/balloon)
-* [Space Explorer](https://arcade.makecode.com/--skillmap#docs:/skillmap/space)
+* [Save the Galaxy](https://arcade.makecode.com/--skillmap#docs:/skillmap/galaxy)
+* [Turkey Day](https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey)
+
 
 
 
 ```package
-mole-images=github:microsoft/arcade-tutorial-extensions/mole-images#v0.0.11
-carnival=github:microsoft/arcade-carnival
+arcade-carnival=github:microsoft/arcade-carnival
+arcade-storytelling=github:microsoft/arcade-storytelling
+arcade-text=github:microsoft/arcade-text
+sparks=github:kiki-lee/sparks#v0.0.4
 ```
