@@ -273,7 +273,7 @@ You should see sparks ignite your kindling each time you click the (A) button. Y
 
 
 
-## {10. Little bit softer now}
+## {13. Little bit softer now}
 
 Right now, the sparks build too quickly. Let's fix that.
 
@@ -286,6 +286,8 @@ block.
 
 #### ~ tutorialhint
 ```blocks
+let kindling: Sprite = null
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     //@highlight
