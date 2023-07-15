@@ -13,13 +13,7 @@
 
 ![How to build](/static/mkj/goal/how1-1.gif "Add three right arrows")
 
-
-<!--
-## {How to run}
-
 ![How to Check](/static/mkj/goal/check1-1.gif "Click the A button on the game window")
-
--->
 
 
 ```blocks
@@ -34,7 +28,7 @@
 ## Great Job! @showdialog
 
 
- [![Level 2](/static/mkj/assets/next.png)](https://arcade.makecode.com/beta#recipe:/test/mkj/goal1/goal1-2)
+ [![Level 2](/static/mkj/assets/next.png)](beta#recipe:/mkj/goal/goal1-2)
 
 
 

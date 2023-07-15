@@ -13,10 +13,7 @@
 
 ![How to build](/static/mkj/goal/how1-2.gif "Add three right arrows")
 
-<!-->
-# {How to Run}
-
-![How to Check](/static/mkj/goal/check1-2.gif "Click the A button on the game window") -->
+![How to Check](/static/mkj/goal/check1-2.gif "Click the A button on the game window")
 
 
 ```blocks
