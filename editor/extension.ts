@@ -276,15 +276,7 @@ namespace pxt.editor {
                 // on player 2 a button pressed
                 pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
                 .forEach(eventRoot => {
-                    const controllerField = eventRoot.querySelector("field[name=controller]");
-                    const buttonField = eventRoot.querySelector("field[name=button]");
-                    if (!buttonField || !controllerField) return;
-                    if (!buttonField.innerHTML.startsWith("ControllerButton.")
-                            && controllerField.innerHTML.startsWith("ControllerButton.")) {
-                        // swapped by invalid translation we now catch; swap back
-                        controllerField.setAttribute("name", "button");
-                        buttonField.setAttribute("name", "controller");
-                    }
+                    swapFieldIfNotMatching(eventRoot, "button", "controller", "ControllerButton.");
                 });
             } else if (lang === "es-ES") {
                 pxt.U.toArray(dom.querySelectorAll("[type=music_sounds]>field[name=note]"))
@@ -292,28 +284,12 @@ namespace pxt.editor {
                 // on a button pressed
                 pxt.U.toArray(dom.querySelectorAll("block[type=keyonevent]"))
                     .forEach(eventRoot => {
-                        const eventField = eventRoot.querySelector("field[name=event]");
-                        const buttonField = eventRoot.querySelector("field[name=button]");
-                        if (!buttonField || !eventField) return;
-                        if (!eventField.innerHTML.startsWith("ControllerButtonEvent.")
-                                && buttonField.innerHTML.startsWith("ControllerButtonEvent.")) {
-                            // swapped by invalid translation we now catch; swap back
-                            eventField.setAttribute("name", "button");
-                            buttonField.setAttribute("name", "event");
-                        }
+                        swapFieldIfNotMatching(eventRoot, "event", "button", "ControllerButtonEvent.");
                     });
                 // on player 2 a button pressed
                 pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
                     .forEach(eventRoot => {
-                        const controllerField = eventRoot.querySelector("field[name=controller]");
-                        const buttonField = eventRoot.querySelector("field[name=button]");
-                        if (!buttonField || !controllerField) return;
-                        if (!buttonField.innerHTML.startsWith("ControllerButton.")
-                                && controllerField.innerHTML.startsWith("ControllerButton.")) {
-                            // swapped by invalid translation we now catch; swap back
-                            controllerField.setAttribute("name", "button");
-                            buttonField.setAttribute("name", "controller");
-                        }
+                        swapFieldIfNotMatching(eventRoot, "button", "controller", "ControllerButton.");
                     });
             } else if (lang === "de") {
                 pxt.U.toArray(dom.querySelectorAll("block[type=image_create]>value[name=heNacht]"))
@@ -321,6 +297,24 @@ namespace pxt.editor {
             }
         }
     }
+
+    function swapFieldIfNotMatching(
+        eventRoot: Element,
+        fieldAName: string,
+        fieldBName: string,
+        fieldAShouldStartWith: string
+    ) {
+        const fieldA = eventRoot.querySelector(`field[name=${fieldAName}]`);
+        const fieldB = eventRoot.querySelector(`field[name=${fieldBName}]`);
+        if (!fieldB || !fieldA) return;
+        if (!fieldA.innerHTML.startsWith(fieldAShouldStartWith)
+                && fieldA.innerHTML.startsWith(fieldAShouldStartWith)) {
+            // swapped by invalid translation we now catch; swap back
+            fieldA.setAttribute("name", fieldBName);
+            fieldB.setAttribute("name", fieldAName);
+        }
+    }
+
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
         const varField = getField(varBlockOrShadow, "VAR");
