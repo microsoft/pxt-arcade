@@ -527,6 +527,7 @@
         "logo": "/static/logo.svg",
         "docsLogo": "/static/logo.svg",
         "cardLogo": "/static/logo.png",
+        "appLogo": "/static/icons/favicon.ico",
         "portraitLogo": "/static/logo.svg",
         "footerLogo": "/static/logo.svg",
         "organization": "Microsoft MakeCode",
