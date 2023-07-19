@@ -307,7 +307,7 @@ namespace pxt.editor {
         const fieldB = eventRoot.querySelector(`field[name=${fieldBName}]`);
         if (!fieldB || !fieldA) return;
         if (!fieldA.innerHTML.startsWith(fieldAShouldStartWith)
-                && fieldA.innerHTML.startsWith(fieldAShouldStartWith)) {
+                && fieldB.innerHTML.startsWith(fieldAShouldStartWith)) {
             // swapped by invalid translation we now catch; swap back
             fieldA.setAttribute("name", fieldBName);
             fieldB.setAttribute("name", fieldAName);
