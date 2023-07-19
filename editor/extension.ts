@@ -270,9 +270,22 @@ namespace pxt.editor {
         }
 
         if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.12.34") < 0) {
+            // ar, zh-CN, zh-TW, fr, ja fine
             const lang = pxt.BrowserUtils.getCookieLang();
             if (lang == "es-MX") {
-
+                // on player 2 a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
+                .forEach(eventRoot => {
+                    const controllerField = eventRoot.querySelector("field[name=controller]");
+                    const buttonField = eventRoot.querySelector("field[name=button]");
+                    if (!buttonField || !controllerField) return;
+                    if (!buttonField.innerHTML.startsWith("ControllerButton.")
+                            && controllerField.innerHTML.startsWith("ControllerButton.")) {
+                        // swapped by invalid translation we now catch; swap back
+                        controllerField.setAttribute("name", "button");
+                        buttonField.setAttribute("name", "controller");
+                    }
+                });
             } else if (lang === "es-ES") {
                 pxt.U.toArray(dom.querySelectorAll("[type=music_sounds]>field[name=note]"))
                     .forEach(node => node.setAttribute("name", "name"));
@@ -302,6 +315,9 @@ namespace pxt.editor {
                             buttonField.setAttribute("name", "controller");
                         }
                     });
+            } else if (lang === "de") {
+                pxt.U.toArray(dom.querySelectorAll("block[type=image_create]>value[name=heNacht]"))
+                    .forEach(node => node.setAttribute("name", "height"));
             }
         }
     }
