@@ -270,7 +270,6 @@ namespace pxt.editor {
         }
 
         if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.12.34") < 0) {
-            // ar, zh-CN, zh-TW, fr, ja fine
             const lang = pxt.BrowserUtils.getCookieLang();
             if (lang == "es-MX") {
                 // on player 2 a button pressed
