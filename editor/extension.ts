@@ -251,9 +251,7 @@ namespace pxt.editor {
                 tileHitParam.appendChild(shadow);
                 block.appendChild(tileHitParam);
             });
-        }
 
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.9") < 0) {
             /**
              * move from tilemap namespace to tiles namespace
              * <block type="tilemap_locationXY">
@@ -269,6 +267,42 @@ namespace pxt.editor {
                 const xyField = getField(block, "xy");
                 xyField.textContent = (xyField.textContent || "").replace(/^tilemap./, "tiles.");
             });
+        }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.12.34") < 0) {
+            const lang = pxt.BrowserUtils.getCookieLang();
+            if (lang == "es-MX") {
+
+            } else if (lang === "es-ES") {
+                pxt.U.toArray(dom.querySelectorAll("[type=music_sounds]>field[name=note]"))
+                    .forEach(node => node.setAttribute("name", "name"));
+                // on a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=keyonevent]"))
+                    .forEach(eventRoot => {
+                        const eventField = eventRoot.querySelector("field[name=event]");
+                        const buttonField = eventRoot.querySelector("field[name=button]");
+                        if (!buttonField || !eventField) return;
+                        if (!eventField.innerHTML.startsWith("ControllerButtonEvent.")
+                                && buttonField.innerHTML.startsWith("ControllerButtonEvent.")) {
+                            // swapped by invalid translation we now catch; swap back
+                            eventField.setAttribute("name", "button");
+                            buttonField.setAttribute("name", "event");
+                        }
+                    });
+                // on player 2 a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
+                    .forEach(eventRoot => {
+                        const controllerField = eventRoot.querySelector("field[name=controller]");
+                        const buttonField = eventRoot.querySelector("field[name=button]");
+                        if (!buttonField || !controllerField) return;
+                        if (!buttonField.innerHTML.startsWith("ControllerButton.")
+                                && controllerField.innerHTML.startsWith("ControllerButton.")) {
+                            // swapped by invalid translation we now catch; swap back
+                            controllerField.setAttribute("name", "button");
+                            buttonField.setAttribute("name", "controller");
+                        }
+                    });
+            }
         }
     }
 
