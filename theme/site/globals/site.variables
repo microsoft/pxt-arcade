@@ -55,7 +55,7 @@
 *******************************/
 
 @loaderImageUrl: "../docs/static/Micorsoft_logo_rgb_W-white_D-square.png";
-@loaderImageSize: 95%;
+@loaderImageSize: 80%;
 
 /*-------------------
    Menu
