@@ -251,9 +251,7 @@ namespace pxt.editor {
                 tileHitParam.appendChild(shadow);
                 block.appendChild(tileHitParam);
             });
-        }
 
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.9") < 0) {
             /**
              * move from tilemap namespace to tiles namespace
              * <block type="tilemap_locationXY">
@@ -270,7 +268,52 @@ namespace pxt.editor {
                 xyField.textContent = (xyField.textContent || "").replace(/^tilemap./, "tiles.");
             });
         }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.12.34") < 0) {
+            const lang = pxt.BrowserUtils.getCookieLang();
+            if (lang == "es-MX") {
+                // on player 2 a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
+                .forEach(eventRoot => {
+                    swapFieldIfNotMatching(eventRoot, "button", "controller", "ControllerButton.");
+                });
+            } else if (lang === "es-ES") {
+                pxt.U.toArray(dom.querySelectorAll("[type=music_sounds]>field[name=note]"))
+                    .forEach(node => node.setAttribute("name", "name"));
+                // on a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=keyonevent]"))
+                    .forEach(eventRoot => {
+                        swapFieldIfNotMatching(eventRoot, "event", "button", "ControllerButtonEvent.");
+                    });
+                // on player 2 a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
+                    .forEach(eventRoot => {
+                        swapFieldIfNotMatching(eventRoot, "button", "controller", "ControllerButton.");
+                    });
+            } else if (lang === "de") {
+                pxt.U.toArray(dom.querySelectorAll("block[type=image_create]>value[name=heNacht]"))
+                    .forEach(node => node.setAttribute("name", "height"));
+            }
+        }
     }
+
+    function swapFieldIfNotMatching(
+        eventRoot: Element,
+        fieldAName: string,
+        fieldBName: string,
+        fieldAShouldStartWith: string
+    ) {
+        const fieldA = eventRoot.querySelector(`field[name=${fieldAName}]`);
+        const fieldB = eventRoot.querySelector(`field[name=${fieldBName}]`);
+        if (!fieldB || !fieldA) return;
+        if (!fieldA.innerHTML.startsWith(fieldAShouldStartWith)
+                && fieldB.innerHTML.startsWith(fieldAShouldStartWith)) {
+            // swapped by invalid translation we now catch; swap back
+            fieldA.setAttribute("name", fieldBName);
+            fieldB.setAttribute("name", fieldAName);
+        }
+    }
+
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
         const varField = getField(varBlockOrShadow, "VAR");
