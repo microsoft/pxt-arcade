@@ -17,8 +17,8 @@ export const getGameCodeAsync = async (kioskCode: string) => {
     }
 }
 
-export const generateKioskCodeAsync = async () => {
-    const codeGenerationUrl = `${kioskBackendEndpoint}/newcode`;
+export const generateKioskCodeAsync = async (time?: number) => {
+    const codeGenerationUrl = `${kioskBackendEndpoint}/newcode${time ? `?time=${time}` : ""}`;
     const response = await fetch(codeGenerationUrl);
     if (!response.ok) {
         const e =  new Error(response.statusText);

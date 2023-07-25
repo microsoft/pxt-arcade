@@ -24,7 +24,19 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
     const kioskCodeNextGenerationTime = useRef(0);
     const nextSafePollTime = useRef(0);
     const kioskCodeUrl = isLocal() ? "http://localhost:3000/static/kiosk/" : "https://arcade.makecode.com/kiosk";
-    const kioskTimeOutInMinutes = 30;
+    const kioskTimeOutInMinutes = getKioskCodeDuration();
+
+    function getKioskCodeDuration(): number {
+        const kioskCodeTime = localStorage.getItem("codeDuration");
+        if (kioskCodeTime) {
+            return parseInt(kioskCodeTime);
+        } else if (kiosk.time) {
+            const kioskTime = parseInt(kiosk.time);
+            return (kioskTime > 240 ? 240 : kioskTime) * 60;
+        } else {
+            return 30;
+        }
+    }
 
     const updateLoop = () => {
         if (!menuButtonSelected && kiosk.gamepadManager.isDownPressed()) {
@@ -129,17 +141,43 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             let newKioskCode: string;
             try {
                 generatingKioskCode.current = true;
-                newKioskCode = await generateKioskCodeAsync();
-                kioskCodeNextGenerationTime.current = Date.now() + generatedCodeDuration;
+                if (kiosk.time) {
+                    newKioskCode = await generateKioskCodeAsync(kioskTimeOutInMinutes);
+                } else {
+                    newKioskCode = await generateKioskCodeAsync();
+                }
                 setKioskCode(newKioskCode);
+
+                kioskCodeNextGenerationTime.current = Date.now() + generatedCodeDuration;
+                localStorage.setItem("kioskCodeEnd", kioskCodeNextGenerationTime.current.toString());
+                localStorage.setItem("currentKioskCode", newKioskCode);
+                localStorage.setItem("codeDuration", kioskTimeOutInMinutes.toString())
             } catch (error) {
                 setRenderQRCode(false);
             }
             generatingKioskCode.current = false;
         }
 
+
         if (!generatingKioskCode.current && renderQRCode) {
-            if (!kioskCode) {
+            const kioskCodeEndTime = localStorage.getItem("kioskCodeEnd");
+            if (kioskCodeEndTime) {
+                const endTime = parseInt(kioskCodeEndTime);
+                const timeElapsed = endTime - Date.now();
+                if (timeElapsed > 0) {
+                    kioskCodeNextGenerationTime.current = endTime;
+                    const storedKioskCode = localStorage.getItem("currentKioskCode");
+                    if (storedKioskCode) {
+                        setKioskCode(storedKioskCode);
+                    }
+                } else {
+                    localStorage.removeItem("kioskCodeEnd");
+                    localStorage.removeItem("currentKioskCode");
+                    localStorage.removeItem("codeDuration");
+                    generateKioskCode();
+                }
+            }
+            else if (!kioskCode) {
                 generateKioskCode();
             } else {
                 const timeElapsed = kioskCodeNextGenerationTime.current - Date.now();
@@ -147,6 +185,9 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 codeGenerationTimer = setTimeout(() => {
                     setKioskCode("");
                     setRenderQRCode(false);
+                    localStorage.removeItem("kioskCodeEnd");
+                    localStorage.removeItem("currentKioskCode");
+                    localStorage.removeItem("codeDuration");
                 }, time)
             }
         }

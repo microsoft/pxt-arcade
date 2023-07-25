@@ -15,9 +15,11 @@ export class Kiosk {
     mostRecentScores: number[] = [];
     onGameSelected!: () => void;
     onNavigated!: () => void;
+    launchedGame: string = "";
     state: KioskState = KioskState.MainMenu;
     clean: boolean;
     locked: boolean;
+    time?: string;
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
@@ -28,11 +30,11 @@ export class Kiosk {
     private lockedGameId?: string;
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private defaultGameDescription = "Made with love in MakeCode Arcade";
-    launchedGame: string = "";
 
-    constructor(clean: boolean, locked: boolean) {
+    constructor(clean: boolean, locked: boolean, time?: string) {
         this.clean = clean;
         this.locked = locked;
+        this.time = time;
     }
 
     async downloadGameListAsync(): Promise<void> {
@@ -106,6 +108,7 @@ export class Kiosk {
             }
         }
         if (gamesToAdd.length) {
+            this.selectGame(0);
             localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
         }
         return gamesToAdd;
