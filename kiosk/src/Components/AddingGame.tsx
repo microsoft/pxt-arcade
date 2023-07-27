@@ -117,6 +117,9 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     }
                 } catch (error: any) {
                     clearTimeout(pollTimer);
+                    localStorage.removeItem("kioskCodeEnd");
+                    localStorage.removeItem("currentKioskCode");
+                    localStorage.removeItem("codeDuration");
                     setKioskCode("");
                     setRenderQRCode(false);
                 }
@@ -151,7 +154,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                 kioskCodeNextGenerationTime.current = Date.now() + generatedCodeDuration;
                 localStorage.setItem("kioskCodeEnd", kioskCodeNextGenerationTime.current.toString());
                 localStorage.setItem("currentKioskCode", newKioskCode);
-                localStorage.setItem("codeDuration", kioskTimeOutInMinutes.toString())
+                localStorage.setItem("codeDuration", kioskTimeOutInMinutes.toString());
             } catch (error) {
                 setRenderQRCode(false);
             }
@@ -230,7 +233,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
                     <ol>
                         <li>Use your mobile device to scan the QR code</li>
                         <li>Use the new page to scan or enter your game's share code</li>
-                        <li>If the game is uploaded successfully, your game will be launched here</li>
+                        <li>If your game is uploaded successfully, it will be added to the game list</li>
                     </ol>
                 </div>
 
