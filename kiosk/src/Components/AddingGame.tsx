@@ -64,17 +64,8 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
         return true;
     }
 
-    const getGameNames = (gameList: GameData[]): string[] => {
-        const gameNames = [];
-        for (const game of gameList) {
-            gameNames.push(game.name);
-        }
-        return gameNames;
-    }
-
-    const displayGamesAdded = (addedGames: GameData[]): void => {
-        const gameNames = getGameNames(addedGames);
-        const games = gameNames.join(", ");
+    const displayGamesAdded = (addedGames: string[]): void => {
+        const games = addedGames.join(", ");
         const notification = `${games} added!`
         setNotifyContent(notification);
         setNotify(true);

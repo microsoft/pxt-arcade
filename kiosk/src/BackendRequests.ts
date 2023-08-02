@@ -10,10 +10,8 @@ export const getGameCodeAsync = async (kioskCode: string) => {
         e.name = "PollError";
         throw e;
     } else {
-        const gameCodeList = JSON.parse((await response.json())?.shareIds);
-        if (gameCodeList?.length) {
-            return gameCodeList;
-        }
+        const gameCodeEntries = JSON.parse((await response.json())?.shareIds);
+        return gameCodeEntries;
     }
 }
 

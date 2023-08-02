@@ -4,7 +4,6 @@ import { GameData } from "./GameData";
 import { BuiltSimJSInfo } from "./BuiltSimJsInfo";
 import { KioskState } from "./KioskState";
 import configData from "../config.json";
-import { runInThisContext } from "vm";
 import { getGameDetailsAsync } from "../BackendRequests"
 import { tickEvent } from "../browserUtils";
 export class Kiosk {
@@ -81,9 +80,10 @@ export class Kiosk {
         return desc;
     }
 
-    async saveNewGamesAsync(gameIds: string[]): Promise<GameData[]> {
+    async saveNewGamesAsync(games: { [index: string]: { [index: string]: string } }): Promise<string[]> {
         const allAddedGames = this.getAllAddedGames();
-        let gamesToAdd: GameData[] = [];
+        let gamesToAdd: string[] = [];
+        const gameIds = Object.keys(games);
         for (const gameId of gameIds) {
             if (!allAddedGames[gameId]) {
                 let gameName;
@@ -99,18 +99,27 @@ export class Kiosk {
                 }
     
                 const gameUploadDate = (new Date()).toLocaleString()
-                const newGame = new GameData(gameId, gameName, gameDescription, "None", gameUploadDate, true);
+                const newGame = new GameData(gameId, gameName, gameDescription, "None", games[gameId].id, gameUploadDate, true);
     
                 this.games.push(newGame);
-                gamesToAdd.push(newGame);
+                gamesToAdd.push(gameName);
                 allAddedGames[gameId] = newGame;
-
+            } else if (allAddedGames[gameId]?.deleted) {
+                if (games[gameId].id !== allAddedGames[gameId].uniqueIdentifier) {
+                    allAddedGames[gameId].uniqueIdentifier = games[gameId].id;
+                    allAddedGames[gameId].deleted = false;
+                    gamesToAdd.push(allAddedGames[gameId].name);
+                    this.games.push(allAddedGames[gameId]);
+                }
+            } else {
+                // we need to keep the backend and frontend unique identifiers the same
+                allAddedGames[gameId].uniqueIdentifier = games[gameId].id;
             }
         }
         if (gamesToAdd.length) {
             this.selectGame(0);
-            localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
         }
+        localStorage.setItem(this.addedGamesLocalStorageKey, JSON.stringify(allAddedGames));
         return gamesToAdd;
     }
 
@@ -128,7 +137,9 @@ export class Kiosk {
         const addedGames = this.getAllAddedGames();
         const addedGamesObjs: GameData[] = Object.values(addedGames);
         for (const game of addedGamesObjs) {
-            this.games.push(game);
+            if (!game?.deleted) {
+                this.games.push(game);
+            }
         }
     }
 
