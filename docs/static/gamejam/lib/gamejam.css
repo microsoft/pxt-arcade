@@ -249,6 +249,21 @@ h1 {
     display: none;
 }
 
+.placeholder {
+    width: 232px;
+    height: 174px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dedede;
+}
+
+.placeholder img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
 /**** FOOTER ****/
 
 @media (max-width: 768px) {

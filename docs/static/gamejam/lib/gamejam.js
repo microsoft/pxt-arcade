@@ -21,15 +21,15 @@ function initTelemetry() {
 function initRulesTelemetry(id) {
     var _a, _b, _c;
     // Try one of our tutorials text link
-    (_a = document.querySelector("#" + id + " + ul li:nth-child(1) a")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
+    (_a = document.querySelector("#".concat(id, " + ul li:nth-child(1) a"))) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
         window.pxtTickEvent("gamejam.link.tutorial");
     });
     // How to import images text link
-    (_b = document.querySelector("#" + id + " + ul li:nth-child(3) a")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
+    (_b = document.querySelector("#".concat(id, " + ul li:nth-child(3) a"))) === null || _b === void 0 ? void 0 : _b.addEventListener("click", function () {
         window.pxtTickEvent("gamejam.link.images");
     });
     // Developer documentation text link
-    (_c = document.querySelector("#" + id + "+ ul li:nth-child(4) a")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", function () {
+    (_c = document.querySelector("#".concat(id, "+ ul li:nth-child(4) a"))) === null || _c === void 0 ? void 0 : _c.addEventListener("click", function () {
         window.pxtTickEvent("gamejam.link.developer");
     });
 }
@@ -196,10 +196,19 @@ function makeGameCard(game) {
     var card = document.createElement("div");
     card.className = "game";
     var link = document.createElement("a");
-    link.href = game.url || "https://arcade.makecode.com/" + game.id;
+    link.href = game.url || "https://arcade.makecode.com/".concat(game.id);
     var textLink = link.cloneNode();
     var img = document.createElement("img");
-    img.src = "https://pxt.azureedge.net/api/" + game.id + "/thumb";
+    img.src = "https://pxt.azureedge.net/api/".concat(game.id, "/thumb");
+    img.onerror = function () {
+        var div = document.createElement("div");
+        div.setAttribute("class", "placeholder");
+        var logo = document.createElement("img");
+        logo.src = "/static/logo.png";
+        div.appendChild(logo);
+        img.remove();
+        link.appendChild(div);
+    };
     link.appendChild(img);
     card.appendChild(link);
     var label = document.createElement("div");
@@ -207,7 +216,7 @@ function makeGameCard(game) {
     label.appendChild(textLink);
     if (game.author) {
         var author = document.createElement("div");
-        author.innerText = "by " + game.author;
+        author.innerText = "by ".concat(game.author);
         label.appendChild(author);
     }
     card.appendChild(label);
@@ -250,7 +259,7 @@ function makeSchedule() {
         var sessionDate = new Date(session.date);
         var date = document.createElement("div");
         date.className = "date";
-        date.innerText = formatDate(sessionDate) + ", " + formatTime(session.time);
+        date.innerText = "".concat(formatDate(sessionDate), ", ").concat(formatTime(session.time));
         text.appendChild(date);
         var description = document.createElement("div");
         description.innerText = session.description;
@@ -262,10 +271,10 @@ function makeSchedule() {
 }
 function formatTime(time) {
     var EST = time + 3;
-    return (time % 12 || 12) + " " + (time < 12 ? "AM" : "PM") + " PDT / " + (EST % 12 || 12) + " " + (EST < 12 ? "AM" : "PM") + " EDT";
+    return "".concat(time % 12 || 12, " ").concat(time < 12 ? "AM" : "PM", " PDT / ").concat(EST % 12 || 12, " ").concat(EST < 12 ? "AM" : "PM", " EDT");
 }
 function formatDate(date) {
-    return MONTHS[date.getMonth()] + " " + date.getDate();
+    return "".concat(MONTHS[date.getMonth()], " ").concat(date.getDate());
 }
 function randomize(arr) {
     var _a;

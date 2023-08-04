@@ -12,12 +12,6 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Enter the Game Jam!
-* buttonLabel: More Info
-* imageUrl: /static/gamejam/jams/prehistoric/assets/hero-banner.png
-* url: https://arcade.makecode.com/gamejam/prehistoric
-* cardType: link
----
 * name: Mutant Mayhem!
 * buttonLabel: Code Now
 * description: Create your own multiplayer game!

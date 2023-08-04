@@ -229,6 +229,15 @@ function makeGameCard(game: Game) {
     let textLink = link.cloneNode() as HTMLElement;
     let img = document.createElement("img");
     img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
+    img.onerror = () => {
+        let div = document.createElement("div");
+        div.setAttribute("class", "placeholder");
+        let logo = document.createElement("img");
+        logo.src = "/static/logo.png";
+        div.appendChild(logo);
+        img.remove();
+        link.appendChild(div);
+    }
     link.appendChild(img);
     card.appendChild(link);
 
