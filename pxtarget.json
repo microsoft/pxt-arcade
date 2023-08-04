@@ -108,6 +108,7 @@
         "libs/settings",
         "libs/settings---files",
         "libs/sevenseg",
+        "libs/shader",
         "libs/sprite-scaling",
         "libs/storyboard",
         "libs/template",
@@ -138,6 +139,7 @@
             "libs/servo",
             "libs/settings",
             "libs/sevenseg",
+            "libs/shader",
             "libs/thermometer"
         ]
     },
