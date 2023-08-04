@@ -134,4 +134,12 @@ See https://careers.microsoft.com/v2/global/en/discoveryprogram for more details
 * url: https://arcade.makecode.com/S08069-14052-69531-40571
 * imageUrl: https://arcade.makecode.com/api/S08069-14052-69531-40571/thumb
 
+--- 
+
+* name: Eat the fish
+* type: sharedExample
+* description: Fish are food, not friends
+* url: https://arcade.makecode.com/S21393-69925-72240-48483
+* imageUrl: https://arcade.makecode.com/api/S21393-69925-72240-48483/thumb
+* 
 ### ~
