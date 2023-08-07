@@ -5,7 +5,7 @@ import configData from "../config.json"
 import "../Kiosk.css";
 import AddGameButton from "./AddGameButton";
 import {QRCodeSVG} from 'qrcode.react';
-import { generateKioskCodeAsync, getGameCodeAsync } from "../BackendRequests";
+import { generateKioskCodeAsync, getGameCodesAsync } from "../BackendRequests";
 import { isLocal, tickEvent } from "../browserUtils";
 import { GameData } from "../Models/GameData";
 import KioskNotification from "./KioskNotification";
@@ -96,7 +96,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             clearTimeout(pollTimer);
             pollTimer = setTimeout(async () => {
                 try {
-                    const gameCodes = await getGameCodeAsync(kioskCode);
+                    const gameCodes = await getGameCodesAsync(kioskCode);
                     if (gameCodes) {
                         const justAddedGames = await kiosk.saveNewGamesAsync(gameCodes);
                         if (justAddedGames.length) {

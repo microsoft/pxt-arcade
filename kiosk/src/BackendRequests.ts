@@ -2,7 +2,7 @@ const stagingEndpoint = "https://staging.pxt.io/api/kiosk"
 const kioskBackendEndpoint = "https://makecode.com/api/kiosk";
 const apiBackendEndpoint = "https://makecode.com/api";
 
-export const getGameCodeAsync = async (kioskCode: string) => {
+export const getGameCodesAsync = async (kioskCode: string) => {
     const getGameCodeUrl = `${kioskBackendEndpoint}/code/${kioskCode}`;
     let response = await fetch(getGameCodeUrl);
     if (!response.ok) {
