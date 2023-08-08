@@ -32,7 +32,7 @@ const AddingGame: React.FC<IProps> = ({ kiosk }) => {
             return parseInt(kioskCodeTime);
         } else if (kiosk.time) {
             const kioskTime = parseInt(kiosk.time);
-            return (kioskTime > 240 ? 240 : kioskTime) * 60;
+            return (kioskTime > 240 ? 240 : (kioskTime === 0 ? 0.5 :kioskTime)) * 60;
         } else {
             return 30;
         }
