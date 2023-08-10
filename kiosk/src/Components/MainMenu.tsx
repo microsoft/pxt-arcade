@@ -7,6 +7,7 @@ import HighScoresList from "./HighScoresList";
 import { DeleteButton } from "./DeleteButton";
 import { tickEvent } from "../browserUtils";
 import DeletionModal from "./DeletionModal";
+import { createKioskShareLink } from "../share";
 
 interface IProps {
     kiosk: Kiosk
@@ -49,7 +50,7 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                     updateLoop();
                 }
             }, configData.GamepadPollLoopMilli);
-            
+
             return () => {
                 if (intervalId) {
                     clearInterval(intervalId);
@@ -60,6 +61,17 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
         }
     });
 
+    const onUploadClick = async () => {
+        const sharePointer = await createKioskShareLink({
+            games: kiosk.games,
+        });
+
+        const outputLink = `https://arcade.makecode.com/kiosk?shared=${sharePointer}`;
+
+        alert(`send em to ${outputLink}`);
+        console.log(outputLink);
+    }
+
     return(
         <div className="mainMenu">
             <nav className="mainMenuTopBar">
@@ -69,6 +81,9 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
                     <div className="mainMenuButton">
                         <AddGameButton selected={addButtonSelected} content="Add your game" />
                     </div>
+                }
+                {
+                    !kiosk.locked && <button tabIndex={0} onClick={onUploadClick}>click me to upload</button>
                 }
             </nav>
             <GameList kiosk={kiosk} addButtonSelected={addButtonSelected}
@@ -81,5 +96,5 @@ const MainMenu: React.FC<IProps> = ({ kiosk }) => {
         </div>
     )
 }
-  
+
 export default MainMenu;

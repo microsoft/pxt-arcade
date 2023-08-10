@@ -6,6 +6,15 @@ import { KioskState } from "./KioskState";
 import configData from "../config.json";
 import { getGameDetailsAsync } from "../BackendRequests"
 import { tickEvent } from "../browserUtils";
+import { getSharedKioskData } from "../share";
+
+export interface KioskOpts {
+    clean: boolean;
+    locked: boolean;
+    time?: string;
+    shareSrc?: string;
+}
+
 export class Kiosk {
     games: GameData[] = [];
     gamepadManager: GamepadManager = new GamepadManager();
@@ -19,6 +28,7 @@ export class Kiosk {
     clean: boolean;
     locked: boolean;
     time?: string;
+    shareSrc?: string; // `{shareId}/{filename}`
 
     private readonly highScoresLocalStorageKey: string = "HighScores";
     private readonly addedGamesLocalStorageKey: string = "UserAddedGames";
@@ -30,27 +40,36 @@ export class Kiosk {
     private builtGamesCache: { [gameId: string]: BuiltSimJSInfo } = { };
     private defaultGameDescription = "Made with love in MakeCode Arcade";
 
-    constructor(clean: boolean, locked: boolean, time?: string) {
+    constructor(opts: KioskOpts) {
+        const { clean, locked, time, shareSrc } = opts;
         this.clean = clean;
-        this.locked = locked;
+        this.shareSrc = shareSrc;
+         // TODO figure out this interaction; right now treating loaded shareSrc as readonly to keep easy
+        this.locked = locked || !!shareSrc;
         this.time = time;
     }
 
     async downloadGameListAsync(): Promise<void> {
+        if (this.shareSrc) {
+            const [id, ...filename] = this.shareSrc.split("/");
+
+            const kioskData = await getSharedKioskData(id, filename.join("/"));
+            this.games = kioskData.games;
+            return;
+        }
         if (!this.clean) {
             let url = configData.GameDataUrl;
             if (configData.Debug) {
                 url = `/static/kiosk/${url}`;
             }
-    
+
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Unable to download game list from "${url}"`);
             }
-    
+
             try {
                 this.games = (await response.json()).games;
-                this.games.push()
             }
             catch (error) {
                 throw new Error(`Unable to process game list downloaded from "${url}": ${error}`);
@@ -68,7 +87,6 @@ export class Kiosk {
         if (name.toLowerCase() === "untitled") {
             return "Kiosk Game";
         }
-        
         return name;
     }
 
@@ -76,7 +94,7 @@ export class Kiosk {
         if (desc.length === 0) {
             return this.defaultGameDescription
         }
-        
+
         return desc;
     }
 
@@ -88,7 +106,7 @@ export class Kiosk {
             if (!allAddedGames[gameId]) {
                 let gameName;
                 let gameDescription;
-    
+
                 try {
                     const gameDetails = await getGameDetailsAsync(gameId);
                     gameName = this.getGameName(gameDetails.name);
@@ -97,10 +115,10 @@ export class Kiosk {
                     gameName = "Kiosk Game";
                     gameDescription = this.defaultGameDescription;
                 }
-    
+
                 const gameUploadDate = (new Date()).toLocaleString()
                 const newGame = new GameData(gameId, gameName, gameDescription, "None", games[gameId].id, gameUploadDate, true);
-    
+
                 this.games.push(newGame);
                 gamesToAdd.push(gameName);
                 allAddedGames[gameId] = newGame;
@@ -256,8 +274,8 @@ export class Kiosk {
         const launchedGameHighs = this.getHighScores(this.launchedGame);
         const currentHighScore = this.mostRecentScores[0];
         const lastScore = launchedGameHighs[launchedGameHighs.length - 1]?.score;
-        if (launchedGameHighs.length === configData.HighScoresToKeep 
-            && lastScore 
+        if (launchedGameHighs.length === configData.HighScoresToKeep
+            && lastScore
             && currentHighScore < lastScore) {
                 this.exitGame(KioskState.GameOver);
 
