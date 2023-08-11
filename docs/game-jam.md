@@ -12,7 +12,7 @@ Check out the winners of the 8th Official Microsoft MakeCode Game Jam, featuring
 * imageUrl: https://pxt.azureedge.net/api/22414-21049-08990-36399/thumb
 ---
 * name: Fossil Clicker
-* description: Collect, sell, upgrade, and repeat in this paleontology simulating idle game! Created by UnsignedArduino
+* description: Collect, sell, upgrade, and repeat in this idle game simulating paleontology! Created by UnsignedArduino
 * author: UnsignedArduino
 * url: https://arcade.makecode.com/39392-36875-05086-87292
 * cardType: sharedExample
