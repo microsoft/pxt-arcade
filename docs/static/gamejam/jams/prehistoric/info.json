@@ -4,6 +4,84 @@
     },
     "featured": [
         {
+            "id": "_Rf7Ka6f5tMPh",
+            "title": "Sent Back in Time!",
+            "author": "Kiwiphoenix364",
+            "description": "Build contraptions to explore a prehistoric world!"
+        },
+        {
+            "id": "S53740-96945-19140-48669",
+            "title": "Prehistoric Explorer",
+            "author": "catstudio Games",
+            "description": "Travel back in time and dodge dinosaurs while trying to get home in this adventure game!"
+        },
+        {
+            "id": "S75139-85271-35208-66455",
+            "title": "Dinosaur Hunting",
+            "author": "Sayem",
+            "description": "Fight dinosaurs and ghosts in this classic SHMUP game!"
+        },
+        {
+            "id": "S63195-99979-78338-71563",
+            "title": "Prehistoric Dan",
+            "author": "Maketendo",
+            "description": "Head back in time to scan dinosaurs and help your boss not get fired!"
+        },
+        {
+            "id": "S01748-68721-30836-46553",
+            "title": "Dino Escape",
+            "author": "Octodemon6611",
+            "description": "Play as a dinosaur attempting to escape the aftermath of the meteor extinction event!"
+        },
+        {
+            "id": "S06834-22429-91300-47706",
+            "title": "S&A - Prechistoric World",
+            "author": "Lisiu23",
+            "description": "Find the missing battery for your time machine in this sidescrolling adventure game!"
+        },
+        {
+            "id": "S77904-05588-07721-68006",
+            "title": "DinoCraft",
+            "author": "jnegative",
+            "description": "Break blocks and build structures in this MineCraft inspired platformer!"
+        },
+        {
+            "id": "_36chFUaaYgrY",
+            "title": "Dinosaur Trials",
+            "author": "ChimbroDaPro",
+            "description": "Play as an ancient race of dinosaurs trying to escape from a monotone world in this take on a classic reaction game!"
+        },
+        {
+            "id": "S00177-35633-77859-17379",
+            "title": "Excavation Excursion",
+            "author": "Blobbey",
+            "description": "Find fossils, make money, buy upgrades, and even collect pets in this paleontology game!"
+        },
+        {
+            "id": "S83557-52602-39655-60991",
+            "title": "ROCK GOES!",
+            "author": "windfix y Jacobo",
+            "description": "Play as a mother dinosaur protecting her eggs from attackers in this beautiful arcade game!"
+        },
+        {
+            "id": "S93197-18791-04197-56384",
+            "title": "3D dinosaur model",
+            "author": "Brohann",
+            "description": "A 3D model of a dinosaur running on MakeCode Arcade!?!?"
+        },
+        {
+            "id": "_JMMdwyUFbghf",
+            "title": "Evolve-Adapt-Die (EVO)",
+            "author": "bluebird77",
+            "description": "Simulate the evolution process in this creative platforming game where you adapt new abilities each time you die!"
+        },
+        {
+            "id": "S61823-59071-17256-01643",
+            "title": "Dino's Great adventure",
+            "author": "Bifrost22",
+            "description": "Play as a mother dino finding a place to lay her egg just after the meteor struck the earth 65 million year ago in this platformer game!"
+        },
+        {
             "id": "S00497-98855-08431-02510",
             "title": "Dinosaur Race",
             "author": "CDG studios"
@@ -117,11 +195,6 @@
             "id": "_T0iYgMXRD838",
             "title": "Dino Crash",
             "author": "Da Footy Gamer"
-        },
-        {
-            "id": "_36chFUaaYgrY",
-            "title": "Dinosaur Trials",
-            "author": "ChimbroDaPro"
         },
         {
             "id": "S50359-03714-75042-35584",
@@ -244,11 +317,6 @@
             "author": "Shadow_Tiger"
         },
         {
-            "id": "S53740-96945-19140-48669",
-            "title": "Prehistoric Explorer",
-            "author": "catstudio Games"
-        },
-        {
             "id": "_bkyPzJ0X7Amv",
             "title": "解救小恐龙",
             "author": "Arir"
@@ -279,11 +347,6 @@
             "author": "Snuggly Jewelsies"
         },
         {
-            "id": "S93197-18791-04197-56384",
-            "title": "3D dinosaur model",
-            "author": "Brohann"
-        },
-        {
             "id": "S58499-28409-67513-26487",
             "title": "Dino Button",
             "author": "Mushfiq"
@@ -297,11 +360,6 @@
             "id": "S74242-80212-01982-22938",
             "title": "Animate it!",
             "author": "Andy"
-        },
-        {
-            "id": "S75139-85271-35208-66455",
-            "title": "Dinosaur Hunting",
-            "author": "Sayem"
         },
         {
             "id": "_gRvTvTe7yevk",
@@ -319,11 +377,6 @@
             "author": "Isaac"
         },
         {
-            "id": "S63195-99979-78338-71563",
-            "title": "Prehistoric Dan",
-            "author": "Maketendo"
-        },
-        {
             "id": "S13029-49096-56602-54759",
             "title": "Dino Run",
             "author": "Kat"
@@ -334,11 +387,6 @@
             "author": "Jupiter"
         },
         {
-            "id": "S77904-05588-07721-68006",
-            "title": "DinoCraft",
-            "author": "jnegative"
-        },
-        {
             "id": "_V64Kc709mT7f",
             "title": "Prehistoric Fishing",
             "author": "Ethan C., Michael T., and Mr. Hartung"
@@ -347,11 +395,6 @@
             "id": "S34588-99263-71409-55447",
             "title": "Fossil Collector",
             "author": "H D-D"
-        },
-        {
-            "id": "S00177-35633-77859-17379",
-            "title": "Excavation Excursion",
-            "author": "Blobbey"
         },
         {
             "id": "S87080-42073-72400-88003",
@@ -414,24 +457,9 @@
             "author": "Oscar_Cubes"
         },
         {
-            "id": "S01748-68721-30836-46553",
-            "title": "Dino Escape",
-            "author": "Octodemon6611"
-        },
-        {
-            "id": "S83557-52602-39655-60991",
-            "title": "ROCK GOES!",
-            "author": "windfix y Jacobo"
-        },
-        {
             "id": "_9wPeUXRAPesT",
             "title": "A pale day",
             "author": "Carpet 36"
-        },
-        {
-            "id": "S61823-59071-17256-01643",
-            "title": "Dino's Great adventure",
-            "author": "Bifrost22"
         },
         {
             "id": "S47513-06009-32854-09562",
@@ -454,24 +482,9 @@
             "author": "GuhhanSP"
         },
         {
-            "id": "S06834-22429-91300-47706",
-            "title": "S&A - Prechistoric World",
-            "author": "Lisiu23"
-        },
-        {
             "id": "S24155-16075-13221-53173",
             "title": "Dino platformer",
             "author": "Rh0eR0"
-        },
-        {
-            "id": "_Rf7Ka6f5tMPh",
-            "title": "Sent Back in Time!",
-            "author": "Kiwiphoenix364"
-        },
-        {
-            "id": "_JMMdwyUFbghf",
-            "title": "Evolve-Adapt-Die (EVO)",
-            "author": "bluebird77"
         },
         {
             "id": "S16353-47569-22918-24916",

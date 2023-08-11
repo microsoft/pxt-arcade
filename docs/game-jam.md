@@ -1,130 +1,137 @@
-# Game Jam: Traffic
-Check out the winners of the 4th Official Microsoft MakeCode Game Jam, featuring games about cars, travel, or traffic! More details can be found on the [official game jam page](https://arcade.makecode.com/gamejam).
+# Game Jam: Prehistoric
+Check out the winners of the 8th Official Microsoft MakeCode Game Jam, featuring prehistoric themed games! More details can be found on the [official game jam page](https://arcade.makecode.com/gamejam/prehistoric).
 
 ## Games
 
 ### ~ codecard
-* name: Glitch
-* description: Polished and imaginative, Glitch is a game where you can slow down time and modify the terrain of the world itself to survive each level.
-* author: Web_Headed_Games
-* url: https://arcade.makecode.com/39412-25824-36790-82290
+* name: DinoZoo
+* description: Simulate the circle of life in this dino-themed falling block game! Created by sylvancircle
+* author: sylvancircle
+* url: https://arcade.makecode.com/22414-21049-08990-36399
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/39412-25824-36790-82290/thumb
+* imageUrl: https://pxt.azureedge.net/api/22414-21049-08990-36399/thumb
 ---
-* name: Last 30 seconds of the universe
-* description: It's (almost) the end of the world, and you are the galaxy's only hope... but are you really alone? This space shooter game may seem impossible at first, but keep playing and you might be surprised.
-* author: felixtsu
-* url: https://arcade.makecode.com/84204-53947-81636-40195
-* cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/84204-53947-81636-40195/thumb
----
-* name: True Love Time Machine
-* description: You were the first tester for a brand new time machine--what could go wrong? Well... maybe one thing. Try and escape the early 2000s and see if you can get all the different possible endings!
-* author: Dylan James C The 1st
-* url: https://arcade.makecode.com/18329-44039-92547-78466
-* cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/18329-44039-92547-78466/thumb
----
-* name: Flying Through Time
-* description: Fast and fun, with an incredible soundtrack--use the experimental time wings to swap between past, present, and future as you zip through different landscapes to rescue your friends.
-* author: lucasmayhew
-* url: https://arcade.makecode.com/29445-50662-54495-27773
-* cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/29445-50662-54495-27773/thumb
----
-* name: Tomb raider
-* description: Adventure through an ancient tomb in this tough-as-nails platformer. See if you can find all 13 ancient gems and the 3 exits before collapse!
-* author: Thomas_s
-* url: https://arcade.makecode.com/12051-52643-75656-27166
-* cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/12051-52643-75656-27166/thumb
----
-* name: The Wanderer
-* description: Explore space and gather materials in this polished, resource-collection game as you try to fix your hyperdrive and escape the supernova!
-* author: DahbixLP
-* url: https://arcade.makecode.com/65329-73524-64041-09452
-* cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/65329-73524-64041-09452/thumb
----
-* name: Timed Platformer
-* description: Make sure you don't run out of time as you play through all twelve levels of this creative platformer!
-* author: fd268
-* url: https://arcade.makecode.com/18905-47762-39268-22513
-* cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/18905-47762-39268-22513/thumb
----
-* name: The Attack of the Serpents
-* description: Dive into the rich world of The Attack of the Serpents as you battle legions of snakes with the power of time at your hand!
+* name: Fossil Clicker
+* description: Collect, sell, upgrade, and repeat in this idle game simulating paleontology! Created by UnsignedArduino
 * author: UnsignedArduino
-* url: https://arcade.makecode.com/88379-32882-11701-72372
+* url: https://arcade.makecode.com/39392-36875-05086-87292
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/88379-32882-11701-72372/thumb
+* imageUrl: https://pxt.azureedge.net/api/39392-36875-05086-87292/thumb
 ---
-* name: Tau Dilation
-* description: The Titan of Time, Kronos, has escaped from Tartarus and it is up to you to defeat him on his own terms.
-* author: Delta
-* url: https://arcade.makecode.com/40197-18454-82229-31469
+* name: Dino Blast
+* description: Search for the legendary dino crystal and save the dinosaurs from evil dragons in this adventure game! Created by InvalidProject99
+* author: InvalidProject99
+* url: https://arcade.makecode.com/48432-56072-58827-08148
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/40197-18454-82229-31469/thumb
+* imageUrl: https://pxt.azureedge.net/api/48432-56072-58827-08148/thumb
 ---
-* name: Time Man
-* description: A complex, ambitious puzzle-platformer where you can freeze time to stop flying boulders. Be careful of quicksand and slime!
-* author: Rishi
-* url: https://arcade.makecode.com/35092-38497-85434-62286
+* name: Booga Bruh
+* description: Find the parts to your broken time machine and make it back to the present in this story-driven RPG! Created by PixelDoodle
+* author: PixelDoodle
+* url: https://arcade.makecode.com/98099-33981-73376-80879
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/35092-38497-85434-62286/thumb
+* imageUrl: https://pxt.azureedge.net/api/98099-33981-73376-80879/thumb
 ---
-* name: Time Quest
-* description: Travel through time to take photos, collect items, and meet friendly and not-so-friendly locals in this beautiful dungeon crawler.
-* author: Rocket Scion
-* url: https://arcade.makecode.com/24218-66945-78169-98108
+* name: Evolve-Adapt-Die (EVO)
+* description: Simulate the evolution process in this creative platforming game where you adapt new abilities each time you die! Created by bluebird77
+* author: bluebird77
+* url: https://arcade.makecode.com/44271-86370-62949-93789
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/24218-66945-78169-98108/thumb
+* imageUrl: https://pxt.azureedge.net/api/44271-86370-62949-93789/thumb
 ---
-* name: Time Flies (Different Take)
-* description: A creative twist on 'Time Flies' with a lot of depth! Catch time and lives as you try to beat your high score.
-* author: BlockyChamp
-* url: https://arcade.makecode.com/56203-12068-28996-67940
+* name: Sent Back in Time!
+* description: Build contraptions to explore a prehistoric world! Created by Kiwiphoenix364
+* author: Kiwiphoenix364
+* url: https://arcade.makecode.com/58507-47430-89537-52451
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/56203-12068-28996-67940/thumb
+* imageUrl: https://pxt.azureedge.net/api/58507-47430-89537-52451/thumb
 ---
-* name: Timing and Patience
-* description: A simple, addicitive game where you must use timing and patience to try and nab the high score. Try out the different difficulty levels!
-* author: EgeoTube Gamez
-* url: https://arcade.makecode.com/28170-65925-97085-38467
+* name: 3D dinosaur model
+* description: A 3D model of a dinosaur running on MakeCode Arcade!?!? Created by Brohann
+* author: Brohann
+* url: https://arcade.makecode.com/19480-91016-21416-55797
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/28170-65925-97085-38467/thumb
+* imageUrl: https://pxt.azureedge.net/api/19480-91016-21416-55797/thumb
 ---
-* name: Time Over
-* description: A beautiful game with a great premise! Collect all the numbers for your clock before time runs out!
-* author: Daniela
-* url: https://arcade.makecode.com/09641-64692-55182-88904
+* name: ROCK GOES!
+* description: Play as a mother dinosaur protecting her eggs from attackers in this beautiful arcade game! Created by windfix y Jacobo
+* author: windfix y Jacobo
+* url: https://arcade.makecode.com/76989-79264-26131-91149
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/09641-64692-55182-88904/thumb
+* imageUrl: https://pxt.azureedge.net/api/76989-79264-26131-91149/thumb
 ---
-* name: fast restaurant
-* description: Deliver the right dishes to the customer as soon as possible in this creative, challenging game.
-* author: demoCrash
-* url: https://arcade.makecode.com/61260-89058-32987-83888
+* name: Excavation Excursion
+* description: Find fossils, make money, buy upgrades, and even collect pets in this paleontology game! Created by Blobbey
+* author: Blobbey
+* url: https://arcade.makecode.com/10189-39800-42881-95047
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/61260-89058-32987-83888/thumb
+* imageUrl: https://pxt.azureedge.net/api/10189-39800-42881-95047/thumb
 ---
-* name: 4-in-1 time-related 8-bit fun
-* description: Four fun, unique games for the price of one! Make sure you play through each of these time-related minigames.
-* author: Samuel G
-* url: https://arcade.makecode.com/19854-09262-25388-69397
+* name: Dino Escape
+* description: Play as a dinosaur attempting to escape the aftermath of the meteor extinction event! Created by Octodemon6611
+* author: Octodemon6611
+* url: https://arcade.makecode.com/19150-26279-62459-54463
 * cardType: sharedExample
-* imageUrl: https://pxt.azureedge.net/api/19854-09262-25388-69397/thumb
+* imageUrl: https://pxt.azureedge.net/api/19150-26279-62459-54463/thumb
+---
+* name: Dinosaur Trials
+* description: Play as an ancient race of dinosaurs trying to escape from a monotone world in this take on a classic reaction game! Created by ChimbroDaPro
+* author: ChimbroDaPro
+* url: https://arcade.makecode.com/08454-95391-77195-94199
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/08454-95391-77195-94199/thumb
+---
+* name: DinoCraft
+* description: Break blocks and build structures in this MineCraft inspired platformer! Created by jnegative
+* author: jnegative
+* url: https://arcade.makecode.com/64311-47617-88529-78446
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/64311-47617-88529-78446/thumb
+---
+* name: Prehistoric Dan
+* description: Head back in time to scan dinosaurs and help your boss not get fired! Created by Maketendo
+* author: Maketendo
+* url: https://arcade.makecode.com/70057-29128-20368-99273
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/70057-29128-20368-99273/thumb
+---
+* name: S&A - Prechistoric World
+* description: Find the missing battery for your time machine in this sidescrolling adventure game! Created by Lisiu23
+* author: Lisiu23
+* url: https://arcade.makecode.com/57672-87358-35699-32284
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/57672-87358-35699-32284/thumb
+---
+* name: Dinosaur Hunting
+* description: Fight dinosaurs and ghosts in this classic SHMUP game! Created by Sayem
+* author: Sayem
+* url: https://arcade.makecode.com/22703-75962-83076-91368
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/22703-75962-83076-91368/thumb
+---
+* name: Dino's Great adventure
+* description: Play as a mother dino finding a place to lay her egg just after the meteor struck the earth 65 million year ago in this platformer game! Created by Bifrost22
+* author: Bifrost22
+* url: https://arcade.makecode.com/69680-60757-30003-05179
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/69680-60757-30003-05179/thumb
+---
+* name: Prehistoric Explorer
+* description: Travel back in time and dodge dinosaurs while trying to get home in this adventure game! Created by catstudio Games
+* author: catstudio Games
+* url: https://arcade.makecode.com/52290-68197-81450-36464
+* cardType: sharedExample
+* imageUrl: https://pxt.azureedge.net/api/52290-68197-81450-36464/thumb
 ---
 * name: See more...
-* description: Check out all the entries on the official game jam page!
+* description: Check out all the entries on the official game jam page! Created by sylvancircle
 * cardType: link
 * directOpen: true
-* imageUrl: /static/gamejam/jams/time/assets/preview.png
-* url: https://arcade.makecode.com/gamejam/time
+* imageUrl: /static/gamejam/jams/prehistoric/assets/preview.png
+* url: https://arcade.makecode.com/gamejam/prehistoric
 
 ### ~
 
 ## See Also
 
-[Game Jam Page](https://arcade.makecode.com/gamejam/time)
+[Game Jam Page](https://arcade.makecode.com/gamejam/prehistoric)

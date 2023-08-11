@@ -204,7 +204,7 @@ function makeGallery() {
             container.insertBefore(hint, parent);
         }
 
-        let selected = randomize(info.featured); // show all the games
+        let selected = randomize(info.featured?.filter(g => !g.description)); // show all the games
         let row = document.createElement("div");
         for (let i = 0; i < selected.length; i++) {
             row.appendChild(makeGameCard(selected[i]));

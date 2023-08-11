@@ -163,6 +163,7 @@ function makeWinners() {
     content.insertBefore(parent, gallery);
 }
 function makeGallery() {
+    var _a;
     var container = document.querySelector(".gallery");
     var parent = document.getElementById("gallery");
     if (container && parent) {
@@ -178,7 +179,7 @@ function makeGallery() {
                 on the workspace background.";
             container.insertBefore(hint, parent);
         }
-        var selected = randomize(info.featured); // show all the games
+        var selected = randomize((_a = info.featured) === null || _a === void 0 ? void 0 : _a.filter(function (g) { return !g.description; })); // show all the games
         var row = document.createElement("div");
         for (var i = 0; i < selected.length; i++) {
             row.appendChild(makeGameCard(selected[i]));
