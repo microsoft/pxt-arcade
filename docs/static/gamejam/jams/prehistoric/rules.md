@@ -4,7 +4,7 @@ We're thrilled to announce the winners of the eighth MakeCode Arcade game jam: P
 
 
 ## First Place: Dino Zoo
-| [![Dino Zoo screenshot](https://pxt.azureedge.net/api/22414-21049-08990-36399/thumb)](https://arcade.makecode.com/39697-95718-82872-45842) |
+| [![Dino Zoo screenshot](https://pxt.azureedge.net/api/22414-21049-08990-36399/thumb)](https://arcade.makecode.com/22414-21049-08990-36399) |
 | -- |
 | &nbsp; |
 
