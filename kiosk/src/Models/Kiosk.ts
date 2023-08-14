@@ -140,7 +140,7 @@ export class Kiosk {
             if (!game?.userAdded) {
                 game.userAdded = true;
             }
-            if (!game?.deleted) {
+            if (game && !game.deleted) {
                 this.games.push(game);
             }
         }
