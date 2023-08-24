@@ -81,7 +81,7 @@ Move the joystick left or right to highlight Cancel or Confirm. Press the **A** 
 
 Instead of starting with the default game list in the MakeCode Arcade Kiosk, you can open Kiosk mode with no games in the game list. Use the **"clean=1"** flag to do this:
 
-https://arcade.makecode.com/kiosk?clean=1
+https://arcade.makecode.com/kiosk#clean=1
 
 ![No games uploaded yet](/static/hardware/kiosk/no-uploaded-games.png)
 
@@ -93,4 +93,9 @@ Note that if you have only uploaded one game to the kiosk, you will see three co
 
 Once you’ve set up your game list in the Kiosk, you have the option to lock the kiosk into a read-only mode – where no games can be added or deleted. This may be helpful if you have your MakeCode Arcade machine located in a public space and don’t want people to edit your game list. Use the **"lock=1"** flag to do this:
 
-https://arcade.makecode.com/kiosk?lock=1
+https://arcade.makecode.com/kiosk#lock=1
+
+You can also combine lock and clean option as following
+
+https://arcade.makecode.com/kiosk#lock=1&clean=1
+
