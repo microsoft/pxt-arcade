@@ -343,7 +343,7 @@ game.onUpdateInterval(1000, function () {
 arcade-carnival=github:microsoft/arcade-carnival
 arcade-storytelling=github:microsoft/arcade-storytelling
 arcade-text=github:microsoft/arcade-text
-sparks=github:kiki-lee/sparks#v0.0.4
+sparks=github:kiki-lee/sparks#v0.0.5
 
 ```
 

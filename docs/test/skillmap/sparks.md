@@ -21,7 +21,7 @@
 * allowcodecarryover: false
 * name: Pile of Sticks
 * type: tutorial
-* description: Learn to use MakeCode Arcade and add a classic firepit to the center of your clicker game.
+* description: Learn to use MakeCode Arcade and add a firepit to the center of a classic clicker game.
 * tags: easy, sprite, effects, events
 * next: sparks2
 * url: /test/skillmap/sparks/sparks1
