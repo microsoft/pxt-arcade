@@ -1,48 +1,33 @@
-## Prehistoric Jam
+## Prehistoric Jam Winners!
 
-The theme for this jam is "prehistoric". In other words, we're looking for games starring dinosaurs, sabertooth tigers, or really just about anything from a long, long, time ago.
-Some examples of good interpretations of this theme are:
+We're thrilled to announce the winners of the eighth MakeCode Arcade game jam: Prehistoric Jam! This was one of our most successful game jams to date with a whopping **106** entries. We hope you'll enjoy playing some of our favorites:
 
-1. A paleontology game where you unearth and clean fossils for a museum
-2. A survival game where a time-travel experiment strands you in the past
-3. A fighting game where you play as a dinosaur boxing with an anthropomorphized meteor
 
-DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
--- | --
-![](/static/gamejam/jams/prehistoric/assets/demo-1.gif) | ![](/static/gamejam/jams/prehistoric/assets/demo-2.gif) | ![](/static/gamejam/jams/prehistoric/assets/demo-1.gif)
+## First Place: Dino Zoo
+| [![Dino Zoo screenshot](https://pxt.azureedge.net/api/22414-21049-08990-36399/thumb)](https://arcade.makecode.com/22414-21049-08990-36399) |
+| -- |
+| &nbsp; |
 
-You can interpret "prehistoric" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
+[Dino Zoo](https://arcade.makecode.com/22414-21049-08990-36399) by **SylvanCircle** is an amazing block-based puzzle game where you simulate the circle of life to clear the board of dinosaurs and plants. From the multiple game modes to the detailed tutorial, this game is super polished and fun to play!
 
-## Hurry before this jam is *history*
-The game jam will run from **July 3, 2023** to **July 31, 2023**
+## Second Place: Fossil Clicker
+| [![Fossil Clicker screenshot](https://pxt.azureedge.net/api/39392-36875-05086-87292/thumb)](https://arcade.makecode.com/39392-36875-05086-87292) |
+| -- |
+| &nbsp; |
 
-You will have roughly one month to build and submit your games for the competition! For you procrastinators out there, we will accept games up until 11:59pm on July 31st.
+[Fossil Clicker](https://arcade.makecode.com/39392-36875-05086-87292) by **UnsignedArduino** is an addictive paleontology themed idle game. Collect, sell, upgrade, and repeat until you have more money than there are atoms in the universe! Y'know, just like real paleontologists do!
 
-## Getting started
+## Third Place (tie): Dino Blast
+| [![Dino Blast screenshot](https://pxt.azureedge.net/api/48432-56072-58827-08148/thumb)](https://arcade.makecode.com/48432-56072-58827-08148) |
+| -- |
+| &nbsp; |
 
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [beginner skillmaps](https://arcade.makecode.com/--skillmap#dino) to learn the basics of making a game!
+[Dino Blast](https://arcade.makecode.com/48432-56072-58827-08148) by **InvalidProject99** is an adventure game where you play as a dinosaur exploring the world on a quest to defeat the evil dragon king. With it's innovative use of the player 2 controls, attacking dragons is indeed a blast!
 
-## Rules
+## Third Place (tie): Booga Bruh
+| [![Boogah Bruh screenshot](https://pxt.azureedge.net/api/98099-33981-73376-80879/thumb)](https://arcade.makecode.com/98099-33981-73376-80879) |
+| -- |
+| &nbsp; |
+**NOTE: This game contains rapidly flashing colors and patterns**
 
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
-3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
-
-## Join the community
-
-This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team. You can hang out with the MakeCode team there too!
-
-## Tips and tricks
-
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our][traffic-jam] [past][garden-jam] [jams][ocean-jam]!
-
-[traffic-jam]: https://arcade.makecode.com/gamejam/traffic
-[ocean-jam]: https://arcade.makecode.com/gamejam/ocean
-[garden-jam]: https://arcade.makecode.com/gamejam/garden
+[Booga Bruh](https://arcade.makecode.com/98099-33981-73376-80879) by **PixelDoodle** is a turn based RPG with one of the most engrossing stories we've seen in MakeCode Arcade! Find the parts to your broken time machine and make it back to the present in this story-driven game!
