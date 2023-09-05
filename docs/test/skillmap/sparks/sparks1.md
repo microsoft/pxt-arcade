@@ -22,7 +22,7 @@ This tutorial will help you create your own game, set near prehistoric Mount Car
 
 **Ready to start coding?**
 
-Let's set the scene of a cave near the mountains.
+Let's set the scene of a cave near the mountains during the coldest of winters.
 
 
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
@@ -359,7 +359,7 @@ kindling.setPosition(70, 80)
 arcade-carnival=github:microsoft/arcade-carnival
 arcade-storytelling=github:microsoft/arcade-storytelling
 arcade-text=github:microsoft/arcade-text
-sparks=github:kiki-lee/sparks#v0.0.4
+sparks=github:kiki-lee/sparks#v0.0.5
 ```
 
 
