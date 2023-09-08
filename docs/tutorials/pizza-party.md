@@ -87,7 +87,7 @@ container already in the workspace.
 
 - :paint brush: Click the empty square in the background block and flip to **Gallery**
 ![Switch to the My Assets tab](/static/skillmap/assets/gallery.png " ")
-the choose the first background image called **City**.
+then choose the first background image called **City**.
 
 
 
