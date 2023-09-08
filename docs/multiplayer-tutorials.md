@@ -11,8 +11,8 @@
   "description": "Create a quick multiplayer game where you try to gather as much pizza as possible before your friends knock away your points!",
   "url": "/tutorials/pizza-party",
   "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/pizza-party/pizza-party-img.png",
-  "largeImageUrl": "/static/tutorials/pizza-party/tmnt.gif"
+  "imageUrl": "/static/tutorials/pizza-party/playtime.png",
+  "largeImageUrl": "/static/tutorials/pizza-party/playtime.png"
 },{
   "name": "Arrow Battle",
   "description": "This quick tutorial will help you create a multiplayer game where you test your reflexes to be the fastest to hit your arrow keys!",
