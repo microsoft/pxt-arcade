@@ -2,7 +2,7 @@
 ### @explicitHints true
 
 
-## Mutant Mayhem Intro @showdialog
+## Pizza Party Intro @showdialog
 
 Are you ready to code a pizza party?
 
