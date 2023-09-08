@@ -85,8 +85,8 @@ into **the end** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-- :paint brush: Click the empty square in the background block and flip to **Gallery**
-![Switch to the My Assets tab](/static/skillmap/assets/gallery.png " ")
+- :paint brush: Click the empty square in the background block and flip to the **Gallery** tab.
+![Switch to the Gallery tab](/static/skillmap/assets/gallery.png " ")
 then choose the first background image called **City**.
 
 
