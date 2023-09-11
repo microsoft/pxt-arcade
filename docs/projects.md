@@ -22,8 +22,8 @@
     {
         "name": "Multiplayer Tutorials",
         "url": "/multiplayer-tutorials",
-        "imageUrl": "/static/tutorials/pizza-party/playtime.png",
-        "largeImageUrl": "/static/tutorials/pizza-party/playtime.png"
+        "imageUrl": "/static/tutorials/pizza-party/pizza-party-img.png",
+        "largeImageUrl": "/static/tutorials/pizza-party/tmnt.gif"
     },
     {
         "name": "Multiplayer Games",
