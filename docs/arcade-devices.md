@@ -77,6 +77,24 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
+        "name": "micro:bit Newbit Shield",
+        "description": "Use the micro:bit with an expansion board from Kittenbot",
+        "imageUrl": "/static/hardware/newbit.png",
+        "url": "https://www.kittenbot.cc/products/newbit-arcade-shield"
+    },
+    {
+        "name": "micro:bit Retro Shield",
+        "description": "Use the micro:bit with an expansion board from Elecfreaks",
+        "imageUrl": "/static/hardware/retro-shield.jpg",
+        "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade"
+    },
+    {
+        "name": "micro:bit Game:Bit Shield",
+        "description": "Use the micro:bit with an expansion board from iCShop",
+        "imageUrl": "/static/hardware/bit-shield.png",
+        "url": "https://www.icshop.com.tw/products/368112100137"
+    },
+    {
         "name": "Add Board",
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding",

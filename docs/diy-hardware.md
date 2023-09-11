@@ -14,6 +14,31 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "variant": "hw---rpi"
     },
     {
+        "name": "Shoebox Controller",
+        "description": "Turn a shoebox into a USB game controller for a PC.",
+        "imageUrl": "/static/hardware/shoebox.jpg",
+        "url": "/hardware/shoebox-controller"
+    },
+    {
+        "name": "Kiosk",
+        "description": "Showcase games on your project Arcade in the Kiosk.",
+        "imageUrl": "/static/hardware/kiosk/kiosk-thumb.png",
+        "url": "/hardware/kiosk"
+    },
+    {
+        "name": "Makey Makey",
+        "description": "Turn your banana keyboard into an Arcade game controller.",
+        "imageUrl": "/static/hardware/makey-makey.jpg",
+        "url": "https://makeymakey.com/blogs/how-to-instructions/getting-started-with-microsoft-makecode-arcade"
+    },
+    {
+        "name": "Adafruit Joy Bonnet",
+        "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
+        "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
+        "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
+        "variant": "hw---rpi"
+    },
+    {
         "name": "Cardboard Panel",
         "description": "Turn a cardboard box into a tabletop arcade.",
         "imageUrl": "/static/hardware/controlpanel.jpg",
@@ -26,29 +51,6 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "imageUrl": "/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg",
         "url": "/hardware/raspberry-pi/ikea-flisat-table",
         "variant": "hw---rpi"
-    },
-    {
-        "name": "Adafruit Joy Bonnet",
-        "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
-        "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
-        "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
-        "variant": "hw---rpi"
-    },
-    {
-        "name": "Shoebox Controller",
-        "description": "Turn a shoebox into a USB game controller for a PC.",
-        "imageUrl": "/static/hardware/shoebox.jpg",
-        "url": "/hardware/shoebox-controller"
-    },
-    {
-        "name": "Kiosk",
-        "description": "Showcase games on your project Arcade in the Kiosk.",
-        "imageUrl": "/static/hardware/kiosk/kiosk-thumb.png",
-        "url": "/hardware/kiosk"
     }
 ]
 ```
-
-## Other ways to play Arcade
-
-* [Makey Makey](/hardware/makey-makey), turn your banana keyboard into an arcade console!
