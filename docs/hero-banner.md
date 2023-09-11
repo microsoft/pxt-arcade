@@ -12,11 +12,11 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Mutant Mayhem!
+* name: Save the Turkeys!
 * buttonLabel: Code Now
-* description: Create your own multiplayer game!
-* imageUrl: /static/hero-gallery/pizza-party.jpg
-* url: https://arcade.makecode.com/#tutorial:/tutorials/pizza-party
+* description: Create an amazing game to share!
+* imageUrl: /static/hero-gallery/turkey.png
+* url: https://arcade.makecode.com/--skillmap#turkey
 * cardType: link
 ---
 * name: How To Code a Video Game
