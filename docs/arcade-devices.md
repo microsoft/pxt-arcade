@@ -107,7 +107,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
 
 ![Schematics screenshot](/static/hardware/screen-framed.png)
 
-If you want to design a board with Arcade support, refer to the [Adding Board page](/hardware/adding).
+If you want to design a board with Arcade support, refer to the [Adding Board](/hardware/adding) page.
 
 There are a few resources about adding new MCUs in the
 [Arcade Hardware Development](/hardware/dev) page.
