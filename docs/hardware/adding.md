@@ -1,10 +1,12 @@
 # Creating your own Arcade hardware
 
-## ~ alert
+### ~ alert
 
-**If you want to produce an Arcade-compatible product please let us know at arcadehdw@microsoft.com.**
+#### Contact the MakeCode Team
 
-## ~
+**If you want to produce an Arcade compatible product please let us know at arcadehdw@microsoft.com.**
+
+### ~
 
 ## Overview #overview
 
