@@ -12,7 +12,6 @@ music.createSong(hex`00780004080200`)
 
 ```cards
 music.stringPlayable("", 120)
-music.melodyPlayable(music.baDing)
 ```
 
 ## Sound
@@ -36,7 +35,6 @@ music.stopAllSounds()
 [play](/reference/music/play),
 [tone playable](/reference/music/tone-playable),
 [string playable](/reference/music/string-playable),
-[melody playable](/reference/music/melody-playable),
 [create song](/reference/music/create-song),
 [ring tone](/reference/music/ring-tone), 
 [rest](/reference/music/rest),
