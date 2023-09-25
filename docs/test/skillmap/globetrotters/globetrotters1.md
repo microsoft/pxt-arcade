@@ -5,6 +5,8 @@
 
 **Backgrounds, Sprites, Movement, and Animation**
 
+![Level 1 splash image](/static//skillmap/globetrotters/level1-splash.jpg)
+
 In this first lesson, you will create the opening scene of the game.
 You will set the game background, show a welcome message, and bring a
 player onto the court.
