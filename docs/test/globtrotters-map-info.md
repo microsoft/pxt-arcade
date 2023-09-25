@@ -2,7 +2,7 @@
 
 ## A BRIEF HISTORY
 
-![Brief History banner](/docs/static/skillmap/globetrotters/history-banner.png)
+![Brief History banner](/static/skillmap/globetrotters/history-banner.png)
 
 Once upon a time, almost a hundred years ago, a basketball team was born that would 
 change the world of sports forever. This wasn't just any team; this was the Harlem
