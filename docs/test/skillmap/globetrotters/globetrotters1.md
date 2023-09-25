@@ -223,6 +223,14 @@ let Hotshot = sprites.create(assets.image`Hotshot`, SpriteKind.Player)
 controller.moveSprite(Hotshot, 100, 0)
 ```
 
+```ghost
+scene.setBackgroundImage(assets.image`audience`)
+game.showLongText("Get a Harlem Globetrotter into the game and help them to score. Press A to begin.", DialogLayout.Full)
+scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
+let Hotshot = sprites.create(assets.image`Hotshot`, SpriteKind.Player)
+controller.moveSprite(Hotshot, 100, 0)
+```
+
 ```assetjson
 {
     "README.md": " ",
