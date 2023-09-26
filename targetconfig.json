@@ -260,10 +260,10 @@
             "variant": "hw---stm32f401"
         },
         {
-            "name": "BrainPad Arcade",
-            "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
-            "imageUrl": "/static/hardware/ghiarcade.jpg",
-            "url": "https://brainpad.com/arcade",
+            "name": "Retro Arcade for Education",
+            "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
+            "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
+            "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
             "variant": "hw---stm32f401"
         },
         {
@@ -274,11 +274,25 @@
             "variant": "hw---stm32f401"
         },
         {
+            "name": "Kitronik ARCADE",
+            "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
+            "imageUrl": "/static/hardware/kitronik.jpg",
+            "url": "https://www.kitronik.co.uk/arcade",
+            "variant": "hw---samd51"
+        },
+        {
             "name": "Adafruit PyBadge",
             "description": "It's a badge, it's an arcade, it's a PyBadge",
             "imageUrl": "/static/hardware/pybadge.jpg",
             "url": "https://www.adafruit.com/product/4200",
             "variant": "hw---samd51"
+        },
+        {
+            "name": "BrainPad Arcade",
+            "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
+            "imageUrl": "/static/hardware/ghiarcade.jpg",
+            "url": "https://brainpad.com/arcade",
+            "variant": "hw---stm32f401"
         },
         {
             "name": "Adafruit PyGamer",
@@ -288,24 +302,10 @@
             "variant": "hw---samd51"
         },
         {
-            "name": "Kitronik ARCADE",
-            "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
-            "imageUrl": "/static/hardware/kitronik.jpg",
-            "url": "https://www.kitronik.co.uk/arcade",
-            "variant": "hw---samd51"
-        },
-        {
             "name": "Ovobot Xtron Pro",
             "description": "A programmable modular console to create games, design wearables and make creative projects.",
             "imageUrl": "/static/hardware/xtronpro.png",
             "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "Retro Arcade for Education",
-            "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
-            "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
-            "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
             "variant": "hw---stm32f401"
         },
         {
@@ -326,19 +326,22 @@
             "name": "micro:bit Newbit Shield",
             "description": "Use the micro:bit with an expansion board from Kittenbot",
             "imageUrl": "/static/hardware/newbit.png",
-            "url": "https://www.kittenbot.cc/products/newbit-arcade-shield"
+            "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
+            "variant": "hw---n4"
         },
         {
             "name": "micro:bit Retro Shield",
             "description": "Use the micro:bit with an expansion board from Elecfreaks",
             "imageUrl": "/static/hardware/retro-shield.jpg",
-            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade"
+            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
+            "variant": "hw---n4"
         },
         {
             "name": "micro:bit Game:Bit Shield",
             "description": "Use the micro:bit with an expansion board from iCShop",
             "imageUrl": "/static/hardware/bit-shield.png",
-            "url": "https://www.icshop.com.tw/products/368112100137"
+            "url": "https://www.icshop.com.tw/products/368112100137",
+            "variant": "hw---n4"
         }
     ],
     "galleries": {
