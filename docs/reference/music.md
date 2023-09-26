@@ -28,6 +28,19 @@ music.play(music.stringPlayable("D F E A E A C B ", 120), music.PlaybackMode.Unt
 music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
 ```
 
+### Play a sound effect
+
+```blocks
+music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+```
+
+## Sound effects
+
+```cards
+music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear)
+music.randomizeSound(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear))
+```
+
 ## Sound
 
 ```cards
@@ -48,6 +61,8 @@ music.stopAllSounds()
 [create song](/reference/music/create-song),
 [string playable](/reference/music/string-playable),
 [tone playable](/reference/music/tone-playable),
+[create sound effect](/reference/music/create-sound-effect),
+[randomize sound](/reference/music/randomize-sound),
 [ring tone](/reference/music/ring-tone), 
 [rest](/reference/music/rest),
 [beat](/reference/music/beat), 
