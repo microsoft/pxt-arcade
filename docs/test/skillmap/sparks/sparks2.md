@@ -1,4 +1,4 @@
-# Pile of Sticks
+# Winner, Winner
 ### @explicitHints true
 
 
@@ -9,7 +9,7 @@ Your code from the last activity is already in the workspace.
 Let's add some code that allows the player to win or lose.
 
 
-![Time is ticking](/static/skillmap/sparks/sparks2.gif "Let's add win & loss conditions." )
+![Time is ticking](/static/skillmap/sparks/sparks2.gif "Let's add a way to win." )
 
 
 
@@ -19,7 +19,7 @@ Let's add some code that allows the player to win or lose.
 
 **Play the clicker game!**
 
-Press the (A) button or **space bar** and watch the score go up!
+Press the (B) button or the **enter key** and watch the score go up!
 
 
 
@@ -85,14 +85,18 @@ info.onScore(30, function () {
 
 - :binoculars: Try your project in the game window.
 
-Press the (A) button as quickly as possible and you should win the game when you score gets to 30.
+Press the (B) button as quickly as possible and you should win the game when you score gets to 30.
 
 
 
 
 ## {6. Counting the Seconds}
 
-Right now, the winning score will always be 30.  Let's change the final score to the amount of time it took to win the game, then celebrate the "lowest" score.
+Right now, the winning score will always be 30.
+Let's change the final score to the amount of time it took to win the game,
+then celebrate the "lowest" score.
+
+---
 
 - :id card: From the ``||info:Info||`` category, drag<br/>
 ``||info:set score to [0]||``<br/>
@@ -100,7 +104,7 @@ into the **top of** the<br/>
 ``||info(noclick):on score [30]||`` container that's already in the workspace.
 
 - :circle: From the ``||game:Game||`` category, drag<br/>
-``||game:time since start (tenths)||``<br/>
+``||stopwatch:timer value [tenths]||``<br/>
 to replace **0** inside the <br/>
 ``||info(noclick):set score to [0]||`` block.
 
@@ -111,7 +115,7 @@ to replace **0** inside the <br/>
 ```blocks
 info.onScore(30, function () {
     //@highlight
-    info.setScore(game.timeSinceStartSec())
+    info.setScore(stopwatch.getTimerValue(stopwatch.TimerGran.Tenths))
     game.gameOver(true)
 })
 ```
@@ -138,147 +142,49 @@ into the **top of** the<br/>
 info.onScore(30, function () {
     //@highlight
     game.setGameOverScoringType(game.ScoringType.LowScore)
-    info.setScore(game.timeSinceStartSec())
+    info.setScore(stopwatch.getTimerValue(stopwatch.TimerGran.Tenths))
     game.gameOver(true)
 })
 ```
 
 
 
+## {8. How long has this been going on?}
 
-## {8. Lose Some}
-
-
-**Time for a challenge!** <br/>
-❤️‍🔥 ❤️‍🔥 ❤️‍🔥
-
-It's too easy to reach 30. Let's subtract a point every second to add a twist.
+Let the user see how long they've been playing.
 
 
-- :circle: From the ``||game:Game||`` category, drag<br/>
-``||game: on game update every [500] ms||``<br/>
-into **an empty area** of the workspace.
-
-- :mouse pointer: Change **500** ms to **1000** ms (which is also 1 second.)
-
+- :stopwatch: From the ``||stopwatch:Stopwatch||`` category, drag<br/>
+``||stopwatch:start timer using [tenths only]||``<br/>
+into the **end of** the<br/>
+``||loops(noclick):on start||`` container that's already in the workspace.
 
 
 #### ~ tutorialhint
 
 ```blocks
-game.onUpdateInterval(1000, function () { })
-```
-
-
-## {9. Lose Some}
-
-
-- :id card: From the ``||info:Info||`` category, drag<br/>
-``||info: change score by [1]||``<br/>
-into **the empty**<br/>
-``||game(noclick): on game update every [1000] ms||``<br/>
-container already in the workspace.
-
-- :mouse pointer: Change **1** to **-1** to remove a point.
-
-
-
-#### ~ tutorialhint
-
-```blocks
-game.onUpdateInterval(1000, function () {
+let kindling: Sprite = null
+scene.setBackgroundImage(sparks.background1)
+kindling = sprites.create(sparks.pile1, SpriteKind.Player)
+kindling.setPosition(70, 80)
 //@highlight
-        info.changeScoreBy(-1)
-})
+stopwatch.startTimer(stopwatch.TimerType.Tens)
 ```
 
 
 
+## {9. Check Your Game!}
 
 
-## {10. Check Your Game!}
+- :binoculars: Try your project in the game window again.
 
-
-- :binoculars: Try your project in the game window.
-
-Press the (A) button as quickly as possible and see if you can hit 30 points before too many points are taken away.
-
-
-
-
-
-## {11. Enough is Enough}
-
-Let's add a way to lose the game when points fall too far below zero.
-
-🕰️ 🕰️ 🕰️
-
-- :id card: From the ``||info:Info||`` category, drag<br/>
-``||info:on score [30]||``<br/>
-into an **empty area** of the workspace.
-
-- :mouse pointer: Click inside the empty container and change **30** to **-5**.
-
-
-#### ~ tutorialhint
-
-```blocks
-info.onScore(-5, function () { })
-```
+Press the (B) button as quickly as possible and
+see how long it takes you to win the game when you score gets to 30.
 
 
 
 
-## {12. Enough is Enough}
-
-
-
-- :circle: From the ``||game:Game||`` category, drag<br/>
-``||game:game over <WIN>||``<br/>
-into the **empty** <br/>
-``||info(noclick):on score [-5]||`` container.
-
-- :mouse pointer: Click **`<WIN`>** and change it to **`<LOSE`>**.
-
-
-
-#### ~ tutorialhint
-
-```blocks
-info.onScore(-5, function () {
-    //@highlight
-    game.gameOver(false)
-})
-```
-
-
-
-
-
-
-## {13. Check Your Game!}
-
-
-- :binoculars: Take a look at the game window
-
-Don't touch any buttons or keys...you should lose the game after five seconds.
-
-
-
-## {14. Play again}
-
-
-- :binoculars: Reset your game and play again!
-
-Click the (A) button as fast as you can.  Is the game any harder to win?
-
-💡 _Don't worry if your game is still too easy. In the next tutorial, we'll add more
-levels, which will make the game much harder!_
-
-
-
-
-## {9. Finale}
+## {Finale}
 
 **👨🏽‍🚒 You're FIRE 👨🏽‍🚒**
 
@@ -308,19 +214,22 @@ game.gameOver(true)
 let kindling = sprites.create(img`.`, SpriteKind.Player)
 kindling.setPosition(70, 80)
 kindling.startEffect(effects.fire)
-
-info.onScore(30, function () { })
+game.showLongText("You are in Israel circa 100,000 B.C.", DialogLayout.Full)
+info.onScore(30)
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {})
+stopwatch.getTimerValue(stopwatch.TimerGran.Tenths)
+stopwatch.startTimer(stopwatch.TimerType.Tens)
 ```
 
 ```template
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         info.changeScoreBy(1)
-        kindling.startEffect(effects.fire, 25)
+        kindling.startEffect(effects.fire, 100)
 })
 
 let kindling: Sprite = null
-scene.setBackgroundImage(sparks.background)
+scene.setBackgroundImage(sparks.background1)
 kindling = sprites.create(sparks.pile1, SpriteKind.Player)
 kindling.setPosition(70, 80)
 ```
@@ -340,24 +249,9 @@ game.onUpdateInterval(1000, function () {
 
 
 ```package
-arcade-carnival=github:microsoft/arcade-carnival
 arcade-storytelling=github:microsoft/arcade-storytelling
 arcade-text=github:microsoft/arcade-text
 sparks=github:kiki-lee/sparks#v0.0.5
-
+stopwatch=github:kiki-lee/stopwatch#v0.0.5
 ```
 
-
-
-```customts
-namespace game {
-    /**
-     * This is a reporter block that returns
-     * the number of seconds since the game started
-     */
-    //% block="time since start (tenths) "
-    export function timeSinceStartSec(): number {
-        return game.runtime()/100;
-    }
-}
-```
