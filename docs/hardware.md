@@ -2,7 +2,7 @@
 
 ## Boards
 
-These boards run MakeCode Arcade games. Choose a board to find out more about it and where you can get one!
+These boards run MakeCode Arcade games. They are based on our guidelines, adhere to open source hardware reference designs (see Adding a New Board to Arcade section below), and have been user tested.  However, each hardware manufacturer is responsible for ensuring the compatibility, reliability, safety and compliance of their products. Microsoft provides no representations or warranties on these products and disclaims liability for any risks associated with their use.
 
 ```codecard
 [
@@ -77,6 +77,31 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---samd51"
     },
     {
+        "name": "micro:bit Newbit Shield",
+        "description": "Use the micro:bit with an expansion board from Kittenbot",
+        "imageUrl": "/static/hardware/newbit.png",
+        "url": "https://www.kittenbot.cc/products/newbit-arcade-shield"
+    },
+    {
+        "name": "micro:bit Retro Shield",
+        "description": "Use the micro:bit with an expansion board from Elecfreaks",
+        "imageUrl": "/static/hardware/retro-shield.jpg",
+        "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade"
+    },
+    {
+        "name": "micro:bit Game:Bit Shield",
+        "description": "Use the micro:bit with an expansion board from iCShop",
+        "imageUrl": "/static/hardware/bit-shield.png",
+        "url": "https://www.icshop.com.tw/products/368112100137"
+    }
+]
+```
+
+## Other ways to play Arcade
+
+```codecard
+[
+    {
         "name": "Adafruit Joy Bonnet",
         "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
         "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
@@ -110,23 +135,19 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---rpi"
     },
     {
-        "name": "Add Board",
-        "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
-        "url": "/hardware/adding",
-        "imageUrl": "/static/hardware/minipcb.png"
+        "name": "Makey Makey",
+        "description": "Turn your banana keyboard into an Arcade game controller.",
+        "imageUrl": "/static/hardware/makey-makey.jpg",
+        "url": "https://makeymakey.com/blogs/how-to-instructions/getting-started-with-microsoft-makecode-arcade"
     }
 ]
 ```
 
-## Other ways to play Arcade
-
-* [Makey Makey](/hardware/makey-makey), turn your banana keyboard into an arcade console!
-
 ## Adding a New Board to Arcade
 
-![Schematics screenshot](/static/hardware/minipcb.png)
+![Schematics screenshot](/static/hardware/screen-framed.png)
 
-If you want to design a board with Arcade support, refer to [Adding Board page](/hardware/adding).
+If you want to design a board with Arcade support, refer to the [Adding Board](/hardware/adding) page.
 
-There is some minimal documentation about adding new MCUs in the
+There are a few resources about adding new MCUs in the
 [Arcade Hardware Development](/hardware/dev) page.
