@@ -7,11 +7,13 @@
 
 _prē-(h)i-ˈstȯr-ik_
 
-: from a time before human records were kept
+: from a time before records were kept
 
 ---
 
-This tutorial will help you create your own game, set near prehistoric Mount Carmel in Israel, with the goal of lighting a fire before the wind blows away your sparks.
+This tutorial will help you create your own game, set near prehistoric
+Mount Carmel in Israel.
+The goal is to light a fire before the wind blows away your sparks.
 
 ![Campfire Sparks](/static/skillmap/sparks/sparks1.gif "Let's create sparks")
 
@@ -187,11 +189,11 @@ kindling.setPosition(70, 80)
 🔥 **Make sparks** 🔥
 
 - :game: From the ``||controller: Controller||`` category **in the toolbox**, grab <br/>
-``||controller: on [A] button [pressed]||`` <br/>
+``||controller: on [B] button [pressed]||`` <br/>
 and drop it into an empty area of the workspace.
 
 
-The is an **EVENT** block and it will cause the **ACTION** inside to happen each time the (A) button is pressed.
+The is an **EVENT** block and it will cause the **ACTION** inside to happen each time the (B) button is pressed.
 
 ~hint Tell me about events! 💡
 
@@ -207,14 +209,14 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () { })
 ```
 
 
 
 ## {10. Add Points}
 
-Now we can add a point each time the (A) button is clicked.
+Now we can add a point each time the (B) button is clicked.
 
 This will be the **ACTION** that goes with our **EVENT**.
 
@@ -222,14 +224,14 @@ This will be the **ACTION** that goes with our **EVENT**.
 - :id card: From the ``||info: Info||`` category in the toolbox, grab <br/>
 ``||info: change score by [1]||`` <br/>
 and snap it into the empty <br/>
-``||controller(noclick): on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [B] button [pressed]||`` <br/>
 block that's already in the workspace.
 
 
 
 #### ~ tutorialhint
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     //@highlight
     info.changeScoreBy(1)
 })
@@ -246,14 +248,14 @@ We can finish by adding spark effects with each click.
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 ``||sprites: [kindling] start [fire] effect||`` <br/>
 and snap it anywhere inside the <br/>
-``||controller(noclick): on [A] button [pressed]||`` <br/>
+``||controller(noclick): on [B] button [pressed]||`` <br/>
 block that's already in the workspace.
 
 
 #### ~ tutorialhint
 ```blocks
 let kindling: Sprite = null
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     //@highlight
     kindling.startEffect(effects.fire)
@@ -268,7 +270,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Take a look at the game window to see your project!
 
-You should see sparks ignite your kindling each time you click the (A) button. You should also get a point with each click.
+You should see sparks ignite your kindling each time you click the (B) button. You should also get a point with each click.
 
 
 
@@ -277,7 +279,8 @@ You should see sparks ignite your kindling each time you click the (A) button. Y
 
 Right now, the sparks build too quickly. Let's fix that.
 
-- :mouse pointer: Click the white plus sign to the right of the <br/>
+- :mouse pointer: Click the white plus sign ``||sprites: +||``
+to the right of the <br/>
 ``||sprites: [kindling] start [fire] effect||`` <br/>
 block.
 
@@ -286,7 +289,7 @@ block.
 
 #### ~ tutorialhint
 ```blocks
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     //@highlight
         kindling.startEffect(effects.fire, 100)
@@ -334,12 +337,12 @@ game.gameOver(true)
 let kindling = sprites.create(img`.`, SpriteKind.Player)
 kindling.setPosition(70, 80)
 kindling.startEffect(effects.fire)
-
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {}
 ```
 
 ```ghost
 
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         info.changeScoreBy(1)
         kindling.startEffect(effects.fire, 25)
 })
