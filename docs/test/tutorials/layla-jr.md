@@ -4,9 +4,132 @@
 
 ## Pickle Party Intro @showdialog
 
-Are you ready to code a pickle party?
+**Ready to code a pickle party?**
 
-Follow this tutorial to create your own multiplayer experience that you can play online together with family and friends!
+![Pickle Party Game](/static/tutorials/lyla/lyla.gif "Characters chasing pickle slices." )
+
+
+
+## {Step 2}
+
+**Take a look at the game window**
+
+![Lyla on the screen](/static/tutorials/lyla/lyla.png "Lyla is alone on the screen." )
+
+You should see Lyla on the screen.
+
+
+
+## {Step 3}
+
+**Click the circles for other players**
+
+![The circles allow you to control other players](/static/tutorials/lyla/circles.gif "Click the circles to control other players." )
+
+
+
+
+
+## {Step 4}
+
+**You can move the selected player with the arrow keys**
+
+![The arrow keys move whichever player you have selected](/static/tutorials/lyla/arrows.gif "The game window is the same color as the player circle." )
+
+
+
+
+
+## {Step 5}
+
+**Let's add pickles for them to chase!**
+
+![Add a flying pickle with a new block](/static/tutorials/lyla/pickle.gif "Choose the pickle from the gallery" )
+
+#### ~ tutorialhint
+
+```blocks
+game.onUpdateInterval2(1, function () {
+    //@highlight
+    sprites.sendFlying(lyla_imgs.picklechip)
+})
+```
+
+
+
+
+## {Step 6}
+
+**Play the game!**
+
+![Choose a character and chase pickles](/static/tutorials/lyla/play.gif "You get points for pickles" )
+
+Use the arrow keys to catch pickles.
+
+
+
+## {Step 7}
+
+**We need a way to win**
+
+Tell the computer what to do when someone scores 15 points.
+
+![Grab the player scores container](/static/tutorials/lyla/score.gif "When a player scores 15 points, the code inside will run." )
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+info.onScore2(15, function () {})
+```
+
+
+
+
+## {Step 8}
+
+**Add the _game over_ block**
+
+![Add the game over block to the new container](/static/tutorials/lyla/game-over.gif "This block tells the computer that the first to 15 wins" )
+
+#### ~ tutorialhint
+
+```blocks
+info.onScore2(15, function () {
+    //@highlight
+    game.gameOver(true)
+})
+```
+
+
+
+
+## {Step 9}
+
+**Play until you win!**
+
+
+
+
+
+## {Step 10}
+
+**Let's make it fancy**
+
+Grab the block that runs code when the game starts.
+
+![Add the "on start" container](/static/tutorials/lyla/on-start.gif "This block tells the computer to run the code inside when the game starts" )
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+scene.setBackgroundImage(img`.`)
+```
+
+
+
+
 
 
 
@@ -21,44 +144,148 @@ When you're ready, sign-in, then select **Done** to start an online multiplayer 
 **Who will be the first to score 20 points?**
 
 
+```blockconfig.global
+info.onScore2(15, function () { })
+game.holdText("Press (A) when everyone is ready to start the game")
+```
+
+
 
 ```template
-sprites.step_right()
-let characters: Image[] = []
+game.onUpdateInterval2(1, function () { })
+```
 
-characters = [
-lyla_imgs.lyla,
-lyla_imgs.everett,
-lyla_imgs.stu
-]
 
+```ghost
+info.onScore2(15, function () {
+    game.gameOver(true)
+})
+scene.setBackgroundImage(lyla_imgs.diner)
+game.holdText("Press (A) when everyone is ready to start the game")
+music.play(music.createSong(lyla_imgs.countdown), music.PlaybackMode.UntilDone)
+game.onUpdateInterval2(1, function () {
+    sprites.sendFlying(lyla_imgs.picklechip)
+})
 ```
 
 
 
 ```package
 multiplayer
-lyla_imgs=github:kiki-lee/lyla_imgs#v0.0.2
+lyla_imgs=github:kiki-lee/lyla_imgs#v0.0.3
 ```
 
 
 ```customts
-
-namespace sprites {
-
-    //% block="`lyla_imgs.stu`"
-    export function step_right() {
-        pause(500)
+mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
+    if (mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number) <= characters.length) {
+        pizza.setPlayersWith(characters, mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number))
     }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    if (!(mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A))) {
+        sprites.destroy(otherSprite, effects.disintegrate, 100)
+        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
+    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {
+        scene.cameraShake(4, 500)
+        pizza.bumpSprite(sprite, otherSprite)
+        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    }
+    if (mp.isButtonPressed(mp.getPlayerBySprite(otherSprite), mp.MultiplayerButton.A)) {
+        scene.cameraShake(4, 500)
+        pizza.bumpSprite(otherSprite, sprite)
+        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, -1)
+    }
+})
+
+
+let characters = [lyla_imgs.lyla, lyla_imgs.everett, lyla_imgs.stu]
+pizza.setPlayersWith(characters, 1)
+
+namespace game {
+    /**
+     * Run code on an interval of time. This executes before game.onUpdate()
+     * @param body code to execute
+     */
+    //% group="Gameplay"
+    //% help=game/on-update-interval weight=99 afterOnStart=true
+    //% blockId=gameinterval2 block="every $period second(s)"
+    //% period.defl=1
+    //% blockAllowMultiple=1
+    export function onUpdateInterval2(period: number, a: () => void): void {
+        period = period * 1000;
+        if (!a || period < 0) return;
+        let timer = 0;
+        game.eventContext().registerFrameHandler(scene.UPDATE_INTERVAL_PRIORITY, () => {
+            const time = game.currentScene().millis();
+            if (timer <= time) {
+                timer = time + period;
+                a();
+            }
+        });
+    }
+
+
+
+    //% blockId=hold_text block="hold text $msg"
+    //% msg.defl = "Press (A) when everyone is ready to start the game"
+    //% img.shadow=screen_image_picker
+    export function holdText(msg: string) {
+        game.showLongText(msg, DialogLayout.Full)
+    }
+
+
 
 }
 
+namespace sprites {
 
-//% color=#29a320 icon="\uf192"
-namespace pickle {
+    export enum Plyrs {
+        //% block="Player 1"
+        One = 0,
+        //% block="Player 2"
+        Two = 1,
+        //% block="Player 3"
+        Three = 2,
+        //% block="Player 4"
+        Four = 3
+    }
+
+
+
+    /**
+     * Run code on an interval of time. This executes before game.onUpdate()
+     * @param body code to execute
+     */
+    //% blockId=assign_player_image block="$thing = $img"
+    //% thing.defl = Plyrs.One
+    //% img.shadow=screen_image_picker
+    export function assignPlayerImg(thing: Plyrs, img:Image) {
+        characters[thing] = img
+        pizza.setPlayersWith(characters, thing+1)
+    }
+
+
+    /**
+     * Run code on an interval of time. This executes before game.onUpdate()
+     * @param body code to execute
+     */
+    //% blockId=send_flying block="add flying $thing"
+    //% thing.shadow=screen_image_picker
+    export function sendFlying(thing:Image){
+        let projectile2 = sprites.createProjectileFromSide(thing, randint(-100, 100), randint(-100, 100))
+    }
+}
+
+
+//% color=#b79900 icon="\uf1ce"
+namespace pizza {
 
     // Make sure not to remove later player when earlier player tested
-    export let playersConnected=0;
+    export let playersConnected = 0;
 
 
     //% blockId=set_players
@@ -67,20 +294,20 @@ namespace pickle {
     //% list.shadow=variables_get
     //% list.defl=characters
     export function setPlayersWith(list: Image[], num: number) {
-        if(num >= pickle.playersConnected){
-            pickle.playersConnected = num;
+        if (num >= pizza.playersConnected) {
+            pizza.playersConnected = num;
             sprites.destroyAllSpritesOfKind(SpriteKind.Player)
             let xloc = [
-            40,
-            120,
-            40,
-            120
+                40,
+                120,
+                40,
+                120
             ]
             let yloc = [
-            30,
-            30,
-            90,
-            90
+                30,
+                30,
+                90,
+                90
             ]
             for (let index = 0; index <= num - 1; index++) {
                 mp.setPlayerSprite(mp.getPlayerByIndex(index), sprites.create(list[index], SpriteKind.Player))
@@ -92,52 +319,32 @@ namespace pickle {
         }
     }
 
-}
-
-namespace logic{
-    /**
-    * this just holds code
-    */
-    //% block="check if A button pressed"  weight=300
-    //% handlerStatement=1
-    export function wralyla(handler: () => void) {
-        handler();
+    //% blockId=bump_sprite
+    //% block="$thisSprite bump $thatSprite"
+    //% thisSprite.shadow=variables_get
+    //% thisSprite.defl=sprite
+    //% thatSprite.shadow=variables_get
+    //% thatSprite.defl=otherSprite
+    export function bumpSprite(thisSprite: Sprite, thatSprite: Sprite) {
+        thatSprite.setPosition((thisSprite.x + 80) % 160, thisSprite.y)
     }
 }
 
-
-//% color=#6d5ba4 icon="\uf0f2"
-namespace bundles{
+namespace info {
     /**
-    * this just holds code
-    */
-    //% block="check if A button pressed"  weight=300
-    //% handlerStatement=1
-    export function wralyla(handler: () => void) {
-        handler();
+     * Runs code once each time a player's score reaches a given value.
+     * @param score The score to check for, eg: 100
+     * @param handler The code to run when the score is reached
+     */
+    //% blockId=mp_onScore2
+    //% block="on player scores $score"
+    //% score.defl=20
+    //% blockGap=8
+    //% help=multiplayer/on-score
+    //% parts="multiplayer"
+    export function onScore2(score: number, handler: () => void) {
+        mp._mpstate().onReachedScore(score, handler);
     }
-
-    /**
-    * this just holds code
-    */
-    //% block="create finish line"  weight=300
-    //% handlerStatement=1
-    export function wraeverett(handler: () => void) {
-        handler();
-    }
-
-    /**
-    * this just holds code
-    */
-    //% block="create players"  weight=300
-    //% handlerStatement=1
-    export function wrastu(handler: () => void) {
-        handler();
-    }
-
-
-
-
 }
 
 ```
