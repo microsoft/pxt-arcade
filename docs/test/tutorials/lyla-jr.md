@@ -22,7 +22,7 @@ You should see Lyla on the screen.
 
 ## {Step 3}
 
-**Click the circles for other players**
+**Click the circles to add other players**
 
 ![The circles allow you to control other players](/static/tutorials/lyla/circles.gif "Click the circles to control other players." )
 
