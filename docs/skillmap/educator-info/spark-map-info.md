@@ -6,6 +6,14 @@ The **Sparks Flying** skillmap introduces simple game design and computer scienc
 
 In this set of activities, students will create a 5-level clicker game with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little or no previous coding experience.
 
+* [See Teacher Lesson Plan](https://1drv.ms/w/s!AqsgsTyHBmRBoCHZ8rm2BKsISKS1?e=5xrAQl)
+* [See Slides](https://1drv.ms/p/s!AqsgsTyHBmRBn2pQnnku4yb7iYfa?e=tsFXRo)
+* [Visit Resources on OneDrive](https://1drv.ms/f/s!AqsgsTyHBmRBn2mMdQSkzSMTSCJg?e=pnPxYg)
+
+
+
+
+
 Designed for students between the ages of 10 & 16, this experience contains a total of 3 tutorials (approximating 45 minutes of instruction).  At the end of the learning path, students receive a certificate of completion and a badge.
 
 |                 | Minutes* |  Key Concepts |
@@ -49,8 +57,8 @@ After completing Sparks Flying, students will have gained exposure to all the el
 | Activity | Pile of Sticks (18 min) |
 |---|---|
 | ![Pile of Sticks thumbnail](/static/skillmap/sparks/sparks1.gif) | Learn to use MakeCode Arcade and add fire pit sprite to your project. |
-| Blocks used |  ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[let kindling = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]`` <br/> ``[info.changeScoreBy(1)]`` <br/> ``[let kindling: Sprite = null; kindling.startEffect(effects.fire, 25)]``|
-| Solution option | [Pile of Sticks Project](https://makecode.com/_JM0UJi1ojWed) |
+| Blocks used |  ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[let kindling = sprites.create(img`.`, SpriteKind.Player)]`` <br/> ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]`` <br/> ``[info.changeScoreBy(1)]`` <br/> ``[let kindling: Sprite = null; kindling.startEffect(effects.fire, 500)]``|
+| Solution option | [Pile of Sticks Project](https://makecode.com/_PXrdTU93ig45) |
 
 #### 2. Win Some, Lose Some
 
@@ -58,7 +66,7 @@ After completing Sparks Flying, students will have gained exposure to all the el
 |---|---|
 | ![Win Some, Lose Some thumbnail](/static/skillmap/sparks/sparks2.gif) | Add win and loss conditions to your game using events. |
 | Blocks used | <br/> ``[game.onUpdateInterval(1000, function () {}]`` <br/>``[info.changeScoreBy(1)]`` <br/> ``[info.onScore(30, function () {})]`` <br/> ``[game.setGameOverScoringType(game.ScoringType.LowScore) ]`` <br/> ``[info.setScore(0)]`` <br/> ``[game.gameOver(true)]``|
-| Solution option | [Win Some, Lose Some Project](https://makecode.com/_RioVF8L3HbtA) |
+| Solution option | [Win Some, Lose Some Project](https://makecode.com/_KkM6gg0fEevk) |
 
 
 <!--

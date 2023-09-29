@@ -318,7 +318,7 @@ info.onScore(30, function () { })
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         info.changeScoreBy(1)
-        kindling.startEffect(effects.fire, 25)
+        kindling.startEffect(effects.fire, 50)
 })
 
 let kindling: Sprite = null

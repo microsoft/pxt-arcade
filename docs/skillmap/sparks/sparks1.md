@@ -281,8 +281,6 @@ Right now, the sparks build too quickly. Let's fix that.
 ``||sprites: [kindling] start [fire] effect||`` <br/>
 block.
 
-- :mouse pointer: Change **500** to **100** so that the sparks barely have a chance to build as each click is added.
-
 
 #### ~ tutorialhint
 ```blocks
@@ -291,7 +289,7 @@ let kindling: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     //@highlight
-        kindling.startEffect(effects.fire, 100)
+        kindling.startEffect(effects.fire, 500)
 })
 ```
 
@@ -343,7 +341,7 @@ kindling.startEffect(effects.fire)
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         info.changeScoreBy(1)
-        kindling.startEffect(effects.fire, 25)
+        kindling.startEffect(effects.fire, 500)
 })
 info.onScore(30, function () {
     game.gameOver(true)

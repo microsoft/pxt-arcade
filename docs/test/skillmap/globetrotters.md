@@ -12,6 +12,6 @@
 * name: Level 1
 * type: tutorial
 * description: Learn backgrounds, sprites, movement, and animation
-* url: /skillmap/globetrotters/globetrotters1
+* url: test/skillmap/globetrotters/globetrotters1
 * tags: easy, sprites, movement, animation
 
