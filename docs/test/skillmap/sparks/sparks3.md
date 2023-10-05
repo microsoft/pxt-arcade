@@ -275,7 +275,7 @@ stopwatch.startTimer(stopwatch.TimerType.Tens)
 
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         info.changeScoreBy(1)
-        kindling.startEffect(effects.fire, 100)
+        kindling.startEffect(effects.fire, 500)
 })
 
 let kindling: Sprite = null
