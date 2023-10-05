@@ -1,4 +1,4 @@
-# Another Level
+# Show and Tell
 ### @explicitHints true
 
 
@@ -6,10 +6,10 @@
 
 Your code from the last activity is already in the workspace.
 
-Let's build on it to add more levels!
+Let's add details to polish it up!
 
 
-![Again and Again](/static/skillmap/sparks/sparks4.gif "Let's add more levels." )
+![Show and Tell](/static/skillmap/sparks/sparks5.gif "Let's add some details to make the game look more professional." )
 
 
 
@@ -19,7 +19,7 @@ Let's build on it to add more levels!
 
 **Play your game!**
 
-Press the (B) button and try to get 30 points before they all disappear!
+Press the (B) button and see how many seconds you can last before the flames die down!
 
 
 
@@ -38,117 +38,111 @@ hint~
 
 
 
-## {3. Prepping the Variable}
+## {3. Letting them know}
 
-The level needs to change as the user plays.
-This is the perfect place to use a variable.
-
-
-~hint What's a variable? 💡
+Let's make the level changes from the last tutorial more noticable.
 
 ---
 
-A **variable** is a placeholder that you can use for a value that changes.
 
-In our program, we will **declare** a variable called **level**, which means that we'll tell the program
-that we want it to replace the word ``||variables(noclick):level||`` with whatever
-value is assigned to it.
-
-Later in our program, we can change the value of **level** and the code will use
-the newest value each time we call ``||variables(noclick):level||``.
-
-This is the block we'll use to declare the variable in our program:
-
-```block
-let level: number = null
-level = 1
-```
-
-This is the block we'll use to change the value as we go:
-
-```block
-let level: number = null
-level++
-```
-
-hint~
-
-
-
-- :align justify: From the ``||variables:Variables||`` category, click on<br/>
-**Make a Variable**<br/>
-
-- :mouse pointer: Enter the name **level** and click **Ok**.
-
-
-
-## {4. Put it in the program}
-
-**Set the variable in your program.**
-
----
-
-- :align justify: From the ``||variables: Variables||`` category, grab <br/>
-``||variables: set [level] to [0]||`` <br/>
+- :circle: From the ``||game: Game||`` category, grab <br/>
+``||game: show long text ["Congrats!..."]||`` <br/>
 and snap it to **the top** of the<br/>
+``||functions(noclick): function change_level||`` <br/>
+container that's already in the workspace.
+
+---
+
+Now the game will alert you to the level change.
+
+
+#### ~ tutorialhint
+```blocks
+function change_level () {
+    //@highlight
+    game.showLongText("Congrats! You started a fire! But...can you do it with fewer sticks?", DialogLayout.Full)
+    info.setScore(0)
+    level = level + 1
+}
+```
+
+
+
+
+
+## {4. Show the current level}
+
+Part of the thrill of this game is knowing what level you're on!
+
+Let's show the current level at the top of the screen.
+
+---
+
+
+- :tree: From the ``||scene: Scene||`` category, grab <br/>
+``||scene: assign label [join "Level" level]||`` <br/>
+and snap it to **the bottom** of the<br/>
+``||functions(noclick): function change_level||`` <br/>
+container that's already in the workspace.
+
+---
+
+Now the game will update the label each time the level changes.
+
+
+
+#### ~ tutorialhint
+```blocks
+function change_level () {
+    game.showLongText("Congrats! You started a fire! But...can you do it with fewer sticks?", DialogLayout.Full)
+    info.setScore(0)
+    level = level + 1
+    //@highlight
+    scene.addLabelTo2("Level " + level)
+}
+
+```
+
+
+
+
+## {5. Show the starting level}
+
+There's still no label during the first level!
+
+---
+
+
+- :tree: From the ``||scene: Scene||`` category, grab <br/>
+``||scene: assign label [join "Level" level]||`` <br/>
+and snap it to **the bottom** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container that's already in the workspace.
 
-- :mouse pointer: Change the value of level from **0** to **1**.
-
 ---
 
-Now the game will begin at Level 1.
+Now there will be a label as soon as the game starts.
+
 
 
 #### ~ tutorialhint
 ```blocks
-//@highlight
 let level = 1
+let kindling: Sprite = null
+game.showLongText("You are in Israel circa 100,000 B.C.", DialogLayout.Full)
+game.showLongText("The world around you is starting to freeze. Press the (B) button as quickly as possible to light a fire that will keep you warm.", DialogLayout.Full)
 scene.setBackgroundImage(sparks.background)
-let kindling = sprites.create(sparks.pile1, SpriteKind.Player)
+kindling = sprites.create(sparks.pile1, SpriteKind.Player)
 kindling.setPosition(70, 80)
+stopwatch.startTimer(stopwatch.TimerType.Tens)
+//@highlight
+scene.addLabelTo2("Level " + level)
+
 ```
 
 
 
 
-
-## {5. Replace in the game event}
-
-**Add the variable to your code.**
-
-Let's use the variable to take away a larger amount of points in each level.
-
----
-
-- :binoculars: Look for the <br/>
-``||info: change score by [-1]||`` <br/>
-block that's **already inside of** <br/>
-``||game(noclick):on game update every [1000]ms||``.
-
-- :mouse pointer: **Delete** the <br/>
-``||info: change score by [-1]||`` <br/>
-block and replace it with <br/>
-``||info: change score by [level x -1]||`` <br/>
-from the ``||info:Info||`` category<br/>
-
----
-
-_**Tip:** Having a hard time finding a block? Click the colored text in the instruction to
-pop open the category that you need._
-
-![Again and Again](/static/skillmap/sparks/pink.gif "Let's add more levels." )
-
-
-
-#### ~ tutorialhint
-```blocks
-game.onUpdateInterval(1000, function () {
-    //@highlight
-    info.changeScoreBy(level * -1)
-})
-```
 
 
 
@@ -158,28 +152,24 @@ game.onUpdateInterval(1000, function () {
 
 - :binoculars: Try your project in the game window.
 
-It should work exactly the same way as it did before...until the level goes up!
+The game should show which level you're on as you go, and each level should be harder than the last.
 
 
 
 
 
+## {7. Pile of Sticks}
 
-## {7. Going Up}
-
-The level should go up each time the player gets to 30 points.
-We'll need a function to make that happen.
+To start a fire with "fewer sticks," we're going to also need to change the **kindling** image with each level.  To do that, we'll use an array.
 
 
-~hint What's a function? 💡
+~hint What's an array? 💡
 
 ---
 
-A **function** is a set of code that you name so that you can **call** it
-over and over inside of your program without having to write the code
-again each time.
+An **array** is an ordered list of elements that
 
-Here is an example of a function **definition**:
+Here is what our array of kindling will look like:
 
 ```blocks
 let textSprite: TextSprite = null
@@ -190,19 +180,6 @@ function change_level () {
     textSprite.setText("Level " + level)
 }
 ```
-
-And here is the block we'll use to **call** our function when we want to use that code:
-
-```block
-//@hide
-function change_level () {}
-
-change_level()
-```
-
-↑ That block represents all of the
-code that we added into our function
-definition.
 
 
 hint~
@@ -390,18 +367,16 @@ add levels to your game!
 
 ```blockconfig.global
 
-let textSprite: TextSprite = null
 let firePit: Sprite = null
 
 info.changeScoreBy(level * -1)
-info.onScore(30, function () {})
 game.gameOver(true)
 let kindling = sprites.create(img`.`, SpriteKind.Player)
-kindling.setPosition(70, 80)
 kindling.startEffect(effects.fire)
-info.setScore(0)
-let level = level + 1
-textSprite.setText("Level " + level)
+info.onScore(30, function () { })
+game.showLongText("Congrats! You started a fire! But...can you do it with fewer sticks?", DialogLayout.Full)
+scene.addLabelTo2("Level " + level)
+
 ```
 
 ```template
@@ -413,10 +388,10 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     kindling.startEffect(effects.fire, 500)
 })
 info.onScore(30, function () {
-    game.setGameOverScoringType(game.ScoringType.LowScore)
-    info.setScore(stopwatch.getTimerValue(stopwatch.TimerGran.Tenths))
-    game.gameOver(true)
+    change_level()
 })
+
+let level = 1
 let kindling: Sprite = null
 game.showLongText("You are in Israel circa 100,000 B.C.", DialogLayout.Full)
 game.showLongText("The world around you is starting to freeze. Press the (B) button as quickly as possible to light a fire that will keep you warm.", DialogLayout.Full)
@@ -425,9 +400,12 @@ kindling = sprites.create(sparks.pile1, SpriteKind.Player)
 kindling.setPosition(70, 80)
 stopwatch.startTimer(stopwatch.TimerType.Tens)
 
-
+function change_level () {
+    info.setScore(0)
+    level = level + 1
+}
 game.onUpdateInterval(1000, function () {
-    info.changeScoreBy(-1)
+    info.changeScoreBy(level*-1)
 })
 
 ```
@@ -450,7 +428,6 @@ function change_level () {
         game.gameOver(true)
     }
     game.showLongText("Congrats! You started a fire! But...can you do it with fewer sticks?", DialogLayout.Full)
-    game.showLongText("Try to pass Level " + level + "!", DialogLayout.Full)
     info.setScore(0)
     level = level + 1
     textSprite.setText("Level " + level)
@@ -473,9 +450,7 @@ level = 1
 scene.setBackgroundImage(sparks.background1)
 firePit = sprites.create(sparks.pile1, SpriteKind.Player)
 firePit.setPosition(70, 80)
-textSprite = textsprite.create("Level 1")
-textSprite.setPosition(30, 10)
-textSprite.setOutline(1, 6)
+
 game.onUpdateInterval(1000, function () {
     info.changeScoreBy(level * -1)
 })
@@ -491,3 +466,34 @@ sparks=github:kiki-lee/sparks#v0.0.5
 stopwatch=github:kiki-lee/stopwatch#v0.0.5
 ```
 
+
+```customts
+
+namespace scene{
+
+    let thisTextSprite: TextSprite = null
+
+    /**
+    * Adds text to the top left of game
+    */
+    //% group="Extension"
+    //% blockId=add_label_to_2
+    //% block="assign label $myLabel || using $myColor"
+    //% myLabel.defl="Level 1"
+    //% myColor.shadow="colorindexpicker"
+    //% myColor.defl=1
+    //% inlineInputMode=inline
+    //% help=github:docs/add_label_to_2
+    export function addLabelTo2(myLabel: string, myColor?: number) {
+        if (!myColor) {myColor = 1;}
+        if (thisTextSprite) {
+            sprites.destroy(thisTextSprite)
+        }
+        thisTextSprite = textsprite.create(myLabel, 0, myColor)
+        thisTextSprite.left = 5
+        thisTextSprite.top = 5
+    }
+
+}
+
+```
