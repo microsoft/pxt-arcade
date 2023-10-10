@@ -4,12 +4,12 @@
 * infoUrl: skillmap/educator-info/class-map-info
 * backgroundurl: /static/skillmap/backgrounds/class-comp.png
 * bannerurl: /static/skillmap/class/class.gif
-* primarycolor: #ff93c4
-* secondarycolor: #fdf60c
-* tertiarycolor: #161112
-* strokecolor: #ffffff
-* highlightcolor: #ffffff
-* completednodecolor: #3b3738
+* primarycolor: #fa924a
+* secondarycolor: #833d17
+* tertiarycolor: #1d005d
+* strokecolor: #1d005d
+* highlightcolor: #f8ffcf
+* completednodecolor: #543b28
 
 ## class
 * name: Miss Kiki's Class
@@ -19,7 +19,7 @@
 * name: Trapped in the Halls
 * type: tutorial
 * description: Add a student to the halls of the school, then keep an eye on them as they move around!
-* url: /skillmap/class/class1
+* url: /test/skillmap/class/class1
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/class/class1.gif
 * next: class2
@@ -29,7 +29,7 @@
 * name: All the Assignments
 * type: tutorial
 * description: Write the code to help the student collect assignments to win the game.
-* url: /skillmap/class/class2
+* url: /test/skillmap/class/class2
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/class/class2.gif
 * next: class3
@@ -39,7 +39,7 @@
 * name: Avoid the Teacher!
 * type: tutorial
 * description: Add teachers to try to slow you down on your way out the door!
-* url: /skillmap/class/class3
+* url: /test/skillmap/class/class3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/class/class3.gif
 * next: class-finish
