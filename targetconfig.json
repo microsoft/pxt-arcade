@@ -327,21 +327,21 @@
             "description": "Use the micro:bit with an expansion board from Kittenbot",
             "imageUrl": "/static/hardware/newbit.png",
             "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
-            "variant": "hw---n4"
+            "variant": "hw---n3"
         },
         {
             "name": "micro:bit Retro Shield",
             "description": "Use the micro:bit with an expansion board from Elecfreaks",
             "imageUrl": "/static/hardware/retro-shield.jpg",
             "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
-            "variant": "hw---n4"
+            "variant": "hw---n3"
         },
         {
             "name": "micro:bit Game:Bit Shield",
             "description": "Use the micro:bit with an expansion board from iCShop",
             "imageUrl": "/static/hardware/bit-shield.png",
             "url": "https://www.icshop.com.tw/products/368112100137",
-            "variant": "hw---n4"
+            "variant": "hw---n3"
         }
     ],
     "galleries": {
