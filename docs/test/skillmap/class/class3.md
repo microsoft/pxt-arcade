@@ -255,7 +255,7 @@ info.onScore(0, function () {
 
 ## {Step 9}
 
-**🕹️ Try your finished game!**
+**🕹️ Try your game!**
 
 ---
 
@@ -272,12 +272,12 @@ Can you escape with a time less than 400?
 
 ## Finale
 
-💯 **You did great!** 💯
+📝 **Great game!** 📝
 
 ---
 
-When you're finished playing your game, click **Done** to head back to the skillmap where you
-can share your game or keep customizing it!
+When you're finished playing your game, click **Done** to head back to the skillmap where you can move
+on to try animating your character.
 
 ~hint How do I share my game?💡
 

@@ -23,7 +23,7 @@
 * tags: easy, sprites, tiles
 * imageUrl: /static/skillmap/class/class1.gif
 * next: class2
-* position: 1 -1
+* position: 0 -1
 
 ### class2
 * name: All the Assignments
@@ -33,7 +33,7 @@
 * tags: easy, tiles, events
 * imageUrl: /static/skillmap/class/class2.gif
 * next: class3
-* position: 2 -1
+* position: 1 -2
 
 ### class3
 * name: Avoid the Teacher!
@@ -43,7 +43,8 @@
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/class/class3.gif
 * next: class-finish
-* position: 3 0
+* position: 3 -2
+* edges: 4 -2
 
 
 ### class-finish
@@ -51,7 +52,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/class-cert.pdf
 * imageUrl: /static/skillmap/certificates/class-cert.png
-* position: 4 0
+* position: 4 -1
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
     * editor: [Mod this project](/)
