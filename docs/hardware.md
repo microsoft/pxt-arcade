@@ -92,7 +92,7 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "name": "micro:bit Game:Bit Shield",
         "description": "Use the micro:bit with an expansion board from iCShop",
         "imageUrl": "/static/hardware/bit-shield.png",
-        "url": "https://www.icshop.com.tw/products/368112100137"
+        "url": "https://www.icshop.com.tw/products/368112100137?locale=en"
     }
 ]
 ```
