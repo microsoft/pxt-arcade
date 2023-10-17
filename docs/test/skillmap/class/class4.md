@@ -1,19 +1,19 @@
-<!-- Level #3 of Kiki's Class Skillmap -->
+<!-- Level #4 of Kiki's Class Skillmap -->
 
-# Finish Your Homework
+# Get Animated
 ### @explicitHints true
 
 
 <!-- ***************************************************
 //           STEP ONE
 // **************************************************** -->
-## Playing to Win @showdialog
+## Getting Animated @showdialog
 
 <!-- This is the text that shows up in the instruction -->
-Don't forget to collect your assignments!
+Let's add some extra movement!
 
 <!-- This is how you add an image in markdown -->
-![A moving image showing the student collecting assignments](/static/skillmap/class/class3.gif "This is what your final game should look like.")
+![A moving image showing an animated student](/static/skillmap/class/class4.gif "This is what your final game should look like.")
 
 
 
@@ -54,20 +54,23 @@ hint~
 
 ## {Step 3}
 
-**How many are there?**
+**Up, Down, Left, and Right**
 
-We need to know how many pieces of paper there are. To get this number,
-we'll write code to have the computer count them!
+Let's animate our student as they walk through the maze. 
 
 ---
 
-- :redo: From the ``||loops:Loops||`` category, drag the <br/>
-``||loops:count assignments||``<br/>
-bundle into **the end** of the<br/>
+- :video: From the ``||characterAnimations:Character||`` category, drag the big<br/>
+``||characterAnimations:[mySprite] loop frames [ ]...||``<br/>
+block into **the end** of the<br/>
 ``||loops(noclick):on start||`` container already in the workspace.
 
-- :mouse pointer: Click on the checkered square, then select the piece of paper
-from the image grid.
+- :mouse pointer: To choose an animation for moving right, click on <br/>
+``||characterAnimations:moving||``<br/>
+and choose<br/>
+``||characterAnimations:moving right||``<br/>
+from the dropdown.
+
 
 
 #### ~ tutorialhint
@@ -79,12 +82,19 @@ tiles.placeOnRandomTile(mySprite, assets.tile`stairs`)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 stopwatch.startTimer(stopwatch.TimerType.Tens)
-//@highlight
 loops.wrap1(function () {
     for (let value of tiles.getTilesByType(assets.tile`paper`)) {
         info.changeScoreBy(1)
     }
 })
+//@highlight
+characterAnimations.loopFrames(
+mySprite,
+assets.animation`right`,
+100,
+characterAnimations.rule(Predicate.MovingRight)
+)
+
 ```
 
 
@@ -95,82 +105,129 @@ loops.wrap1(function () {
 
 ## {Step 4}
 
-Let's remove one from the count each time you collect a paper.
+Next, you can either choose an animation from the gallery, 
+or create your own by adding frames in the **Animation Editor**.
 
 ---
 
+- :mouse pointer: Click the grey square inside of <br/>
+``||characterAnimations:[mySprite] loop frames [ ]...||``<br/>
+to open the **Animation Editor**.  
 
-- :tree: From the ``||scene:Scene||`` category, drag
-``||scene:on [sprite] of kind [Player]...||``<br/>
-into **an empty area** of the workspace.
+- :mouse pointer: Select **Gallery** to choose the animation of a character walking to the right, like this one:
+ ![The image of a student facing right with a camera in the lower left corner](/static/skillmap/class/student-right.png "Choose the animation of the student walking to the right.")
 
-- :mouse pointer: Click on the checkered square,
-then select the paper from the image grid.
-
+Then click **Done**.
 
 
 #### ~ tutorialhint
 
 ```blocks
+scene.setBackgroundColor(13)
+let mySprite = sprites.create(class_img.stand, SpriteKind.Player)
+tiles.placeOnRandomTile(mySprite, assets.tile`stairs`)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+stopwatch.startTimer(stopwatch.TimerType.Tens)
+loops.wrap1(function () {
+    for (let value of tiles.getTilesByType(assets.tile`paper`)) {
+        info.changeScoreBy(1)
+    }
+})
 //@highlight
-scene.onOverlapTile(SpriteKind.Player, assets.tile`paper`, function (sprite, location) { })
+characterAnimations.loopFrames(
+mySprite,
+class_img.right,
+100,
+characterAnimations.rule(Predicate.MovingRight)
+)
+
 ```
+
 
 
 
 <!-- ***************************************************
 //                      STEP FIVE
-// **************************************************** -->
+<!-- *************************************************-->
 
 ## {Step 5}
 
-Make the paper disappear and subtract one from the paper count.
+**Try your game.**
 
 ---
 
-
-- :tree: From the ``||scene:Scene||`` category, drag<br/>
-``||scene:set [ ] at [location]||``<br/>
-into **the empty** <br/>
-``||scene(noclick): on [sprite] of kind [Player]...||``<br/>
-block already in the workspace.
-
-- :id card: From the ``||info:Info||`` category, drag<br/>
-``||info:change score by [-1]||``<br/>
-into the **end of** the <br/>
-``||scene(noclick): on [sprite] of kind [Player]...||``<br/>
-block already in the workspace.
-
-
-
-
-#### ~ tutorialhint
-
-```blocks
-
-scene.onOverlapTile(SpriteKind.Player, assets.tile`paper`, function (sprite, location) {
-    //@highlight
-    tiles.setTileAt(location, assets.tile`transparency16`)
-    //@highlight
-    info.changeScoreBy(-1)
-})
-```
+- :binoculars: Move your student through the maze. What happens when you move to the right?
+What happens when you move in any other direction?
 
 
 
 
 <!-- ***************************************************
 //                      STEP SIX
-<!-- *************************************************-->
+// **************************************************** -->
 
 ## {Step 6}
 
-**Try your game.**
+Now we can add animations for all of the other directions.
 
 ---
 
-- :binoculars: Move through the entire maze to pick up all of the assignments.
-Does the score go down each time you get one?
+
+- :video: Snap three more<br/>
+``||characterAnimations:[mySprite] loop frames [ ]...||``<br/>
+block into **the end** of the<br/>
+``||loops(noclick):on start||`` container already in the workspace.
+
+- :mouse pointer: Set the **when** actions for the blocks to <br/>
+``||characterAnimations:moving left||``<br/>
+``||characterAnimations:moving up||``<br/>
+``||characterAnimations:moving down||``<br/>
+
+
+#### ~ tutorialhint
+
+```blocks
+scene.setBackgroundColor(13)
+let mySprite = sprites.create(class_img.stand, SpriteKind.Player)
+tiles.placeOnRandomTile(mySprite, assets.tile`stairs`)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+stopwatch.startTimer(stopwatch.TimerType.Tens)
+loops.wrap1(function () {
+    for (let value of tiles.getTilesByType(assets.tile`paper`)) {
+        info.changeScoreBy(1)
+    }
+})
+characterAnimations.loopFrames(
+mySprite,
+img.right,
+100,
+characterAnimations.rule(Predicate.MovingRight)
+)
+//@highlight
+characterAnimations.loopFrames(
+mySprite,
+assets.animation`left`,
+100,
+characterAnimations.rule(Predicate.MovingLeft)
+)
+//@highlight
+characterAnimations.loopFrames(
+mySprite,
+assets.animation`up`,
+100,
+characterAnimations.rule(Predicate.MovingUp)
+)
+//@highlight
+characterAnimations.loopFrames(
+mySprite,
+assets.animation`down`,
+100,
+characterAnimations.rule(Predicate.MovingDown)
+)
+```
+
 
 
 
@@ -181,25 +238,51 @@ Does the score go down each time you get one?
 
 ## {Step 7}
 
-**Winner, winner, chicken dinner!**<br/>
- 🐥🐥🐥
-
- Let's add a way to win!
-
----
-
-- :id card: From the ``||info:Info||`` category, drag
-``||info:on score [0]||``<br/>
-into **an empty area** of the workspace.
+**Add animations to each of your new character blocks.**
 
 
 #### ~ tutorialhint
 
 ```blocks
+scene.setBackgroundColor(13)
+let mySprite = sprites.create(class_img.stand, SpriteKind.Player)
+tiles.placeOnRandomTile(mySprite, assets.tile`stairs`)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+stopwatch.startTimer(stopwatch.TimerType.Tens)
+loops.wrap1(function () {
+    for (let value of tiles.getTilesByType(assets.tile`paper`)) {
+        info.changeScoreBy(1)
+    }
+})
+characterAnimations.loopFrames(
+mySprite,
+class_img.right,
+100,
+characterAnimations.rule(Predicate.MovingRight)
+)
 //@highlight
-info.onScore(0, function () { })
+characterAnimations.loopFrames(
+mySprite,
+class_img.left,
+100,
+characterAnimations.rule(Predicate.MovingLeft)
+)
+//@highlight
+characterAnimations.loopFrames(
+mySprite,
+class_img.up,
+100,
+characterAnimations.rule(Predicate.MovingUp)
+)
+//@highlight
+characterAnimations.loopFrames(
+mySprite,
+class_img.down,
+100,
+characterAnimations.rule(Predicate.MovingDown)
+)
 ```
-
 
 
 
@@ -210,58 +293,13 @@ info.onScore(0, function () { })
 
 ## {Step 8}
 
-**Lower times are best!**
+**🕹️ Try your finished game!**
 
 ---
 
-- :id card: From the ``||info:Info||`` category, drag<br/>
-``||info:set score to [timer value tenths]||``<br/>
-into **the empty** <br/>
-``||info(noclick): on score [0]||``<br/>
-block already in the workspace.
+Watch your student walk through the maze with animations!
 
-- :circle: From the ``||game:Game||`` category, drag<br/>
-``||game:use [low score] as best score||``<br/>
-into the **end of** the <br/>
-``||info(noclick): on score [0]||``<br/>
-block already in the workspace.
-
-- :circle: From the ``||game:Game||`` category, drag<br/>
-``||game:game over <WIN>||``<br/>
-into the **end of** the <br/>
-``||info(noclick): on score [0]||``<br/>
-block already in the workspace.
-
-
-#### ~ tutorialhint
-
-```blocks
-info.onScore(0, function () {
-    //@highlight
-    info.setScore(stopwatch.getTimerValue(stopwatch.TimerGran.Tenths))
-    //@highlight
-    game.setGameOverScoringType(game.ScoringType.LowScore)
-    //@highlight
-    game.gameOver(true)
-})
-```
-
-
-
-
-<!-- ***************************************************
-//                      STEP NINE
-<!-- *************************************************-->
-
-## {Step 9}
-
-**🕹️ Try your game!**
-
----
-
-You should win as soon as you collect all of your assignments.
-
-Can you escape with a time less than 400?
+Can you escape with a time less than 390?
 
 
 
@@ -272,12 +310,12 @@ Can you escape with a time less than 400?
 
 ## Finale
 
-📝 **Great game!** 📝
+💯 **You did great!** 💯
 
 ---
 
-When you're finished playing your game, click **Done** to head back to the skillmap where you can move
-on to try animating your character.
+When you're finished playing your game, click **Done** to head back to the skillmap where you
+can share your game or keep customizing it!
 
 ~hint How do I share my game?💡
 
@@ -327,6 +365,12 @@ hint~
     info.setScore(stopwatch.getTimerValue(stopwatch.TimerGran.Tenths))
     game.setGameOverScoringType(game.ScoringType.LowScore)
 
+    characterAnimations.loopFrames(
+    mySprite,
+    class_img.left,
+    100,
+    characterAnimations.rule(Predicate.Moving)
+    )
 ```
 
 
@@ -367,12 +411,28 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`door`, function (sprite, loca
     game.over(false)
 })
 
+scene.onOverlapTile(SpriteKind.Player, assets.tile`paper`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`transparency16`)
+    info.changeScoreBy(-1)
+})
+
 scene.setBackgroundColor(13)
 let mySprite = sprites.create(class_img.stand, SpriteKind.Player)
 tiles.placeOnRandomTile(mySprite, assets.tile`stairs`)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 stopwatch.startTimer(stopwatch.TimerType.Tens)
+loops.wrap1(function () {
+    for (let value of tiles.getTilesByType(assets.tile`paper`)) {
+        info.changeScoreBy(1)
+    }
+})
+
+info.onScore(0, function () {
+    info.setScore(stopwatch.getTimerValue(stopwatch.TimerGran.Tenths))
+    game.setGameOverScoringType(game.ScoringType.LowScore)
+    game.gameOver(true)
+})
 ```
 
 
