@@ -15,6 +15,12 @@
         "videoUrl": "/static/tutorials/chase-the-pizza.mp4"
     },
     {
+        "name": "Multiplayer Tutorials",
+        "url": "/multiplayer-tutorials",
+        "imageUrl": "/static/tutorials/pizza-party/playtime.png",
+        "largeImageUrl": "/static/tutorials/pizza-party/playtime.png"
+    },
+    {
         "name": "Multiplayer Games",
         "url": "/multiplayer-games",
         "imageUrl": "/static/multiplayer/perfect-fit.png"
