@@ -1,4 +1,4 @@
-# Training Opportunities for MakeCode Educators
+# Training Opportunities for MakeCode Educators 
 
 A collection of courses meant to help educators learn to use Microsoft MakeCode
 
