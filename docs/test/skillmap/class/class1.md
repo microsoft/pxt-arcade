@@ -8,7 +8,7 @@
 
 
 
-# Miss Kiki's Class
+# Trapped in the Halls
 ### @explicitHints true
 <!-- ***************************************************
 // Use the single hash to name the tutorial, and the
@@ -99,11 +99,11 @@ switch to the **Gallery** tab to choose a student image.
 ![Toggle to Gallery](/static/skillmap/assets/gallery.png "Click the Gallery tab to choose a character")
 
 
-<!-- This section will add blocks to the answer key.-->
-<!-- tutorialhint tells the tutorial that we're adding a hint now -->
-<!-- // Include all of the blocks that students will see within -->
-<!-- // the code segment that they're working on, then -->
-<!-- // use //@highlight to highlight the instruction from this step -->
+<!-- This section will add blocks to the answer key.
+// tutorialhint tells the tutorial that we're adding a hint now 
+// Include all of the blocks that students will see within 
+// the code segment that they're working on, then 
+// use //@highlight to highlight the instruction from this step -->
 
 #### ~ tutorialhint
 

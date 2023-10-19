@@ -1,54 +1,39 @@
 # Training Opportunities for MakeCode Educators
 
-A collection of courses meant to help educators learn to use Microsoft MakeCode
+A collection of courses that provide professional learning opportunities for Microsoft MakeCode.
 
 
-
-Minecraft - https://learn.microsoft.com/en-us/training/paths/minecraft-teacher-academy/
-Arcade - https://learn.microsoft.com/en-us/training/modules/utilize-makecode-arcade-your-classroom/
-Micro:bit - https://microbit.org/teach/professional-development/
-
-
-## Course Sections
+## MakeCode Sections
 
 ```codecard
 [
     {
-        "name": "CS Intro 1",
-        "description": "A semester length computer science course for beginning coders",
-        "url":"/courses/csintro1",
-        "imageUrl": "/static/courses/csintro1.gif"
+        "name": "Arcade PL",
+        "description": "A 42 min course on MS Learn that shows you how to utilize MakeCode Arcade in your classroom",
+        "url":"https://learn.microsoft.com/en-us/training/modules/utilize-makecode-arcade-your-classroom/",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOYCd?ver=bf04&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
     }, {
-        "name": "CS Intro 2",
-        "description": "A continuation of the Intro to CS course",
-        "url":"/courses/csintro2",
-        "imageUrl": "/static/courses/csintro2.gif"
+        "name": "micro:bit PL",
+        "description": "Explore courses covering a range of topics to do with computing and the micro:bit",
+        "url":"https://microbit.org/teach/professional-development/",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWP52j?ver=a251&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
     }, {
-        "name": "CS Intro 3",
-        "description": "A quarter length transition from blocks to JavaScript",
-        "url": "/courses/csintro3",
-        "imageUrl": "/static/courses/csintro3.gif"
+        "name": "Minecraft PL",
+        "description": "This series focuses on using Minecraft Education as a teaching and learning tool to support strong pedagogical practices",
+        "url": "https://learn.microsoft.com/en-us/training/paths/minecraft-teacher-academy/",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE5fBrs?ver=79f6&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
     }
 ]
 ```
 
-## About the CS Intro Series
-
-The CS Intro Series is designed to teach new developers how to code from the ground up.
-
-In CS Intro 1, students are introduced to programming through the MakeCode Blocks editor. They can create their own games, while learning concepts that are crucial to software development: creating variables, responding to events, and using iteration to simplify and extend their programs. Throughout the course, they will learn to develop their own games through small daily tasks, as well as projects that guide them through the process of turning basic ideas into full-fledged games.
-
-In CS Intro 2, students will continue to develop the software development skills they were introduced to in the first course, with more advanced programming concepts such as functions, logical comparisons, and arrays. These new skills will allow students to create more advanced and compelling games.
-
 ### ~hint
 
-In the future CS Intro 3 and CS Intro 4 courses, students will transition the skills they have learned in a Block based environment into skills in a text based coding environment, allowing them to dig deeper into the games they make, as well as transition their skills in the @boardname@ into other environments.
+In addition to the trainings found here, Arcade and micro:bit occasionally provide live professional learning opportunities in persona and online. Follow @MSMakeCode on Twitter to learn more.
 
 ### ~
 
 ## See also
 
-[Courses Home Page](/courses),
-[CS Intro 1](/courses/csintro1),
-[CS Intro 2](/courses/csintro2),
-[CS Intro 3](/courses/csintro3)
+[Arcade Courses Home Page](https://arcade.makecode.com/courses) <br/>
+[micro:bit Courses Home Page](https://makecode.microbit.org/courses) <br/>
+[Minecraft Lessons Home Page](https://education.minecraft.net/en-us/resources/explore-lessons)
