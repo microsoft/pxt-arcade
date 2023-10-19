@@ -1,38 +1,99 @@
+<!-- See this tutorial in action at https://arcade.makecode.com/#tutorial:/tutorials/hundred -->
+
+<!-- If you found this in the github, you can copy the raw file located at
+// https://github.com/microsoft/pxt-arcade/blob/master/docs/tutorials/hundred.md 
+// and paste it into the tutorial tool
+// located at https://makecode.com/tutorial-tool then run it from the
+// Arcade editor to see your edits as you go -->
+
+
+
+
 # 100 Day Challenge
 ### @explicitHints true
+<!-- ***************************************************
+// Use the single hash to name the tutorial, and the
+// double hash to name the step. Triple hashes set
+// custom flags that change the way the tutorial works
+// https://makecode.com/writing-docs/tutorials
+// @explicitHints true cues the tutorial not to add hints
+// automatically, but to let you tell it when you want hints
+// ****************************************************-->
 
 
 
+
+<!-- ***************************************************
+//           STEP ONE
+<!-- ***************************************************
+// Step #1 is usually a modal (pop-up) that sets the scene
+// The @showdialog tag makes it pop out
+// **************************************************** -->
 ## {Intro @showdialog}
+
+
+<!-- This is the text that shows up in the instruction -->
 
 It's been 100 days!
 
 Let's celebrate by creating a project with 100 of our favorite things!
 
+<!-- This is how you add an image in markdown -->
 ![It's an alien invasion!](/static/tutorials/aliens/alien.gif "Try not to get in their way!" )
+<!-- The first part is for the screen reader. The second is the URL of the image. The last is the mouse rollover text. -->
 
 
 
+
+<!-- ***************************************************
+//                      STEP TWO
+<!-- ***************************************************
+// This step's title is inside curly braces. That hides it
+// from the viewer, because step titles are pretty huge
+// and obnoxious
+// **************************************************** -->
 ## {Step 2}
 
+<!-- This text will be bold -->
 **Ready to start coding?**
 
 We need a background for our project.
 
 
-- :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab <br/>
 
+<!-- This next part of the instruction uses a couple of different
+// formats to guide students. First, the -:tree: text
+// adds an icon to the side of the instruction that hints at the
+// type of action students will be doing (this one adds the tree icon)
+// Next, the ``||scene:Scene||`` text creates a highlighted word that
+// opens the category it points to when clicked (here, it's the Scene category.)
+// Want the formatted text to link to a different category than the color
+// sends it to by default, use a different category in parentheses
+// ``||variables(sprites):set [mySprite]||`` makes a red block that
+// goes to the blue Sprites category.
+// ``||loops(noclick):on start||`` makes the text green but doesn't
+// open any category
+// The ```block segment lets you insert a block directly
+//into the instructions.
+// --------------------------------------------------------------->
+- :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab
 ```block
 scene.setBackgroundImage(img`.`)
 ```
-
 then snap it inside the empty <br/>
 ``||loops(noclick): on start||`` <br/>
 block already in the workspace.
 
 
+
+<!----------------------------------------------------------->
+<!-- This is how you create a clue within the instruction -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
 ~hint Click here to see how 🕵🏽
 
+<!-- The dashes below make a divider line -->
+
+---
 
 - :lightbulb: The panel with the colorful category names is called the
  **toolbox**. <br/>
@@ -41,11 +102,20 @@ block already in the workspace.
 ![Look under Scene for the block you need](/static/skillmap/mole/add-bg-block.gif "Drag out the background block to fill later.")
 
 hint~
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!------------------------ End Clue --------------------------->
+<!----------------------------------------------------------->
 
 
+
+
+<!-- This section will add blocks to the answer key.
+// tutorialhint tells the tutorial that we're adding a hint now 
+// Include all of the blocks that students will see within
+// the code segment that they're working on, then 
+// use //@highlight to highlight the instruction from this step -->
 
 #### ~ tutorialhint
-
 
 ```blocks
 //@highlight
@@ -53,9 +123,16 @@ scene.setBackgroundImage(img`.`)
 ```
 
 
-
+<!-- ***************************************************
+//                      STEP THREE
+<!-- ***************************************************
+// Keep adding instructions and hints to guide students
+// toward the steps they need to take. Tutorials work best
+// when you "complete a thought" before moving on to the next thing.
+// Add a sprite, position it, get it moving, follow with the camera,
+// THEN you can move on to the maze mechanics.
+// **************************************************** -->
 ## {Step 3}
-
 
 - :paint brush: Click the empty **grey square** to open the image editor and choose a background from the **Gallery**.
 
@@ -67,8 +144,12 @@ scene.setBackgroundImage(assets.image`Planet`)
 _💡 If you don't find a background you like, you can make one of your own!_
 
 
-## {Step 4}
 
+<!-- ***************************************************
+//                      STEP FOUR
+//    ************************************************** -->
+
+## {Step 4}
 
 **Let's add movement to the scene**
 
@@ -80,7 +161,6 @@ into **the end** of the <br/>
 ``||loops(noclick):on start||`` container. <br/>
 
 
-
 #### ~ tutorialhint
 ```blocks
 scene.setBackgroundImage(assets.image`Planet`)
@@ -90,16 +170,28 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 
 
 
+<!-- ***************************************************
+//                      STEP FIVE
+<!-- ***************************************************
+// Occasionally remind students to look at what they've done
+// so they can make sure things are working. You might be
+// surprised at how often they soldier on without taking
+// time to play with their creations.
+// **************************************************** -->
 ## {Step 5}
-
 
 - :binoculars: Look at your project in the game window to see what your code has done!
 
 You should see a background that's scrolling from right to left.
 
+<!-- Notice that the game playimg steps don't contain answer keys.>
 
 
 
+
+<!-- ***************************************************
+//                      STEP SIX
+//    ************************************************** -->
 ## {Step 6}
 
 **Unleash the beasts!**
@@ -127,11 +219,16 @@ for (let index = 0; index < 100; index++) {
 ```
 
 
+<!-- ***************************************************
+//                      STEP SEVEN
+//    ************************************************** -->
 ## {Step 7}
 
 **Choose your Sprite!**
 
 ~hint What's a sprite? 💡
+
+---
 
 In Arcade, each character or image that does something is called a **SPRITE**.
 
@@ -160,12 +257,13 @@ for (let index = 0; index < 100; index++) {
 ```
 
 
-
+<!-- ***************************************************
+//                      STEP EIGHT
+<!-- **************************************************-->
 ## {Step 8}
 
-
 - :binoculars: Take a look at the game window to see your project!<br/>
-(You may need to reload your project to catch the action.)
+(You may need to click the reload button on the game console to catch the action.)
 ![Press reload to see your project run](/static/tutorials/aliens/reload.png " " )
 
 Does it look like you have a single sprite floating across the sky?
@@ -173,6 +271,9 @@ Does it look like you have a single sprite floating across the sky?
 We'll fix that over the next couple of steps.
 
 
+<!-- ***************************************************
+//                      STEP NINE
+<!-- **************************************************-->
 ## {Step 9}
 
 If we leave the sprites like this, you won't be able to see them all! Let's spread them out.
@@ -200,6 +301,9 @@ for (let index = 0; index < 100; index++) {
 
 
 
+<!-- ***************************************************
+//                      STEP TEN
+<!-- **************************************************-->
 ## {Step 10}
 
 **Add some space.**
@@ -228,6 +332,9 @@ for (let index = 0; index < 100; index++) {
 
 
 
+<!-- ***************************************************
+//                      STEP ELEVEN
+<!-- **************************************************-->
 ## {Step 11}
 
 Let's animate!
@@ -276,6 +383,9 @@ true
 })
 ```
 
+<!-- ***************************************************
+//                      STEP TWELVE
+<!-- **************************************************-->
 ## {Step 12}
 
 **🎥 Let's get animating 🎥**
@@ -316,8 +426,22 @@ true
 ```
 
 
+<!-- ***************************************************
+//                      NOTE
+<!-- ***************************************************
+// Students usually max out somewhere between 10-15 steps.
+// If you can wrap-up the tutorial in this amount of time,
+// then it makes sense to use a single tutorial for the game.
+// Otherwise, consider creating a skillmap. Directions for
+// turning tutorials into skillmaps can be found at
+// aka.ms/make-a-skillmap
+// **************************************************** -->
 
-## {Step 13}
+
+<!-- ***************************************************
+//                      FINALE
+<!-- **************************************************-->
+## {Finale}
 
 **💯 There you have it 💯**
 
@@ -328,6 +452,22 @@ Now you have a hundred things to celebrate 100 days!
 Take a final look at your project in the game window. When you're finished, click **Done**, then share it with family and friends!
 
 
+
+
+<!-- *************** End Tutorial Text Portion ******************//
+// ---------------------------------------------------------------------------------//
+// The following code sets up the images, blocks, and extensions //
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv-->
+
+
+
+
+<!-- ***************************************************
+//            BLOCKCONFIG - DEFAULT BLOCKS
+// ****************************************************
+// This is how you add default settings to blocks
+// in the toolbox
+******************************************************-->
 ```blockconfig.global
 let projectile = sprites.createProjectileFromSide(img`.`, -90, 0)
 scroller.scrollBackgroundWithSpeed(-50, 0)
@@ -345,12 +485,27 @@ true
 ```
 
 
+
+<!-- ***************************************************
+//            PACKAGE - IMPORT EXTENSIONS
+// ****************************************************
+// This is how you import extensions into your tutorial
+******************************************************-->
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
 ```
 
 
 
+<!-- ***************************************************
+// GHOST - ADD BLOCKS EVEN IF THEY'RE NOT YET IN TUTORIAL
+// ****************************************************
+// This is how you add blocks to the toolbox, even
+// if the tutorial doesn't use them
+// I've preloaded this with all of the code for our game.
+// Note that the blocks won't show up prefilled in the toolbox
+// unless you also add them to a blockconfig section.
+******************************************************-->
 ```ghost
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)
@@ -381,10 +536,19 @@ pause(2000)
 scroller.scrollBackgroundWithSpeed(0, 0)
 game.splash("Happy 100 Days!")
 
-
 ```
 
 
+<!-- ***************************************************
+//            ASSETJSON - ADD NON_EXTENSION ASSETS
+// ****************************************************
+// This imports items into 'My Assets". This is important for things
+// like music and tilemaps that don't have a gallery.
+// You get this from saving a project containing only assets
+// from the url
+// https://arcade.makecode.com/?saveTemplate=1#editor
+// and pasting the result between the ticks
+******************************************************-->
 
 ```assetjson
 {
