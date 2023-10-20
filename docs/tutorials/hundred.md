@@ -62,19 +62,26 @@ We need a background for our project.
 
 
 <!-- This next part of the instruction uses a couple of different
-// formats to guide students. First, the -:tree: text
-// adds an icon to the side of the instruction that hints at the
-// type of action students will be doing (this one adds the tree icon)
-// Next, the ``||scene:Scene||`` text creates a highlighted word that
-// opens the category it points to when clicked (here, it's the Scene category.)
+// formats to guide students. 
+// https://makecode.com/writing-docs/snippets#namespace-coloring
+//
+// The -:tree: text adds an icon to the side of the instruction that 
+// corresponds to the category for the step (this one adds the tree icon)
+//
+// Next, the ``||scene:Scene||`` text creates a highlighted "button" that
+// opens the category it points to when clicked (it's the Scene category here.)
+//
 // Want the formatted text to link to a different category than the color
 // sends it to by default, use a different category in parentheses
 // ``||variables(sprites):set [mySprite]||`` makes a red block that
 // goes to the blue Sprites category.
+//
 // ``||loops(noclick):on start||`` makes the text green but doesn't
 // open any category
+//
 // The ```block segment lets you insert a block directly
-//into the instructions.
+// into the instructions.
+// https://makecode.com/writing-docs/snippets#blocks
 // --------------------------------------------------------------->
 - :tree: Go to the ``||scene: Scene||`` category **in the toolbox** and grab
 ```block
@@ -110,10 +117,13 @@ hint~
 
 
 <!-- This section will add blocks to the answer key.
-// tutorialhint tells the tutorial that we're adding a hint now 
+// https://makecode.com/writing-docs/tutorials/basics#using-blocks
+// tutorialhint tells the tutorial that we're adding a hint now. 
 // Include all of the blocks that students will see within
-// the code segment that they're working on, then 
-// use //@highlight to highlight the instruction from this step -->
+// the code segment that they're working on. 
+//  
+// Use //@highlight to highlight the instruction from this step 
+// https://makecode.com/writing-docs/snippets#highlight -->
 
 #### ~ tutorialhint
 
@@ -453,18 +463,18 @@ Take a final look at your project in the game window. When you're finished, clic
 
 
 
-
-<!-- *************** End Tutorial Text Portion ******************//
+<!-- **************************** End Tutorial Text Portion *************************//
 // ---------------------------------------------------------------------------------//
-// The following code sets up the images, blocks, and extensions //
-// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv-->
-
+// The following code sets up the images, blocks, and extensions                   //
+// see https://makecode.com/writing-docs/tutorials/control-options#special-blocks //
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv-->
 
 
 
 <!-- ***************************************************
 //            BLOCKCONFIG - DEFAULT BLOCKS
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/basics#limitations
 // This is how you add default settings to blocks
 // in the toolbox
 ******************************************************-->
@@ -489,6 +499,7 @@ true
 <!-- ***************************************************
 //            PACKAGE - IMPORT EXTENSIONS
 // ****************************************************
+// https://makecode.com/writing-docs/snippets#package
 // This is how you import extensions into your tutorial
 ******************************************************-->
 ```package
@@ -500,6 +511,7 @@ arcade-background-scroll=github:microsoft/arcade-background-scroll
 <!-- ***************************************************
 // GHOST - ADD BLOCKS EVEN IF THEY'RE NOT YET IN TUTORIAL
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/control-options#ghost-blocks
 // This is how you add blocks to the toolbox, even
 // if the tutorial doesn't use them
 // I've preloaded this with all of the code for our game.
@@ -542,6 +554,7 @@ game.splash("Happy 100 Days!")
 <!-- ***************************************************
 //            ASSETJSON - ADD NON_EXTENSION ASSETS
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/resources#assetjson
 // This imports items into 'My Assets". This is important for things
 // like music and tilemaps that don't have a gallery.
 // You get this from saving a project containing only assets

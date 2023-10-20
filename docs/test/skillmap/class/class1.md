@@ -69,6 +69,15 @@ Sprites have properties that you can use and change — things like scale, posit
 
 Our "student" character will be a sprite, too.
 
+You create a sprite using a block like this:
+
+<!-- https://makecode.com/writing-docs/snippets#block
+// This will embed a block directly into the instructions
+-->
+```block
+let mySprite = sprites.create(class_img.stand, SpriteKind.Player)
+```
+
 hint~
 
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
@@ -77,15 +86,20 @@ hint~
 
 
 <!-- This next part of the instruction uses a couple of different
-// formats to guide students. First, the -:paper plane: text
-// adds an icon to the side of the instruction that hints at the
-// type of action students will be doing (this one adds the sprite icon)
+// formats to guide students. 
+// https://makecode.com/writing-docs/snippets#namespace-coloring
+//
+// The -:paper plane: text adds an icon to the side of the instruction 
+// that corresponds to the category used in the step (this one adds the sprite icon)
+//
 // Next, the ``||sprites:Sprites||`` text creates a highlighted word that
 // opens the category it points to when clicked (here, it's the Sprites category.)
+//
 // Want the formatted text to link to a different category than the color
 // sends it to by default, use a different category in parentheses
 // ``||variables(sprites):set [mySprite]||`` makes a red block that
 // goes to the blue Sprites category.
+//
 // ``||loops(noclick):on start||`` makes the text green but doesn't
 // open any category
 // --------------------------------------------------------------->
@@ -100,10 +114,13 @@ switch to the **Gallery** tab to choose a student image.
 
 
 <!-- This section will add blocks to the answer key.
-// tutorialhint tells the tutorial that we're adding a hint now 
-// Include all of the blocks that students will see within 
-// the code segment that they're working on, then 
-// use //@highlight to highlight the instruction from this step -->
+// https://makecode.com/writing-docs/tutorials/basics#using-blocks
+// tutorialhint tells the tutorial that we're adding a hint now. 
+// Include all of the blocks that students will see within
+// the code segment that they're working on. 
+//  
+// Use //@highlight to highlight the instruction from this step 
+// https://makecode.com/writing-docs/snippets#highlight -->
 
 #### ~ tutorialhint
 
@@ -288,10 +305,11 @@ skillmap where we'll add timers and overlap events!
 
 
 
-<!-- *************** End Tutorial Text Portion ******************//
+<!-- **************************** End Tutorial Text Portion *************************//
 // ---------------------------------------------------------------------------------//
-// The following code sets up the images, blocks, and extensions //
-// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv-->
+// The following code sets up the images, blocks, and extensions                   //
+// see https://makecode.com/writing-docs/tutorials/control-options#special-blocks //
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv-->
 
 
 
@@ -310,6 +328,7 @@ stopwatch.startTimer(stopwatch.TimerType.Tens)
 <!-- ***************************************************
 //            PACKAGE - IMPORT EXTENSIONS
 // ****************************************************
+// https://makecode.com/writing-docs/snippets#package
 // This is how you import extensions into your tutorial
 ******************************************************-->
 ```package
@@ -327,6 +346,7 @@ class_img=github:kiki-lee/class_img#v0.0.1
 <!-- ***************************************************
 //            TEMPLATE - START WITH BLOCKS
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/control-options#special-blocks
 // This is how you start with code in the workspace
 ******************************************************-->
 ```template
@@ -337,6 +357,7 @@ scene.setBackgroundColor(13)
 <!-- ***************************************************
 // GHOST - ADD BLOCKS EVEN IF THEY'RE NOT YET IN TUTORIAL
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/control-options#ghost-blocks
 // This is how you add blocks to the toolbox, even
 // if the tutorial doesn't use them
 // I've preloaded this with all of the code for our game.
@@ -364,6 +385,7 @@ stopwatch.startTimer(stopwatch.TimerType.Tens)
 <!-- ***************************************************
 //            CUSTOMTS - BEHIND THE SCENES
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/control-options#custom-code
 // This is how you add code "behind the scenes"
 // This code is hidden from the user so it's a good way
 // to hide confusing steps or add custom functions
@@ -394,6 +416,7 @@ namespace loops{
 <!-- ***************************************************
 //            ASSETJSON - ADD NON_EXTENSION ASSETS
 // ****************************************************
+// https://makecode.com/writing-docs/tutorials/resources#assetjson
 // This imports items into 'My Assets". This is important for things
 // like music and tilemaps that don't have a gallery.
 // You get this from saving a project containing only assets
