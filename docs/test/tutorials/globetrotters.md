@@ -42,7 +42,7 @@ scene.setBackgroundImage(img`.`)
 
  ___
 
-- :mouse pointer: Cick the **empty gray box*** inside the background block.
+- :mouse pointer: Cick the **empty gray box** inside the background block.
 
 - :mouse pointer: Select the **Gallery**
 ![Toggle to Gallery](/static/skillmap/assets/gallery.png "Click the Gallery tab to choose a character")
@@ -67,7 +67,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 
 **Opening Scene:**
 
-Now, it's time to create the **opening scene** of our project. 💫
+Now, it's time to create the **opening screen** of our project. 💫
 
 These are the instructions that tell the player about the game.
 
@@ -226,12 +226,12 @@ Now that our sprite has a **name**, we need to add the matching **image**.
 
 ---
 
-- :mouse pointer: Click the empty gray image box, and select **Gallery**.
+- :mouse pointer: Click the empty gray image box, then select the **Gallery**.
 
 
 - :paint brush: From the **Gallery**, choose the player you want to use. 
 
-**The image that you choose must match your variable. For example, if you called your variable Hotshot, you should choose the image of `hotshot`. **
+**The image that you choose should match your variable. For example, if you called your variable Hotshot, you should choose the image of `hotshot`. **
 
 
 _💡If you hover your cursor over the images, you can see the actual name of each player_
@@ -248,10 +248,50 @@ let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
 ```
 
 
-## {11. Pick the player image}
 
 
-🌟 Great Work! 🌟
+## {11. Position the player}
+
+**Let's add gravity.**  
+
+To keep the sprite running along the floor, set the sprite's acceleration to 300.
+
+---
+
+- :paper plane: From the ``||sprites:Sprites||`` category, drag
+```block
+let mySprite: Sprite = null
+mySprite.ay = 300
+```
+into **the end** of the <br/>
+``||loops(noclick):on start||`` container already in the workspace.
+
+
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and choose your sprite name from the dropdown menu.
+
+
+
+#### ~ tutorialhint
+
+```blocks
+scene.setBackgroundImage(globe_imgs.audience)
+game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
+scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
+let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+// @highlight
+Hotshot.ay = 300
+
+```
+
+
+
+
+## {12. Code Check}
+
+
+**🌟 Great Work! 🌟**
+
+- :binoculars: Take a look at the game window. Once you clear the message, you should see your sprite drop to the ground. 
 
 
 ** CODE CHECK:** Let's make sure your code looks like this
@@ -260,14 +300,15 @@ let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-//@highlight
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
+
 ```
 
 If not, you can fix it now!
 
 
-## {12. Pick the player image}
+## {13. Pick the player image}
 
 - :game: Open ``||controller:Controller||`` and drag
 ```block
@@ -286,6 +327,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
 //@highlight
 controller.moveSprite(Hotshot, 100, 0)
 ```
@@ -293,7 +335,7 @@ controller.moveSprite(Hotshot, 100, 0)
 
 
 
-## {13. Review your code again}
+## {14. Review your code again}
 
 **You are doing fantastic! **
 
@@ -307,6 +349,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
 controller.moveSprite(Hotshot, 100, 0)
 ```
 
@@ -314,7 +357,7 @@ If not, you can fix it now!
 
 
 
-## {14. cameraFollowSprite}
+## {15. cameraFollowSprite}
 
 Did you notice that your sprite runs off screen? We can fix that!
 
@@ -336,6 +379,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
 controller.moveSprite(Hotshot, 100, 0)
 //@highlight
 scene.cameraFollowSprite(Hotshot)
@@ -344,7 +388,7 @@ scene.cameraFollowSprite(Hotshot)
 
 
 
-## {15. Set NPC}
+## {16. Set NPC}
 
 Let's add some NPCs (non-playing characters).
 
@@ -352,7 +396,7 @@ These are the characters that will be asking the trivia questions.
 
 ---
 
-- :basketball: Open ``||globetrotters:Globetrotters||`` and drag
+- :basketball ball: Open ``||globetrotters:Globetrotters||`` and drag
 ```block
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
 ```
@@ -373,8 +417,9 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
 controller.moveSprite(Hotshot, 100, 0)
-scene.cameraFollowSprite(mySprite)
+scene.cameraFollowSprite(Hotshot)
 //@highlight
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
 //@highlight
@@ -389,7 +434,7 @@ globetrotters.setNPC(4, globetrotters.NPCnum.COACH)
 
 
 
-## {16. Animate mySprite}
+## {17. Animate mySprite}
 
 - :video: From ``||characterAnimations:Character||``, select **TWO**:
 ```block
@@ -404,7 +449,8 @@ blocks and snap them both in at **the end** of the <br/>
 ``||loops(noclick):on start||`` container already in the workspace.
 
 
-- :mouse pointer: Click ``||variables(noclick):mySprite||`` and choose your sprite name from the dropdown menu of each block.
+- :mouse pointer: Click ``||variables(noclick):mySprite||`` and choose your 
+sprite name from the dropdown menu in each block.
 
 
 - :paint brush: In the top block, click the empty box with green around it and choose the "standing" animation from the **Gallery** that belongs with your character.<br/> **(Example: If you chose Hotshot, you'll want to choose `hotshot_standing`.)**
@@ -426,6 +472,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
 controller.moveSprite(Hotshot, 100, 0)
 scene.cameraFollowSprite(mySprite)
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
@@ -442,13 +489,14 @@ Predicate.MovingRight))
 
 
 
-## {17. Review your code again}
+## {18. Review your code again}
 
 **Amazing! **
 
-- :binoculars: Take a look at your game window!<br/>
+- :binoculars: Take a look at your game window!<br/><br/>
 Does your player move back and forth
-with the arrow keys?
+with the arrow keys?<br/><br/>
+Do you see your four NPCs as you walk?
 
 ** CODE CHECK:** Let's make sure your code looks like this
 
@@ -457,6 +505,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+Hotshot.ay = 300
 controller.moveSprite(Hotshot, 100, 0)
 scene.cameraFollowSprite(mySprite)
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
@@ -471,190 +520,193 @@ Predicate.MovingRight))
 
 
 
-## {18. Press B to tossBall}
-- :paper plane: Go to ``||Controller||`` and select: <br/>
-```block
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-```
-- :paper plane: Go to ``||Globetrotters|``and select: <br/>
-```block
-globetrotters.tossBall(assets.image`ball`)
-```
-- :paper plane: Click on the **gray box**, click **Gallery**, and select the basketball.
 
+## {19. onOverlap/ Interaction with NPC}
 
-## {19. Add onCountdownEnd}
-⬇💻
+We can make the NPCs ask our player questions when they overlap!
 
-  - :paper plane: Let's add the **timer**, that will allow the game to end. It makes the game more challenging!
-- :paper plane: Go to the ``||info||`` and select the<br/>
-```block
-info.onCountdownEnd(function () {
-```
+---
 
-
-## {20. Keep adding to the onCountdownEnd}
-- :paper plane: Go to ``||Game||`` and select the<br/>
-```block
-game.showLongText("Keep practicing!", DialogLayout.Top)
-game.gameOver(false)
-```
-- :paper plane: In the **showLongText**, add the words *Keep practicing!** - :paper plane: In the **Game Over**, select the words *Lose**
-This part is to make sure that the game ends, when the countdown is over AND it says
-**Game Over.**
-
-
-## {21. Add onScore}
-Now, we need to have a way for the player to win
-This will be similar to the previous steps.
-- :paper plane: Go to ``||info||`` and get the<br/>
-```block
-info.onScore(200, function () {
-```
-- :paper plane: For the **showLongText** and **Game Over**, you can find the commands under the ``||Game||`` category.
-- :paper plane: Make sure to add the words *You could become a Harlem Globetrotter!!!**
-
-
-## {22. Keep adding to the onCountdownEnd}
-- :paper plane: Go to ``||Game||`` and select the<br/>
-```block
-🎉
-
-  game.showLongText("You could become a Harlem Globetrotter!!!", DialogLayout.Top)
-game.gameOver(true)
-```
-- :paper plane: In the **showLongText**, add the words *You could become a Harlem Globetrotter!!!!**
-- :paper plane: In the **gameOver**, select the words *Win**
-This part is to make sure that the game ends, when the player scores *200 points**.
-
-
-## {23. Add play_next_level}
-Now, we will add Level 2. When the player, gets at least three questions correct,
-player can go to Level 2!
-- :paper plane: Go to``||function|`` and select the<br/>
-```block
-function play_next_level () {
-```
-Clarification: You have to select the **Create Function** to make your own block. Rename the block: play_next_level
-
-
-## {24. Continue adding to the play_next_level}
-Now, we will commands INSIDE the function. When the player, gets at least three questions correct,
-player can go to Level 2!
-- :paper plane: Go to the ``||Globetrotters||`` extension and select the<br/>
-```block
-globetrotters.setLevel2(assets.image`tnt`)
-```
-- :paper plane: Go to the ``||Game||`` and select the<br/>
-```block
-game.showLongText("Press B to shoot the basketballs. You must get to 200 points!",
-DialogLayout.Bottom)
-```
-- :paper plane: Go to the ``||Info||`` and select the<br/>
-```block
-info.startCountdown(45)
-```
-
-  ## {25. Add points when Bucket hits basketball}
-In this section, we are making sure that the player gets points when the ball
-**overlaps** with the Bucket/Hoop. In other words, when the ball touches/bounces off the Bucket, player gets points.
-- :paper plane: Go to the ``||Sprites||`` and select the<br/>
-```block
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Bucket, function (sprite, otherSprite) {
-```
-- :paper plane: Select **Projectile** after **on sprite of kind** and change the second "Player" to **Bucket**.
-
-
-## {26. Continue- Add points when Bucket hits basketball}
-Now, we will add the score to increase by 2 when the ball hits the Bucket AND
-the ball/Sprite will be destroyed.
-- :paper plane: Go to the ``||Info||`` and select the<br/>
-```block
-info.changeScoreBy(2)
-```
-- :paper plane: Go to the ``||Sprites||`` and select the<br/>
-```block
-sprites.destroy(sprite)
-```
-
-
-## {27. onOverlap/ Interaction with NPC}
-- :paper plane: Go to the ``||Sprites||`` and get the<br/>
-```block
-sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
-```
-- :paper plane: Keep **Player** after "on sprite of kind" and change the second **Player** to **NPC**.
-
-
-## {28. Continue the onOverlap/ Interaction with NPC}
-Let's add commands for the inside of the NPC overlap.
-- :paper plane: Go to the ``||controller:Controller||`` category and select the<br/>
-```block
-
-  controller.moveSprite(mySprite, 0, 0)
-```
-- :paper plane: Press the **(+)** symbol and change `vx` to **0** and `vy` to **0**.
-
-
-## {29. NPC askQuestion}
-- :paper plane: Go to the ``||Globetrotter’s||`` extension and select the<br/>
-```block
-globetrotters.askQuestion(otherSprite)
-```
-- :paper plane: Drag **otherSprite** from the first part of your block into the **askQuestion from** command.
-
-
-## {30. moveSprite}
-- :paper plane: Go to the ``||controller:Controller||`` category and select the<br/>
-```block
-controller.moveSprite(mySprite, 100, 0)
-```
-<br/>block and put it at the end of the previous blocks. - :paper plane: Press the **(+)** symbol and change `vx`
-to **100** and `vy` to **0**.
-
-
-## {31. Review your code again}
-** CODE CHECK:** Let's make sure your code looks like this
+- :paper plane: From ``||sprites:Sprites||`` drag<br/>
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
-controller.moveSprite(mySprite, 0, 0)
-globetrotters.askQuestion(otherSprite)
-controller.moveSprite(mySprite, 100, 0)
-```
-
-
-## {32. Challenge Time: Show your Knowledge}
-**Challenge Time: Show your Knowledge**
-⬇💻
-
-  - :paper plane: For this section, use what you have learned to make
-your code look like the commands BELOW.
-For example, "get NPC number from otherSprite" is a **black command** so, find the block in the **Globetrotters** extension.
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
-controller.moveSprite(mySprite, 0, 0)
-globetrotters.askQuestion(otherSprite)
-controller.moveSprite(mySprite, 100, 0)
-if (globetrotters.NPCNumberOf(otherSprite) >= 4) {
-if (info.score() >= 30) {
-effects.confetti.startScreenEffect(500)
-play_next_level()
-} else {
-music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
-game.showLongText("TRY AGAIN! You need 31 points to get to the basketball court. YOU GOT THIS!!!",
-DialogLayout.Full)
-game.reset()
-}
-}
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    }
 })
 ```
-- :paper plane: For the **IF** command, make sure you go to the **Logic** section. *💡 It is light blue.*
+into **an empty area** of the workspace.
+
+
+_💡 This set of blocks will not click together with the rest of the blocks in your program._
+
+
+#### ~ tutorialhint
+```blocks
+//@highlight
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    }
+})
+```
+
+
+```blockconfig.local
+game.showLongText("Press B to shoot the basketballs. \\n You must get to 200 points!",
+DialogLayout.Bottom)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    }
+})
+```
+
+
+
+## {20. Set Second Level}
+
+We need to change levels if the player has reached at least 30 points after talking to four NPCs. 
+
+---
+
+- :basketball ball: From ``||globetrotters:Globetrotters||``, drag
+```block
+ globetrotters.setLevel2(img`,`)
+```
+into **the end of** the<br/>
+``||logic:if <player gets [30]> then ||``<br/>
+container that's already in the workspace. 
+
+
+- :mouse pointer: Click the empty gray square in the new block and choose a player 
+from the **Gallery** to take the freethrows. 
+
+
+**Play your game and see if you can get all of the questions right.  What happens?**
+
+
+#### ~ tutorialhint
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    //@highlight
+     globetrotters.setLevel2(globe_animations.hotshot)
+    }
+})
+```
+
+
+```blockconfig.local
+game.showLongText("Press B to shoot the basketballs. \\n You must get to 200 points!",
+DialogLayout.Bottom)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    }
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+globetrotters.tossBall(assets.image`ball`)
+})
+```
+
+
+
+
+
+## {21. Press B to tossBall}
+
+You need to toss the ball to win the final round,
+but the (B) button doesn't do anything.  Let's fix that!
+
+---
+
+- :game: From ``||controller:Controller||`` drag
+```blocks
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+globetrotters.tossBall(img`.`)
+})
+```
+out into **an empty area** of the workspace. 
+
+
+- :paint brush: Click the empty gray square and choose the **ball** from the gallery.
+
+
+_💡 This bundle should not connect to any of the code that's already in the workspace._
+
+
+#### ~ tutorialhint
+```blocks
+//@highlight
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+globetrotters.tossBall(globe_imgs.ball)
+})
+```
+
+
+```blockconfig.local
+game.showLongText("Press B to shoot the basketballs. \\n You must get to 200 points!",
+DialogLayout.Bottom)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    }
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+globetrotters.tossBall(assets.image`ball`)
+})
+```
+
+
+
+
+
+
+## {22. Review your code again}
+
+- :binoculars: **Play your finished game!**
+
+If you answer 3 out of 4 questions correctly, you should end up in the second level making freethrows. 
+
+Score 200 points to win!
+
+
+** CODE CHECK:** If your code doesn't work, check that it matches this...
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+     globetrotters.setLevel2(globe_animations.hotshot)
+    }
+})
+
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+globetrotters.tossBall(globe_imgs.ball)
+})
+```
+
+
+## {Finale}
+
+**💯 WAY TO GO 💯**
+
+---
+
+Great job on your trivia game!
+
+Take a final look at your project in the game window. 
+When you're finished playing, click **Done**, then share it with family and friends!
 
 
 
 
 
 ```blockconfig.global
+let mySprite: Sprite = null
+
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
 game.showLongText("Get a Harlem Globetrotter into the game and help them score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
@@ -665,32 +717,46 @@ assets.animation``,
 200,
 characterAnimations.rule(Predicate.NotMoving)
 )
-``` 
-
-```template
-scene.setBackgroundImage(globe_imgs.audience)
-game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
-scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-controller.moveSprite(Hotshot, 100, 0)
-scene.cameraFollowSprite(Hotshot)
-globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
-globetrotters.setNPC(2, globetrotters.NPCnum.CHEESE)
-globetrotters.setNPC(3, globetrotters.NPCnum.JET)
-globetrotters.setNPC(4, globetrotters.NPCnum.COACH)
-characterAnimations.loopFrames(Hotshot, globe_animations.hotshot_standing, 200,characterAnimations.rule
-(Predicate.NotMoving))
-characterAnimations.loopFrames(Hotshot, globe_animations.hotshot_dribble, 200,characterAnimations.rule(
-Predicate.MovingRight))
+mySprite.ay = 300
+info.startCountdown(45)
+effects.confetti.startScreenEffect(500)
 
 ```
 
 
+```customts
+tiles.setCurrentTilemap(globe_imgs.court_floor)
+game.setGameOverScoringType(game.ScoringType.None)
+
+
+info.onCountdownEnd(function () {
+    game.showLongText("Keep practicing!", DialogLayout.Top)
+    game.gameOver(false)
+})
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Bucket, function (sprite, otherSprite) {
+    info.changeScoreBy(2)
+    sprites.destroy(sprite)
+})
+info.onScore(200, function () {
+    game.showLongText("You could become a Harlem Globetrotter!!!", DialogLayout.Top)
+    game.gameOver(true)
+})
+```
+
+
+
+
 ```ghost
 
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    globetrotters.askQuestion2(sprite, otherSprite)
+    if (globetrotters.checkScore(30)) {
+    }
+})
+
+
   sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
-controller.moveSprite(mySprite, 0, 0)
-globetrotters.askQuestion(otherSprite)
+  globetrotters.askQuestion2(sprite, otherSprite)
 controller.moveSprite(mySprite, 100, 0)
 if (globetrotters.NPCNumberOf(otherSprite) >= 4) {
 if (info.score() >= 30) {
@@ -698,10 +764,14 @@ effects.confetti.startScreenEffect(500)
 play_next_level()
 } else {
 music.play(music.melodyPlayable(music.wawawawaa), music.PlaybackMode.UntilDone)
-game.showLongText("TRY AGAIN! You need 31 points to get to the basketball court. YOU GOT THIS!!!",
+game.showLongText("TRY AGAIN! You need 30 points to get to the basketball court. YOU GOT THIS!!!",
 DialogLayout.Full)
 game.reset()
 }
+if (globetrotters.check_player_passed(30)) {
+        effects.confetti.startScreenEffect(500)
+        play_next_level()
+    }
 }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -757,5 +827,6 @@ characterAnimations.rule(Predicate.MovingRight)
 arcade-background-scroll=github:microsoft/arcade-background-scroll
 globe_imgs=github:kiki-lee/globe_imgs
 globe_animations=github:kiki-lee/globe_animations
-globe_ext=github:kiki-lee/globe_ext#v0.0.8
+globe_ext=github:kiki-lee/globe_ext#v0.0.16
 ```
+
