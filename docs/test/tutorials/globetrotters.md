@@ -206,7 +206,7 @@ let mySprite = sprites.create(img`.`, SpriteKind.Player)
 - :mouse pointer: Select ``||variables(noclick):Rename variable||`` and name your
 sprite after the Harlem Globetrotter you want to select.
 
-_💡 Use the name of ONE of these players : **Torch**, **WHAM**, **TNT**, **Cheese**, **JET**, or **Hotshot**._
+_💡 Use the name of ONE of these players : **Torch**, **WHAM**, **TNT**, **Cheese**, **JET**, or **Hot Shot**._
 
 
 
@@ -216,7 +216,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 // @highlight
-let Hotshot = sprites.create(img`.`, SpriteKind.Player)
+let Hot_Shot = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 
@@ -231,7 +231,7 @@ Now that our sprite has a **name**, we need to add the matching **image**.
 
 - :paint brush: From the **Gallery**, choose the player you want to use. 
 
-**The image that you choose should match your variable. For example, if you called your variable Hotshot, you should choose the image of `hotshot`. **
+**The image that you choose should match your variable. For example, if you called your variable Hot_Shot, you should choose the image of `hot_shot`. **
 
 
 _💡If you hover your cursor over the images, you can see the actual name of each player_
@@ -244,7 +244,7 @@ scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
 // @highlight
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
 ```
 
 
@@ -277,9 +277,9 @@ into **the end** of the <br/>
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
 // @highlight
-Hotshot.ay = 300
+Hot_Shot.ay = 300
 
 ```
 
@@ -300,8 +300,8 @@ Hotshot.ay = 300
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
 
 ```
 
@@ -326,10 +326,10 @@ into **the end** of the <br/>
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
 //@highlight
-controller.moveSprite(Hotshot, 100, 0)
+controller.moveSprite(Hot_Shot, 100, 0)
 ```
 
 
@@ -348,9 +348,9 @@ Your code should look something like this:
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
-controller.moveSprite(Hotshot, 100, 0)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
+controller.moveSprite(Hot_Shot, 100, 0)
 ```
 
 If not, you can fix it now!
@@ -378,11 +378,11 @@ into **the end** of the <br/>
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
-controller.moveSprite(Hotshot, 100, 0)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
+controller.moveSprite(Hot_Shot, 100, 0)
 //@highlight
-scene.cameraFollowSprite(Hotshot)
+scene.cameraFollowSprite(Hot_Shot)
 ```
 
 
@@ -416,10 +416,10 @@ _💡 Try not to have any of your NPCs be the same as your main sprite.  To chan
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
-controller.moveSprite(Hotshot, 100, 0)
-scene.cameraFollowSprite(Hotshot)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
+controller.moveSprite(Hot_Shot, 100, 0)
+scene.cameraFollowSprite(Hot_Shot)
 //@highlight
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
 //@highlight
@@ -453,11 +453,11 @@ blocks and snap them both in at **the end** of the <br/>
 sprite name from the dropdown menu in each block.
 
 
-- :paint brush: In the top block, click the empty box with green around it and choose the "standing" animation from the **Gallery** that belongs with your character.<br/> **(Example: If you chose Hotshot, you'll want to choose `hotshot_standing`.)**
+- :paint brush: In the top block, click the empty box with green around it and choose the "standing" animation from the **Gallery** that belongs with your character.<br/> **(Example: If you chose Hot_Shot, you'll want to choose `hot_shot_standing`.)**
 
 
 - :paint brush: In the bottom block, click the empty box with green around it and choose the "dribble" animation from the **Gallery** that belongs with your character.<br/> 
-**(Example: If you chose Hotshot, you'll want to choose `hotshot_dribble`.)**
+**(Example: If you chose Hot_Shot, you'll want to choose `hot_shot_dribble`.)**
 
 - :mouse pointer: In the bottom block, click the ``||characterAnimations:not moving||`` option and change it to ``||characterAnimations:moving right||``.
 
@@ -471,19 +471,19 @@ _💡If you hover your cursor over the image, you can see the name of the player
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
-controller.moveSprite(Hotshot, 100, 0)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
+controller.moveSprite(Hot_Shot, 100, 0)
 scene.cameraFollowSprite(mySprite)
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
 globetrotters.setNPC(2, globetrotters.NPCnum.CHEESE)
 globetrotters.setNPC(3, globetrotters.NPCnum.JET)
 globetrotters.setNPC(4, globetrotters.NPCnum.COACH)
 //@highlight
-characterAnimations.loopFrames(mySprite,globe_animations.hotshot_standing,200,characterAnimations.rule
+characterAnimations.loopFrames(mySprite,globe_animations.hot_shot_standing,200,characterAnimations.rule
 (Predicate.NotMoving))
 //@highlight
-characterAnimations.loopFrames(mySprite,globe_animations.hotshot_dribble,200,characterAnimations.rule(
+characterAnimations.loopFrames(mySprite,globe_animations.hot_shot_dribble,200,characterAnimations.rule(
 Predicate.MovingRight))
 ```
 
@@ -504,17 +504,17 @@ Do you see your four NPCs as you walk?
 scene.setBackgroundImage(globe_imgs.audience)
 game.showLongText("Get a Harlem Globetrotter into the game and help them to score. \\n Press A to begin.", DialogLayout.Full)
 scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections)
-let Hotshot = sprites.create(globe_animations.hotshot, SpriteKind.Player)
-Hotshot.ay = 300
-controller.moveSprite(Hotshot, 100, 0)
+let Hot_Shot = sprites.create(globe_animations.hot_shot, SpriteKind.Player)
+Hot_Shot.ay = 300
+controller.moveSprite(Hot_Shot, 100, 0)
 scene.cameraFollowSprite(mySprite)
 globetrotters.setNPC(1, globetrotters.NPCnum.WHAM)
 globetrotters.setNPC(2, globetrotters.NPCnum.CHEESE)
 globetrotters.setNPC(3, globetrotters.NPCnum.JET)
 globetrotters.setNPC(4, globetrotters.NPCnum.COACH)
-characterAnimations.loopFrames(mySprite,globe_animations.hotshot_standing,200,characterAnimations.rule
+characterAnimations.loopFrames(mySprite,globe_animations.hot_shot_standing,200,characterAnimations.rule
 (Predicate.NotMoving))
-characterAnimations.loopFrames(mySprite,globe_animations.hotshot_dribble,200,characterAnimations.rule(
+characterAnimations.loopFrames(mySprite,globe_animations.hot_shot_dribble,200,characterAnimations.rule(
 Predicate.MovingRight))
 ```
 
@@ -572,7 +572,7 @@ We need to change levels if the player has reached at least 30 points after talk
 
 - :basketball ball: From ``||globetrotters:Globetrotters||``, drag
 ```block
- globetrotters.setLevel2(img`,`)
+ globetrotters.setLevel2(img`.`)
 ```
 into **the end of** the<br/>
 ``||logic:if <player gets [30]> then ||``<br/>
@@ -592,7 +592,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSpri
     globetrotters.askQuestion2(sprite, otherSprite)
     if (globetrotters.checkScore(30)) {
     //@highlight
-     globetrotters.setLevel2(globe_animations.hotshot)
+     globetrotters.setLevel2(globe_animations.hot_shot)
     }
 })
 ```
@@ -679,7 +679,7 @@ Score 200 points to win!
 sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
     globetrotters.askQuestion2(sprite, otherSprite)
     if (globetrotters.checkScore(30)) {
-     globetrotters.setLevel2(globe_animations.hotshot)
+     globetrotters.setLevel2(globe_animations.hot_shot)
     }
 })
 
@@ -826,7 +826,7 @@ characterAnimations.rule(Predicate.MovingRight)
 ```package
 arcade-background-scroll=github:microsoft/arcade-background-scroll
 globe_imgs=github:kiki-lee/globe_imgs
-globe_animations=github:kiki-lee/globe_animations
-globe_ext=github:kiki-lee/globe_ext#v0.0.16
+globe_animations=github:kiki-lee/globe_animations#v0.0.3
+globe_ext=github:kiki-lee/globe_ext#v0.0.17
 ```
 
