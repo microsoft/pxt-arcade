@@ -272,9 +272,6 @@ Don't touch any buttons or keys...you should lose the game after five seconds.
 
 Click the (A) button as fast as you can.  Is the game any harder to win?
 
-💡 _Don't worry if your game is still too easy. In the next tutorial, we'll add more
-levels, which will make the game much harder!_
-
 
 
 
@@ -318,7 +315,7 @@ info.onScore(30, function () { })
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         info.changeScoreBy(1)
-        kindling.startEffect(effects.fire, 50)
+        kindling.startEffect(effects.fire, 500)
 })
 
 let kindling: Sprite = null

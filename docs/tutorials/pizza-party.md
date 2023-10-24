@@ -203,8 +203,8 @@ Now, when other players join, more sprites will appear in the game window.
 
 ```blocks
 //@highlight
-mp.onControllerEvent(ControllerEvent.Connected, function (player2) {
-    pizza.setPlayersWith(characters, mp.getPlayerProperty(player2, mp.PlayerProperty.Number))
+mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
+    pizza.setPlayersWith(characters, mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number))
 })
 ```
 
@@ -900,6 +900,16 @@ namespace pizza {
                 mp.moveWithButtons(mp.getPlayerByIndex(index))
             }
         }
+    }
+
+    //% blockId=bump_sprite
+    //% block="$thisSprite bump $thatSprite"
+    //% thisSprite.shadow=variables_get
+    //% thisSprite.defl=sprite
+    //% thatSprite.shadow=variables_get
+    //% thatSprite.defl=otherSprite
+    export function bumpSprite(thisSprite: Sprite, thatSprite: Sprite) {
+        thatSprite.setPosition((thisSprite.x + 80) % 160, thisSprite.y)
     }
 
 }

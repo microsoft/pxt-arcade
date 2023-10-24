@@ -316,7 +316,7 @@ You should lose when 🔥 gets to -5.
 
 
 
-## {6. Play!}
+## {16. Play!}
 
 **Play your finished game!**
 
@@ -325,14 +325,14 @@ What is your fastest time?
 
 ---
 
-![Add a pile of kindling](/static/skillmap/sparks/kindling.gif "Let's add a kindling sprite")
+![Add a pile of kindling](/static/skillmap/sparks/play-win.gif "Let's add a kindling sprite")
 
 
 
 
 
 
-## {7. Finale}
+## {17. Finale}
 
 **🔥 Way to Go 🔥 **
 
@@ -342,6 +342,8 @@ You made an Arcade game!
 
 
 When you're ready, click **Done** to finish this tutorial and share what you made.
+
+
 
 ```blockconfig.global
     sparksjr.changeScoreOverride(1)

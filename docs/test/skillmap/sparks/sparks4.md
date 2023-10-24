@@ -84,7 +84,7 @@ hint~
 
 ## {4. Put it in the program}
 
-Add the variable to your program.
+**Set the variable in your program.**
 
 ---
 
@@ -110,17 +110,263 @@ let kindling = sprites.create(sparks.pile1, SpriteKind.Player)
 kindling.setPosition(70, 80)
 ```
 
-```blockconfig.local
-let level = 1
+
+
+
+
+## {5. Replace in the game event}
+
+**Add the variable to your code.**
+
+Let's use the variable to take away a larger amount of points in each level.
+
+---
+
+- :binoculars: Look for the <br/>
+``||info: change score by [-1]||`` <br/>
+block that's **already inside of** <br/>
+``||game(noclick):on game update every [1000]ms||``.
+
+- :mouse pointer: **Delete** the <br/>
+``||info: change score by [-1]||`` <br/>
+block and replace it with <br/>
+``||info: change score by [level x -1]||`` <br/>
+from the ``||info:Info||`` category<br/>
+
+---
+
+_**Tip:** Having a hard time finding a block? Click the colored text in the instruction to
+pop open the category that you need._
+
+![Again and Again](/static/skillmap/sparks/pink.gif "Let's add more levels." )
+
+
+
+#### ~ tutorialhint
+```blocks
+game.onUpdateInterval(1000, function () {
+    //@highlight
+    info.changeScoreBy(level * -1)
+})
+```
+
+
+
+
+## {6. Check Your Game!}
+
+
+- :binoculars: Try your project in the game window.
+
+It should work exactly the same way as it did before...until the level goes up!
+
+
+
+
+
+
+## {7. Going Up}
+
+The level should go up each time the player gets to 30 points.
+We'll need a function to make that happen.
+
+
+~hint What's a function? 💡
+
+---
+
+A **function** is a set of code that you name so that you can **call** it
+over and over inside of your program without having to write the code
+again each time.
+
+Here is an example of a function **definition**:
+
+```blocks
+let textSprite: TextSprite = null
+let firePit: Sprite = null
+function change_level () {
+    info.setScore(0)
+    let level = level + 1
+    textSprite.setText("Level " + level)
+}
+```
+
+And here is the block we'll use to **call** our function when we want to use that code:
+
+```block
+//@hide
+function change_level () {}
+
+change_level()
+```
+
+↑ That block represents all of the
+code that we added into our function
+definition.
+
+
+hint~
+
+- :chevron down: Click **Advanced** in the toolbox to reveal
+the ``||functions:Functions||`` category.
+
+- :function: Click on ``||functions:Functions||``, then click <br/>
+**Make a Function**.
+
+- :mouse pointer: Give your function the name **change_level** and click "Done".
+
+
+
+
+
+## {8. What's your function}
+
+Let's add the code to add one to the level inside the function.
+
+---
+
+- :align justify: Open ``||variables: Variables||`` and drag <br/>
+``||variables:set [level] to [0]||`` <br/>
+into the ``||functions(on click):function [change_level]||`` container. <br/>
+
+- :calculator: From ``||math:Math||``, drag <br/>
+``||math:[0] + [0]||`` in to **replace** the **0** in the <br/>
+``||variables:set [level] to [0]||`` block.
+
+
+
+#### ~ tutorialhint
+```blocks
+function change_level () {
+    level = 0 + 0
+}
+```
+
+
+
+
+## {9. Another one}
+
+Add one to level...
+
+---
+
+- :align justify: Open ``||variables: Variables||`` and drag <br/>
+``||variables:level||`` in to replace the first **0** inside of <br/>
+``||variables:set [level] to [0 + 0]||``.
+
+- :mouse pointer: Find <br/>
+``||variables:set [level] to [level + 0]||`` <br/>
+and change the last **0** to a **1**.
+
+
+
+#### ~ tutorialhint
+```blocks
+function change_level () {
+    level = level + 1
+}
 ```
 
 
 
 
 
-## {9. Finale}
+## {10. Another one}
 
-**👨🏽‍🚒 You're FIRE 👨🏽‍🚒**
+If you play your game right now, you'll see nothing has changed, because you're not
+using the
+
+
+```block
+//@hide
+function change_level () {}
+
+change_level()
+```
+
+block anywhere yet.  Let's fix that.
+
+---
+
+- :mouse pointer: Delete everything inside of <br/>
+``||info(no click):on score [30]||`` <br/>
+**without** deleting the container itself.
+
+
+- :function: From ``||functions:Functions||``, drag <br/>
+``||functions:call change_level||`` into <br/>
+``||info(no click):on score [30]||``. <br/>
+
+
+#### ~ tutorialhint
+
+
+```blocks
+//@hide
+function change_level () {}
+
+info.onScore(30, function () {
+    change_level()
+})
+```
+
+
+
+## {11. Check Your Game!}
+
+
+- :binoculars: Try your game now.
+
+When you get to 30, things should start to get harder, but that's all you'll see.
+After that, the game will keep going on forever. We'll change that in the next step.
+
+
+
+
+
+## {12. Another one}
+
+Resetting the score inside your function will allow you to trigger change_level
+again the next time you reach 30.
+
+---
+
+- :id card: From ``||info:Info||``, drag <br/>
+``||info:set score to [0]||`` <br/>
+into the **top of** the <br/>
+``||function: function [change_level]||`` function.
+
+
+#### ~ tutorialhint
+
+```blocks
+//@hide
+function change_level () {}
+
+info.onScore(30, function () {
+    info.setScore(0)
+    change_level()
+})
+```
+
+
+
+
+## {13. Play Your Game!}
+
+
+- :binoculars: Try your game again.
+
+This time when you play, your score will start over every time you reach 30 and
+the game will get harder each time.
+
+
+
+
+## {14. Finale}
+
+**🪨 Your game ROCKS!! 🪨**
 
 What a great game you've got there!
 
@@ -143,12 +389,19 @@ add levels to your game!
 
 
 ```blockconfig.global
+
+let textSprite: TextSprite = null
+let firePit: Sprite = null
+
+info.changeScoreBy(level * -1)
 info.onScore(30, function () {})
 game.gameOver(true)
 let kindling = sprites.create(img`.`, SpriteKind.Player)
 kindling.setPosition(70, 80)
 kindling.startEffect(effects.fire)
-info.onScore(30, function () { })
+info.setScore(0)
+let level = level + 1
+textSprite.setText("Level " + level)
 ```
 
 ```template
@@ -157,7 +410,7 @@ info.onScore(-5, function () {
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
-    kindling.startEffect(effects.fire, 25)
+    kindling.startEffect(effects.fire, 500)
 })
 info.onScore(30, function () {
     game.setGameOverScoringType(game.ScoringType.LowScore)
@@ -188,9 +441,9 @@ info.onScore(-5, function () {
     game.gameOver(false)
 })
 info.onScore(30, function () {
-    bumpLevels()
+    change_level()
 })
-function bumpLevels () {
+function change_level () {
     if (level == 5) {
         info.setScore(game.timeSinceStartSec())
         game.setGameOverMessage(true, "Great job, Fire Maker!")

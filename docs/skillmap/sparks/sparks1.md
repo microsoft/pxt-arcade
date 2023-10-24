@@ -296,7 +296,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {8. Play!}
+## {14. Play!}
 
 - :binoculars: Take a look at what you've made!
 
@@ -305,7 +305,7 @@ How many points can you get in twenty seconds?
 
 
 
-## {9. Finale}
+## {15. Finale}
 
 **🪵 Way to Go 🪵**
 
