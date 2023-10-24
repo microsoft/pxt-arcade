@@ -4,10 +4,10 @@
 * infoUrl: skillmap/educator-info/spark-map-info
 * bannerUrl: /static/skillmap/sparks/campfire.gif
 * backgroundurl: /static/skillmap/backgrounds/sparks-comp.png
-* primarycolor: #ffffff
+* primarycolor: #bebebe
 * secondarycolor: #ffb200
-* tertiarycolor: #93fffb
-* completednodecolor: #267a85
+* tertiarycolor: #0e1b36
+* completednodecolor: #5f282a
 * highlightcolor: #ffff00
 * allowcodecarryover: true
 * tags: prehistoric, educational, clicker
