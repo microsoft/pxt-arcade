@@ -372,34 +372,40 @@
     "kiosk": {
         "games": [
             {
-                "id": "_Y8VUmcHYsdsy",
-                "name": "GalgaMulti",
-                "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "32777-59846-95775-11055",
-                "name": "Secure the river!",
-                "description": "This is a cooperative game where both players share lives. You must defeat skeletons, collect hearts and avoid the ducks and fishes.",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "39705-92830-48491-01106",
-                "name": "Strawberry Slam",
-                "description": "Two strawberries battle it out in the kitchen to be the Shortcake Star!",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "13412-17300-80986-88577",
-                "name": "TicTacTwo!",
-                "description": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet.",
+                "id": "05854-11479-55466-38029",
+                "name": "MakeCode Racers",
+                "description": "Top-down racing game for 1-4 players. Press Left and Right to steer, A to use picked up item.",
                 "highScoreMode": "None"
             },
             {
-                "id": "69052-09321-39220-20264",
-                "name": "Blocky Boss Battle",
-                "description": "A test of reflexes! Avoid the blue stingers while sending fireballs at the boss!",
-                "highScoreMode": "SingleAscending"
+                "id": "58561-90881-11172-52149",
+                "name": "BUG PRESIDENT: THE GAME",
+                "description": "Lead your constituents to find food and carry it back to the nest as fast as you can!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "_RRKcWkHouVgW",
+                "name": "Joey's Pool Sharks",
+                "description": "Challenge your friend to a game of pool! Be sure to check out the (very silly) alternate rule sets! (requires two players)",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "13636-04540-17933-74746",
+                "name": "Best Nest",
+                "description": "Try to clean your side of the nest! Clear the leaves and collect acorns while messing up your opponent's side! (requires 2 players)",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "26520-78737-32440-70281",
+                "name": "NINJA",
+                "description": "Try to slice all the logs as quickly and evenly as you can! Press Left/Right to change direction and A to slice!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "45517-18731-77014-82186",
+                "name": "Auto and Ollie",
+                "description": "Control both cats and use their unique strengths to solve puzzles! Press A to swap between characters. Up is jump and B triggers Ollie's tackle attack. (1-2 players)",
+                "highScoreMode": "None"
             },
             {
                 "id": "07573-63879-62644-28924",
@@ -414,10 +420,22 @@
                 "highScoreMode": "None"
             },
             {
-                "id": "19410-44885-95661-59850",
-                "name": "Save the Forest",
-                "description": "Fly your plane over the forest spraying water to put out the fires!",
+                "id": "_Y8VUmcHYsdsy",
+                "name": "GalgaMulti",
+                "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "13412-17300-80986-88577",
+                "name": "TicTacTwo!",
+                "description": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet.",
                 "highScoreMode": "None"
+            },
+            {
+                "id": "69052-09321-39220-20264",
+                "name": "Blocky Boss Battle",
+                "description": "A test of reflexes! Avoid the blue stingers while sending fireballs at the boss!",
+                "highScoreMode": "SingleAscending"
             },
             {
                 "id": "96744-30917-11312-43375",
@@ -465,12 +483,6 @@
                 "id": "86980-49044-76449-93183",
                 "name": "Stack the Goats",
                 "description": "Build a tower of goats!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "02651-16710-47798-38995",
-                "name": "Cave Explorer",
-                "description": "Explore multiple levels of caves deep within the earth, but watch out for those cave caterpillars!",
                 "highScoreMode": "None"
             },
             {
