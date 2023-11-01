@@ -85,7 +85,7 @@ https://arcade.makecode.com/kiosk#clean=1
 
 ![No games uploaded yet](/static/hardware/kiosk/no-uploaded-games.png)
 
-Note that if you have only uploaded one game to the kiosk, you will see three copies of that game. This behavior just allows the carousel interface to scroll to the left or right. Once you upload 3 or more different games, you should not see any duplicate games in the list.
+Note that if you have only uploaded one game to the kiosk, you will see multiple copies of that game. This behavior just allows the carousel interface to scroll to the left or right. Once you upload 3 or more different games, you should not see any duplicate games in the list.
 
 ![Just one uploaded game](/static/hardware/kiosk/single-uploaded-game.png)
 
