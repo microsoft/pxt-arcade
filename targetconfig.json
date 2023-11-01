@@ -372,21 +372,33 @@
     "kiosk": {
         "games": [
             {
-                "id": "05854-11479-55466-38029",
-                "name": "MakeCode Racers",
-                "description": "Top-down racing game for 1-4 players. Press Left and Right to steer, A to use picked up item.",
+                "id": "25572-25731-72869-29244",
+                "name": "Space Destroyer",
+                "description": "Use the lasers on your spaceship to shoot falling asteroids!",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "84490-94874-87123-99597",
+                "name": "Bunny Hop!",
+                "description": "Help your bunny hop over obstacles as they run through the forest",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "60307-91678-81892-80686",
+                "name": "Pigeon: Deliverance",
+                "description": "Fly through the dangerous rooftops and ledges of New York City delivering messages!",
                 "highScoreMode": "None"
             },
             {
-                "id": "58561-90881-11172-52149",
-                "name": "BUG PRESIDENT: THE GAME",
-                "description": "Lead your constituents to find food and carry it back to the nest as fast as you can!",
+                "id": "16040-59904-05312-47571",
+                "name": "NINJA",
+                "description": "Try to slice all the logs as quickly and evenly as you can! Press Left/Right to change direction and A to slice!",
                 "highScoreMode": "None"
             },
             {
-                "id": "_RRKcWkHouVgW",
-                "name": "Joey's Pool Sharks",
-                "description": "Challenge your friend to a game of pool! Be sure to check out the (very silly) alternate rule sets! (requires two players)",
+                "id": "48013-80771-51585-68674",
+                "name": "Falling Duck",
+                "description": "Fly through the sky avoiding obstacles",
                 "highScoreMode": "None"
             },
             {
@@ -396,9 +408,21 @@
                 "highScoreMode": "None"
             },
             {
-                "id": "26520-78737-32440-70281",
-                "name": "NINJA",
-                "description": "Try to slice all the logs as quickly and evenly as you can! Press Left/Right to change direction and A to slice!",
+                "id": "57893-82458-42686-66689",
+                "name": "Joey's Pool Sharks",
+                "description": "Challenge your friend to a game of pool! Be sure to check out the (very silly) alternate rule sets! (requires two players)",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "58561-90881-11172-52149",
+                "name": "BUG PRESIDENT: THE GAME",
+                "description": "Lead your constituents to find food and carry it back to the nest as fast as you can!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "57061-57423-51986-84463",
+                "name": "MakeCode Racers",
+                "description": "Top-down racing game for 1-4 players. Press Left and Right to steer, A to use picked up item.",
                 "highScoreMode": "None"
             },
             {
@@ -414,14 +438,8 @@
                 "highScoreMode": "None"
             },
             {
-                "id": "24832-19682-40817-54648",
-                "name": "Pigeon: Deliverance",
-                "description": "Fly through the dangerous rooftops and ledges of New York City delivering messages!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "_Y8VUmcHYsdsy",
-                "name": "GalgaMulti",
+                "id": "95233-64905-79615-48176",
+                "name": "Galga",
                 "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
                 "highScoreMode": "SingleAscending"
             },
@@ -438,27 +456,9 @@
                 "highScoreMode": "SingleAscending"
             },
             {
-                "id": "96744-30917-11312-43375",
-                "name": "Falling Duck",
-                "description": "Fly through the sky avoiding obstacles",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "50225-04801-24334-14778",
-                "name": "Space Destroyer",
-                "description": "Use the lasers on your spaceship to shoot falling asteroids!",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "27640-75402-47530-91242",
+                "id": "03442-50539-08276-81984",
                 "name": "Hot Air Balloon",
                 "description": "Navigate your hot air balloon through the mountains avoiding birds and spaceships",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "91201-59331-72477-53174",
-                "name": "Bunny Hop!",
-                "description": "Help your bunny hop over obstacles as they run through the forest",
                 "highScoreMode": "SingleAscending"
             },
             {
@@ -480,15 +480,15 @@
                 "highScoreMode": "None"
             },
             {
-                "id": "86980-49044-76449-93183",
+                "id": "31127-78143-64325-24445",
                 "name": "Stack the Goats",
                 "description": "Build a tower of goats!",
                 "highScoreMode": "None"
             },
             {
-                "id": "99776-77448-58171-80239",
-                "name": "Kickoff!",
-                "description": "Time to practice your football throwing game! Coordinate plays and avoid defenders",
+                "id": "28053-50874-97254-10357",
+                "name": "Dino Zoo",
+                "description": "Use your knowledge of the cycle of life to stack plants and dinosaurs!",
                 "highScoreMode": "None"
             }
         ]
