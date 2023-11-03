@@ -62,7 +62,7 @@ This will append your game to your Arcade machine’s kiosk game list.
 
 Alternately, you can add a game to the kiosk through a shared game link. On the MakeCode Arcade machine, use your phone or other computer’s camera to scan the QR code in the Add your Game screen for your kiosk (or browse to http://arcade.makecode.com/kiosk#add-game:<KIOSK_ID> where the KIOSK ID is the 6-digit alphanumeric code of your kiosk) and enter in the **Share Link** for the game you would like to add to the kiosk.
 
-Please note that for security purposes, the Kiosk ID is only valid for 10 minutes, after which time you will need to generate a new Kiosk ID. There is no limit to how many games can be added to a kiosk.
+Please note that for security purposes, the Kiosk ID is only valid for 30 minutes, after which time you will need to generate a new Kiosk ID. There is no limit to how many games can be added to a kiosk.
 
 ## Deleting a game from the Kiosk
 
