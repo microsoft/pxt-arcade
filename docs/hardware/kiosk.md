@@ -1,6 +1,6 @@
 # MakeCode Arcade Kiosk
 
-The Kiosk mode in MakeCode Arcade is meant to be used in conjunction with a MakeCode Arcade machine, a [DIY MakeCode Arcade cabinet]( https://arcade.makecode.com/hardware/raspberry-pi/wooden-cabinet), or a simple computer screen with a game controller interface – i.e. [Shoebox Controller](https://arcade.makecode.com/hardware/shoebox-controller).
+The Kiosk mode in MakeCode Arcade is meant to be used in conjunction with a MakeCode Arcade machine, a [DIY MakeCode Arcade cabinet]( https://arcade.makecode.com/hardware/raspberry-pi/wooden-cabinet), or a simple computer screen with a game controller interface – i.e. [Shoebox Controller](https://arcade.makecode.com/hardware/shoebox-controller). You can also use the [MakeCode Arcade Kiosk](https://www.xbox.com/games/store/makecode-arcade-kiosk/9p3rgvvtvb1s) app in the Xbox Store to upload and play Arcade games on the big screen with a game controller.
 
 ![Makecode Arcade consoles](/static/hardware/kiosk/makecode-arcade-machines.jpg)
 
