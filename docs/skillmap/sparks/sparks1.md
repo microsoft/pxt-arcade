@@ -103,6 +103,8 @@ Let's add a **SPRITE** to our game that looks like kindling.
 
 ~hint What's a sprite? 💡
 
+---
+
 In Arcade, each character or image that does something is called a **SPRITE**.
 
 Sprites have properties that you can use and change — things like scale, position, and lifespan are all properties of sprites.
