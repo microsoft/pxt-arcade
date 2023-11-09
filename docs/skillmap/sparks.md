@@ -6,7 +6,7 @@
 * backgroundurl: /static/skillmap/backgrounds/sparks-comp.png
 * primarycolor: #bebebe
 * secondarycolor: #ffb200
-* tertiarycolor: #0e1b36
+* tertiarycolor: #0d1a36
 * completednodecolor: #5f282a
 * highlightcolor: #ffff00
 * allowcodecarryover: true

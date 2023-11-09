@@ -6,7 +6,7 @@
 * bannerurl: /static/skillmap/shark/shark4a.gif
 * primarycolor: #ff93c4
 * secondarycolor: #87f2ff
-* tertiarycolor: #5c406c
+* tertiarycolor: #001538
 * strokecolor: #5c406c
 * highlightcolor: #fff609
 * completednodecolor: #473c4d

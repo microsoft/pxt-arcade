@@ -6,7 +6,7 @@
 * backgroundurl: /static/skillmap/backgrounds/galaxy-comp1.png
 * primarycolor: #ffa000
 * secondarycolor: #ff07d9
-* tertiarycolor: #ffffff
+* tertiarycolor: #001122
 * highlightcolor: #ffffff
 * completednodecolor: #31125d
 * tags: space, projectiles
