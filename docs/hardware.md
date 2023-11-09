@@ -28,6 +28,13 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---stm32f401"
     },
     {
+        "name": "MRT Game Maker Kit",
+        "description": " Sleek hand-held game device with a hard case and a USB-C port.",
+        "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
+        "url": " https://www.myrobottime.co.kr/gamemakerkit",
+        "variant": "hw---stm32f401"
+    },
+    {
         "name": "Adafruit PyBadge",
         "description": "It's a badge, it's an arcade, it's a PyBadge",
         "imageUrl": "/static/hardware/pybadge.jpg",
