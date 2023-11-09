@@ -18,11 +18,13 @@ before the time runs out!
 
 ## {Step 2}
 
-**Start with a background color...**
+**Set the background color**
 
 ---
 
-- :tree: Open the ``||scene:Scene||`` toolbox drawer and drag <br/>
+- :tree: Open the <br/>
+``||scene:Scene||``<br/>
+toolbox drawer and drag <br/>
 ``||scene:set background color [ ]||`` <br/>
 into **the empty** ``||loops(noclick):on start||`` container already in your workspace. 
 
@@ -58,7 +60,16 @@ scene.setBackgroundColor(13)
 
 ## {Step 3}
 
-Time to add a player **sprite**.
+Add a player **sprite**.
+
+---
+
+- :paper plane: Open the ``||sprites:Sprites||`` drawer and drag <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+into **the end of** the  ``||loops(noclick):on start||`` block already in your workspace.
+
+---
+
 
 ~hint What's a sprite? 💡
 
@@ -73,13 +84,6 @@ Our player will be a sprite, too.
 
 hint~
 
----
-
-- :paper plane: Open the ``||sprites:Sprites||`` drawer and drag <br/>
-``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
-into **the end of** the  ``||loops(noclick):on start||`` block already in your workspace.
-
----
 
 ~hint Show me 🔍
 
@@ -103,7 +107,7 @@ mySprite = sprites.create(img`.`, SpriteKind.Player)
 block to open the **Sprite Editor**. 
 
 
-- :mouse pointer: Click **Done** when you are finished.
+- :mouse pointer: Click **Done** when you are finished drawing.
 
 ~hint Show me 🔍
 
@@ -279,7 +283,7 @@ to open the **Sprite Editor**.
 
 ~hint Show me 🔍
 
-![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.gif)
+![Image gallery](/static/tutorials/chase-the-pizza/gallery.gif)
 
 hint~
 
@@ -425,7 +429,7 @@ hint~
 ---
 
 - :paper plane: Open ``||sprites:Sprites||``, and drag <br/>
-``||sprites:set [pizza] position to||``<br/> 
+``||sprites:set [pizza] position to...||``<br/> 
 into the **end of the** <br/>
 ``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
 container already in the workspace.
@@ -448,14 +452,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 
-## {Step 17}
+## {Step 13}
 
 **Let’s start a countdown each time the sprites overlap.**
 
 ---
 
 - :id card: From ``||info:Info||``, drag <br/>
-``||info:start countdown [5] (s)||`` <br/> 
+``||info:start countdown [3] (s)||`` <br/> 
 into the **end of the** <br/>
 ``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
 container already in the workspace.
@@ -472,7 +476,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 	info.changeScoreBy(1)
     pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
     // @highlight
-    info.startCountdown(5)
+    info.startCountdown(3)
 })
 ```
 
@@ -539,8 +543,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
     pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
-    // @highlight
-    info.startCountdown(10)
+    info.startCountdown(3)
 })
 ```
 
@@ -552,7 +555,7 @@ scene.setBackgroundColor(13)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})
 randint(0, scene.screenWidth())
 pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
-info.startCountdown(5)
+info.startCountdown(3)
 
 ```
 

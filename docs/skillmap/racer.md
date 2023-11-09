@@ -7,7 +7,7 @@
 
 * primarycolor: #fa8033
 * secondarycolor: #fdf60c
-* tertiarycolor: #000000
+* tertiarycolor: #020311
 * strokecolor: #ffffff
 * highlightcolor: #ffffff
 * completednodecolor: #504c52
