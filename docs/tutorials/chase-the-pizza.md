@@ -1,4 +1,6 @@
 # Chase the Pizza
+### @explicitHints true
+
 
 ### ~button /#tutorial:/tutorials/chase-the-pizza
 
@@ -6,248 +8,509 @@ Try this tutorial!
 
 ### ~
 
-## {Introduction @unplugged}
+## Introduction @showdialog
 
-![Game animation](/static/tutorials/chase-the-pizza.gif)
+![Game animation](/static/tutorials/chase-the-pizza/chasing.gif)
 
-In this tutorial you will create a game with 2 sprites, a ``||sprites:Player||`` sprite and a ``||sprites:Food||`` sprite. The goal of the game is to eat as much pizza as you can before the time runs out! Each time your player catches the pizza, you gain points and the countdown is restarted.
+Create a game where the goal is to eat as much pizza as you can 
+before the time runs out! 
 
-## {Step 1}
-
-Open the ``||scene:Scene||`` Toolbox drawer and drag the ``||scene:set background color||`` block into the ``||loops:on start||`` block on your Workspace. Click **Next** to go to the next step in the Tutorial.
-
-```blocks
-// @highlight
-scene.setBackgroundColor(0)
-```
 
 ## {Step 2}
 
-In the ``||scene:set background color||`` block, click on the grey color oval to open the color palette and select a background color. To see what this looks like in your game, look at the Game Simulator window.
+**Set the background color**
 
-![Choose background color](/static/tutorials/chase-the-pizza/background-color.jpg)
+---
+
+- :tree: Open the <br/>
+``||scene:Scene||``<br/>
+toolbox drawer and drag <br/>
+``||scene:set background color [ ]||`` <br/>
+into **the empty** ``||loops(noclick):on start||`` container already in your workspace. 
+
+~hint What does that mean? 🤷🏽
+
+---
+
+When giving instructions, we'll highlight some text to give you a better idea of what you are looking for.
+
+For example, when we suggest the <br/>
+``||scene:set background color to [ ]||``<br/>
+block, we are pointing you toward <br/>
+
+```block
+scene.setBackgroundColor(13)
+```
+
+hint~
+
+💡 _Feel free to choose your own color if you don't like the swatch in the block._ 
+
+
+---
+
+- :mouse pointer: Click the button that says **Next** to go to the 
+next step of the tutorial.
+
+
+#### ~ tutorialhint
+```blocks
+// @highlight
+scene.setBackgroundColor(13)
+```
+
 
 ## {Step 3}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables(sprites):set mySprite||`` into the ``||loops:on start||`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
+Add a player **sprite**.
 
+---
+
+- :paper plane: Open the ``||sprites:Sprites||`` drawer and drag <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+into **the end of** the  ``||loops(noclick):on start||`` block already in your workspace.
+
+---
+
+
+~hint What's a sprite? 💡
+
+---
+
+In Arcade, each character or image that does something is called a **SPRITE**.
+
+Sprites have properties that you can use and change — 
+things like scale, position, and lifespan are all properties of sprites.
+
+Our player will be a sprite, too.
+
+hint~
+
+
+~hint Show me 🔍
+
+![Add a sprite block](/static/tutorials/chase-the-pizza/mySprite.gif)
+
+hint~
+
+
+#### ~ tutorialhint
 ```blocks
 let mySprite: Sprite = null
-scene.setBackgroundColor(7)
+scene.setBackgroundColor(13)
 // @highlight
-mySprite = sprites.create(img`
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
+mySprite = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 ## {Step 4}
 
-Draw your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables(sprites):set mySprite||`` block to open the Sprite Editor. Use the color palette and design tools to draw an image on the canvas. Click **Done** when you are finished.
+- :mouse pointer: Draw your sprite by clicking on the empty grey square in the <br/> 
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
+block to open the **Sprite Editor**. 
 
-![Image editor](/static/tutorials/chase-the-pizza/image-editor.gif)
+
+- :mouse pointer: Click **Done** when you are finished drawing.
+
+~hint Show me 🔍
+
+![Image editor](/static/tutorials/chase-the-pizza/draw.gif)
+
+hint~
+
+
+
+#### ~ tutorialhint
+```blocks
+let mySprite: Sprite = null
+scene.setBackgroundColor(13)
+// @highlight
+mySprite = sprites.create(img`
+. . . . . 5 5 5 5 5 5 5 . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 
+. 5 5 5 5 f f 5 5 5 f f 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 f f f f f f f f f 5 5 5 
+. 5 5 5 5 f b b b b b f 5 5 5 5 
+. . 5 5 5 5 f b b b f 5 5 5 5 . 
+. . 5 5 5 5 5 f f f 5 5 5 5 5 . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . . . . 5 5 5 5 5 5 5 . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+```
+
 
 ## {Step 5}
 
-Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables(sprites):set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
+**Make the sprite move**
 
+---
+
+- :game: Open ``||controller:Controller||`` and drag<br/> 
+``||controller:move [mySprite] with buttons||``<br/>
+into **the end of** the <br/>
+``||loops(noclick):on start||`` block already in your workspace.
+
+Now you can move your sprite around the screen using the arrow buttons on the game pad or your keyboard. 
+
+
+~hint Show me 🔍
+
+![Add the move block](/static/tutorials/chase-the-pizza/move.gif)
+
+hint~
+
+
+#### ~ tutorialhint
 ```blocks
 let mySprite: Sprite = null
-scene.setBackgroundColor(7)
+scene.setBackgroundColor(13)
 mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . .
-. . . 5 5 5 5 5 5 5 5 5 5 . . .
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 .
-. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 .
-. 5 5 5 5 f f f f f f 5 5 5 5 .
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-. . . 5 5 5 5 5 5 5 5 5 5 . . .
-. . . . . 5 5 5 5 5 5 . . . . .
+. . . . . 5 5 5 5 5 5 5 . . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. 5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 
+. 5 5 5 5 f f 5 5 5 f f 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 f f f f f f f f f 5 5 5 
+. 5 5 5 5 f b b b b b f 5 5 5 5 
+. . 5 5 5 5 f b b b f 5 5 5 5 . 
+. . 5 5 5 5 5 f f f 5 5 5 5 5 . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . . . . 5 5 5 5 5 5 5 . . . . 
+. . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
 // @highlight
 controller.moveSprite(mySprite)
 ```
+
+
+
 
 ## {Step 6}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag another ``||variables(sprites):set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **pizza** sprite in our game.
 
-```blocks
-let mySprite: Sprite = null
-let mySprite2: Sprite = null
-scene.setBackgroundColor(7)
-mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . .
-. . . 5 5 5 5 5 5 5 5 5 5 . . .
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 .
-. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 .
-. 5 5 5 5 f f f f f f 5 5 5 5 .
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-. . . 5 5 5 5 5 5 5 5 5 5 . . .
-. . . . . 5 5 5 5 5 5 . . . . .
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-// @highlight
-mySprite2 = sprites.create(img`
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`, SpriteKind.Player)
-```
+- :binoculars: Test your project in the game window!
+
+You should be able to move your sprite with the joypad or arrow keys on your keyboard.
+
+
+![Look for the game window in the lower right](/static/tutorials/chase-the-pizza/game.png)
+
+
+
+
+
+
 
 ## {Step 7}
 
-In the ``||variables(sprites):set mySprite2||`` block, click on ``||variables(noclick):mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``pizza`` as the new sprite name and click **Ok**.
+**Add some pizza**
 
-![Rename mySprite2](/static/tutorials/chase-the-pizza/rename-mysprite2.gif)
+---
+
+- :paper plane: Open ``||sprites:Sprites||`` and drag<br/> 
+``||variables(sprites):set [pizza] to sprite [ ] of kind [Player]||``<br/> 
+into **the end of** the <br/>
+``||loops(noclick):on start||`` block already in your workspace.
+
+
+- :mouse pointer: Click **Player** in<br/>
+``||variables(noclick):set [pizza] to sprite [ ] of kind [Player]||``<br/> 
+and choose  **Food** instead. 
+
+---
+
+~hint Show me 🔍
+
+![Change the pizza to food](/static/tutorials/chase-the-pizza/food.gif)
+
+hint~
+
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
+```
+
+
+#### ~ tutorialhint
+```blocks
+let mySprite: Sprite = null
+let pizza: Sprite = null
+scene.setBackgroundColor(13)
+mySprite = sprites.create(img`
+. . . . 5 5 5 5 5 5 5 . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 . 
+5 5 5 5 f f 5 5 5 f f 5 5 5 5 . 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+5 5 5 f f f f f f f f f 5 5 5 . 
+5 5 5 5 f b b b b b f 5 5 5 5 . 
+5 5 5 5 5 f b b b f 5 5 5 5 5 . 
+. 5 5 5 5 5 f f f 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . 5 5 5 5 5 5 5 . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+// @highlight
+pizza = sprites.create(img`.`, SpriteKind.Food)
+```
+
 
 ## {Step 8}
 
-In the ``||variables(noclick):set pizza||`` block, click on the ``||sprites:Player||`` kind to open the menu of different Sprite kinds. Select ``||sprites:Food||`` as your ``||variables(noclick):pizza||`` sprite kind.
 
-![Set sprite kind](/static/tutorials/chase-the-pizza/sprite-kind.jpg)
+- :mouse pointer: Choose your pizza by clicking the empty grey square inside <br/> 
+``||variables(noclick):set [pizza] to sprite [ ] of kind [Food]||`` <br/>
+to open the **Sprite Editor**. 
+
+- :mouse pointer: Switch to the **Gallery** tab at the top. 
+![Select the gallery](/static/skillmap/assets/gallery.png)
+
+
+- :mouse pointer: Choose your pizza, then click **Done**.
+
+~hint Show me 🔍
+
+![Image gallery](/static/tutorials/chase-the-pizza/gallery.gif)
+
+hint~
+
+
+💡 _Feel free to draw your own pizza if you prefer!_
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
+```
+
+
+#### ~ tutorialhint
+```blocks
+let pizza: Sprite = null
+let mySprite: Sprite = null
+scene.setBackgroundColor(13)
+mySprite = sprites.create(img`
+. . . . 5 5 5 5 5 5 5 . . . . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 . 
+5 5 5 5 f f 5 5 5 f f 5 5 5 5 . 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+5 5 5 f f f f f f f f f 5 5 5 . 
+5 5 5 5 f b b b b b f 5 5 5 5 . 
+5 5 5 5 5 f b b b f 5 5 5 5 5 . 
+. 5 5 5 5 5 f f f 5 5 5 5 5 . . 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . . 5 5 5 5 5 5 5 . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Player)
+controller.moveSprite(mySprite)
+pizza = sprites.create(img`
+. . . . . . b b b b . . . . . .
+. . . . . . b 4 4 4 b . . . . .
+. . . . . . b b 4 4 4 b . . . .
+. . . . . b 4 b b b 4 4 b . . .
+. . . . b d 5 5 5 4 b 4 4 b . .
+. . . . b 3 2 3 5 5 4 e 4 4 b .
+. . . b d 2 2 2 5 7 5 4 e 4 4 e
+. . . b 5 3 2 3 5 5 5 5 e e e e
+. . b d 7 5 5 5 3 2 3 5 5 e e e
+. . b 5 5 5 5 5 2 2 2 5 5 d e e
+. b 3 2 3 5 7 5 3 2 3 5 d d e 4
+. b 2 2 2 5 5 5 5 5 5 d d e 4 .
+b d 3 2 d 5 5 5 d d d 4 4 . . .
+b 5 5 5 5 d d 4 4 4 4 . . . . .
+4 d d d 4 4 4 . . . . . . . . .
+4 4 4 4 . . . . . . . . . . . .
+`, SpriteKind.Food)
+```
+
+
 
 ## {Step 9}
 
-Click on the grey box for ``||variables(noclick):set pizza||`` and then select the **Gallery** view. Scroll to find the image of a small pizza (or any other image you like!) and select it to load into the image editor.
+**Make something happen when the sprites overlap!**
 
-![Image gallery](/static/tutorials/chase-the-pizza/image-gallery.gif)
+---
+
+- :paper plane: Open ``||sprites:Sprites||`` and drag the<br/>
+``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Food]||``<br/>
+container into **an empty area** of the workspace.
+
+
+🤷🏽‍♀️ _Need help? Click the lightbulb in the circle below to see what blocks you need in this step._
+
+
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
+```
+
+
+#### ~ tutorialhint
+```blocks
+// @highlight
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+
+})
+```
+
+
 
 ## {Step 10}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:on sprite overlaps otherSprite||`` block onto your Workspace (you can place this anywhere).
+**Add a point when the sprites overlap**
 
+---
+
+- :id card: Open ``||info:Info||`` and drag<br/> 
+``||info:change score by [1]||``<br/> 
+into **the empty** <br/>
+``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
+container already in the workspace.
+
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
+```
+
+#### ~ tutorialhint
 ```blocks
-// @highlight
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    // @highlight
+	info.changeScoreBy(1)
 })
 ```
+
+
+
+
 
 ## {Step 11}
 
-In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second ``||sprites:Player||`` kind after ``||variables(noclick):otherSprite||`` to open the menu. Select ``||sprites:Food||`` as its kind.
 
-![Overlap sprite kind](/static/tutorials/chase-the-pizza/overlap-kind-sprite.png)
+- :binoculars: Check your game!
+
+Notice that you get WAAAYYYYY too many points when your player 
+sprite overlaps the pizza?  
+
+We'll fix that in the next step.
+
+
+
 
 ## {Step 12}
 
-When our ``||sprites:Player||`` overlaps with the ``||variables(noclick):pizza||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
+**Teleport the pizza to a random location each time the sprites overlap.**
 
+~hint What is random? 🤷🏽‍♀️
+
+---
+
+A "random" number is a value that you can't predict ahead of time. 
+
+In Arcade, we use this block:
+
+```block
+randint(0, scene.screenWidth())
+```
+
+to ask for a random number between **0** and the **width of the screen**.
+
+hint~
+
+---
+
+- :paper plane: Open ``||sprites:Sprites||``, and drag <br/>
+``||sprites:set [pizza] position to...||``<br/> 
+into the **end of the** <br/>
+``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
+container already in the workspace.
+
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
+```
+
+#### ~ tutorialhint
 ```blocks
+let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    // @highlight
 	info.changeScoreBy(1)
+    // @highlight
+    pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
 })
 ```
+
+
+
 
 ## {Step 13}
 
-Let’s set the position for ``||variables(noclick):pizza||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
+**Let’s start a countdown each time the sprites overlap.**
 
+---
+
+- :id card: From ``||info:Info||``, drag <br/>
+``||info:start countdown [3] (s)||`` <br/> 
+into the **end of the** <br/>
+``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
+container already in the workspace.
+
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
+```
+
+#### ~ tutorialhint
 ```blocks
-let mySprite: Sprite = null
+let pizza: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
+    pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
     // @highlight
-    mySprite.setPosition(0, 0)
+    info.startCountdown(3)
 })
 ```
 
-## {Step 14}
 
-In the ``||sprites:set mySprite position||`` block, click on the ``||variables(noclick):mySprite||`` variable to open the menu, and select your ``||variables(noclick):pizza||`` sprite.
+## {Finale}
 
-![Change mySprite to pizza](/static/tutorials/chase-the-pizza/sprite-position-rename.png)
+**🎉 Great job! 🎉**
 
-## {Step 15}
+You've made a **Chase the Pizza** game.
 
-Open the ``||math:Math||`` Toolbox drawer and drag two ``||math:pick random||`` blocks onto the Workspace. Drop one into the ``x`` coordinate of the ``||sprites:set pizza position||`` block, and the other into the ``y`` coordinate replacing the ``0`` values.
+Try playing your game. How many points can you get before time runs out?
 
-```blocks
-let pizza: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-    pizza.setPosition(randint(0, 10), randint(0, 10))
-})
+When you're finished playing, click **Done** to share your game with family and friends!
+
+
+
+```blockconfig.local
+let pizza = sprites.create(img`.`, SpriteKind.Player)
 ```
 
-## {Step 16}
-
-The Arcade game screen is `160` pixels wide, and `120` pixels high. In the first ``||math:pick random||`` block in the `x` coordinate of the ``||sprites:set pizza position||`` block, change the maximum value from ``10`` to **160**. In the second ``||math:pick random||`` block in the ``y`` coordinate, change the maximum value from ``10`` to **120**.
-
-```blocks
-let pizza: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	info.changeScoreBy(1)
-    pizza.setPosition(randint(0, 160), randint(0, 120))
-})
-```
-
-## {Step 17}
-
-Let’s restart our countdown each time. Open the ``||info:Info||`` Toolbox drawer and drag a ``||info:start countdown||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
-
-```blocks
-let pizza: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	info.changeScoreBy(1)
-    pizza.setPosition(randint(0, 160), randint(0, 120))
-    // @highlight
-    info.startCountdown(10)
-})
-```
-## {Complete}
-
-Congratulations, you have completed your game! Use the Game Simulator to play by moving your ``||sprites:Player||`` around the screen to try and eat as much pizza as possible before the time runs out. What’s your high score?
-
+#### ~ tutorialhint
 ```blocks
 let pizza: Sprite = null
 let mySprite: Sprite = null
-scene.setBackgroundColor(7)
+scene.setBackgroundColor(13)
 mySprite = sprites.create(img`
 . . . . . 5 5 5 5 5 5 . . . . .
 . . . 5 5 5 5 5 5 5 5 5 5 . . .
@@ -288,8 +551,23 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
 	info.changeScoreBy(1)
-    pizza.setPosition(randint(0, 160), randint(0, 120))
-    // @highlight
-    info.startCountdown(10)
+    pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
+    info.startCountdown(3)
 })
+```
+
+
+```blockconfig.global
+let pizza: Sprite = null
+
+scene.setBackgroundColor(13)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})
+randint(0, scene.screenWidth())
+pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
+info.startCountdown(3)
+
+```
+
+```package
+chase-the-pizza=github:kiki-lee/chase-the-pizza
 ```
