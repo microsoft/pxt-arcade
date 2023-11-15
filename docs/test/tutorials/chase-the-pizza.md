@@ -44,6 +44,8 @@ scene.setBackgroundColor(13)
 
 hint~
 
+💡 _Feel free to choose your own color if you don't like the swatch in the block._ 
+
 
 ---
 
@@ -154,7 +156,7 @@ mySprite = sprites.create(img`
 into **the end of** the <br/>
 ``||loops(noclick):on start||`` block already in your workspace.
 
-Now you can move your sprite around the screen using the arrow keys. 
+Now you can move your sprite around the screen using the arrow buttons on the game pad or your keyboard. 
 
 
 ~hint Show me 🔍
@@ -198,7 +200,7 @@ controller.moveSprite(mySprite)
 
 - :binoculars: Test your project in the game window!
 
-You should be able to move your sprite with the arrow keys.
+You should be able to move your sprite with the joypad or arrow keys on your keyboard.
 
 
 ![Look for the game window in the lower right](/static/tutorials/chase-the-pizza/game.png)
@@ -271,7 +273,7 @@ pizza = sprites.create(img`.`, SpriteKind.Food)
 ## {Step 8}
 
 
-- :mouse pointer: Draw your sprite by clicking the empty grey square inside <br/> 
+- :mouse pointer: Choose your pizza by clicking the empty grey square inside <br/> 
 ``||variables(noclick):set [pizza] to sprite [ ] of kind [Food]||`` <br/>
 to open the **Sprite Editor**. 
 
@@ -286,6 +288,9 @@ to open the **Sprite Editor**.
 ![Image gallery](/static/tutorials/chase-the-pizza/gallery.gif)
 
 hint~
+
+
+💡 _Feel free to draw your own pizza if you prefer!_
 
 ```blockconfig.local
 let pizza = sprites.create(img`.`, SpriteKind.Player)
@@ -347,6 +352,10 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 - :paper plane: Open ``||sprites:Sprites||`` and drag the<br/>
 ``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Food]||``<br/>
 container into **an empty area** of the workspace.
+
+
+🤷🏽‍♀️ _Need help? Click the lightbulb in the circle below to see what blocks you need in this step._
+
 
 
 ```blockconfig.local
@@ -422,7 +431,7 @@ In Arcade, we use this block:
 randint(0, scene.screenWidth())
 ```
 
-to ask for a random number that between **1** and the **width of the screen**.
+to ask for a random number between **0** and the **width of the screen**.
 
 hint~
 
