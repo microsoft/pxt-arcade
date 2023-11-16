@@ -9,12 +9,12 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
     {
         "name": "Sparks Flying",
         "description": "Create a game that challenges you to light a fire to keep yourself warm, but be careful! It's not as easy as it sounds.",
-        "url": "aka.ms/prehistoric",
+        "url": "/#tutorial:/tutorials/sparks",
         "imageUrl": "/static/hour-of-code/2023/sparks.gif"
     }, {
         "name": "Sparks Flying (Jr)",
         "description": "This simplified version of Sparks Flying allows students as young as kindergarten to experience the joy of coding their own game in MakeCode Arcade.",
-        "url": "aka.ms/sparky",
+        "url": "/#tutorial:/tutorials/sparks-jr",
         "imageUrl": "/static/hour-of-code/2023/jr.png"
     }
 ]
