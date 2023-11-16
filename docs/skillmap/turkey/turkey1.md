@@ -20,7 +20,19 @@ Click "Ok" to get started.
 
 **Where's the turkey??**
 
+---
+
 Let's create a turkey sprite and get it moving before we do anything else.
+
+
+- :paper plane: From the ``||sprites:Sprites||`` category,
+grab <br/>
+```block
+let bigTurkey = sprites.create(img`.`, SpriteKind.Player)
+```
+<br/>and snap it inside and at **the end** of the ``||loops(noclick):on start||``
+container already in the workspace.
+
 
 ~hint What's a sprite? 💡
 
@@ -34,14 +46,6 @@ Our turkey will be a sprite, too.
 
 hint~
 
-- :paper plane: From the ``||sprites:Sprites||`` category,
-grab <br/>
-```block
-let bigTurkey = sprites.create(img`.`, SpriteKind.Player)
-```
-<br/>and snap it inside and at **the end** of the ``||loops(noclick):on start||`` container.
-
-
 
 #### ~ tutorialhint
 ```blocks
@@ -53,8 +57,11 @@ let bigTurkey = sprites.create(img`.`, SpriteKind.Player)
 
 ## {3. We need a Turkey}
 
+Choose the big turkey...
 
-- :paint brush: To choose the image of the big turkey, click the empty grey box,
+---
+
+- :paint brush: Click the empty grey box,
 then switch to **My Assets** and click the turkey named **player**.
 
 ![Pick player from My Assets](/static/skillmap/turkey/pick-player.gif "Toggle to My Assets and choose player")
@@ -94,11 +101,17 @@ controller.moveSprite(bigTurkey, 100, 0)
 ```
 
 
-## Try It
+## {5. Try It}
 
-**Check the Game Window**
 
-The turkey should move left when you click the left arrow and move right with the right arrow.
+- :binoculars: Test your project in the game window!
+
+You should be able to move your sprite with the joypad or arrow keys on your keyboard.
+
+![Look for the game window in the lower right](/static/skillmap/turkey/game.png)
+Í
+
+
 
 
 ## {6. Add gravity}
@@ -106,6 +119,17 @@ The turkey should move left when you click the left arrow and move right with th
 **To make the game playable, it needs gravity.**
 
 For that, we'll add acceleration.
+
+---
+
+- :paper plane:  From the ``||sprites:Sprites||`` category, grab
+```block
+let bigTurkey: Sprite = null
+bigTurkey.ay = 500
+```
+and snap it inside at **the end** of the
+``||loops(noclick):on start||`` container.
+
 
 ~hint What is acceleration?💡
 
@@ -116,16 +140,6 @@ Acceleration controls how speed changes in a direction.
 We need to play with the turkey's speed in the vertical (up & down) direction.
 
 hint~
-
-- :paper plane:  From the ``||sprites:Sprites||`` category, grab <br/>
-
-```block
-let bigTurkey: Sprite = null
-bigTurkey.ay = 500
-```
-
-<br/>and snap it inside at **the end** of the
-``||loops(noclick):on start||`` container.
 
 
 #### ~ tutorialhint
@@ -144,7 +158,7 @@ bigTurkey.ay = 500
 
 ---
 
-- :tree:  To keep the turkey in sight go to ``||scene:Scene||`` and drag<br/>
+- :tree:  To keep the turkey in sight, go to ``||scene:Scene||`` and drag<br/>
 ```block
 scene.cameraFollowSprite(bigTurkey)
 ```
@@ -164,10 +178,14 @@ scene.cameraFollowSprite(bigTurkey)
 ```
 
 
-## Look Again
+## {8. Look Again}
 
-🕹️ 🕹️ 🕹️
-**Look at your game to make sure you can see the turkey land on a platform.**
+
+- :binoculars: Check your project in the game window!
+
+Your turkey should land on a platform,
+then you should be able to move it with the joypad or arrow keys on your keyboard.
+
 
 
 
@@ -179,13 +197,11 @@ Let's move it to a special tile on the ground.
 
 ---
 
-- :tree: From ``||scene:Scene||``, drag <br/>
-
+- :tree: From ``||scene:Scene||``, drag
 ```block
 tiles.placeOnRandomTile(bigTurkey, assets.tile`transparency16`)
 ```
-
-<br/>into **the end** of the
+into **the end** of the
 ``||loops(noclick):on start||`` container.
 
 
@@ -261,18 +277,39 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Play your game!
+## {12. Play your game!}
+
+
+- :binoculars: Test your game!
 
 Give your game a try using the arrow keys and A button (or space bar.)
 
-Can you get your turkey to the top?
+Can you get your turkey to the top of the screen?
 
 
 
-## Finale
+## {Finale}
 
 When you're finished playing your game, click **Done**
-to return to the main skillmap and continue to find out how to rescue your turkey friends from their cages!
+to return to the main skillmap.
+
+Continue to the next level to find out how to rescue your turkey friends 
+from their cages!
+
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right 
+corner for the share button.
+
+![Share your card](/static/skillmap/turkey/share.gif )
+
+hint~
+
 
 
 

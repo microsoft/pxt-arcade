@@ -13,14 +13,28 @@ We need a way to trigger a win!
 
 ## {2. Try It!}
 
-**First, play what you have in the game window.**
-🕹️ 🕹️ 🕹️
+**Look at the game window.**
 
----
+- :binoculars: Look at your project in the game window to see what we're starting with.
 
 You should be able to move your player left and right with the arrows,
 and jump with the (A) button.
-You should also be getting points with each turkey released from its cage.
+
+You should also be getting points with each turkey released from a cage. And little turkeys
+should follow you as you move around.
+
+
+~hint My game doesn't work ⚠️
+
+---
+
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
+
+hint~
+
+
 
 
 
@@ -31,13 +45,12 @@ You should also be getting points with each turkey released from its cage.
 ---
 
 - :tree: From ``||scene:Scene||``, drag
-
 ```blocks
 scene.onOverlapTile(SpriteKind.Player,assets.tile`transparency16`, function (sprite, location) {
 })
 ```
-
 into **an empty area** of the workspace.
+
 
 - :paint brush: This time, change the checkerboard tile to the solid purple tile.
 ![Pick the purple tile](/static/skillmap/turkey/purple-tile.png "Select the tile at the end.")
@@ -55,11 +68,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile16, function (spri
 
 
 
-- :store: From ``||carnival:Carnival||``, snap<br/>
+- :ticket: From ``||carnival:Carnival||``, snap
 ```block
     carnival.onGameOverExpanded(carnival.WinTypes.Timed)
 ```
-<br/>into the new <br/>
+into the new <br/>
 ``||scene(noclick):on [sprite] of kind [Player] overlaps [ ] at [location]||``
 <br/> container that you just added to the workspace.
 
@@ -75,7 +88,7 @@ carnival.onGameOverExpanded(carnival.WinTypes.Timed)
 
 ## {4. Play Your Game!}
 
-**Play your game!**
+- :binoculars: Play your game!
 
 You should win the game as soon as your turkey makes it to the purple tiles at the top.
 
@@ -91,7 +104,7 @@ How long does it take you to collect all of the turkeys and get out?
 ---
 
 
-- :store: From ``||carnival:Carnival||``, snap
+- :ticket: From ``||carnival:Carnival||``, snap
 ```block
 carnival.startTimer()
 ```
@@ -118,20 +131,33 @@ carnival.startTimer()
 
 ## {6. Time's Up!}
 
-
-**Play your game again and see if you can beat your best time!**
-
+- :binoculars: Play your game again and see if you can beat your best time!
 
 
 
-## Finale
+
+## {Finale}
 
 **🦃 Well done! 🦃**
+
+---
 
 When you're finished playing, click **Done** to return to the main skillmap where
 you can claim your badge and share your game with friends!
 
 
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right 
+corner for the share button.
+
+![Share your card](/static/skillmap/turkey/share.gif )
+
+hint~
 
 
 ```blockconfig.global
