@@ -24,7 +24,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "name": "MRT Game Maker Kit",
         "description": " Sleek hand-held game device with a hard case and a USB-C port.",
         "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
-        "url": " https://www.myrobottime.co.kr/gamemakerkit",
+        "url": "https://www.myrobottime.co.kr/gamemakerkit",
         "variant": "hw---stm32f401"
     },
     {
