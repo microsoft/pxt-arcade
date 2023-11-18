@@ -21,6 +21,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---stm32f401"
     },
     {
+        "name": "MRT Game Maker Kit",
+        "description": " Sleek hand-held game device with a hard case and a USB-C port.",
+        "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
+        "url": "https://www.myrobottime.co.kr/gamemakerkit",
+        "variant": "hw---stm32f401"
+    },
+    {
         "name": "Kitronik ARCADE",
         "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
         "imageUrl": "/static/hardware/kitronik.jpg",
