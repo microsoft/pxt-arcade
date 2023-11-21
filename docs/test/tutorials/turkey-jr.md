@@ -23,6 +23,10 @@ Add the turkey to your code.
     turkey.addTurkey()
 ```
 
+---
+
+![Add the new block to the workspace](/static/skillmap/turkey/jr2.gif)
+
 
 #### ~ tutorialhint
 ```blocks
@@ -33,7 +37,7 @@ turkey.addTurkey()
 ```
 
 
-![Add the new block to the workspace](/static/skillmap/turkey/jr2.gif)
+
 
 
 
@@ -61,7 +65,7 @@ turkey.onA(function () {
 })
 ```
 
-
+---
 
 ![Add the new block to the workspace](/static/skillmap/turkey/jr4.gif)
 
@@ -96,13 +100,14 @@ turkey.onA(function () {
 
 ## {6. Get Cages}
 
-Now add this:
+Add this:
 ```blocks
 turkey.turkeyOverlapCage(function () {
     turkey.changeScoreOverride(1)
 })
 ```
 
+---
 
 ![Add the new block to the workspace](/static/skillmap/turkey/jr6.gif)
 
@@ -152,6 +157,8 @@ turkey.turkeyOverlapCage(function () {
 })
 ```
 
+---
+
 
 ![Add the new block to the workspace](/static/skillmap/turkey/jr8.gif)
 
@@ -179,7 +186,7 @@ turkey.turkeyOverlapCage(function () {
 
 ## {9. Play}
 
-- :binoculars: Now you free a turkey when you touch each cage. 
+- :binoculars: Now you'll free a turkey when you touch each cage. 
 
 
 ![Add the new block to the workspace](/static/skillmap/turkey/free.gif)
@@ -195,7 +202,10 @@ turkey.onCages(15, function () {
 })
 ```
 
+---
+
 ![Add the new block to the workspace](/static/skillmap/turkey/jr10.gif)
+
 
 #### ~ tutorialhint
 
@@ -223,7 +233,7 @@ turkey.onCages(15, function () {
 
 ## {11. Play}
 
-- :binoculars: Now you will win the game when you free 15 turkeys!
+- :binoculars: You should win the game when you free 15 turkeys!
 
 ![Add the new block to the workspace](/static/skillmap/turkey/win.gif)
 
