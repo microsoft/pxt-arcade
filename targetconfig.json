@@ -122,8 +122,16 @@
                 "preferred": true,
                 "tags": [ "Hardware" ]
             },
-            "code-ninjas-home-office/game-building-session-tutorials": {},
-            "microsoft/arcade-carnival": {}
+            "microsoft/arcade-carnival": {},
+            "code-ninjas-home-office/game-building-session-tutorials": {
+                "tutorial" : true
+            },
+            "Code-Ninjas-Home-Office/Code-Ninjas-Tutorials": {
+                "tutorial" : true
+            },
+            "Code-Ninjas-Home-Office/arctic-code-quest": {
+                "tutorial" : true
+            }
         },
         "builtinExtensionsLib": {
             "controller": {
