@@ -6,7 +6,7 @@
 * backgroundurl: /static/skillmap/backgrounds/star-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #000000
+* tertiarycolor: #17001d
 * completednodecolor: #4d3740
 * highlightcolor: #ffffff
 * allowcodecarryover: true
@@ -50,7 +50,7 @@
 * next: star-activity4
 * url: /skillmap/star/star3
 * imageUrl: /static/skillmap/star/star3-trimmed.gif
-* position: 1 1
+* position: 1 -1
 
 
 ### star-activity4
@@ -61,7 +61,7 @@
 * next: star-cert
 * url: /skillmap/star/star4
 * imageUrl: /static/skillmap/star/star4-trimmed.gif
-* position: 2 1
+* position: 2 -1
 
 
 ### star-cert
@@ -70,7 +70,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/star-cert.pdf
 * imageUrl: /static/skillmap/certificates/star-cert.png
-* position: 3 1
+* position: 3 -1
 * actions:
     * map: [Try Mama Dino](/skillmap/dino)
     * editor: [Edit in creative mode](/)
