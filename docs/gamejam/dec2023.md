@@ -1,32 +1,28 @@
-# MakeCode Arcade Game Jam
+# MakeCode Arcade "Community Heroes" Jam
 
-![Game Jam Banner Image'](/static/gamejam/jams/holding/gamejambanner.png)
+![Image of Superheroes in a community'](/static/gamejam/jams/holding/gamejambanner2.png)
 
-## It's game jam time!
 
-Welcome to the 9th Official Microsoft MakeCode Game Jam! 
+**Welcome to the 9th Official Microsoft MakeCode Game Jam!**
 
 This is a fun competition where you can pit your game development skills against others to build a game using [MakeCode Arcade](https://arcade.makecode.com), a game engine for retro pixel-art games that run in the browser or on handheld game devices.
 
----
 
-### Theme
+## Theme
 
-Come back on Monday, December 4th to find out what the theme will be for this competition.
+The theme of this jam is...
 
----
+**_Superheroes for My Community_**
 
-### Get Started!
+For this jam, create games that reflect characters who YOU see as superheroes.  They can be real or fictional, human or non-human...but whatever you create, make sure that it reflects the needs of you and your community. 
 
-Need some help getting started?  Click the image below to follow a tutorial that will show you how to create a basic game using MakeCode Arcade. 
-
-[![Start with Save the Dinos](/static/skillmap/backgrounds/dino-map.png 'Click here to start a tutorial')](https://aka.ms/new-dino)
+[![Submit here](/static/gamejam/img/submit.png 'Click here to submit your game')](https://forms.office.com/r/vfc2dfuaYf)
 
 ---
 
 ### About
 
-You have until December 17th to create and submit your
+You have until **December 17th** to create and submit your
 game with the chance to be featured on the Game Jam page,
 MakeCode live stream and social media channels!
 
@@ -52,9 +48,23 @@ newest MakeCode Arcade updates, games, and competitions!
 - All games must be submitted by someone who is at least 13 years old.   
   (Students under 13 can participate, but someone 13 or over must submit their game.)
 
+
+[![Submit here](/static/gamejam/img/submit.png 'Click here to submit your game')](https://forms.office.com/r/vfc2dfuaYf)
+
+
+---
+
+### Get Started!
+
+Need some help getting started?  Click the image below to follow a tutorial that will show you how to create a basic game using MakeCode Arcade. 
+
+[![Start with Save the Dinos](/static/skillmap/backgrounds/dino-map.png 'Click here to start a tutorial')](https://aka.ms/new-dino)
+
 ---
 
 ### Submissions
+
+[![Submit here](/static/gamejam/img/submit.png 'Click here to submit your game')](https://forms.office.com/r/vfc2dfuaYf)
 
 Don’t to forget to submit your game before
 **December 17th**
