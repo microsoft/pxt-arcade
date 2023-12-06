@@ -15,7 +15,7 @@ In this tutorial, we'll show you how to create your own Holiday Snow Globe Card.
 
 **Ready to start coding?**
 
-Let's set the color of the background.
+Let's set the color of the background.  
 
 ---
 
