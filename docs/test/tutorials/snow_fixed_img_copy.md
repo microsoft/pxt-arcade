@@ -15,7 +15,7 @@ In this tutorial, we'll show you how to create your own Holiday Snow Globe Card.
 
 **Ready to start coding?**
 
-Let's set the color of the background.  
+Let's set the color of the background.
 
 ---
 
@@ -49,7 +49,7 @@ scene.setBackgroundColor(7)
 - :paper plane: Open the ``||sprites:Sprites||`` category and drag the
 ```block
 sprites.wrap1(function () {
-    let globe = sprites.create(img`.`, SpriteKind.Player)
+    let globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
     globe.z = 1000
 })
 ```
@@ -57,6 +57,8 @@ bundle into **the end** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
+
+💡 **_Feel free to click on the globe and edit the image, or choose a new one from the gallery!_**
 
 
 ~hint What did that do? 🤷🏽‍♀️
@@ -68,7 +70,7 @@ You just dragged a bundle of code into your workspace and connected the blocks i
 Here's what that code does:
 
 ```block
-    let globe = sprites.create(img`.`, SpriteKind.Player)
+    let globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
 ```
 This block defines and names the item that you'll be using as the "globe" image.
 (Ignore the "kind". You won't be using that in this project.)
@@ -82,7 +84,6 @@ This block defines and names the item that you'll be using as the "globe" image.
 ```
 This block sets the depth (also called z-index) of the globe to be much closer to the camera than the following items will be. This is important for making sure everything else happens behind this frame. 
 
-❗️ **You won't see the result of any of this until you choose an image in the next step.**
 
 hint~
 
@@ -94,29 +95,6 @@ hint~
 scene.setBackgroundColor(7)
 //@highlight
 sprites.wrap1(function () {
-    let globe = sprites.create(img`.`, SpriteKind.Player)
-    globe.z = 1000
-})
-```
-
-
-
-## {4. Set Globe}
-
-- :mouse pointer: Click the empty grey square inside the <br/>
-``||variables(noclick):set [globe] to||`` <br/>
-block and switch to the **Gallery**.<br/>
-![Switch to Gallery](/static/skillmap/assets/gallery.png " ")
-Choose one of the globe images.
-![Choose a globe](/static/tutorials/snow/globe1.png " ")
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundColor(7)
-sprites.wrap1(function () {
-    //@highlight
     let globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
     globe.z = 1000
 })
@@ -124,7 +102,7 @@ sprites.wrap1(function () {
 
 
 
-## {5. Check Your Game!}
+## {4. Check Your Game!}
 
 - :binoculars: Look at your project in the game window.
 
@@ -132,7 +110,7 @@ You should see your globe filled with the color that you chose in the first step
 
 
 
-## {6. Make a Scene}
+## {5. Make a Scene}
 
 **Time to make a scene!**
 
@@ -142,7 +120,7 @@ You should see your globe filled with the color that you chose in the first step
 - :paper plane: Open the ``||sprites:Sprites||`` category and drag the
 ```block
 sprites.wrap2(function () {
-    let scenery = sprites.create(img`.`, SpriteKind.Player)
+    let scenery = sprites.create(snow_imgs.tree, SpriteKind.Player)
     scenery.top = 5
 })
 ```
@@ -151,13 +129,17 @@ bundle into **the end** of the<br/>
 container already in the workspace.
 
 
+💡 **_Feel free to click on the tree scene and edit the image, or choose a new one from the gallery!_**
+
+
+
 ~hint What did that do? 🤷🏽‍♀️
 
 ---
 
 
 ```block
-    let scenery = sprites.create(img`.`, SpriteKind.Player)
+    let scenery = sprites.create(snow_imgs.tree, SpriteKind.Player)
 ```
 This block defines and names the item that you'll be using to show your "scenery"
 image. (Ignore the "kind". You won't be using that in this project.)
@@ -167,12 +149,11 @@ image. (Ignore the "kind". You won't be using that in this project.)
 ```block
     let scenery: Sprite = null
     scenery.top = 5
-
 ```
 This block aligns the top of the image for `scenery` to 5 pixels below the top edge of the screen.  
 
 
-❗️ **You won't see the result of any of this until you choose an image in the next step.**
+
 
 hint~
 
@@ -189,7 +170,7 @@ sprites.wrap1(function () {
 //@highlight
 
 sprites.wrap2(function () {
-    let scenery = sprites.create(img`.`, SpriteKind.Player)
+    let scenery = sprites.create(snow_imgs.tree, SpriteKind.Player)
     scenery.top = 5
 })
 
@@ -197,36 +178,8 @@ sprites.wrap2(function () {
 
 
 
-## {7. Make a Scene, Cont.}
 
-- :mouse pointer: Click the empty grey square inside the <br/>
-``||variables(noclick):set [scenery] to||`` <br/>
-block and draw the scene you want to see inside of your globe.<br/><br/>
-(Or choose a scene from our gallery.)
-
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundColor(7)
-sprites.wrap1(function () {
-    let globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
-    globe.z = 1000
-})
-
-//@highlight
-
-sprites.wrap2(function () {
-    let scenery = sprites.create(img`.`, SpriteKind.Player)
-    scenery.top = 5
-})
-
-```
-
-
-
-## {8. Look Again}
+## {6. Look Again}
 
 
 - :binoculars: Look at your project in the game window again.
@@ -236,7 +189,7 @@ You should see your new scene inside of the globe you chose.
 
 
 
-## {9. Animate It}
+## {7. Animate It}
 
 **Add some animation!**
 
@@ -245,11 +198,11 @@ You should see your new scene inside of the globe you chose.
 - :paper plane: Open the ``||sprites:Sprites||`` category and drag the
 ```block
 sprites.wrap3(function () {
-    let anim = sprites.create(snow_imgs.squirrel, SpriteKind.Player)
+    let anim = sprites.create(snow_imgs.lights, SpriteKind.Player)
     anim.bottom = 65
     animation.runImageAnimation(
     anim,
-    [img`.`],
+    snow_imgs.blinking_lights,
     200,
     true
     )
@@ -260,6 +213,11 @@ bundle into **the end** of the<br/>
 container already in the workspace.
 
 
+💡 **_Feel free to click on the images if you want to edit or change them._**
+
+
+
+
 
 ~hint What did that do? 🤷🏽‍♀️
 
@@ -267,7 +225,7 @@ container already in the workspace.
 
 
 ```block
-    let anim = sprites.create(img`.`, SpriteKind.Player)
+    let anim = sprites.create(snow_imgs.lights, SpriteKind.Player)
 ```
 This block defines and names the animation that goes inside your globe. 
 (Ignore the "kind". You won't be using that in this project.)
@@ -288,7 +246,7 @@ screen.
     let anim: Sprite = null
     animation.runImageAnimation(
     anim,
-    [img`.`],
+    snow_imgs.blinking_lights,
     200,
     true
     )
@@ -297,7 +255,7 @@ screen.
 This block replaces the static image of your "anim" sprite with a series of moving frames. 
 
 
-❗️ **You won't see the result of any of this until you choose an image in the next step.**
+
 
 hint~
 
@@ -312,17 +270,17 @@ sprites.wrap1(function () {
 })
 
 sprites.wrap2(function () {
-    let scenery = sprites.create(img`.`, SpriteKind.Player)
+    let scenery = sprites.create(snow_imgs.tree, SpriteKind.Player)
     scenery.top = 5
 })
 
 //@highlight
 sprites.wrap3(function () {
-    let anim = sprites.create(img`.`, SpriteKind.Player)
+    let anim = sprites.create(snow_imgs.lights, SpriteKind.Player)
     anim.bottom = 65
     animation.runImageAnimation(
     anim,
-    [img`.`],
+    snow_imgs.blinking_lights,
     200,
     true
     )
@@ -331,46 +289,7 @@ sprites.wrap3(function () {
 
 
 
-## {10. Animate It, Cont.}
-
-- :mouse pointer: Click the empty grey square inside the <br/>
-``||variables(noclick):set [anim] to||`` <br/>
-block and create an animation to go with your scene.<br/><br/>
-(You can start with an animation from our gallery if you want to see how animations are done.)
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundColor(7)
-sprites.wrap1(function () {
-    let globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
-    globe.z = 1000
-})
-
-sprites.wrap2(function () {
-    let scenery = sprites.create(img`.`, SpriteKind.Player)
-    scenery.top = 5
-})
-
-sprites.wrap3(function () {
-    //@highlight
-    let anim = sprites.create(snow_imgs.squirrel, SpriteKind.Player)
-    anim.bottom = 65
-    //@highlight
-    animation.runImageAnimation(
-    anim,
-    [snow_imgs.squirrel],
-    200,
-    true
-    )
-})
-
-```
-
-
-
-## {11. Check it Out}
+## {8. Check it Out}
 
 
 - :binoculars: Check out what you have so far.
@@ -379,9 +298,39 @@ You should see your animation playing against your scene.
 
 
 
+~hint I want my own animation! 👨🏽‍🎨
+
+---
+
+You can make your own animation by clicking on the one in the block and editing the frames.  Each image on the right makes up one frame of the animation. Those frames run quickly, one after another, to make it look like the images are moving. 
+
+Start small, like with our two-frame blinking light animation, then you can make your creations longer as you get more practice!
+
+hint~
 
 
-## {12. Shake it Up}
+~hint My animation isn't right 🤔
+
+---
+
+Your animation aligns based on the image you choose for the `anim` sprite.
+
+If you're having a hard time getting your animation to line up correctly, here are some steps you can take:
+
+- **Make sure that your animation is the same size in pixels** as the image you chose when setting up your `anim` sprite.
+- **Try changing where the `bottom` of the sprite is.** Instead of setting it to `65`, you may need to set it to `30` or `100`
+- If you want to move your animation sideways a bit, **try switching to the block shown below** so that you can adjust both the side-to-side position as well as the up-and-down position.
+
+```block
+let anim: Sprite = null
+anim.setPosition(80, 60)
+```
+
+hint~
+
+
+
+## {9. Shake it Up}
 
 **Let's shake things up!**
 
@@ -392,7 +341,7 @@ You should see your animation playing against your scene.
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     scene.cameraShake(12, 500)
     snow.bigShortBlizzard(scenery)
-    music.play(music.createSong(assets.song`winter_wonderland`), music.PlaybackMode.InBackground)
+    music.play(music.createSong(), music.PlaybackMode.InBackground)
 })
 ```
 bundle into **an empty area ** of the workspace.
@@ -425,7 +374,7 @@ This block adds a blizzard effect to the inside of the snowglobe.
 <br/>
 
 ```block
-    music.play(music.createSong(assets.song`winter_wonderland`), music.PlaybackMode.InBackground)
+    music.play(music.createSong(), music.PlaybackMode.InBackground)
 ```
 This block allows you to add a song to your snowglobe.
 
@@ -448,32 +397,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {13. Shake it Up (Contd.)}
-
-- :mouse pointer: Click the empty grey rectangle in the <br/>
-``||music:play song||``<br/>
-block and create a song for your snowglobe.<br/><br/>
-
-(Or, switch to **My Assets** at the top of the editor to use a song of ours.)
-
-
-
-#### ~ tutorialhint
-
-```blocks
-
-//@highlight
-
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    scene.cameraShake(12, 500)
-    snow.bigShortBlizzard(scenery)
-    music.play(music.createSong(assets.song`winter_wonderland`), music.PlaybackMode.InBackground)
-})
-```
-
-
-
-## {14. Give it a Shake}
+## {10. Give it a Shake}
 
 
 - :binoculars: Take a look!
@@ -481,22 +405,40 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 When you press the (A) button (or space bar) the globe should look like it's shaking, 
 then snow should fall while music plays. 
 
+~hint Don't hear anything? 🔇
+
+---
+
+There are a few reasons you might not be able to hear your music 
+even if the code is correct.
+
+- Make sure the music player is unmuted (🔊)
+- Try turning up the volume on your computer
+- Add a ``||music:set volume [100]||`` block to your ``||loops(noclick):on start||`` container.
+
+If you still can't hear your song, 
+go back and look at previous steps to make sure your code matches the instructions.
+
+
+hint~
+
 
 ~hint Is the volume too loud? 🔊
 
 ---
 
-Look for this block in the ``||music:Music||`` category, and add it to the ``||loops(noclick):on start||`` container.
-
+Look for this block in the ``||music:Music||`` category
 ```block
 music.setVolume(30)
 ```
+and add it to the ``||loops(noclick):on start||`` container.
+
 
 hint~
 
 
 
-## {15. Make it Meaningful}
+## {11. Make it Meaningful}
 
 **Let's add a message.**
 
@@ -553,14 +495,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {16. Appreciate Your Work}
+## {12. Appreciate Your Work}
 
 
 - :binoculars: Check out your final creation!
 
 Press the (A) button to shake your globe, then press (B) to see your message.
 
-**Magical!**
+**❄️ Magical! ❄️**
 
 
 
@@ -573,11 +515,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {11. Finale}
+## {13. Finale}
 
-**🎉 Way to Go 🎉**
+**☃️ Way to Go ☃️**
 
-You have finished your extra special holiday card!
+You finished your extra special holiday card!
 
 When you're ready, click **Done** to share it with family and friends!
 
@@ -585,16 +527,19 @@ When you're ready, click **Done** to share it with family and friends!
 
 
 ```blockconfig.global
+let globe: Sprite = null
+let scenery: Sprite = null
+let anim: Sprite = null
 
 scene.setBackgroundColor(7)
 
 sprites.wrap1(function () {
-    let globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
+    globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
     globe.z = 1000
 })
 
 sprites.wrap2(function () {
-    let scenery = sprites.create(snow_imgs.tree, SpriteKind.Player)
+    scenery = sprites.create(snow_imgs.tree, SpriteKind.Player)
     scenery.top = 5
 })
 
@@ -614,8 +559,12 @@ music.setVolume(30)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     scene.cameraShake(12, 500)
     snow.bigShortBlizzard(scenery)
-    music.play(music.createSong(assets.song`winter_wonderland`), music.PlaybackMode.InBackground)
+    music.play(music.createSong(snow_imgs.winter_wonderland), music.PlaybackMode.InBackground)
 })
+
+anim.setPosition(80, 60)
+globe.z = 1000
+globe = sprites.create(img`.`, SpriteKind.Player)
 ```
 
 
@@ -656,6 +605,8 @@ music.setVolume(30)
 
 game.setDialogTextColor(1)
 game.setDialogFrame(snow_imgs.snowBox)
+anim.setPosition(80, 60)
+
 ```
 
 
