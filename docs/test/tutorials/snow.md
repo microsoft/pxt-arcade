@@ -673,7 +673,7 @@ globe = sprites.create(img`.`, SpriteKind.Player)
 
 ```package
 arcade-text=github:microsoft/arcade-text
-snow_imgs=github:kiki-lee/snow_imgs#v0.0.2
+snow_imgs=github:kiki-lee/snow_imgs#v0.0.4
 ```
 
 

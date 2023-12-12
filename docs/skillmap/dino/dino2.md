@@ -127,7 +127,7 @@ Let's add a countdown timer.
 info.startCountdown(15)
 ```
 and snap it into the end of the<br/>
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 
 ~hint Click here to see how 🕵🏽
