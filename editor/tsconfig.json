@@ -7,6 +7,7 @@
         "outFile": "../built/editor.js",
         "rootDir": ".",
         "newLine": "LF",
+        "types": [],
         "sourceMap": false
     }
 }
