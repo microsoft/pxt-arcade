@@ -16,8 +16,8 @@ Here are some cool activities to get you started with your @boardname@!
 * buttonLabel: Code Now
 * description: New! Share an animated snow globe greeting card.
 * imageUrl: /static/hero-gallery/snowglobes.png
-* url: https://arcade.makecode.com/#tutorial:/tutorials/snow
-* cardType: link
+* url: /tutorials/snow
+* cardType: tutorial
 ---
 * name: New "Junior" Tutorial!
 * buttonLabel: Code Now
