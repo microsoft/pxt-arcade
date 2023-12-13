@@ -23,8 +23,8 @@ Here are some cool activities to get you started with your @boardname@!
 * buttonLabel: Code Now
 * description: New! Code a simple arcade game with grades K-5.
 * imageUrl: /static/hero-gallery/turkey.png
-* url: https://arcade.makecode.com/#tutorial:/tutorials/turkey-jr
-* cardType: link
+* url: /tutorials/turkey-jr
+* cardType: tutorial
 ---
 * name: How To Code a Video Game
 * imageUrl: /static/hero-gallery/how-to-code.png
