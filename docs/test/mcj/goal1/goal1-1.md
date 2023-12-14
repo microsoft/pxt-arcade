@@ -15,6 +15,7 @@
 
 
 <!--
+
 ## {How to run}
 
 ![How to Check](/static/mkj/goal/check1-1.gif "Click the A button on the game window")
