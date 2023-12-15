@@ -5,18 +5,18 @@
 
 
 
-![How to win](/static/mkj/goal/goal1-2.gif "Walk forward to get to the ball!")
+![How to win](/static/mcj/goal/goal1-2.gif "Walk forward to get to the ball!")
 
 
 
 ## {One Step}
 
-![How to build](/static/mkj/goal/how1-2.gif "Add three right arrows")
+![How to build](/static/mcj/goal/how1-2.gif "Add three right arrows")
 
 <!-->
 # {How to Run}
 
-![How to Check](/static/mkj/goal/check1-2.gif "Click the A button on the game window") -->
+![How to Check](/static/mcj/goal/check1-2.gif "Click the A button on the game window") -->
 
 
 ```blocks
@@ -31,7 +31,7 @@
 ## Great Job! @showdialog
 
 
- <!-- [![Level 2](/static/mkj/assets/next.png)](beta#recipe:/mkj/goal/goal1-2) -->
+ <!-- [![Level 2](/static/mcj/assets/next.png)](beta#recipe:/mcj/goal/goal1-2) -->
 
 
 
