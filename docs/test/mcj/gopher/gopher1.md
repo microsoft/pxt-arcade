@@ -2,7 +2,7 @@
 ### @explicitHints true
 ### @flyoutOnly true
 
-## Let's Get Gopher Crazy! @showdialog
+## Gopher it! @showdialog
 
 Get the gopher to the acorn.
 
@@ -16,10 +16,7 @@ Get the gopher to the acorn.
 
 Move down to get the acorn!
 
-```block
-sprites.step_down()
-```
-
+---
 
 ![How to build](/static/mcj/gopher/how1-1.gif "Dig down to get to the acorn.")
 
@@ -38,7 +35,7 @@ sprites.step_down()
 #### ~ tutorialhint
 
 ```blocks
-  controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+  controller.onA(function () {
   //@highlight
     sprites.step_down()
 })
@@ -57,10 +54,9 @@ arcade-block-icons=github:kiki-lee/arcade-block-icons
 
 ```
 
+
 ```template
-
-  controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})
-
+  controller.onA( function () {})
 ```
 
 
@@ -192,11 +188,22 @@ namespace sprites {
             pause(500)
         }
 
-
-
     }
 
 
+    namespace controller {
+        /**
+         * Register code run when a controller event occurs
+        * @param event
+        * @param handler
+        */
+        //% weight=99 blockGap=8
+        //% blockId=ctrlonA block="on `ICON.a-button-white-invert`"
+        //% help=docs/on-a
+        export function onA(handler: () => void) {
+        controller.A.onEvent(ControllerButtonEvent.Pressed, handler)
+        }
+    }
 
 
 ```

@@ -14,12 +14,13 @@ Get the gopher to the acorn.
 ## {Get to the Acorns}
 
 
-Use loops to get the acorn!
+Use a loop to get the acorn!
+
+---
 
 ```block
 loops.loopThis(4, function (){ })
 ```
-
 
 ---
 
@@ -30,7 +31,7 @@ loops.loopThis(4, function (){ })
 #### ~ tutorialhint
 
 ```blocks
-  controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+  controller.onA( function () {
     //@highlight
     loops.loopThis(4, function () {
         sprites.step_down()
@@ -49,14 +50,12 @@ loops.loopThis(4, function (){ })
 pxt-tilemaps=github:microsoft/pxt-tilemaps
 pxt-characterAnimations=github:microsoft/arcade-character-animations
 makecodejr-assets=github:kiki-lee/makecodejr-assets
-arcade-block-icons=github:kiki-lee/arcade-block-icons
+arcade-block-icons=github:kiki-lee/arcade-block-icons#v0.0.13
 
 ```
 
 ```template
-
-  controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})
-
+  controller.onA( function () {})
 ```
 
 
@@ -215,7 +214,7 @@ namespace sprites {
         //% blockId=ctrlonA block="on `ICON.a-button-white-invert`"
         //% help=docs/on-a
         export function onA(handler: () => void) {
-            controller.A.onEvent(ControllerButtonEvent.Pressed, handler)
+        controller.A.onEvent(ControllerButtonEvent.Pressed, handler)
         }
     }
 
