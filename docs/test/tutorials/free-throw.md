@@ -358,6 +358,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 - When you press the (A) button (or space bar) the player should shoot a basketball toward the top of the screen
 
 
+💡 _We will add points in the next step._
+
+
 ~hint Mine isn't working 🤷‍♂️ 
 
 ---
