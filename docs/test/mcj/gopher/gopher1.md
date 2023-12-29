@@ -26,7 +26,7 @@ Move down to get the acorn!
 
 [![Enemies](/static/mcj/gopher/next.png)](#recipe:/test/mcj/gopher/gopher2)
 
-
+              
 ---
 
 
