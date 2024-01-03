@@ -671,7 +671,10 @@
             "editor": "/tours/editor-tour"
         },
         "showOpenInVscode": true,
-        "hideReplaceMyCode": true
+        "hideReplaceMyCode": true,
+        "timeMachine": true,
+        "timeMachineDiffInterval": 600000,
+        "timeMachineSnapshotInterval": 1800000
     },
     "queryVariants": {
         "skillsMap=1": {
