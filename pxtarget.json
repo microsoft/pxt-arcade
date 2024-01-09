@@ -120,7 +120,8 @@
         "libs/sprite-scaling",
         "libs/storyboard",
         "libs/template",
-        "libs/thermometer"
+        "libs/thermometer",
+        "libs/browser-events"
     ],
     "staticpkgdirs": {
         "base": [
@@ -671,7 +672,10 @@
             "editor": "/tours/editor-tour"
         },
         "showOpenInVscode": true,
-        "hideReplaceMyCode": true
+        "hideReplaceMyCode": true,
+        "timeMachine": true,
+        "timeMachineDiffInterval": 600000,
+        "timeMachineSnapshotInterval": 1800000
     },
     "queryVariants": {
         "skillsMap=1": {
