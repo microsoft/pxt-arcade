@@ -267,7 +267,7 @@ turkey.turkeyOverlapCage(function () {
 ```package
 turkey_imgs=github:kiki-lee/turkey_imgs
 carnival=github:microsoft/arcade-carnival#v0.0.7
-arcade-block-icons=github:kiki-lee/arcade-block-icons
+arcade-block-icons=github:kiki-lee/arcade-block-icons#v0.0.13
 
 ```
 
