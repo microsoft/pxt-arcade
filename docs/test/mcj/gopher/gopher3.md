@@ -49,7 +49,7 @@ Move down to get the acorn!
 pxt-tilemaps=github:microsoft/pxt-tilemaps
 pxt-characterAnimations=github:microsoft/arcade-character-animations
 makecodejr-assets=github:kiki-lee/makecodejr-assets
-arcade-block-icons=github:kiki-lee/arcade-block-icons
+arcade-block-icons=github:kiki-lee/arcade-block-icons#v0.0.13
 
 ```
 

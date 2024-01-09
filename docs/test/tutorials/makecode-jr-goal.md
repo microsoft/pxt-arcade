@@ -24,7 +24,7 @@ Build a **sequence** of code to help the dino collect both bubbles.
 ```package
 pxt-tilemaps=github:microsoft/pxt-tilemaps/
 pxt-characterAnimations=github:microsoft/arcade-character-animations/
-pxt-block-icons=github:jwunderl/arcade-block-icons/
+arcade-block-icons=github:kiki-lee/arcade-block-icons#v0.0.13
 ```
 
 

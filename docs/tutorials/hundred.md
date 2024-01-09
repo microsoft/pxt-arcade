@@ -305,7 +305,7 @@ for (let index = 0; index < 100; index++) {
     let projectile = sprites.createProjectileFromSide(assets.image`Alien`, -90, 0)
     //@highlight
     projectile.y = randint(40, 100)
-})
+}
 
 ```
 
@@ -337,7 +337,7 @@ for (let index = 0; index < 100; index++) {
     projectile.y = randint(40, 100)
     //@highlight
     pause(100)
-})
+}
 ```
 
 
@@ -364,7 +364,6 @@ projectile,
 100,
 true
 )
-})
 ```
 into **the end** of the <br/>
 ``||loops(noclick):repeat 100 times||`` loop.
@@ -390,7 +389,7 @@ projectile,
 100,
 true
 )
-})
+}
 ```
 
 <!-- ***************************************************
@@ -413,7 +412,6 @@ assets.animation`Animated Alien`,
 100,
 true
 )
-})
 ```
 
 #### ~ tutorialhint
@@ -432,7 +430,7 @@ assets.animation`Animated Alien`,
 100,
 true
 )
-})
+}
 ```
 
 
