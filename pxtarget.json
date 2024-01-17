@@ -685,6 +685,12 @@
                 "shareFinishedTutorials": false,
                 "hideReplaceMyCode": false
             }
+        },
+        "teachertool=1": {
+            "appTheme": {
+                "hideMenuBar": true,
+                "workspaceSearch": true
+            }
         }
     },
     "unsupportedBrowsers": [
