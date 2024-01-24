@@ -8,67 +8,37 @@
 Thank you to all who participated in our "Superheroes of My Community" game jam! We received dozens of submissions and are excited to go through them before sharing our favorites with you on social media. 
 
 
+## Superhero Jam Winners!
+Now presenting the winners of the MakeCode Arcade Traffic Jam! We had a record number (100+!) of submissions, and the entire MakeCode team has been enjoying your games. Check out our live stream showcasing a few of the honorable mentions as well as the winners, and browse the full gallery of submissions at the bottom of this page.
 
-#### Social
-
-Don't forget to follow us on Twitter to see your creations shared with the world!
-
-[YouTube](https://www.youtube.com/microsoftmakecode) | [Twitter](https://twitter.com/msmakecode) | [Twitch](https://www.twitch.tv/msmakecode)
-     
+### First Place: [The MakeCode Forums by ChimbroDaPro](https://arcade.makecode.com/_D4o1yU0qkK8P)
+[![Forums Screenshot](https://arcade.makecode.com/api/_D4o1yU0qkK8P/thumb)](https://arcade.makecode.com/_D4o1yU0qkK8P))
  
- #### Rules
-
-- Games must be built in MakeCode Arcade
-- Your game must relate to the provided theme.   
-- Keep the games PG: no inappropriate, offensive, or excessively violent content.
-- All games must be submitted by 11:59 pm PST on **December 17th**.
-- You are welcome to work together with others on a game.
-- All games must be submitted by someone who is at least 13 years old.   
-  (Students under 13 can participate, but someone 13 or over must submit their game.)
+Never has a game united the MakeCode team in such awe!  We laughed. We cried. We shook in fear. This is a fantastic example of what we hope [forum.makecode.com](https://forum.makecode.com) never becomes...but it was beyond fun to play through this simulation to figure out how many endings were possible. 
 
 
 
-
----
-
-### I missed it!
-
-Did you miss the game jam?  Join our forum at [forum.makecode.com](https://forum.makecode.com) to participate in smaller game jams all throughout the year!
-
----
+### Second Place: [Fighting Fire by Toolazyfurnames](https://arcade.makecode.com/S92945-87110-90152-31022)
+[![Fighting Fire Screenshot](https://arcade.makecode.com/api/S92945-87110-90152-31022/thumb)](https://arcade.makecode.com/S92945-87110-90152-31022)
+  
+With it's gorgeous graphics and rapid game play, this unique take on a Galga style game can entertain you for hours!
 
 
-Follow us on [YouTube](https://www.youtube.com/microsoftmakecode), [Twitter](https://twitter.com/msmakecode), or [Twitch](https://www.twitch.tv/msmakecode) to find out who made our list of favorites.
-                   
+### Third Place: [Community Heroes Game Jam by Iam](https://makecode.com/_2y002RHcJARd)
+[![Community Heroes Screenshot](https://arcade.makecode.com/api/_2y002RHcJARd/thumb)](https://makecode.com/_2y002RHcJARd)
+ 
+This platformer is nearly impossible for those who are inexperienced with keyboard navigation, but it presents a hearty challenge and tons of fun for those who persevere. 
 
 
-## Games
+
+
+
+
+### Honorable Mentions
+These are some games that didn't make the top three, but the judges loved! Give them a play, we're sure you'll enjoy yourself.
+
 
 ### ~ codecard
-
-* name: The MakeCode Forums by ChimbroDaPro 
-* type: sharedExample
-* description: “The MakeCode Forums” is a game entirely based around… well, the Microsoft MakeCode Forums! 
-* url: https://makecode.com/_D4o1yU0qkK8P
-* imageUrl: https://arcade.makecode.com/api/_D4o1yU0qkK8P/thumb
-
----
-
-* name: Community Heroes Game Jam by Iam
-* type: sharedExample
-* description: W A S D
-* url: https://makecode.com/_2y002RHcJARd
-* imageUrl: https://arcade.makecode.com/api/_2y002RHcJARd/thumb
-
----
-
-* name: Fighting Fire by Toolazyfurnames
-* type: sharedExample
-* description: Put out as much fire as you can as it rains down to prevent it from reaching the civilians.
-* url: https://arcade.makecode.com/S92945-87110-90152-31022
-* imageUrl: https://arcade.makecode.com/api/S92945-87110-90152-31022/thumb
-
----
 
 * name: Tyler the 100% Real Doctor by Bugoi
 * type: sharedExample
@@ -247,3 +217,46 @@ Follow us on [YouTube](https://www.youtube.com/microsoftmakecode), [Twitter](htt
 * imageUrl: https://arcade.makecode.com/api/_F5tdkk74vapi/thumb
 * 
 ### ~
+
+
+
+
+
+
+
+
+
+
+#### Social
+
+Don't forget to follow us on Twitter to see your creations shared with the world!
+
+[YouTube](https://www.youtube.com/microsoftmakecode) | [Twitter](https://twitter.com/msmakecode) | [Twitch](https://www.twitch.tv/msmakecode)
+     
+ 
+ #### Rules
+
+- Games must be built in MakeCode Arcade
+- Your game must relate to the provided theme.   
+- Keep the games PG: no inappropriate, offensive, or excessively violent content.
+- All games must be submitted by 11:59 pm PST on **December 17th**.
+- You are welcome to work together with others on a game.
+- All games must be submitted by someone who is at least 13 years old.   
+  (Students under 13 can participate, but someone 13 or over must submit their game.)
+
+
+
+
+---
+
+### I missed it!
+
+Did you miss the game jam?  Join our forum at [forum.makecode.com](https://forum.makecode.com) to participate in smaller game jams all throughout the year!
+
+---
+
+
+Follow us on [YouTube](https://www.youtube.com/microsoftmakecode), [Twitter](https://twitter.com/msmakecode), or [Twitch](https://www.twitch.tv/msmakecode) to find out who made our list of favorites.
+                   
+
+
