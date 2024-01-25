@@ -363,19 +363,17 @@ fly.setBounceOnWall(true)
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
 frog.overlapsWith(fly)
-if () { } else { }
+if (false) { } else { }
 game.over(true)
 
-list = sprites.allOfKind(SpriteKind.Food)
-    list.pop().destroy()
-    for (let index = 0; index <= 4; index++) {
+let list = sprites.allOfKind(SpriteKind.Food)
+list.pop().destroy()
+for (let index = 0; index <= 4; index++) {
 
-    }
-    for (let index = 0; index < 4; index++) {
+}
+for (let index = 0; index < 4; index++) {
 
-    }
-
-
+}
 ```
 
 
