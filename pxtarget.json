@@ -570,7 +570,8 @@
             "fr",
             "ja",
             "es-ES",
-            "es-MX"
+            "es-MX",
+            "ru"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
