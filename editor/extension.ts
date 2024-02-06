@@ -1,4 +1,4 @@
-/// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
+/// <reference path="../node_modules/pxt-core/localtypings/pxteditor.d.ts" />
 
 namespace pxt.editor {
     function patchBlocks(pkgTargetVersion: string, dom: Element) {
