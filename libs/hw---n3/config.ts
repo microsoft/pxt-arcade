@@ -33,5 +33,4 @@ namespace config {
     export const DISPLAY_CFG0 = 0x00000080
     export const DISPLAY_CFG1 = 0x00000603
     export const DISPLAY_CFG2 = 8
-    export const DISPLAY_DELAY = 300
 }

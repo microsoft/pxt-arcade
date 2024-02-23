@@ -9,8 +9,8 @@ function img(lits: any, ...args: any[]): Image { return null }
 image.setPalette(hex`__palette`)
 //% whenUsed
 
-const delay = control.getConfigValue(DAL.CFG_DISPLAY_DELAY, 0)
-control.waitMicros(delay * 1000)
+// add delay
+control.waitMicros(200 * 1000)
 const screen = _screen_internal.createScreen();
 
 namespace image {
