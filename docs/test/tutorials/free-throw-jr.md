@@ -4,7 +4,7 @@
 
 ## {1. Introduction @showdialog}
 
-Line up your shot and see if you can slam dunk this Basketball free throw game!
+Let's code a free-throw game!
 
 ![Free throw shot from player](/static/tutorials/free-throw/freethrow.gif)
 
@@ -36,9 +36,9 @@ freethrow.setCourt()
 ## {3. Look at the game window}
 
 
-- :binoculars: Look at your project in the game window!
+- :binoculars: Look at the game window!
 
-You should see the court background that you just added.
+You should see a basketball court.
 
 ![Look for the game window in the lower right](/static/tutorials/free-throw/game.png)
 
@@ -68,24 +68,24 @@ freethrow.addPlayer(throw_imgs.dunk)
 ```blocks
 freethrow.setCourt()
 //@highlight
-freethrow.throw_imgs.dunk
+freethrow.addPlayer(throw_imgs.dunk)
 ```
 
 
 
-## {7. Look at the game window again}
+## {5. Look at the game window again}
 
 
-- :binoculars: Look at your project in the game window!
+- :binoculars: Look at the game window again!
 
-You should see the athlete start running forward.
-
-
-
+You should see the athlete moving across the court.
 
 
 
-## {9. Create the Basketball Hoop}
+
+
+
+## {6. Create the Basketball Hoop}
 
 **Add the hoop!**
 
@@ -97,7 +97,7 @@ freethrow.addHoop()
 #### ~ tutorialhint
 ```blocks
 freethrow.setCourt()
-freethrow.throw_imgs.dunk
+freethrow.addPlayer(throw_imgs.dunk)
 //@highlight
 freethrow.addHoop()
 
@@ -105,7 +105,7 @@ freethrow.addHoop()
 
 
 
-## {10. Use (A) Button to Toss}
+## {7. Use (A) Button to Toss}
 
 **Make (A) toss the ball**
 
@@ -128,13 +128,14 @@ freethrow.onA(function () {
 
 
 
-## {12. Test it Out}
+## {8. Test it Out}
 
 
 - :binoculars: Look at your game!
 
-- Your player should be moving back and forth on the court  
-- When you press the (A) button (or space bar) the player should shoot a basketball toward the top of the screen
+Your player should move across the court.  
+
+When you press the (A) button <br/>(or space bar)<br/> the player should throw the ball.
 
 
 ~hint It isn't working 🤷‍♂️ 
@@ -158,7 +159,7 @@ hint~
 
 
 
-## {13. Points when we get a basket}
+## {9. Points when we get a basket}
 
 
 **Add points for each basket**
@@ -218,7 +219,7 @@ freethrow.gameCountdown(30)
 
 
 
-## You did a great job!!! @showdialog
+<!--## You did a great job!!! @showdialog
 
 
 ### What did you think of this tutorial?
@@ -227,7 +228,7 @@ freethrow.gameCountdown(30)
 
 Would you like to tell us more?
 
-(Yes)  (No)
+(Yes)  (No) -->
 
 
 
@@ -237,9 +238,9 @@ Would you like to tell us more?
 
 ---
 
-You've coded an amazing game!
+You've made a free-throw game!
 
-**Can you get 20 points before the counter gets down to zero?**
+**Can you get 20 points before time runs out?**
 
 When you've finished playing, click **Done** so you can share your tutorial with family and friends!
 
