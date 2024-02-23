@@ -8,6 +8,9 @@ function img(lits: any, ...args: any[]): Image { return null }
 // set palette before creating screen, so the JS version has the right BPP
 image.setPalette(hex`__palette`)
 //% whenUsed
+
+const delay = control.getConfigValue(DAL.CFG_DISPLAY_DELAY, 0)
+control.waitMicros(delay * 1000)
 const screen = _screen_internal.createScreen();
 
 namespace image {
