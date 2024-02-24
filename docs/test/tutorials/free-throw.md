@@ -13,7 +13,7 @@ Line up your shot and see if you can slam dunk this Basketball free throw game!
 
 **Ready to start coding?**
 
-Let's add the basketball court background.
+Let's add a basketball court as the background.
 
 ---
 
@@ -40,10 +40,18 @@ block, we are pointing you toward <br/>
 scene.setBackgroundImage(img`.`)
 ```
 
+which is located in the ``||scene:Scene||`` category in the Toolbox.
+
 hint~
 
+- :paint brush: Click the empty grey box in the background block to draw a basketball court <Br/>
+(or switch to the **Gallery** to pick the one that we created.)
+
+<!--
 <br/><br/>
 💡 _The court image should be preloaded in the block, but you are welcome to edit the image if you like._
+-->
+
 
 
 #### ~ tutorialhint
@@ -80,7 +88,7 @@ You should see the court background that you just added.
 - :paper plane: From ``||sprites:Sprites||``, drag<br/>
 ``||variables(sprites):set [athlete] to sprite [ ] of kind [Player]||``<br/>
 to **the end** of the
-``||loops:on start||`` container.
+``||loops(noclick):on start||`` container.
 
 
 ~hint What's a sprite? 💡
@@ -95,9 +103,17 @@ Our athlete will be a sprite, too.
 
 hint~
 
+
+- :paint brush: Click the empty grey box in the sprite block to draw your player <Br/>
+(or switch to the **Gallery** to pick one that we created.)
+
+
+
+<!-- 
+
 <br/><br/>
 💡 _The athlete image should be preloaded in the block, but you are welcome to edit the image if you like._
-
+-->
 
 #### ~ tutorialhint
 ```blocks
@@ -242,7 +258,7 @@ Using what you learned when adding the athlete, add a hoop to the scene then pos
 - :paper plane: From ``||sprites:Sprites||``, drag<br/>
 ``||variables(sprites):set [hoop] to sprite [ ] of kind [Goal]||``<br/>
 to **the end** of the
-``||loops(noclick):on start||`` container.
+``||loops(noclick):on start||`` container, then select the hoop from the Gallery.
 
 - :paper plane: From the ``||sprites: Sprites||`` category in the toolbox, grab <br/>
 ``||sprites: set [hoop] position to x [80] y [35]||`` <br/>
@@ -323,13 +339,19 @@ hint~
 
 
 - :paper plane: Snap <br/>
-``||variables(sprites):set [projectile] to projectile [🏀] from [athlete] with vx [0] vy [-100]||`` <br/>
+``||variables(sprites):set [projectile] to projectile [ ] from [athlete] with vx [0] vy [-100]||`` <br/>
 inside **the empty** <br/>
 ``||controller(noclick):on [A] button pressed ||``<br/>
 container.
 
-💡 _The projectile is a basketball, but you can click the ball and change it to whatever you like._
 
+- :paint brush: Click the empty grey box in the projectile block to draw a basketball <br/>
+(or switch to the **Gallery** to pick the one that we created.)
+
+
+<!--
+💡 _The projectile is a basketball, but you can click the ball and change it to whatever you like._
+-->
 
 
 
@@ -354,8 +376,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 - :binoculars: Look at your game!
 
-- Your player should be moving back and forth on the court  
-- When you press the (A) button (or space bar) the player should shoot a basketball toward the top of the screen
+Your player should be moving back and forth on the court.
+
+When you press the (A) button (or space bar) the player should shoot a basketball toward the top of the screen.
 
 
 💡 _We will add points in the next step._
@@ -443,7 +466,7 @@ and snap it into **the end** of the <br/>
 containter in the workspace.
 
 
-~hint Why "destroy sprite"? 💡
+~hint Why destroy "sprite"? 💡
 
 ---
 
@@ -478,7 +501,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Goal, function (sprite, othe
 
 - :binoculars: Look at your project in the game window!
 
-You should get a point every time your basketball overlaps the hoop!
+You should get exactly one point every time your basketball overlaps the hoop!
 
 
 
@@ -528,10 +551,7 @@ info.startCountdown(30)
 ```
 
 
-
-
-
-## You did a great job!!! @showdialog
+<!--## You did a great job!!! @showdialog
 
 
 ### What did you think of this tutorial?
@@ -541,6 +561,8 @@ info.startCountdown(30)
 Would you like to tell us more?
 
 (Yes)  (No)
+
+-->
 
 
 
@@ -597,7 +619,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Goal, function (sprite, othe
 projectile = sprites.createProjectileFromSprite(throw_imgs.ball, athlete, 0, -100)
 music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackground)
 
-scene.setBackgroundImage(throw_imgs.court)
+scene.setBackgroundImage(img`.`)
 ```
 
 
