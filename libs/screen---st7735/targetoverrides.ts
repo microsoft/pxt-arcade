@@ -10,7 +10,7 @@ image.setPalette(hex`__palette`)
 //% whenUsed
 
 // add delay
-control.waitMicros(200 * 1000)
+control.waitMicros(300 * 1000)
 const screen = _screen_internal.createScreen();
 
 namespace image {
