@@ -237,7 +237,7 @@ and drag it into the empty ``||game(noclick):on game update [5000]ms||`` contain
 ```blocks
 game.onUpdateInterval(5000, function () {
     //@highlight
-    clover = sprites.createProjectileFromSide(assets.image`collect`, 50, 50)
+    let clover = sprites.createProjectileFromSide(assets.image`collect`, 50, 50)
 })
 ```
 
