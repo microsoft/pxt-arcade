@@ -135,10 +135,10 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---rpi"
     },
     {
-        "name": "Arcade cabinet",
-        "description": "Full size Arcade cabinet powered by a Raspberry Pi.",
+        "name": "Arcade cabinets",
+        "description": "Choose one of three options.",
         "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg",
-        "url": "/hardware/raspberry-pi/wooden-cabinet",
+        "url": "/hardware/cabinets",
         "variant": "hw---rpi"
     },
     {
