@@ -615,25 +615,6 @@ and choose **duplicate**.
 _Don’t worry if it looks disabled, we’ll fix that._
 
 
-## {Step 20 - Add Overlaps behavior for Bee @fullscreen}
-
-**We need an overlap behavior for the bee**
-
-- :mouse pointer: Right-click on the the<br/>
-``||sprites(noclick):on sprite overlaps||`` <br/>
-container that's already in your workspace.
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 100)
-    music.baDing.play()
-    info.changeScoreBy(1)
-})
-```
-and choose **duplicate**.
-
-_Don’t worry if it looks disabled, we’ll fix that._
-
-
 - :mouse pointer: In the copied <br/>
 ``||sprites(noclick):on sprite overlaps||`` <br/>
 block, click the kind ``||sprites:Projectile||`` and change it to ``||sprites:Enemy||``.
