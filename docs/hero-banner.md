@@ -12,18 +12,18 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Send a Snow Globe
-* buttonLabel: Code Now
-* description: New! Share an animated snow globe greeting card.
-* imageUrl: /static/hero-gallery/snowglobes.png
-* url: /tutorials/snow
-* cardType: tutorial
+* name: Join the Game Jam!
+* buttonLabel: See More
+* description: Contribute a game about women who change the world
+* imageUrl: /static/hero-gallery/gamechangers.png
+* url: aka.ms/gamejam
+* cardType: link
 ---
-* name: New "Junior" Tutorial!
+* name: Build a Multiplayer Game
 * buttonLabel: Code Now
-* description: New! Code a simple arcade game with grades K-5.
-* imageUrl: /static/hero-gallery/turkey.png
-* url: /tutorials/turkey-jr
+* description: Code a game you can play online with friends
+* imageUrl: /static/hero-gallery/multi.png
+* url: /tutorials/arrow
 * cardType: tutorial
 ---
 * name: How To Code a Video Game
