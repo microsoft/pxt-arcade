@@ -128,3 +128,14 @@ div.segment.logo-container {
 div.segment.logo-container img {
     image-rendering: pixelated;
 }
+
+@media screen and (max-width: 980px) {
+    div.content {
+        margin: 0.75rem;
+    }
+
+    footer > div.ui.container {
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
+    }
+}
