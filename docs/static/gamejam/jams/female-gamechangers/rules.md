@@ -49,7 +49,7 @@ Join our [forums](https://forum.makecode.com) to chat with other coders, brainst
 * When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen
 * See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
 * Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our][traffic-jam] [past][garden-jam] [jams][ocean-jam]!
+* Also make sure you check out the winners of [our past jams!](/gamejam/all)
 
 [traffic-jam]: https://arcade.makecode.com/gamejam/traffic
 [ocean-jam]: https://arcade.makecode.com/gamejam/ocean
