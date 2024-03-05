@@ -2,7 +2,7 @@
 -- | --
 ![Microsoft logo](/static/gamejam/jams/female-gamechangers/assets/msft-makecode-logo.png) | ![Code ninjas logo](/static/gamejam/jams/female-gamechangers/assets/code-ninjas-logo.svg) | ![Girls Who Code logo](/static/gamejam/jams/female-gamechangers/assets/girls-who-code-logo.png)
 
-For Women's History Month in March, we are excited to partner with Girls Who Code and Code Ninjas to celebrate women who have made an impact in your life through the Female Gamechangers Game Jam!
+This Women's History Month, we are excited to partner with Girls Who Code and Code Ninjas to celebrate women who have made an impact in your life through the Female Gamechangers Game Jam!
 
 The theme for this jam is "Women who impacted your life". Your game could include a famous woman from history, someone you know personally, or even an original character you create!
 
