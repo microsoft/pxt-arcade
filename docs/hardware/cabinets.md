@@ -18,8 +18,8 @@ Technology has come a long way and we now have *three* different cabinet types t
 {
   "name": "Cardboard",
   "description": "Make an inexpensive and simple cardboard arcade cabinet!",
-  "url": "/hardware/arcade-cabinets/cardboard-kiosk",
-  "cardType": "tutorial",
+  "url": "/hardware/arcade-cabinets/cardboard-arcade",
+  "cardType": "link",
   "imageUrl": "/static/hardware/arcade-kiosks/cardboard-card.png"
 }, 
 {
