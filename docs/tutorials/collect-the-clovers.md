@@ -235,10 +235,9 @@ and drag it into the empty ``||game(noclick):on game update [5000]ms||`` contain
 
 
 ```blocks
-let projectile: Sprite = null
 game.onUpdateInterval(5000, function () {
     //@highlight
-    clover = sprites.createProjectileFromSide(assets.image`collect`, 50, 50)
+    let clover = sprites.createProjectileFromSide(assets.image`collect`, 50, 50)
 })
 ```
 
@@ -268,7 +267,7 @@ block.
 
 **Random** numbers are numbers that don't appear to have a predictable pattern. Using our `random` block, you'll be given a number between the minimum and maximum that you set, but you won't know which number will be chosen beforehand.
 
-This number is rechosen every time the block runs, and each time you may randomly end up with a number that is either the same or different than the last.
+This number is chosen again every time the block runs, and each time you may randomly end up with a number that is either the same or different than the last.
 
 hint~
 
@@ -596,25 +595,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     info.changeScoreBy(1)
 })
 ```
-
-## {Step 20 - Add Overlaps behavior for Bee @fullscreen}
-
-**We need an overlap behavior for the bee**
-
-- :mouse pointer: Right-click on the the<br/>
-``||sprites(noclick):on sprite overlaps||`` <br/>
-container that's already in your workspace.
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    otherSprite.destroy(effects.confetti, 100)
-    music.baDing.play()
-    info.changeScoreBy(1)
-})
-```
-and choose **duplicate**.
-
-_Don’t worry if it looks disabled, we’ll fix that._
-
 
 ## {Step 20 - Add Overlaps behavior for Bee @fullscreen}
 
