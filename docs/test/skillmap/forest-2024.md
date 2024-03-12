@@ -20,7 +20,7 @@
 * name: Prepare Your Plane
 * type: tutorial
 * description: Set up your airtanker to make sure you can get everywhere you need to be!
-* url: test/skillmap/forest/forest1
+* url: /test/skillmap/forest/forest1
 * imageUrl: /static/skillmap/forest/forest1.gif
 * tags: easy, sprite, movement
 * next: forest2

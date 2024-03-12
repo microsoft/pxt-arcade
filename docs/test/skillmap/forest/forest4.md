@@ -59,9 +59,9 @@ container that's already in the workspace.
 //@highlight
 game.set_health_of_trees(7)
 tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
+let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(myPlane)
+scene.cameraFollowSprite(myPlane)
 
 for (let index = 0; index < 4; index++) {
     sprites.create_spreading_fire(assets.tile`tree`, assets.tile`tree fire`)
@@ -109,9 +109,9 @@ game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
+let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(myPlane)
+scene.cameraFollowSprite(myPlane)
 
 for (let index = 0; index < 4; index++) {
     sprites.create_spreading_fire(assets.tile`tree`, assets.tile`tree fire`)
@@ -151,7 +151,7 @@ game.onUpdate(function () {
 
 ## {6. Test}
 
-**🎮 Test your game**
+- :binoculars:  Test your game. 
 
 ---
 
@@ -159,7 +159,8 @@ Do you notice that your fire is now spreading to other nearby parts of the fores
 
 Does it get out of control too quickly? Try experimenting with your variables.
 
-Increase the health of the trees to make the game easier. Increase the dryness of the grass or strength of the wind to make it harder!
+- Increase the health of the trees to make the game easier. 
+- Increase the dryness of the grass or strength of the wind to make it harder!
 
 
 
@@ -204,12 +205,12 @@ game.onUpdate(function () {
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(mySprite, assets.image`water`)
+    sprites.spray(myPlane, assets.image`water`)
 })
 
-let mySprite = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-scene.cameraFollowSprite(mySprite)
+let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+controller.moveSprite(myPlane)
+scene.cameraFollowSprite(myPlane)
 
 for (let index = 0; index < 4; index++) {
     sprites.create_spreading_fire(assets.tile`tree`, assets.tile`tree fire`)
