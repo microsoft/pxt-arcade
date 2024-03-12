@@ -6,7 +6,7 @@
 
 
 The last few summers have been among the hottest on record and the forest service needs
-your helo to keep fires under control.
+your help to keep fires under control.
 
 Let's start by setting up your plane to make sure you can get everywhere you need to be.
 
