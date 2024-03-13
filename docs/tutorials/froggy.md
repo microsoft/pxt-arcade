@@ -416,7 +416,7 @@ for (let index = 0; index < 4; index++) {
 
 
 ```package
-flies_imgs=github:kiki-lee/flies_imgs#v0.0.2
+flies_imgs=github:kiki-lee/flies_imgs#v0.0.3
 ```
 
 ```ghost
