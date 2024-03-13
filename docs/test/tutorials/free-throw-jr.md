@@ -12,7 +12,7 @@ Let's code a free-throw game!
 
 ## {2. Your First Block}
 
-Add the court!
+First, add the court!
 
 ---
 
@@ -21,6 +21,9 @@ Add the court!
 freethrow.setCourt()
 ```
 
+---
+
+![Free throw shot from player](/static/tutorials/free-throw/court.gif)
 
 
 #### ~ tutorialhint
@@ -60,6 +63,10 @@ freethrow.addPlayer(throw_imgs.dunk)
 
 ---
 
+![Free throw shot from player](/static/tutorials/free-throw/dunk.gif)
+
+---
+
 💡 _You can click the image of the player to make changes._
 
 
@@ -78,6 +85,12 @@ freethrow.addPlayer(throw_imgs.dunk)
 
 - :binoculars: Look at the game window again!
 
+---
+
+![Free throw shot from player](/static/tutorials/free-throw/moving.gif)
+
+---
+
 You should see the athlete moving across the court.
 
 
@@ -89,10 +102,17 @@ You should see the athlete moving across the court.
 
 **Add the hoop!**
 
+---
+
 ```block
 freethrow.addHoop()
 ```
 
+---
+
+![Free throw shot from player](/static/tutorials/free-throw/hoop.gif)
+
+---
 
 #### ~ tutorialhint
 ```blocks
@@ -109,11 +129,19 @@ freethrow.addHoop()
 
 **Make (A) toss the ball**
 
+---
+
 ```blocks
 freethrow.onA(function () {
     freethrow.throwBall()
 })
 ```
+
+---
+
+![Free throw shot from player](/static/tutorials/free-throw/toss.gif)
+
+---
 
 
 #### ~ tutorialhint
@@ -131,18 +159,22 @@ freethrow.onA(function () {
 ## {8. Test it Out}
 
 
-- :binoculars: Look at your game!
+- :binoculars: Try your game!
 
-Your player should move across the court.  
+---
 
-When you press the (A) button <br/>(or space bar)<br/> the player should throw the ball.
+![Free throw shot from player](/static/tutorials/free-throw/test.gif)
+
+---
+
+When you press (A) or the space bar, the player should throw the ball.
 
 
 ~hint It isn't working 🤷‍♂️ 
 
 ---
 
-Take a look at the blocks below to see if your code is missing anything:
+Does you have all of this code?
 
 
 ```blocks
@@ -173,6 +205,12 @@ freethrow.onOverlapHoop(function () {
 })
 ```
 
+---
+
+![Free throw shot from player](/static/tutorials/free-throw/points.gif)
+
+---
+
 #### ~ tutorialhint
 ```blocks
 //@highlight
@@ -184,13 +222,16 @@ freethrow.onOverlapHoop(function () {
 
 
 
+## {10. Look at the game window again, again}
 
 
+- :binoculars: Play again!
 
-## {15. Look at the game window again, again}
+---
 
+![Free throw shot from player](/static/tutorials/free-throw/pointstest.gif)
 
-- :binoculars: Look at your project in the game window!
+---
 
 You should get a point every time your basketball overlaps the hoop!
 
@@ -200,10 +241,15 @@ You should get a point every time your basketball overlaps the hoop!
 
 ** Add a timer**
 
+---
+
 ```block
 freethrow.gameCountdown(30)
 ```
 
+---
+
+![Free throw shot from player](/static/tutorials/free-throw/addtimer.gif)
 
 
 #### ~ tutorialhint
@@ -217,24 +263,9 @@ freethrow.gameCountdown(30)
 
 
 
+## {11. Finale}
 
-
-<!--## You did a great job!!! @showdialog
-
-
-### What did you think of this tutorial?
-
-### 😍  😑  ☹️
-
-Would you like to tell us more?
-
-(Yes)  (No) -->
-
-
-
-## {18. Finale}
-
-**🏀 Well Done 🏀**
+**🏀 Well Done! 🏀**
 
 ---
 
