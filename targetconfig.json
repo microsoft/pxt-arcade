@@ -405,6 +405,12 @@
                 "highScoreMode": "None"
             },
             {
+                "id": "12407-17885-37645-48510",
+                "name": "Rhombus Rush!",
+                "description": "Test your skills in this fast-paced game of reflexes and timing! Levels designed by members of the MakeCode Forum!",
+                "highScoreMode": "None"
+            },
+            {
                 "id": "16040-59904-05312-47571",
                 "name": "NINJA",
                 "description": "Try to slice all the logs as quickly and evenly as you can! Press Left/Right to change direction and A to slice!",
