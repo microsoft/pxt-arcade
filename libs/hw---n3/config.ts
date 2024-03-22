@@ -35,17 +35,9 @@ namespace config {
     export const DISPLAY_CFG2 = 8
 
     // mappng for big edge connector pins,
-    // except for the ones used for the shield (see above)
     export const PIN_P0 = DAL.P0_2
     export const PIN_P1 = DAL.P0_3 
     export const PIN_P2 = DAL.P0_4
-    export const PIN_P3 = DAL.P0_31 
-    export const PIN_P4 = DAL.P0_28 
-    export const PIN_P5 = DAL.P0_14 
-    export const PIN_P6 = DAL.P1_5 
-    export const PIN_P7 = DAL.P0_11 
-    export const PIN_P10 = DAL.P0_30 
-    export const PIN_P11 = DAL.P0_23 
 }
 
 
