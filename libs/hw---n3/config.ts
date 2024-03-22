@@ -54,19 +54,6 @@ namespace config {
     export const PIN_P16 = DAL.P1_2 
     export const PIN_P19 = DAL.P0_26 
     export const PIN_P20 = DAL.P1_0 
-    
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P21)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P22)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P23)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P24)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P25)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P26)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P27)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P28)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P29)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P30)
-    //% fixedInstance shim=pxt::lookupPinCfg(CFG_PIN_P31)
-
 }
 
 
