@@ -33,4 +33,14 @@ namespace config {
     export const DISPLAY_CFG0 = 0x00000080
     export const DISPLAY_CFG1 = 0x00000603
     export const DISPLAY_CFG2 = 8
+
+    // mappng for big edge connector pins,
+    export const PIN_P0 = DAL.P0_2
+    export const PIN_P1 = DAL.P0_3 
+    export const PIN_P2 = DAL.P0_4
 }
+
+
+
+
+
