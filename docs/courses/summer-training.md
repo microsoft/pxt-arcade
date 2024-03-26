@@ -12,7 +12,7 @@ We will be hosting a special training in Las Vegas in the days leading up to CST
     {
         "name": "Micro:bit at CSTA",
         "description": "Join us in Vegas on 6/16/24 for an introduction to using micro:bit in the classroom",
-        "url":"https://aka.ms/carnivalGuide",
+        "url":"https://aka.ms/CSTA24reg",
         "imageUrl": "https://pxt.azureedge.net/blob/ce157b871e8d7330375d8dc8ade57d7426259ef4/static/courses/csintro.jpg",
         "label": "In Person on 6/16/24",
         "labelClass": "black ribbon large"
@@ -28,14 +28,14 @@ This year, we will be hosting two separate cohorts of each session for both the 
     {
         "name": "Intro to CS PD #1",
         "description": "Click here to register through Infosys Pathfinders to take part in this online 40-hour professional learning introduction to our entry level Intro to CS with MakeCode Arcade curriculum",
-        "url":"https://aka.ms/carnivalGuide",
+        "url":"https://pathfinders.onwingspan.com/web/en/app/event-details/makeCode",
         "imageUrl": "https://pxt.azureedge.net/blob/6fc548f43baa08998bdc2bd7221cc740244d65f5/static/courses/teals-introcs.jpg",
         "label": "Online 6/3/24 - 6/7/24",
         "labelClass": "orange ribbon large"
     }, {
         "name": "Intro to CS PD #2",
         "description": "Click here to register through Infosys Pathfinders to take part in this online 40-hour professional learning introduction to our entry level Intro to CS with MakeCode Arcade curriculum",
-        "url":"https://aka.ms/carnivalDrive",
+        "url":"https://pathfinders.onwingspan.com/web/en/app/event-details/makeCode",
         "imageUrl": "https://pxt.azureedge.net/blob/6fc548f43baa08998bdc2bd7221cc740244d65f5/static/courses/teals-introcs.jpg",
         "label": "Online 7/29/24 - 8/2/24",
         "labelClass": "orange ribbon large"
@@ -47,21 +47,21 @@ This year, we will be hosting two separate cohorts of each session for both the 
     {
         "name": "AP CS Prinicpals #1",
         "description": "Click here to register through the College Board to experience this online professional learning opportunity for the MakeCode Arcade AP CS Principals course",
-        "url": "https://aka.ms/mbCarnival",
+        "url": "https://events.teams.microsoft.com/event/068ed173-0075-493a-be29-8d9784b2717f@38dd6634-1031-4c50-a9b4-d16cd9d97d57",
         "imageUrl": "https://pxt.azureedge.net/blob/2f29e06f0ce78fc647a0f19ea4acadd0ea29563c/static/courses/csp.png",
         "label": "Online 6/17/24 - 6/22/24",
         "labelClass": "orange ribbon large"
     },{
         "name": "AP CS Prinicpals #2",
         "description": "Click here to register through the College Board to experience this online professional learning opportunity for the MakeCode Arcade AP CS Principals course",
-        "url": "https://aka.ms/mbCarnival",
+        "url": "https://events.teams.microsoft.com/event/ee217aa0-7581-432b-b828-b0972328b25d@38dd6634-1031-4c50-a9b4-d16cd9d97d57",
         "imageUrl": "https://pxt.azureedge.net/blob/2f29e06f0ce78fc647a0f19ea4acadd0ea29563c/static/courses/csp.png",
         "label": "Online 7/22/24 - 7/26/24",
         "labelClass": "orange ribbon large"
     }
 ]
 ```
-
+<!--
 ## MakeCode Trainings for Minecraft
 
 ```codecard
@@ -83,11 +83,12 @@ This year, we will be hosting two separate cohorts of each session for both the 
     }
 ]
 ```
+-->
 
 
 ## See also
 
-* [Summer Training for VSCodeEDU](https://arcade.makecode.com/hour-of-code-2022)
+* [Summer Training for VSCodeEDU](https://vscodeedu.com/educators)
 * [Code a Carnival Webpage (HoC)](https://arcade.makecode.com/hour-of-code-2022)
 * [Getting Started with MakeCode Arcade](https://youtu.be/DE_-0flM324)
 * [Meet the micro:bit Video](https://youtu.be/iG-cRQXP7R8)
