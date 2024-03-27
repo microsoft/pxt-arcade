@@ -5,6 +5,10 @@
 //% groups=["0.","1#","2T","3t","4N","5n","6G","7g","8","9","aAR","bBP","cCp","dDO","eEY","fFW"]
 function img(lits: any, ...args: any[]): Image { return null }
 
+// this wait needed in case of an ESD event for arcade shield
+// would be best to have this part of configuration
+control.waitMicros(300000)
+
 // set palette before creating screen, so the JS version has the right BPP
 image.setPalette(hex`__palette`)
 //% whenUsed
