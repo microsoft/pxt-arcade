@@ -6,8 +6,9 @@
 function img(lits: any, ...args: any[]): Image { return null }
 
 // this wait needed in case of an ESD event for arcade shield
-// would be best to have this part of configuration
-control.waitMicros(300000)
+const delay = control.getConfigValue(DAL.CFG_DISPLAY_DELAY, 0)
+if (delay > 0)
+    control.waitMicros(delay * 1000)
 
 // set palette before creating screen, so the JS version has the right BPP
 image.setPalette(hex`__palette`)
