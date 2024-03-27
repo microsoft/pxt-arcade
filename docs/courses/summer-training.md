@@ -69,7 +69,7 @@ This year, we will be hosting two separate cohorts of each session for both the 
 [
     {
         "name": "AP CS Prinicples #1",
-        "description": "Click here to register for this online professional learning opportunity fo the MakeCode AP CS Principles course. (Session #1)",
+        "description": "Click here to register for this online professional learning opportunity for the MakeCode AP CS Principles course. (Session #1)",
         "url": "https://events.teams.microsoft.com/event/068ed173-0075-493a-be29-8d9784b2717f@38dd6634-1031-4c50-a9b4-d16cd9d97d57",
         "imageUrl": "https://pxt.azureedge.net/blob/2f29e06f0ce78fc647a0f19ea4acadd0ea29563c/static/courses/csp.png",
         "label": "Online 6/17/24 - 6/22/24",
