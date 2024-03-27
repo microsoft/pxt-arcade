@@ -76,7 +76,7 @@ This year, we will be hosting two separate cohorts of each session for both the 
         "labelClass": "orange ribbon large"
     },{
         "name": "AP CS Prinicples #2",
-        "description": "Click here to register for this online professional learning opportunity fo the MakeCode AP CS Principles course. (Session #2)",
+        "description": "Click here to register for this online professional learning opportunity for the MakeCode AP CS Principles course. (Session #2)",
         "url": "https://events.teams.microsoft.com/event/ee217aa0-7581-432b-b828-b0972328b25d@38dd6634-1031-4c50-a9b4-d16cd9d97d57",
         "imageUrl": "https://pxt.azureedge.net/blob/2f29e06f0ce78fc647a0f19ea4acadd0ea29563c/static/courses/csp.png",
         "label": "Online 7/22/24 - 7/26/24",
