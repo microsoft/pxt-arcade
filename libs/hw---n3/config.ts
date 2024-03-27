@@ -27,6 +27,7 @@ namespace config {
 
     export const DISPLAY_WIDTH = 160
     export const DISPLAY_HEIGHT = 128
+    export const DISPLAY_DELAY = 300
 
     export const DISPLAY_TYPE = 4242 // smart display
 
