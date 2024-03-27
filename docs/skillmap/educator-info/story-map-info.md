@@ -50,7 +50,7 @@ In this learning path, students will learn how to use background images, music, 
 | Activity | Greeting Card (15 min) |
 |---|---|
 | ![Greeting Card thumbnail](/static/skillmap/map-info/greeting-card.png) | Design a simple greeting card to send to friends and family. |
-| Blocks used | **[On Start](/blocks/on-start)** <br/><br/> ``[scene.setBackgroundImage(img`.`)]``<br/>``[effects.confetti.startScreenEffect()]``|
+| Blocks used | ``[scene.setBackgroundImage(img`.`)]`` <br/> ``[effects.confetti.startScreenEffect()]``|
 | Solution option | [Greeting Card Project](https://arcade.makecode.com/S21073-89960-25393-61916) |
 
 #### 2. Bigger Greeting
@@ -58,7 +58,7 @@ In this learning path, students will learn how to use background images, music, 
 | Activity | Bigger Greeting (15 min) |
 |---|---|
 | ![Bigger Greeting thumbnail](/static/skillmap/map-info/bigger-greeting.png) | This activity builds off the previous Greeting Card activity.<br/>Students will add text that is revealed with the press of a &nbsp;<br/>button. |
-| Blocks used | ``[carnival.addLabelTo("", carnival.Areas.Top, 2)]``<br/>``[music.play(music.createSong()music.PlaybackMode.LoopingInBackground)]``<br/>``[music.setVolume(20)]``<br/>``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]``<br/>``[game.setDialogFrame(img`.`)]``<br/>``[game.setDialogTextColor(0)]``<br/>``[game.showLongText("", DialogLayout.Bottom)]`` |
+| Blocks used | ``[carnival.addLabelTo("", carnival.Areas.Top, 2)]`` <br/> ``[music.play(music.createSong()music.PlaybackMode.LoopingInBackground)]`` <br/> ``[music.setVolume(20)]``<br/> ``[controller.A.onEvent(ControllerButtonEvent.Pressed, function () {})]`` <br/> ``[game.setDialogFrame(img`.`)]`` <br/> ``[game.setDialogTextColor(0)]`` <br/> ``[game.showLongText("", DialogLayout.Bottom)]`` |
 | Solution option | [Bigger Greeting Project](https://arcade.makecode.com/S38456-47249-27054-15853) |
 
 #### 3. Joking Around
@@ -66,7 +66,7 @@ In this learning path, students will learn how to use background images, music, 
 | Activity | Joking Around (45 min) |
 |---|---|
 | ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring thier favorite jokes to life. |
-| Blocks used | ``[game.showLongText("", DialogLayout.Top)]``<br/>``[game.splash("")]``<br/>``[sprites.create(img`.`).setPosition(0, 0)]``<br/>``[effects.bubbles.startScreenEffect()]``<br/>``[sprites.create(img`.`).setImage(img`.`)]``<br/>``[scene.cameraShake(4, 500)]`` <br/>``[animation.runImageAnimation()]``|
+| Blocks used | ``[game.showLongText("", DialogLayout.Top)]`` <br/> ``[game.splash("")]`` <br/> ``[sprites.create(img`.`).setPosition(0, 0)]`` <br/> ``[effects.bubbles.startScreenEffect()]`` <br/> ``[sprites.create(img`.`).setImage(img`.`)]`` <br/> ``[scene.cameraShake(4, 500)]`` <br/> ``[animation.runImageAnimation()]``|
 | Solution option | [Joking Around Project](https://arcade.makecode.com/S05893-52939-88219-32873) |
 
 
@@ -74,8 +74,8 @@ In this learning path, students will learn how to use background images, music, 
 
 | Activity | The Shortest Story (45 min) |
 |---|---|
-| ![The Shortest Story thumbnail](/static/skillmap/map-info/short-story.png) | This activity allows students to follow their own creativity,<br/>as they develop short stories that they can share with friends. |
-| Blocks used | ``[music.play(music.createSong()music.PlaybackMode.LoopingInBackground)]``<br/>``[music.setVolume(20)]``<br/>``[scene.setBackgroundImage()]``<br/>``[effects.bubbles.startScreenEffect()]`` |
+| ![The Shortest Story thumbnail](/static/skillmap/map-info/short-story.png) | This activity allows students to follow their own creativity, <br/> as they develop short stories that they can share with friends. |
+| Blocks used | ``[music.play(music.createSong()music.PlaybackMode.LoopingInBackground)]`` <br/> ``[music.setVolume(20)]`` <br/> ``[scene.setBackgroundImage()]`` <br/> ``[effects.bubbles.startScreenEffect()]`` |
 | Solution option | [The Shortest Story Project](https://arcade.makecode.com/S33219-62880-94664-42434) |
 
 
@@ -98,5 +98,5 @@ After completing the **Full of Stories** skillmap, students can move on to the f
 
 
 ```package
-carnival=github:microsoft/arcade-tutorial-extensions/carnival/
+carnival=github:microsoft/arcade-carnival#v0.0.7
 ```
