@@ -1,19 +1,42 @@
 
-![MakeCode Hero Image](https://pxt.azureedge.net/blob/67e56508413dd82807151fefa88b9c8cb2f03392/static/images/hero.png)
+![MakeCode Hero Image](https://pxt.azureedge.net/blob/67e56508413dd82807151fefa88b9c8cb2f03392/static/images/hero.png) 
+
+
 
 # MakeCode Summer Training Schedule
 
 ## MakeCode Trainings for micro:bit
-We will be hosting a special training in Las Vegas in the days leading up to CSTA. Please click the card below to register. 
+We will be hosting three **free** online trainings, leading up to a special in-person training in Las Vegas in the days before CSTA. Please click the cards below to register. 
 
 
 ```codecard
 [
     {
+        "name": "Getting Started",
+        "description": "Join 'Making and Coding with micro:bit - Get started with free curriculum' for a look at Microsoft’s free Introduction to Computer Science: Making with the micro:bit curriculum for middle school. ",
+        "url":"https://msit.events.teams.microsoft.com/event/40f9ed5f-8d72-4494-bbe2-42005441f4e6@72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "imageUrl": "https://github.com/microsoft/pxt-microbit/blob/master/docs/static/mb/projects/clap-lights.png?raw=true",
+        "label": "Online 4/30 @ 3pm PDT",
+        "labelClass": "orange ribbon large"
+    },{
+        "name": "Making and Coding",
+        "description": "Join 'Making and Coding with micro:bit - Modeling, coaching and skill building' for a look at Microsoft’s free Introduction to Computer Science: making with the micro:bit curriculum for middle school. ",
+        "url":"https://msit.events.teams.microsoft.com/event/762cfe3c-ef1a-40ec-87fd-73eacc6f1a77@72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "imageUrl": "https://github.com/microsoft/pxt-microbit/blob/master/docs/static/download/connect.png?raw=true",
+        "label": "Online 5/14 @ 3pm PDT",
+        "labelClass": "orange ribbon large"
+    },{
+        "name": "Supporting Projects",
+        "description": "Join 'Making and Coding with micro:bit - Supporting independent projects' for a look at Microsoft’s free Introduction to Computer Science: making with the micro:bit curriculum for middle school.",
+        "url":"https://msit.events.teams.microsoft.com/event/52ef14cd-07de-41be-83bc-c664d4a98aa5@72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "imageUrl": "https://github.com/microsoft/pxt-microbit/blob/master/docs/static/download/firmware.png?raw=true",
+        "label": "Online 5/28 @ 3pm PDT",
+        "labelClass": "orange ribbon large"
+    },{
         "name": "Micro:bit at CSTA",
         "description": "Join us in Vegas on 6/16/24 for an introduction to using micro:bit in the classroom",
         "url":"https://aka.ms/CSTA24reg",
-        "imageUrl": "https://pxt.azureedge.net/blob/ce157b871e8d7330375d8dc8ade57d7426259ef4/static/courses/csintro.jpg",
+        "imageUrl": "https://pxt.azureedge.net/blob/ce157b871e8d7330375d8dc8ade57d7426259ef4/static/electron-icons.icns",
         "label": "In Person on 6/16/24",
         "labelClass": "black ribbon large"
     }
@@ -45,15 +68,15 @@ This year, we will be hosting two separate cohorts of each session for both the 
 ```codecard
 [
     {
-        "name": "AP CS Prinicpals #1",
-        "description": "Click here to register through the College Board to experience this online professional learning opportunity for the MakeCode Arcade AP CS Principals course",
+        "name": "AP CS Prinicples #1",
+        "description": "Click here to register for this online professional learning opportunity fo the MakeCode AP CS Principles course. (Session #1)",
         "url": "https://events.teams.microsoft.com/event/068ed173-0075-493a-be29-8d9784b2717f@38dd6634-1031-4c50-a9b4-d16cd9d97d57",
         "imageUrl": "https://pxt.azureedge.net/blob/2f29e06f0ce78fc647a0f19ea4acadd0ea29563c/static/courses/csp.png",
         "label": "Online 6/17/24 - 6/22/24",
         "labelClass": "orange ribbon large"
     },{
-        "name": "AP CS Prinicpals #2",
-        "description": "Click here to register through the College Board to experience this online professional learning opportunity for the MakeCode Arcade AP CS Principals course",
+        "name": "AP CS Prinicples #2",
+        "description": "Click here to register for this online professional learning opportunity fo the MakeCode AP CS Principles course. (Session #2)",
         "url": "https://events.teams.microsoft.com/event/ee217aa0-7581-432b-b828-b0972328b25d@38dd6634-1031-4c50-a9b4-d16cd9d97d57",
         "imageUrl": "https://pxt.azureedge.net/blob/2f29e06f0ce78fc647a0f19ea4acadd0ea29563c/static/courses/csp.png",
         "label": "Online 7/22/24 - 7/26/24",
