@@ -78,9 +78,9 @@ Students will work with sprite controller blocks, variables, and conditional sta
 
 | Activity | Animate It! (20 min) |
 |---|---|
-| ![Animate It! thumbnail](/static/skillmap/map-info/animate-it.png) | Polish your game using animation to make your characters come to life! |
-| Blocks used | ``[info.changeLifeBy(1)]``|
-| Solution option | [Animate It Project](https://arcade.makecode.com/20377-15271-69070-26521) |
+| ![Animate It! thumbnail](https://makecode.com/api/_VbY6wsJ643HV/thumb) | Polish your game using animation to make your characters come to life! |
+| Blocks used | ``[animation.runImageAnimation()]``|
+| Solution option | [Animate It Project](https://makecode.com/_VbY6wsJ643HV) |
 
 ##### Game Mod Ideas
 

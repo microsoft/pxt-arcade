@@ -17,6 +17,12 @@
   "url": "https://arcade.makecode.com/#tutorial:/tutorials/sparks-jr",
   "cardType": "link",
   "imageUrl": "https://makecode.com/api/_Aw3E84FyDPKX/thumb"
+}, {
+  "name": "Free Throw Jr.",
+  "description": "Code a game that lets you to line up a shot and throw for the hoop.",
+  "url": "https://arcade.makecode.com/#tutorial:/tutorials/free-throw-jr",
+  "cardType": "link",
+  "imageUrl": "https://makecode.com/api/S77067-48788-87054-57025/thumb"
 }
 ]
 ```
