@@ -701,7 +701,7 @@
             "id": "ie"
         }
     ],
-    "uploadDocs": true,
+    "uploadDocs": false,
     "noSimShims": true,
     "defaultBadges": [
         {
