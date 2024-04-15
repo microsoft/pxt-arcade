@@ -4,6 +4,42 @@
     },
     "featured": [
         {
+            "id": "81763-74727-74866-09375",
+            "title": "Amanda Gorman and \"The Hill We Climb\"",
+            "author": "Ceggiebear",
+            "description": "Play as poet Amanda Gorman as she composes her poem for President Biden's inauguration!"
+        },
+        {
+            "id": "38226-95731-47070-73388",
+            "title": "Megan Rapinoe",
+            "author": "GoMustangs",
+            "description": "Play as Megan Rapinoe in this classic shmup game with a twist! Switch your hair color to wrack up a score multiplier for major points!"
+        },
+        {
+            "id": "75876-49918-50592-15147",
+            "title": "Amelia Earhart: Aviator Extraordinaire",
+            "author": "Blobbey",
+            "description": "Recreate famous flights from Amelia Earhart's life in this flight simulator!"
+        },
+        {
+            "id": "98398-96774-94162-09922",
+            "title": "Blast and Slash",
+            "author": "Lucas_M/DangerKitty",
+            "description": "Blast and slash your way through the desert in this addictive female-led roguelike game! Collect money to unlock upgrades in preparation for the climactic boss battle!"
+        },
+        {
+            "id": "76909-17578-71814-49492",
+            "title": "FOR ALL WOMANKIND",
+            "author": "Oscar",
+            "description": "Play as a team of astronauts trying to land their shuttlecraft in this game dedicated to Katherine Johnson!"
+        },
+        {
+            "id": "49970-33654-67029-92638",
+            "title": "Infiltration",
+            "author": "M1nt-Phoen1x",
+            "description": "Stand up to the tyranny of megacorporations and save your family in the metroidvania game!"
+        },
+        {
             "id": "07354-43385-19795-87252",
             "title": "BootlegMan",
             "author": "Joe N"
@@ -39,11 +75,6 @@
             "author": "Aeth"
         },
         {
-            "id": "81763-74727-74866-09375",
-            "title": "Amanda Gorman and \"The Hill We Climb\"",
-            "author": "Ceggiebear"
-        },
-        {
             "id": "13291-46234-96045-98750",
             "title": "Monika's Literature club activity",
             "author": "Scott144"
@@ -62,11 +93,6 @@
             "id": "07772-79468-80619-15682",
             "title": "Women suffrage moment. ",
             "author": "Muhammad Mr. Ahmed"
-        },
-        {
-            "id": "38226-95731-47070-73388",
-            "title": "Megan Rapinoe",
-            "author": "GoMustangs"
         },
         {
             "id": "33348-22247-29839-27999",
@@ -92,26 +118,6 @@
             "id": "85019-68993-24232-29047",
             "title": "Ghost Clone Invaders",
             "author": "Monishka S"
-        },
-        {
-            "id": "98537-40423-47522-15861",
-            "title": "Marie Curie (Game jam submission)",
-            "author": "Peppercorn Studios"
-        },
-        {
-            "id": "75876-49918-50592-15147",
-            "title": "Amelia Earhart: Aviator Extraordinaire",
-            "author": "Blobbey"
-        },
-        {
-            "id": "24653-68670-93715-48748",
-            "title": "The Adventures of Frances Perkins",
-            "author": "Brohann"
-        },
-        {
-            "id": "58950-52861-22099-51073",
-            "title": "Lady Lovelace's Time Machine",
-            "author": "verisutha"
         },
         {
             "id": "14704-73542-39194-29081",
@@ -184,34 +190,14 @@
             "author": "gideon_loves_cats :):)"
         },
         {
-            "id": "98398-96774-94162-09922",
-            "title": "Blash and Slash",
-            "author": "Lucas_M/DangerKitty"
-        },
-        {
             "id": "86994-86785-55167-78927",
             "title": "Annie and Mary",
             "author": "hanki"
         },
         {
-            "id": "14599-75222-61879-27532",
-            "title": "Hop-O-Matic",
-            "author": "rymc88"
-        },
-        {
-            "id": "76909-17578-71814-49492",
-            "title": "FOR ALL WOMANKIND",
-            "author": "Oscar"
-        },
-        {
             "id": "39130-17586-84955-97935",
             "title": "ZANDOX",
             "author": "NOVABOY"
-        },
-        {
-            "id": "49970-33654-67029-92638",
-            "title": "Infiltration",
-            "author": "M1nt-Phoen1x"
         }
     ],
     "start": "2024-3-1 00:00:01 GMT-0700",
