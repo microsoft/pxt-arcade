@@ -39,5 +39,5 @@
 
 [Grace Hopper's Hop-O-Matic](https://arcade.makecode.com/14599-75222-61879-27532) by **rymc88** lets you take on the role of Grace Hopper's compiler as it processes source code into ones and zeroes. Our judges loved how this game interpreted the theme as well as the amazing animation it plays when you finish encoding a character. This game is surprisingly addictive even though it only uses two buttons! 
 
-Be sure to also check out the [official Code Ninja's page for this jam](https://forms.codeninjas.com/femalegamechangers) to learn about how you can be entered to win prizes if you're under 16!
+Be sure to also check out the [official Code Ninja's page for this jam](https://forms.codeninjas.com/femalegamechangers), where they will host a separate round of judging and prizes!
 
