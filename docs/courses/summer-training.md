@@ -34,10 +34,10 @@ We will be hosting three **free** online trainings, leading up to a special in-p
         "labelClass": "orange ribbon large"
     },{
         "name": "Micro:bit at CSTA",
-        "description": "Join us in Vegas on 6/16/24 for an introduction to using micro:bit in the classroom",
+        "description": "Join us in Vegas on 7/16/24 for an introduction to using micro:bit in the classroom",
         "url":"https://aka.ms/CSTA24reg",
         "imageUrl": "https://pxt.azureedge.net/blob/ce157b871e8d7330375d8dc8ade57d7426259ef4/static/electron-icons.icns",
-        "label": "In Person on 6/16/24",
+        "label": "In Person on 7/16/24",
         "labelClass": "black ribbon large"
     }
 ]
