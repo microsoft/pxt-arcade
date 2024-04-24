@@ -83,7 +83,7 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 //@highlight
@@ -127,7 +127,7 @@ hint~
 
 ```blocks
 
-myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
