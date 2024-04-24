@@ -59,7 +59,7 @@ container that's already in the workspace.
 //@highlight
 game.set_health_of_trees(7)
 tiles.setTilemap(tilemap`level1`)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -109,7 +109,7 @@ game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -127,14 +127,12 @@ Now that the environment is set, we can add code to make the fires spread.
 
 ---
 
-- :circle: From ``||game:Game||``, snap <br/>
-
+- :circle: From ``||game:Game||``, snap
 ```blocks
 game.onUpdate(function () {
     sprites.random_spread()
 })
 ```
-
 into an **empty area** of your workspace to run
 each time the game updates.
 
@@ -165,7 +163,7 @@ Does it get out of control too quickly? Try experimenting with your variables.
 
 
 
-## Finale
+## {Finale}
 
 👏 **Excellent!**
 
@@ -178,11 +176,11 @@ keep moving through the skillmap to find out how to add a heads-up display to yo
 
 
 ```blockconfig.global
-let myPlane = sprites.create(img`.`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, img`.`)
+    sprites.spray(myPlane, forest_imgs.water)
 })
 
 tiles.setTileAt(location, assets.tile`transparency16`)
@@ -205,10 +203,10 @@ game.onUpdate(function () {
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, assets.image`water`)
+    sprites.spray(myPlane, forest_imgs.water)
 })
 
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 

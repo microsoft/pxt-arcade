@@ -57,7 +57,7 @@ into **an empty area** of your workspace.
 #### ~ tutorialhint
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, assets.image`water`)
+    sprites.spray(myPlane, forest_imgs.Fire_Plane_2_Right)
 })
 ```
 
@@ -216,6 +216,7 @@ keep moving through the skillmap so you can see how to make your fires spread.
 let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
+sprites.spray(myPlane, forest_imgs.water)
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     sprites.spray(myPlane, forest_imgs.water)
 })

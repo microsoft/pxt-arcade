@@ -4,7 +4,7 @@
 
 ## Intro @showdialog
 
-Are you ready to have an adventure with Joy and the rest of the emotions from Inside Out 2? Click **Next** to make your own game!
+Are you ready to try something new with Joy and the rest of the emotions from Inside Out 2? Click **Next** to make your own game!
 
 
 ![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.png "How many memories can you store?")
@@ -222,10 +222,7 @@ You should be able to aim your bubble further to the right.
 #### ~ tutorialhint
 
 ```blocks
-bubble.createBoard()
-bubble.load_bubble()
-let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
-mySprite.top = 102
+
 //@highlight
 controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
     bubble.tilt_angle(bubble.Choice.Right)
@@ -248,13 +245,7 @@ You should now be able to aim your bubble further to the left.
 #### ~ tutorialhint
 
 ```blocks
-bubble.createBoard()
-bubble.load_bubble()
-let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
-mySprite.top = 102
-controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
-    bubble.tilt_angle(bubble.Choice.Right)
-})
+
 //@highlight
 controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
     bubble.tilt_angle(bubble.Choice.Left)
@@ -298,11 +289,61 @@ You should be able to toss a bubble in the direction it's aimed when you press e
 
 Give it a try!
 
-💡 _ Notice that your bubble doesn't properly stick where it hits, yet. There's also no option to throw another bubble. We'll fix both of those things in the steps that follow._
+💡 _Notice that your bubble doesn't properly stick where it hits, yet. There's also no option to throw another bubble. We'll fix both of those things in the steps that follow._
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
 
 
 
-## {12. Need a Refill?}
+## {12. Connecting Bubbles}
+
+**Time to make the memories stick!**
+
+We want the bubbles to stick whenever they connect to the top wall or to another bubble.
+
+---
+
+- :tree: Open the ``||scene: Scene||`` category and grab the<br/>
+``||scene:on [sprite] of kind [Bubble] ...||``<br/>
+bundle and drop it into **an empty** area of the workspace. <br/>
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
+    bubble.stick_to_wall(sprite, location)
+})
+```
+
+
+
+
+## {13. Check Your Screen!}
+
+
+- :binoculars: Take a shot in the game window!
+
+When your bubble hits a grouping at the top, it should stick! If that grouping has three or more of the same color, you should also get points as they pop.
+
+
+
+
+
+
+## {14. Need a Refill?}
 
 **Let's load a new bubble every time we toss the old one.**
 
@@ -312,7 +353,7 @@ Give it a try!
 ``||bubble:load new bubble||``<br/>
 then snap it inside at **the end of** the <br/>
 ``||controller(noclick):on [A] button [pressed]||``<br/>
-block already in the workspace.
+container already in the workspace.
 
 
 
@@ -339,41 +380,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 
 
-## {13. Connecting Bubbles}
-
-**Time to make the memories stick!**
-
-We want the bubbles to stick whenever they connect to the top wall or to another bubble.
-
----
-
-- :tree: Open the ``||scene: Scene||`` category and grab the<br/>
-``||scene:on [sprite] of kind [Bubble] ...||``<br/>
-bundle and drop it into **an empty** area of the workspace. <br/>
 
 
-```blockconfig.local
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    bubble.tossBubble()
-    bubble.load_bubble()
-})
-
-```
-
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
-    bubble.stick_to_wall(sprite, location)
-})
-```
-
-
-
-
-## {18. Test It}
+## {15. Test It}
 
 
 - :binoculars: **Time to play your finished game!**
@@ -396,6 +405,12 @@ Feel like going above and beyond? There are enough blocks in the toolbox to make
 hint~
 
 
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+    bubble.load_bubble()
+})
+```
 
 
 
