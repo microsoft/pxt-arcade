@@ -52,7 +52,7 @@ game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -102,7 +102,7 @@ game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -143,7 +143,7 @@ game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -188,7 +188,7 @@ game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
 tiles.setTilemap(tilemap`level1`)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -235,7 +235,7 @@ and head back out to the skillmap to share it with friends or save it in your ga
 
 
 ```blockconfig.global
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -250,13 +250,13 @@ pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
 ```template
 
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, assets.image`water`)
+    sprites.spray(myPlane, forest_imgs.water)
 })
 
 game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
@@ -297,11 +297,11 @@ hud.fire_hud_label ("Nope:")
 
 
 ```blockconfig.global
-let myPlane = sprites.create(img`.`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, img`.`)
+    sprites.spray(myPlane, forest_imgs.water)
 })
 
 tiles.setTileAt(location, assets.tile`transparency16`)
@@ -324,13 +324,13 @@ game.onUpdate(function () {
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, assets.image`water`)
+    sprites.spray(myPlane, forest_imgs.water)
 })
 
 game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
