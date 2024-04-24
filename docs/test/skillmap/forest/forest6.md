@@ -32,9 +32,44 @@ it flips around as it goes back and forth.
 - :game: From ``||controller:Controller||``, grab
 ```blocks
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     myPlane,
-    [img`.`],
+    [img`
+        ........................
+        ........................
+        ....ffffff..............
+        ....f9bbbbf.........8f..
+        .....ffbbbbff......88f..
+        .....8ffff888ff...88bf..
+        ..ffffbbbbbb8888888bbf..
+        ffbb1bbbbbbbbbbbb888888f
+        fbbbbddd99bbbbbbbbbfffff
+        .f8bbbbbbbbb88bbbbf.....
+        ..ff8888888bf88bbbbf....
+        ....ffffffffff88bbbbb...
+        ........cf.cf.f98888b...
+        ...............ffffff...
+        ........................
+        ........................
+        `,img`
+        ........................
+        ........................
+        ........................
+        ....ffffff..........8f..
+        ....f9bbbbff.......88f..
+        .....8fffffff.....88bf..
+        ..ffffbbbbbbff88888bbf..
+        ffbbbd9999bbbbbbb888888f
+        fbbbbbbbbbbbbbbbbbbfffff
+        .f8bbbbbbbbb888bbbbf....
+        ..ff8888888bf888bbbbb...
+        ....fffffffffff98888b...
+        ........cf.cf..ffffff...
+        ........................
+        ........................
+        ........................
+        `],
     100,
     true
     )
@@ -301,7 +336,7 @@ and head back out to the skillmap to share with friends and save your game in yo
 
 
 ```blockconfig.global
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -353,14 +388,14 @@ music.thump.play()
 ```template
 
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, assets.image`water`)
+    sprites.spray(myPlane, forest_imgs.Fire_Plane_2_Right)
 })
 
 
 game.set_health_of_trees(7)
 game.set_strength_of_wind(3)
 game.set_dryness_of_grass(3)
-let myPlane = sprites.create(assets.image`Fire Plane Right`, SpriteKind.Player)
+let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
 
