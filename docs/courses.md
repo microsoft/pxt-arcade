@@ -51,6 +51,7 @@ The games they make in the course can run on the GameGo device! Courses are free
         "url": "https://make2learn.tinkergen.com/course/?sku=604182001",
         "imageUrl": "/static/courses/gamego-beginner.png",
         "largeImageUrl": "/static/courses/gamego-beginner.png",
+        "cardType": "link",
         "directOpen": true
     }, {
         "name": "GameGo Intermediate Programming Course",
@@ -58,6 +59,7 @@ The games they make in the course can run on the GameGo device! Courses are free
         "url": "https://make2learn.tinkergen.com/course/?sku=604182003",
         "imageUrl": "/static/courses/gamego-intermediate.png",
         "largeImageUrl": "/static/courses/gamego-intermediate.png",
+        "cardType": "link",
         "directOpen": true
     }
 ]
