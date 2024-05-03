@@ -12,13 +12,6 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Join the Game Jam!
-* buttonLabel: See More
-* description: Contribute a game about women who change the world
-* imageUrl: /static/hero-gallery/gamechangers.png
-* url: aka.ms/gamejam
-* cardType: link
----
 * name: Build a Multiplayer Game
 * buttonLabel: Code Now
 * description: Code a game you can play online with friends
