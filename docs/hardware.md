@@ -100,6 +100,12 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "description": "Use the micro:bit with an expansion board from iCShop",
         "imageUrl": "/static/hardware/bit-shield.png",
         "url": "https://www.icshop.com.tw/products/368112100137?locale=en"
+    },
+    {
+        "name": "micro:bit Kitronik Shield",
+        "description": "Use the micro:bit with an expansion board from Kitronik",
+        "imageUrl": "/static/hardware/kitronik-shield.png",
+        "url": "http://www.kitronik.co.uk/56116"
     }
 ]
 ```
