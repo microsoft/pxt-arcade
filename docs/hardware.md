@@ -91,7 +91,7 @@ You can use micro:bit V2 with an accessory shield to play MakeCode Arcade games 
 
 Shields are based on our guidelines, adhere to open source hardware reference designs, and have been user tested.  However, each hardware manufacturer is responsible for ensuring the compatibility, reliability, safety and compliance of their products. Microsoft provides no representations or warranties on these products and disclaims liability for any risks associated with their use.
 
-```
+```codecard
 [
     {
         "name": "micro:bit Newbit Shield",
