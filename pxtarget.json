@@ -605,10 +605,10 @@
         },
         "blocklyOptions": {
             "grid": {
-                "spacing": 20,
-                "length": 100,
-                "colour": "rgba(107, 79, 118, 0.10)",
-                "snap": true
+                "spacing": 30,
+                "length": 1,
+                "colour": "rgb(189, 195, 199)",
+                "snap": false
             }
         },
         "blockColors": {
@@ -624,7 +624,7 @@
         "simAnimationExit": "fly right out",
         "crowdinProject": "makecode",
         "monacoColors": {
-            "editor.background": "#FEF3E0"
+            "editor.background": "#F8FAFC"
         },
         "monacoFieldEditors": [
             "image-editor",
