@@ -87,7 +87,7 @@
 @editorToolsBackground: @lightSecondaryColor;
 @blocklySvgColor: @lightSecondaryColor;
 @homeScreenBackground: @lightSecondaryColor;
-@cloudCardBackground: lighten(desaturate(@teal, 56), 23);
+@cloudCardBackground: darken(@secondaryColor, 20%);
 
 /*-------------------
    Full screen
@@ -140,3 +140,6 @@
 @teachingBubbleBackgroundColor: @teal;
 @teachingBubbleTextColor: @white;
 @teachingBubbleStepsColor: @beige;
+
+@assetUnselected: #ebedef;
+@DebuggerBackgroundPrimaryColor: #117955;
