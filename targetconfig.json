@@ -359,7 +359,7 @@
             "variant": "hw---n3"
         },
         {
-            "name": "micro:bit Kitronik Shield",
+            "name": "Kitronik Arcade for micro:bit",
             "description": "Use the micro:bit with an expansion board from Kitronik",
             "imageUrl": "/static/hardware/kitronik-shield.png",
             "url": "https://kitronik.co.uk/56116",
