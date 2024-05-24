@@ -357,6 +357,13 @@
             "imageUrl": "/static/hardware/bit-shield.png",
             "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
             "variant": "hw---n3"
+        },
+        {
+            "name": "Kitronik Arcade for micro:bit",
+            "description": "Use the micro:bit with an expansion board from Kitronik",
+            "imageUrl": "/static/hardware/kitronik-shield.png",
+            "url": "https://kitronik.co.uk/56116",
+            "variant": "hw---n3"
         }
     ],
     "galleries": {
