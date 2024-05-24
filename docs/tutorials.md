@@ -14,7 +14,7 @@
   "imageUrl": "/static/tutorials/interface/info.png",
   "largeImageUrl": "/static/tutorials/interface/info.png",
   "label": "New? Try This!",
-  "labelClass": "orange ribbon large"
+  "labelClass": "purple ribbon large"
 },{
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",

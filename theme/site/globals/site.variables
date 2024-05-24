@@ -31,21 +31,23 @@
 @grey             : #7f8c8d;
 @orange           : #F76820;
 @pink             : #E91E63;
-@teal             : #028B9B;
+@teal             : #116E79;
 @yellow           : #f1c40f;
 
 /* 32 colors */
-@purple           : #6B4F76;
+@purple           : #5D4FBA;
 @blue             : #B1E3DA;
 @beige            : #FEF3E0;
 @salmon           : #E95153;
+
+@lightGrey        : #F8FAFC;
 
 /*-------------------
     Brand Colors
 --------------------*/
 
-@primaryColor        : @orange;
-@secondaryColor      : @orange;
+@primaryColor        : @teal;
+@secondaryColor      : @purple;
 
 @lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightGrey;
@@ -61,9 +63,9 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @orange;
+@mainMenuInvertedBackground: @teal;
 @mainMenuTutorialBackground: @teal;
-@mainMenuTutorialButtons: @orange;
+@mainMenuTutorialButtons: @teal;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;
 
@@ -81,11 +83,11 @@
    Background
 --------------------*/
 
-@simulatorBackground: @blue;
-@editorToolsBackground: @beige;
-@blocklySvgColor: @beige;
-@homeScreenBackground: @beige;
-@cloudCardBackground: lighten(desaturate(@teal, 56), 23);
+@simulatorBackground: @lightSecondaryColor;
+@editorToolsBackground: @lightSecondaryColor;
+@blocklySvgColor: @lightSecondaryColor;
+@homeScreenBackground: @lightSecondaryColor;
+@cloudCardBackground: darken(@secondaryColor, 20%);
 
 /*-------------------
    Full screen
@@ -98,7 +100,7 @@
    Editor
 --------------------*/
 
-@blocklyToolboxColor: @beige;
+@blocklyToolboxColor: @white;
 @trashIconColor: @primaryColor;
 
 /*-------------------
@@ -138,3 +140,6 @@
 @teachingBubbleBackgroundColor: @teal;
 @teachingBubbleTextColor: @white;
 @teachingBubbleStepsColor: @beige;
+
+@assetUnselected: #ebedef;
+@DebuggerBackgroundPrimaryColor: #117955;

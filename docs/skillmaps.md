@@ -12,7 +12,7 @@
   "imageUrl":  "/static/skillmap/backgrounds/beginner.png",
   "url": "https://arcade.makecode.com/--skillmap#beginner",
   "label": "New? Try This!",
-  "labelClass": "orange ribbon large",
+  "labelClass": "purple ribbon large",
   "directOpen": true
 },
 {

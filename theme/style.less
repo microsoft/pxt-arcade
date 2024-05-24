@@ -53,15 +53,15 @@
 }
 
 .ui.primary.button.download-button {
-    background-color: @orange;
+    background-color: @secondaryColor;
 }
 
 .simtoolbar .ui.button.icon, #editortools .ui.button.editortools-btn {
-    background-color: @teal;
+    background-color: @secondaryColor;
 }
 
 #editortools .ui.button.hw-button {
-    background-color: darken(desaturate(@orange, 20%), 10%);
+    background-color: darken(@secondaryColor, 15%);
 }
 
 #simulator .ui.button.play-button .icon.play {
@@ -79,6 +79,22 @@
 
 .draggable-graph-path {
     stroke: @soundEffectHeaderColor;
+}
+
+.carouselarrow {
+    color: @secondaryColor;
+}
+
+.projectsdialog .detailview .ui.grid.stackable .actions .card-action .button.approve {
+    background-color: @primaryColor;
+}
+
+.extensions-browser {
+    .extension-tag.selected {
+        background-color: @primaryColor;
+        border-color: @primaryColor;
+        color: @white
+    }
 }
 
 /* Mobile */
