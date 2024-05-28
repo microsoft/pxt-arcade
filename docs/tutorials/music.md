@@ -155,7 +155,7 @@ block to open the music editor.
 
 <br/>
 
-![Write music in MakeCode Arcade](azuremedia:32b05e5a-f5ce-45fd-a21b-fff271701b2f/MusicEditorDemo.ism)
+![Write music in MakeCode Arcade](youtube:7d0noM0BM7E)
 
 
 

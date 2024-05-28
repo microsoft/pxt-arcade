@@ -4,22 +4,13 @@
 
 ## Whack-the-Mole Intro @showdialog
 
-![whack-the-mole](azuremedia:eb645602-3355-4aa7-a756-0ea205b2ce80/Whack-the-Mole-Intro.ism)
-
-~hint Click here view the intro video with ASL
-
-![ASL Whack-the-Mole Intro](azuremedia:02104365-8137-40f6-9de6-3920afaf5f42/mole-asl.ism)
-
-hint~
+![whack-the-mole](youtube:UKYPIXl7agI)
 
 ---
 
 Special thanks to MakeCode forum User _SoftTalker_ for this submission.
 
----
 
-Thank you to Deaf Kids Code for providing ASL video translations.
-![Deaf Kids Code Logo](/static/skillmap/assets/dkc-logo-small.png " ")
 
 
 
