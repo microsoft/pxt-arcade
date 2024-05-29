@@ -4,10 +4,11 @@
 
 ## Intro @showdialog
 
-Are you ready to try something new with Joy and the rest of the emotions from Inside Out 2? Click **Next** to make your own game!
+Are you ready to try something new with Joy and the rest of the emotions from <br/>
+Disney and Pixar's Inside Out 2? Click **Next** to make your own game!
 
 
-![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.png "How many memories can you store?")
+![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.jpg "How many memories can you store?")
 
 
 
@@ -509,7 +510,7 @@ bubble=github:kiki-lee/bubble_ext#v0.1.0
         "#729280",
         "#A4839F",
         "#5C406c",
-        "#E5CDC4",
+        "#f9cb84",
         "#8A0A0A",
         "#000000"
     ]
