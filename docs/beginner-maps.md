@@ -14,7 +14,7 @@
   "imageUrl":  "/static/skillmap/backgrounds/story-map.png",
   "url": "https://arcade.makecode.com/--skillmap#story",
   "label": "New? Try This!",
-  "labelClass": "purple ribbon large",
+  "labelClass": "orange ribbon large",
   "directOpen": true
 },
 {
