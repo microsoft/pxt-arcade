@@ -4,10 +4,12 @@
 
 ## Intro @showdialog
 
-Are you ready to have an adventure with Joy and the rest of the emotions from Inside Out 2? Click **Next** to make your own game!
+Are you ready to try something new with Joy and the rest of the emotions from <br/>
+Disney and Pixar's Inside Out 2? Click **Next** to make your own game!
 
 
-![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.png "How many memories can you store?")
+![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.jpg "How many memories can you store?")
+
 
 
 
@@ -15,8 +17,105 @@ Are you ready to have an adventure with Joy and the rest of the emotions from In
 
 ## {2. Your First Block}
 
+**Ready to start coding?**
 
-## {2. Your First Block}
+Let's set the scene by adding "core memories" to the game window.
+
+
+---
+
+
+- :dot circle: Open the ``||bubble: Bubble||`` category **in the toolbox** and grab <br/>
+``||bubble:create board||``<br/>
+then snap it inside the empty <br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
+
+---
+
+
+~hint What does that mean? 🤷🏽
+
+---
+
+When giving instructions, we'll color some text to give you a better idea of what you are looking for.
+
+For example, when we suggest the <br/>
+``||bubble:create board||``<br/>
+block, we are pointing you toward <br/>
+
+```block
+bubble.createBoard()
+```
+
+hint~
+
+
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+bubble.createBoard()
+```
+
+
+
+
+## {3. Check Your Screen!}
+
+
+- :binoculars: Look at your project in the game window to see what your code has done.
+
+You should see two rows of memory bubbles lining the top of the game window. 
+
+![The game window is in the lower left corner](/static/tutorials/bubbles/game.png "Your game will automatically load in this window after every step.")
+
+
+
+## {4. Add Bubble}
+
+**Let's add a memory bubble to aim.**
+
+---
+
+
+- :dot circle: Open the ``||bubble: Bubble||`` category **in the toolbox** and grab <br/>
+``||bubble:load new bubble||``<br/>
+then snap it inside at **the end of** the <br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
+
+---
+
+~hint ⁉️ No bubbles showing?
+
+---
+
+This game relies on setting the scene before you add your main bubble.  If you don't see anything loaded in your game window, you may have instructions in the wrong order.  
+
+Check to see that your code looks like this:
+
+```blocks
+bubble.createBoard()
+//@highlight
+bubble.load_bubble()
+```
+
+hint~
+
+
+#### ~ tutorialhint
+
+```blocks
+bubble.createBoard()
+//@highlight
+bubble.load_bubble()
+```
+
+
+
+## {5. Gaming with Joy}
 
 **Add your emotion!**
 
@@ -30,122 +129,340 @@ In Arcade, each character or image that does something is called a **SPRITE**.
 
 Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
 
-Our players will be sprites, too.
+Our characters will be sprites, too.
 
 hint~
 
 - :paper plane: Open the ``||sprites:Sprites||`` category and drag <br/>
 ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``<br/>
-into **the empty** <br/>
+into the **end of** the <br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-
-~hint Pizza category? 🍕
-
----
-
-Within special tutorials, you'll sometimes see custom categories that we don't offer in our normal interface. These categories are **Extensions**.
-
-When creating custom projects or tutorials, people can craft their own blocks that others can add into their toolbox as an extension.  Since we can't get to the **Extensions** gallery from a tutorial, the categories you need have been provided in the toolbox by default.
-
-If you want to use the ``||bubble:Bubble||`` category in another tutorial someday, make sure to grab the share link for this finished project and you'll be able to import the blocks from this tutorial into another project!
-
-hint~
-
-
-
+💡 _To change sprites, click the character in the box and look under the **Gallery** tab._
 
 
 #### ~ tutorialhint
 
 ```blocks
+bubble.createBoard()
+bubble.load_bubble()
 //@highlight
 let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
 ```
 
 
 
-## {5. Check Your Game!}
+## {6. Check Your Game!}
 
 
-- :binoculars: Look at your project in the game window to see what your code has done.
+- :binoculars: Take a look at the game window again.
 
-You should see a single sprite in the game window that looks like the first image in your array.
+Your sprite should be in the middle of the screen.  
 
-**Click on the game window and try moving your _sprite_ using the arrow keys or joypad.**
-
-
-
+In the next step, we'll move it to a location that makes it look like it's aiming the bubble.
 
 
 
 
 
+## {7. Gaming with Joy}
+
+**Move your sprite.**
+
+Let's add a block to make sure that the top of the sprite is right below the memory bubble. 
 
 
-## {13. Test!}
+- :paper plane: Open the ``||sprites:Sprites||`` category and drag <br/>
+``||sprites:set [mySprite] [top] to [102]||``<br/>
+into the **end of** the <br/>
+``||loops(noclick): on start||`` <br/>
+container already in the workspace.
+
+---
+
+~hint Why 102? 🤷🏽‍♀️
+
+---
+
+The coordinates of our screen go from **0** at the top to **120** at the very bottom. 
+
+Since we want just a little bit of our character peeking up from below, we'll set the top of our character to **102** so it rests just below the bubble that we will be aiming. 
 
 
-- :binoculars: Test your project with two or more players.
-
-As **Player 1**, try holding down the (A) button (or space bar) and running into another player.  What happens?
+hint~
 
 
-📝 _Note: At the moment, a player can only bump someone with a higher number. We'll fix that in the next step._
+#### ~ tutorialhint
+
+```blocks
+bubble.createBoard()
+bubble.load_bubble()
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
+//@highlight
+mySprite.top = 102
+
+```
+
+
+
+
+## {8. Aim the Bubble Right}
+
+**Now that everything is on screen, it's time to aim your shot.**
+
+- :game: Open the ``||controller:Controller||`` category and drag the<br/>
+``||controller:on [right] button [repeat]||``<br/>
+bundle into **an empty area** of the workspace. <br/>
+
+---
+
+You should be able to aim your bubble further to the right. 
+
+
+#### ~ tutorialhint
+
+```blocks
+
+//@highlight
+controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Right)
+})
+```
+
+
+
+## {9. Aim the Bubble Left}
+
+- :mouse pointer: Right-click to **Duplicate** your <br/>
+``||controller:on [right] button [repeat]||``<br/>
+bundle, then change both **right** options to **left**. <br/>
+
+---
+
+You should now be able to aim your bubble further to the left. 
+
+
+#### ~ tutorialhint
+
+```blocks
+
+//@highlight
+controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Left)
+})
+```
+
+
+
+## {10. Time to Toss}
+
+**Time to toss!**
+
+- :game: Open the ``||controller:Controller||`` category and drag the<br/>
+``||controller:on [A] button [pressed]||``<br/>
+bundle into **an empty area** of the workspace. <br/>
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+
+//@highlight
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+
+## {11. Test!}
+
+
+- :binoculars: Test your game.
+
+You should be able to toss a bubble in the direction it's aimed when you press either the (A) button or the **space bar**.
+
+Give it a try!
+
+💡 _Notice that your bubble doesn't properly stick where it hits, yet. There's also no option to throw another bubble. We'll fix both of those things in the steps that follow._
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+
+
+## {12. Connecting Bubbles}
+
+**Time to make the memories stick!**
+
+We want the bubbles to stick whenever they connect to the top wall or to another bubble.
+
+---
+
+- :tree: Open the ``||scene: Scene||`` category and grab the<br/>
+``||scene:on [sprite] of kind [Bubble] ...||``<br/>
+bundle and drop it into **an empty** area of the workspace. <br/>
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
+    bubble.stick_to_wall(sprite, location)
+})
+```
+
+
+
+
+## {13. Check Your Screen!}
+
+
+- :binoculars: Take a shot in the game window!
+
+When your bubble hits a grouping at the top, it should stick! If that grouping has three or more of the same color, you should also get points as they pop.
 
 
 
 
 
-## {18. Test It}
+
+## {14. Need a Refill?}
+
+**Let's load a new bubble every time we toss the old one.**
+
+---
+
+- :dot circle: Open the ``||bubble: Bubble||`` category **in the toolbox** and grab <br/>
+``||bubble:load new bubble||``<br/>
+then snap it inside at **the end of** the <br/>
+``||controller(noclick):on [A] button [pressed]||``<br/>
+container already in the workspace.
 
 
-- :binoculars: Test your final experience.
 
-You should be able to rack up points as you grab pizza until you press the (A) button, then the pizza should fly right by you.
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+    bubble.load_bubble()
+})
+```
 
-**For extra fun, login so you can play online with friends!**
 
 
+#### ~ tutorialhint
+
+```blocks
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+        //@highlight
+    bubble.load_bubble()
+})
+```
+
+
+
+
+
+
+## {15. Test It}
+
+
+- :binoculars: **Time to play your finished game!**
+
+Aim your bubble using the arrow keys, then toss with the (A) button or **space bar**.
+
+Can you clear the board fast enough to get a bonus?
+
+~hint Want to add more? 🫧
+
+---
+
+Feel like going above and beyond? There are enough blocks in the toolbox to make these customizations:
+
+- Add music in the background
+- Add a background color to the board
+- Win the game by reaching a score instead of clearing the board
+- Change your character with each new ball
+
+hint~
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+    bubble.load_bubble()
+})
+```
 
 
 
 
 ## {Finale}
 
-**🍕 Cowabunga 🍕**
+**🥳 Great Job 🥳**
 
-You have finished your multiplayer experience!
+You have finished the tutorial!
 
-When you're ready, sign-in, then select **Done** to start an online multiplayer session with up to three friends.
+When you're ready, click **Done** to share your game with family and friends!
 
-**Who will be the first to score 20 points?**
 
 
 
 
 ```blockconfig.global
-let mySprite = sprites.create(img`.`, SpriteKind.Player)
+
+let characters: Image[] = []
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
 mySprite.top = 102
+controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Right)
+})
+scene.setBackgroundColor(14)
+
+music.play(music.createSong(hex`0096000408080106001c00010a006400f401640000040000000000000000000000000000000002d80000000200011608000a00011110001200011618001a00011120002200011628002a00011130003200011638003a00011140004200011848004a00011150005200011858005a00011160006200011868006a00011170007200011878007a00011180008200011288008a00010d90009200011298009a00010da000a2000112a800aa00010db000b2000112b800ba00010dc000c2000118c400c6000118cc00ce000118d000d2000118d800da00011ddc00de00011de400e600011de800ea00011df000f2000120f400f6000120f800fa000120fc00fe000120`), music.PlaybackMode.LoopingInBackground)
+scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
+    bubble.stick_to_wall(sprite, location)
+})
+mySprite.setImage(io2_images.fear)
+characters = [io2_images.joy, io2_images.anger, io2_images.envy, io2_images.fear]
+mySprite.setImage(characters[randint(0, characters.length - 1)])
+
 ```
 
 
 
 ```ghost
 
+let characters: Image[] = []
 scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
     bubble.stick_to_wall(sprite, location)
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    console.log("Calling Toss Ball")
     bubble.tossBubble()
-    console.log("Calling load_bubble")
     bubble.load_bubble()
 })
 controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
-    bubble.tilt_angle_right()
+    bubble.tilt_angle(bubble.Choice.Right)
 })
 info.onScore(100, function () {
     game.setGameOverEffect(true, effects.confetti)
@@ -153,16 +470,18 @@ info.onScore(100, function () {
     game.setGameOverMessage(true, "GAME OVER!")
 })
 controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
-    bubble.tilt_angle_left()
+    bubble.tilt_angle(bubble.Choice.Left)
 })
 scene.setBackgroundColor(14)
-music.play(music.createSong(hex`0078000408010105001c000f0a006400f4010a00000400000000000000000000000000000000021a0000000400011d04000800011e08000c00021e2010001400021d1e`), music.PlaybackMode.InBackground)
-let mySprite = sprites.create(assets.image`myImage`, SpriteKind.Player)
+music.play(music.createSong(hex`0096000408080106001c00010a006400f401640000040000000000000000000000000000000002d80000000200011608000a00011110001200011618001a00011120002200011628002a00011130003200011638003a00011140004200011848004a00011150005200011858005a00011160006200011868006a00011170007200011878007a00011180008200011288008a00010d90009200011298009a00010da000a2000112a800aa00010db000b2000112b800ba00010dc000c2000118c400c6000118cc00ce000118d000d2000118d800da00011ddc00de00011de400e600011de800ea00011df000f2000120f400f6000120f800fa000120fc00fe000120`), music.PlaybackMode.LoopingInBackground)
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
 mySprite.top = 102
 mySprite.startEffect(effects.fountain)
 bubble.createBoard()
 bubble.load_bubble()
-
+mySprite.setImage(io2_images.fear)
+characters = [io2_images.joy, io2_images.anger, io2_images.envy, io2_images.fear]
+mySprite.setImage(characters[randint(0, characters.length - 1)])
 
 ```
 
@@ -171,7 +490,7 @@ bubble.load_bubble()
 ```package
 multiplayer
 io2_images=github:kiki-lee/io2_images#v0.0.1
-bubble=github:kiki-lee/bubble_ext#v0.0.12
+bubble=github:kiki-lee/bubble_ext#v0.1.0
 ```
 
 
@@ -191,28 +510,10 @@ bubble=github:kiki-lee/bubble_ext#v0.0.12
         "#729280",
         "#A4839F",
         "#5C406c",
-        "#E5CDC4",
+        "#f9cb84",
         "#8A0A0A",
         "#000000"
     ]
 }
 ```
 
-
-```assetjson
-
-{
-  "README.md": " \n\n\n> Open this page at [https://kiki-lee.github.io/bubble_ext/](https://kiki-lee.github.io/bubble_ext/)\n\n## Use as Extension\n\nThis repository can be added as an **extension** in MakeCode.\n\n* open [https://arcade.makecode.com/](https://arcade.makecode.com/)\n* click on **New Project**\n* click on **Extensions** under the gearwheel menu\n* search for **https://github.com/kiki-lee/bubble_ext** and import\n\n## Edit this project ![Build status badge](https://github.com/kiki-lee/bubble_ext/workflows/MakeCode/badge.svg)\n\nTo edit this repository in MakeCode.\n\n* open [https://arcade.makecode.com/](https://arcade.makecode.com/)\n* click on **Import** then click on **Import URL**\n* paste **https://github.com/kiki-lee/bubble_ext** and click import\n\n## Blocks preview\n\nThis image shows the blocks code from the last commit in master.\nThis image may take a few minutes to refresh.\n\n![A rendered view of the blocks](https://github.com/kiki-lee/bubble_ext/raw/master/.github/makecode/blocks.png)\n\n#### Metadata (used for search, rendering)\n\n* for PXT/arcade\n<script src=\"https://makecode.com/gh-pages-embed.js\"></script><script>makeCodeRender(\"{{ site.makecode.home_url }}\", \"{{ site.github.owner_name }}/{{ site.github.repository_name }}\");</script>\n",
-  "assets.json": "",
-  "bubble.ts": "namespace SpriteKind {\n    //% isKind\n    export const Bubbles = SpriteKind.create()\n}\ntiles.setCurrentTilemap(tilemap` `)\n\n\n//% color=#32c4de icon=\"\\uf192\"\nnamespace bubble {\n\n    let codingThisBall = 0\n    export let list: Image[] = []\n    let burstBubble: Sprite = null\n    let ShotNumber = 0\n    let bonus = 0\n    let totalBallsOut = 0\n    let foundRoot = false\n    let currentLocation: tiles.Location = null\n    let locationsToClear: tiles.Location[] = []\n    let lookingForTile: Image = null\n    let clearCount = 0\n    let locationQueue: tiles.Location[] = []\n    let alreadyVisited: Image = null\n    let aimingAngle = 0\n    let myBall: Sprite = null\n\n\n    /**\n    * Appear to toss the bubble\n    */\n    //% blockId=tossBubble \n    //% block=\"toss bubble\"\n    //% help=bubble/toss_bubble\n    export function tossBubble() {\n        if (!(stateTransitions.stateIs(\"aiming\"))) {\n            return\n        }\n        stateTransitions.changeState(\"throwing\")\n        spriteutils.setVelocityAtAngle(myBall, spriteutils.degreesToRadians(aimingAngle), 300)\n        sprites.setDataNumber(myBall, \"vx\", myBall.vx)\n        sprites.setDataNumber(myBall, \"vy\", myBall.vy)\n    }\n\n\n\n    function maybeAddToQueue(column: number, row: number) {\n        if (alreadyVisited.getPixel(column, row) == 0) {\n            locationQueue.push(tiles.getTileLocation(column, row))\n            alreadyVisited.setPixel(column, row, 15)\n        }\n    }\n\n    function checkForMatches(thisBall: Sprite) {\n        if (tiles.tileAtLocationEquals(myBall.tilemapLocation(), assets.tile`myTile0`)) {\n            game.gameOver(false)\n        }\n        sprites.destroy(thisBall)\n        tiles.setTileAt(thisBall.tilemapLocation(), thisBall.image)\n        tiles.setWallAt(thisBall.tilemapLocation(), true)\n        alreadyVisited = image.create(20, 15)\n        clearCount = 0\n        lookingForTile = thisBall.image\n        locationQueue = []\n        locationsToClear = []\n        maybeAddToQueue(thisBall.tilemapLocation().column, thisBall.tilemapLocation().row)\n        alreadyVisited.drawRect(0, 0, 20, 15, 15)\n        stateTransitions.changeState(\"scoring\")\n        timer.background(function () {\n            while (locationQueue.length > 0) {\n                currentLocation = locationQueue.removeAt(0)\n                if (tileUtil.tileIs(tileUtil.currentTilemap(), currentLocation, lookingForTile)) {\n                    locationsToClear.push(currentLocation)\n                    maybeAddToQueue(currentLocation.column + 1, currentLocation.row + 0)\n                    maybeAddToQueue(currentLocation.column - 1, currentLocation.row + 0)\n                    maybeAddToQueue(currentLocation.column + 0, currentLocation.row + 1)\n                    maybeAddToQueue(currentLocation.column + 0, currentLocation.row - 1)\n                }\n            }\n            if (locationsToClear.length >= 3) {\n                pause(100)\n                for (let value of locationsToClear) {\n                    clearLocation(value.column, value.row)\n                    info.changeScoreBy(1)\n                }\n                info.changeScoreBy(Math.floor(1.5 ** locationsToClear.length) - 3)\n                alreadyVisited.fill(0)\n                alreadyVisited.drawRect(0, 0, 20, 15, 15)\n                for (let indexX = 0; indexX <= 19; indexX++) {\n                    for (let indexY = 0; indexY <= 14; indexY++) {\n                        maybeAddToQueue(indexX, indexY)\n                        if (locationQueue.length > 0) {\n                            locationsToClear = []\n                            while (locationQueue.length > 0) {\n                                currentLocation = locationQueue.removeAt(0)\n                                if (tiles.tileAtLocationIsWall(currentLocation)) {\n                                    locationsToClear.push(currentLocation)\n                                    maybeAddToQueue(currentLocation.column + 1, currentLocation.row + 0)\n                                    maybeAddToQueue(currentLocation.column - 1, currentLocation.row + 0)\n                                    maybeAddToQueue(currentLocation.column + 0, currentLocation.row + 1)\n                                    maybeAddToQueue(currentLocation.column + 0, currentLocation.row - 1)\n                                }\n                            }\n                            foundRoot = false\n                            for (let value2 of locationsToClear) {\n                                if (value2.row == 1) {\n                                    foundRoot = true\n                                    break;\n                                }\n                            }\n                            if (!(foundRoot)) {\n                                for (let value3 of locationsToClear) {\n                                    clearLocation(value3.column, value3.row)\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n            totalBallsOut = tiles.getTilesByType(assets.tile`myTile1`).length + (tiles.getTilesByType(assets.tile`myTile2`).length + (tiles.getTilesByType(assets.tile`myTile3`).length + (tiles.getTilesByType(assets.tile`myTile4`).length + tiles.getTilesByType(assets.tile`myTile5`).length)))\n            if (totalBallsOut <= 0) {\n                bonus = Math.round((120000 - game.runtime()) / 200)\n                if (bonus > 0) {\n                    game.setGameOverMessage(true, \"Speed Bonus:\" + bonus + \" points!\")\n                    info.changeScoreBy(bonus)\n                }\n                game.gameOver(true)\n            }\n        })\n        stateTransitions.changeState(\"aiming\")\n    }\n\n\n\n    /**\n    * Appear to aim further left\n    */\n    //% blockId=aimLeft \n    //% block=\"change angle left\"\n    //% help=bubble/aim_left\n    export function tilt_angle_left() {\n        if (stateTransitions.stateIs(\"aiming\")) {\n            aimingAngle = Math.constrain(aimingAngle - 1.5, -175, -5)\n        }\n    }\n\n    /**\n    * Appear to aim further right\n    */\n    //% blockId=aimRight \n    //% block=\"change angle right\"\n    //% help=bubble/aim_right\n    export function tilt_angle_right() {\n        if (stateTransitions.stateIs(\"aiming\")) {\n            aimingAngle = Math.constrain(aimingAngle + 1.5, -175, -5)\n        }\n    }\n\n\n\n\n    function clearLocation(column: number, row: number) {\n        burstBubble = sprites.create(img`\n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        . . . . . . . . . . . . . . . . \n        `, SpriteKind.Player)\n        tiles.placeOnTile(burstBubble, tiles.getTileLocation(column, row))\n        if (tiles.tileAtLocationEquals(tiles.getTileLocation(column, row), assets.tile`myTile2`)) {\n            animation.runImageAnimation(\n                burstBubble,\n                [img`\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . 3 3 3 . . . . . . .\n                    . . . . . 3 . . . 3 . . . . . .\n                    . . . . 3 . . . . . 3 . . . . .\n                    . . . . 3 . . . . . 3 . . . . .\n                    . . . . 3 . . . . . 3 . . . . .\n                    . . . . . 3 . . . 3 . . . . . .\n                    . . . . . . 3 3 3 . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                    . . . . . . . . . . . . . . . .\n                `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 3 . . . . . . . . \n            . . . . 3 . . . . . 3 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 3 . . . . . . . 3 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . 3 . . . . . 3 . . . . . \n            . . . . . . . 3 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 3 . . . . . . . . \n            . . . 3 . . . . . . . 3 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 3 . . . . . . . . . 3 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 3 . . . . . . . 3 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 3 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 3 . . . . . . 3 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 3 . . . . . . . . \n            . 3 . . . . . . . . . . . 3 . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 3 . . . . . . . . . 3 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 3 . . . . . . . . \n            `],\n                50,\n                false\n            )\n        } else if (tiles.tileAtLocationEquals(tiles.getTileLocation(column, row), assets.tile`myTile1`)) {\n            animation.runImageAnimation(\n                burstBubble,\n                [img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . 2 2 2 . . . . . . . \n            . . . . . 2 . . . 2 . . . . . . \n            . . . . 2 . . . . . 2 . . . . . \n            . . . . 2 . . . . . 2 . . . . . \n            . . . . 2 . . . . . 2 . . . . . \n            . . . . . 2 . . . 2 . . . . . . \n            . . . . . . 2 2 2 . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 2 . . . . . . . . \n            . . . . 2 . . . . . 2 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 2 . . . . . . . 2 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . 2 . . . . . 2 . . . . . \n            . . . . . . . 2 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 2 . . . . . . . . \n            . . . 2 . . . . . . . 2 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 2 . . . . . . . . . 2 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 2 . . . . . . . 2 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 2 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 2 . . . . . . 2 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 2 . . . . . . . . \n            . 2 . . . . . . . . . . . 2 . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 2 . . . . . . . . . 2 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 2 . . . . . . . . \n            `],\n                50,\n                false\n            )\n        } else if (tiles.tileAtLocationEquals(tiles.getTileLocation(column, row), assets.tile`myTile4`)) {\n            animation.runImageAnimation(\n                burstBubble,\n                [img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . 5 5 5 . . . . . . . \n            . . . . . 5 . . . 5 . . . . . . \n            . . . . 5 . . . . . 5 . . . . . \n            . . . . 5 . . . . . 5 . . . . . \n            . . . . 5 . . . . . 5 . . . . . \n            . . . . . 5 . . . 5 . . . . . . \n            . . . . . . 5 5 5 . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 5 . . . . . . . . \n            . . . . 5 . . . . . 5 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 5 . . . . . . . 5 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . 5 . . . . . 5 . . . . . \n            . . . . . . . 5 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 5 . . . . . . . . \n            . . . 5 . . . . . . . 5 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 5 . . . . . . . . . 5 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 5 . . . . . . . 5 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 5 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 5 . . . . . . 5 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 5 . . . . . . . . \n            . 5 . . . . . . . . . . . 5 . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 5 . . . . . . . . . 5 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 5 . . . . . . . . \n            `],\n                50,\n                false\n            )\n        } else if (tiles.tileAtLocationEquals(tiles.getTileLocation(column, row), assets.tile`myTile5`)) {\n            animation.runImageAnimation(\n                burstBubble,\n                [img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . 6 6 6 . . . . . . . \n            . . . . . 6 . . . 6 . . . . . . \n            . . . . 6 . . . . . 6 . . . . . \n            . . . . 6 . . . . . 6 . . . . . \n            . . . . 6 . . . . . 6 . . . . . \n            . . . . . 6 . . . 6 . . . . . . \n            . . . . . . 6 6 6 . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 6 . . . . . . . . \n            . . . . 6 . . . . . 6 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 6 . . . . . . . 6 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . 6 . . . . . 6 . . . . . \n            . . . . . . . 6 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 6 . . . . . . . . \n            . . . 6 . . . . . . . 6 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 6 . . . . . . . . . 6 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 6 . . . . . . . 6 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 6 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 6 . . . . . . 6 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 6 . . . . . . . . \n            . 6 . . . . . . . . . . . 6 . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 6 . . . . . . . . . 6 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 6 . . . . . . . . \n            `],\n                50,\n                false\n            )\n        } else if (tiles.tileAtLocationEquals(tiles.getTileLocation(column, row), assets.tile`myTile3`)) {\n            animation.runImageAnimation(\n                burstBubble,\n                [img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . 4 4 4 . . . . . . . \n            . . . . . 4 . . . 4 . . . . . . \n            . . . . 4 . . . . . 4 . . . . . \n            . . . . 4 . . . . . 4 . . . . . \n            . . . . 4 . . . . . 4 . . . . . \n            . . . . . 4 . . . 4 . . . . . . \n            . . . . . . 4 4 4 . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 4 . . . . . . . . \n            . . . . 4 . . . . . 4 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 4 . . . . . . . 4 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . 4 . . . . . 4 . . . . . \n            . . . . . . . 4 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 4 . . . . . . . . \n            . . . 4 . . . . . . . 4 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 4 . . . . . . . . . 4 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 4 . . . . . . . 4 . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 4 . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            `, img`\n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . 4 . . . . . . 4 . . . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 4 . . . . . . . . \n            . 4 . . . . . . . . . . . 4 . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . . . . . . . . . . \n            . . 4 . . . . . . . . . 4 . . . \n            . . . . . . . . . . . . . . . . \n            . . . . . . . 4 . . . . . . . . \n            `],\n                50,\n                false\n            )\n        } else {\n\n        }\n        burstBubble.lifespan = 150\n        tiles.setTileAt(tiles.getTileLocation(column, row), assets.tile`transparency8`)\n        tiles.setWallAt(tiles.getTileLocation(column, row), false)\n        clearCount += 1\n        music.play(music.createSoundEffect(\n            WaveShape.Sawtooth,\n            100 * clearCount,\n            3000 + 500 * clearCount,\n            255,\n            0,\n            100,\n            SoundExpressionEffect.None,\n            InterpolationCurve.Logarithmic\n        ), music.PlaybackMode.UntilDone)\n    }\n    spriteutils.createRenderable(0, function (screen2) {\n        if (stateTransitions.stateIs(\"aiming\")) {\n            for (let index = 0; index <= 4; index++) {\n                if(myBall){\n                    screen2.setPixel(myBall.x + (index + 1) * 8 * Math.cos(spriteutils.degreesToRadians(aimingAngle)), myBall.y + (index + 1) * 8 * Math.sin(spriteutils.degreesToRadians(aimingAngle)), 11)\n                }\n            }\n        }\n    })\n\n\n    /**\n    * Appear to load the bubble\n    */\n    //% blockId=loadBubble \n    //% block=\"load new bubble\"\n    //% help=bubble/load_bubble\n    export function load_bubble() {\n        pauseUntil(() => stateTransitions.stateIs(\"aiming\"))\n        if (totalBallsOut < 8) {\n            for (let value4 of bubble.list) {\n                if (tiles.getTilesByType(value4).length == 0 && bubble.list.indexOf(value4) >= 0) {\n                    bubble.list.removeAt(bubble.list.indexOf(value4))\n                } else if (tiles.getTilesByType(value4).length > 0 && bubble.list.indexOf(value4) < 0) {\n                    bubble.list.push(value4)\n                }\n            }\n        }\n        codingThisBall = randint(0, bubble.list.length - 1)\n        ShotNumber += 1\n        myBall = sprites.create(bubble.list[codingThisBall], SpriteKind.Bubbles)\n        myBall.x = 80\n        myBall.bottom = 102\n\n    }\n\n\n    /**\n    * Set up the board grid\n    */\n    //% blockId=createBoard \n    //% block=\"arrange board\"\n    //% help=bubble/create_board\n    export function createBoard() {\n        tiles.setCurrentTilemap(tileUtil.createSmallMap(tilemap`level0`))\n        bubble.list = [\n            assets.tile`myTile1`,\n            assets.tile`myTile2`,\n            assets.tile`myTile3`,\n            assets.tile`myTile4`,\n            assets.tile`myTile5`\n        ]\n        aimingAngle = -90\n        for (let indexX2 = 0; indexX2 <= 17; indexX2++) {\n            for (let indexY2 = 0; indexY2 <= 1; indexY2++) {\n                if(bubble.list.length > 0){\n                    tiles.setWallAt(tiles.getTileLocation(indexX2 + 1, indexY2 + 1), true)\n                    tiles.setTileAt(tiles.getTileLocation(indexX2 + 1, indexY2 + 1), bubble.list._pickRandom())\n                }\n            }\n        }\n        controller.configureRepeatEventDefaults(0, 30)\n        ShotNumber = 0\n        stateTransitions.changeState(\"aiming\")\n    }\n\n\n    /**\n    * Decides where the bubble should stick\n    * \n    */\n    //% blockId=stick_to_wall\n    //% block=\"stick $sprite to $location\"\n    //% sprite.shadow=variables_get\n    //% sprite.defl=sprite\n    //% location.shadow=variables_get\n    //% location.defl=location\n    export function stick_to_wall(sprite: Sprite, location: tiles.Location) {\n        stateTransitions.changeState(\"checking\")\n        if (!(tiles.tileAtLocationEquals(location, assets.tile`myTile`))) {\n            if (tiles.tileAtLocationEquals(location, assets.tile`bottom_row`)) {\n                sprites.destroy(sprite)\n                info.changeScoreBy(-1)\n            } else if (tiles.tileAtLocationIsWall(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Bottom)) || tiles.tileAtLocationIsWall(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Right)) || tiles.tileAtLocationIsWall(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Top)) || tiles.tileAtLocationIsWall(sprite.tilemapLocation().getNeighboringLocation(CollisionDirection.Left))) {\n                sprite.setVelocity(0, 0)\n                checkForMatches(sprite)\n            } else {\n                sprite.setVelocity(0, 0)\n                sprite.y += -8\n                checkForMatches(sprite)\n            }\n        } else {\n            if (sprite.isHittingTile(CollisionDirection.Left)) {\n                sprites.setDataNumber(myBall, \"vx\", Math.abs(sprites.readDataNumber(sprite, \"vx\")))\n            }\n            if (sprite.isHittingTile(CollisionDirection.Right)) {\n                sprites.setDataNumber(myBall, \"vx\", 0 - Math.abs(sprites.readDataNumber(sprite, \"vx\")))\n            }\n            if (sprite.isHittingTile(CollisionDirection.Top)) {\n                sprite.setVelocity(0, 0)\n                checkForMatches(sprite)\n            }\n            if (sprite.isHittingTile(CollisionDirection.Bottom)) {\n                sprites.setDataNumber(myBall, \"vy\", 0 - Math.abs(sprites.readDataNumber(sprite, \"vy\")))\n            }\n        }\n    }\n\n}\n",
-  "images.g.jres": "{\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}",
-  "images.g.ts": "// Auto-generated code. Do not edit.\nnamespace myImages {\n\n    helpers._registerFactory(\"image\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"animation\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"song\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n",
-  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"KIND_SpriteKind\" id=\"(=g{`(u4A!~6zJ4:AOHf\">Player</variable><variable type=\"KIND_SpriteKind\" id=\"2Ax-Z9kI5`5ac56P1F(o\">Projectile</variable><variable type=\"KIND_SpriteKind\" id=\"4~9w#4-lQ^GIRWKMqUu=\">Food</variable><variable type=\"KIND_SpriteKind\" id=\"C2bm]eTv+;X)RXKZbHqn\">Enemy</variable><variable type=\"KIND_SpriteKind\" id=\"%BApd*[YXPwQ?uOc$joJ\">Bubbles</variable><variable id=\"B3^c7f|u~pyS7;$tr{q@\">sprite</variable><variable id=\"vfq?|d1PC(!q^(^-GS!D\">location</variable></variables></xml>",
-  "main.ts": "\n",
-  "pxt.json": "{\n    \"name\": \"bubble_ext_for_assetjson\",\n    \"version\": \"0.0.10\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n        \"arcade-tile-util\": \"github:microsoft/arcade-tile-util#v1.2.0\",\n        \"arcade-sprite-util\": \"github:jwunderl/arcade-sprite-util#v0.3.1\",\n        \"arcade-state-transitions\": \"github:riknoll/arcade-state-transitions#v0.0.2\",\n        \"controller\": \"*\",\n        \"Timers\": \"github:microsoft/arcade-timers#v1.1.0\",\n        \"arcade-sprite-data\": \"github:microsoft/arcade-sprite-data#v0.2.1\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\",\n        \"images.g.jres\",\n        \"images.g.ts\",\n        \"bubble.ts\"\n    ],\n    \"testFiles\": [\n        \"test.ts\"\n    ],\n    \"targetVersions\": {\n        \"branch\": \"v1.12.49\",\n        \"tag\": \"v1.12.49\",\n        \"commits\": \"https://github.com/microsoft/pxt-arcade/commits/8b39eda27ca91b27b57fc1f30c6b3b33d3fc2029\",\n        \"target\": \"1.12.51\",\n        \"pxt\": \"8.5.60\",\n        \"targetId\": \"arcade\"\n    },\n    \"supportedTargets\": [\n        \"arcade\"\n    ],\n    \"preferredEditor\": \"blocksprj\",\n    \"palette\": [\n        \"#000000\",\n        \"#FFFFFF\",\n        \"#DF012E\",\n        \"#F696F8\",\n        \"#708DFF\",\n        \"#FF9500\",\n        \"#5FDF5D\",\n        \"#94BD84\",\n        \"#3E76F9\",\n        \"#87F2FF\",\n        \"#FFF5FD\",\n        \"#A4839F\",\n        \"#5C406c\",\n        \"#E5CDC4\",\n        \"#E5F7FF\",\n        \"#000000\"\n    ]\n}\n",
-  "test.ts": "// tests go here; this will not be compiled when this package is used as an extension.\n",
-  "tilemap.g.jres": "{\n    \"tile1\": {\n        \"data\": \"hwQIAAgAAAC8u7y7vLu8u7y7vLvMzLy7vLu8u7y7vLu8u8zMvLu8uw==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile\"\n    },\n    \"tile4\": {\n        \"data\": \"hwQIAAgAAAAAMwMAMDMzADMzMwMzMzMDMzMzAzAzMwAAMwMAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile2\"\n    },\n    \"tile5\": {\n        \"data\": \"hwQIAAgAAAAARAQAQEREAERERAREREQEREREBEBERAAARAQAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile3\"\n    },\n    \"tile6\": {\n        \"data\": \"hwQIAAgAAAAAVQUAUFVVAFVVVQVVVVUFVVVVBVBVVQAAVQUAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile4\"\n    },\n    \"tile7\": {\n        \"data\": \"hwQIAAgAAAAAZgYAYGZmAGZmZgZmZmYGZmZmBmBmZgAAZgYAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile5\"\n    },\n    \"tile9\": {\n        \"data\": \"hwQIAAgAAAAAAAC8AAAAvAAAALwAAADMAAAAvAAAALwAAAC8AAAAvA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"bottom_row\"\n    },\n    \"tile3\": {\n        \"data\": \"hwQIAAgAAAAAIgIAICIiACIiIgIiIiICIiIiAiAiIgAAIgIAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile1\"\n    },\n    \"tile2\": {\n        \"data\": \"hwQIAAgAAAAMAAAADAAAAAwAAAAAAAAADAAAAAwAAAAMAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"myTile0\"\n    },\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"transparency8\": {\n        \"data\": \"hwQIAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"level4\": {\n        \"id\": \"level4\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAxMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==\",\n        \"tileset\": [\n            \"myTiles.transparency16\"\n        ],\n        \"displayName\": \"level4\"\n    },\n    \"level2\": {\n        \"id\": \"level2\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MDgxNDAwMGYwMDAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAzMDMwMzAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMTAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDEwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMjAyMDIwMTIyMjIyMjIyMjIyMjIyMjIyMjIyMDIwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAyMDAyMDAwMDAwMDAwMDAwMDAwMDIwMDIwMDAwMDAwMDAwMDAwMDAwMjAwMjAwMDAwMDAwMDAwMDAwMDAyMA==\",\n        \"tileset\": [\n            \"myTiles.transparency8\",\n            \"myTiles.tile1\",\n            \"myTiles.tile9\",\n            \"myTiles.tile2\"\n        ],\n        \"displayName\": \"level0\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
-  "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile4 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile5 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile6 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile7 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile9 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile3 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile2 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency8 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level4\":\n            case \"level4\":return tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`\n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n. . . . . . . . . . . . . . . . \n`, [myTiles.transparency16], TileScale.Sixteen);\n            case \"level0\":\n            case \"level2\":return tiles.createTilemap(hex`14000f00010101010101010101010101010101010101010101000000000000000000000000000000000000010100000000000000000000000000000000000001010000000000000000000000000000000000000101000000000000000000000000000000000000010100000000000000000000000000000000000001010000000000000000000000000000000000000101000000000000000000000000000000000000010100000000000000000000000000000000000001010000000000000000000000000000000000000101030303030303030303030303030303030303010100000000000000000000000000000000000001010000000000000000000000000000000000000101000000000000000000000000000000000000010102020202020202020202020202020202020201`, img`\n2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n2 . . . . . . . . . . . . . . . . . . 2 \n`, [myTiles.transparency8,myTiles.tile1,myTiles.tile9,myTiles.tile2], TileScale.Eight);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"myTile\":\n            case \"tile1\":return tile1;\n            case \"myTile2\":\n            case \"tile4\":return tile4;\n            case \"myTile3\":\n            case \"tile5\":return tile5;\n            case \"myTile4\":\n            case \"tile6\":return tile6;\n            case \"myTile5\":\n            case \"tile7\":return tile7;\n            case \"bottom_row\":\n            case \"tile9\":return tile9;\n            case \"myTile1\":\n            case \"tile3\":return tile3;\n            case \"myTile0\":\n            case \"tile2\":return tile2;\n            case \"transparency16\":return transparency16;\n            case \"transparency8\":return transparency8;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
-}
-
-```
