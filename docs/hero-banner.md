@@ -1,6 +1,6 @@
 # Hero Banner
 
-Here are some cool activities to get you started with your @boardname@!
+Here are some cool activities to get you started!
 
 ## Intro Content
 
@@ -12,11 +12,11 @@ Here are some cool activities to get you started with your @boardname@!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Build a Multiplayer Game
+* name: Build a Bubble Popping Game
 * buttonLabel: Code Now
-* description: Code a game you can play online with friends
-* imageUrl: /static/hero-gallery/multi.png
-* url: /tutorials/arrow
+* description: Create your own bubble popping game with the crew from Disney & Pixar's Inside Out 2!
+* imageUrl: /static/hero-gallery/io2_hero.jpg
+* url: /tutorials/bubbles
 * cardType: tutorial
 ---
 * name: How To Code a Video Game
