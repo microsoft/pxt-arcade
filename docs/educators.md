@@ -10,9 +10,9 @@ We have gathered all of our best educator resources and collected them all right
 ```codecard
 [
     {
-        "name": "Tutorial Activities",
-        "description": "Popular short activities for classrooms looking for a quick lesson or a variety of options.",
-        "url":"/educators#tutorials",
+        "name": "Tutorial Short-Links",
+        "description": "A table of our most popular activities and their associated URLS and teacher resources.",
+        "url":"/educators#shortlinks",
         "imageUrl": "static/tutorials/froggy/frog.gif"
     },{
         "name": "Skillmap Activities",
@@ -43,7 +43,7 @@ We have gathered all of our best educator resources and collected them all right
 ]
 ```
 
-## <a name="tutorials">Tutorial Activities</a>
+## <a name="shortlink">Activity Table</a>
 This year, we will be hosting two separate cohorts of each session for both the Intro and CSP courses. 
 
 ```codecard
