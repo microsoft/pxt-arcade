@@ -32,13 +32,6 @@
     "editor": "py",
     "cardType": "tutorial"
   }]
-}, {
-  "name": "Create a Music Player",
-  "description": "Join the Zune prototyping crew and make your own music player with this tutorial from MakeCode Arcade!",
-  "url": "/tutorials/music",
-  "cardType": "tutorial",
-  "imageUrl": "/static/tutorials/music/zune.png",
-  "largeImageUrl": "/static/tutorials/music/zune.png"
 },{
   "name": "Collect the Clovers",
   "description": "Create a garden to collect 4-leaf clovers, avoid the bees!",
@@ -46,6 +39,29 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/collect-the-clovers/clovers.png",
   "largeImageUrl": "/static/tutorials/collect-the-clovers/collect-clovers-sim.gif"
+}, {
+  "name": "Joy of Bubble Popping",
+  "description": "Create a bubble popping game complete with sounds and bonus points!",
+  "url": "/tutorials/bubbles",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/bubbles/card.jpg",
+  "largeImageUrl": "/static/tutorials/bubbles/card.jpg",
+  "label": "Limited Time Branding!",
+  "labelClass": "purple ribbon large"
+},{
+  "name": "Create a Music Player",
+  "description": "Join the Zune prototyping crew and make your own music player with this tutorial from MakeCode Arcade!",
+  "url": "/tutorials/music",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/music/zune.png",
+  "largeImageUrl": "/static/tutorials/music/zune.png"
+},{
+  "name": "Animated Snowglobe",
+  "description": "Capture the spirit of winter with this magical snowglobe tutorial!",
+  "url": "/tutorials/snow",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/snow/globe.jpg",
+  "largeImageUrl": "/static/tutorials/snow/globe.jpg"
 },{
   "name": "Dunk",
   "description": "Create animations to help your basketball superstar do tricks all the way to the hoop!",
