@@ -14,7 +14,7 @@ Here are some cool activities to get you started!
 ---
 * name: Build a Bubble Popping Game
 * buttonLabel: Code Now
-* description: Create your own bubble popping game with the crew from Disney & Pixar's Inside Out 2!
+* description: Code with images from Disney & Pixar's Inside Out 2!
 * imageUrl: /static/hero-gallery/io2_hero.jpg
 * url: /tutorials/bubbles
 * cardType: tutorial
