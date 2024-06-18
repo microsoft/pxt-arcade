@@ -345,8 +345,7 @@ inside **the empty** <br/>
 container.
 
 
-- :paint brush: Click the empty grey box in the projectile block to draw a basketball <br/>
-(or switch to the **Gallery** to pick the one that we created.)
+- :paint brush: Click the basketball image in the projectile block if you want to draw a basketball of your own.
 
 
 <!--
