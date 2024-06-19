@@ -219,8 +219,7 @@ mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
 bundle into **an empty** area of the workspace.
 
 
-- :mouse pointer: Click the empty grey square inside the bundle to select an image for the projectile.
-<br/>Switch to the **Gallery** tab to choose the **pizza**.
+- :mouse pointer: Click the image square inside the bundle if you want to choose a different pizza slice from the **Gallery**.
 
 
 
