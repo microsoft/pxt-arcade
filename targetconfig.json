@@ -134,6 +134,9 @@
             },
             "code-ninjas-home-office/game-building-session-tutorials-2024": {
                 "tutorial" : true
+            },
+            "code-ninjas-home-office/game-building-session-yb-ob": {
+                "tutorial" : true
             }
         },
         "builtinExtensionsLib": {
