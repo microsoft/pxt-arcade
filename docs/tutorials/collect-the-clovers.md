@@ -23,7 +23,7 @@ Start by setting the scene.
 
 - :tree: Open the ``||scene:Scene||`` category and drag
 ```block
-scene.setBackgroundImage(img`.`)
+scene.setBackgroundImage(assets.image`background`)
 ```
 into the ``||loops(noclick):on start||``<br/>
 container that's already in the workspace.
@@ -46,7 +46,7 @@ hint~
 
 ```blocks
 //@highlight
-scene.setBackgroundImage(img`.`)
+scene.setBackgroundImage(assets.image`background`)
 ```
 
 
@@ -60,11 +60,11 @@ scene.setBackgroundImage(img`.`)
 ---
 
 
-- :mouse pointer: Click the grey box inside<br/>
+- :mouse pointer: Click the image inside<br/>
 ```block
-scene.setBackgroundImage(img`.`)
+scene.setBackgroundImage(assets.image`background`)
 ```
-to open the image editor.
+to change the scene.
 
 
 - :paint brush: Draw a nice grassy background, or choose an image from the **gallery**.
@@ -99,12 +99,12 @@ Do you want a rabbit? A princess? A warrior?
 
 - :paper plane: From ``||sprites: Sprites||``, drag
 ```block
-let hero = sprites.create(img`.`, SpriteKind.Player)
+let hero = sprites.create(assets.image`hero`, SpriteKind.Player)
 ```
 into **the end** of the ``||loops(noclick): on start||`` container.
 
 
-- :paint brush: Click the empty grey box and switch to the **gallery** to
+- :paint brush: Click the bunny image and switch to the **gallery** to
  select a character for your project.
 
 
