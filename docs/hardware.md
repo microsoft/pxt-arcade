@@ -82,7 +82,17 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "imageUrl": "/static/hardware/adafruitm4.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
-    },
+    }
+]
+```
+##  micro:bit shields for Arcade
+
+You can use micro:bit V2 with an accessory shield to play MakeCode Arcade games as well! Connecting the new micro:bit to a MakeCode Arcade compatible shield allows the micro:bit to become its own retro gaming handheld. The micro:bit acts like a game cartridge that contains all of your game code, all the shield does is enhance the micro:bit with a full colour LCD, additional buttons for game input. In addition to these awesome new features, micro:bit accessory manufacturers can augment their shields with their own custom Arcade shield designs and unique capabilities.
+
+Shields are based on our guidelines, adhere to open source hardware reference designs, and have been user tested.  However, each hardware manufacturer is responsible for ensuring the compatibility, reliability, safety and compliance of their products. Microsoft provides no representations or warranties on these products and disclaims liability for any risks associated with their use.
+
+```codecard
+[
     {
         "name": "micro:bit Newbit Shield",
         "description": "Use the micro:bit with an expansion board from Kittenbot",
@@ -100,10 +110,15 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "description": "Use the micro:bit with an expansion board from iCShop",
         "imageUrl": "/static/hardware/bit-shield.png",
         "url": "https://www.icshop.com.tw/products/368112100137?locale=en"
+    },
+    {
+        "name": "Kitronik Arcade for micro:bit",
+        "description": "Use the micro:bit with an expansion board from Kitronik",
+        "imageUrl": "/static/hardware/kitronik-shield.png",
+        "url": "http://www.kitronik.co.uk/56116"
     }
 ]
 ```
-
 ## Other ways to play Arcade
 
 ```codecard

@@ -2,55 +2,42 @@
 -- | --
 ![Microsoft logo](/static/gamejam/jams/female-gamechangers/assets/msft-makecode-logo.png) | ![Code ninjas logo](/static/gamejam/jams/female-gamechangers/assets/code-ninjas-logo.svg) | ![Girls Who Code logo](/static/gamejam/jams/female-gamechangers/assets/girls-who-code-logo.png)
 
-This Women's History Month, we are excited to partner with Girls Who Code and Code Ninjas to celebrate women who have made an impact in your life through the Female Gamechangers Game Jam!
+# Female Gamechangers Jam Winners!
 
-The theme for this jam is "Women who impacted your life". Your game could include a famous woman from history, someone you know personally, or even an original character you create!
+## First Place: Marie Curie
+| |
+| -- |
+| [![Marie Curie game screenshot](https://pxt.azureedge.net/api/98537-40423-47522-15861/thumb)](https://arcade.makecode.com/98537-40423-47522-15861) |
+| &nbsp; |
 
-Some examples of good interpretations of this theme:
+[Marie Curie](https://arcade.makecode.com/98537-40423-47522-15861) by **Peppercorn Studios** lets you play as Marie Curie as she searches for new elements to discover and name! Mix different chemicals to try and create interesting combinations. When you have something that you think might be a new element, press Menu and try submitting it to the Nobel committee! This game wowed us with it's charming art and inventive gameplay! Also, kudos to KiwiPhoenix for creating the game's music.
 
-1. A game that traces the journey of Amelia Earhart
-2. A sports game featuring female athletes
-3. A space exploration game inspired by the life of NASA mathematician Katherine Johnson
+## Second Place: Lady Lovelace's Time Machine
 
-DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
--- | --
-![](/static/gamejam/jams/female-gamechangers/assets/demo-1.gif) | ![](/static/gamejam/jams/female-gamechangers/assets/demo-3.gif) | ![](/static/gamejam/jams/female-gamechangers/assets/demo-2.gif)
+| |
+| -- |
+| [![Lady Lovelace's Time Machine game screenshot](https://pxt.azureedge.net/api/58950-52861-22099-51073/thumb)](https://arcade.makecode.com/58950-52861-22099-51073) |
+| &nbsp; |
 
-You can interpret the theme however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
+[Lady Lovelace's Time Machine](https://arcade.makecode.com/58950-52861-22099-51073) by **verisutha** tasks you with helping Ada Lovelace repair your time machine after an accident strands you in the past! Luckily, you have the help of other women from history including Mary Shelley, Grace Hopper, Marie Curie, and Katherine Johnson in your quest! Everything about this game impressed our judges especially its use of custscenes, art, and storytelling. Best of all, this game includes no less than *four* other games for you to play through (and they're all fun!). Make sure to stick around to the end for a great finale cutscene!
 
-Be sure to also check out the [official Code Ninja's page for this jam](https://forms.codeninjas.com/femalegamechangers) to learn about how you can be entered to win prizes if you're under 16!
+## Third Place (tie): The Adventures of Frances Perkins
 
-## Important Dates
+| |
+| -- |
+| [![The Adventures of Frances Perkins game screenshot](https://pxt.azureedge.net/api/24653-68670-93715-48748/thumb)](https://arcade.makecode.com/24653-68670-93715-48748) |
+| &nbsp; |
 
-The game jam will run from **March 1, 2024** to **March 31, 2024**
+[The Adventures of Frances Perkins](https://arcade.makecode.com/24653-68670-93715-48748) by **Brohann** is a terrific platformer where you play as civil rights activist Frances Perkins as she saves children from being forced into child labor. This game wowed our judges with its level of polish: the art, sounds, and text/lighting effects really made it stand out from the crowd! We also loved that the gameplay switches up as the game goes on (be sure to check out the minecart levels!).
 
-You will have one month to build and submit your games for the competition! For you procrastinators out there, we will accept games up until 11:59pm on March 31st.
+## Third Place (tie): Grace Hopper's Hop-O-Matic
 
-## Getting started
+| |
+| -- |
+| [![Grace Hopper's Hop-O-Matic game screenshot](https://pxt.azureedge.net/api/14599-75222-61879-27532/thumb)](https://arcade.makecode.com/14599-75222-61879-27532) |
+| &nbsp; |
 
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [beginner skillmaps](https://arcade.makecode.com/--skillmap#dino) to learn the basics of making a game!
+[Grace Hopper's Hop-O-Matic](https://arcade.makecode.com/14599-75222-61879-27532) by **rymc88** lets you take on the role of Grace Hopper's compiler as it processes source code into ones and zeroes. Our judges loved how this game interpreted the theme as well as the amazing animation it plays when you finish encoding a character. This game is surprisingly addictive even though it only uses two buttons! 
 
-## Rules
+Be sure to also check out the [official Code Ninja's page for this jam](https://forms.codeninjas.com/femalegamechangers), where they will host a separate round of judging and prizes!
 
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
-3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
-
-## Join the community
-
-This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team. You can hang out with the MakeCode team there too!
-
-## Tips and tricks
-
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our past jams!](/gamejam/all)
-
-[traffic-jam]: https://arcade.makecode.com/gamejam/traffic
-[ocean-jam]: https://arcade.makecode.com/gamejam/ocean
-[garden-jam]: https://arcade.makecode.com/gamejam/garden
