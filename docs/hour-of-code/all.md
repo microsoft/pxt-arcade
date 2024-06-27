@@ -9,7 +9,7 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
     {
         "name": "Sparks Flying",
         "description": "Create a game that challenges you to light a fire to keep yourself warm, but be careful! It's not as easy as it sounds.",
-        "url": "/#tutorial:/tutorials/sparks",
+        "url": "https://arcade.makecode.com/--skillmap#docs:/skillmap/sparks",
         "imageUrl": "/static/hour-of-code/2023/sparks.gif"
     }, {
         "name": "Sparks Flying (Jr)",

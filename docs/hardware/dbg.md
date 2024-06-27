@@ -2,7 +2,7 @@
 
 It's often needed to connect a SWD debugger to a board.
 
-We found [Black Magic Probe](https://github.com/blacksphere/blackmagic/wiki) to work well,
+We found [Black Magic Probe](https://github.com/blackmagic-debug/blackmagic) to work well,
 for a variety of MCUs, and it doesn't require openocd.
 You can use their beautifully made hardware, or flash an existing
 board with Black Magic firmware.
