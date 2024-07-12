@@ -33,10 +33,17 @@ Structured courses for teaching computer science in the classroom.
         "url": "/courses/carnival",
         "imageUrl": "/static/hour-of-code/2022/booth.png",
         "largeImageUrl": "/static/hour-of-code/2022/booth.png",
-        "directOpen": true
+        "directOpen": true,
+        "label": "No Verification Required!",
+        "labelClass": "orange ribbon large"
     }
 ]
 ```
+
+Interested in using AP Computer Science Principles or Introduction to Computer Science with Microsoft MakeCode Arcade? You'll need to create an Educator Verified GitHub account to download them.  Details on that process can be found here:
+
+[https://makecode.com/github-teacher-verification](https://makecode.com/github-teacher-verification)
+
 
 ## TinkerGen GameGo-Game Programming Courses
 
@@ -66,6 +73,8 @@ The games they make in the course can run on the GameGo device! Courses are free
 ```
 
 ## See also
+
+
 
 [Code a Carnival](aka.ms/carnivalTeacher)
 [AP Computer Science Principles](https://makecode.com/csp)
