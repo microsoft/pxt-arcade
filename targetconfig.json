@@ -137,6 +137,9 @@
             },
             "code-ninjas-home-office/game-building-session-yb-ob": {
                 "tutorial" : true
+            },
+            "code-ninjas-home-office/scott-kelly-games": {
+                "tutorial" : true
             }
         },
         "builtinExtensionsLib": {
