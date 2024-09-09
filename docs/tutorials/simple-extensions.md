@@ -61,7 +61,7 @@ let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
-myCorg.follow()
+myCorg.cameraFollow()
 tiles.setTilemap(tilemap`level_0`)
 ```
 
@@ -75,7 +75,7 @@ let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
-myCorg.follow()
+myCorg.cameraFollow()
 tiles.setTilemap(tilemap`level_1`)
 ```
 
@@ -94,7 +94,7 @@ let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()
 myCorg.verticalMovement()
 myCorg.updateSprite()
-myCorg.follow()
+myCorg.cameraFollow()
 tiles.setTilemap(tilemap`level_1`)
 ```
 
