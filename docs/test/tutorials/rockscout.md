@@ -69,7 +69,26 @@ let rockscout = sprites.create(assets.image`Rockscout`, SpriteKind.Player)
 ```
 
 
-## {3. Control the Player}
+
+
+## {3. Drawing an Avatar}
+
+**Designing an Avatar**  
+
+---
+
+You might notice that you can design your own sprite image (aka avatar) if you click on the rockscout already in the workspace. 
+
+While it might look like you're drawing with pixels, what you are really doing is 
+creating an array of numbers that tells the computer what your avatar should look like.
+
+![Look at your array](/static/skillmap/rockstar/rockscout-imgs-array.gif "Your sprite image is an array of hexadecimal digits.")
+
+
+
+
+
+## {4. Control the Player}
 
 **Time to get the sprite moving**  
 
@@ -89,7 +108,7 @@ controller.moveSprite(rockscout)
 ```
 
 
-## {4. Try It}
+## {5. Try It}
 
 **Check the Game Window**  
 
@@ -99,7 +118,7 @@ We'll fix that over the next couple of steps.
 
 
 
-## {5. Trapped Backstage}
+## {6. Trapped Backstage}
 
 The Rockscout sprite should start at the stage door.
 
@@ -127,7 +146,7 @@ tiles.placeOnRandomTile(rockscout, assets.tile`stage`)
 ```
 
 
-## {6. Follow with Camera}
+## {7. Follow with Camera}
 
 
 - :tree: To keep Terri in sight, go to ``||scene:Scene||`` and drag<br/>
@@ -146,7 +165,7 @@ scene.cameraFollowSprite(rockscout)
 ```
 
 
-## {7. Look Again}
+## {8. Look Again}
 
 **🕹️ Try your maze in the game window**  
 
@@ -158,7 +177,7 @@ Can you get to the exit?
 
 
 
-## {8. Add Points}
+## {9. Add Points}
 
 **🎸 Award points when Terri grabs an instrument**<br/>
 
@@ -188,7 +207,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 })
 ```
 
-## {9. Try It!}
+## {10. Try It!}
 
 **🕹️ Try your maze in the game window**  
 
@@ -207,7 +226,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 
 
 
-## {10. More Instruments}
+## {11. More Instruments}
 
 **🎹 Do it all again**<br/>
 Follow the same steps two more times to add points for the **drums** and **keyboard** tiles.
@@ -234,7 +253,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument4`, function (sprit
 ```
 
 
-## {11. Look Again...Again}
+## {12. Look Again...Again}
 
 **🕹️ Try your maze again**  
 
@@ -252,7 +271,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
 ```
 
 
-## {12. Out the Door}
+## {13. Out the Door}
 
 **🚪 Make it out the door**
 
@@ -283,7 +302,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, loca
 
 
 
-## {13. Spot the Fan}
+## {14. Spot the Fan}
 
 **Remove points when Terri runs into a screaming fan 📸**  
 
@@ -315,7 +334,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, loca
 ```
 
 
-## {14. More Fans}
+## {15. More Fans}
 
 **🎤 Encore 🎤**
 
@@ -343,7 +362,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`fan3`, function (sprite, loca
 ```
 
 
-## {15. Look Again}
+## {16. Look Again}
 
 **🕹️ Try your maze in the game window**  
 
@@ -354,7 +373,7 @@ You should lose one point for every fan you run into.
 How many points can you keep on your way to the door?
 
 
-## {16. Out of Time}
+## {17. Out of Time}
 
 **🕒 Make it out in time**
 
@@ -378,6 +397,24 @@ tiles.placeOnRandomTile(rockscout, assets.tile`stage`)
 //@highlight
 info.startCountdown(30)
 ```
+
+
+
+
+## {18. Decision Tree}
+
+**Make it your own!**  
+
+---
+
+Now you can change anything you want. 
+
+Sometimes it's easiest to write down your plan so you know how each change will affect the game. 
+
+Try making a decision tree!
+
+![Map it out](/static/skillmap/rockstar/decision-tree.png "Draw a decision tree - or flow chart - to detail what happens for each decision.")
+
 
 
 
