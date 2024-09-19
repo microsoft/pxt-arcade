@@ -8,7 +8,9 @@ Congratulations! You've just accepted a job managing Terri, the last remaining  
 
 ![Navigate the maze backstage](/static/skillmap/rockstar/rockscout.png "Look what we're about to do today!")
 
-We'll walk you through the skills you'll need to help Terri navigate backstage to collect equipment from the show while avoiding screaming fans!
+We'll walk you through the skills you'll need to help Terri navigate backstage to collect equipment from the show while avoiding screaming fans!  
+
+To win, you need to get to the exit before time runs out.
 
 
 
@@ -410,12 +412,21 @@ info.startCountdown(30)
 
 
 
-
-## {18. Decision Tree}
+## {18. Go Further}
 
 **Make it your own!**  
 
 ---
+
+Now that you have created this game, what else could you gamify?  
+
+What new skill could you help your friends/sister scouts learn?  
+_(For example, pilots and astronauts may use simulation games to learn how to fly a plane or land a rover.)_  
+
+
+
+## {19. Decision Tree}
+
 
 Now you can change anything you want. 
 
