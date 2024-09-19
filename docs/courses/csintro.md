@@ -1,18 +1,18 @@
-# CS Intro
+# Introduction to Computer Science with MakeCode Arcade
 
-A collection of courses meant to teach introductory programmers using Blocks and JavaScript
+Hello!  Welcome to the new student guide for "Introduction to Computer Science with MakeCode Arcade"!
+
+This page will provide you with additional activities that you can complete in order to better understand the lessons in the official curriculum.  Please note, this page does not contain any answer keys or exemplar projects.
 
 ### ~hint
 
-These courses are currently in beta - this means that they are likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](https://github.com/microsoft/pxt-arcade).
+If you are looking for our previous "CS Intro" course, you may now find that at:"
+https://arcade.makecode.com/courses/csintro-archive
 
 ### ~
 
-## Courses on Flipgrid
 
-Flipcode for the **Intro to CS** course grid: **[csintroarcade](https://flipgrid.com/csintroarcade)**
-
-## Course Sections
+## Unit 0 Activities
 
 ```codecard
 [
@@ -35,23 +35,23 @@ Flipcode for the **Intro to CS** course grid: **[csintroarcade](https://flipgrid
 ]
 ```
 
-## About the CS Intro Series
+## Unit 1 Activities
 
-The CS Intro Series is designed to teach new developers how to code from the ground up.
 
-In CS Intro 1, students are introduced to programming through the MakeCode Blocks editor. They can create their own games, while learning concepts that are crucial to software development: creating variables, responding to events, and using iteration to simplify and extend their programs. Throughout the course, they will learn to develop their own games through small daily tasks, as well as projects that guide them through the process of turning basic ideas into full-fledged games.
 
-In CS Intro 2, students will continue to develop the software development skills they were introduced to in the first course, with more advanced programming concepts such as functions, logical comparisons, and arrays. These new skills will allow students to create more advanced and compelling games.
+## Unit 2 Activities
 
-### ~hint
 
-In the future CS Intro 3 and CS Intro 4 courses, students will transition the skills they have learned in a Block based environment into skills in a text based coding environment, allowing them to dig deeper into the games they make, as well as transition their skills in the @boardname@ into other environments.
 
-### ~
+## Unit 3 Activities
+
+
+
+
+
 
 ## See also
 
 [Courses Home Page](/courses),
-[CS Intro 1](/courses/csintro1),
-[CS Intro 2](/courses/csintro2),
-[CS Intro 3](/courses/csintro3)
+[Arcade Tutorials](/tutorials),
+[Beginner Skillmaps](/beginner-maps),
