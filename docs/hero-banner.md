@@ -12,6 +12,13 @@ Here are some cool activities to get you started!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
+* name: Mission to Hubble
+* buttonLabel: Code Now
+* description: Help Scott Kelly reach the Hubble!
+* imageUrl: /static/hero-gallery/hubble_banner.jpg
+* url: https://forms.codeninjas.com/back-to-school-game-building-session/?utm-source=makecode&utm_medium=partner&utm_campaign=bts_gbs
+* cardType: link
+---
 * name: Build a Bubble Popping Game
 * buttonLabel: Code Now
 * description: Code a game featuring characters from the new movie!
