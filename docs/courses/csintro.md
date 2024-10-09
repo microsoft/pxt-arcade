@@ -7,7 +7,7 @@ This page will provide you with additional activities that you can complete in o
 ### ~hint
 
 If you are looking for our previous "CS Intro" course, you may now find that at:"
-https://arcade.makecode.com/courses/csintro-archive
+https://arcade.makecode.com/courses/csintro_archive
 
 ### ~
 
