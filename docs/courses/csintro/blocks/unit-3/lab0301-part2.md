@@ -135,7 +135,7 @@ If you don't like the name of the loop control variable,
 you can drop one of your own in its place. Give it a try!
 -    Let's say you want to draw a grid of sprites on the screen,
 like the image below:   
-![Ducks in a grid.](https://alex-kulcsar.github.io/introcs-tutorials/assets/images/S01.L03.01.P02.duck_grid.png)   
+![Ducks in a grid.](/static/courses/csintro/S01.L03.01.P02.duck_grid.png)   
 How might you do that?
 -    Create an interesting pattern of sprites.
 Challenge your "helping trios" teammates to duplicate your pattern using loops.
