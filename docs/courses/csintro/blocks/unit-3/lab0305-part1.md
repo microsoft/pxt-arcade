@@ -9,7 +9,7 @@ flip through the pages quickly, then it looks like the image is moving!
 
 This is the style of animation that MakeCode Arcade uses.
 It is called *frame-based animation*.   
-![An example of a flipbook.](https://alex-kulcsar.github.io/introcs-tutorials/assets/images/S01.L03.05.P01.flipbook.jpg)   
+![An example of a flipbook.](/static/courses/csintro/S01.L03.05.P01.flipbook.jpg)   
 Image credit: John Barnes Linnett. Public domain.
 
 ## I like to do things the hard way!
