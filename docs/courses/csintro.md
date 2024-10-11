@@ -5,9 +5,52 @@ Hello! Welcome to the student guide for *Introduction to Computer Science with M
 
 This page will provide you with additional activities that you can complete in order to better understand the lessons in the official curriculum.  Please note, this page does not contain any answer keys or exemplar projects.
 
+## Introduction
+
+New to tutorials in MakeCode? Then follow the *Intro to MakeCode Arcade* tutorial below!
+
+```codecard
+[
+    {
+        "name": "Intro to MakeCode Arcade",
+        "description": "Follow step-by-step instructions to learn the basics of using MakeCode Arcade tutorials!",
+        "url": "https://aka.ms/mc-intro",
+        "imageUrl": "/static/tutorials/interface/info.png",
+        "largeImageUrl": "/static/tutorials/interface/info.png",
+        "label": "New? Try This!",
+        "labelClass": "orange ribbon large"
+    }
+]
+```
+
 ## Skillmaps
 
 Appropriate labs from each unit are aggregated below into skillmaps.
+
+<!--
+### Blocks semester
+-->
+
+```codecard
+[
+    {
+        "name": "Unit 1",
+        "description": "Sprites",
+        "url": "/--skillmap#github:microsoft/pxt-arcade/docs/courses/csintro/blocks/unit1/skillmap",
+        "imageUrl": "https://arcade.makecode.com/api/S01708-98615-82961-41216/thumb"
+    }, {
+        "name": "Unit 2",
+        "description": "Event handlers and variables",
+        "url": "/--skillmap#github:microsoft/pxt-arcade/docs/courses/csintro/blocks/unit2/skillmap",
+        "imageUrl": "https://arcade.makecode.com/api/S01440-65616-58259-55413/thumb"
+    }, {
+        "name": "Unit 3",
+        "description": "Loops and arrays",
+        "url": "/--skillmap#github:microsoft/pxt-arcade/docs/courses/csintro/blocks/unit3/skillmap",
+        "imageUrl": "https://arcade.makecode.com/api/S24151-39662-06684-76747/thumb"
+    }
+]
+```
 
 ## Tutorials
 
@@ -180,6 +223,16 @@ The individual activities presented in the skillmaps above are also provided as 
         "description": "The for loop",
         "url": "/#tutorial:/courses/csintro/blocks/unit-3/lab0301-part2",
         "imageUrl": "https://arcade.makecode.com/api/S04739-13054-75441-03012/thumb"
+    }, {
+        "name": "Lab 3.4",
+        "description": "High scores",
+        "url": "/--skillmap#github:microsoft/pxt-arcade/docs/courses/csintro/blocks/unit3/lab-3-4-skillmap",
+        "imageUrl": "https://arcade.makecode.com/api/S61379-50555-16499-36625/thumb"
+    }, {
+        "name": "Lab 3.5",
+        "description": "Animated sprites",
+        "url": "/--skillmap#github:microsoft/pxt-arcade/docs/courses/csintro/blocks/unit3/lab-3-5-skillmap",
+        "imageUrl": "https://arcade.makecode.com/api/S24151-39662-06684-76747/thumb"
     }
 ]
 ```

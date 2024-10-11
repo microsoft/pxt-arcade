@@ -75,12 +75,12 @@ to make the game end, because it will not end on its own now!
 
 Before we end the game, let's display the high scores table.
 
-1.   Create a new variable called **high scores text**.
+1.   Create a new variable called **high scores message**.
 1.   In your   
 ``||info(noclick):on life zero||``   
 container,
 set the value of   
-**high scores text** to the string   
+**high scores message** to the string   
 **High scores\n**.
      -    Those special characters at the end ask MakeCode to put
 the characters on their own line.
@@ -105,7 +105,7 @@ for an array is one less than its size.
 1.   In the   
 ``||loops(noclick):for||`` loop, build your high score message.
 Set the   
-**high scores text** variable to join the following strings:
+**high scores message** variable to join the following strings:
      1.   ``||variables:high scores text||``
      (In other words, you are adding to the existing value.)
      1.   ``||variables(arrays):high score names||``
