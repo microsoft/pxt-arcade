@@ -50,7 +50,7 @@ block.
 Run your project to see how these blocks work together.
 Check the hint if you need help.
 
-![Advanced drawers in the toolbox.](https://alex-kulcsar.github.io/introcs-tutorials/assets/images/S01.L02.02.P01.text_drawer.png)
+![Advanced drawers in the toolbox.](/static/courses/csintro/S01.L02.02.P01.text_drawer.png)
 
 ```blocks
 game.splash("Hello" + "World")

@@ -116,7 +116,7 @@ Use the hint to see a screenshot of this and to check your code.
 Play your game in the simulator to see what happens when the enemy sprite
 collides with your hero!
 
-![Using a local variable from a function header.](https://alex-kulcsar.github.io/introcs-tutorials/assets/images/S01.L01.04.P02.function_use_local_variable.png)
+![Using a local variable from a function header.](/static/courses/csintro/S01.L01.04.P02.function_use_local_variable.png)
 
 ```block
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
