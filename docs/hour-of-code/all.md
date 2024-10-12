@@ -2,7 +2,21 @@
 
 Join us in celebrating Computer Science Education Week by playing, designing, and coding your very own retro arcade games!
 
-## New for 2023
+## New for 2024
+
+```codecard
+[
+    {
+        "name": "Inside Out 2",
+        "description": "Create a bubble popping game, featuring the stars of Disney and Pixar's Inside Out 2.",
+        "url": "https://arcade.makecode.com/#tutorial:/tutorials/bubbles",
+        "imageUrl": "/static/tutorials/bubbles/card.jpg"
+    }
+]
+```
+
+## Previous Activities
+
 
 ```codecard
 [
@@ -16,16 +30,7 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
         "description": "This simplified version of Sparks Flying allows students as young as kindergarten to experience the joy of coding their own game in MakeCode Arcade.",
         "url": "/#tutorial:/tutorials/sparks-jr",
         "imageUrl": "/static/hour-of-code/2023/jr.png"
-    }
-]
-```
-
-## Previous Activities
-
-
-```codecard
-[
-    {
+    },{
         "name": "2022 Hour of Code",
         "description": "Code your own classroom carnival with games like Whack-the-Mole, Burstin' Balloons, and Target Practice",
         "url": "/hour-of-code-2022",
