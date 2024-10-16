@@ -74,7 +74,7 @@ and snap it inside at **the end** of the <br/>
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Loop 4 times.](/static/skillmap/forest/loop4.gif "Add a loop.")
 
 hint~
 
@@ -119,7 +119,7 @@ and snap it inside **the empty** <br/>
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/forest/change-tiles.gif "Add a sprite to your game.")
 
 hint~
 
@@ -186,7 +186,7 @@ into an **empty area** of the workspace.
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Add some crackle.](/static/skillmap/forest/crackle.gif "Add some crackle.")
 
 hint~
 
