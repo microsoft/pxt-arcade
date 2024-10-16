@@ -3,17 +3,37 @@
 A collection of courses that provide professional learning opportunities for Microsoft MakeCode.
 
 
-## MakeCode Sections
+## CSEd Week Webinars
 
 ```codecard
 [
     {
-        "name": "Arcade PL",
-        "description": "A 42 min course on MS Learn that shows you how to utilize MakeCode Arcade in your classroom",
+        "name": "Intro to MakeCode for CSEd Week 2024",
+        "description": "Join us for an engaging 50-minute webinar where we'll explore the best MakeCode Hour of Code activities, perfect for Computer Science Education Week! ",
         "url":"https://learn.microsoft.com/en-us/training/modules/utilize-makecode-arcade-your-classroom/",
         "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOYCd?ver=bf04&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
     }, {
-        "name": "micro:bit PL",
+        "name": "Instant CSEd Week Prep",
+        "description": "From activity selection to class runtime, you'll leave this session with all the knowledge and resources necessary to make CS Education Week fun, engaging, and stress-free for you and your students. ",
+        "url":"https://microbit.org/teach/professional-development/",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWP52j?ver=a251&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
+    }
+]
+```
+
+
+
+## Intro to CS with Arcade
+
+```codecard
+[
+    {
+        "name": "Tips and Tricks for Intro to CS with Arcade",
+        "description": "From activity selection to class runtime, you'll leave this session with all the knowledge and resources necessary to make CS Education Week fun, engaging, and stress-free for you and your students.",
+        "url":"https://learn.microsoft.com/en-us/training/modules/utilize-makecode-arcade-your-classroom/",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOYCd?ver=bf04&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
+    }, {
+        "name": "Intro to CS - Ask Me Anything",
         "description": "Explore courses covering a range of topics to do with computing and the micro:bit",
         "url":"https://microbit.org/teach/professional-development/",
         "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWP52j?ver=a251&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
@@ -25,6 +45,8 @@ A collection of courses that provide professional learning opportunities for Mic
     }
 ]
 ```
+
+
 
 ### ~hint
 

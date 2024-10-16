@@ -65,9 +65,7 @@ let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 
 If you want a new plane, click the image and choose a new one from the Gallery.
 
-
-
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/forest/change-sprite.gif "Chose a new sprite")
 
 
 
@@ -92,7 +90,7 @@ container that's already in the workspace.
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/forest/move-plane.gif "Add a sprite to your game.")
 
 hint~
 
@@ -123,7 +121,7 @@ _💡 You can also use the arrow keys on your keyboard!_
 ## {6. Follow with Camera}
 
 **😮 Ack!**<br/>
-Your air tanker flies off-screen if you go too far.
+Your plane flies off-screen if you go too far.
 
 ---
 
@@ -140,7 +138,7 @@ container that's already in the workspace.
 ~hint Show me how! 🕵🏽
 
 
-![Add the sprite block.](/static/skillmap/mole/add-sprite.gif "Add a sprite to your game.")
+![Add the sprite block.](/static/skillmap/forest/camera.gif "Add a sprite to your game.")
 
 hint~
 

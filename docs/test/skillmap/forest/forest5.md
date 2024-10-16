@@ -238,68 +238,6 @@ and head back out to the skillmap to share it with friends or save it in your ga
 let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
 controller.moveSprite(myPlane)
 scene.cameraFollowSprite(myPlane)
-
-```
-
-
-
-```package
-pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
-```
-
-```template
-
-controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    sprites.spray(myPlane, forest_imgs.water)
-})
-
-game.set_health_of_trees(7)
-game.set_strength_of_wind(3)
-game.set_dryness_of_grass(3)
-let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
-controller.moveSprite(myPlane)
-scene.cameraFollowSprite(myPlane)
-
-for (let index = 0; index < 4; index++) {
-    sprites.create_spreading_fire(assets.tile`tree`, assets.tile`tree fire`)
-}
-
-sprites.on_fire_created(function (location) {
-    scene.createParticleEffectAtLocation(location, effects.fire)
-    sprites.set_flame_strength(location, 5)
-})
-
-scene.onOverlapTile(SpriteKind.Water, assets.tile`tree fire`, function (sprite, location) {
-    sprite.destroy()
-    sprites.change_flame_strength_by(location, -1)
-})
-sprites.on_fire_destroyed(function (location) {
-    scene.clearParticleEffectsAtLocation(location)
-    tiles.setTileAt(location, assets.tile`burnt tree`)
-})
-
-game.onUpdate(function () {
-    sprites.random_spread()
-})
-
-```
-
-```ghost
-hud.fire_hud(true)
-hud.danger_hud(true)
-hud.forest_hud(true)
-hud.forest_hud_healthy(3)
-hud.forest_hud_burned(4)
-hud.forest_hud_label ("Healthy Forest:")
-hud.danger_hud_label ("Fire Danger:")
-hud.fire_hud_label ("Nope:")
-```
-
-
-```blockconfig.global
-let myPlane = sprites.create(forest_imgs.Fire_Plane_2_Right, SpriteKind.Player)
-controller.moveSprite(myPlane)
-scene.cameraFollowSprite(myPlane)
 controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
     sprites.spray(myPlane, forest_imgs.water)
 })
@@ -317,7 +255,6 @@ sprites.on_fire_destroyed(function (location) {
 game.onUpdate(function () {
     sprites.random_spread()
 })
-
 ```
 
 
@@ -361,7 +298,6 @@ game.onUpdate(function () {
 ```package
 pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
 forest_imgs=github:kiki-lee/forest_imgs
-
 ```
 
 
@@ -382,3 +318,4 @@ tiles.setTilemap(tilemap`level1`)
   "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile3 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile2 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile8 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile4 = image.ofBuffer(hex``);\n    //% fixedInstance jres blockIdentity=images._tile\n    export const tile1 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tilemap\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"level1\":\n            case \"level1\":return tiles.createTilemap(hex`12001200030303030303030303030303030303030303030101010101010101010101010101010103030101010101010101010101010101010103030102010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030101010101010101010101010101010103030303030303030303030303030303030303`, img`\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n..................\n`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3], TileScale.Sixteen);\n        }\n        return null;\n    })\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n            case \"wall\":\n            case \"tile3\":return tile3;\n            case \"firePit\":\n            case \"tile2\":return tile2;\n            case \"burnt tree\":\n            case \"tile8\":return tile8;\n            case \"tree fire\":\n            case \"tile4\":return tile4;\n            case \"tree\":\n            case \"tile1\":return tile1;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
+
