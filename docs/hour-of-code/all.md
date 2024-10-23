@@ -8,9 +8,15 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
 [
     {
         "name": "Inside Out 2",
-        "description": "Create a bubble popping game, featuring the stars of Disney and Pixar's Inside Out 2.",
+        "description": "Create a bubble popping game, featuring the stars of Disney and Pixar's Inside Out 2",
         "url": "https://arcade.makecode.com/#tutorial:/tutorials/bubbles",
         "imageUrl": "/static/tutorials/bubbles/card.jpg"
+    },
+    {
+        "name": "Scott Kelly - Mission to Hubble",
+        "description": "Follow along with the steps of this tutorial to create a game based on Scott Kelly's first space flight",
+        "url": "https://forms.codeninjas.com/back-to-school-game-building-session/?utm-source=makecode&utm_medium=partner&utm_campaign=bts_gbs",
+        "imageUrl": "/static/tutorials/hubble/hubble_4x3.jpg"
     }
 ]
 ```
