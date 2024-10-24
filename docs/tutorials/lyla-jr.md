@@ -38,7 +38,7 @@ sprites.sendFlying(lyla_imgs.picklechip, 1)
 
 
 
-## {Step 7}
+## {Step 3}
 
 **Add a background!**
 
@@ -59,7 +59,7 @@ scene.setBG(lyla_imgs.diner)
 
 
 
-## {Step 6}
+## {Step 4}
 
 **Try your game!**
 
@@ -71,7 +71,7 @@ catch the snacks.
 
 
 
-## {Step 8}
+## {Step 5}
 
 **Add a timer!**
 
@@ -98,7 +98,7 @@ game.gameCountdown(30)
 
 
 
-## {Step 10}
+## {Step 6}
 
 **Make more changes!**
 
