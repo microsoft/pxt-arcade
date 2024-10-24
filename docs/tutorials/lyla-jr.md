@@ -5,17 +5,29 @@
 
 ## Lyla and Ev's Snack Chase @showdialog
 
-**Let's code a video game with Lyla, Everett and Stu!**
+**Let's code a video game with Lyla, Everett, Luke and Stu!**
 
 ![Pickle Party Game](/static/tutorials/lyla/lyla.gif "Characters chasing pickle slices." )
 
 
 
-## {Step 5}
+## {Step 2}
 
 **We need snacks to chase!**
 
+---
+
+Snap the 
+```block
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+```
+block into the workspace. 
+
+---
+
 ![Add a flying pickle with a new block](/static/tutorials/lyla/pickle.gif "Choose the pickle from the gallery" )
+
+
 
 #### ~ tutorialhint
 
@@ -116,7 +128,12 @@ music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackgr
 ![You finished your game!](/static/tutorials/lyla/finish.gif "You finished your game")
 
 
-You made a video game! Try playing it with your friends.
+You made a video game! 
+
+You can play with one other friend on the same keyboard, 
+or start a game with more friends by clicking **Done** and 
+clicking "Host Multiplayer Game".
+
 
 
 ```blockconfig.global
