@@ -15,3 +15,4 @@ package-lock.json
 *.code-workspace
 *.DS_STORE
 .pxt/
+mcaddons/quadpixel/resource_packs/quadpixel/textures/blocks/*

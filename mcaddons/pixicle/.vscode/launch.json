@@ -1,0 +1,14 @@
+{
+  "version": "0.3.0",
+  "configurations": [
+    {
+      "type": "minecraft-js",
+      "port": 19144,
+      "mode": "listen",
+      "name": "Debug with Minecraft",
+      "preLaunchTask": "build",
+      "sourceMapRoot": "${workspaceFolder}/dist/debug/",
+      "generatedSourceRoot": "${workspaceFolder}/dist/scripts/"
+    }
+  ]
+}

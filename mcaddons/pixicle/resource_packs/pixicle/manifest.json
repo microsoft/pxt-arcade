@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pixicle",
+    "description": "MakeCode Arcade Screen",
+    "uuid": "7fddb5cb-da48-43a9-b1ec-f95fdea4059e",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 30]
+  },
+  "modules": [
+    {
+      "description": "Pixicle Resource Pack",
+      "type": "resources",
+      "uuid": "503fe660-142b-46a2-8fec-34a54e944720",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "ca750a90-38a0-4747-8f51-91eeb5c3d607",
+      "version": [1, 0, 0]
+    }
+  ]
+}

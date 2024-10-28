@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "quadpixel",
+    "description": "MakeCode Arcade Screen",
+    "uuid": "9f3bd110-0c2f-4827-a45c-b4f22a7ccedd",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 30]
+  },
+  "modules": [
+    {
+      "description": "Resources",
+      "type": "resources",
+      "uuid": "f7907a3d-505b-46b8-acb4-c3d9178ceda4",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "2778442c-585d-4aaa-ba36-d7f55f8b6cbc",
+      "version": [1, 0, 0]
+    }
+  ]
+}

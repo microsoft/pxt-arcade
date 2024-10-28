@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pixicle",
+    "description": "MakeCode Arcade Screen",
+    "uuid": "ca750a90-38a0-4747-8f51-91eeb5c3d607",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 30]
+  },
+  "modules": [
+    {
+      "description": "Pixicle scripts",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "d646e092-3716-4d65-b3ec-9dc4ac56b192",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "7fddb5cb-da48-43a9-b1ec-f95fdea4059e",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.14.0"
+    }
+  ]
+}

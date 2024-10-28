@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "quadpixel",
+    "description": "MakeCode Arcade Screen",
+    "uuid": "2778442c-585d-4aaa-ba36-d7f55f8b6cbc",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 30]
+  },
+  "modules": [
+    {
+      "description": "Scripts",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "5916966f-82ec-4850-84dd-ddda0e557fa4",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "9f3bd110-0c2f-4827-a45c-b4f22a7ccedd",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.14.0"
+    }
+  ]
+}
