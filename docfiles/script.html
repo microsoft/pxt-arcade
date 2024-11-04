@@ -45,6 +45,14 @@
         <div id="embed-frame">
             <div id="loader" style="text-align:center;margin:20% auto;font-family:monospace;font-size:25px;">loading...</div>
         </div>
+        <div id="presence-bar" class="ui item grid centered portrait multiplayer-presence" style="margin-bottom: 0.5rem; display: none;">
+            <div class="sim-presence-bar">
+                <button class="common-button sim-presence-bar-player player-1" title="Player 1" role="button" tabindex="0"></button>
+                <button class="common-button sim-presence-bar-player player-2" title="Player 2" role="button" tabindex="0"></button>
+                <button class="common-button sim-presence-bar-player player-3" title="Player 3" role="button" tabindex="0"></button>
+                <button class="common-button sim-presence-bar-player player-4" title="Player 4" role="button" tabindex="0"></button>
+            </div>
+        </div>
         <div class="script-bookend">
             <div id="abuse-message" class="ui mini blue message container no-select">
                 <div class="ui grid padded">
@@ -169,6 +177,7 @@
             });
 
             var isGame = true;
+            var isMultiplayer = false;
             editCodeButton.addEventListener("click", function() {
                 window.pxtTickEvent('share.editcode', { target: "arcade" });
             })
@@ -220,6 +229,13 @@
                 });
 
             window.addEventListener('message', function (ev) {
+                if (ev.data && ev.data.type === "status" && ev.data.state === "running" && isMultiplayer) {
+                    const iframe = document.getElementsByTagName("iframe").item(0);
+
+                    if (iframe) {
+                        setActivePlayer(1, iframe);
+                    }
+                }
                 if (!shareLinkIsApproved)
                     return;
                 var d = ev.data;
@@ -239,6 +255,8 @@
                     } catch (e) { /** failed to parse tick from game **/ }
                 }
             });
+
+            initPresenceBar();
 
             function prebuildSimulator(container) {
                 var sims = document.createElement("div");
@@ -282,6 +300,8 @@
                             if (built.parts.indexOf("multiplayer") !== -1) {
                                 window.pxtTickEvent('share.isMultiplayerGame', { target: "arcade" });
                                 multiplayerShareButton.style.display = "block";
+                                isMultiplayer = true;
+                                document.getElementById("presence-bar").style.display = "block";
                             }
                         });
                     });
@@ -295,6 +315,35 @@
                 iframe.frameBorder = "0";
                 iframe.src = src;
                 return iframe;
+            }
+
+            function initPresenceBar() {
+                for (let i = 0; i < 4; i++) {
+                    const button = document.getElementsByClassName("player-" + (i + 1)).item(0);
+                    button.addEventListener("click", () => {
+                        const iframe = document.getElementsByTagName("iframe").item(0);
+
+                        if (iframe) {
+                            setActivePlayer(i + 1, iframe);
+                            iframe.focus();
+                        }
+                    });
+                }
+            }
+
+            function setActivePlayer(playerNumber, iframe) {
+                const setSlotMsg = {
+                    type: "setactiveplayer",
+                    playerNumber: playerNumber,
+                };
+                const connectionMsg = {
+                    type: "multiplayer",
+                    content: "Connection",
+                    slot: playerNumber,
+                    connected: true,
+                };
+                iframe.contentWindow.postMessage(setSlotMsg, "*");
+                iframe.contentWindow.postMessage(connectionMsg, "*");
             }
         })();
     </script>
