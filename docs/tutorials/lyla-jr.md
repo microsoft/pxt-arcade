@@ -1,9 +1,10 @@
-# Lyla and Ev's Snack Chase
+# Lyla and Stu's Snack Chase
 ### @explicitHints true
 ### @flyoutOnly true
+### @hideDone true
 
 
-## Lyla and Ev's Snack Chase @showdialog
+## Lyla and Stu's Snack Chase @showdialog
 
 **Let's code a video game with Lyla, Everett, Luke and Stu!**
 
@@ -40,9 +41,13 @@ sprites.sendFlying(lyla_imgs.picklechip, 1)
 
 ## {Step 3}
 
-**Add a background!**
+**Set the scene!**
+
+---
 
 ![Use the set scene block](/static/tutorials/lyla/bg.gif "Use the set scene block" )
+
+---
 
 The background in the block is Loops Lunch! Click on the image to draw your own background.
 
@@ -63,7 +68,7 @@ scene.setBG(lyla_imgs.diner)
 
 **Try your game!**
 
-[Re-Link Intro Video Here]
+---
 
 Press A (or the space bar) to clear the message, then use the arrow keys to
 catch the snacks.
@@ -75,12 +80,15 @@ catch the snacks.
 
 **Add a timer!**
 
+---
 
 ![Grab the timer block](/static/tutorials/lyla/timer.gif "The timer will count down from 45 to 0." )
 
+---
+
 How many snacks can you catch before time runs out? 
 
-If its too hard, add more seconds to the timer. If it's too easy, try taking time away.
+If the game is too hard, add more seconds to the timer. If it's too easy, try taking time away.
 
 
 
@@ -96,43 +104,64 @@ game.gameCountdown(30)
 
 
 
+## {Step 7}
 
 
-## {Step 6}
-
-**Make more changes!**
-
-![Add something special](/static/tutorials/lyla/more.gif "Add something special")
-
-If you want, you can change the players, change the snacks, and add sounds!
+🥒 You did it! 🥒
 
 
-#### ~ tutorialhint
+You made a video game!
 
-```blocks
-sprites.sendFlying(lyla_imgs.picklechip, 1)
-scene.setBG(lyla_imgs.diner)
-game.gameCountdown(30)
-//@highlight
-sprites.assignPlayerImgs(lyla_imgs.lyla, lyla_imgs.louisa, lyla_imgs.liana, lyla_imgs.luke)
-music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackground)
+![You finished your game!](/static/tutorials/lyla/finish.gif "You finished your game")
 
-```
+
+
+
+
+## Play with Friends @showdialog
+
+
+You can play your game with one other friend using the same keyboard.
+
+![Picture of keys to use to play game](/static/tutorials/lyla/key.png "Key for keyboard keys")
+
+---
+
+~hint Click here to learn how to play online with more friends.
+
+---
+
+![balloon intro](youtube:jZGvmt6X880)
+
+hint~
 
 
 
 ## {Finale}
 
-**🥒 You did it! 🥒**
+**Want to keep working?**
 
-![You finished your game!](/static/tutorials/lyla/finish.gif "You finished your game")
+---
+
+Add more blocks to change players, change snacks, or add music!
+
+![Add something special](/static/tutorials/lyla/more.gif "Add something special")
+
+---
 
 
-You made a video game! 
 
-You can play with one other friend on the same keyboard, 
-or start a game with more friends by clicking **Done** and 
-clicking "Host Multiplayer Game".
+#### ~ tutorialhint....
+
+```blocks
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+scene.setBG(lyla_imgs.diner)
+game.gameCountdown(30)
+sprites.assignPlayerImgs(lyla_imgs.lyla, lyla_imgs.stu, lyla_imgs.everett, lyla_imgs.luke)
+music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackground)
+```
+
+
 
 
 
@@ -140,22 +169,15 @@ clicking "Host Multiplayer Game".
 scene.setBG(lyla_imgs.diner)
 game.gameCountdown(30)
 sprites.sendFlying(lyla_imgs.picklechip, 1)
-sprites.assignPlayerImgs(lyla_imgs.lyla, lyla_imgs.stu, lyla_imgs.everett, lyla_imgs.luke)
-music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackground)
 
 ```
-
-
 
 
 ```ghost
 scene.setBG(lyla_imgs.diner)
 game.gameCountdown(30)
 sprites.sendFlying(lyla_imgs.picklechip, 1)
-sprites.assignPlayerImgs(lyla_imgs.lyla, lyla_imgs.stu, lyla_imgs.everett, lyla_imgs.luke)
-music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
-music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackground)
-
 ```
 
 
