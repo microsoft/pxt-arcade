@@ -127,7 +127,7 @@ You can play your game with one other friend using the same keyboard.
 
 ---
 
-~hint Click here to learn how to play online with up to three other friends.
+~hint Parents, click here for more ways to share.
 
 ---
 
