@@ -8,8 +8,8 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
 [
     {
         "name": "Snack Chase",
-        "description": "Code a snack chase with characters from Lyla in the Loop on PBS Kids",
-        "url": "https://arcade.makecode.com/#tutorial:/tutorials/lyla",
+        "description": "Code a snack chase game with characters from Lyla in the Loop on PBS KIDS",
+        "url": "https://arcade.makecode.com/#tutorial:/tutorials/lyla-jr",
         "imageUrl": "/static/tutorials/lyla/card.jpg",
         "label": "JUNIOR",
         "labelClass": "orange ribbon large"
