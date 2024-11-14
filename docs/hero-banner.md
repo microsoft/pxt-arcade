@@ -12,6 +12,13 @@ Here are some cool activities to get you started!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
+* name: Snack Chase
+* buttonLabel: Code Now
+* description: Code with friends from Lyla in the Loop!
+* imageUrl: /static/hero-gallery/lyla-hero.jpg
+* url: https://arcade.makecode.com/#tutorial:/tutorials/lyla-jr
+* cardType: link
+---
 * name: Mission to Hubble
 * buttonLabel: Code Now
 * description: Help Scott Kelly reach the Hubble!
@@ -29,11 +36,6 @@ Here are some cool activities to get you started!
 * name: How To Code a Video Game
 * imageUrl: /static/hero-gallery/how-to-code.png
 * youTubePlaylistId: PLMMBk9hE-SepfPK6z19t6aAfwbOQNY6K7
----
-* name: Join the Live Stream
-* buttonLabel: Watch Stream
-* imageUrl: /static/hero-gallery/stream.png
-* url: https://www.twitch.tv/msmakecode
-* cardType: link
+
 
 ### ~
