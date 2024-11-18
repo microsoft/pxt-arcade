@@ -8,8 +8,7 @@
 
 **Let's code a video game with Lyla, Everett, Luke and Stu!**
 
-![Pickle Party Game](/static/tutorials/lyla/lyla.gif "Characters chasing pickle slices." )
-
+![Lyla intro](youtube:d8f-PtWSuKk)
 
 
 ## {Step 2}
@@ -68,6 +67,8 @@ scene.setBG(lyla_imgs.diner)
 
 **Try your game!**
 
+![Lyla intro](youtube:d8f-PtWSuKk?start=53)
+
 ---
 
 Press A (or the space bar) to clear the message, then use the arrow keys to
@@ -104,16 +105,15 @@ game.gameCountdown(30)
 
 
 
-## {Step 7}
+## 🥒 You did it! 🥒
 
 
-🥒 You did it! 🥒
+
 
 
 You made a video game!
 
 ![You finished your game!](/static/tutorials/lyla/finish.gif "You finished your game")
-
 
 
 
@@ -127,11 +127,11 @@ You can play your game with one other friend using the same keyboard.
 
 ---
 
-~hint Click here to learn how to play online with more friends.
+~hint Parents, click here for more ways to share.
 
 ---
 
-![balloon intro](youtube:jZGvmt6X880)
+![Sharing Multiplayer](youtube:dGaG_b2y33I)
 
 hint~
 
@@ -143,7 +143,8 @@ hint~
 
 ---
 
-Add more blocks to change players, change snacks, or add music!
+Add more blocks!
+You can change players, change snacks, or add music!
 
 ![Add something special](/static/tutorials/lyla/more.gif "Add something special")
 
@@ -163,14 +164,11 @@ music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackgr
 
 
 
-
-
 ```blockconfig.global
 scene.setBG(lyla_imgs.diner)
 game.gameCountdown(30)
 sprites.sendFlying(lyla_imgs.picklechip, 1)
-music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackground)
-
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 ```
 
 
@@ -178,6 +176,8 @@ music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackgr
 scene.setBG(lyla_imgs.diner)
 game.gameCountdown(30)
 sprites.sendFlying(lyla_imgs.picklechip, 1)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+
 ```
 
 
