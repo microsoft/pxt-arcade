@@ -12,13 +12,6 @@ Here are some cool activities to get you started!
 * url: https://arcade.makecode.com/#tutorial:/tutorials/intro
 * cardType: link
 ---
-* name: Cozy Jam
-* buttonLabel: Join the Jam
-* description: Participate in a Game Jam!
-* imageUrl: /static/gamejam/jams/cozy/assets/hero-banner.png
-* url: https://arcade.makecode.com/gamejam/cozy
-* cardType: link
----
 * name: Snack Chase
 * buttonLabel: Code Now
 * description: Code with friends from Lyla in the Loop!
@@ -40,9 +33,12 @@ Here are some cool activities to get you started!
 * url: /tutorials/bubbles
 * cardType: tutorial
 ---
-* name: How To Code a Video Game
-* imageUrl: /static/hero-gallery/how-to-code.png
-* youTubePlaylistId: PLMMBk9hE-SepfPK6z19t6aAfwbOQNY6K7
+* name: Cozy Jam
+* buttonLabel: Join the Jam
+* description: Participate in a Game Jam!
+* imageUrl: /static/gamejam/jams/cozy/assets/hero-banner.png
+* url: https://arcade.makecode.com/gamejam/cozy
+* cardType: link
 
 
 ### ~
