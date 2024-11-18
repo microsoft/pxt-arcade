@@ -9,7 +9,12 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
 ## Previous Game Jams
 
 ```codecard
-[
+[   {
+        "name": "Female Gamechangers",
+        "description": "Celebrate Women's History Month with Microsoft MakeCode Arcade!",
+        "url": "/gamejam/female-gamechangers",
+        "imageUrl": "/static/gamejam/jams/female-gamechangers/assets/preview.png"
+    },
     {
         "name": "Five Second Games",
         "description": "A combination of micro-games that can be played in 5 seconds!",
