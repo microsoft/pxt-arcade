@@ -36,8 +36,8 @@ We have gathered all of our best educator resources and collected them all right
         "imageUrl": "/static/skillmap/story/story-comp.png"
     },{
         "name": "Educator Training",
-        "description": "Summer trainings are now in session!",
-        "url":"/courses/summer-training",
+        "description": "Learn more about MakeCode!",
+        "url":"/courses/educator-trainings",
         "imageUrl": "/static/livestream-games/hamlet.png"
     }
 ]
