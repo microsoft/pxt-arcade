@@ -10,8 +10,7 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "name": "Arcade cabinet",
         "description": "Full size Arcade cabinet powered by a Raspberry Pi.",
         "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg",
-        "url": "/hardware/raspberry-pi/wooden-cabinet",
-        "variant": "hw---rpi"
+        "url": "/hardware/cabinets"
     },
     {
         "name": "Shoebox Controller",

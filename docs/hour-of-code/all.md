@@ -31,6 +31,9 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
     }
 ]
 ```
+<br/><br/>
+[Click here to access educator resources for the above activities.](https://1drv.ms/f/s!AqsgsTyHBmRBpVuQI9q-h2yeQD5m?e=O88oeA)
+
 
 ## Previous Activities
 
@@ -70,8 +73,7 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
 
 ## See also
 
-[Sparks Flying](aka.ms/prehistoric)<br/>
-[Sparks Flying JR](aka.ms/sparky)<br/>
+[Code a Carnival Curriculum](https://aka.ms/carnivalTeacher)<br/>
 [2022 Hour of Code](/hour-of-code-2022)<br/>
 [2021 Hour of Code](/hour-of-code-2021)<br/>
 [2020 Hour of Code](/hour-of-code-2020)
