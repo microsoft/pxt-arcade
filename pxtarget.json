@@ -734,7 +734,7 @@
             "lockedImage": "/static/badges/badge-jungle-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/jungle",
             "type": "skillmap-completion",
-            "title": "Jungle Monkey"
+            "title": "Jungle Jump"
         },
         {
             "id": "skillmap-completion-space",

@@ -84,7 +84,7 @@
   "imageUrl": "/static/skillmap/backgrounds/target-comp.gif",
   "largeImageUrl": "/static/skillmap/backgrounds/target-comp.gif",
   "label": "Video tutorial",
-  "labelClass": "ribbon"
+  "labelClass": "teal ribbon large"
 }, {
   "name": "Time Flies",
   "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
