@@ -347,8 +347,8 @@
             "variant": "hw---samd51"
         },
         {
-            "name": "micro:bit Newbit Shield",
-            "description": "Use the micro:bit with an expansion board from Kittenbot",
+            "name": "Newbit Arcade Shield",
+            "description": "Use the micro:bit with an expansion board from KittenBot",
             "imageUrl": "/static/hardware/newbit.png",
             "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
             "variant": "hw---n3"
