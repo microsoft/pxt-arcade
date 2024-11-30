@@ -1,0 +1,36 @@
+body {
+    background: #fff5dc;
+}
+
+.top {
+    image-rendering: pixelated;
+}
+
+/**** ACTION BUTTONS ****/
+
+.button {
+    color: #fff;
+    background-color: #8e3a3a;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #ac7c52;
+}
+
+/**** FOOTER ****/
+
+.footer .ui.link.list .item {
+    color: #1b2447;
+}
+
+.content {
+    background: unset;
+    color: #1b2447;
+}
+
+a:not(.button) {
+    color: #0060b9;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
