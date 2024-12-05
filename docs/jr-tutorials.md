@@ -4,7 +4,14 @@
 
 ```codecard
 [
-{
+ {
+  "name": "Snack Chase",
+  "cardType": "tutorial",
+  "description": "Code a snack chase game with characters from Lyla in the Loop on PBS KIDS",
+  "url": "https://arcade.makecode.com/#tutorial:/tutorials/lyla-jr",
+  "imageUrl": "/static/tutorials/lyla/card.jpg",
+  "directOpen": true
+  }, {
   "name": "Turkey Junior",
   "cardType": "link",
   "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
