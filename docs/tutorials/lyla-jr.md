@@ -8,7 +8,8 @@
 
 **Let's code a video game with Lyla, Everett, Luke and Stu!**
 
-![Lyla intro](youtube:d8f-PtWSuKk)
+![Lyla intro](youtube:43Pp_KVsFIc)
+
 
 
 ## {Step 2}

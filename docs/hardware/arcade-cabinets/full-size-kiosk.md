@@ -27,6 +27,8 @@ The cabinet is built out of 3 - 8' x 4' plywood sheets of 1/2" thickness.
 * **1** - HDMI to VGA Adapter (https://a.co/d/4NyKmNO)
 * **2** - Containers of screws: 2.5" #8 and .375" #4 
 
+[Click here to download complete instruction pack](/hardware/arcade-cabinets/complete-cabinet-package.zip)
+
 ## Suggested Tools
 
 * CNC or jigsaw, router, table saw, impact driver, wood glue, etc... The kind of tools you find in a wood shop.
