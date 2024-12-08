@@ -198,7 +198,7 @@ game.onUpdateInterval(1000, function () {
 <br/>and drop it onto **an empty area** of the workspace.
 
 
-The is an **EVENT** block and it will cause the **ACTION** inside to happen each time a second passes.
+This is an **EVENT** block and it will cause the **ACTION** inside to happen each time a second passes.
 
 ~hint Tell me about events! 💡
 
