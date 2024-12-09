@@ -11,7 +11,7 @@ Disney and Pixar's Inside Out 2? Click **Next** to make your own game!
 ![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.jpg "How many memories can you store?")
 
 
-
+![ ](https://code.org/api/hour/begin_bubble_popping) 
 
 
 
