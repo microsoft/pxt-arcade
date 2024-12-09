@@ -10,7 +10,7 @@
 
 ![Lyla intro](youtube:43Pp_KVsFIc)
 
-
+![ ](https://code.org/api/hour/begin_snack_chase.png) 
 
 ## {Step 2}
 
