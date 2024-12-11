@@ -27,6 +27,8 @@ The cabinet is built out of 3 - 8' x 4' plywood sheets of 1/2" thickness.
 * **1** - HDMI to VGA Adapter (https://a.co/d/4NyKmNO)
 * **2** - Containers of screws: 2.5" #8 and .375" #4 
 
+[Click here to download complete instruction pack](/hardware/arcade-cabinets/complete-cabinet-package.zip)
+
 ## Suggested Tools
 
 * CNC or jigsaw, router, table saw, impact driver, wood glue, etc... The kind of tools you find in a wood shop.
@@ -34,28 +36,28 @@ The cabinet is built out of 3 - 8' x 4' plywood sheets of 1/2" thickness.
 
 ## Template
 
-This [SVG template](/hardware/cabinet.svg) will serve as the outline for the top cabinet on your CNC, or you can print out the pieces at full-scale and follow along the outline with a jigsaw.
+This [SVG template](/hardware/arcade-cabinets/cabinet.svg) will serve as the outline for the top cabinet on your CNC, or you can print out the pieces at full-scale and follow along the outline with a jigsaw.
 
 ![Top Template](/static/hardware/arcade-kiosks/arcade-cabinet.png)
-[Download top of cabinet here...](/hardware/cabinet.svg)
+[Download top of cabinet here...](/hardware/arcade-cabinets/cabinet.svg)
 
 <br/>
 
-The following [SVG template](/hardware/control-panel.svg) provides the outline for the cuts in the control panel that allow you to add the two-player buttons and joysticks.
+The following [SVG template](/hardware/arcade-cabinets/control-panel.svg) provides the outline for the cuts in the control panel that allow you to add the two-player buttons and joysticks.
 
 ![Control Panel Template](/static/hardware/arcade-kiosks/control-panel-image.png)
-[Download control panel cuts here...](/hardware/control-panel.svg)
+[Download control panel cuts here...](/hardware/arcade-cabinets/control-panel.svg)
 
 <br/>
 
 ## Kiosk Top Instructions
 
 
-* Cut your cabinet pieces from plywood as indicated in the [SVG file](/hardware/control-panel.svg).
+* Cut your cabinet pieces from plywood as indicated in the [SVG file](/hardware/arcade-cabinets/control-panel.svg).
 
 ![Cutting the template](/static/hardware/arcade-kiosks/cnc.png)
 
-* Cut the control panel from the second [SVG file](/static/hardware/arcade-kiosks/control-panel-image.png).
+* Cut the control panel from the second [Control panel image](/static/hardware/arcade-kiosks/control-panel-image.png).
 
 ![Rough edges](/static/hardware/arcade-kiosks/control-panel-image.png)<br/>
 

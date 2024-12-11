@@ -1,173 +1,183 @@
-# Pickle Party
+# Lyla and Stu's Snack Chase
 ### @explicitHints true
 ### @flyoutOnly true
+### @hideDone true
 
 
-## Pickle Party Intro @showdialog
+## Lyla and Stu's Snack Chase @showdialog
 
-**Ready to code a pickle party?**
+**Let's code a video game with Lyla, Everett, Luke and Stu!**
 
-![Pickle Party Game](/static/tutorials/lyla/lyla.gif "Characters chasing pickle slices." )
-
+![Lyla intro](youtube:d8f-PtWSuKk)
 
 
 ## {Step 2}
 
-**Take a look at the game window**
+**We need snacks to chase!**
 
-![Lyla on the screen](/static/tutorials/lyla/lyla.png "Lyla is alone on the screen." )
+---
 
-You should see Lyla on the screen.
+Snap the 
+```block
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+```
+block into the workspace. 
+
+---
+
+![Add a flying pickle with a new block](/static/tutorials/lyla/pickle.gif "Choose the pickle from the gallery" )
+
+
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+```
 
 
 
 ## {Step 3}
 
-**Click the circles to add other players**
+**Set the scene!**
 
-![The circles allow you to control other players](/static/tutorials/lyla/circles.gif "Click the circles to control other players." )
+---
 
+![Use the set scene block](/static/tutorials/lyla/bg.gif "Use the set scene block" )
+
+---
+
+The background in the block is Loops Lunch! Click on the image to draw your own background.
+
+
+
+#### ~ tutorialhint
+
+```blocks
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+//@highlight
+scene.setBG(lyla_imgs.diner)
+```
 
 
 
 
 ## {Step 4}
 
-**You can move the selected player with the arrow keys**
+**Try your game!**
 
-![The arrow keys move whichever player you have selected](/static/tutorials/lyla/arrows.gif "The game window is the same color as the player circle." )
+![Lyla intro](youtube:d8f-PtWSuKk?start=53)
 
+---
+
+Press A (or the space bar) to clear the message, then use the arrow keys to
+catch the snacks.
 
 
 
 
 ## {Step 5}
 
-**Let's add pickles to chase!**
+**Add a timer!**
 
-![Add a flying pickle with a new block](/static/tutorials/lyla/pickle.gif "Choose the pickle from the gallery" )
+---
 
-#### ~ tutorialhint
+![Grab the timer block](/static/tutorials/lyla/timer.gif "The timer will count down from 45 to 0." )
 
-```blocks
-game.onUpdateInterval2(1, function () {
-    //@highlight
-    sprites.sendFlying(lyla_imgs.picklechip)
-})
-```
+---
 
+How many snacks can you catch before time runs out? 
+
+If the game is too hard, add more seconds to the timer. If it's too easy, try taking time away.
 
 
 
-## {Step 6}
-
-**Play the game!**
-
-![Choose a character and chase pickles](/static/tutorials/lyla/play.gif "You get points for pickles" )
-
-Use the arrow keys to catch pickles.
-
-
-
-## {Step 7}
-
-**We need a way to win**
-
-Tell the computer what to do when someone scores 15 points.
-
-![Grab the player scores container](/static/tutorials/lyla/score.gif "When a player scores 15 points, the code inside will run." )
 
 #### ~ tutorialhint
 
 ```blocks
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+scene.setBG(lyla_imgs.diner)
 //@highlight
-info.onScore2(15, function () {})
+game.gameCountdown(30)
 ```
 
 
 
-
-## {Step 8}
-
-**Add the _game over_ block**
-
-![Add the game over block to the new container](/static/tutorials/lyla/game-over.gif "This block tells the computer that the first to 15 wins" )
-
-#### ~ tutorialhint
-
-```blocks
-info.onScore2(5, function () {
-    game.simpleWin()
-})
-```
-
-
-
-
-## {Step 9}
-
-**Play until you win!**
+## 🥒 You did it! 🥒
 
 
 
 
 
-## {Step 10}
+You made a video game!
 
-**Let's make it fancy**
-
-Grab the block that runs code when the game starts.
-
-![Add the "on start" container](/static/tutorials/lyla/on-start.gif "This block tells the computer to run the code inside when the game starts" )
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
-scene.setBG(`.`)
-```
+![You finished your game!](/static/tutorials/lyla/finish.gif "You finished your game")
 
 
 
 
+## Play with Friends @showdialog
+
+
+You can play your game with one other friend using the same keyboard.
+
+![Picture of keys to use to play game](/static/tutorials/lyla/key.png "Key for keyboard keys")
+
+---
+
+~hint Parents, click here for more ways to share.
+
+---
+
+![Sharing Multiplayer](youtube:dGaG_b2y33I)
+
+hint~
 
 
 
 ## {Finale}
 
-**🥒 Excellent 🥒**
+**Want to keep working?**
 
-You have finished your multiplayer experience!
+---
 
-When you're ready, sign-in, then select **Done** to start an online multiplayer session with up to three friends.
+Add more blocks!
+You can change players, change snacks, or add music!
 
-**Who will be the first to score 20 points?**
+![Add something special](/static/tutorials/lyla/more.gif "Add something special")
+
+---
 
 
-```blockconfig.global
-info.onScore2(15, function () { })
-game.holdText("Press (A) to start")
+
+#### ~ tutorialhint....
+
+```blocks
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+scene.setBG(lyla_imgs.diner)
+game.gameCountdown(30)
+sprites.assignPlayerImgs(lyla_imgs.lyla, lyla_imgs.stu, lyla_imgs.everett, lyla_imgs.luke)
+music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.InBackground)
 ```
 
 
 
-```template
-game.onUpdateInterval2(1, function () { })
+```blockconfig.global
+scene.setBG(lyla_imgs.diner)
+game.gameCountdown(30)
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 ```
 
 
 ```ghost
-loops.onStartSimple(function () {
-    scene.setBG(lyla_imgs.diner)
-    game.holdText("Press (A) to play")
-    music.simpleSong(music.createSong(lyla_imgs.countdown))
-})
-info.onScore2(5, function () {
-    game.simpleWin()
-})
-game.onUpdateInterval2(1, function () {
-    sprites.sendFlying(lyla_imgs.picklechip)
-})
+scene.setBG(lyla_imgs.diner)
+game.gameCountdown(30)
+sprites.sendFlying(lyla_imgs.picklechip, 1)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+
 ```
 
 
@@ -175,201 +185,69 @@ game.onUpdateInterval2(1, function () {
 ```package
 multiplayer
 arcade-text=github:microsoft/arcade-text#v1.3.0
-lyla_imgs=github:kiki-lee/lyla_imgs#v0.0.4
+lyla_imgs=github:kiki-lee/lyla_imgs#v0.0.7
 arcade-block-icons=github:kiki-lee/arcade-block-icons#v0.0.10
 ```
 
 
 ```customts
-mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
-    if (mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number) <= characters.length) {
-        pickle.setPlayersWith(characters, mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number))
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    if (!(mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A))) {
-        sprites.destroy(otherSprite, effects.disintegrate, 100)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
-    }
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pickle.bumpSprite(sprite, otherSprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
-    }
-    if (mp.isButtonPressed(mp.getPlayerBySprite(otherSprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pickle.bumpSprite(otherSprite, sprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, -1)
-    }
-})
-
-
-let characters = [lyla_imgs.lyla, lyla_imgs.everett, lyla_imgs.stu]
-pickle.setPlayersWith(characters, 1)
-
-
-
-namespace loops{
-
-    
-    /**
-     * Run code when the play button is pressed
-     * (Like on start, but jr)
-     */
-    //% color=#488898
-    //% help=game/on-start-simple 
-    //% weight=99 
-    //% afterOnStart=false
-    //% blockId=on_start_simple 
-    //% block="on `ICON.play`"
-    //% blockAllowMultiple=0
-    export function onStartSimple( a: () => void): void {
-        a();
-    }
-}
-
-namespace music{
-
-    /**
-     * Simplified block to play a song
-     */
-    //% help=game/simple-song
-    //% blockId=playThis 
-    //% block="play $thisSong"
-    //% thisSong.shadow=music_song_field_editor
-    export function simpleSong(thisSong: Playable) {
-        music.play(thisSong, music.PlaybackMode.UntilDone)
-    }
-
-}
-
-//% weight=200
-namespace game {
-    /**
-     * Run code on an interval of time. This executes before game.onUpdate()
-     * @param body code to execute
-     */
-    //% help=game/on-update-interval weight=99 afterOnStart=true
-    //% blockId=gameinterval2 
-    //% weight=100
-    //% block="every $period seconds"
-    //% period.defl=1
-    //% blockAllowMultiple=1
-    export function onUpdateInterval2(period: number, a: () => void): void {
-        period = period * 1000;
-        if (!a || period < 0) return;
-        let timer = 0;
-        game.eventContext().registerFrameHandler(scene.UPDATE_INTERVAL_PRIORITY, () => {
-            const time = game.currentScene().millis();
-            if (timer <= time) {
-                timer = time + period;
-                a();
-            }
-        });
-    }
-
-
- 
-    //% blockId=hold_text 
-    //% weight=200
-    //% block="show $thisText"
-    //% thisText.defl="Press (A) to play"
-    export function holdText(thisText:string) {
-        game.showLongText(thisText, DialogLayout.Full)
-    }
-
-
-    /**
-    * Special lose sequence
-    */
-    //% blockId=set_kindling_lose
-    //% block="game over `ICON.frown-open-white`"
-    //% help=github:docs/set_simple_lose
-    export function simpleLoss() {
-        game.gameOver(false)
-    }
-
-
-    /**
-    * Special win sequence
-    */
-    //% blockId=set_kindling_win
-    //% block="game over `ICON.smile-beam-white`"
-    //% weight=300
-    //% help=github:docs/set_simple_win
-    export function simpleWin() {
-        game.gameOver(true)
-    }
-
-
-}
-
-
-//% weight=300
-namespace sprites {
-
-    export enum Plyrs {
-        //% block="Player 1"
-        One = 0,
-        //% block="Player 2"
-        Two = 1,
-        //% block="Player 3"
-        Three = 2,
-        //% block="Player 4"
-        Four = 3
-    }
-
-
-
-    /**
-     * Run code on an interval of time. This executes before game.onUpdate()
-     * @param body code to execute
-     */
-    //% blockId=assign_player_image 
-    //% block="$thing = $img"
-    //% thing.defl = Plyrs.One
-    //% img.shadow=screen_image_picker
-    export function assignPlayerImg(thing: Plyrs, img:Image) {
-        characters[thing] = img
-        pickle.setPlayersWith(characters, thing+1)
-    }
-
-
-    /**
-     * Run code on an interval of time. This executes before game.onUpdate()
-     * @param body code to execute
-     */
-    //% blockId=send_flying 
-    //% weight=1000
-    //% block="add flying $thing"
-    //% thing.shadow=screen_image_picker
-    export function sendFlying(thing:Image){
-        let projectile2 = sprites.createProjectileFromSide(thing, randint(-100, 100), randint(-100, 100))
-    }
-}
-
 
 //% color=#b79900 icon="\uf1ce"
 namespace pickle {
-
-    // Make sure not to remove later player when earlier player tested
+    /* Code to set up Lyla game only */
+    // Make sure not to remove later player when earlier player selected
     export let playersConnected = 0;
-
+    // Keep count to delete old splash when new splash arrives
+    export let pickles_to_get = 7;
+    export let characters = [lyla_imgs.lyla, lyla_imgs.everett, lyla_imgs.stu, lyla_imgs.luke];
     // Create textsprite for score
-    export let scoreText = textsprite.create("")
+    export let scoreText = textsprite.create("");
+    export let theseThings = " snacks";
+
+    game.setGameOverMessage(false, "Try Again!")
+    game.setGameOverEffect(false, effects.dissolve)
+    game.setGameOverPlayable(false, music.createSong(lyla_imgs.lose), false)
+    game.setGameOverMessage(true, "You did it!")
+    game.setGameOverPlayable(true, music.createSong(lyla_imgs.winner), false)
+
+
+    control.raiseEvent(3241, 1)
+
+    sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+        sprites.destroy(otherSprite, effects.disintegrate, 100)
+        pickle.changeScoreOverride(1)
+    })
+    info.onCountdownEnd(function () {
+        game.simpleGame()
+    })
+
+    // Workaround for game in play mode (vs edit mode where it worked fine)
+    info.setScore(0)
+
+
+    // Add characters and message when new players join
+    mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
+        if (mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number) <= characters.length) {
+                pickle.setPlayersWith(characters, mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number))
+        }
+        else {
+            game.splashMP("Not enough characters on team!")
+        }
+    })
 
 
 
+    /********/
     //% blockId=set_players
-    //% block="set game for $num player(s) with $list"
+    // block="set game for $num player(s) with $list"
     //% num.defl=1
     //% list.shadow=variables_get
     //% list.defl=characters
     export function setPlayersWith(list: Image[], num: number) {
-        if (num >= pickle.playersConnected) {
-            pickle.playersConnected = num;
+        
+        if (num > playersConnected) {
+            playersConnected = num;
+            pickles_to_get = 7 * num;
             sprites.destroyAllSpritesOfKind(SpriteKind.Player)
             let xloc = [
                 40,
@@ -389,12 +267,13 @@ namespace pickle {
                 mp.getPlayerSprite(mp.getPlayerByIndex(index)).setPosition(xloc.shift(), yloc.shift())
                 mp.getPlayerSprite(mp.getPlayerByIndex(index)).z = 1000
                 mp.moveWithButtons(mp.getPlayerByIndex(index))
+                
             }
-        }
+            game.splashMP("Catch " + pickles_to_get + theseThings + " to win!")
+         }
     }
-    
     //% blockId=bump_sprite
-    //% block="$thisSprite bump $thatSprite"
+    // block="$thisSprite bump $thatSprite"
     //% thisSprite.shadow=variables_get
     //% thisSprite.defl=sprite
     //% thatSprite.shadow=variables_get
@@ -402,71 +281,270 @@ namespace pickle {
     export function bumpSprite(thisSprite: Sprite, thatSprite: Sprite) {
         thatSprite.setPosition((thisSprite.x + 80) % 160, thisSprite.y)
     }
-
-
     /**
-        * Overrides the normal score UI with an iconified version
-        */
-    //% blockId=mp_set_score_override
-    //% block="set $thisPlayer pickle to $thisScore"
-    //% thisPlayer.shadow=mp_playerSelector
+    * Overrides the normal score UI with an iconified version
+    */
+    //% blockId=set_score_override
+    //% block="set `ICON.pickle` to $thisScore"
     //% thisScore.defl=0
     //% color="#b70082"
     //% group="Info"
     //% help=github:docs/mp_set_score_override
-    export function mpSetScoreOverride(thisPlayer: mp.Player, thisScore: number) {
-
+    export function setScoreOverride(thisScore: number) {
         let thisIcon = img`
-                . . . b b . . .
-                . . b 5 5 b . .
-                . b 5 d 1 5 b .
-                . b 5 3 1 5 b .
-                . c 5 3 1 d c .
-                . c 5 1 d d c .
-                . . f d d f . .
-                . . . f f . . .
-                `
-        
-
-        if (pickle.playersConnected == 4) {
-            // show all four scores
-        } else if (pickle.playersConnected == 3) {
-            // show first three scores
-        } else if (pickle.playersConnected == 2) {
-            // show first two scores
-        } else {
-            mp.setPlayerState(thisPlayer, MultiplayerState.score, thisScore)
-            pickle.scoreText.setText("x" + convertToText(mp.getPlayerState(thisPlayer, MultiplayerState.score)))
-            scoreText.setIcon(thisIcon)
-            scoreText.setBorder(1, 2, 1)
-            scoreText.setMaxFontHeight(9)
-            scoreText.right = 160
-            scoreText.top = 0
-            scoreText.update()
-            info.showScore(false)
-        }
-
+            . . . . . . . . . . . . . . . . 
+. . . . . 7 7 a 8. . . . . . . 
+. . . . 7 7 a 8 7 7 a 8 7. . . 
+. . . 7 7 a 8 7 7 a 8 7 7 7. . 
+. . 7 7 a 8 7 7 a 8 7 7 7 a 8. 
+. . 7 a 8 7 7 a 8 7 7 7 a 8 7. 
+. 7 a 8 7 7 a 8 7 7 7 a 8 7. . 
+.a 8 7 7 a 8 7 7 7 a 8 7 7 7. 
+. . 7 7 a 8 7 7 a 8 8 7 7 7 7. 
+. . 7 a 8 7 7 a 8 7 7 7 7 7 a. 
+. . . 8 7 7 a 8 7 7 7 7 7 a 8. 
+. . . 7 7 a 8 7 7 7 7 a a 8. . 
+. . . .a 8 7 7 7 7 a 8 7. . . 
+. . . . . . 7 7 7 a 8 7. . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . .
+`
+        info.setScore(thisScore)
+        pickle.scoreText.setText(" x " + convertToText(info.score()))
+        scoreText.setIcon(thisIcon)
+        scoreText.setBorder(1, 3, 1)
+        scoreText.setMaxFontHeight(9)
+        scoreText.right = 160
+        scoreText.top = 1
+        scoreText.update()
+        info.showScore(false)
     }
-
-
     /**
     * Changes the score and overrides the traditional UI
     * with an iconified version
     */
     //% blockId=mp_change_score_override
-    //% block="change $thisPlayer pickle by $thisScore"
-    //% thisPlayer.shadow=mp_playerSelector
+    //% block="change `ICON.pickle` by $thisScore"
     //% thisScore.defl=1
     //% color="#b70082"
     //% help=github:docs/mp_change_score_override
-    export function mpChangeScoreOverride(thisPlayer: mp.Player, thisScore: number) {
-        mp.changePlayerStateBy(thisPlayer, MultiplayerState.score, thisScore)
-        pickle.mpSetScoreOverride(thisPlayer, info.score())
+    //% group="Info"
+    export function changeScoreOverride(thisScore: number) {
+        info.changeScoreBy(thisScore)
+        pickle.setScoreOverride(info.score())
     }
+}
+namespace loops {
+    /**
+     * Run code when the play button is pressed
+     * (Like on start, but jr)
+     */
+    //% color=#488898
+    //% help=game/on-start-simple 
+    //% weight=99 
+    //% afterOnStart=false
+    //% blockId=on_start_simple 
+    //% block="on `ICON.play`"
+    //% blockAllowMultiple=0
+    export function onStartSimple(a: () => void): void {
+        a();
+    }
+}
+namespace music {
+    /**
+     * Simplified block to play a song
+     */
+    //% help=game/simple-song
+    //% blockId=playThis 
+    //% block="play $thisSong"
+    //% thisSong.shadow=music_song_field_editor
+    export function simpleSong(thisSong: Playable) {
+        music.play(thisSong, music.PlaybackMode.UntilDone)
+    }
+}
+//% weight=200
+namespace game {
+    /**
+    * Start the game timer
+    */
+    //% blockId=game_countdown
+    //% block="`ICON.clock-white` $thisSec (s)"
+    //% thisSec.defl = 30
+    //% help=github:docs/game_coundown
+    export function gameCountdown(thisSec: number) {
+        info.startCountdown(thisSec)
+    }
+    /**
+     * Run code on an interval of time. This executes before game.onUpdate()
+     * @param body code to execute
+     */
+    //% help=game/on-update-interval weight=99 afterOnStart=true
+    //% blockId=gameinterval3 
+    //% weight=100
+    //% block="every $period second(s)"
+    //% period.defl=1
+    //% blockAllowMultiple=1
+    export function onUpdateInterval3(period: number, a: () => void): void {
+        period = period * 1000;
+        if (!a || period < 0) return;
+        let timer = 0;
+        game.eventContext().registerFrameHandler(scene.UPDATE_INTERVAL_PRIORITY, () => {
+            const time = game.currentScene().millis();
+            if (timer <= time) {
+                timer = time + period;
+                a();
+            }
+        });
+    }
+    //% blockId=hold_text 
+    //% weight=200
+    //% block="show $thisText"
+    //% thisText.defl="Press (A) to play"
+    export function holdText(thisText: string) {
+        game.showLongText(thisText, DialogLayout.Full)
+    }
+    /**
+    * Special lose sequence
+    */
+    //% blockId=set_lyla_lose
+    //% block="game over `ICON.frown-open-white`"
+    //% help=github:docs/set_simple_lose
+    export function simpleLoss() {
+        game.gameOver(false)
+    }
+    /**
+    * Special win sequence
+    */
+    //% blockId=set_lyla_win
+    //% block="game over `ICON.smile-beam-white`"
+    //% weight=300
+    //% help=github:docs/set_simple_win
+    export function simpleWin() {
+        game.gameOver(true)
+    }
+    /**
+    * Special win sequence
+    */
+    //% blockId=set_lyla_g_o
+    //% block="game over"
+    //% weight=300
+    //% help=github:docs/set_simple_g_o
+    export function simpleGame() {
+        if (info.score() >= pickle.pickles_to_get) {
+            game.simpleWin()
+        } else {
+            game.simpleLoss()
+        }
+    }
+    /**
+     * Show a title and an optional subtitle menu
+     * Can be dismissed by any player
+     * @param title
+     * @param subtitle
+     */
+    //% weight=90 help=game/splashMP
+    //% blockId=gameSplashMP block="splash %title||%subtitle"
+    //% title.shadow=text
+    //% subtitle.shadow=text
+    //% group="Prompt"
+    export function splashMP(title: any, subtitle?: any) {
+        title = console.inspect(title);
+        subtitle = subtitle ? console.inspect(subtitle) : subtitle;
+        controller._setUserEventsEnabled(false);
+        game.pushScene();
+        game.currentScene().flags |= scene.Flag.SeeThrough;
+        const dialog = new SplashDialog(screen.width, subtitle ? 42 : 35);
+        dialog.setText(title);
+        if (subtitle) dialog.setSubtext(subtitle);
+        const s = sprites.create(dialog.image, -1);
+        let pressed = true;
+        let done = false;
+        let connected = false;
+        mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
+            connected = true;
+        })
 
-
+        game.onUpdate(() => {
+            dialog.update();
+            const currentState = ( connected ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.One), mp.MultiplayerButton.A)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.Two), mp.MultiplayerButton.A)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.Three), mp.MultiplayerButton.A)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.Four), mp.MultiplayerButton.A)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.One), mp.MultiplayerButton.B)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.Two), mp.MultiplayerButton.B)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.Three), mp.MultiplayerButton.B)) ||
+                (mp.isButtonPressed(mp.playerSelector(mp.PlayerNumber.Four), mp.MultiplayerButton.B))
+            )
+            if (currentState && !pressed) {
+                connected = false;
+                pressed = true;
+                scene.setBackgroundImage(null); // GC it
+                game.popScene();
+                done = true;
+            }
+            else if (pressed && !currentState) {
+                pressed = false;
+                connected = false;
+            }
+        })
+        pauseUntil(() => done);
+        controller._setUserEventsEnabled(true);
+    }
 }
 
+//% weight=100
+namespace sprites {
+    export enum Plyrs {
+        //% block="Player 1"
+        One = 0,
+        //% block="Player 2"
+        Two = 1,
+        //% block="Player 3"
+        Three = 2,
+        //% block="Player 4"
+        Four = 3
+    }
+    /**
+     * Creates a moving sprite with the image that you choose
+     */
+    //% blockId=send_flying 
+    //% weight=1000
+    //% block="add $thing every $interval `ICON.clock-white`"
+    //% thing.shadow=screen_image_picker
+    //% thing.defl=lyla_imgs.picklechip
+    //% interval.defl=1
+    export function sendFlying(thing: Image, interval:number) {
+        // Only calls them pickles if they are the default pickle
+        /*if (thing.equals(lyla_imgs.picklechip)) {
+            pickle.theseThings = " pickles";
+        }*/
+        game.onUpdateInterval(interval*1000, function () {
+            let foodFight = sprites.createProjectileFromSide(thing, randint(-100, 100), randint(-100, 100))
+        })
+    }
+    /**
+     * Assign images to players by array
+     */
+    //% blockId=assign_player_images
+    //% block="team = $img1 $img2 $img3 $img4"
+    //% img1.shadow=screen_image_picker
+    //% img2.shadow=screen_image_picker
+    //% img3.shadow=screen_image_picker
+    //% img4.shadow=screen_image_picker
+    //% img1.defl=lyla_imgs.lyla
+    //% img2.defl=lyla_imgs.stu
+    //% img3.defl=lyla_imgs.everett
+    //% img4.defl=lyla_imgs.luke
+    //% inlineInputMode=inline
+    //% weight=1200
+    export function assignPlayerImgs(img1: Image, img2: Image, img3: Image, img4: Image) {
+        pickle.characters[0] = img1;
+        pickle.characters[1] = img2;
+        pickle.characters[2] = img3;
+        pickle.characters[3] = img4;
+    }
+}
 //% weight=250
 namespace info {
     /**
@@ -474,18 +552,16 @@ namespace info {
      * @param score The score to check for, eg: 100
      * @param handler The code to run when the score is reached
      */
-    //% blockId=mp_onScore2
+    //% blockId=onScore2
     //% block="after $score `ICON.pickle`"
     //% score.defl=20
     //% blockGap=8
-    //% help=multiplayer/on-score
-    //% parts="multiplayer"
+    //% help=docs/on-score
+    //% group="Info"
     export function onScore2(score: number, handler: () => void) {
-        mp._mpstate().onReachedScore(score, handler);
+        info.onScore(score, handler);
     }
-
 }
-
 //% weight=100
 namespace scene {
     /**
@@ -495,27 +571,27 @@ namespace scene {
     //% block="set scene $thisBG"
     //% thisBG.shadow=lyla_bg_image_picker
     //% help=docs/set_bg
+    //% group="Scene"
     export function setBG(thisBG: Image) {
         scene.setBackgroundImage(thisBG)
     }
 }
-
 namespace images {
-
-        //% blockId=lyla_bg_image_picker block="%img"
-        //% shim=TD_ID
-        //% img.fieldEditor="sprite"
-        //% img.fieldOptions.taggedTemplate="img"
-        //% img.fieldOptions.decompileIndirectFixedInstances="true"
-        //% img.fieldOptions.decompileArgumentAsString="true"
-        //% img.fieldOptions.sizes="-1,-1"
-        //% img.fieldOptions.filter="lylabg"
-        //% weight=100 group="Create"
-        //% blockHidden=1 duplicateShadowOnDrag
-        export function _screenImageLylaBG(img: Image) {
-            return img
-        }
+    //% blockId=lyla_bg_image_picker block="%img"
+    //% shim=TD_ID
+    //% img.fieldEditor="sprite"
+    //% img.fieldOptions.taggedTemplate="img"
+    //% img.fieldOptions.decompileIndirectFixedInstances="true"
+    //% img.fieldOptions.decompileArgumentAsString="true"
+    //% img.fieldOptions.sizes="-1,-1"
+    //% img.fieldOptions.filter="lylabg"
+    //% weight=100 group="Create"
+    //% blockHidden=1 duplicateShadowOnDrag
+    export function _screenImageLylaBG(img: Image) {
+        return img
+    }
 }
+
 ```
 
 ```simtheme
@@ -529,7 +605,7 @@ namespace images {
         "#FDFF70",
         "#8E2EC4",
         "#408325",
-        "#135847",
+        "#4166D8",
         "#10CCE5",
         "#95D6B1",
         "#A4839F",
@@ -554,3 +630,4 @@ namespace images {
   "tilemap.g.ts": "// Auto-generated code. Do not edit.\nnamespace myTiles {\n    //% fixedInstance jres blockIdentity=images._tile\n    export const transparency16 = image.ofBuffer(hex``);\n\n    helpers._registerFactory(\"tile\", function(name: string) {\n        switch(helpers.stringTrim(name)) {\n            case \"transparency16\":return transparency16;\n        }\n        return null;\n    })\n\n}\n// Auto-generated code. Do not edit.\n"
 }
 ```
+

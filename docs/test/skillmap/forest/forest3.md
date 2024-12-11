@@ -197,7 +197,7 @@ sprites.on_fire_destroyed(function (location) {
 ---
 
 You should be able to put out the four random fires
-by spraying water with the (A) button.
+by spraying water with the (A) button or space bar. 
 
 
 

@@ -100,7 +100,7 @@ game.set_dryness_of_grass(3)
 hint~
 
 
-_💡 The three variables you just added can all be changed to make your game easier or more difficult!_
+_💡 The value of the three variables you just added can all be changed to make your game easier or more difficult!_
 
 
 #### ~ tutorialhint
@@ -127,7 +127,7 @@ Now that the environment is set, we can add code to make the fires spread.
 
 ---
 
-- :circle: From ``||game:Game||``, snap
+- :circle: From ``||game:Game||``, drop
 ```blocks
 game.onUpdate(function () {
     sprites.random_spread()
@@ -169,7 +169,7 @@ Does it get out of control too quickly? Try experimenting with your variables.
 
 ---
 
-Once you've put out the fires, click **Done** to
+Once you've put out the fires, select **Done** to
 keep moving through the skillmap to find out how to add a heads-up display to your game.
 
 
@@ -234,7 +234,6 @@ sprites.on_fire_destroyed(function (location) {
 ```package
 pxt-arcade-forest-fire=github:microsoft/arcade-forest-fire
 forest_imgs=github:kiki-lee/forest_imgs
-
 ```
 
 
