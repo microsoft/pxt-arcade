@@ -200,7 +200,7 @@ function makeGameCard(game) {
     link.href = game.url || "https://arcade.makecode.com/".concat(game.id);
     var textLink = link.cloneNode();
     var img = document.createElement("img");
-    img.src = "https://pxt.azureedge.net/api/".concat(game.id, "/thumb");
+    img.src = "https://cdn.makecode.com/api/".concat(game.id, "/thumb");
     img.onerror = function () {
         var div = document.createElement("div");
         div.setAttribute("class", "placeholder");
