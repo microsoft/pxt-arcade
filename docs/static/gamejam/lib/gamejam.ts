@@ -228,7 +228,7 @@ function makeGameCard(game: Game) {
     link.href = game.url || `https://arcade.makecode.com/${game.id}`;
     let textLink = link.cloneNode() as HTMLElement;
     let img = document.createElement("img");
-    img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
+    img.src = `https://cdn.makecode.com/api/${game.id}/thumb`;
     img.onerror = () => {
         let div = document.createElement("div");
         div.setAttribute("class", "placeholder");
