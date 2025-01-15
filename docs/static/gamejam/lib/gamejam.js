@@ -113,7 +113,7 @@ function makeRules() {
         function onLoad() {
             marked.setOptions({
                 // @ts-ignore
-                sanitizer: DOMPurify.sanitizer
+                sanitizer: DOMPurify.sanitizer,
             });
             var markdown = marked(this.responseText);
             var parent = document.getElementById("rules");
@@ -200,8 +200,9 @@ function makeGameCard(game) {
     link.href = game.url || "https://arcade.makecode.com/".concat(game.id);
     var textLink = link.cloneNode();
     var img = document.createElement("img");
-    img.src = "https://pxt.azureedge.net/api/".concat(game.id, "/thumb");
-    img.onerror = function () {
+    img.src = "https://cdn.makecode.com/api/".concat(game.id, "/thumb");
+    img.crossOrigin = "Anonymous";
+    var createPlaceholder = function () {
         var div = document.createElement("div");
         div.setAttribute("class", "placeholder");
         var logo = document.createElement("img");
@@ -209,6 +210,26 @@ function makeGameCard(game) {
         div.appendChild(logo);
         img.remove();
         link.appendChild(div);
+    };
+    img.onerror = createPlaceholder;
+    img.onload = function () {
+        // sometimes the thumbnail is fully transparent even though the
+        // image loads
+        var canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        var context = canvas.getContext("2d");
+        context.drawImage(img, 0, 0);
+        var data = context.getImageData(0, 0, canvas.width, canvas.height);
+        for (var x = 0; x < data.width; x++) {
+            for (var y = 0; y < data.height; y++) {
+                var index = x * y * 4;
+                if (data.data[index + 3] !== 0) {
+                    return;
+                }
+            }
+        }
+        createPlaceholder();
     };
     link.appendChild(img);
     card.appendChild(link);

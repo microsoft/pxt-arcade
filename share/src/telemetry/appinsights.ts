@@ -9,7 +9,7 @@ export function loadAppInsights(includeCookie: any) {
         disableExceptionTracking: true,
         isCookieUseDisabled: !includeCookie,
         isStorageUseDisabled: !includeCookie,
-        url: "https://pxt.azureedge.net/blob/dd22520c096be24e7432f5b46e8aad59711f31f0/ai.0.js" // Hardcode docs CDN url for experiment
+        url: "https://cdn.makecode.com/blob/dd22520c096be24e7432f5b46e8aad59711f31f0/ai.0.js" // Hardcode docs CDN url for experiment
     });
     (window as any).appInsights = appInsights;
     
