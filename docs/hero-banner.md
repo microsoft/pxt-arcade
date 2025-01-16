@@ -32,10 +32,6 @@ Here are some cool activities to get you started!
 * imageUrl: /static/hero-gallery/io2_hero.jpg
 * url: /tutorials/bubbles
 * cardType: tutorial
----
-* name: How To Code a Video Game
-* imageUrl: /static/hero-gallery/how-to-code.png
-* youTubePlaylistId: PLMMBk9hE-SepfPK6z19t6aAfwbOQNY6K7
 
 
 
