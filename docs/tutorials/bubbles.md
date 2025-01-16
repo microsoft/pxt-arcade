@@ -234,11 +234,29 @@ controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
 
 ## {9. Aim the Bubble Left}
 
-- :mouse pointer: Right-click to **Duplicate** your <br/>
+- :game: Open the ``||controller:Controller||`` category and drag another<br/>
 ``||controller:on [right] button [repeat]||``<br/>
-bundle, then change both **right** options to **left**. <br/>
+bundle into **an empty area** of the workspace. <br/>
+
+
+- :mouse pointer: Change both **right** options to say **left**. <br/>
+
+
+~hint There's another way 💡
 
 ---
+
+Did you know that you can also right-click to duplicate code that's already in the workspace? Try it with the<br/>
+``||controller:on [right] button [repeat]||``<br/>
+container and make your edits to turn it into a <br/>
+``||controller:on [left] button [repeat]||``<br/>
+container with a <br/>
+``||bubble: change angle [left]||``<br/>
+block inside. 
+
+
+hint~
+
 
 You should now be able to aim your bubble further to the left. 
 
