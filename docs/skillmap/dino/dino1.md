@@ -22,7 +22,7 @@ Let's create a game where you help Mama Dino rescue her hoard of babies!
 - :tree:  From the ``||scene:Scene||`` category in the toolbox,
 grab
 ```block
-scene.setBackgroundImage(img`.`)
+scene.setBackgroundImage(sprites.background.cityscape2)
 ```
 and drag it into the empty<br/>
 ``||loops(noclick):on start||``<br/>
@@ -44,37 +44,6 @@ hint~
 
 ```blocks
 //@highlight
-scene.setBackgroundImage(img`.`)
-```
-
-
-
-
-## {Step 3}
-
-
-- :paint brush:  Click the empty grey square inside
-```block
-scene.setBackgroundImage(img`.`)
-```
-to open the **image editor**. <br/><br/>
-You can draw your own background or choose the freeway from the **Gallery**.
-<!-- ![This is where the gallery is located](/static/skillmap/assets/gallery.png "You can switch over to the gallery or make your own image." ) -->
-![Choose the freeway from My Assets gallery](/static/skillmap/dino/freeway.png " " )
-
-
-~hint Click here to see how 🕵🏽
-
----
-
-![The background gallery](/static/skillmap/dino/choose-bg.gif "Toggle between editor and gallery" )
-hint~
-
-
-#### ~ tutorialhint
-
-```blocks
-//@highlight
 scene.setBackgroundImage(sprites.background.cityscape2)
 ```
 
@@ -86,7 +55,7 @@ scene.setBackgroundImage(sprites.background.cityscape2)
 **Look at your project**
 
 - :binoculars: Take a look at the game window. <br/><br/>
-Do you see the background you chose?
+Do you see the background?
 
 
 ![Look for the game window in the lower right](/static/skillmap/assets/game-window.png "Click the mini game window to pop open the bigger game window.")
@@ -116,7 +85,7 @@ hint~
 
 - :paper plane: From the ``||sprites: Sprites||`` category **in the toolbox**, grab
 ```block
-let mamaDino = sprites.create(img`.`, SpriteKind.Player)
+let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 ```
 and snap it in at **the bottom** of the ``||loops(noclick): on start||`` block already in the workspace.
 
@@ -126,43 +95,6 @@ and snap it in at **the bottom** of the ``||loops(noclick): on start||`` block a
 
 
 ![Add the sprite block.](/static/skillmap/dino/dino1-5.gif "Add a sprite to your game.")
-
-hint~
-
-
-#### ~ tutorialhint
-
-```blocks
-scene.setBackgroundImage(sprites.background.cityscape2)
-//@highlight
-let mamaDino = sprites.create(img`.`, SpriteKind.Player)
-```
-
-
-
-## {Step 6}
-
-- :paint brush: Click the empty image box inside
-```block
-let mamaDino = sprites.create(img`.`, SpriteKind.Player)
-```
-to open the
-image editor and click the **My Assets** tab.
-
-
-![My Assets tab](/static/skillmap/assets/my-assets-three.png )
-
-
-- :mouse pointer: Choose **Mama** and click **Done**.
-
-![Choose mama dino from My Assets gallery](/static/skillmap/dino/mama-dino.png " " )
-
-
-~hint Click here to see how 🕵🏽
-
----
-
-![Look in My Assets for Mama Dino](/static/skillmap/dino/dino1-6.gif )
 
 hint~
 
@@ -284,16 +216,13 @@ Let's add some baby dinos for Mama to rescue 💚
 - :redo:  From ``||loops:Loops||``, grab the
 ```block
 forever(function () {
-    let babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
+    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     babyDino.y = randint(15, 115)
     pause(1000)
 })
 ```
 bundle and drag it into an empty spot on the workspace.
 
-
-- :paint brush:  Click the **empty image square** and switch to **My Assets** to choose the **Baby** sprite image.
-![Choose the baby dino from My Assets gallery](/static/skillmap/dino/baby.png " " )
 
 This will create a new baby dino every second (1000ms) at a random starting height (y).
 
@@ -302,14 +231,14 @@ This will create a new baby dino every second (1000ms) at a random starting heig
 
 ---
 
-![Add baby dinos](/static/skillmap/dino/dino1-10.gif )
+![Add baby dinos](/static/skillmap/dino/dino1-10a.gif )
 
 hint~
 
 
 ```blockconfig.local
 forever(function () {
-    let babyDino = sprites.createProjectileFromSide(img`.`, -90, 0)
+    let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
     babyDino.y = randint(15, 115)
     pause(1000)
 })
@@ -367,6 +296,7 @@ Click **Done** to return to the main map so you can keep going to add points and
 ```blockconfig.global
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 let babyDino = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+scene.setBackgroundImage(sprites.background.cityscape2)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 babyDino.y = 0
 ```
@@ -381,7 +311,7 @@ arcade-background-scroll=github:microsoft/arcade-background-scroll/
 ```ghost
 let babyDino: Sprite = null
 
-scene.setBackgroundImage(assets.image`Freeway`)
+scene.setBackgroundImage(sprites.background.cityscape2)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 
 forever(function () {

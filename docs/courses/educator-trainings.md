@@ -17,10 +17,10 @@ _(Click tile to register for free)_
         "imageUrl": "/static/tutorials/bubbles/card.jpg"
     }, {
         "name": "Instant CSEd Week Prep",
-        "label": "12/03/24 at 4pm PST",
-        "labelClass": "purple ribbon large",
         "description": "From activity selection to class runtime, you'll leave this session with all the knowledge and resources necessary to make CS Education Week fun, engaging, and stress-free for you and your students. ",
-        "url":"https://msit.events.teams.microsoft.com/event/efc1dd04-8b3d-48d4-b4ae-97c27eb0fdf0@72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "label": "View the Recording",
+        "labelClass": "purple ribbon large",
+        "url":"https://youtu.be/sG7XMH2WaGs",
         "imageUrl": "/static/skillmap/balloon/balloon4.gif"
     }
 ]

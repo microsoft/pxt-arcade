@@ -21,9 +21,15 @@ Let's get to it!
 and snap it into the<br/>
 ``||loops(noclick):on start||`` container already in the workspace.
 
-- :paint brush: Click the empty grey box to open the **image editor**.
+~hint Want something else?💡
 
-_💡 You can draw a background or you can switch to the **Gallery** tab at the top and choose one that has already been created._
+---
+
+If you don't want to use the provided background, click on the image and 
+you will be able to draw something new. Or, you can switch to the **Gallery** tab 
+at the top and choose a background that has already been created.
+
+hint~
 
 - :mouse pointer: Click **Next** when you're ready for the next instruction.
 
@@ -45,9 +51,15 @@ scene.setBackgroundImage(flies_imgs.background)
 into **the end** of the<br/>
 ``||loops(noclick):on start||`` container.
 
-- :paint brush: Click the empty grey box ito open the **image editor**.
+~hint Don't want that frog?💡
 
-_💡 Switch to the **Gallery** tab to choose the same frog we use, or draw one of your own!_
+---
+
+If you don't want to use our frog, you can click on the frog image in the workspace and 
+you will be able to draw something new. Or, you can switch to the **Gallery** tab and 
+choose something else. 
+
+hint~
 
 #### ~ tutorialhint
 
@@ -57,7 +69,7 @@ scene.setBackgroundImage(flies_imgs.background)
 let frog = sprites.create(flies_imgs.frog, SpriteKind.Player)
 ```
 
-## 4. Try It
+## {4. Try It}
 
 **Take a look at your Game Window in the bottom right corner.**
 
@@ -100,15 +112,10 @@ The frog needs something to eat.
 ---
 
 - :paper plane: Snap a <br/>
-``||variables(sprites):set [fly] to sprite [ ] of kind [Player]||``<br/>
+``||variables(sprites):set [fly] to sprite [ ] of kind [Food]||``<br/>
 block into **the end** of the<br/>
 ``||loops(noclick):on start||`` container.
 
-- :paper plane: Click the empty grey box to open the image editor and draw a flying insect.
-
-_💡 Or switch to the **Gallery** tab at the top and choose a fly that has already been created._
-
-- :mouse pointer: The **kind** of the fly should be **Food**.
 
 ```blockconfig.local
 let fly = sprites.create(flies_imgs.fly, SpriteKind.Food)
@@ -134,13 +141,12 @@ fly = sprites.create(flies_imgs.fly, SpriteKind.Food)
 ---
 
 - :paper plane: To get the fly moving, snap a <br/>
-``||sprites:set [fly] velocity to vx [50] vy [50]||`` <br/>
+``||sprites:set [fly] velocity to vx [200] vy [100]||`` <br/>
 into the  **the end** of the <br/>
 ``||loops(noclick):on start||`` container.
 
-- :mouse pointer: Add some excitement by choosing larger numbers for both velocity directions (**vx** and **vy**).
-
-_💡 Anything between 100 and 200 is entertaining._
+_💡 You can customize your fly's speed and direction by playing with those numbers.
+Anything between 100 and 200 is fun._
 
 
 ```blockconfig.local
@@ -274,15 +280,15 @@ if (frog.overlapsWith(fly)) {
 
 ## {12. Check for Flies}
 
-When we press the Ⓐ button, one of two things could be happening:
-- The fly will be overlapping the frog and we win the game with a snack
-- The fly will not be overlapping the frog and our player will lose a life
+When we press the Ⓐ button, one of two things could happen:
+1. The fly will be overlapping the frog and we win the game with a snack
+2. The fly will not be overlapping the frog and our player will lose a life
 
 ---
 
 - :circle: To create the first case, drag<br/>
 ``||game:game over <WIN>||``<br/>
-into the top (**if**) section of the<br/>
+into the top section of the<br/>
 ``||logic:if <frog overlaps with fly> then / else||``<br/>
 block.
 
@@ -290,6 +296,30 @@ block.
 ``||info:change life by -1||``<br/>
 into the bottom (**else**) section of the<br/>
 ``||logic:if <frog overlaps with fly> then / else||`` block.
+
+~hint I don't see an (else) section 🤷🏽‍♀️
+
+---
+
+There are two styles of <br/>
+``||logic(noclick):if <true>||`` <br/>
+containers to choose from:
+```block
+if (true) {
+    } 
+```
+or
+```block
+if (true) {
+    } else {
+    }
+```
+
+If you see the first one, click the white plus sign **(+)** at the bottom, 
+and it will turn into the second one. 
+
+
+hint~
 
 
 ```blockconfig.local
@@ -393,11 +423,12 @@ look at the challenges below for suggestions on modding your game.
 
 ```blockconfig.global
 let fly: Sprite = null
-let frog = sprites.create(img`.`, SpriteKind.Player)
+let frog = sprites.create(flies_imgs.frog, SpriteKind.Player)
 frog.setPosition(80, 60)
 info.startCountdown(10)
 fly.setVelocity(200, 100)
 fly.setBounceOnWall(true)
+scene.setBackgroundImage(flies_imgs.background)
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
 frog.overlapsWith(fly)

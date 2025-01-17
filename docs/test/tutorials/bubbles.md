@@ -236,7 +236,7 @@ controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
 
 - :mouse pointer: Right-click to **Duplicate** your <br/>
 ``||controller:on [right] button [repeat]||``<br/>
-bundle, then change both **right** options to **left**. <br/>
+bundle, then change both **right** options to say **left**. <br/>
 
 ---
 
