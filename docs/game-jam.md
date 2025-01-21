@@ -18,7 +18,7 @@ Check out the winners of the 10th Official Microsoft MakeCode Game Jam, featurin
 * cardType: sharedExample
 * imageUrl: https://cdn.makecode.com/api/50763-65106-55406-25942/thumb
 ---
-* name: The joy of pixels
+* name: The Joy of Pixels
 * description: Create a masterpiece in this painting simulator! How happy a tree can YOU paint?
 * author: Jedi
 * url: https://arcade.makecode.com/08245-57951-20701-25721
