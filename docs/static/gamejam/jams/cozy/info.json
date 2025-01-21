@@ -31,7 +31,8 @@
         {
             "id": "_WVveyhRE3UyH",
             "title": "The Picnic Basket",
-            "author": "ChimbroDaPro"
+            "author": "ChimbroDaPro",
+            "description": "Get into some DEEP topics in this conversation simulator! Will you pay for your own coffee? Only you can decide!"
         },
         {
             "id": "32531-06637-42984-59694",
@@ -96,7 +97,8 @@
         {
             "id": "_hr4LqCMHD4ve",
             "title": "Cozy Cooking",
-            "author": "dimpp"
+            "author": "dimpp",
+            "description": "Make some soup! Everyone loves soup! Hey, let's all have soup!"
         },
         {
             "id": "42295-91608-29210-21993",
@@ -104,9 +106,10 @@
             "author": "Isreal"
         },
         {
-            "id": "99246-66615-33542-73731",
+            "id": "99558-01822-14292-68050",
             "title": "FISHE",
-            "author": "Jupiter_Dev"
+            "author": "Jupiter_Dev",
+            "description": "Catch some, uh, strange fish by the fire in this fishing game! Can you find Richard's cat?"
         },
         {
             "id": "70537-88490-83402-14586",
@@ -131,7 +134,8 @@
         {
             "id": "05661-46127-05850-78858",
             "title": "Paint!",
-            "author": "Thomas The Stickman and The Orange Cube"
+            "author": "Thomas The Stickman and The Orange Cube",
+            "description": "Try to fill in all the tiles with paint in this relaxing puzzler!"
         },
         {
             "id": "68460-86464-55427-41294",
@@ -156,7 +160,8 @@
         {
             "id": "_cmzbH0RoMAMU",
             "title": "Christmas Cozy Game Jam",
-            "author": "Anonymous"
+            "author": "Anonymous",
+            "description": "A classic match 3 game with a Christmas theme!"
         },
         {
             "id": "86966-79789-48424-33139",
@@ -171,17 +176,20 @@
         {
             "id": "49179-56090-52439-38721",
             "title": "THE ULTIMATE QUEST FOR A SINGLE SLICE OF DELICIOUS PIZZA",
-            "author": "Jack"
+            "author": "Jack",
+            "description": "A \"very silly game\" by Jack!"
         },
         {
             "id": "90079-87753-76853-40585",
             "title": "Ripple Nursery",
-            "author": "BLADEr"
+            "author": "BLADEr",
+            "description": "Create a peaceful aquatic nursery in this beautiful game featuring procedurally generated fish!"
         },
         {
             "id": "88693-92934-73193-47840",
             "title": "Quest for the lost water bucket: Game Jam Edition",
-            "author": "Awesomefreez"
+            "author": "Awesomefreez",
+            "description": "A hilarious journey to find a lost water bucket with a cast straight out of the crisper!"
         },
         {
             "id": "62833-09719-51107-03300",
@@ -191,12 +199,14 @@
         {
             "id": "19750-75550-52030-37293",
             "title": "Games by the Fire",
-            "author": "WoofWoof"
+            "author": "WoofWoof",
+            "description": "A collection of classic games to play on a rainy (or snowy) day!"
         },
         {
             "id": "46419-07177-12626-56728",
             "title": "Duck House: Quake",
-            "author": "Randomuser"
+            "author": "Randomuser",
+            "description": "If you're only going to play one psychological mystery game with a cast of anthropomorphized rubber ducks this year, make it this one!"
         },
         {
             "id": "20265-50437-16111-11264",
@@ -226,7 +236,8 @@
         {
             "id": "26252-49898-29454-33844",
             "title": "Cat diary",
-            "author": "Me-loo0"
+            "author": "Me-loo0",
+            "description": "Play as an abandoned kitten who is taken in to a new home on a cold winter day!"
         },
         {
             "id": "_cuMUJVfip8tC",
