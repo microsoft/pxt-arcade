@@ -1,4 +1,4 @@
-# Lab 2.1 Part 4: Shooting gallery
+# Lab 2.1 Part 4: Collision Alert!
 
 ## Collision alert! @showdialog
 

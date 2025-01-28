@@ -1,4 +1,4 @@
-# Lab 2.2 Part 2: Introduction to variables
+# Lab 2.2 Part 2: How Many Items?
 
 ## How many items? @showdialog
 

@@ -1,4 +1,4 @@
-# Lab 2.6 Part 1: Changing conditions
+# Lab 2.6 Part 1: Only Room for Two of Us!
 
 ## There's only room for three of us! @showdialog
 

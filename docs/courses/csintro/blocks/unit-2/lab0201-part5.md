@@ -1,4 +1,4 @@
-# Lab 2.1 Part 5 (BONUS): Shooting gallery
+# Lab 2.1 Part 5 (BONUS): Pew, Pew!
 
 ## BONUS -- Pew pew! @showdialog
 

@@ -1,6 +1,6 @@
-# Lab 2.6 Part 4: Changing conditions
+# Lab 2.6 Part 4: Starting Difficulty
 
-## Starting difficulty @showdialog
+## Starting Difficulty @showdialog
 
 Let's update your game so that the player can choose a difficulty level!
 

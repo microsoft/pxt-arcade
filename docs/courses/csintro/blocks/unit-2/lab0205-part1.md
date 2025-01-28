@@ -1,4 +1,4 @@
-# Lab 2.5 Part 1: Guess what!
+# Lab 2.5 Part 1: Pick a Number!
 
 ## Pick a number! @showdialog
 

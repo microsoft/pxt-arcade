@@ -1,4 +1,4 @@
-# Lab 2.5 Part 3: Guess what!
+# Lab 2.5 Part 3: Magic Four Ball!
 
 ## Magic four ball! @showdialog
 

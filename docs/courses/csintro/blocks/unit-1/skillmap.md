@@ -62,13 +62,13 @@
 ## lab-01-04-and-05
 
 * layout: manual
-* name: Eat it all! and Eat some more!
+* name: Eat it all! & Eat some more!
 * description: In these labs, we will write a game where the player must eat all the food
 which appears--while avoiding an enemy which bounces around the screen!
 
 ### lab-01-04-part1
 
-* name: Lab 1.4 Part 1 A screen full of food
+* name: Lab 1.4 Part 1 A Screen Full of Food
 * description: Add food sprites to the screen at random locations
 * type: tutorial
 * next: lab-01-04-part2
@@ -78,7 +78,7 @@ which appears--while avoiding an enemy which bounces around the screen!
 
 ### lab-01-04-part2
 
-* name: Lab 1.4 Part 2 Eat it all!
+* name: Lab 1.4 Part 2 Eat It All!
 * description: Add food sprites to the screen at random locations
 * type: tutorial
 * next: lab-01-04-part3

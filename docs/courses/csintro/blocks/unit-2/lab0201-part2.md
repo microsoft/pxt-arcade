@@ -1,4 +1,4 @@
-# Lab 2.1 Part 2: Shooting gallery
+# Lab 2.1 Part 2: Here Come the Enemies!
 
 ## Here come the enemies! @showdialog
 

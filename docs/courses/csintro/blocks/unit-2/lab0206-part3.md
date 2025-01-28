@@ -1,4 +1,4 @@
-# Lab 2.6 Part 3: Changing conditions
+# Lab 2.6 Part 3: Not So Fast!
 
 ## Not too fast! @showdialog
 

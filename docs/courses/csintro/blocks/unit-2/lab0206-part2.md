@@ -1,4 +1,4 @@
-# Lab 2.6 Part 2: Changing conditions
+# Lab 2.6 Part 2: Here Come the Enemies ... Faster!
 
 ## Here come the enemies ... faster! @showdialog
 
