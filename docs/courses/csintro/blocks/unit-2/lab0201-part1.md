@@ -1,13 +1,13 @@
-# Lab 2.1 Part 1: Shooting gallery
+# Lab 2.1 Part 1: Aiming Gallery
 
-## Fire away! @showdialog
+## Fire Away! @showdialog
 
 In this lab, you will learn about event handlers and how they can be used
 in your projects.
 
 You also will learn ways to play sounds.
 
-## Step right up!
+## Step Right Up!
 
 We will be creating a "shooting gallery" game.
 First, let's add a hero sprite to our project.
@@ -31,7 +31,7 @@ heroSprite.setStayInScreen(true)
 controller.moveSprite(heroSprite)
 ```
 
-## Press the button!
+## Press the Button!
 
 Let's add our first event handler.
 
@@ -48,7 +48,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Projectile ... what?
+## Projectile ... What?
 
 Now, let's launch a *projectile* every time the player presses the **A** button.
 
@@ -76,7 +76,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Fire away!
+## Fire Away! Again!
 
 Let's add some blocks so that the projectile looks like it was launched
 by the player.
@@ -117,7 +117,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Get a move on!
+## Get A Move On!
 
 It's not much of a projectile if it doesn't move! Let's make the projectile
 move up the screen when it is launched.
