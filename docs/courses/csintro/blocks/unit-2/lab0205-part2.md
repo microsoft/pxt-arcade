@@ -1,4 +1,4 @@
-# Lab 2.5 Part 2: Guess what!
+# Lab 2.5 Part 2: Can You Even?
 
 ## Is it even? @showdialog
 
