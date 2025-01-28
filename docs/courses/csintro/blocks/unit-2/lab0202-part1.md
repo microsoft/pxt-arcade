@@ -1,4 +1,4 @@
-# Lab 2.2 Part 1: Introduction to variables
+# Lab 2.2 Part 1: How Old Are You?
 
 ## Introduction to variables @showdialog
 
