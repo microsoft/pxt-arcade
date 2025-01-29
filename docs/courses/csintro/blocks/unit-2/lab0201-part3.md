@@ -1,4 +1,4 @@
-# Lab 2.1 Part 3: Shooting gallery
+# Lab 2.1 Part 3: Villains Be Gone!
 
 ## Villains be gone! @showdialog
 
