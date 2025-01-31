@@ -1,7 +1,5 @@
 # Throw a Bone
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/throw-a-bone)
-
 ## {Introduction @unplugged}
 
 Setting up ``||sprites:Sprites||`` can get a bit complicated, with a number of different blocks. ``||sprites:Projectiles||`` are special ``||sprites:Sprites||`` that are made to move across the screen and simplify these sorts of behaviors for you.
