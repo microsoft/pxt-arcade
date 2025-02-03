@@ -1,11 +1,5 @@
 # Maze
 
-### ~button /#tutorial:/tutorials/maze
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @unplugged}
 
 Welcome to @boardname@! Let's get started by creating a game where your player tries to get out of a maze while there's still time!

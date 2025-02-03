@@ -1,11 +1,5 @@
 # Galga
 
-### ~button /#tutorial:/tutorials/galga
-
-Try this tutorial!
-
-### ~
-
 ### @autoexpandOff true
 
 ## {Introduction @unplugged}

@@ -1,11 +1,5 @@
 # Catch the Football
 
-### ~button /#tutorial:/tutorials/catch-the-football
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/catch-the-football.gif)

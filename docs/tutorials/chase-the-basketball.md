@@ -1,11 +1,5 @@
 # Chase the Basketball
 
-### ~button /#tutorial:/tutorials/chase-the-basketball
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/chase-the-basketball.gif)

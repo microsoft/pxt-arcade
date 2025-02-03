@@ -1,11 +1,5 @@
 # Lander
 
-### ~button /#tutorial:/tutorials/lander
-
-Let's create a lunar landing game!
-
-### ~
-
 ## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/lander.gif)
