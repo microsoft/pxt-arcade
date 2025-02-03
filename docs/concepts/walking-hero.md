@@ -1,7 +1,5 @@
 # Walking Hero
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/walking-hero)
-
 ## {Introduction @unplugged}
 
 ``||sprites:Sprites||`` can be used to represent the **characters** in your game. These can be anything - coins to collect, enemies to avoid, or lasers fired from a spaceship.

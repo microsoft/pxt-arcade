@@ -1,7 +1,5 @@
 # Princess Pizza
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/princess-pizza)
-
 ## {Introduction @unplugged}
 
 ``||sprites:Sprites||`` that are moving will often have situations where two sprites end up on top of each other. The ``||sprites:sprite overlap||`` event can be used to handle interactions between ``||sprites:sprites||`` when this occurs.
