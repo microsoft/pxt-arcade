@@ -1,11 +1,5 @@
 # Happy Flower
 
-### ~button /#tutorial:/tutorials/happy-flower
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @unplugged}
 
 Flowers make everyone around them happier, especially the bees who get nectar from them. To show this, we can create a flower that sends happy little bees back to the hive.

@@ -1,11 +1,5 @@
 # Lemon Leak
 
-### ~button /#tutorial:/tutorials/lemon-leak
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/lemon-leak.gif)

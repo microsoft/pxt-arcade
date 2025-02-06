@@ -1,12 +1,6 @@
 # Collect the Clovers
 ### @explicitHints true
 
-### ~button /#tutorial:/tutorials/collect-the-clovers
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @showdialog}
 
 Create a garden game to collect 4-leaf clovers and avoid the bees!

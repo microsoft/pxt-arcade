@@ -1,13 +1,6 @@
 # Chase the Pizza
 ### @explicitHints true
 
-
-### ~button /#tutorial:/tutorials/chase-the-pizza
-
-Try this tutorial!
-
-### ~
-
 ## Introduction @showdialog
 
 ![Game animation](/static/tutorials/chase-the-pizza/chasing.gif)

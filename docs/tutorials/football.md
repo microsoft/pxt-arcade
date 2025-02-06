@@ -1,11 +1,5 @@
 # Mod the Football
 
-### ~button /#tutorial:/tutorials/football
-
-Try this tutorial!
-
-### ~
-
 ## {Introduction @unplugged}
 
 ![Game animation](/static/tutorials/football/header.gif)
