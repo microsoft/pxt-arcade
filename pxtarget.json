@@ -620,6 +620,7 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
+        "defaultColorTheme": "arcade-light",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
         "crowdinProject": "makecode",

@@ -1,0 +1,8 @@
+[
+    {
+        "id": "arcade-light",
+        "name": "Light",
+        "description": "A light theme with a retro arcade style.",
+        "file": "arcade-light.json"
+    }
+]

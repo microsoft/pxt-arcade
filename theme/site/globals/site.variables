@@ -141,5 +141,5 @@
 @teachingBubbleTextColor: @white;
 @teachingBubbleStepsColor: @beige;
 
-@assetUnselected: #ebedef;
+// @assetUnselected: #ebedef; use default from pxt now
 @DebuggerBackgroundPrimaryColor: #117955;
