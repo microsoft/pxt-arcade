@@ -678,7 +678,10 @@
         "hideReplaceMyCode": true,
         "timeMachine": true,
         "timeMachineDiffInterval": 600000,
-        "timeMachineSnapshotInterval": 1800000
+        "timeMachineSnapshotInterval": 1800000,
+        "feedbackEnabled": true,
+        "ocvAppId": 50315,
+        "ocvFrameUrl": "https://admin-ignite.microsoft.com"
     },
     "queryVariants": {
         "skillsMap=1": {
