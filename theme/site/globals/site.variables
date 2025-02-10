@@ -100,8 +100,8 @@
    Editor
 --------------------*/
 
-@blocklyToolboxColor: @white;
-@trashIconColor: @primaryColor;
+// @blocklyToolboxColor: @white; (default to pxt theme var)
+// @trashIconColor: @primaryColor;  (default to pxt theme var)
 
 /*-------------------
    Blockly
@@ -126,8 +126,8 @@
 @greenScreenBlockColor: #20BF6B;
 
 
-@soundEffectHeaderColor: #E30FC0;
-@soundPreviewBackgroundColor: #F7EEF5;
+@soundEffectHeaderColor: #E30FC0; // Matches block color
+// @soundPreviewBackgroundColor: var(--pxt-neutral-background2);
 
 /*---------------------------
    Cloud Status
