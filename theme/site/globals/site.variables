@@ -37,8 +37,8 @@
 /* 32 colors */
 @purple           : #5D4FBA;
 @blue             : #B1E3DA;
-@beige            : #FEF3E0;
-@salmon           : #E95153;
+// @beige            : #FEF3E0; (Unused)
+// @salmon           : #E95153; (Unused)
 
 @lightGrey        : #F8FAFC;
 
@@ -49,8 +49,8 @@
 @primaryColor        : #FF00FF;
 @secondaryColor      : #00FF00;
 
-@lightPrimaryColor   : #0000FF;
-@lightSecondaryColor : #FF0000;
+// @lightPrimaryColor   : #0000FF; (Unused)
+// @lightSecondaryColor : #FF0000; (Unused)
 
 /*******************************
      PXT Variables
