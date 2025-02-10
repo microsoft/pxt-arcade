@@ -63,13 +63,13 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @teal;
-@mainMenuTutorialBackground: @teal;
-@mainMenuTutorialButtons: @teal;
+// @mainMenuInvertedBackground: @teal;
+// @mainMenuTutorialBackground: @teal;
+// @mainMenuTutorialButtons: @teal;
 
-@mainMenuBlocksJsToggleColor: @primaryColor;
+// @mainMenuBlocksJsToggleColor: @primaryColor;
 
-@tutorialSelectedMenuColor: @primaryColor;
+// @tutorialSelectedMenuColor: @primaryColor;
 
 /*-------------------
    Layout
