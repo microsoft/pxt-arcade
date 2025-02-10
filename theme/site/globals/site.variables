@@ -6,7 +6,7 @@
       Page
 ---------------*/
 
-@pageBackground      : #F9F9F9;
+// @pageBackground      : #F9F9F9; (Unused)
 
 /*-------------------
      Fonts
@@ -83,18 +83,18 @@
    Background
 --------------------*/
 
-@simulatorBackground: @lightSecondaryColor;
-@editorToolsBackground: @lightSecondaryColor;
-@blocklySvgColor: @lightSecondaryColor;
-@homeScreenBackground: @lightSecondaryColor;
-@cloudCardBackground: darken(@secondaryColor, 20%);
+// @simulatorBackground: @lightSecondaryColor; (Unused)
+// @editorToolsBackground: @lightSecondaryColor; (Unused)
+// @blocklySvgColor: @lightSecondaryColor; (Unused)
+// @homeScreenBackground: @lightSecondaryColor; (Unused)
+// @cloudCardBackground: darken(@secondaryColor, 20%); (Unused)
 
 /*-------------------
    Full screen
 --------------------*/
 
-@fullscreenBackgroundGradientStart: @simulatorBackground;
-@fullscreenBackgroundGradientEnd: @simulatorBackground;
+// @fullscreenBackgroundGradientStart: @simulatorBackground; (Unused)
+// @fullscreenBackgroundGradientEnd: @simulatorBackground; (Unused)
 
 /*-------------------
    Editor
