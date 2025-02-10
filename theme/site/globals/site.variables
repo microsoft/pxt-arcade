@@ -46,11 +46,11 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @teal;
-@secondaryColor      : @purple;
+@primaryColor        : #FF00FF;
+@secondaryColor      : #00FF00;
 
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightGrey;
+@lightPrimaryColor   : #0000FF;
+@lightSecondaryColor : #FF0000;
 
 /*******************************
      PXT Variables
@@ -113,11 +113,11 @@
    Flyout
 --------------------*/
 
-@flyoutLabelColor: white;
-@blocklyFlyoutColor: @grey;
-@blocklyFlyoutColorOpacity: 0.9;
-@monacoFlyoutColor: fade(@blocklyFlyoutColor, 97%);
-@monacoFlyoutText: @flyoutLabelColor;
+// @flyoutLabelColor: white; (same as pxt)
+// @blocklyFlyoutColor: @grey;  (same as pxt)
+// @blocklyFlyoutColorOpacity: 0.9;  (same as pxt)
+// @monacoFlyoutColor: fade(@blocklyFlyoutColor, 97%); change to use same as pxt
+// @monacoFlyoutText: @flyoutLabelColor; change to use same as pxt
 
 /*-------------------
    Greenscreen
@@ -132,14 +132,14 @@
 /*---------------------------
    Cloud Status
 ----------------------------*/
-@cloudStatusColor: @teal;
+// @cloudStatusColor: @teal; change to use same as pxt
 
 /*---------------------------
    Teaching Bubble
 ----------------------------*/
-@teachingBubbleBackgroundColor: @teal;
-@teachingBubbleTextColor: @white;
-@teachingBubbleStepsColor: @beige;
+// @teachingBubbleBackgroundColor: @teal;  change to use same as pxt
+// @teachingBubbleTextColor: @white;  change to use same as pxt
+// @teachingBubbleStepsColor: @beige;  change to use same as pxt
 
 // @assetUnselected: #ebedef; use default from pxt now
-@DebuggerBackgroundPrimaryColor: #117955;
+// @DebuggerBackgroundPrimaryColor: #117955;  change to use same as pxt
