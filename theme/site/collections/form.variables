@@ -2,4 +2,4 @@
     User Variable Overrides
 *******************************/
 
-@inputFocusColor: var(--pxt-color234);
+@inputFocusColor: #597A91;

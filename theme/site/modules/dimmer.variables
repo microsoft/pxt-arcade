@@ -2,4 +2,4 @@
     User Variable Overrides
 *******************************/
 
-@backgroundColor: var(--pxt-color246);
+@backgroundColor: rgba(127, 140, 141, 0.85);

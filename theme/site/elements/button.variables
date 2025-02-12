@@ -2,8 +2,8 @@
             Button
 *******************************/
 
-@backgroundColor: var(--pxt-color234);
-@backgroundImage: linear-gradient(transparent, var(--pxt-color234));
+@backgroundColor: #F8F8F8;
+@backgroundImage: linear-gradient(transparent, rgba(0, 0, 0, 0.05));
 @verticalAlign: middle;
 @borderRadius: 0.2em;
 @borderBoxShadowColor: @borderColor;
