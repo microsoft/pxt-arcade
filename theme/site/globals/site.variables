@@ -26,28 +26,28 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@black            : #34495e;
-@green            : #2ecc71;
-@grey             : #7f8c8d;
-@orange           : #F76820;
-@pink             : #E91E63;
-@teal             : #116E79;
-@yellow           : #f1c40f;
+@black            : var(--pxt-color235);
+@green            : var(--pxt-color236);
+@grey             : var(--pxt-color236);
+@orange           : var(--pxt-color237);
+@pink             : var(--pxt-color238);
+@teal             : var(--pxt-color239);
+@yellow           : var(--pxt-color240);
 
 /* 32 colors */
-@purple           : #5D4FBA;
-@blue             : #B1E3DA;
+@purple           : var(--pxt-color241);
+@blue             : var(--pxt-color242);
 // @beige            : #FEF3E0; (Unused)
 // @salmon           : #E95153; (Unused)
 
-@lightGrey        : #F8FAFC;
+@lightGrey        : var(--pxt-color243);
 
 /*-------------------
     Brand Colors
 --------------------*/
 
-@primaryColor        : #FF00FF;
-@secondaryColor      : #00FF00;
+@primaryColor        : var(--pxt-color244);
+@secondaryColor      : var(--pxt-color244);
 
 // @lightPrimaryColor   : #0000FF; (Unused)
 // @lightSecondaryColor : #FF0000; (Unused)
@@ -123,10 +123,10 @@
    Greenscreen
 --------------------*/
 
-@greenScreenBlockColor: #20BF6B;
+@greenScreenBlockColor: var(--pxt-color245);
 
 
-@soundEffectHeaderColor: #E30FC0; // Matches block color
+@soundEffectHeaderColor: var(--pxt-color245); // Matches block color
 // @soundPreviewBackgroundColor: var(--pxt-neutral-background2);
 
 /*---------------------------
