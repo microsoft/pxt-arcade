@@ -564,14 +564,18 @@
         "selectLanguage": true,
         "availableLocales": [
             "en",
-            "zh-CN",
-            "zh-TW",
+            "ar",
             "de",
-            "fr",
-            "ja",
             "es-ES",
             "es-MX",
-            "ru"
+            "fr",
+            "ga-IE",
+            "it",
+            "ja",
+            "ko",
+            "ru",
+            "zh-CN",
+            "zh-TW"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
