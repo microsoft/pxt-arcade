@@ -569,16 +569,17 @@
         "availableLocales": [
             "en",
             "ar",
-            "zh-CN",
-            "zh-TW",
             "de",
+            "es-ES",
+            "es-MX",
             "fr",
+            "ga-IE",
             "it",
             "ja",
             "ko",
-            "es-ES",
-            "es-MX",
-            "ru"
+            "ru",
+            "zh-CN",
+            "zh-TW"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
