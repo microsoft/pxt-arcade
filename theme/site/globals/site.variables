@@ -2,12 +2,6 @@
      User Global Variables
 *******************************/
 
-/*--------------
-      Page
----------------*/
-
-// @pageBackground      : #F9F9F9; (Unused)
-
 /*-------------------
      Fonts
 --------------------*/
@@ -37,20 +31,9 @@
 /* 32 colors */
 @purple           : #5D4FBA;
 @blue             : #B1E3DA;
-// @beige            : #FEF3E0; (Unused)
-// @salmon           : #E95153; (Unused)
 
 @lightGrey        : #F8FAFC;
 
-/*-------------------
-    Brand Colors
---------------------*/
-
-@primaryColor        : #FF00FF;
-@secondaryColor      : #00FF00;
-
-// @lightPrimaryColor   : #0000FF; (Unused)
-// @lightSecondaryColor : #FF0000; (Unused)
 
 /*******************************
      PXT Variables
@@ -58,18 +41,6 @@
 
 @loaderImageUrl: "../docs/static/Micorsoft_logo_rgb_W-white_D-square.png";
 @loaderImageSize: 80%;
-
-/*-------------------
-   Menu
---------------------*/
-
-// @mainMenuInvertedBackground: @teal;
-// @mainMenuTutorialBackground: @teal;
-// @mainMenuTutorialButtons: @teal;
-
-// @mainMenuBlocksJsToggleColor: @primaryColor;
-
-// @tutorialSelectedMenuColor: @primaryColor;
 
 /*-------------------
    Layout
@@ -80,44 +51,10 @@
 @simulatorWidthSmall: @sideBarWidth;
 
 /*-------------------
-   Background
---------------------*/
-
-// @simulatorBackground: @lightSecondaryColor; (Unused)
-// @editorToolsBackground: @lightSecondaryColor; (Unused)
-// @blocklySvgColor: @lightSecondaryColor; (Unused)
-// @homeScreenBackground: @lightSecondaryColor; (Unused)
-// @cloudCardBackground: darken(@secondaryColor, 20%); (Unused)
-
-/*-------------------
-   Full screen
---------------------*/
-
-// @fullscreenBackgroundGradientStart: @simulatorBackground; (Unused)
-// @fullscreenBackgroundGradientEnd: @simulatorBackground; (Unused)
-
-/*-------------------
-   Editor
---------------------*/
-
-// @blocklyToolboxColor: @white; (default to pxt theme var)
-// @trashIconColor: @primaryColor;  (default to pxt theme var)
-
-/*-------------------
    Blockly
 --------------------*/
 
 @blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
-
-/*-------------------
-   Flyout
---------------------*/
-
-// @flyoutLabelColor: white; (same as pxt)
-// @blocklyFlyoutColor: @grey;  (same as pxt)
-// @blocklyFlyoutColorOpacity: 0.9;  (same as pxt)
-// @monacoFlyoutColor: fade(@blocklyFlyoutColor, 97%); change to use same as pxt
-// @monacoFlyoutText: @flyoutLabelColor; change to use same as pxt
 
 /*-------------------
    Greenscreen
@@ -125,21 +62,8 @@
 
 @greenScreenBlockColor: #20BF6B;
 
+/*-------------------
+   Field Editors
+--------------------*/
 
 @soundEffectHeaderColor: #E30FC0; // Matches block color
-// @soundPreviewBackgroundColor: var(--pxt-neutral-background2);
-
-/*---------------------------
-   Cloud Status
-----------------------------*/
-// @cloudStatusColor: @teal; change to use same as pxt
-
-/*---------------------------
-   Teaching Bubble
-----------------------------*/
-// @teachingBubbleBackgroundColor: @teal;  change to use same as pxt
-// @teachingBubbleTextColor: @white;  change to use same as pxt
-// @teachingBubbleStepsColor: @beige;  change to use same as pxt
-
-// @assetUnselected: #ebedef; use default from pxt now
-// @DebuggerBackgroundPrimaryColor: #117955;  change to use same as pxt
