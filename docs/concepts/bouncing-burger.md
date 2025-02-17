@@ -1,7 +1,5 @@
 # Bouncing Burger
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/bouncing-burger)
-
 ## {Introduction @unplugged}
 
 ``||sprites:Sprites||`` can be given ``||sprites:x||`` and ``||sprites:y||`` velocities so that they can move around the screen.  In this case, a ``||sprites:Sprite||`` will be used to represent a burger that bounces around the screen.

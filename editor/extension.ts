@@ -91,6 +91,13 @@ namespace pxt.editor {
 
             paramValues.forEach(value => {
                 let oldVariableName = "";
+
+                const handlerVarShadow = getShadow(value, "variables_get_reporter");
+
+                if (!handlerVarShadow) {
+                    return;
+                }
+
                 const connectedVarBlock = getChildBlock(value, "variables_get");
 
                 if (connectedVarBlock) {
@@ -101,7 +108,6 @@ namespace pxt.editor {
                     value.removeChild(connectedVarBlock);
                 }
 
-                const handlerVarShadow = getShadow(value, "variables_get_reporter");
                 const handlerVarField = getField(handlerVarShadow, "VAR");
                 const argReporterName = handlerVarField.textContent;
                 oldVariableName = oldVariableName || argReporterName;
@@ -293,6 +299,39 @@ namespace pxt.editor {
             } else if (lang === "de") {
                 pxt.U.toArray(dom.querySelectorAll("block[type=image_create]>value[name=heNacht]"))
                     .forEach(node => node.setAttribute("name", "height"));
+            }
+        }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.0.0") < 0) {
+            // At some point Sprite.z switched from being a getter/setter to a property
+            pxt.U.toArray(dom.querySelectorAll("block[type=Sprite_blockCombine_set]>field[name=property]"))
+                .forEach(node => {
+                    if (node.textContent.trim() === "Sprite.z@set") {
+                        node.textContent = "Sprite.z";
+                    }
+                });
+
+
+            // The kind field used by the legacy animation editor switched to including the numerical
+            // enum value in the field (e.g. Walking -> 0Walking)
+            const actionKinds = pxt.U.toArray(dom.querySelectorAll("variable[type=ActionKind]"));
+
+            if (actionKinds.length) {
+                pxt.U.toArray(dom.querySelectorAll("block[type=action_enum_shim]>field[name=MEMBER]"))
+                    .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=action_enum_shim]>field[name=MEMBER]")))
+                    .forEach(node => {
+                        const value = node.textContent;
+                        if (!/^\d/.test(value)) {
+                            // The correct numerical value will be in the variables
+                            for (const kind of actionKinds) {
+                                const match = /^\d+(.*)/.exec(kind.textContent);
+                                if (match?.[1] === value) {
+                                    node.textContent = kind.textContent;
+                                    break;
+                                }
+                            }
+                        }
+                    });
             }
         }
     }

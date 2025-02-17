@@ -1,7 +1,5 @@
 # Setting the Scene
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/setting-the-scene)
-
 ## {Introduction @unplugged}
 
 The maps and levels in a game are important to make the game interesting to explore. ``||scene:Tilemaps||`` are used to create maps for the player to explore, which can even be set to prevent the player from moving past certain points.
