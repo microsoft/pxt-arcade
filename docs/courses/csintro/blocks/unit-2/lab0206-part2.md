@@ -1,6 +1,6 @@
-# Lab 2.6 Part 2: Here Come the Enemies ... Faster!
+# Lab 2.6 Part 2: Here Come the Targets...Faster!
 
-## Here come the enemies ... faster! @showdialog
+## Here come the enemies...faster! @showdialog
 
 Many games get more difficult the longer you play.
 Let's update your game so that enemies fall faster as you play!
