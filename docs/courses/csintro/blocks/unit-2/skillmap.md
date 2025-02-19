@@ -4,10 +4,10 @@
 * description: Learn about interactions between sprites and conditional statements.
 * primarycolor: #2EA9B0  
 * secondarycolor: #F392BD 
-* tertiarycolor: #4a4a4a 
+* tertiarycolor: #a4849e 
 * highlightcolor: #FAED28 
-* bannerUrl: https://arcade.makecode.com/api/_8F36tk7VXgAm/thumb
-* backgroundurl: https://github.com/kiki-lee/skillmap/blob/master/lab2bg.png?raw=true02140
+* bannerUrl: https://arcade.makecode.com/api/_7ig072Wvb79R/thumb
+* backgroundurl: /static/skillmap/backgrounds/lab2bg.png
 
 
 <!-- ****************************************** -->
@@ -17,7 +17,7 @@
 ## lab-02-01
 
 * layout: manual
-* name: Aiming Gallery
+* name: On Target
 * description: Learn about event handlers and projectiles!
 
 
@@ -35,7 +35,7 @@
 
 ### lab-02-01-part-2
 
-* name: Lab 2.1 Part 2 - Here Come the Enemies!
+* name: Lab 2.1 Part 2 - Here Come the Targets!
 * description: Add enemies to your project.
 * type: tutorial
 * next: lab-02-01-part-3
@@ -45,7 +45,7 @@
 
 ### lab-02-01-part-3
 
-* name: Lab 2.1 Part 3 - Villains Be Gone!
+* name: Lab 2.1 Part 3 - Hit the Targets!
 * description: Destroy enemies when they are hit by a projectile.
 * type: tutorial
 * next: lab-02-01-part-4
@@ -98,7 +98,7 @@
 
 ### lab-02-06-part-2
 
-* name: Lab 2.6 Part 2 - Here Come the Enemies ... Faster!
+* name: Lab 2.6 Part 2 - Here Come the Targets...Faster!
 * description: Update your project to speed up the enemies.
 * type: tutorial
 * next: lab-02-06-part-3
