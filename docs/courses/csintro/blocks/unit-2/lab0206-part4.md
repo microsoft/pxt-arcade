@@ -22,7 +22,7 @@ Also jot down some values for a **challenging** difficulty level.
 
 ## What would you like?
 
-To being, let's ask the player for a difficulty level.
+To begin, let's ask the player for a difficulty level.
 
 1.   Create a new variable that will store the player's choice of difficulty.
 Give the variable a good name. How about **difficulty**?

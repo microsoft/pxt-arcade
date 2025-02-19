@@ -276,7 +276,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 game.onUpdateInterval(2000, function () {
-    let mySat = sprites.createProjectileFromSide(assets.image`Satellite`, 0, 50)
+    let mySat = sprites.createProjectileFromSide(img`.`, 0, 50)
     mySat.x = randint(5, 155)
     mySat.setKind(SpriteKind.Satellite)
 })
@@ -333,9 +333,9 @@ sprites.onOverlap(SpriteKind.Satellite, SpriteKind.Projectile, function (sprite,
 
 ```template
     let myShip: Sprite = null
-    scene.setBackgroundImage(img`.`)
+    scene.setBackgroundImage(galaxyimgs.Galaxy)
     scroller.scrollBackgroundWithSpeed(0, 10)
-    myShip = sprites.create(img`.`, SpriteKind.Player)
+    myShip = sprites.create(galaxyimgs.Rocket, SpriteKind.Player)
     controller.moveSprite(myShip, 100, 100)
     myShip.setStayInScreen(true)
 ```
