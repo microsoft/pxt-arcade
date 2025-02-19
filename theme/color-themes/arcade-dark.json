@@ -6,24 +6,6 @@
         "/overrides/arcade-dark-overrides.css"
     ],
     "colors": {
-        "pxt-target-background1": "#1b1a19",
-        "pxt-target-foreground1": "#f3f2f1",
-        "pxt-target-background-hover1": "#292828",
-        "pxt-target-foreground-hover1": "#ffffff",
-        "pxt-target-stencil1": "#3b3a39",
-
-        "pxt-target-background2": "#1b1a19",
-        "pxt-target-foreground2": "#f3f2f1",
-        "pxt-target-background-hover2": "#292828",
-        "pxt-target-foreground-hover2": "#ffffff",
-        "pxt-target-stencil2": "#3b3a39",
-
-        "pxt-target-background3": "#1b1a19",
-        "pxt-target-foreground3": "#f3f2f1",
-        "pxt-target-background-hover3": "#292828",
-        "pxt-target-foreground-hover3": "#ffffff",
-        "pxt-target-stencil3": "#3b3a39",
-
         "pxt-header-background": "#181818",
         "pxt-header-foreground": "#ffffff",
         "pxt-header-background-hover": "#4b4b4b",
@@ -47,6 +29,24 @@
         "pxt-tertiary-background-hover": "#005a9e",
         "pxt-tertiary-foreground-hover": "#ffffff",
         "pxt-tertiary-accent": "#0894ff",
+
+        "pxt-target-background1": "#1b1a19",
+        "pxt-target-foreground1": "#f3f2f1",
+        "pxt-target-background-hover1": "#292828",
+        "pxt-target-foreground-hover1": "#ffffff",
+        "pxt-target-stencil1": "#3b3a39",
+
+        "pxt-target-background2": "#1b1a19",
+        "pxt-target-foreground2": "#f3f2f1",
+        "pxt-target-background-hover2": "#292828",
+        "pxt-target-foreground-hover2": "#ffffff",
+        "pxt-target-stencil2": "#3b3a39",
+
+        "pxt-target-background3": "#1b1a19",
+        "pxt-target-foreground3": "#f3f2f1",
+        "pxt-target-background-hover3": "#292828",
+        "pxt-target-foreground-hover3": "#ffffff",
+        "pxt-target-stencil3": "#3b3a39",
 
         "pxt-neutral-background1": "#1b1a19",
         "pxt-neutral-foreground1": "#f3f2f1",

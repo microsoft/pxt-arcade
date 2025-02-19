@@ -3,24 +3,6 @@
     "name": "Arcade Legacy",
     "overrideFiles": [],
     "colors": {
-        "pxt-target-background1": "#FEF3E0",
-        "pxt-target-foreground1": "#000000",
-        "pxt-target-background-hover1": "#fce0af",
-        "pxt-target-foreground-hover1": "#000000",
-        "pxt-target-stencil1": "#e4d9c7",
-
-        "pxt-target-background2": "#B1E1DA",
-        "pxt-target-foreground2": "#000000",
-        "pxt-target-background-hover2": "#8cd3c9",
-        "pxt-target-foreground-hover2": "#000000",
-        "pxt-target-stencil2": "#b0b0b0",
-
-        "pxt-target-background3": "#FEF3E0",
-        "pxt-target-foreground3": "#000000",
-        "pxt-target-background-hover3": "#fce0af",
-        "pxt-target-foreground-hover3": "#000000",
-        "pxt-target-stencil3": "#e4d9c7",
-
         "pxt-header-background": "#F76820",
         "pxt-header-foreground": "#FFFFFF",
         "pxt-header-background-hover": "#ab3d06",
@@ -44,6 +26,24 @@
         "pxt-tertiary-background-hover": "#015e69",
         "pxt-tertiary-foreground-hover": "#FFFFFF",
         "pxt-tertiary-accent": "#013136",
+
+        "pxt-target-background1": "#FEF3E0",
+        "pxt-target-foreground1": "#000000",
+        "pxt-target-background-hover1": "#fce0af",
+        "pxt-target-foreground-hover1": "#000000",
+        "pxt-target-stencil1": "#e4d9c7",
+
+        "pxt-target-background2": "#B1E1DA",
+        "pxt-target-foreground2": "#000000",
+        "pxt-target-background-hover2": "#8cd3c9",
+        "pxt-target-foreground-hover2": "#000000",
+        "pxt-target-stencil2": "#b0b0b0",
+
+        "pxt-target-background3": "#FEF3E0",
+        "pxt-target-foreground3": "#000000",
+        "pxt-target-background-hover3": "#fce0af",
+        "pxt-target-foreground-hover3": "#000000",
+        "pxt-target-stencil3": "#e4d9c7",
 
         "pxt-neutral-background1": "#FFFFFF",
         "pxt-neutral-foreground1": "rgba(0,0,0,.85)",
