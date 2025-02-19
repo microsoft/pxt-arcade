@@ -569,16 +569,17 @@
         "availableLocales": [
             "en",
             "ar",
-            "zh-CN",
-            "zh-TW",
             "de",
+            "es-ES",
+            "es-MX",
             "fr",
+            "ga-IE",
             "it",
             "ja",
             "ko",
-            "es-ES",
-            "es-MX",
-            "ru"
+            "ru",
+            "zh-CN",
+            "zh-TW"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
@@ -678,7 +679,10 @@
         "hideReplaceMyCode": true,
         "timeMachine": true,
         "timeMachineDiffInterval": 600000,
-        "timeMachineSnapshotInterval": 1800000
+        "timeMachineSnapshotInterval": 1800000,
+        "feedbackEnabled": true,
+        "ocvAppId": 50315,
+        "ocvFrameUrl": "https://admin-ignite.microsoft.com"
     },
     "queryVariants": {
         "skillsMap=1": {

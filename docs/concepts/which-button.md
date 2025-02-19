@@ -1,7 +1,5 @@
 # Which Button?
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/which-button)
-
 ## {Introduction @unplugged}
 
 The ``||info:Info||`` category has a number of properties that help handle common behaviors in games. By default, these properties show up on screen as soon as they are set, allowing for an easy way to give the people playing your game information about how well they are doing.
