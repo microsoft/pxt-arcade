@@ -72,11 +72,4 @@ The games they make in the course can run on the GameGo device! Courses are free
 ]
 ```
 
-## See also
 
-
-
-[Code a Carnival](aka.ms/carnivalTeacher)
-[AP Computer Science Principles](https://makecode.com/csp)
-[GameGo Beginner](https://make2learn.tinkergen.com/course/?sku=604182001),
-[GameGo Intermediate](https://make2learn.tinkergen.com/course/?sku=604182003)
