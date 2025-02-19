@@ -25,25 +25,21 @@
         "pxt-target-stencil3": "#3b3a39",
 
         "pxt-header-background": "#181818",
-        "pxt-header-background-alpha30": "#1818184C",
         "pxt-header-foreground": "#ffffff",
 
         "pxt-primary-background": "#0078d4",
         "pxt-primary-background-hover": "#005a9e",
         "pxt-primary-alpha0": "#0078d400",
-        "pxt-primary-alpha90": "#0078d45A",
         "pxt-primary-dark": "#004578",
         "pxt-primary-foreground": "#ffffff",
 
         "pxt-secondary-background": "#5c2d91",
         "pxt-secondary-background-hover": "#4b2578",
-        "pxt-secondary-dark": "#4b2578",
         "pxt-secondary-light": "#7a4c2a",
         "pxt-secondary-foreground": "#f3f2f1",
 
         "pxt-tertiary-background": "#0078d4",
         "pxt-tertiary-background-hover": "#005a9e",
-        "pxt-tertiary-alpha20": "#0078d433",
         "pxt-tertiary-foreground": "#ffffff",
 
         "pxt-neutral-background1": "#1b1a19",
