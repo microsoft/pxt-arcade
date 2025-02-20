@@ -18,5 +18,5 @@
 
 .pxtToolbox .blocklyTreeIcon {
     /* Better contrast in toolbox, but try to preserve some of the icon color */
-    filter: brightness(1.5) saturate(2);
+    filter: brightness(1.2) saturate(2);
 }
