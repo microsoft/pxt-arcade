@@ -1,4 +1,5 @@
-# Part 3: Points! Lives!
+💡# Part 3: Points! Lives!
+### @explicitHints true
 
 ## Scores and lives @showdialog
 
@@ -9,17 +10,22 @@ Now, let's track the player's score and lives.
 
 Let's give the player a starting score and set of lives at the start of the game.
 
+---
+
 From the ``||info:Info||`` drawer, add the following blocks to your
 ``||loops(noclick):on start||`` container:
 
--    ``||info:set score to (0)||``
--    ``||info:set life to (3)||``
+-    ``||info:set score to [0]||``
+-    ``||info:set life to [3]||``
+
+---
 
 Feel free to change these values if you want the player to start with a
 different score or a different number of lives.
 
+#### ~ tutorialhint
+
 ```blocks
-let foodSprite: Sprite = null
 let heroSprite = sprites.create(sprites.castle.princessFront2, SpriteKind.Player)
 heroSprite.setStayInScreen(true)
 controller.moveSprite(heroSprite)
@@ -37,21 +43,27 @@ info.setLife(3)
 
 Now, let's make the player lose a life when they collide with the enemy.
 
-From the ``||info:Info||`` drawer, drag a
-``||info:change life by (-1)||``   
-block and add it to the appropriate   
-``||sprites(noclick):on overlap||``   
-container.
+---
 
-Use the hint to check your code.
+From the ``||info:Info||`` drawer, drag<br/>
+``||info:change life by [-1]||`` <br/>
+into the appropriate <br/>
+``||sprites(noclick):on overlap||`` <br/>
+container in your workspace.
+
+---
 
 Play your game and make sure you lose a life when you collide into the enemy.
+
+---
 
 **Question**
 
 1.   What happens in the game when you run out of lives?
 
-```block
+#### ~ tutorialhint
+
+```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.setPosition(randint(8, 152), randint(8, 112))
     otherSprite.setVelocity(randint(25, 50), randint(25, 50))
@@ -64,21 +76,25 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 Now, let's increase the player's score whenever they eat food.
 
-From the ``||info:Info||`` drawer, drag a
-``||info:change score by (1)||``   
-block and add it to the appropriate   
-``||sprites(noclick):on overlap||``   
+---
+
+From the ``||info:Info||`` drawer, drag <br/>
+``||info:change score by [1]||`` <br/>
+into the appropriate   
+``||sprites(noclick):on overlap||`` <br/>
 container.
+
+---
 
 Feel free to change the value in the
 block to add different amount to the player's score
-whenever they eat food.
+when they eat food.
 
-Use the hint to check your code.
+**Play your game and make sure you earn points whenever you eat food.**
 
-Play your game and make sure you earn points whenever you eat food.
+#### ~ tutorialhint
 
-```block
+```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     sprites.destroy(otherSprite, effects.spray, 500)
     // @highlight
@@ -90,12 +106,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 Good work! Now, make the game your own!
 
--    Make **both** the player **and** the enemy relocate when they collide.
--    Have the player lose points if the enemy eats food.
--    Play a sound when the enemy and player collide, and when the player eats food.
--    Design your own sprites.
--    Add a background.
--    What else can you think of?
+You can:
+
+-    Make **both** the player **and** the enemy relocate when they collide
+-    Have the player lose points if the enemy eats food
+-    Play a sound when the enemy and player collide, and when the player eats food
+-    Design your own sprites
+-    Add a background
+
+Can you think of anything else?
+
+
+
 
 ```template
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {

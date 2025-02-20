@@ -1,4 +1,5 @@
-# Lab 1.1 Part 1: Blocks scavenger hunt!
+# Lab 1.1 Part 1: Blocks Scavenger Hunt!
+### @explicitHints true
 
 ## Blocks scavenger hunt! @showdialog
 
@@ -11,37 +12,38 @@ complete the worksheet as you go through this tutorial.
 
 ## First block!
 
+---
+
 1.   Find the  
-``||variables(sprites):set mySprite to||`` ``||sprites:sprite [] of kind Player||``   
-block and add it to the   
-``||loops(noclick):on start||``   
+``||variables(sprites):set [mySprite] to sprite [] of kind [Player]||``<br/>
+block and add it to the  <br/>
+``||loops(noclick):on start||`` <br/>
 container already in the workspace.
-1.   Give your sprite an image.   
-(Select one from the **Gallery** for now.)
+1.   Select an image from the gallery.
 
 ---
 
-**Questions**
+**Worksheet**
 
-*Note*: If your instructor provided you with a worksheet,
+If your instructor provided you with a worksheet,
 write the answers to these questions on your worksheet.
 
--   Which drawer in the toolbox holds this block?
+-   Which drawer in the toolbox holds the block discussed above?
 -   What does this block do?
 
-If you need help, remember that you can select the help icon
-(the question mark) to see a hint!
+
+
+#### ~ tutorialhint
 
 ```blocks
 // @highlight
-let mySprite: Sprite = sprites.create(img`.`, SpriteKind.Player)
+let mySprite: Sprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
 ```
 
 ## Next block!
 
-1.   Find the   
-``||sprites:set||`` ``||variables(sprites):mySprite||``
-``||sprites:position to x [0] y[0]||``   
+1.   Find the<br/>
+``||sprites:set [mySprite] position to x [0] y[0]||``<br/>
  block.
 1.   Add the block to **the bottom** of your ``||loops(noclick):on start||`` container.
 
@@ -49,52 +51,63 @@ Try different values for **x** and **y**.
 
 ---
 
-**Questions**
+**Worksheet**
 
 -   Which drawer in the toolbox holds this block?
 -   What does this block do?
 -   Are there any numbers that are **not** allowed for **x** or **y**?
 
+
+#### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = sprites.create(img`.`, SpriteKind.Player)
+let mySprite: Sprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
 // @highlight
-mySprite.setPosition(0, 0)
+mySprite.setPosition(80, 80)
 ```
 
 ## Let's move!
 
-1.   Find the   
-``||controller:move||`` ``||variables(controller):mySprite||``
-``||controller:with buttons (+)||``   
+1.   Find the<br/>
+``||controller:move [mySprite] with buttons (+)||``<br/>
  block.
 2.   Add the block to **the bottom** of your ``||loops(noclick):on start||`` container.
 
 ---
 
-**Questions**
+**Worksheet**
 
 -   Which drawer in the toolbox holds this block?
 -   What does this block do?
 -   Which buttons are used to move the sprite?
 
+
+#### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = sprites.create(img`.`, SpriteKind.Player)
-mySprite.setPosition(0, 0)
+let mySprite: Sprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
+mySprite.setPosition(80, 80)
 // @highlight
 controller.moveSprite(mySprite)
 ```
 
 ## Move some more!
 
-1.   In your   
-``||controller(noclick):move||`` ``||variables(noclick):mySprite||``
-``||controller(noclick):with buttons (+)||``   
+1.   In your<br/>
+``||controller(noclick):move [mySprite] with buttons (+)||``<br/>
 block, click the **expand** button.
-     -   The *expand* button is the plus sign at the end of the block.
+
+
+~hint What is the "expand" button?
 
 ---
 
-**Questions**
+-   The *expand* button is the plus sign at the end of the block.
+hint~
+
+---
+
+**Worksheet**
 
 -   What new items appear?
 -   What happens when you change the values of **vx** and **vy**?
@@ -104,35 +117,44 @@ block, click the **expand** button.
 ** vertically** (up and down)?
 -   Are there any numbers that are **not** allowed for **vx** and **vy**?
 
-~hint What kind of numbers should I try?
+~hint What numbers should I try? 🤷‍♂️
+
+---
+
 -   Try some negative numbers.
--   What happens when the velocity is zero?
+-   What happens when you try zero?
 hint~
 
+
+#### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = sprites.create(img`.`, SpriteKind.Player)
-mySprite.setPosition(0, 0)
+let mySprite: Sprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
+mySprite.setPosition(80, 80)
 // @highlight
 controller.moveSprite(mySprite, 50, 0)
 ```
 
 ## Sprites can talk?
 
-1.   Find the   
-``||variables(sprites):mySprite||`` ``||sprites:say ":)"||``   
+1.   Find the<br/>
+``||sprites:[mySprite] say [":)"] (+) ||``<br/>
 block.
 2.   Add the block to **the bottom** of your ``||loops(noclick):on start||`` container.
 
 ---
 
-**Questions**
+**Worksheet**
 
 -   Which drawer in the toolbox holds this block?
 -   What does this block do?
 
+
+#### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = sprites.create(img`.`, SpriteKind.Player)
-mySprite.setPosition(0, 0)
+let mySprite: Sprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
+mySprite.setPosition(80, 80)
 controller.moveSprite(mySprite, 50, 0)
 // @highlight
 mySprite.say(":)")
@@ -140,25 +162,25 @@ mySprite.say(":)")
 
 ## Sprites CAN talk!
 
-1.   In your   
-``||variables(noclick):mySprite||`` ``||sprites(noclick):say ":)"||``   
-block,
-select the **expand** button.
+1.   In your<br/>
+``||sprites(noclick):[mySprite] say [":)"] (+) ||``<br/>
+block, select the **expand** button.
 
-~hint What is the "expand" button?
--   The *expand* button is the plus sign at the end of the block.
-hint~
+
 
 ---
 
-**Questions**
+**Worksheet**
 
 -   What new items appear?
 -   What is the purpose of each of the new items?
 
+
+#### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = sprites.create(img`.`, SpriteKind.Player)
-mySprite.setPosition(0, 0)
+let mySprite: Sprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
+mySprite.setPosition(80, 80)
 controller.moveSprite(mySprite, 50, 0)
 // @highlight
 mySprite.say(":)", 1000)
