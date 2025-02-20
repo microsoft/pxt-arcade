@@ -9,9 +9,14 @@
 }
 
 
-.pxtToolbox:not(.invertedToolbox) .blocklyTreeSelected span.blocklyTreeLabel,
-.pxtToolbox:not(.invertedToolbox) span.blocklyTreeLabel,
-.pxtToolbox:not(.invertedToolbox) .blocklyTreeIcon {
+.pxtToolbox span.blocklyTreeLabel,
+.pxtToolbox .blocklyTreeSelected span.blocklyTreeLabel,
+.pxtToolbox .blocklyTreeSelected .blocklyTreeIcon {
     /* Better contrast in toolbox */
+    color: var(--pxt-target-foreground3);
+}
+
+.pxtToolbox .blocklyTreeIcon {
+    /* Better contrast in toolbox, but try to preserve some of the icon color */
     filter: brightness(1.5) saturate(2);
 }
