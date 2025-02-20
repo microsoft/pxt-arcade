@@ -13,15 +13,6 @@
     Add your custom CSS here
 *******************************/
 
-/* Open Sans font */
-@font-face {
-    font-family: 'Share Tech Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Share Tech Mono'),
-         data-uri('../docs/static/fonts/ShareTechMono-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
 .simtoolbar .ui.button,
 .ui.button.play-button,
 .ui.button.restart-button,
@@ -95,6 +86,10 @@
         border-color: @primaryColor;
         color: @white
     }
+}
+
+span.blocklyTreeLabel {
+    font-weight: 500;
 }
 
 /* Mobile */
