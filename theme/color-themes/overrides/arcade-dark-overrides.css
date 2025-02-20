@@ -7,3 +7,11 @@
     /* Better contrast */
     color: var(--pxt-primary-background);
 }
+
+
+.pxtToolbox:not(.invertedToolbox) .blocklyTreeSelected span.blocklyTreeLabel,
+.pxtToolbox:not(.invertedToolbox) span.blocklyTreeLabel,
+.pxtToolbox:not(.invertedToolbox) .blocklyTreeIcon {
+    /* Better contrast in toolbox */
+    filter: brightness(1.5) saturate(2);
+}
