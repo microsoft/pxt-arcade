@@ -44,47 +44,57 @@
 }
 
 .ui.primary.button.download-button {
-    background-color: @secondaryColor;
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
 }
 
 .simtoolbar .ui.button.icon, #editortools .ui.button.editortools-btn {
-    background-color: @secondaryColor;
+    background-color: var(--pxt-secondary-background);
+    color: var(--pxt-secondary-foreground);
+
+    &:hover {
+        filter: none;
+        background-color: var(--pxt-secondary-background-hover);
+        color: var(--pxt-secondary-foreground-hover);
+    }
 }
 
 #editortools .ui.button.hw-button {
-    background-color: darken(@secondaryColor, 15%);
+    background-color: var(--pxt-primary-accent);
+    color: var(--pxt-primary-foreground);
 }
 
 #simulator .ui.button.play-button .icon.play {
-    color: @white!important;
+    color: var(--pxt-secondary-foreground)!important;
 }
 
 
 #homemenu .ui.item, #mainmenu .ui.item {
-    color: @white;
+    color: var(--pxt-header-foreground);
 }
 
 .common-radio-group.common-radio-buttons .common-radio-choice.selected {
-    color: @soundEffectHeaderColor;
+    color: var(--pxt-primary-background);
 }
 
 .draggable-graph-path {
-    stroke: @soundEffectHeaderColor;
+    stroke: var(--pxt-primary-background);
 }
 
 .carouselarrow {
-    color: @secondaryColor;
+    color: var(--pxt-secondary-background);
 }
 
 .projectsdialog .detailview .ui.grid.stackable .actions .card-action .button.approve {
-    background-color: @primaryColor;
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
 }
 
 .extensions-browser {
     .extension-tag.selected {
-        background-color: @primaryColor;
-        border-color: @primaryColor;
-        color: @white
+        background-color: var(--pxt-primary-background);
+        border-color: var(--pxt-primary-background);
+        color: var(--pxt-primary-foreground);
     }
 }
 
@@ -140,8 +150,8 @@ span.blocklyTreeLabel {
 }
 
 .hero .hero-banner-contents .action .button {
-    background-color: @teal;
-
+    background-color: var(--pxt-tertiary-background);
+    color: var(--pxt-tertiary-foreground);
 }
 
 .script-content {
