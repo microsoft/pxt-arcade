@@ -2,12 +2,6 @@
      User Global Variables
 *******************************/
 
-/*--------------
-      Page
----------------*/
-
-@pageBackground      : #F9F9F9;
-
 /*-------------------
      Fonts
 --------------------*/
@@ -37,20 +31,9 @@
 /* 32 colors */
 @purple           : #5D4FBA;
 @blue             : #B1E3DA;
-@beige            : #FEF3E0;
-@salmon           : #E95153;
 
 @lightGrey        : #F8FAFC;
 
-/*-------------------
-    Brand Colors
---------------------*/
-
-@primaryColor        : @teal;
-@secondaryColor      : @purple;
-
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightGrey;
 
 /*******************************
      PXT Variables
@@ -58,18 +41,6 @@
 
 @loaderImageUrl: "../docs/static/Micorsoft_logo_rgb_W-white_D-square.png";
 @loaderImageSize: 80%;
-
-/*-------------------
-   Menu
---------------------*/
-
-@mainMenuInvertedBackground: @teal;
-@mainMenuTutorialBackground: @teal;
-@mainMenuTutorialButtons: @teal;
-
-@mainMenuBlocksJsToggleColor: @primaryColor;
-
-@tutorialSelectedMenuColor: @primaryColor;
 
 /*-------------------
    Layout
@@ -80,44 +51,10 @@
 @simulatorWidthSmall: @sideBarWidth;
 
 /*-------------------
-   Background
---------------------*/
-
-@simulatorBackground: @lightSecondaryColor;
-@editorToolsBackground: @lightSecondaryColor;
-@blocklySvgColor: @lightSecondaryColor;
-@homeScreenBackground: @lightSecondaryColor;
-@cloudCardBackground: darken(@secondaryColor, 20%);
-
-/*-------------------
-   Full screen
---------------------*/
-
-@fullscreenBackgroundGradientStart: @simulatorBackground;
-@fullscreenBackgroundGradientEnd: @simulatorBackground;
-
-/*-------------------
-   Editor
---------------------*/
-
-@blocklyToolboxColor: @white;
-@trashIconColor: @primaryColor;
-
-/*-------------------
    Blockly
 --------------------*/
 
 @blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
-
-/*-------------------
-   Flyout
---------------------*/
-
-@flyoutLabelColor: white;
-@blocklyFlyoutColor: @grey;
-@blocklyFlyoutColorOpacity: 0.9;
-@monacoFlyoutColor: fade(@blocklyFlyoutColor, 97%);
-@monacoFlyoutText: @flyoutLabelColor;
 
 /*-------------------
    Greenscreen
@@ -125,21 +62,8 @@
 
 @greenScreenBlockColor: #20BF6B;
 
+/*-------------------
+   Field Editors
+--------------------*/
 
-@soundEffectHeaderColor: #E30FC0;
-@soundPreviewBackgroundColor: #F7EEF5;
-
-/*---------------------------
-   Cloud Status
-----------------------------*/
-@cloudStatusColor: @teal;
-
-/*---------------------------
-   Teaching Bubble
-----------------------------*/
-@teachingBubbleBackgroundColor: @teal;
-@teachingBubbleTextColor: @white;
-@teachingBubbleStepsColor: @beige;
-
-@assetUnselected: #ebedef;
-@DebuggerBackgroundPrimaryColor: #117955;
+@soundEffectHeaderColor: #E30FC0; // Matches block color
