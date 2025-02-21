@@ -334,6 +334,32 @@ namespace pxt.editor {
                     });
             }
         }
+
+        // Added the "use system keyboard" options to the ask for number and ask for string blocks
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "2.0.18") < 0) {
+            const allPromptBlocks = U.toArray(dom.querySelectorAll("block[type=gameaskforstring]"))
+                .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskforstring]")))
+                .concat(U.toArray(dom.querySelectorAll("block[type=gameaskfornumber]")))
+                .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskfornumber]")));
+
+            for (const block of allPromptBlocks) {
+                if (!getChildNode(block, "value", "name", "useSystemKeyboard")) {
+                    const value = document.createElement("value");
+                    value.setAttribute("name", "useSystemKeyboard");
+
+                    const shadow = document.createElement("shadow");
+                    shadow.setAttribute("type", "logic_boolean");
+
+                    const field = document.createElement("field");
+                    field.setAttribute("name", "BOOL");
+                    field.textContent = "FALSE";
+
+                    shadow.appendChild(field);
+                    value.appendChild(shadow);
+                    block.appendChild(value);
+                }
+            }
+        }
     }
 
     function swapFieldIfNotMatching(
