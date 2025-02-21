@@ -621,8 +621,6 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
-        "defaultColorTheme": "arcade-light",
-        "highContrastColorTheme": "pxt-high-contrast",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
         "crowdinProject": "makecode",
