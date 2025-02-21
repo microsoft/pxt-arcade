@@ -219,7 +219,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (projectileCount < maxProjectiles) {
         fireSprite = sprites.create(lab2imgs.flame, SpriteKind.Projectile)
         fireSprite.setPosition(flamethrower.x, flamethrower.y)
-        fireSprite.setVelocity(0, -90)
+        fireSprite.setVelocity(0, -200)
         fireSprite.setFlag(SpriteFlag.AutoDestroy, true)
         projectileCount += 1
     }

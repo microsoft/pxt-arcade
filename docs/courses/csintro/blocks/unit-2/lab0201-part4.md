@@ -3,8 +3,11 @@
 
 ## Collision alert! @showdialog
 
-When enemies hit your player, the player should lose a life. Let's finish
-the game by adding one more event handler.
+When enemies hit your player, the player should lose a life.<br/>
+Let's finish the game by adding one more event handler.
+
+![Lab 2.1.4](https://arcade.makecode.com/api/_0wWasDYJfW35/thumb)
+
 
 ## Ouch!
 
@@ -21,7 +24,7 @@ that removes one of the player's lives.
 ---
 
 Test your project to see if your code runs as expected.
-View the hint if you need help.
+
 
 #### ~ tutorialhint
 
@@ -34,8 +37,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 
 ## Complete! @showdialog
 
-Good work! Your game is now complete! If you have time, then move on to the bonus
-section, where we will add some sound effects!
+Good work! Lab 2.1 is now complete! 
+
+If you have time, move on to the bonus
+level, to add some sound effects!
 
 
 
@@ -64,8 +69,8 @@ let flamethrower: Sprite = null
 scene.setBackgroundColor(11)
 flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
 flamethrower.setPosition(80, 110)
-flamethrower.setStayInScreen(true)
 controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {
@@ -95,10 +100,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let iceSprite: Sprite = null
 let fireSprite: Sprite = null
 let flamethrower: Sprite = null
+scene.setBackgroundColor(11)
 flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
 flamethrower.setPosition(80, 110)
-flamethrower.setStayInScreen(true)
 controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
 game.onUpdateInterval(1000, function () {
