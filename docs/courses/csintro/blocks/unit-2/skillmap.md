@@ -88,7 +88,7 @@
 
 ### lab-02-06-part-1
 
-* name: Lab 2.6 Part 1 - Only Room for Two of Us!
+* name: Lab 2.6 Part 1 - Only Room for Two!
 * description: Update your project to limit the number of projectiles that are allowed.
 * type: tutorial
 * next: lab-02-06-part-2

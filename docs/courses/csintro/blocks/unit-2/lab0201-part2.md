@@ -109,8 +109,8 @@ let fireSprite: Sprite = null
 let flamethrower: Sprite = null
 flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
 flamethrower.setPosition(80, 110)
-flamethrower.setStayInScreen(true)
 controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 ```
 
 ```ghost
@@ -125,8 +125,8 @@ let fireSprite: Sprite = null
 let flamethrower: Sprite = null
 flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
 flamethrower.setPosition(80, 110)
-flamethrower.setStayInScreen(true)
 controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 game.onUpdateInterval(1000, function () {
     iceSprite = sprites.create(lab2imgs.icecube, SpriteKind.Enemy)
     iceSprite.setPosition(randint(8, 152), 0)
