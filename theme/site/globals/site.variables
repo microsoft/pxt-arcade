@@ -12,14 +12,14 @@
      Fonts
 --------------------*/
 
-@headerFont        : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
-@pageFont          : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@headerFont        : 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+@pageFont          : 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
 
-@docsHeaderFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@docsPageFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@docsHeaderFont: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+@docsPageFont: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
 
 @importGoogleFonts: false;
-@fontName: "Share Tech Mono";
+@fontName: "Segoe UI";
 
 /*-------------------
       Site Colors
