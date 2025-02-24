@@ -41,7 +41,7 @@
 
         "pxt-target-background3": "#FEF3E0",
         "pxt-target-foreground3": "#000000",
-        "pxt-target-background3-hover": "#fce0af",
+        "pxt-target-background3-hover": "#E4E4E4",
         "pxt-target-foreground3-hover": "#000000",
         "pxt-target-stencil3": "#e4d9c7",
 
