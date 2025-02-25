@@ -17,7 +17,7 @@
 
 .pxtToolbox .blocklyTreeIcon,
 .tutorial-container span.docs.inlineblock {
-    /* Better contrast in toolbox & tutorial block text, but try to preserve some of the icon color */
+    /* Better contrast in toolbox & tutorial block colors, but try to preserve some of the icon color */
     filter: brightness(1.2) saturate(2);
 }
 
