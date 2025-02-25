@@ -1,6 +1,7 @@
 {
     "id": "arcade-light",
     "name": "Arcade Light",
+    "weight": 40,
     "overrideFiles": [],
     "colors": {
         "pxt-header-background": "#116E79",

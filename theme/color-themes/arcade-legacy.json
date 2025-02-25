@@ -1,6 +1,7 @@
 {
     "id": "arcade-legacy",
     "name": "Arcade Legacy",
+    "weight": 20,
     "overrideFiles": [],
     "colors": {
         "pxt-header-background": "#F76820",
