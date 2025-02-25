@@ -47,19 +47,19 @@
 
         "pxt-neutral-background1": "#FFFFFF",
         "pxt-neutral-foreground1": "rgba(0,0,0,.85)",
-        "pxt-neutral-background1-hover": "#e6e6e6",
+        "pxt-neutral-background1-hover": "#f2f2f2",
         "pxt-neutral-foreground1-hover": "rgba(0,0,0,.85)",
         "pxt-neutral-stencil1": "rgba(34, 74, 114, 0.15)",
 
         "pxt-neutral-background2": "#F8F8F8",
         "pxt-neutral-foreground2": "rgba(0,0,0,.85)",
-        "pxt-neutral-background2-hover": "#DFDFDF",
+        "pxt-neutral-background2-hover": "#ebebeb",
         "pxt-neutral-foreground2-hover": "rgba(0,0,0,.85)",
         "pxt-neutral-stencil2": "#e9eef2",
 
         "pxt-neutral-background3": "#4e5758",
         "pxt-neutral-foreground3": "#FFFFFF",
-        "pxt-neutral-background3-hover": "#363c3d",
+        "pxt-neutral-background3-hover": "#424a4a",
         "pxt-neutral-foreground3-hover": "#FFFFFF",
         "pxt-neutral-stencil3": "#FFFFFF",
         "pxt-neutral-background3-alpha90": "#4E5758E5",
