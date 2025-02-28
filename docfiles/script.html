@@ -12,6 +12,44 @@
 
     <link rel="alternate" type="application/json+oembed" href="@oembedurl@&format=json" />
     <link rel="alternate" type="text/xml+oembed" href="@oembedurl@&format=xml" />
+
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dropdown button:hover {
+            background-color: #005f73;
+        }
+        .show {
+            display: block;
+        }
+    </style>
 </head>
 
 <body id='root' class='root expandIt share-page'>
@@ -22,17 +60,26 @@
                     <div class="page-header-item page-header-content no-grow">
                         <h2 class="ui item header no-select">@title@</h2>
                     </div>
+
                     <div class="page-header-item show-code-toggle">
                         <button id="show-code-button" class="ui mini default button" role="menuitem">Show Code</button>
                         <a id="editCodeButton" href="/@versionsuff@#pub:@id@" class="ui mini button landscape only" role="menuitem">Edit Code</a>
                     </div>
                     <div class="page-header-item no-grow">
                         <button id="multiplayer-share-button" class="ui mini default button" role="menuitem" style="display: none">Host Game</button>
+                        <div class="dropdown">
+                            <button onclick="toggleDropdown()">Send To ▼</button>
+                            <div id="send-to-dropdown-menu" class="dropdown-content">
+                                <a href="/--kiosk" target="_blank" rel="noopener">Kiosk</a>
+                                <a href="/--eval" target="_blank" rel="noopener">Code Eval tool</a>
+                            </div>
+                        </div>
                         <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization no-select">
                             <img class="ui logo portrait hide" src="./static/Microsoft-logo_rgb_c-gray.png" alt="Microsoft MakeCode Logo">
                             <img class="ui mini image portrait only" src="./static/Microsoft-logo_rgb_c-gray-square.png" alt="Microsoft MakeCode Logo">
                         </a>
                     </div>
+
                 </div>
             </div>
     </div>
@@ -119,7 +166,7 @@
                                             text: $('#abusetext').val()
                                         }),
                                         success: function() {
-                                            $("#abusedone").modal("show");
+                                            $("#abusedone").modal(" ");
                                         },
                                         contentType: "application/json",
                                         dataType: 'json'
@@ -155,6 +202,7 @@
             var showCodeButton = document.getElementById("show-code-button");
             var editCodeButton = document.getElementById("editCodeButton");
             var multiplayerShareButton = document.getElementById("multiplayer-share-button");
+            var sendToDropDownMenu = document.getElementById("send-to-dropdown-menu");
             var embedContainer = document.getElementById("embed-frame");
 
             var builtSimJSPromise = Promise.resolve(undefined);
@@ -203,6 +251,14 @@
 
             multiplayerShareButton.addEventListener("click", function() {
                 window.pxtTickEvent('share.multiplayerShareClick', { target: "arcade" });
+                const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://localhost:3000" : "";
+                const multiplayerHostUrl = `${domain}${pxt.webConfig.relprefix}multiplayer?host=@id@`;
+
+                window.open(multiplayerHostUrl, "_blank");
+            })
+
+            sendToDropDownMenu.addEventListener("click", function() {
+                window.pxtTickEvent('share.sendToDropDownMenu', { target: "arcade" });
                 const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://localhost:3000" : "";
                 const multiplayerHostUrl = `${domain}${pxt.webConfig.relprefix}multiplayer?host=@id@`;
 
@@ -346,6 +402,16 @@
                 iframe.contentWindow.postMessage(connectionMsg, "*");
             }
         })();
+
+        function toggleDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                document.getElementById("dropdownMenu").classList.remove("show");
+            }
+        }
     </script>
 
     <!-- @include tracking.html -->
