@@ -103,7 +103,7 @@ info.onLifeZero(function () {
             highScores.pop()
             highScoreNames.pop()
             // @highlight
-            blockSettings.writeNumberArray(" highScores ", highScores)
+            blockSettings.writeNumberArray("highScores", highScores)
             // @highlight
             blockSettings.writeStringArray("highScoreNames", highScoreNames)
             break;
