@@ -298,7 +298,7 @@ projectileCount = 0
 heroSprite = sprites.create(sprites.food.smallTaco, SpriteKind.Player)
 heroSprite.setPosition(80, 100)
 controller.moveSprite(heroSprite)
-heroSprite.setStayInScreen<true>
+heroSprite.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
 numScores = 3
