@@ -15,8 +15,9 @@
     color: var(--pxt-target-foreground3);
 }
 
-.pxtToolbox .blocklyTreeIcon {
-    /* Better contrast in toolbox, but try to preserve some of the icon color */
+.pxtToolbox .blocklyTreeIcon,
+.tutorial-container span.docs.inlineblock {
+    /* Better contrast in toolbox & tutorial block colors, but try to preserve some of the icon color */
     filter: brightness(1.2) saturate(2);
 }
 
