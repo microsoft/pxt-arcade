@@ -59,20 +59,21 @@ Decide how participants will submit their games to you.
 
 ## Celebrate
 
-Will you just be awarding participation certificates or calling out specific projects for their creativity, complexity, or alignment with the assigned theme? Download, customize and award [certificates of achievement](https://aka.ms/GameJamBoxCert).
+Will you be awarding participation certificates to everyone or calling out specific projects for creativity, complexity, or alignment with the assigned theme? Download, customize and award [certificates of achievement](https://aka.ms/GameJamBoxCert).
 
 ## Educator Resources
 
 If you’re a teacher, we got you covered! Here are some additional resources to get you started:
 
 - [Game Jam in a Box Lesson Teacher Guide Word Document](https://1drv.ms/w/s!AqsgsTyHBmRBknY1ENeC4jdrPg81?e=7W1Guq)
-- [Game Jam in a Box Lesson Teacher Guide PDF](https://1drv.ms/b/s!AqsgsTyHBmRBkng3YIHQUvorRPe0?e=ikYw4I)
-- [Game Jam in a Box Presentation Template](https://1drv.ms/p/s!AqsgsTyHBmRBknTT2xRpZ2upij4v?e=bWiGb6)
+- [Game Jam in a Box Lesson Teacher Guide PDF](https://1drv.ms/b/c/416406873cb120ab/EasgsTyHBmQggEF4CQAAAAAB6uKGXZ9l_abiPWfnSl2x5g?e=3HFlVH)
+- [Game Jam in a Box Presentation Template](https://1drv.ms/p/c/416406873cb120ab/EQAKJIOoCw1Kjpxd7VQyA-0BpT4PFtRqEt1g7oS5sIb0hQ?e=IyUzEu)
 
 ## Resources
 
 - [Block Documentation](https://arcade.makecode.com/block-gallery): General documentation for MakeCode Arcade blocks
-- [Sharing Code](https://1drv.ms/b/s!AqsgsTyHBmRBkgY6P-ecQ1ZWulzc?e=s6fcgw): How participants in groups can share their code with each other
+- [Kiki's Corner](https://medium.com/kikis-corner): How-To blog for all things MakeCode Arcade 
+- [Building Projects Together in MakeCode Arcade](https://medium.com/kikis-corner/building-projects-together-in-makecode-arcade-9cf70e57aecc): How participants in groups can share their code
 - [Forums](http://forum.makecode.com/): We have forums for educators to ask questions or share MakeCode tips and tricks
 - [Twitter](https://twitter.com/msmakecode): The team can be contacted on our forums or Twitter account.
 
