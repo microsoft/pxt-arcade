@@ -59,13 +59,15 @@ Labs from each unit are grouped in the tiles below.
 ]
 ```
 
+<!-->
+
 ## Individual Tutorials
 
 Individual activities from the tiles above are provided as standalone tutorials below.
 
 <!---
 ### Blocks semester
--->
+
 
 #### Unit 0 Activities
 
@@ -235,7 +237,7 @@ Individual activities from the tiles above are provided as standalone tutorials 
         "name": "Lab 3.4",
         "description": "High scores",
         "url": "https://arcade.makecode.com/--skillmap#docs:/courses/csintro/blocks/unit-3/lab-3-4-skillmap",
-        "imageUrl": "https://arcade.makecode.com/api/S61379-50555-16499-36625/thumb"
+        "imageUrl": "https://arcade.makecode.com/api/_6t78hiKYxRpt/thumb"
     }, {
         "name": "Lab 3.5",
         "description": "Animated sprites",
@@ -244,12 +246,14 @@ Individual activities from the tiles above are provided as standalone tutorials 
     }
 ]
 ```
+-->
 
 ## See also
 
 [Courses Home Page](/courses),
 [Arcade Tutorials](/tutorials),
 [Beginner Skillmaps](/beginner-maps),
+[Kiki's Corner](https://medium.com/kikis-corner),
 
 ### ~hint
 

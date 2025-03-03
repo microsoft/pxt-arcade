@@ -3,12 +3,35 @@
 A collection of courses that provide professional learning opportunities for Microsoft MakeCode.
 
 
-## CSEd Week Webinars
+## MakeCode General Trainings
 _(Click tile to register for free)_
 
-```codecard
 [
     {
+        "name": "MakeCode Arcade-Con!",
+        "description": "Save the date for this 6-hour online professional learning conference, centered around Microsoft MakeCode Arcade.",
+        "label": "April 23, 2024",
+        "labelClass": "purple ribbon large",
+        "url":"https://youtu.be/zFqY9P5KtcA",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOYCd?ver=bf04&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
+    }
+    
+]
+
+
+## Intro to CS with Arcade
+_(Click tile to register for free)_
+
+
+[
+    {
+        "name": "Tips and Tricks for Intro to CS with Arcade",
+        "description": "Discover exciting tips, tricks, and features meant to make your classroom experience as smooth as possible",
+        "label": "View the Recording",
+        "labelClass": "purple ribbon large",
+        "url":"https://youtu.be/zFqY9P5KtcA",
+        "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOYCd?ver=bf04&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
+    },{
         "name": "Intro to MakeCode for CSEd Week 2024",
         "description": "Join us for an engaging 50-minute webinar where we'll explore the best MakeCode Hour of Code activities, perfect for Computer Science Education Week!",
         "label": "View the Recording",
@@ -23,13 +46,12 @@ _(Click tile to register for free)_
         "url":"https://youtu.be/sG7XMH2WaGs",
         "imageUrl": "/static/skillmap/balloon/balloon4.gif"
     }
+    
 ]
-```
 
 
 
-## Intro to CS with Arcade
-_(Click tile to register for free)_
+## Previous Recordings
 
 ```codecard
 [
@@ -40,14 +62,22 @@ _(Click tile to register for free)_
         "labelClass": "purple ribbon large",
         "url":"https://youtu.be/zFqY9P5KtcA",
         "imageUrl": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWOYCd?ver=bf04&q=90&m=6&h=291&w=517&b=%23FFFFFFFF&l=f&o=t"
-    }, {
-        "name": "Intro to CS - Ask Me Anything",
-        "description": "This session is your chance to ask the curriculum developers about whatever is on your mind—from coding conundrums to classroom challenges.",
-        "label": "02/25/25 at 4pm PST",
+    },{
+        "name": "Intro to MakeCode for CSEd Week 2024",
+        "description": "Join us for an engaging 50-minute webinar where we'll explore the best MakeCode Hour of Code activities, perfect for Computer Science Education Week!",
+        "label": "View the Recording",
         "labelClass": "purple ribbon large",
-        "url":"https://msit.events.teams.microsoft.com/event/b12482d0-cef6-4159-8324-7f751f56048a@72f988bf-86f1-41af-91ab-2d7cd011db47",
-        "imageUrl": "https://arcade.makecode.com/api/S02325-67229-86604-38896/thumb"
+        "url":"https://youtu.be/sT5o01rIQZw",
+        "imageUrl": "/static/tutorials/bubbles/card.jpg"
+    }, {
+        "name": "Instant CSEd Week Prep",
+        "description": "From activity selection to class runtime, you'll leave this session with all the knowledge and resources necessary to make CS Education Week fun, engaging, and stress-free for you and your students. ",
+        "label": "View the Recording",
+        "labelClass": "purple ribbon large",
+        "url":"https://youtu.be/sG7XMH2WaGs",
+        "imageUrl": "/static/skillmap/balloon/balloon4.gif"
     }
+    
 ]
 ```
 
