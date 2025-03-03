@@ -92,4 +92,4 @@
 * description: Use the Character extension to give sprites complex animations.
 * type: tutorial
 * url: /courses/csintro/blocks/unit-3/lab0305-part3
-* imageUrl: https://arcade.makecode.com/api/_RdC9TMWEuKR1/thumb
+* imageUrl: https://arcade.makecode.com/api/_WfpV16DDwUTU/thumb
