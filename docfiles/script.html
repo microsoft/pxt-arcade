@@ -69,9 +69,9 @@
                         <button id="multiplayer-share-button" class="ui mini default button" role="menuitem" style="display: none">Host Game</button>
                         <div class="dropdown">
                             <button onclick="toggleDropdown()">Send To ▼</button>
-                            <div id="send-to-dropdown-menu" class="dropdown-content">
-                                <a href="/--kiosk" target="_blank" rel="noopener">Kiosk</a>
-                                <a href="/--eval" target="_blank" rel="noopener">Code Eval tool</a>
+                            <div id="dropdownMenu" class="dropdown-content">
+                                <a href="#" onclick="openLink('/--kiosk')">Kiosk</a>
+                                <a href="#" onclick="openLink('/--eval')">Code Eval tool</a>
                             </div>
                         </div>
                         <a href="https://makecode.com/org" title="Go to Microsoft MakeCode" aria-label="Microsoft MakeCode Logo" role="menuitem" target="blank" rel="noopener" class="ui item logo organization no-select">
@@ -180,7 +180,6 @@
         </div>
         <div class="script-bookend">
             <div style="text-align: center;">
-
                     <div class="ui container horizontal mini link list">
                         <!-- <a class="ui item " href="https://makecode.com/contact " target="_blank " rel="noopener ">Contact Us</a> -->
                         <a class="ui item no-select" href="https://makecode.com/privacy " target="_blank " rel="noopener ">Privacy &amp; Cookies</a>
@@ -256,15 +255,17 @@
 
                 window.open(multiplayerHostUrl, "_blank");
             })
-
+/*
             sendToDropDownMenu.addEventListener("click", function() {
-                window.pxtTickEvent('share.sendToDropDownMenu', { target: "arcade" });
+                window.pxtTickEvent('share.
+                
+                ', { target: "arcade" });
                 const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://localhost:3000" : "";
                 const multiplayerHostUrl = `${domain}${pxt.webConfig.relprefix}multiplayer?host=@id@`;
 
                 window.open(multiplayerHostUrl, "_blank");
             })
-
+*/
             var shareLinkIsApproved = false;
 
             window.pxtTargetConfigPromise
@@ -412,6 +413,15 @@
                 document.getElementById("dropdownMenu").classList.remove("show");
             }
         }
+        
+        openLink = function(link) {
+
+            const domain = pxt.BrowserUtils.isLocalHostDev() ? "https://makecode.microbit.org" : "";
+            const evalUrl = `${domain}${pxt.webConfig.relprefix}eval?project=@id@`;
+
+            window.open(evalUrl, "_blank");
+       }
+
     </script>
 
     <!-- @include tracking.html -->
