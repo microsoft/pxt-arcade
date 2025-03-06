@@ -30,7 +30,7 @@
 
 /* 32 colors */
 @purple           : #5D4FBA;
-@blue             : #B1E3DA;
+@blue             : #116e79;
 
 @lightGrey        : #F8FAFC;
 
