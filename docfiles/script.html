@@ -415,11 +415,47 @@
         }
         
         openLink = function(link) {
+            if (link == "/--kiosk")
+            {
+                //GEnerate a code to lauch a input text box which takes a kiosk id
+                const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://arcade.makecode.com" : "";
+                const kioskId = prompt("Enter a Kiosk ID to launch the game:");
+                if (kioskId) {
+                    //write a post api to save kiosk id and the share id both 
+                    //and then open the link            
+                    const postUrl = `${domain}/api/kiosk/updatecode`;
+                    const data = {
+                        shareId: "@id@",
+                        kioskCode: kioskId
+                    };
+                    fetch(postUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                }   
+            }
+            else {
+                const domain = pxt.BrowserUtils.isLocalHostDev() ? "https://makecode.microbit.org" : "";
+                const evalUrl = `${domain}${pxt.webConfig.relprefix}eval?project=@id@`;
 
-            const domain = pxt.BrowserUtils.isLocalHostDev() ? "https://makecode.microbit.org" : "";
-            const evalUrl = `${domain}${pxt.webConfig.relprefix}eval?project=@id@`;
+                window.open(evalUrl, "_blank");
+            }
 
-            window.open(evalUrl, "_blank");
        }
 
     </script>
