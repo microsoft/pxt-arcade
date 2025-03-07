@@ -30,3 +30,16 @@
     /* Neutral and target colors are the same in dark theme, so it helps to have a clearer border when hovering over cards. */
     border-color: var(--pxt-focus-border) !important;
 }
+
+/* 
+ * Inverted image colors
+ */
+.barcharticon {
+    filter: invert(1);
+}
+
+.modals .ui.button.immersive-reader-button,
+#mainmenu .immersive-reader-button.ui.item,
+#simulator .editor-sidebar .immersive-reader-button.ui.item {
+    background-image: url("/static/icons/immersive-reader-light.svg") !important;
+}
