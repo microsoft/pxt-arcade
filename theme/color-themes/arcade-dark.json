@@ -73,6 +73,7 @@
         "pxt-neutral-alpha10": "rgba(180, 180, 180, 0.1)",
         "pxt-neutral-alpha20": "rgba(180, 180, 180, 0.2)",
         "pxt-neutral-alpha50": "rgba(180, 180, 180, 0.5)",
+        "pxt-neutral-alpha80": "rgba(180, 180, 180, 0.8)",
 
         "pxt-link": "#479ef5",
         "pxt-link-hover": "#62abf5",
