@@ -311,28 +311,35 @@ namespace pxt.editor {
                     }
                 });
 
+            const performOldEnumShimUpgrade = (variableType: string, blockType: string) => {
+                const variableKinds = pxt.U.toArray(dom.querySelectorAll(`variable[type=${variableType}]`));
+
+                if (variableKinds.length) {
+                    pxt.U.toArray(dom.querySelectorAll(`block[type=${blockType}]>field[name=MEMBER]`))
+                        .concat(pxt.U.toArray(dom.querySelectorAll(`shadow[type=${blockType}]>field[name=MEMBER]`)))
+                        .forEach(node => {
+                            const value = node.textContent;
+                            if (!/^\d/.test(value)) {
+                                // The correct numerical value will be in the variables
+                                for (const kind of variableKinds) {
+                                    const match = /^\d+(.*)/.exec(kind.textContent);
+                                    if (match?.[1] === value) {
+                                        node.textContent = kind.textContent;
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                }
+            }
+
 
             // The kind field used by the legacy animation editor switched to including the numerical
             // enum value in the field (e.g. Walking -> 0Walking)
-            const actionKinds = pxt.U.toArray(dom.querySelectorAll("variable[type=ActionKind]"));
+            performOldEnumShimUpgrade("ActionKind", "action_enum_shim");
 
-            if (actionKinds.length) {
-                pxt.U.toArray(dom.querySelectorAll("block[type=action_enum_shim]>field[name=MEMBER]"))
-                    .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=action_enum_shim]>field[name=MEMBER]")))
-                    .forEach(node => {
-                        const value = node.textContent;
-                        if (!/^\d/.test(value)) {
-                            // The correct numerical value will be in the variables
-                            for (const kind of actionKinds) {
-                                const match = /^\d+(.*)/.exec(kind.textContent);
-                                if (match?.[1] === value) {
-                                    node.textContent = kind.textContent;
-                                    break;
-                                }
-                            }
-                        }
-                    });
-            }
+            // same for SpriteKindLegacy
+            performOldEnumShimUpgrade("SpriteKindLegacy", "spritetype");
         }
 
         // Added the "use system keyboard" options to the ask for number and ask for string blocks
