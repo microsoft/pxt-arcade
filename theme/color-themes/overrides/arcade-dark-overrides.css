@@ -4,8 +4,8 @@
 }
 
 #langmodal #availablelocales .langoption .header {
-    /* Better contrast */
-    color: var(--pxt-primary-background);
+    /* Better contrast than default, which is purple */
+    color: var(--pxt-colors-teal-background);
 }
 
 .pxtToolbox span.blocklyTreeLabel,
