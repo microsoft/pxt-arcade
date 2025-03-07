@@ -48,3 +48,14 @@
     /* Better contrast, especially against images in carousels */
     opacity: 0.9;
 }
+
+/* For inverted buttons, it almost always looks better to have the background be dark instead of light (even though non-inverted has a light foreground) */
+button.ui.button.inverted,
+button.common-button.inverted {
+    background-color: var(--pxt-neutral-background2) !important;
+}
+
+button.ui.button.inverted:hover,
+button.common-button.inverted:hover {
+    background-color: var(--pxt-neutral-background2-hover) !important;
+}
