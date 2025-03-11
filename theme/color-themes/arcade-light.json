@@ -2,7 +2,8 @@
     "id": "arcade-light",
     "name": "Arcade Light",
     "weight": 40,
-    "overrideFiles": [],
+    "overrideFiles": [
+        "/overrides/arcade-light-overrides.css"],
     "colors": {
         "pxt-header-background": "#116E79",
         "pxt-header-foreground": "#FFFFFF",
@@ -20,7 +21,7 @@
         "pxt-secondary-foreground": "#F8FAFC",
         "pxt-secondary-background-hover": "#483c9a",
         "pxt-secondary-foreground-hover": "#F8FAFC",
-        "pxt-secondary-accent": "#7569c4",
+        "pxt-secondary-accent": "#403587",
 
         "pxt-tertiary-background": "#116E79",
         "pxt-tertiary-foreground": "#FFFFFF",
