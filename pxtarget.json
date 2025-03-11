@@ -687,7 +687,7 @@
         "ocvFrameUrl": "https://admin-ignite.microsoft.com"
     },
     "queryVariants": {
-        "skillsMap=1": {
+        "skillmap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
                 "allowParentController": true,
