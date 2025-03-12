@@ -724,7 +724,7 @@ music.setVolume(30)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     scene.cameraShake(12, 500)
     snow.bigShortBlizzard(scenery)
-    music.play(music.createSong(snow_imgs.winter_wonderland), music.PlaybackMode.InBackground)
+    music.play(music.createSong(assets.song`winter_wonderland`), music.PlaybackMode.InBackground)
 })
 
 anim.setPosition(80, 60)
