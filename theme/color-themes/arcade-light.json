@@ -1,6 +1,6 @@
 {
     "id": "arcade-light",
-    "name": "Arcade Light",
+    "name": "Light",
     "weight": 40,
     "overrideFiles": [
         "/overrides/arcade-light-overrides.css"],
