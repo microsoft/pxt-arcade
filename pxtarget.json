@@ -569,16 +569,18 @@
         "availableLocales": [
             "en",
             "ar",
-            "zh-CN",
-            "zh-TW",
             "de",
+            "es-ES",
+            "es-MX",
             "fr",
+            "ga-IE",
             "it",
             "ja",
             "ko",
-            "es-ES",
-            "es-MX",
             "ru",
+            "zh-CN",
+            "ru",
+            "zh-TW",
             "nl"
         ],
         "invertedMenu": true,
@@ -621,6 +623,8 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
+        "defaultColorTheme": "arcade-legacy",
+        "highContrastColorTheme": "pxt-high-contrast",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
         "crowdinProject": "makecode",
@@ -679,10 +683,13 @@
         "hideReplaceMyCode": true,
         "timeMachine": true,
         "timeMachineDiffInterval": 600000,
-        "timeMachineSnapshotInterval": 1800000
+        "timeMachineSnapshotInterval": 1800000,
+        "feedbackEnabled": true,
+        "ocvAppId": 50315,
+        "ocvFrameUrl": "https://admin-ignite.microsoft.com"
     },
     "queryVariants": {
-        "skillsMap=1": {
+        "skillmap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
                 "allowParentController": true,

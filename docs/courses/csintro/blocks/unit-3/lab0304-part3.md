@@ -1,103 +1,111 @@
-# Lab 3.4 Part 3: High scores
+# Lab 3.4 Part 3: Don't Lose It!
+### @explicitHints true
 
 ## Don't lose it! @showdialog
 
-We've added a high scores table to our project, displayed it at the end
-of the game, and added the player's name if they qualify.
+We've added a high score table to our project, displayed it at the end
+of the game, and added the player's name when they qualify.
 
-Now, let's save the high scores table so that it doesn't get lost each
+Now, let's save the high score table so that it doesn't get lost each
 time we play our game!
+
+![Lab 3.4.3](https://arcade.makecode.com/api/_6t78hiKYxRpt/thumb)
 
 ## Where is the table?
 
-We've added an extension to your project, and you'll notice a new
-drawer in your toolbox called **BetterSettings**.
+We've added an extension to your project. Look for a new
+drawer in your toolbox called ``||blockSettings:BetterSettings||``.
 
-In your ``||loops(noclick):on start||`` blocks, we simply create the **high scores**
-and **high score names** arrays and add some values to it.
+Right now, we're using arrays to keep track of scores, but those reset each time through. 
 
-Instead, let's load the high score table if one has been saved.
+Instead, let's check to see if a "better" high score table has been created.
 
--    First, find the two blocks where you create the   
-**high scores** and   
-**high score names** variables, and drag them off to the side. You'll use
-them again later.
+---
 
-Now, at the bottom of your   
-``||loops(noclick):on start||`` container, add the
-following blocks.
-
-1.   Add an   
-``||logic:if (true) then else||`` container and add blocks so that it reads
-as follows:   
-``||logic:if||`` ``||blockSettings:setting with name ("high scores") exists||``
+1. First, find the two blocks where you create <br/>
+** highScores ** and <br/>
+**highScoreNames**, and drag those off to the side.<br/>
+(You'll use them again in a minute.)
+2. At the bottom of your <br/>
+``||loops(noclick):on start||`` container, add an <br/>
+``||logic:if <true> then else||`` container and add blocks so that it reads
+as follows: <br/>
+``||logic:if||`` ``||blockSettings:setting with name (" highScores ") exists||``
 ``||logic:then||``
-1.   In the   
-``||logic(noclick):if||`` branch, add blocks that read as follows:   
-``||variables:set (high scores) to||``
-``||blockSettings:read settings ("high scores") as number array||``
-1.   In the   
+    1.   In the <br/>
+``||logic(noclick):if||`` branch, add blocks that read as follows: <br/>
+``||variables:set ( highScores ) to||``
+``||blockSettings:read settings (" highScores ") as number array||``
+    1.   In the <br/>
 ``||logic:else||`` branch, place your block that you moved
 off to the side that
-creates the   
-**high scores** array with your starting values.
+creates the <br/>
+** highScores ** array with your starting values.
 
-Do something similar for your **high score names** variable.
+Repeat the steps for your **highScoreNames** variable.
 
-*Watch your spelling and capitalization!*
+*Watch spelling and capitalization!*
+
+---
 
 Check the hint if you need some help.
 
+#### ~ tutorialhint
+
 ```blocks
-if (blockSettings.exists("high scores")) {
-    let high_scores = blockSettings.readNumberArray("high scores")
+if (blockSettings.exists(" highScores ")) {
+    let highScores = blockSettings.readNumberArray(" highScores ")
 } else {
-    let high_scores = [500, 300, 100]
+    let highScores = [500, 300, 100]
 }
-if (blockSettings.exists("high score names")) {
-    let high_score_names = blockSettings.readStringArray("high score names")
+if (blockSettings.exists("highScoreNames")) {
+    let highScoreNames = blockSettings.readStringArray("highScoreNames")
 } else {
-    let high_score_names = ["Charlie", "Bravo", "Alfa"]
+    let highScoreNames = ["Charlie", "Bravo", "Alfa"]
 }
 ```
 
 ## Save it!
 
-We've loaded the high score table if one has been saved. Now, we need to save
-the high score table when we change it!
+If a high score table exists, we've made sure it will load when the game starts. Now, we need to 
+be able to add and remove scores from that table. 
 
-In your   
-``||info(noclick):on life zero||`` container, after we update the   
-**high scores** and **high score names** variables
-and right before the   
+---
+
+In your <br/>
+``||info(noclick):on life zero||`` container, right before the
 ``||loops:break||`` block,
-add the following blocks:
+add the following:
 
--    ``||blockSettings:set setting ("high scores") to number array||``
-``||variables:high scores||``
--    ``||blockSettings:set setting ("high score names") to string array||``
-``||variables:high score names||``
+-    ``||blockSettings:set setting (" highScores ") to number array||``
+``||variables: highScores ||``
+-    ``||blockSettings:set setting ("highScoreNames") to string array||``
+``||variables:highScoreNames||``
+
+---
 
 Give it a try! Your high score table should save between plays!
 
 Check the hint if you need some help.
 
+#### ~ tutorialhint
+
 ```blocks
-let number_of_high_scores = 0
-let high_scores: number [] = []
-let high_score_names: string[] = []
+let numScores = 0
+let highScores: number [] = []
+let highScoreNames: string[] = []
 info.onLifeZero(function () {
-    for (let index = 0; index <= number_of_high_scores - 1; index++) {
-        if (info.score() > high_scores[index]) {
+    for (let index = 0; index <= numScores - 1; index++) {
+        if (info.score() > highScores[index]) {
             let playerName = game.askForString("High score! What is your name?")
-            high_scores.insertAt(index, info.score())
-            high_score_names.insertAt(index, playerName)
-            high_scores.pop()
-            high_score_names.pop()
+            highScores.insertAt(index, info.score())
+            highScoreNames.insertAt(index, playerName)
+            highScores.pop()
+            highScoreNames.pop()
             // @highlight
-            blockSettings.writeNumberArray("high scores", high_scores)
+            blockSettings.writeNumberArray("highScores", highScores)
             // @highlight
-            blockSettings.writeStringArray("high score names", high_score_names)
+            blockSettings.writeStringArray("highScoreNames", highScoreNames)
             break;
         }
     }
@@ -106,12 +114,15 @@ info.onLifeZero(function () {
 
 ## Complete! @showdialog
 
-Good work! We have made a high scores table that works!
+**Good work!**<br/>
+🍔 🍔 🍔 
+ 
+We've made a high score table that works!
 
 Feel free to use this in any of your projects!
 
-If you would like to use **BetterSettings** or its cousin, simply called
-**Settings**, in your own projects, then ask your instructor.
+If you'd like to use ``||blockSettings:BetterSettings||``  (or its cousin,
+**Settings**) in your own projects, ask your instructor for the address of the extension.
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -124,22 +135,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onLifeZero(function () {
-    for (let index = 0; index <= number_of_high_scores - 1; index++) {
-        if (info.score() > high_scores[index]) {
+    for (let index = 0; index <= numScores - 1; index++) {
+        if (info.score() > highScores[index]) {
             playerName = game.askForString("High score! What is your name?")
-            high_scores.insertAt(index, info.score())
-            high_score_names.insertAt(index, playerName)
-            high_scores.pop()
-            high_score_names.pop()
+            highScores.insertAt(index, info.score())
+            highScoreNames.insertAt(index, playerName)
+            highScores.pop()
+            highScoreNames.pop()
             break;
         }
     }
-    high_scores_message = "High Scores\\n"
-    for (let index = 0; index <= number_of_high_scores - 1; index++) {
-        high_scores_message = "" + high_scores_message + high_score_names[index] + ": " + high_scores[index] + "\\n"
+    highScores_message = " highScores \\n"
+    for (let index = 0; index <= numScores - 1; index++) {
+        highScores_message = "" + highScores_message + highScoreNames[index] + ": " + highScores[index] + "\\n"
     }
-    game.showLongText(high_scores_message, DialogLayout.Center)
-    game.gameOver(false)
+    game.showLongText(highScores_message, DialogLayout.Center)
+    game.gameOver(true)
 })
 sprites.onCreated(SpriteKind.Projectile, function (sprite) {
     music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.InBackground)
@@ -162,17 +173,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.InBackground)
 })
 let enemySprite: Sprite = null
-let high_scores_message = ""
+let highScores_message = ""
 let playerName = ""
 let projectile: Sprite = null
-let high_score_names: string[] = []
-let high_scores: number[] = []
-let number_of_high_scores = 0
+let highScoreNames: string[] = []
+let highScores: number[] = []
+let numScores = 0
 let heroSprite: Sprite = null
 let projectileCount = 0
 let enemyVelocity = 0
 let MAX_ENEMY_VELOCITY = 0
 let MAX_PROJECTILES = 0
+scene.setBackgroundColor(13)
 let difficulty = game.askForNumber("Enter starting difficulty (1, 2, or 3)")
 if (difficulty == 1) {
     MAX_PROJECTILES = 5
@@ -194,9 +206,9 @@ controller.moveSprite(heroSprite)
 heroSprite.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
-number_of_high_scores = 3
-high_scores = [500, 300, 100]
-high_score_names = ["Charlie", "Bravo", "Alfa"]
+numScores = 3
+highScores = [500, 300, 100]
+highScoreNames = ["Charlie", "Bravo", "Alfa"]
 game.onUpdateInterval(1000, function () {
     enemySprite = sprites.create(sprites.food.smallBurger, SpriteKind.Enemy)
     enemySprite.setPosition(randint(10, 150), -5)
@@ -216,24 +228,24 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onLifeZero(function () {
-    for (let index = 0; index <= number_of_high_scores - 1; index++) {
-        if (info.score() > high_scores[index]) {
+    for (let index = 0; index <= numScores - 1; index++) {
+        if (info.score() > highScores[index]) {
             playerName = game.askForString("High score! What is your name?")
-            high_scores.insertAt(index, info.score())
-            high_score_names.insertAt(index, playerName)
-            high_scores.pop()
-            high_score_names.pop()
-            blockSettings.writeNumberArray("high scores", high_scores)
-            blockSettings.writeStringArray("high score names", high_score_names)
+            highScores.insertAt(index, info.score())
+            highScoreNames.insertAt(index, playerName)
+            highScores.pop()
+            highScoreNames.pop()
+            blockSettings.writeNumberArray(" highScores ", highScores)
+            blockSettings.writeStringArray("highScoreNames", highScoreNames)
             break;
         }
     }
-    high_scores_message = "High Scores\\n"
-    for (let index = 0; index <= number_of_high_scores - 1; index++) {
-        high_scores_message = "" + high_scores_message + high_score_names[index] + ": " + high_scores[index] + "\\n"
+    highScores_message = " highScores \\n"
+    for (let index = 0; index <= numScores - 1; index++) {
+        highScores_message = "" + highScores_message + highScoreNames[index] + ": " + highScores[index] + "\\n"
     }
-    game.showLongText(high_scores_message, DialogLayout.Center)
-    game.gameOver(false)
+    game.showLongText(highScores_message, DialogLayout.Center)
+    game.gameOver(true)
 })
 sprites.onCreated(SpriteKind.Projectile, function (sprite) {
     music.play(music.melodyPlayable(music.pewPew), music.PlaybackMode.InBackground)
@@ -256,17 +268,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.InBackground)
 })
 let enemySprite: Sprite = null
-let high_scores_message = ""
+let highScores_message = ""
 let playerName = ""
 let projectile: Sprite = null
-let high_score_names: string[] = []
-let high_scores: number[] = []
-let number_of_high_scores = 0
+let highScoreNames: string[] = []
+let highScores: number[] = []
+let numScores = 0
 let heroSprite: Sprite = null
 let projectileCount = 0
 let enemyVelocity = 0
 let MAX_ENEMY_VELOCITY = 0
 let MAX_PROJECTILES = 0
+scene.setBackgroundColor(13)
 let difficulty = game.askForNumber("Enter starting difficulty (1, 2, or 3)")
 if (difficulty == 1) {
     MAX_PROJECTILES = 5
@@ -288,16 +301,16 @@ controller.moveSprite(heroSprite)
 heroSprite.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
-number_of_high_scores = 3
-if (blockSettings.exists("high scores")) {
-    high_scores = blockSettings.readNumberArray("high scores")
+numScores = 3
+if (blockSettings.exists(" highScores ")) {
+    highScores = blockSettings.readNumberArray(" highScores ")
 } else {
-    high_scores = [500, 300, 100]
+    highScores = [500, 300, 100]
 }
-if (blockSettings.exists("high score names")) {
-    high_score_names = blockSettings.readStringArray("high score names")
+if (blockSettings.exists("highScoreNames")) {
+    highScoreNames = blockSettings.readStringArray("highScoreNames")
 } else {
-    high_score_names = ["Charlie", "Bravo", "Alfa"]
+    highScoreNames = ["Charlie", "Bravo", "Alfa"]
 }
 game.onUpdateInterval(1000, function () {
     enemySprite = sprites.create(sprites.food.smallBurger, SpriteKind.Enemy)

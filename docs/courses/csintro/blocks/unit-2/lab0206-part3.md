@@ -1,67 +1,82 @@
-# Lab 2.6 Part 3: Changing conditions
+# Lab 2.6 Part 3: Not So Fast!
+### @explicitHints true
 
 ## Not too fast! @showdialog
 
 At some point, your enemies will be moving too fast.
+
 Let's update your game so that enemies have a speed limit!
+
+![Lab 2.6.3](https://arcade.makecode.com/api/_e6MEdsWedWoc/thumb)
+
 
 ## What's the limit?
 
 First, let's determine the enemy's speed limit.
 
-1.   Create a new variable that sets the enemy speed limit.
-Call it something like **maxEnemySpeed**.
-1.   In your   
-``||loops(noclick):on start||``   
+---
+
+1.   Create a new ``||variables:variable||`` that sets the enemy speed limit.<br/>
+(Call it something like **maxEnemyVY**.)
+1.   In your<br/> 
+``||loops(noclick):on start||``<br/> 
 container, set your new variable to
 a reasonable speed limit.
 
-Run your project to make sure nothing has changed ... yet!
-Check the hint to verify your code.
+---
+
+Run your project to make sure nothing has changed...yet!
+
+#### ~ tutorialhint
 
 ```blocks
-let maxEnemySpeed = 0
+let maxEnemyVY = 0
 let enemyVelocity = 0
 let projectileCount = 0
 let maxProjectiles = 0
-let heroSprite: Sprite = null
-heroSprite = sprites.create(sprites.space.spaceOrangeShip, SpriteKind.Player)
-heroSprite.setPosition(80, 110)
-heroSprite.setStayInScreen(true)
-controller.moveSprite(heroSprite)
+let flamethrower: Sprite = null
+scene.setBackgroundColor(11)
+flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
+flamethrower.setPosition(80, 110)
+controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
-maxProjectiles = 3
+maxProjectiles = 2
 projectileCount = 0
 enemyVelocity = 25
 // @highlight
-maxEnemySpeed = 150
+maxEnemyVY = 150
 ```
 
 ## Mind your speed!
 
 Now, let's enforce our new speed limit.
 
-1.   Go back to that   
-``||sprites(noclick):on overlap||``   
+---
+
+1.   Go back to that<br/> 
+``||sprites(noclick):on overlap||``<br/> 
 container where enemies are
-destroyed when they collide when a projectile.
+destroyed when they collide with a projectile.
 1.   Add blocks **to the bottom** of that container
-to create the following ``||logic(noclick):if||`` statement:
+to create the following ``||logic:if||`` statement:
 
-``||logic:if||`` ``||variables:enemyVelocity||``
-``||logic:is greater than||``
-``||variables:maxEnemySpeed||`` ``||logic:then||``
+``||logic:if <enemyVelocity [>] maxEnemyVY> then||``
 
--   ``||variables:set (enemyVelocity) to (maxEnemySpeed)||``
+-   ``||variables:set [enemyVelocity] to [maxEnemyVY]||``
+
+---
 
 Run your project to test your speed limit. Try different speed limit values
 and see what works best for your project.
-Check the hint if you need help.
+
+
+#### ~ tutorialhint
 
 ```blocks
 let enemyVelocity = 0
-let maxEnemySpeed = 0
+let maxEnemyVY = 0
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     sprites.destroy(sprite)
@@ -69,24 +84,32 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.InBackground)
     enemyVelocity += 5
     // @highlight
-    if (enemyVelocity > maxEnemySpeed) {
-        enemyVelocity = maxEnemySpeed
+    if (enemyVelocity > maxEnemyVY) {
+        enemyVelocity = maxEnemyVY
     }
 })
 ```
 
 ## Conclusion @showdialog
 
-Good job! Now, let's ask the player how difficult they want the game to be.
+***Great job!*** 
+
+Now, let's ask the player how difficult they want the game to be.
+
 On to Part 4!
+
+
+```package
+lab2imgs=github:kiki-lee/lab2imgs
+```
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (projectileCount < maxProjectiles) {
-        plasmaSprite = sprites.create(sprites.projectile.explosion1, SpriteKind.Projectile)
-        plasmaSprite.setPosition(heroSprite.x, heroSprite.y)
-        plasmaSprite.setVelocity(0, -50)
-        plasmaSprite.setFlag(SpriteFlag.AutoDestroy, true)
+        fireSprite = sprites.create(lab2imgs.flame, SpriteKind.Projectile)
+        fireSprite.setPosition(flamethrower.x, flamethrower.y)
+        fireSprite.setVelocity(0, -200)
+        fireSprite.setFlag(SpriteFlag.AutoDestroy, true)
         projectileCount += 1
     }
 })
@@ -108,35 +131,36 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     sprites.destroy(otherSprite, effects.fire, 500)
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.InBackground)
 })
-let enemySprite: Sprite = null
-let plasmaSprite: Sprite = null
+let iceSprite: Sprite = null
+let fireSprite: Sprite = null
 let projectileCount = 0
 let maxProjectiles = 0
-let heroSprite: Sprite = null
-heroSprite = sprites.create(sprites.space.spaceOrangeShip, SpriteKind.Player)
-heroSprite.setPosition(80, 110)
-heroSprite.setStayInScreen(true)
-controller.moveSprite(heroSprite)
+let flamethrower: Sprite = null
+scene.setBackgroundColor(11)
+flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
+flamethrower.setPosition(80, 110)
+controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
-maxProjectiles = 3
+maxProjectiles = 2
 projectileCount = 0
 let enemyVelocity = 25
 game.onUpdateInterval(1000, function () {
-    enemySprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Enemy)
-    enemySprite.setPosition(randint(8, 152), 0)
-    enemySprite.setVelocity(0, enemyVelocity)
-    enemySprite.setFlag(SpriteFlag.AutoDestroy, true)
+    iceSprite = sprites.create(lab2imgs.icecube, SpriteKind.Enemy)
+    iceSprite.setPosition(randint(8, 152), 0)
+    iceSprite.setVelocity(0, enemyVelocity)
+    iceSprite.setFlag(SpriteFlag.AutoDestroy, true)
 })
 ```
 
 ```ghost
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (projectileCount < maxProjectiles) {
-        plasmaSprite = sprites.create(sprites.projectile.explosion1, SpriteKind.Projectile)
-        plasmaSprite.setPosition(heroSprite.x, heroSprite.y)
-        plasmaSprite.setVelocity(0, -50)
-        plasmaSprite.setFlag(SpriteFlag.AutoDestroy, true)
+        fireSprite = sprites.create(lab2imgs.flame, SpriteKind.Projectile)
+        fireSprite.setPosition(flamethrower.x, flamethrower.y)
+        fireSprite.setVelocity(0, -200)
+        fireSprite.setFlag(SpriteFlag.AutoDestroy, true)
         projectileCount += 1
     }
 })
@@ -152,8 +176,8 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     sprites.destroy(otherSprite, effects.spray, 500)
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.InBackground)
     enemyVelocity += 5
-    if (enemyVelocity > maxEnemySpeed) {
-        enemyVelocity = maxEnemySpeed
+    if (enemyVelocity > maxEnemyVY) {
+        enemyVelocity = maxEnemyVY
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -161,27 +185,28 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     sprites.destroy(otherSprite, effects.fire, 500)
     music.play(music.melodyPlayable(music.smallCrash), music.PlaybackMode.InBackground)
 })
-let enemySprite: Sprite = null
-let plasmaSprite: Sprite = null
-let maxEnemySpeed = 0
+let iceSprite: Sprite = null
+let fireSprite: Sprite = null
+let maxEnemyVY = 0
 let enemyVelocity = 0
 let projectileCount = 0
 let maxProjectiles = 0
-let heroSprite: Sprite = null
-heroSprite = sprites.create(sprites.space.spaceOrangeShip, SpriteKind.Player)
-heroSprite.setPosition(80, 110)
-heroSprite.setStayInScreen(true)
-controller.moveSprite(heroSprite)
+let flamethrower: Sprite = null
+scene.setBackgroundColor(11)
+flamethrower = sprites.create(lab2imgs.flamethrower, SpriteKind.Player)
+flamethrower.setPosition(80, 110)
+controller.moveSprite(flamethrower)
+flamethrower.setStayInScreen(true)
 info.setScore(0)
 info.setLife(3)
-maxProjectiles = 3
+maxProjectiles = 2
 projectileCount = 0
 enemyVelocity = 25
-maxEnemySpeed = 150
+maxEnemyVY = 150
 game.onUpdateInterval(1000, function () {
-    enemySprite = sprites.create(sprites.space.spaceAsteroid0, SpriteKind.Enemy)
-    enemySprite.setPosition(randint(8, 152), 0)
-    enemySprite.setVelocity(0, enemyVelocity)
-    enemySprite.setFlag(SpriteFlag.AutoDestroy, true)
+    iceSprite = sprites.create(lab2imgs.icecube, SpriteKind.Enemy)
+    iceSprite.setPosition(randint(8, 152), 0)
+    iceSprite.setVelocity(0, enemyVelocity)
+    iceSprite.setFlag(SpriteFlag.AutoDestroy, true)
 })
 ```

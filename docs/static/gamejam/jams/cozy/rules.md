@@ -1,59 +1,27 @@
-## Cozy Jam
+## Cozy Jam Winners!
 
-The theme for this jam is "cozy games". What is a [cozy game](https://en.wikipedia.org/wiki/Cozy_game), you might ask? Well, it's any game that focuses on creating a relaxing atmosphere rather than a stressful one.
-Cozy games are often about building things, exploring the world, or expressing yourself instead of limited lives, time limits, or difficulty.
-Cozy games can also be a game that just has a real cozy vibe! Think warm mugs of hot cocoa, friendly conversations with neighbors, soft pastel colors... you get the idea!
+## First Place: Rhythm Code!
+| |
+| -- |
+| [!["Rhythm Code!" game screenshot](https://cdn.makecode.com/api/40921-79622-15624-16091/thumb)](https://arcade.makecode.com/40921-79622-15624-16091) |
+| &nbsp; |
 
+[Rhythm Code!](https://arcade.makecode.com/40921-79622-15624-16091) by **InvalidProject** features not just one, but THREE whole rhythm games to test your timing skills! Our judges loved the artwork, music, and rating system of this submission. Plus, rumor has it that each of these games is based on a different member of the MakeCode forums... Make sure you check out [this forum post](https://forum.makecode.com/t/my-game-jam-game-rhythm-code/32951) for more detailed instructions on how to play each of the games!
 
-Does that mean your game can't feature *any* action? Of course it doesn't! As long as your game has that cozy vibe we're looking for, you can have as much action as you want. Just be prepared to defend the coziness of your game!
+## Second Place: The Forest Campfire
+| |
+| -- |
+| [!["The Forest Campfire" game screenshot](https://cdn.makecode.com/api/50763-65106-55406-25942/thumb)](https://arcade.makecode.com/50763-65106-55406-25942) |
+| &nbsp; |
 
-Some valid interpretations of this theme include:
+[The Forest Campfire](https://arcade.makecode.com/50763-65106-55406-25942) by **Freast & Toast** is a delightful game where you complete quests to help out a goofy cast of characters on a camping trip. Our judges were absolutely *floored* by the character art in this game and how polished all of the dialog looked. Not only that, but the writing left us grinning like maniacs through the whole thing! If you like this game, make sure to check out another of Freast's games: [One Night At Scary Gary's](https://arcade.makecode.com/S07056-15018-00192-01563) (which is decidedly less cozy but *is* mentioned in an easter egg of this game).
 
-* A farming simulator where you plant crops and interact with people in a small town like in [Harvest Moon][harvest-moon], [Stardew Valley](https://en.wikipedia.org/wiki/Stardew_Valley), [Rune Factory](https://en.wikipedia.org/wiki/Rune_Factory), or [Fields of Mistria](https://en.wikipedia.org/wiki/Fields_of_Mistria)
-* A relaxing puzzle solving game like [Monument Valley][monument-valley], [Lumines](https://en.wikipedia.org/wiki/Lumines), [A Monster's Expedition](https://en.wikipedia.org/wiki/A_Monster's_Expedition), or [Dorfromantik](https://en.wikipedia.org/wiki/Dorfromantik)
-* A sandbox game that lets you create music or art like in [Tiny Glade](https://en.wikipedia.org/wiki/Tiny_Glade), [Electroplankton](https://en.wikipedia.org/wiki/Electroplankton), [Tilt Brush](https://en.wikipedia.org/wiki/Tilt_Brush), or [Mario Paint](https://en.wikipedia.org/wiki/Mario_Paint)
+> **Note from Richard**: "Games that feature me as a character receive no preferential treatment in game jam judging but also it doesn't hurt either."
 
-Feel free to subvert the genre as well. For example, a game that starts out as a cozy game full of happy animal villagers and then subtly turns into some sort of horror game nightmare over time would be a valid interpretation.
+## Third Place: The Joy of Pixels
+| |
+| -- |
+| [!["The Joy of Pixels" game screenshot](https://cdn.makecode.com/api/08245-57951-20701-25721/thumb)](https://arcade.makecode.com/08245-57951-20701-25721) |
+| &nbsp; |
 
-DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
--- | --
-![](/static/gamejam/jams/cozy/assets/demo-1.gif) | ![](/static/gamejam/jams/cozy/assets/demo-2.gif) | ![](/static/gamejam/jams/cozy/assets/demo-3.gif)
-
-
-You can interpret "cozy" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation.
-
-## Don't stress! You've got plenty of time
-The game jam will run from **November 18, 2024** to **January 1, 2025**
-
-That means you have until the end of 2024 to work on your game. For you procrastinators out there, we will accept submissions until 11:59 PM PDT on January 1st!
-
-## Getting started
-
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [beginner skillmaps](https://arcade.makecode.com/--skillmap#dino) to learn the basics of making a game!
-
-## Rules
-
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
-3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
-
-## Join the community
-
-This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team. You can hang out with the MakeCode team there too!
-
-## Tips and tricks
-
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our][traffic-jam] [past][garden-jam] [jams][ocean-jam]!
-
-[traffic-jam]: https://arcade.makecode.com/gamejam/traffic
-[ocean-jam]: https://arcade.makecode.com/gamejam/ocean
-[garden-jam]: https://arcade.makecode.com/gamejam/garden
-[harvest-moon]: https://en.wikipedia.org/wiki/Harvest_Moon_(video_game)
-[monument-valley]: https://en.wikipedia.org/wiki/Monument_Valley_(video_game)
+[The Joy of Pixels](https://arcade.makecode.com/08245-57951-20701-25721) by **Jedi** is a painting sandbox game where you can create and save artworks made out of pixels! The attention to detail in this game is what impressed our judges the most; you can press the menu button to cycle through multiple modes where you can control things like your brush size, speed, and color as well as how zoomed in the canvas is. Plus, the setting is the very definition of coziness!

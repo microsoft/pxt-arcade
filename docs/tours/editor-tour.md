@@ -8,9 +8,9 @@
 * highlight: nothing
 * location: center
 
-## Arcade Simulator
-* title: Arcade Simulator
-* description: See what your code looks like running on the simulator!
+## Game Window
+* title: Game Window
+* description: Play and test your game in the Game Window.
 * highlight: simulator
 * location: right
 

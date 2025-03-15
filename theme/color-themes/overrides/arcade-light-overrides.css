@@ -1,0 +1,5 @@
+.gallerysegment .ui.card.link.cloudprojectscard {
+    /* Differentiate from New Project button */
+    background-color: var(--pxt-colors-teal-background) !important;
+    color: var(--pxt-colors-teal-foreground) !important;
+}

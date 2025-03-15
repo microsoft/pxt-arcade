@@ -91,6 +91,13 @@ namespace pxt.editor {
 
             paramValues.forEach(value => {
                 let oldVariableName = "";
+
+                const handlerVarShadow = getShadow(value, "variables_get_reporter");
+
+                if (!handlerVarShadow) {
+                    return;
+                }
+
                 const connectedVarBlock = getChildBlock(value, "variables_get");
 
                 if (connectedVarBlock) {
@@ -101,7 +108,6 @@ namespace pxt.editor {
                     value.removeChild(connectedVarBlock);
                 }
 
-                const handlerVarShadow = getShadow(value, "variables_get_reporter");
                 const handlerVarField = getField(handlerVarShadow, "VAR");
                 const argReporterName = handlerVarField.textContent;
                 oldVariableName = oldVariableName || argReporterName;
@@ -293,6 +299,72 @@ namespace pxt.editor {
             } else if (lang === "de") {
                 pxt.U.toArray(dom.querySelectorAll("block[type=image_create]>value[name=heNacht]"))
                     .forEach(node => node.setAttribute("name", "height"));
+            }
+        }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.0.0") < 0) {
+            // At some point Sprite.z switched from being a getter/setter to a property
+            pxt.U.toArray(dom.querySelectorAll("block[type=Sprite_blockCombine_set]>field[name=property]"))
+                .forEach(node => {
+                    if (node.textContent.trim() === "Sprite.z@set") {
+                        node.textContent = "Sprite.z";
+                    }
+                });
+
+            const performOldEnumShimUpgrade = (variableType: string, blockType: string) => {
+                const variableKinds = pxt.U.toArray(dom.querySelectorAll(`variable[type=${variableType}]`));
+
+                if (variableKinds.length) {
+                    pxt.U.toArray(dom.querySelectorAll(`block[type=${blockType}]>field[name=MEMBER]`))
+                        .concat(pxt.U.toArray(dom.querySelectorAll(`shadow[type=${blockType}]>field[name=MEMBER]`)))
+                        .forEach(node => {
+                            const value = node.textContent;
+                            if (!/^\d/.test(value)) {
+                                // The correct numerical value will be in the variables
+                                for (const kind of variableKinds) {
+                                    const match = /^\d+(.*)/.exec(kind.textContent);
+                                    if (match?.[1] === value) {
+                                        node.textContent = kind.textContent;
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                }
+            }
+
+
+            // The kind field used by the legacy animation editor switched to including the numerical
+            // enum value in the field (e.g. Walking -> 0Walking)
+            performOldEnumShimUpgrade("ActionKind", "action_enum_shim");
+
+            // same for SpriteKindLegacy
+            performOldEnumShimUpgrade("SpriteKindLegacy", "spritetype");
+        }
+
+        // Added the "use system keyboard" options to the ask for number and ask for string blocks
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "2.0.18") < 0) {
+            const allPromptBlocks = U.toArray(dom.querySelectorAll("block[type=gameaskforstring]"))
+                .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskforstring]")))
+                .concat(U.toArray(dom.querySelectorAll("block[type=gameaskfornumber]")))
+                .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskfornumber]")));
+
+            for (const block of allPromptBlocks) {
+                if (!getChildNode(block, "value", "name", "useSystemKeyboard")) {
+                    const value = document.createElement("value");
+                    value.setAttribute("name", "useSystemKeyboard");
+
+                    const shadow = document.createElement("shadow");
+                    shadow.setAttribute("type", "logic_boolean");
+
+                    const field = document.createElement("field");
+                    field.setAttribute("name", "BOOL");
+                    field.textContent = "FALSE";
+
+                    shadow.appendChild(field);
+                    value.appendChild(shadow);
+                    block.appendChild(value);
+                }
             }
         }
     }
