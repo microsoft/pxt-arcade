@@ -579,7 +579,8 @@
             "ko",
             "ru",
             "zh-CN",
-            "zh-TW"
+            "zh-TW",
+            "nl"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
