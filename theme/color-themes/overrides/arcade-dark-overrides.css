@@ -5,7 +5,7 @@
 
 #langmodal #availablelocales .langoption .header {
     /* Better contrast than default, which is purple */
-    color: var(--pxt-colors-teal-background);
+    color: var(--pxt-neutral-foreground1);
 }
 
 .pxtToolbox span.blocklyTreeLabel,
@@ -50,12 +50,12 @@
 }
 
 /* For inverted buttons, it almost always looks better to have the background be dark instead of light (even though non-inverted has a light foreground) */
-button.ui.button.inverted,
-button.common-button.inverted {
+button.ui.button.inverted:not(.teaching-bubble-button),
+button.common-button.inverted:not(.teaching-bubble-button) {
     background-color: var(--pxt-neutral-background2) !important;
 }
 
-button.ui.button.inverted:hover,
-button.common-button.inverted:hover {
+button.ui.button.inverted:hover:not(.teaching-bubble-button),
+button.common-button.inverted:hover:not(.teaching-bubble-button) {
     background-color: var(--pxt-neutral-background2-hover) !important;
 }

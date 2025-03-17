@@ -622,7 +622,7 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
-        "defaultColorTheme": "arcade-legacy",
+        "defaultColorTheme": "arcade-orange",
         "highContrastColorTheme": "pxt-high-contrast",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",

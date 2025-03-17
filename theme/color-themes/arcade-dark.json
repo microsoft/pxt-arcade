@@ -1,6 +1,6 @@
 {
     "id": "arcade-dark",
-    "name": "Arcade Dark",
+    "name": "Dark",
     "weight": 60,
     "monacoBaseTheme": "vs-dark",
     "overrideFiles": [
