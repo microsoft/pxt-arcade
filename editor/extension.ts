@@ -363,7 +363,7 @@ namespace pxt.editor {
 
                     const field = document.createElement("field");
                     field.setAttribute("name", "BOOL");
-                    field.textContent = "TRUE";
+                    field.textContent = "FALSE";
 
                     shadow.appendChild(field);
                     value.appendChild(shadow);
@@ -397,18 +397,6 @@ namespace pxt.editor {
                     value.appendChild(shadow);
                     block.appendChild(value);
                 }
-
-                // alter the mutation so that the block is fully expanded. this is required
-                // to make sure that the parameters we added take effect
-                let mutation = getMutation(block);
-                if (!mutation) {
-                    mutation = document.createElement("mutation");
-                    mutation.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
-                    block.appendChild(mutation);
-                }
-
-                mutation.setAttribute("_expanded", "2");
-                mutation.setAttribute("_input_init", "true");
             }
         }
     }
