@@ -672,7 +672,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    if (!(mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A))) {  }
+    if (!(false)) {  }
     sprites.destroy(otherSprite, effects.disintegrate, 100)
     mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
 })
