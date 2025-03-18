@@ -694,7 +694,7 @@ When you're ready, click **Done** to share it with family and friends!
 ```blockconfig.global
 let globe: Sprite = null
 let scenery: Sprite = null
-let anim: Sprite = null
+//let anim: Sprite = null
 
 scene.setBackgroundColor(7)
 
