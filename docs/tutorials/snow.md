@@ -694,7 +694,7 @@ When you're ready, click **Done** to share it with family and friends!
 ```blockconfig.global
 let globe: Sprite = null
 let scenery: Sprite = null
-//let anim: Sprite = null
+let anim: Sprite = null
 
 scene.setBackgroundColor(7)
 
@@ -709,7 +709,7 @@ sprites.wrap2(function () {
 })
 
 sprites.wrap3(function () {
-    let anim = sprites.create(img`.`, SpriteKind.Player)
+    anim = sprites.create(img`.`, SpriteKind.Player)
     anim.bottom = 65
     animation.runImageAnimation(
     anim,
@@ -751,13 +751,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let scenery: Sprite = null
 let globe: Sprite = null
+let anim: Sprite = null
 scene.setBackgroundColor(7)
 globe = sprites.create(snow_imgs.globe1, SpriteKind.Player)
 globe.z = 1000
 scenery = sprites.create(snow_imgs.snow_being, SpriteKind.Player)
 scenery.top = 5
 snow.bigShortBlizzard(scenery)
-let anim = sprites.create(snow_imgs.squirrel, SpriteKind.Player)
+anim = sprites.create(snow_imgs.squirrel, SpriteKind.Player)
 anim.bottom = 65
 animation.runImageAnimation(
 anim,
