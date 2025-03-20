@@ -34,7 +34,10 @@
 /* 
  * Inverted image colors
  */
-.barcharticon {
+.barcharticon,
+.blockly-ws-search-next-btn,
+.blockly-ws-search-previous-btn,
+.blockly-ws-search-close-btn {
     filter: invert(1);
 }
 
