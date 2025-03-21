@@ -497,6 +497,12 @@
                     "typeName": "Image",
                     "icon": "image outline",
                     "defaultName": "myImage"
+                },
+                {
+                    "label": "Location",
+                    "typeName": "tiles.Location",
+                    "icon": "tree",
+                    "defaultName": "myLocation"
                 }
             ]
         },
