@@ -1,7 +1,5 @@
 # Setting the Scene
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/setting-the-scene)
-
 ## {Introduction @unplugged}
 
 The maps and levels in a game are important to make the game interesting to explore. ``||scene:Tilemaps||`` are used to create maps for the player to explore, which can even be set to prevent the player from moving past certain points.
@@ -29,7 +27,7 @@ tiles.setTilemap(tilemap`level_0`)
 
 ## {Step 3 @fullscreen}
 
-Find ``||variables:set mySprite to||`` and drag it into ``||loops:on start||`` to create a ``||sprites:Sprite||``. Open the image editor for the ``||sprites:Sprite||`` and create an image to represent it on the screen.
+Find ``||variables(sprites):set mySprite to||`` and drag it into ``||loops:on start||`` to create a ``||sprites:Sprite||``. Open the image editor for the ``||sprites:Sprite||`` and create an image to represent it on the screen.
 
 ```blocks
 tiles.setTilemap(tilemap`level_0`)
@@ -55,7 +53,7 @@ let mySprite = sprites.create(img`
 
 ## {Step 4 @fullscreen}
 
-Find ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on start||`` after ``||variables:set mySprite to||``.
+Find ``||controller:move mySprite with buttons||`` and drag it into ``||loops:on start||`` after ``||variables(sprites):set mySprite to||``.
 
 This lets the player move the character around the map that is displayed on the screen. However, there is one issue; the player can move straight through the beautiful tiles we designed! This is fixed by changing all of them to be ``||scene:Wall||`` tiles.
 

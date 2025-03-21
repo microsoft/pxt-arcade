@@ -7,7 +7,7 @@ There's more to explore with our clicker game.
 
 Let's create a spray of stars that flies toward the stage as we click.
 
-![Click away](/static/skillmap/star/star3.gif "You're a star!" )
+![Click away](/static/skillmap/star-sing2/star3.gif "You're a star!" )
 
 
 ## {Step 2}

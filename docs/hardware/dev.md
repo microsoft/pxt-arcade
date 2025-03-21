@@ -1,5 +1,7 @@
 # Arcade Hardware Development
 
+![Schematics screenshot](/static/hardware/minipcb-framed.png)
+
 ## Creating a new board based on a supported MCU
 
 * [Creating new hardware](/hardware/adding)

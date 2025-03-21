@@ -28,17 +28,32 @@ The color values in the default palette for the MakeCode UI are listed here:
 
 ![Default color chart](/static/developer/default-colors.jpg)
 
-### Changing the default palette
+### User palette settings
+
+Users can change the color palette used for their projects in the Asset Editor under the **Asset** tab. Pressing the **Colors** button will display the Color Palette window. Several predefined palettes are available to choose from. The user can create a new "custom" palette if desired and pick the 15 colors to fill it. This palette will be custom to the project and can be set as the default palette by clicking **Apply**.
+
+![User color palette settings](/static/developer/color-palette-window.png)
+
+### Changing the default palette manually
+
+A manual method of changing the default palette is described in this section. This is useful if you want to copy in all of the colors at once without entering each color in the Color Palette window.
+
+### ~ tip
+
+#### Changing colors from a program
 
 If you intend to use the MakeCode blocks editor to create or edit images
 but would like to change the colors, it is recommended
 that you set a default palette so that your sprites render correctly
 in the image editor/blocks.
 
-To change the default palette of a project, go into the project
-settings in the MakeCode editor (under the cogwheel in the upper right).
-Once there, click "Edit settings as text" and add a `"palette"` entry
-like so:
+### ~
+
+To change the default palette of a project, select the **(1) - JavaScript** tab at the top of the editor to edit project code in text. On the left of the editor's workspace is the **(2) - Explorer** control for the files in your project. Expand the Explorer control and find the `pxt.json` file. Click on this file and then go back to the workspace and click on the **(3) - Edit Settings As text** button.
+
+![Edit project settings as text](/static/developer/edit-settings.png)
+
+You can now edit your project settings. Add a `"palette"` entry with your color values like this:
 
 ```JSON
 {
@@ -74,14 +89,7 @@ like so:
 }
 ```
 
-### ~ hint
-
-#### Mapped colors
-
-Note that it doesn't matter what you set as the first color in the array because
-it always maps to transparency. Be sure that the palette array you enter has **exactly** 16 colors.
-
-### ~
+If a `"palette"` entry already exists, it's possible that a another palette was applied previously in the Color Palette editor. You can set a new palette by overwriting the previous entry. You will have 15 colors that you set for color entries `1` - `15`. The first color, entry `0`, is reserved for transparency and can remain set as `#000000`. Be certain that there are **exactly** 16 color entries, the first is the transparency color and the other 15 colors are the custom colors.
 
 ### Changing the palette at runtime
 

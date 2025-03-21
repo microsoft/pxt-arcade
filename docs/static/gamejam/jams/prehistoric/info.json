@@ -1,0 +1,532 @@
+{
+    "rules": {
+        "path": "/static/gamejam/jams/prehistoric/rules.md"
+    },
+    "featured": [
+        {
+            "id": "_Rf7Ka6f5tMPh",
+            "title": "Sent Back in Time!",
+            "author": "Kiwiphoenix364",
+            "description": "Build contraptions to explore a prehistoric world!"
+        },
+        {
+            "id": "S53740-96945-19140-48669",
+            "title": "Prehistoric Explorer",
+            "author": "catstudio Games",
+            "description": "Travel back in time and dodge dinosaurs while trying to get home in this adventure game!"
+        },
+        {
+            "id": "S75139-85271-35208-66455",
+            "title": "Dinosaur Hunting",
+            "author": "Sayem",
+            "description": "Fight dinosaurs and ghosts in this classic SHMUP game!"
+        },
+        {
+            "id": "S63195-99979-78338-71563",
+            "title": "Prehistoric Dan",
+            "author": "Maketendo",
+            "description": "Head back in time to scan dinosaurs and help your boss not get fired!"
+        },
+        {
+            "id": "S01748-68721-30836-46553",
+            "title": "Dino Escape",
+            "author": "Octodemon6611",
+            "description": "Play as a dinosaur attempting to escape the aftermath of the meteor extinction event!"
+        },
+        {
+            "id": "S06834-22429-91300-47706",
+            "title": "S&A - Prechistoric World",
+            "author": "Lisiu23",
+            "description": "Find the missing battery for your time machine in this sidescrolling adventure game!"
+        },
+        {
+            "id": "S77904-05588-07721-68006",
+            "title": "DinoCraft",
+            "author": "jnegative",
+            "description": "Break blocks and build structures in this MineCraft inspired platformer!"
+        },
+        {
+            "id": "_36chFUaaYgrY",
+            "title": "Dinosaur Trials",
+            "author": "ChimbroDaPro",
+            "description": "Play as an ancient race of dinosaurs trying to escape from a monotone world in this take on a classic reaction game!"
+        },
+        {
+            "id": "S00177-35633-77859-17379",
+            "title": "Excavation Excursion",
+            "author": "Blobbey",
+            "description": "Find fossils, make money, buy upgrades, and even collect pets in this paleontology game!"
+        },
+        {
+            "id": "S83557-52602-39655-60991",
+            "title": "ROCK GOES!",
+            "author": "windfix y Jacobo",
+            "description": "Play as a mother dinosaur protecting her eggs from attackers in this beautiful arcade game!"
+        },
+        {
+            "id": "S93197-18791-04197-56384",
+            "title": "3D dinosaur model",
+            "author": "Brohann",
+            "description": "A 3D model of a dinosaur running on MakeCode Arcade!?!?"
+        },
+        {
+            "id": "_JMMdwyUFbghf",
+            "title": "Evolve-Adapt-Die (EVO)",
+            "author": "bluebird77",
+            "description": "Simulate the evolution process in this creative platforming game where you adapt new abilities each time you die!"
+        },
+        {
+            "id": "S61823-59071-17256-01643",
+            "title": "Dino's Great adventure",
+            "author": "Bifrost22",
+            "description": "Play as a mother dino finding a place to lay her egg just after the meteor struck the earth 65 million year ago in this platformer game!"
+        },
+        {
+            "id": "S00497-98855-08431-02510",
+            "title": "Dinosaur Race",
+            "author": "CDG studios"
+        },
+        {
+            "id": "S83037-43362-47922-80639",
+            "title": "Pizza party",
+            "author": "Shummel1234"
+        },
+        {
+            "id": "_MFj4H3go0c8x",
+            "title": "Basketball dino",
+            "author": "Ajay"
+        },
+        {
+            "id": "S88299-91039-96278-59375",
+            "title": "cave crawler",
+            "author": "cool axolotl"
+        },
+        {
+            "id": "S41368-45650-55169-52647",
+            "title": "Dino Rescue Simulator",
+            "author": "Crazymandanger"
+        },
+        {
+            "id": "S91139-68327-46511-96126",
+            "title": "Dino Food",
+            "author": "Mrsussybakka69"
+        },
+        {
+            "id": "S57998-42651-88801-76428",
+            "title": "Dinosaur Sim",
+            "author": "Dinogamer46"
+        },
+        {
+            "id": "S92564-43087-78761-26954",
+            "title": "Jewel Raider",
+            "author": "RIDUAN"
+        },
+        {
+            "id": "_7rjJ2pVerOqF",
+            "title": "dino jump",
+            "author": "komodo gamer"
+        },
+        {
+            "id": "_de613bV2Jg2Y",
+            "title": "Dino Dodger",
+            "author": "Markus. M"
+        },
+        {
+            "id": "S44542-43591-57876-82989",
+            "title": "STACK OF BONES",
+            "author": "TAG40"
+        },
+        {
+            "id": "S40718-73839-45029-89530",
+            "title": "DINOSAUR DRAW",
+            "author": "TAG40"
+        },
+        {
+            "id": "S71593-00422-52615-39423",
+            "title": "Dino Run",
+            "author": "TheOminousWolf"
+        },
+        {
+            "id": "S44197-98453-80753-47862",
+            "title": "Prehistoric Corgi",
+            "author": "Alyssa D."
+        },
+        {
+            "id": "S04454-38117-13859-17213",
+            "title": "euborius jam",
+            "author": "enternate"
+        },
+        {
+            "id": "S62075-72324-67341-78163",
+            "title": "feed the dino",
+            "author": "flying tigers"
+        },
+        {
+            "id": "_K8d8fTMEfLHH",
+            "title": "GOOGLE DINO",
+            "author": "volcane"
+        },
+        {
+            "id": "S18756-80730-67328-30795",
+            "title": "GAME OF DINOSAUR LIFE",
+            "author": "TAG40"
+        },
+        {
+            "id": "S54288-67017-48963-92615",
+            "title": "raptor run",
+            "author": "addam78299"
+        },
+        {
+            "id": "S29956-97631-02781-67730",
+            "title": "TURN THE WORLD AROUND",
+            "author": "TAG40"
+        },
+        {
+            "id": "_Px3VbuDoVX1k",
+            "title": "Stone Maze",
+            "author": "Arthur"
+        },
+        {
+            "id": "S75313-87258-54198-25216",
+            "title": "Bouncing Bones",
+            "author": "Henry W."
+        },
+        {
+            "id": "_T0iYgMXRD838",
+            "title": "Dino Crash",
+            "author": "Da Footy Gamer"
+        },
+        {
+            "id": "S50359-03714-75042-35584",
+            "title": "Dino Hordes",
+            "author": "Rubberducky27"
+        },
+        {
+            "id": "S83868-79213-36176-54552",
+            "title": "Dino Run",
+            "author": "SirFinnShark11"
+        },
+        {
+            "id": "_FuzibW9FK2go",
+            "title": "Jokin' Around",
+            "author": "Da Footy Goat"
+        },
+        {
+            "id": "S39241-48129-63984-19027",
+            "title": "The Time Machine",
+            "author": "StarFlamingo"
+        },
+        {
+            "id": "S51324-21010-97078-56785",
+            "title": "Prehistoric Game",
+            "author": "MrNerdyBoy"
+        },
+        {
+            "id": "S84875-18662-53440-94175",
+            "title": "você e sua amiginha quer subir na minha motinha",
+            "author": "heitorsinho"
+        },
+        {
+            "id": "_eqr7RUDMqWkv",
+            "title": "Make the fier grow!",
+            "author": "Silas M"
+        },
+        {
+            "id": "_F1TUce6X0UKH",
+            "title": "pizza paRTY",
+            "author": "TBOYGAMER"
+        },
+        {
+            "id": "_VvP8rcctE0V7",
+            "title": "cave space (part 1 of time space)",
+            "author": "Crafty studios"
+        },
+        {
+            "id": "S67688-93949-71309-08294",
+            "title": "Dug The Dino",
+            "author": "WinterDrop91"
+        },
+        {
+            "id": "S54613-13573-98885-19446",
+            "title": "Jet-rexs",
+            "author": "A.Z.G 2000"
+        },
+        {
+            "id": "S27019-94662-98583-66440",
+            "title": "Impact",
+            "author": "Scrubyboat"
+        },
+        {
+            "id": "_YkrVmUfXLYyE",
+            "title": "XDDD",
+            "author": "Marcelo"
+        },
+        {
+            "id": "S39872-72595-51242-72043",
+            "title": "the time machine",
+            "author": "Ert34"
+        },
+        {
+            "id": "S53961-44875-79049-49366",
+            "title": "Tierra de Dinosaurios",
+            "author": "Valencarbo07"
+        },
+        {
+            "id": "S62927-25744-03598-91135",
+            "title": "[Prehistoric] Bat Shooter",
+            "author": "Ad-Bro"
+        },
+        {
+            "id": "_VWL50MeMPY9u",
+            "title": "Jurrasic Period",
+            "author": "Spike"
+        },
+        {
+            "id": "_Dm4FFpPy342K",
+            "title": "Alien chase 1",
+            "author": "Thexenx"
+        },
+        {
+            "id": "S05160-64105-20464-20464",
+            "title": "DinoZoo",
+            "author": "sylvancircle"
+        },
+        {
+            "id": "S30758-91092-88470-37957",
+            "title": "DINO ATTACK",
+            "author": "Mr.DogeMaster"
+        },
+        {
+            "id": "_A5T6atDhi7ex",
+            "title": "A Dino fight",
+            "author": "Archie Walker"
+        },
+        {
+            "id": "S97616-63010-76202-62018",
+            "title": "dino maze",
+            "author": "L.A.B"
+        },
+        {
+            "id": "S55171-54576-68580-17290",
+            "title": "Dino Dig",
+            "author": "Jack_Hack11"
+        },
+        {
+            "id": "_PitU7u8U7Ybs",
+            "title": "Tiny's Tiny Adventure",
+            "author": "Shadow_Tiger"
+        },
+        {
+            "id": "_bkyPzJ0X7Amv",
+            "title": "解救小恐龙",
+            "author": "Arir"
+        },
+        {
+            "id": "S07311-55258-33150-80751",
+            "title": "3D Maze",
+            "author": "Wyatt"
+        },
+        {
+            "id": "S73353-09357-31598-48056",
+            "title": "dino game",
+            "author": "Martin"
+        },
+        {
+            "id": "_HHf3yYU2E1e6",
+            "title": "Ye Olde Mountain",
+            "author": "Teddy B."
+        },
+        {
+            "id": "S81613-64931-44678-94724",
+            "title": "Booga Bruh",
+            "author": "PixelDoodle"
+        },
+        {
+            "id": "S97426-93889-23037-06707",
+            "title": "A Supernova Surrounded By Stars",
+            "author": "Snuggly Jewelsies"
+        },
+        {
+            "id": "S58499-28409-67513-26487",
+            "title": "Dino Button",
+            "author": "Mushfiq"
+        },
+        {
+            "id": "S95209-49718-54933-16343",
+            "title": "Dino Blast",
+            "author": "InvalidProject99"
+        },
+        {
+            "id": "S74242-80212-01982-22938",
+            "title": "Animate it!",
+            "author": "Andy"
+        },
+        {
+            "id": "_gRvTvTe7yevk",
+            "title": "gem hunt",
+            "author": "P.A."
+        },
+        {
+            "id": "S03528-76201-18358-43020",
+            "title": "Player vs Dinosaur",
+            "author": "Govindo"
+        },
+        {
+            "id": "S01366-00610-28970-64620",
+            "title": "Jurassic Park",
+            "author": "Isaac"
+        },
+        {
+            "id": "S13029-49096-56602-54759",
+            "title": "Dino Run",
+            "author": "Kat"
+        },
+        {
+            "id": "S98598-62144-13098-87004",
+            "title": "Pterodactyl Airlines",
+            "author": "Jupiter"
+        },
+        {
+            "id": "_V64Kc709mT7f",
+            "title": "Prehistoric Fishing",
+            "author": "Ethan C., Michael T., and Mr. Hartung"
+        },
+        {
+            "id": "S34588-99263-71409-55447",
+            "title": "Fossil Collector",
+            "author": "H D-D"
+        },
+        {
+            "id": "S87080-42073-72400-88003",
+            "title": "dino run",
+            "author": "kian"
+        },
+        {
+            "id": "S91177-75177-06637-09421",
+            "title": "dino dinner",
+            "author": "moheinaesh v."
+        },
+        {
+            "id": "S34094-21292-22109-55013",
+            "title": "Strange Adventure",
+            "author": "SuperShorif"
+        },
+        {
+            "id": "S70361-29853-57470-45936",
+            "title": "Dinos Adventure",
+            "author": "André R."
+        },
+        {
+            "id": "_a92CraYsPhzA",
+            "title": "crystalin demo",
+            "author": "Ruslan S."
+        },
+        {
+            "id": "S56126-04938-38257-84656",
+            "title": "Dinotopia",
+            "author": "hellowooooooooorld"
+        },
+        {
+            "id": "S05111-65714-60083-19727",
+            "title": "The true history of the dinos.",
+            "author": "DiegoQQ"
+        },
+        {
+            "id": "S36076-18712-27888-97490",
+            "title": "Keep On Digging!",
+            "author": "L-BO2O!"
+        },
+        {
+            "id": "_Uuk6hX6KpcvH",
+            "title": "Project Dinosaur",
+            "author": "Sager"
+        },
+        {
+            "id": "S22784-00469-65227-38723",
+            "title": "Dino Asteroid Survival!",
+            "author": "Ben K."
+        },
+        {
+            "id": "S62194-56249-79042-50863",
+            "title": "Dino Flyer 3000",
+            "author": "Lolly L."
+        },
+        {
+            "id": "S35830-25612-08560-34502",
+            "title": "Dino Survivor",
+            "author": "Oscar_Cubes"
+        },
+        {
+            "id": "_9wPeUXRAPesT",
+            "title": "A pale day",
+            "author": "Carpet 36"
+        },
+        {
+            "id": "S47513-06009-32854-09562",
+            "title": "Dino Slam",
+            "author": "Lens_arcade"
+        },
+        {
+            "id": "S63347-80589-46938-87779",
+            "title": "running man and car",
+            "author": "aonymous123"
+        },
+        {
+            "id": "_fhxLXYU6udhz",
+            "title": "Ice Age Savior",
+            "author": "RobbyZero"
+        },
+        {
+            "id": "S74415-34309-39700-62396",
+            "title": "alive again!",
+            "author": "GuhhanSP"
+        },
+        {
+            "id": "S24155-16075-13221-53173",
+            "title": "Dino platformer",
+            "author": "Rh0eR0"
+        },
+        {
+            "id": "S16353-47569-22918-24916",
+            "title": "Adventure Tyranosaurus",
+            "author": "Nana and Pandi"
+        },
+        {
+            "id": "S78295-10042-76912-97419",
+            "title": "Search For Fossils",
+            "author": "Aztec Prince"
+        },
+        {
+            "id": "S34132-61212-68917-75436",
+            "title": "Data Collector",
+            "author": "Arya M."
+        },
+        {
+            "id": "S26505-38913-95501-17307",
+            "title": "Dinochrome",
+            "author": "Mario I."
+        },
+        {
+            "id": "_deV8KR7dp3f6",
+            "title": "Stone Age Saga: The Final Frontier",
+            "author": "Shrimp-scampie-the-Cat"
+        },
+        {
+            "id": "S95487-02099-29288-46784",
+            "title": "Cretaceous Cloning",
+            "author": "Hackerman"
+        },
+        {
+            "id": "_deuWiy6qTWwq",
+            "title": "Dinosaur Research",
+            "author": "skobeloff"
+        },
+        {
+            "id": "_FbaEf71tqeFi",
+            "title": "Fossil Clicker",
+            "author": "UnsignedArduino"
+        }
+    ],
+    "start": "2023-7-3 00:00:01 GMT-0700",
+    "end": "2023-7-31 23:59:59 GMT-0700"
+}

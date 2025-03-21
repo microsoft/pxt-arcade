@@ -5,7 +5,7 @@
 
 Let's make a clicker game starring the cast of Sing 2!
 
-![Click away](/static/skillmap/star/star1.gif "Click and buy bigger clickers" )
+![Click away](/static/skillmap/star-sing2/star1.gif "Click and buy bigger clickers" )
 
 
 ## {Step 2}
@@ -54,7 +54,7 @@ image editor and click the **My Assets** tab.
 
 - :mouse pointer: Choose the **stage** background and click **Done**.
 
-![The world is a stage](/static/skillmap/star/stage.png "Find your stage" )
+![The world is a stage](/static/skillmap/star-sing2/stage.png "Find your stage" )
 
 
 

@@ -14,13 +14,14 @@
         "packages": true,
         "publishing": true,
         "githubPackages": true,
+        "showBadges": true,
         "cloudProviders": {
             "github": {
                 "id": "github",
                 "name": "GitHub",
                 "icon": "/static/providers/github-mark.png",
                 "identity": false,
-                "order": 3
+                "order": 4
             },
             "microsoft": {
                 "id": "microsoft",
@@ -37,6 +38,14 @@
                 "identity": true,
                 "redirect": true,
                 "order": 2
+            },
+            "clever": {
+                "id": "clever",
+                "name": "Clever",
+                "icon": "/static/providers/clever-logo.png",
+                "identity": true,
+                "redirect": true,
+                "order": 3
             }
         }
     },
@@ -90,6 +99,7 @@
         "libs/mixer---rp2040",
         "libs/mouse",
         "libs/mqtt",
+        "libs/multiplayer",
         "libs/net",
         "libs/net-game",
         "libs/palette",
@@ -108,17 +118,21 @@
         "libs/settings",
         "libs/settings---files",
         "libs/sevenseg",
+        "libs/shader",
         "libs/sprite-scaling",
         "libs/storyboard",
         "libs/template",
-        "libs/thermometer"
+        "libs/thermometer",
+        "libs/browser-events"
     ],
     "staticpkgdirs": {
         "base": [
             "libs/hw",
             "libs/hw---n3",
+            "libs/hw---n4",
             "libs/hw---samd51",
-            "libs/hw---stm32f401"
+            "libs/hw---stm32f401",
+            "libs/hw---rp2040"
         ],
         "extensions": [
             "libs/accelerometer",
@@ -138,6 +152,7 @@
             "libs/servo",
             "libs/settings",
             "libs/sevenseg",
+            "libs/shader",
             "libs/thermometer"
         ]
     },
@@ -468,6 +483,9 @@
         "functionBlocks": true,
         "breakBlock": true,
         "continueBlock": true,
+        "pauseUntilBlock": {
+            "category": "loops"
+        },
         "functionsOptions": {
             "useNewFunctions": true,
             "extraFunctionEditorTypes": [
@@ -514,6 +532,7 @@
         "logo": "/static/logo.svg",
         "docsLogo": "/static/logo.svg",
         "cardLogo": "/static/logo.png",
+        "appLogo": "/static/icons/favicon.ico",
         "portraitLogo": "/static/logo.svg",
         "footerLogo": "/static/logo.svg",
         "organization": "Microsoft MakeCode",
@@ -550,13 +569,19 @@
         "selectLanguage": true,
         "availableLocales": [
             "en",
+            "ar",
+            "de",
+            "es-ES",
+            "es-MX",
+            "fr",
+            "ga-IE",
+            "it",
+            "ja",
+            "ko",
+            "ru",
             "zh-CN",
             "zh-TW",
-            "de",
-            "fr",
-            "ja",
-            "es-ES",
-            "es-MX"
+            "nl"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
@@ -567,11 +592,11 @@
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": {
-            "imageUrl": "/static/hero-gallery/skillmap.png",
-            "name": "Start Skillmap",
-            "url": "https://aka.ms/ArcadeSkillmap",
-            "buttonLabel": "Start Skillmap",
-            "description": "New? Start here!",
+            "imageUrl": "/static/hero-gallery/multiplayer-banner.png",
+            "name": "Multiplayer Games!",
+            "url": "/--multiplayer",
+            "buttonLabel": "Try Now",
+            "description": "Multiplayer Games!",
             "cardType": "link"
         },
         "homeScreenHeroGallery": "/hero-banner",
@@ -583,10 +608,10 @@
         },
         "blocklyOptions": {
             "grid": {
-                "spacing": 20,
-                "length": 100,
-                "colour": "rgba(107, 79, 118, 0.10)",
-                "snap": true
+                "spacing": 30,
+                "length": 1,
+                "colour": "rgb(189, 195, 199)",
+                "snap": false
             }
         },
         "blockColors": {
@@ -598,16 +623,19 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
+        "defaultColorTheme": "arcade-orange",
+        "highContrastColorTheme": "pxt-high-contrast",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
         "crowdinProject": "makecode",
         "monacoColors": {
-            "editor.background": "#FEF3E0"
+            "editor.background": "#F8FAFC"
         },
         "monacoFieldEditors": [
             "image-editor",
             "tilemap-editor",
-            "soundeffect-editor"
+            "soundeffect-editor",
+            "music-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
@@ -645,15 +673,34 @@
         "assetEditor": true,
         "immersiveReader": true,
         "tutorialCodeValidation": true,
-        "multiplayerShareButton": true,
-        "songEditor": true
+        "multiplayer": true,
+        "songEditor": true,
+        "shareToKiosk": true,
+        "tours": {
+            "editor": "/tours/editor-tour"
+        },
+        "showOpenInVscode": true,
+        "hideReplaceMyCode": true,
+        "timeMachine": true,
+        "timeMachineDiffInterval": 600000,
+        "timeMachineSnapshotInterval": 1800000,
+        "feedbackEnabled": true,
+        "ocvAppId": 50315,
+        "ocvFrameUrl": "https://admin-ignite.microsoft.com"
     },
     "queryVariants": {
-        "skillsMap=1": {
+        "skillmap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
                 "allowParentController": true,
-                "shareFinishedTutorials": false
+                "shareFinishedTutorials": false,
+                "hideReplaceMyCode": false
+            }
+        },
+        "teachertool=1": {
+            "appTheme": {
+                "hideMenuBar": true,
+                "workspaceSearch": true
             }
         }
     },
@@ -663,6 +710,7 @@
         }
     ],
     "uploadDocs": true,
+    "noSimShims": true,
     "defaultBadges": [
         {
             "id": "skillmap-completion-save the forest",
@@ -694,7 +742,7 @@
             "lockedImage": "/static/badges/badge-jungle-locked.png",
             "sourceURL": "https://www.makecode.com/api/md/arcade/skillmap/jungle",
             "type": "skillmap-completion",
-            "title": "Jungle Monkey"
+            "title": "Jungle Jump"
         },
         {
             "id": "skillmap-completion-space",

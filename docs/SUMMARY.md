@@ -53,6 +53,7 @@
     * [Save](/save)
     * [Sign In](/identity/sign-in)
     * [Cloud Sync](/identity/cloud-sync)
+    * [VS Code](/vscode)
 
 ## Hardware
 
@@ -64,3 +65,12 @@
     * [Shoebox Controller](/hardware/shoebox-controller)
     * [Dev](/hardware/dev)
     * [Debug connector](/hardware/dbg)
+
+## Developers #devs
+
+* Developers
+    * [Command Line Interface](/cli)
+    * [Visual Studio Code support](/code)
+    * [Blocks Embed](/blocks-embed)
+    * [Art, images, colors](/developer/images)
+    * [Sounds](/developer/sound)

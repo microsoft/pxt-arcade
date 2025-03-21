@@ -20,7 +20,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ## {Step 2}
 
 Inside the ``||sprites:on created||`` block, place a ``||sprites:set velocity||`` block.
-Drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite inside of ``||sprites:set velocity||``.
+Drag the ``||variables(noclick):sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite inside of ``||sprites:set velocity||``.
 
 ```blocks
 sprites.onCreated(SpriteKind.Enemy, function (sprite) {
@@ -42,7 +42,7 @@ sprites.onCreated(SpriteKind.Enemy, function (sprite) {
 ## {Step 4}
 
 Place a ``||sprites:set auto destroy||`` block below the ``||sprites:set velocity||`` block (this is called a sprite **flag**).
-Just like before, drag the ``||variables:sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite for ``||sprites:set auto destroy||``.
+Just like before, drag the ``||variables(noclick):sprite||`` variable from the ``||sprites:on created||`` block and use it as the sprite for ``||sprites:set auto destroy||``.
 
 
 ```blocks

@@ -1,13 +1,14 @@
 # Going Further
+### @explicitHints true
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
-In this tutorial, we'll customize your Monster Racer game to make it even more special.
+This tutorial will help you customize your Monster Racer game to make it even more special.
 
 ![Animating your truck.](/static/skillmap/racer/racer3.gif "Look what we're about to make!")
 
 
-## 2. Review
+## {2. Review}
 
 
 Take a look at the code that's already in your workspace.
@@ -23,135 +24,160 @@ There should also be three **overlap** containers:
 Click "Replace my code" below to replace the code in your workspace with recommended code.
 
 
-## 3. Keep Rollin'
+## {3. Keep Rollin'}
 
-Let's add a block to animate your truck.
+Add a block to animate your truck.
 
 ---
 
-- :mouse pointer: Click the **Advanced** label in the toolbox to reveal the ``||animation:Animation||`` category.
+- :chevron down: Click the **Advanced** label in the toolbox to reveal the ``||animation:Animation||`` category.
 
-- :sync: Drag the <br/>
-``||animation: animate [mySprite]||`` <br/>
- block into the end of the ``||loops:on start||`` container.
+- :sync: Drag the<br/>
+``||animation:animate [truck]||``<br/>
+block into the end of the <br/>
+``||loops(noclick):on start||`` container.
 
 
+#### ~ tutorialhint
 
 ```blocks
-
-tiles.setTilemap(tilemap`level1`)
-scene.setBackgroundImage(assets.image`background`)
-let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
-mySprite.ay = 500
-mySprite.vx = 100
-scene.cameraFollowSprite(mySprite)
+let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.ay = 500
+truck.vx = 100
+scene.cameraFollowSprite(truck)
 //@highlight
-animation.runImageAnimation(
-mySprite,
-[img`
-    .
-    `],
-500,
-false
-)
+animation.runImageAnimation(truck, [img`.`], 500, true)
 ```
 
-## 4. Trucking Along
+## {4. Trucking Along}
 
 Choose your truck animation.
 
 ---
 
-- :paint brush: Click the empty grey square to choose a truck animation from **My Assets**.
+- :paint brush: Click the empty animation image square to choose a truck animation from **My Assets**.
 
-- :mouse pointer: When the truck is selected, the interval should fill automatically, but you can replace it with a larger number if you want the animation to run more slowly.
 
-- :mouse pointer: Toggle **loop** to `<ON>` to keep the animation playing over and over for the whole game.
+#### ~ tutorialhint
 
 ```blocks
-tiles.setTilemap(tilemap`level1`)
-scene.setBackgroundImage(assets.image`background`)
-let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
-mySprite.ay = 500
-mySprite.vx = 100
-scene.cameraFollowSprite(mySprite)
+let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.ay = 500
+truck.vx = 100
+scene.cameraFollowSprite(truck)
 //@highlight
-animation.runImageAnimation(
-mySprite,
-assets.animation`truck2 animated`,
-100,
-true
-)
+animation.runImageAnimation(truck, assets.animation`truck2 animated`, 100, true)
 ```
 
-## 5. Play it Again
+## {5. Play it Again}
 
-Remember to play your game again each time you make a change.
+- :binoculars: Remember to keep looking back to the game window to see how your game changes with each bit of code you add.
 
 Can you see the effects of the code you just wrote?
 
 
-## 6. Cave Design
+## {6. Sound Effects}
 
-Finally, you can edit the cave to have your own set of pits and spikes!
+**Add sound effects each time you jump.**
 
 ---
 
-- :mouse pointer: Click the tile shown in the ``||scene:set tilemap to [ ]||`` block already in your program.
-
-The current tilemap will open in the **Tilemap Editor**.
-
-![Opening the tilmap](/static/skillmap/racer/racer-map.gif "Want to edit the tilemap?")
-
+- :headphones: From ``||music: Music||``, grab<br/>
+``||music: play [sound knock] [in background]||``<br/>
+and drag it into **the beginning** of the<br/>
+``||controller(noclick):on [A] button [pressed]||`` container that's already in the workspace.
 
 
-## 7. Cave Walls
-
-Click the **wall** icon to solidify tiles.
-
-With the wall icon highlighted, you can select the eraser tool to remove walls, too!
-
-![Add or remove walls](/static/skillmap/racer/racer-walls.gif "Use the pencil to draw walls and the eraser to remove them. ")
+#### ~ tutorialhint
 
 
+```blocks
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+let truck: Sprite = null
+
+    //@highlight
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.InBackground)
+    truck.vy = -200
+})
+```
 
 
-## 8. Rearranging
+## {7. Play it Again}
 
-Click the **tile** icon to load your pencil tool with the tiles you want to add to the map.
-
-With the tile icon highlighted, you can select the eraser tool to remove tiles, too!
-
-The tiles for this game are listed under **My Tiles**.
-
-![Change tiles](/static/skillmap/racer/racer-custom.gif "Use the tile gallery to select tiles to add to the map.")
-
-
-## 9. Add More Code
-
-Remember, if you add other tiles to your game, you'll also need to add more <br/>
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
-containers to activate them!
+- :binoculars: Try your game again. Do you hear the sound each time you jump?
 
 
 
-## Finale
+## {8. More Sound Effects}
+
+**Add more sounds.**
+
+---
+
+- :headphones: Go back to the ``||music: Music||`` category and look at some of the other blocks. <br/><br/>Which one would you choose as background music for your game?
+
+- :mouse pointer: To add your music so that it plays from the beginning of your game, add it to your
+<br/>``||loops(noclick): on start||`` container.
+
+```blockconfig.local
+music.play(music.createSong(), music.PlaybackMode.LoopingInBackground)
+```
+
+
+#### ~ tutorialhint
+
+
+```blocks
+//@highlight
+music.play(music.createSong(hex`0078000408020100001c00010a006400f4016400000400000000000000000000000000050000040600000004000129`), music.PlaybackMode.LoopingInBackground)
+let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.ay = 500
+truck.vx = 100
+scene.cameraFollowSprite(truck)
+animation.runImageAnimation(truck, assets.animation`truck2 animated`, 100, true)
+```
+
+
+## {9. Play it Again}
+
+- :binoculars: Once you've added all of your sound effects, play your game through one last time.  Can you make it all the way to the end?
+
+
+
+## {Finale}
 
 Excellent!
 
-Try playing your game in the full screen game window – jump over obstacles and make it to the finish line!
+When you're finished, click **Done** to return to the skillmap and share your game with family and friends!
 
-When you're finished, click **Done** to finish the skillmap and share your game with family and friends.
 
+~hint How do I share my game?💡
+
+---
+
+**Want to share your project?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/racer/share.png )
+
+hint~
+
+
+
+```blockconfig.global
+scene.cameraFollowSprite(truck)
+let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.vx = 100
+scene.cameraFollowSprite(truck)
+animation.runImageAnimation(truck, [img`.`], 500, true)
+music.play(music.melodyPlayable(music.knock), music.PlaybackMode.InBackground)
+```
 
 
 ```template
-
-scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
-    game.over(true)
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        mySprite.vy = -200
+        truck.vy = -200
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
@@ -162,84 +188,56 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, lo
     game.over(false)
 })
 
-tiles.setTilemap(tilemap`level1`)
-scene.setBackgroundImage(assets.image`background`)
-let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
-mySprite.ay = 500
-mySprite.vx = 100
-scene.cameraFollowSprite(mySprite)
+scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
+    game.over(true)
+})
+
+let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.ay = 500
+truck.vx = 100
+scene.cameraFollowSprite(truck)
 ```
+
 
 ```ghost
 scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
     game.over(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
-        mySprite.vy = -200
-    }
+    truck.vy = -200
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.InBackground)
 })
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    speed += -50
-    mySprite.vx = speed
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    speed += 50
-    mySprite.vx = speed
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
     game.over(false)
 })
-let mySprite: Sprite = null
-let speed = 0
-speed = 100
-scene.setBackgroundColor(9)
-scene.setBackgroundImage(assets.image`background`)
-tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`truck3`, SpriteKind.Player)
-mySprite.ay = 400
-mySprite.vx = speed
-scene.cameraFollowSprite(mySprite)
+scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
+    music.play(music.createSoundEffect(WaveShape.Noise, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+    game.over(false)
+})
+let truck: Sprite = null
+music.setVolume(20)
+music.play(music.createSong(hex`0078000408020100001c00010a006400f4016400000400000000000000000000000000050000040600000004000129`), music.PlaybackMode.LoopingInBackground)
+music.play(music.melodyPlayable(music.knock), music.PlaybackMode.InBackground)
+truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.ay = 500
+truck.vx = 100
+scene.cameraFollowSprite(truck)
 animation.runImageAnimation(
-mySprite,
-assets.animation`truck2 animated`,
+truck,
+assets.animation`truck1 animated`,
 100,
 true
 )
-scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    let myEnemy: Sprite = null
-    if (mySprite.isHittingTile(CollisionDirection.Left)) {
-        mySprite.x += 0
-    }
-    myEnemy.follow(mySprite)
-    mySprite.setFlag(SpriteFlag.AutoDestroy, false)
-    info.setScore(0)
-    info.changeScoreBy(1)
-    info.startCountdown(10)
-})
-info.onCountdownEnd(function () {
-    info.stopCountdown()
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
-})
-info.onLifeZero(function () {
-    info.setLife(3)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
-    scene.cameraShake(4, 500)
-    effects.confetti.startScreenEffect()
-    effects.confetti.endScreenEffect()
-    tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 0))
-})
-game.onUpdateInterval(500, function () {
-    game.splash("")
-    music.baDing.play()
-})
+tiles.setTilemap(tilemap`level1`)
 ```
 
+
+
+
+
 ```customts
+tiles.setTilemap(tilemap`level1`)
+scene.setBackgroundImage(assets.image`background`)
 for (let value of tiles.getTilesByType(assets.tile`acid`)) {
     tiles.setWallAt(value, false)
 }

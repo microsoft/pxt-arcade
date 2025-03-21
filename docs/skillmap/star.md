@@ -2,11 +2,11 @@
 * name: Talent Show
 * description: Learn to create a clicker game and quickly rack up the points as you applaud the most talented animals.
 * infoUrl: skillmap/educator-info/star-map-info
-* bannerUrl: /static/skillmap/star/star4.gif
+* bannerUrl: /static/skillmap/star/star4-trimmed.gif
 * backgroundurl: /static/skillmap/backgrounds/star-comp.png
 * primarycolor: #ff7f41
 * secondarycolor: #fff53d
-* tertiarycolor: #000000
+* tertiarycolor: #17001d
 * completednodecolor: #4d3740
 * highlightcolor: #ffffff
 * allowcodecarryover: true
@@ -26,7 +26,7 @@
 * tags: easy, clicker, points
 * next: star-activity2
 * url: /skillmap/star/star1
-* imageUrl: /static/skillmap/star/star1.gif
+* imageUrl: /static/skillmap/star/star1-trimmed.gif
 * position: 0 0
 
 
@@ -38,7 +38,7 @@
 * tags: easy, clicker, game, events
 * next: star-activity3
 * url: /skillmap/star/star2
-* imageUrl: /static/skillmap/star/star2.gif
+* imageUrl: /static/skillmap/star/star2-trimmed.gif
 * position: 1 0
 
 
@@ -49,8 +49,8 @@
 * tags: easy, clicker, projectiles
 * next: star-activity4
 * url: /skillmap/star/star3
-* imageUrl: /static/skillmap/star/star3.gif
-* position: 1 1
+* imageUrl: /static/skillmap/star/star3-trimmed.gif
+* position: 1 -1
 
 
 ### star-activity4
@@ -60,8 +60,8 @@
 * tags: easy, clicker, projectiles, arrays
 * next: star-cert
 * url: /skillmap/star/star4
-* imageUrl: /static/skillmap/star/star4.gif
-* position: 2 1
+* imageUrl: /static/skillmap/star/star4-trimmed.gif
+* position: 2 -1
 
 
 ### star-cert
@@ -70,10 +70,10 @@
 * type: certificate
 * url: /static/skillmap/certificates/star-cert.pdf
 * imageUrl: /static/skillmap/certificates/star-cert.png
-* position: 3 1
+* position: 3 -1
 * actions:
-    * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * map: [Try Mama Dino](/skillmap/dino)
+    * editor: [Edit in creative mode](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/star-cert.pdf

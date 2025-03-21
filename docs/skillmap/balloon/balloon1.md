@@ -1,21 +1,11 @@
-# Let's Get Clicking!
+# Create a Clicker
 
 ### @explicitHints true
 
 ## Burstin' Balloons Intro @showdialog
 
-![balloon intro](azuremedia:64101234-a394-4f89-98af-b4edfd11143a/BurstinBalloonsIntro.ism)
+![balloon intro](youtube:jZGvmt6X880)
 
-~hint Click here view the intro video with ASL
-
-![ASL Whack-the-Mole Intro](azuremedia:6026eebb-7d56-450e-9c25-5bbaac549f3f/balloon-asl.ism)
-
-hint~
-
----
-
-Thank you to Deaf Kids Code for providing ASL video translations.
-![Deaf Kids Code Logo](/static/skillmap/assets/dkc-logo-small.png " ")
 
 
 
@@ -77,8 +67,6 @@ This will be the **ACTION** that goes with our **EVENT**.
 
 - :id card: From the ``||info: Info||`` category in the toolbox, grab <br/>
 ``||info: change player [1] score by [1]||`` <br/>
-
-
 and snap it into the empty <br/>
 ``||controller(noclick): on [A] button [pressed]||`` <br/>
 block that's already in the workspace.
@@ -206,7 +194,18 @@ You have started your very own clicker game!
 
 Can you get more than **40 points**?
 
+
+~hint How do I share my game?💡
+
 ---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/balloon/share.gif )
+
+hint~
 
 When you're finished playing, come back to the instructions and click the **Done** button to return to the skillmap and continue building your amazing <br/>**🎈carnival game🎈**!
 
@@ -221,24 +220,11 @@ scene.setBackgroundColor(1)
 
 
 ```package
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
+sprite-scaling
+carnival=github:microsoft/arcade-carnival#v0.0.7
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
+balloon-images=github:microsoft/arcade-tutorial-extensions/balloon-images#v0.0.11
 ```
-
-```customts
-namespace simplified{
-    /**
-    * just run the code
-    */
-    //% block="create player"
-    //% handlerStatement=1
-    export function wrap(handler: () => void) {
-        handler();
-    }
-}
-```
-
 
 
 ```assetjson

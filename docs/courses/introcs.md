@@ -12,6 +12,10 @@ The Introduction to Computer Science with MakeCode Arcade curriculum is designed
 
 ## Course Outline
 
+### New! 
+Student facing skillmaps and tutorials for Units 0-3 available [here](https://arcade.makecode.com/courses/csintro).<br/>
+[https://arcade.makecode.com/courses/csintro](https://arcade.makecode.com/courses/csintro)
+
 ### Semester 1
 
 * **Unit 0 Beginnings** – Students learn about the course, the classroom environment, algorithms, and the MakeCode Arcade environment.
@@ -46,6 +50,7 @@ The course materials include:
 >* Student guide word document
 * PowerPoint slide decks for classroom lectures with talking points in the Notes section
 * Student projects, labs and activities include Bell Ringers (with solutions where appropriate)
+* NEW: [Student-facing tutorials for Units 0-3](https://arcade.makecode.com/courses/csintro)
 
 ### ~ reminder
 
@@ -56,3 +61,8 @@ You must be a verified educator to download the course materials. Please create 
 Download the course materials: https://aka.ms/TEALSintroCS
 
 ### ~
+
+## Getting Started
+
+For a simple, step-by-step guide to getting started, please visit the [Intro to CS channel on our forum](https://forum.makecode.com/t/getting-started-with-intro-to-cs-with-makecode-arcade/31835). 
+

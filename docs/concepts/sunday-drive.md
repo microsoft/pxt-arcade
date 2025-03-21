@@ -1,7 +1,5 @@
 # Sunday Drive
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/sunday-drive)
-
 ## {Introduction @unplugged}
 
 Games often need actions to occur repeatedly - enemies and collectibles need to be created, winning conditions need to be checked, and so on. The ``||game:on game update interval||`` event allows you to set code to run on a set time period, so that it will occur repeatedly.

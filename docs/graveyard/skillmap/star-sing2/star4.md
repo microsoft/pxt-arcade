@@ -5,7 +5,7 @@
 
 Let's add some variety!  Show your performer love with roses.
 
-![Click away](/static/skillmap/star/star4.gif "Evrything's coming up roses!" )
+![Click away](/static/skillmap/star-sing2/star4.gif "Evrything's coming up roses!" )
 
 
 ## {Step 2}

@@ -29,7 +29,7 @@ In the ``||scene:set background color||`` block, click on the grey color oval to
 
 ## {Step 3}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables:set mySprite||`` into the ``||loops:on start|`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag the first block, ``||variables(sprites):set mySprite||`` into the ``||loops:on start|`` block on your Workspace. This will create a new ``||sprites:Player||`` character for your game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -57,13 +57,13 @@ mySprite = sprites.create(img`
 
 ## {Step 4}
 
-Choose your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables:set mySprite||`` block to open the Sprite Editor. Click on the **Gallery** tab and choose your player image. Click **Done** when you are finished.
+Choose your ``||sprites:Player||`` character by clicking on the grey square in the ``||variables(sprites):set mySprite||`` block to open the Sprite Editor. Click on the **Gallery** tab and choose your player image. Click **Done** when you are finished.
 
 ![Edit player sprite image](/static/tutorials/catch-the-football/choose-player-image.gif)
 
 ## {Step 5}
 
-Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables:set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
+Open the ``||controller:Controller||`` Toolbox drawer and drag the ``||controller:move mySprite with buttons||`` block after the ``||variables(sprites):set mySprite||`` block. This will allow you to move your ``||sprites:Player||`` sprite around the screen with the arrow keys. Try it out in the Game Simulator
 
 ```blocks
 let mySprite: Sprite = null
@@ -92,7 +92,7 @@ controller.moveSprite(mySprite)
 
 ## {Step 6}
 
-Open the ``||sprites:Sprites||`` Toolbox drawer and drag another set ``||variables:set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **ball** sprite in our game.
+Open the ``||sprites:Sprites||`` Toolbox drawer and drag another set ``||variables(sprites):set mySprite2||`` block into the ``||loops:on start||`` block on your Workspace. This will be the **ball** sprite in our game.
 
 ```blocks
 let mySprite: Sprite = null
@@ -140,7 +140,7 @@ mySprite2 = sprites.create(img`
 
 ## {Step 7}
 
-In the set ``||variables:set mySprite2||`` block, click on ``||variables(noclick):mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``football`` as the new sprite name and click **Ok**.
+In the set ``||variables(sprites):set mySprite2||`` block, click on ``||variables(noclick):mySprite2||`` to open the menu, and select ``Rename variable...`` Type in ``football`` as the new sprite name and click **Ok**.
 
 ![Rename mySprite2](/static/tutorials/catch-the-football/rename-variable.gif)
 
@@ -152,7 +152,7 @@ In the ``||variables:set football||`` block, click on the ``||sprites:Player||``
 
 ## {Step 9}
 
-Draw your football sprite by clicking on the grey square in the ``||variables:set football||`` block to open the Sprite Editor
+Draw your football sprite by clicking on the grey square in the ``||variables(sprites):set football||`` block to open the Sprite Editor
 
 ![Edit football sprite image](/static/tutorials/catch-the-football/football-sprite-editor.gif)
 
@@ -175,7 +175,7 @@ In the ``||sprites:on sprite overlaps otherSprite||`` block, click on the second
 
 ## {Step 12}
 
-When our ``||sprites:Player||`` overlaps with the ``||variables:football||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
+When our ``||sprites:Player||`` overlaps with the ``||variables(noclick):football||`` sprite, let’s add a point to our game score. Open the ``||info:Info||`` Toolbox drawer and drag the ``||info:change score||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block.
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -186,7 +186,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Step 13}
 
-Let’s set the position for ``||variables(noclick):football||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites:set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
+Let’s set the position for ``||variables(noclick):football||`` to random locations around the screen. Open the ``||sprites:Sprites||`` Toolbox drawer and drag the ``||sprites(sprites):set mySprite position||`` block into the ``||sprites:on sprite overlaps otherSprite||`` block on your Workspace.
 
 ```blocks
 let mySprite: Sprite = null

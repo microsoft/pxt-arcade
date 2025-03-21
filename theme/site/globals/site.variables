@@ -2,24 +2,18 @@
      User Global Variables
 *******************************/
 
-/*--------------
-      Page
----------------*/
-
-@pageBackground      : #F9F9F9;
-
 /*-------------------
      Fonts
 --------------------*/
 
-@headerFont        : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
-@pageFont          : "Share Tech Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+@headerFont        : 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+@pageFont          : 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
 
-@docsHeaderFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@docsPageFont: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@docsHeaderFont: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+@docsPageFont: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
 
 @importGoogleFonts: false;
-@fontName: "Share Tech Mono";
+@fontName: "Segoe UI";
 
 /*-------------------
       Site Colors
@@ -31,40 +25,22 @@
 @grey             : #7f8c8d;
 @orange           : #F76820;
 @pink             : #E91E63;
-@teal             : #028B9B;
+@teal             : #116E79;
 @yellow           : #f1c40f;
 
 /* 32 colors */
-@purple           : #6B4F76;
-@blue             : #B1E3DA;
-@beige            : #FEF3E0;
-@salmon           : #E95153;
+@purple           : #5D4FBA;
+@blue             : #116e79;
 
-/*-------------------
-    Brand Colors
---------------------*/
+@lightGrey        : #F8FAFC;
 
-@primaryColor        : @orange;
-@secondaryColor      : @orange;
-
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightGrey;
 
 /*******************************
      PXT Variables
 *******************************/
 
-/*-------------------
-   Menu
---------------------*/
-
-@mainMenuInvertedBackground: @orange;
-@mainMenuTutorialBackground: @teal;
-@mainMenuTutorialButtons: @orange;
-
-@mainMenuBlocksJsToggleColor: @primaryColor;
-
-@tutorialSelectedMenuColor: @primaryColor;
+@loaderImageUrl: "../docs/static/Micorsoft_logo_rgb_W-white_D-square.png";
+@loaderImageSize: 80%;
 
 /*-------------------
    Layout
@@ -75,44 +51,10 @@
 @simulatorWidthSmall: @sideBarWidth;
 
 /*-------------------
-   Background
---------------------*/
-
-@simulatorBackground: @blue;
-@editorToolsBackground: @beige;
-@blocklySvgColor: @beige;
-
-@homeScreenBackground: @beige;
-
-/*-------------------
-   Full screen
---------------------*/
-
-@fullscreenBackgroundGradientStart: @simulatorBackground;
-@fullscreenBackgroundGradientEnd: @simulatorBackground;
-
-/*-------------------
-   Editor
---------------------*/
-
-@blocklyToolboxColor: @beige;
-@trashIconColor: @primaryColor;
-
-/*-------------------
    Blockly
 --------------------*/
 
 @blocklyFont: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
-
-/*-------------------
-   Flyout
---------------------*/
-
-@flyoutLabelColor: white;
-@blocklyFlyoutColor: @grey;
-@blocklyFlyoutColorOpacity: 0.9;
-@monacoFlyoutColor: fade(@blocklyFlyoutColor, 97%);
-@monacoFlyoutText: @flyoutLabelColor;
 
 /*-------------------
    Greenscreen
@@ -120,6 +62,8 @@
 
 @greenScreenBlockColor: #20BF6B;
 
+/*-------------------
+   Field Editors
+--------------------*/
 
-@soundEffectHeaderColor: #E30FC0;
-@soundPreviewBackgroundColor: #F7EEF5;
+@soundEffectHeaderColor: #E30FC0; // Matches block color

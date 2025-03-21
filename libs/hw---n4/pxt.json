@@ -26,6 +26,7 @@
     "public": true,
     "skipLocalization": true,
     "additionalFilePath": "../hw",
+    "experimentalHw": true,
     "yotta": {
         "optionalConfig": {
             "DEVICE_JACDAC_DEBUG": 1
@@ -35,7 +36,6 @@
             "DEVICE_WEBUSB": 0
         }
     },
-    "experimentalHw": true,
     "dalDTS": {
         "corePackage": "../core---nrf52"
     }

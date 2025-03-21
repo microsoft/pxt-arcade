@@ -7,7 +7,7 @@
 
 * primarycolor: #fa8033
 * secondarycolor: #fdf60c
-* tertiarycolor: #000000
+* tertiarycolor: #020311
 * strokecolor: #ffffff
 * highlightcolor: #ffffff
 * completednodecolor: #504c52
@@ -46,8 +46,8 @@
 * next: racer3
 * position: 3 0
 * actions:
+    * activity: [Complete Optional Level](racer3)
     * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/racer-cert.pdf
@@ -60,7 +60,7 @@
 
 
 ### racer3
-* name: Going Further
+* name: Going Further (Optional)
 * type: tutorial
 * description: Customize your game and make it your own by adding animations and changing your tilemap.
 * url: /skillmap/racer/racer3

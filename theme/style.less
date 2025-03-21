@@ -13,15 +13,6 @@
     Add your custom CSS here
 *******************************/
 
-/* Open Sans font */
-@font-face {
-    font-family: 'Share Tech Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Share Tech Mono'),
-         data-uri('../docs/static/fonts/ShareTechMono-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
 .simtoolbar .ui.button,
 .ui.button.play-button,
 .ui.button.restart-button,
@@ -53,32 +44,62 @@
 }
 
 .ui.primary.button.download-button {
-    background-color: @orange;
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
 }
 
 .simtoolbar .ui.button.icon, #editortools .ui.button.editortools-btn {
-    background-color: @teal;
+    background-color: var(--pxt-secondary-background);
+    color: var(--pxt-secondary-foreground);
+
+    &:hover {
+        filter: none;
+        background-color: var(--pxt-secondary-background-hover);
+        color: var(--pxt-secondary-foreground-hover);
+    }
 }
 
 #editortools .ui.button.hw-button {
-    background-color: darken(desaturate(@orange, 20%), 10%);
+    background-color: var(--pxt-primary-accent);
+    color: var(--pxt-primary-foreground);
 }
 
 #simulator .ui.button.play-button .icon.play {
-    color: @white!important;
+    color: var(--pxt-secondary-foreground)!important;
 }
 
 
 #homemenu .ui.item, #mainmenu .ui.item {
-    color: @white;
+    color: var(--pxt-header-foreground);
 }
 
 .common-radio-group.common-radio-buttons .common-radio-choice.selected {
-    color: @soundEffectHeaderColor;
+    color: var(--pxt-primary-background);
 }
 
 .draggable-graph-path {
-    stroke: @soundEffectHeaderColor;
+    stroke: var(--pxt-primary-background);
+}
+
+.carouselarrow {
+    color: var(--pxt-secondary-background);
+}
+
+.projectsdialog .detailview .ui.grid.stackable .actions .card-action .button.approve {
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
+}
+
+.extensions-browser {
+    .extension-tag.selected {
+        background-color: var(--pxt-primary-background);
+        border-color: var(--pxt-primary-background);
+        color: var(--pxt-primary-foreground);
+    }
+}
+
+span.blocklyTreeLabel {
+    font-weight: 500;
 }
 
 /* Mobile */
@@ -129,8 +150,8 @@
 }
 
 .hero .hero-banner-contents .action .button {
-    background-color: @teal;
-
+    background-color: var(--pxt-tertiary-background);
+    color: var(--pxt-tertiary-foreground);
 }
 
 .script-content {

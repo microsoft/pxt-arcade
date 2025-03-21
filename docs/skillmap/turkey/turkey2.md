@@ -12,13 +12,24 @@
 
 ## {2. Try It!}
 
-**First, check the game you have so far.**<br/>
-🕹️ 🕹️ 🕹️
+**Look at the game window.**
+
+- :binoculars: Look at your project in the game window to see what we're starting with.
+
+You should be able to move your turkey from side to side with the arrows and make it jump
+from platform to platform using the A button (or the space bar.)
+
+
+~hint My game doesn't work ⚠️
 
 ---
 
-You should be able to move your turkey from side to side and make it jump
-from platform to platform using the A button (or the space bar.)
+If your code isn't working and you can't figure out why, click
+<br/>"Replace my code"<br/>
+to replace the blocks in your workspace with new starter code.
+
+hint~
+
 
 
 
@@ -31,15 +42,14 @@ When the player overlaps a **cage** tile, let's trigger some code.
 
 ---
 
-- :tree: From the ``||scene:Scene||`` category, drag the
-
+- :tree: From the ``||scene:Scene||`` category, drag
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
     info.changeScoreBy(1)
 })
 ```
+into **an empty area** of the workspace.
 
-bundle into **an empty area** of the workspace.
 
 - :paint brush: Click the checkerboard image and change it to the **cage** tile.
 ![Pick the cage tile](/static/skillmap/turkey/cage-tile.png "Choose the second non-empty tile")
@@ -54,7 +64,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
 
 ## {4. Try It Again!}
 
-**Look at your game window.**
+- :binoculars: Check your game window!
 
 Guide your turkey to a cage.  What happens when the two overlap?
 
@@ -71,11 +81,9 @@ We can fix that by replacing the cage with an empty tile once you reach it.
 ---
 
 - :tree: From ``||scene:Scene||``, drag
-
 ```block
     tiles.setTileAt(location, assets.tile`transparency16`)
 ```
-
 into **the end** of the<br/>
 ``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
@@ -94,8 +102,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
 
 ## {6. Play Again!}
 
-**Give it a try in the game window**
-
+- :binoculars: Test your project again!
 
 You should get one point for each cage you grab.  Can you find all 15?
 
@@ -110,14 +117,13 @@ Each time you overlap a cage, let's make a new turkey follow you to freedom!
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, drag
-
 ```block
     let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
 ```
-
 into **the end** of the<br/>
 ``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
+
 
 - :paint brush: Click the empty grey square and switch to
 **MyAssets** to choose the little **turkey** sprite.
@@ -138,25 +144,23 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
     info.changeScoreBy(1)
     tiles.setTileAt(location, assets.tile`transparency16`)
     //@highlight
-    let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
+    let freeTurkeys = sprites.create(turkey_imgs.lil, SpriteKind.Rescued)
 })
 ```
 
 
 ## {8. Appear}
 
-What good does it do to add the turkey if you can't see it?
+**You've added little turkeys, but we can't see them.**
 
-Let's set each new turkey to appear in the same place the cage disappeared from.
+Let's set each new turkey to appear in the same place where the cage disappeared.
 
 ---
 
 - :tree: From ``||scene:Scene||``, drag
-
 ```block
     tiles.placeOnTile(freeTurkeys, location)
 ```
-
 into **the end** of the
 ``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``
 container.
@@ -175,7 +179,7 @@ namespace SpriteKind {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
     info.changeScoreBy(1)
     tiles.setTileAt(location, assets.tile`transparency16`)
-    let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
+    let freeTurkeys = sprites.create(turkey_imgs.lil, SpriteKind.Rescued)
     //@highlight
     tiles.placeOnTile(freeTurkeys, location)
 })
@@ -184,13 +188,12 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
 
 ## {9. Play!}
 
-**Give it a try in the game window**
-
----
+- :binoculars: Test your project!
 
 A little turkey should appear each time you overlap a cage.
 
-Keep following the instructions to find out how to get the little turkeys to follow you to freedom.
+Keep following the instructions to find out how to get the little turkeys to 
+follow you to freedom.
 
 ```blockconfig.local
     let freeTurkeys = sprites.create(img`.`, SpriteKind.Rescued)
@@ -202,13 +205,10 @@ Keep following the instructions to find out how to get the little turkeys to fol
 **Leave no turkeys behind!**
 
 - :paper plane: From ``||sprites:Sprites||``, drag
-
 ```block
 let freeTurkeys: Sprite = null
-
 freeTurkeys.follow(sprite)
 ```
-
 into **the end** of the <br/>
 ``||scene(noclick):on [sprite] of kind [Player] overlaps [cage] at [location]||``<br/>
 container.
@@ -228,7 +228,7 @@ namespace SpriteKind {
 scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, location) {
     info.changeScoreBy(1)
     tiles.setTileAt(location, assets.tile`transparency16`)
-    let freeTurkeys = sprites.create(assets.image`turkey`, SpriteKind.Rescued)
+    let freeTurkeys = sprites.create(turkey_imgs.lil, SpriteKind.Rescued)
     tiles.placeOnTile(freeTurkeys, location)
     //@highlight
     freeTurkeys.follow(sprite)
@@ -238,16 +238,31 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`cage`, function (sprite, loca
 
 ## {11. Play}
 
-**Play your game!**
+- :binoculars: Play your game!
 
 Each turkey you rescue should follow you as you make your way to the top.
 
 
 
-## Finale
+## {Finale}
 
 When you're finished playing, click **Done** to return to the
-main skillmap to keep going and find out how to add the ability to WIN!
+main skillmap. Keep going and find out how to add the ability to WIN!
+
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right 
+corner for the share button.
+
+![Share your card](/static/skillmap/turkey/share.gif )
+
+hint~
+
 
 
 
@@ -272,10 +287,6 @@ freeTurkeys.follow(sprite)
 
 ```
 
-```package
-carnival=github:microsoft/arcade-carnival
-```
-
 
 ```template
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -283,7 +294,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 let bigTurkey: Sprite = null
-bigTurkey = sprites.create(assets.image`player`, SpriteKind.Player)
+bigTurkey = sprites.create(turkey_imgs.player, SpriteKind.Player)
 controller.moveSprite(bigTurkey, 100, 0)
 bigTurkey.ay = 500
 scene.cameraFollowSprite(bigTurkey)
@@ -293,12 +304,17 @@ tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
 
 ```customts
 scene.setBackgroundColor(9)
-tiles.setTilemap(tilemap`level1`)
+tiles.setTilemap(turkey_imgs.level1)
 
 namespace SpriteKind {
     //% isKind
     export const Rescued = SpriteKind.create()
 }
+```
+
+```package
+carnival=github:microsoft/arcade-carnival#v0.0.7
+turkey_imgs=github:kiki-lee/turkey_imgs
 ```
 
 

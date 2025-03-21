@@ -365,7 +365,7 @@ game.onUpdateInterval(1000, function () {
 
 ---
 
-► Grab a ``||sprites:set [mySprite] position to vx [0] vy [0]||`` block
+► Grab a ``||sprites:set [mySprite] position to x [0] y [0]||`` block
 and snap it into the end of your **on game update** block. Change **mySprite**
 to **bogey**.
 

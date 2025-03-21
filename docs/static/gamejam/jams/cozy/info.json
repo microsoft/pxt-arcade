@@ -1,0 +1,280 @@
+{
+    "rules": {
+        "path": "/static/gamejam/jams/cozy/rules.md"
+    },
+    "featured": [
+        {
+            "id": "36344-99511-01025-46516",
+            "title": "Space Quest",
+            "author": "P1X3L_2012"
+        },
+        {
+            "id": "60748-35000-13454-96354",
+            "title": "Rain",
+            "author": "CHEZMAN!"
+        },
+        {
+            "id": "_Phu758F8rfgH",
+            "title": "Antistress",
+            "author": "DA_PRO_PLAYZ"
+        },
+        {
+            "id": "36193-00660-99865-93873",
+            "title": "The Frosted Path (Graphic novel)",
+            "author": "Orest123"
+        },
+        {
+            "id": "_EyYePFJtoMuL",
+            "title": "Minecraft: 2D Edition - The Garden Awaknes",
+            "author": "23RubXD"
+        },
+        {
+            "id": "_WVveyhRE3UyH",
+            "title": "The Picnic Basket",
+            "author": "ChimbroDaPro",
+            "description": "Get into some DEEP topics in this conversation simulator! Will you pay for your own coffee? Only you can decide!"
+        },
+        {
+            "id": "32531-06637-42984-59694",
+            "title": "Fishing Frenzy",
+            "author": "Mainlylandon"
+        },
+        {
+            "id": "82748-09977-78001-87477",
+            "title": "Collect the Presents",
+            "author": "Gio"
+        },
+        {
+            "id": "75947-31787-24031-97826",
+            "title": "Cozy monkey jump",
+            "author": "George K."
+        },
+        {
+            "id": "_DWof3VKgbH4Y",
+            "title": "Highway Maniacs.",
+            "author": "Cheema"
+        },
+        {
+            "id": "85764-77097-96811-21338",
+            "title": "cozy game",
+            "author": "JJ"
+        },
+        {
+            "id": "93767-12879-15003-48853",
+            "title": "Maze 3D Test",
+            "author": "Paul D."
+        },
+        {
+            "id": "_aR609TXgX9r1",
+            "title": "let's go gardening",
+            "author": "Jose A."
+        },
+        {
+            "id": "57892-95782-47642-01415",
+            "title": "Woodland",
+            "author": "JustAnotherGdPlayer"
+        },
+        {
+            "id": "_32bRTU7g59Xf",
+            "title": "The joy of Pixels",
+            "author": "Jedi"
+        },
+        {
+            "id": "32820-77300-83457-31101",
+            "title": "The Adventure of Kevin",
+            "author": "Kevin"
+        },
+        {
+            "id": "34156-27273-62883-08935",
+            "title": "your valley",
+            "author": "ert34"
+        },
+        {
+            "id": "81503-30471-81187-44322",
+            "title": "Cozy Cookie Maker",
+            "author": "laserninja13"
+        },
+        {
+            "id": "_hr4LqCMHD4ve",
+            "title": "Cozy Cooking",
+            "author": "dimpp",
+            "description": "Make some soup! Everyone loves soup! Hey, let's all have soup!"
+        },
+        {
+            "id": "42295-91608-29210-21993",
+            "title": "Food frenzy",
+            "author": "Isreal"
+        },
+        {
+            "id": "99558-01822-14292-68050",
+            "title": "FISHE",
+            "author": "Jupiter_Dev",
+            "description": "Catch some, uh, strange fish by the fire in this fishing game! Can you find Richard's cat?"
+        },
+        {
+            "id": "70537-88490-83402-14586",
+            "title": "Make a snowman",
+            "author": "Stanley"
+        },
+        {
+            "id": "_XKuf8w4PvFCr",
+            "title": "Little problem",
+            "author": "Jiawei G."
+        },
+        {
+            "id": "44356-71969-99597-07107",
+            "title": "Mail Bird Co.",
+            "author": "Vladislav V."
+        },
+        {
+            "id": "71282-17090-81377-60403",
+            "title": "A sleepers study guide",
+            "author": "SIgma_salafi"
+        },
+        {
+            "id": "05661-46127-05850-78858",
+            "title": "Paint!",
+            "author": "Thomas The Stickman and The Orange Cube",
+            "description": "Try to fill in all the tiles with paint in this relaxing puzzler!"
+        },
+        {
+            "id": "68460-86464-55427-41294",
+            "title": "Makecode flight Simulater",
+            "author": "GameStore"
+        },
+        {
+            "id": "48837-63865-14649-42802",
+            "title": "Stones Vs New Years",
+            "author": "Muhammad F. A."
+        },
+        {
+            "id": "14923-22659-02365-15839",
+            "title": "Floppy bird",
+            "author": "Gary"
+        },
+        {
+            "id": "_3RWCsPfv8XqU",
+            "title": "Cozy Farming",
+            "author": "YomiYori"
+        },
+        {
+            "id": "_cmzbH0RoMAMU",
+            "title": "Christmas Cozy Game Jam",
+            "author": "Anonymous",
+            "description": "A classic match 3 game with a Christmas theme!"
+        },
+        {
+            "id": "86966-79789-48424-33139",
+            "title": "chrisma",
+            "author": "David"
+        },
+        {
+            "id": "55268-82954-55569-76373",
+            "title": "Daytime in Blankville",
+            "author": "Anonymous"
+        },
+        {
+            "id": "49179-56090-52439-38721",
+            "title": "THE ULTIMATE QUEST FOR A SINGLE SLICE OF DELICIOUS PIZZA",
+            "author": "Jack",
+            "description": "A \"very silly game\" by Jack!"
+        },
+        {
+            "id": "90079-87753-76853-40585",
+            "title": "Ripple Nursery",
+            "author": "BLADEr",
+            "description": "Create a peaceful aquatic nursery in this beautiful game featuring procedurally generated fish!"
+        },
+        {
+            "id": "88693-92934-73193-47840",
+            "title": "Quest for the lost water bucket: Game Jam Edition",
+            "author": "Awesomefreez",
+            "description": "A hilarious journey to find a lost water bucket with a cast straight out of the crisper!"
+        },
+        {
+            "id": "62833-09719-51107-03300",
+            "title": "Rhythm Code!",
+            "author": "InvalidProject"
+        },
+        {
+            "id": "19750-75550-52030-37293",
+            "title": "Games by the Fire",
+            "author": "WoofWoof",
+            "description": "A collection of classic games to play on a rainy (or snowy) day!"
+        },
+        {
+            "id": "46419-07177-12626-56728",
+            "title": "Duck House: Quake",
+            "author": "Randomuser",
+            "description": "If you're only going to play one psychological mystery game with a cast of anthropomorphized rubber ducks this year, make it this one!"
+        },
+        {
+            "id": "20265-50437-16111-11264",
+            "title": "Burger time",
+            "author": "W3taa"
+        },
+        {
+            "id": "46896-94243-48370-36453",
+            "title": "Dance Dance ressurection",
+            "author": "John MCA"
+        },
+        {
+            "id": "68761-85010-92431-63388",
+            "title": "Minnie Mouse",
+            "author": "Lil.met"
+        },
+        {
+            "id": "50763-65106-55406-25942",
+            "title": "The Forest Campfire",
+            "author": "Freast & Toast"
+        },
+        {
+            "id": "40000-02429-96340-35680",
+            "title": "Just Fishh",
+            "author": "Bismellah B."
+        },
+        {
+            "id": "26252-49898-29454-33844",
+            "title": "Cat diary",
+            "author": "Me-loo0",
+            "description": "Play as an abandoned kitten who is taken in to a new home on a cold winter day!"
+        },
+        {
+            "id": "_cuMUJVfip8tC",
+            "title": "Campfire and ghost",
+            "author": "JunhaoxL."
+        },
+        {
+            "id": "93187-14115-91555-83671",
+            "title": "monochrome",
+            "author": "pecan4"
+        },
+        {
+            "id": "84134-78937-56869-08217",
+            "title": "Rocky Beaches",
+            "author": "Mike C's Class"
+        },
+        {
+            "id": "69963-81794-69131-44209",
+            "title": "Cozy Train Sim (C)",
+            "author": "Mike C's Class"
+        },
+        {
+            "id": "96626-82643-49991-76107",
+            "title": "Cozy (Fireplace Collector)",
+            "author": "Mike C's Class"
+        },
+        {
+            "id": "44010-01830-42331-65491",
+            "title": "Train",
+            "author": "Mike C's Class"
+        },
+        {
+            "id": "96471-94681-26216-50144",
+            "title": "Mellon Simulator 2",
+            "author": "Oliver R."
+        }
+    ],
+    "start": "2024-11-18 00:00:01 GMT-0700",
+    "end": "2025-1-1 23:59:59 GMT-0700"
+}

@@ -53,7 +53,8 @@
                 "tags": [ "Hardware" ]
             },
             "jwunderl/pxt-button-combos": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Controller" ]
             },
             "jwunderl/pxt-color": {
                 "preferred": true,
@@ -72,10 +73,13 @@
                 "tags": [ "Utility" ],
                 "upgrades": "min:v0.0.6"
             },
-            "microsoft/arcade-grid": { "preferred": true },
-            "microsoft/arcade-minimap": {
+            "microsoft/arcade-grid": {
                 "preferred": true,
                 "tags": [ "Sprites" ]
+            },
+            "microsoft/arcade-minimap": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
             },
             "microsoft/arcade-timers": {
                 "preferred": true,
@@ -118,8 +122,78 @@
                 "preferred": true,
                 "tags": [ "Hardware" ]
             },
-            "code-ninjas-home-office/game-building-session-tutorials": {},
-            "microsoft/arcade-carnival": {}
+            "microsoft/arcade-carnival": {},
+            "code-ninjas-home-office/game-building-session-tutorials": {
+                "tutorial" : true
+            },
+            "code-ninjas-home-office/code-ninjas-tutorials": {
+                "tutorial" : true
+            },
+            "code-ninjas-home-office/arctic-code-quest": {
+                "tutorial" : true
+            },
+            "code-ninjas-home-office/game-building-session-tutorials-2024": {
+                "tutorial" : true
+            },
+            "code-ninjas-home-office/game-building-session-yb-ob": {
+                "tutorial" : true
+            },
+            "code-ninjas-home-office/scott-kelly-games": {
+                "tutorial" : true
+            },
+            "code-ninjas-home-office/camps": {
+                "tutorial" : true
+            }
+        },
+        "builtinExtensionsLib": {
+            "controller": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller" ]
+            },
+            "animation": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
+            "multiplayer": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller", "Sprites" ]
+            },
+            "sprite-scaling": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
+            "corgio": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "darts": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
+            "edge-connector": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "light": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "radio-broadcast": {
+                "preferred": true,
+                "tags": [ "Utility"]
+            },
+            "servo": {
+                "preferred": true,
+                "tags": [ "Hardware" ]
+            },
+            "sevenseg": {
+                "preferred": true,
+                "tags": [ "Utility" ]
+            },
+            "feather": {
+                "preferred": true,
+                "tags": [ "Hardware", "Controller" ]
+            }
         },
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
@@ -136,7 +210,13 @@
             "S07439-34681-01269-56955",
             "S83499-96784-35479-44416",
             "S20979-80747-10645-55772",
-            "S42791-93051-00250-80367"
+            "S42791-93051-00250-80367",
+            "_1DogpPTpb8fK",
+            "_bz3CCuWFiepH",
+            "_C71PmfFaYDm2",
+            "_dCP7f8c3q5PJ",
+            "_cvxPm1WesYyi",
+            "_FdYfDwixRTAw"
         ]
     },
     "skillMap": {
@@ -155,40 +235,155 @@
             "turkey": "docs:/skillmap/turkey",
             "star": "docs:/skillmap/star",
             "mole": "docs:/skillmap/mole",
-            "balloon": "docs:/skillmap/balloon"
+            "balloon": "docs:/skillmap/balloon",
+            "adventure": "docs:/skillmap/adventure",
+            "story": "docs:/skillmap/story",
+            "dino": "docs:/skillmap/dino",
+            "galaxy": "docs:/skillmap/galaxy",
+            "sparks": "docs:/skillmap/sparks"
         }
     },
     "multiplayer": {
         "games": [
             {
-                "shareId": "S07439-34681-01269-56955",
+                "shareId": "_bz3CCuWFiepH",
                 "title": "Perfect Fit",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/perfect-fit.png"
             },
             {
-                "shareId": "S83499-96784-35479-44416",
+                "shareId": "_C71PmfFaYDm2",
                 "title": "Galga",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/galga.png"
             },
             {
-                "shareId": "S20979-80747-10645-55772",
+                "shareId": "_FdYfDwixRTAw",
                 "title": "Painting Together",
                 "subtitle": "1-4 player",
                 "image": "/static/multiplayer/painting.png"
             },
             {
-                "shareId": "S42791-93051-00250-80367",
+                "shareId": "_1DogpPTpb8fK",
                 "title": "Horse Race",
                 "subtitle": "4 player",
                 "image": "/static/multiplayer/horse-race.png"
             }
         ]
     },
+    "hardwareOptions": [
+        {
+            "name": "Meowbit",
+            "description": "A retro game console for STEM education from Kittenbot team",
+            "imageUrl": "/static/hardware/meowbit.png",
+            "url": "https://www.kittenbot.cc/collections/frontpage/products/meowbit-codable-console-for-microsoft-makecode-arcade",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "Retro Arcade for Education",
+            "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
+            "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
+            "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "TinkerGen GameGo",
+            "description": "A fun-sized console to play the games you code.",
+            "imageUrl": "/static/hardware/gamego.jpg",
+            "url": "https://www.tinkergen.com/gamego",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "MRT Game Maker Kit",
+            "description": " Sleek hand-held game device with a hard case and a USB-C port.",
+            "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
+            "url": "https://www.myrobottime.co.kr/gamemakerkit",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "Kitronik ARCADE",
+            "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
+            "imageUrl": "/static/hardware/kitronik.jpg",
+            "url": "https://www.kitronik.co.uk/arcade",
+            "variant": "hw---samd51"
+        },
+        {
+            "name": "Adafruit PyBadge",
+            "description": "It's a badge, it's an arcade, it's a PyBadge",
+            "imageUrl": "/static/hardware/pybadge.jpg",
+            "url": "https://www.adafruit.com/product/4200",
+            "variant": "hw---samd51"
+        },
+        {
+            "name": "BrainPad Arcade",
+            "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
+            "imageUrl": "/static/hardware/ghiarcade.jpg",
+            "url": "https://brainpad.com/arcade",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "Adafruit PyGamer",
+            "description": "The upgraded PyBadge",
+            "imageUrl": "/static/hardware/pygamer.jpg",
+            "url": "https://www.adafruit.com/product/4242",
+            "variant": "hw---samd51"
+        },
+        {
+            "name": "Ovobot Xtron Pro",
+            "description": "A programmable modular console to create games, design wearables and make creative projects.",
+            "imageUrl": "/static/hardware/xtronpro.png",
+            "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "Adafruit EdgeBadge",
+            "description": "It's the PyBadge with a zest of Machine learning",
+            "imageUrl": "/static/hardware/edgebadge.jpg",
+            "url": "https://www.adafruit.com/product/4400",
+            "variant": "hw---samd51"
+        },
+        {
+            "name": "Adafruit M4",
+            "description": "Learn how to run your games on micro-controllers from Adafruit",
+            "imageUrl": "/static/hardware/adafruitm4.jpg",
+            "url": "https://learn.adafruit.com/makecode-arcade-m4",
+            "variant": "hw---samd51"
+        },
+        {
+            "name": "Newbit Arcade Shield",
+            "description": "Use the micro:bit with an expansion board from KittenBot",
+            "imageUrl": "/static/hardware/newbit.png",
+            "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
+            "variant": "hw---n3"
+        },
+        {
+            "name": "micro:bit Retro Shield",
+            "description": "Use the micro:bit with an expansion board from Elecfreaks",
+            "imageUrl": "/static/hardware/retro-shield.jpg",
+            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
+            "variant": "hw---n3"
+        },
+        {
+            "name": "micro:bit Game:Bit Shield",
+            "description": "Use the micro:bit with an expansion board from iCShop",
+            "imageUrl": "/static/hardware/bit-shield.png",
+            "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
+            "variant": "hw---n3"
+        },
+        {
+            "name": "Kitronik Arcade for micro:bit",
+            "description": "Use the micro:bit with an expansion board from Kitronik",
+            "imageUrl": "/static/hardware/kitronik-shield.png",
+            "url": "https://kitronik.co.uk/56116",
+            "variant": "hw---n3"
+        }
+    ],
     "galleries": {
-        "Skillmaps": "skillmaps",
+        "Beginner Skillmaps": "beginner-maps",
+        "Next Level Skillmaps": "inter-maps",
         "Tutorials": "tutorials",
+        "Multiplayer Tutorials": "multiplayer-tutorials",
+        "Multiplayer Games": "multiplayer-games",
         "Live Coding": "live-coding",
         "Blocks Games": "blocks-games",
         "JavaScript Games": "javascript-games",
@@ -206,6 +401,136 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v1.10.34"
+        "latest": "v1.12.41"
+    },
+    "kiosk": {
+        "games": [
+            {
+                "id": "25572-25731-72869-29244",
+                "name": "Space Destroyer",
+                "description": "Use the lasers on your spaceship to shoot falling asteroids!",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "84490-94874-87123-99597",
+                "name": "Bunny Hop!",
+                "description": "Help your bunny hop over obstacles as they run through the forest",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "60307-91678-81892-80686",
+                "name": "Pigeon: Deliverance",
+                "description": "Fly through the dangerous rooftops and ledges of New York City delivering messages!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "12407-17885-37645-48510",
+                "name": "Rhombus Rush!",
+                "description": "Test your skills in this fast-paced game of reflexes and timing! Levels designed by members of the MakeCode Forum!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "16040-59904-05312-47571",
+                "name": "NINJA",
+                "description": "Try to slice all the logs as quickly and evenly as you can! Press Left/Right to change direction and A to slice!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "48013-80771-51585-68674",
+                "name": "Falling Duck",
+                "description": "Fly through the sky avoiding obstacles",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "13636-04540-17933-74746",
+                "name": "Best Nest",
+                "description": "Try to clean your side of the nest! Clear the leaves and collect acorns while messing up your opponent's side! (requires 2 players)",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "57893-82458-42686-66689",
+                "name": "Joey's Pool Sharks",
+                "description": "Challenge your friend to a game of pool! Be sure to check out the (very silly) alternate rule sets! (requires two players)",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "58561-90881-11172-52149",
+                "name": "BUG PRESIDENT: THE GAME",
+                "description": "Lead your constituents to find food and carry it back to the nest as fast as you can!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "57061-57423-51986-84463",
+                "name": "MakeCode Racers",
+                "description": "Top-down racing game for 1-4 players. Press Left and Right to steer, A to use picked up item.",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "45517-18731-77014-82186",
+                "name": "Auto and Ollie",
+                "description": "Control both cats and use their unique strengths to solve puzzles! Press A to swap between characters. Up is jump and B triggers Ollie's tackle attack. (1-2 players)",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "07573-63879-62644-28924",
+                "name": "Asphodel follows directions",
+                "description": "Place arrows along the path to help Asphodel the witch find their way",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "95233-64905-79615-48176",
+                "name": "Galga",
+                "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "13412-17300-80986-88577",
+                "name": "TicTacTwo!",
+                "description": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet.",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "69052-09321-39220-20264",
+                "name": "Blocky Boss Battle",
+                "description": "A test of reflexes! Avoid the blue stingers while sending fireballs at the boss!",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "03442-50539-08276-81984",
+                "name": "Hot Air Balloon",
+                "description": "Navigate your hot air balloon through the mountains avoiding birds and spaceships",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "91782-54072-13194-99228",
+                "name": "Caterpillar",
+                "description": "Eat the leaves to grow, but watch out for walls!",
+                "highScoreMode": "SingleAscending"
+            },
+            {
+                "id": "14111-27578-89085-17056",
+                "name": "Jewel Raider",
+                "description": "Adventure through levels collecting jewels and avoiding obstacles!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "21784-44427-92956-37509",
+                "name": "Mouse Adventure",
+                "description": "Go on a mouse adventure in a haunted castle, battling bad guys, avoiding obstacles and collecting keys!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "31127-78143-64325-24445",
+                "name": "Stack the Goats",
+                "description": "Build a tower of goats!",
+                "highScoreMode": "None"
+            },
+            {
+                "id": "00865-64360-23737-26211",
+                "name": "Dino Zoo",
+                "description": "Use your knowledge of the cycle of life to stack plants and dinosaurs!",
+                "highScoreMode": "None"
+            }
+        ]
     }
 }

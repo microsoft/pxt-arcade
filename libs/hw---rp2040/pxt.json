@@ -10,7 +10,8 @@
         "name": "R2",
         "description": "Board based on Raspberry Pi RP2040",
         "learnMoreUrl": "https://arcade.makecode.com/hardware#r2",
-        "cardType": "hw"
+        "cardType": "hw",
+        "imageUrl": "/static/hardware/rpi-pico.jpg"
     },
     "compileServiceVariant": "rp2040",
     "cppDependencies": {
@@ -34,7 +35,6 @@
             "DEVICE_WEBUSB": 1
         }
     },
-    "experimentalHw": true,
     "dalDTS": {
         "corePackage": "../core---rp2040"
     }

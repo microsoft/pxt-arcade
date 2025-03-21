@@ -312,6 +312,20 @@ hint~
 
 You have started your very own clicker game!
 
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/balloon/share.gif )
+
+hint~
+
+
 When you're ready, click **Done** to return to the skillmap and continue building your amazing <br/>**🎡 carnival game 🎡**!
 
 
@@ -329,9 +343,10 @@ carnival.onGameOverExpanded(carnival.WinTypes.Multi)
 
 
 ```package
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
+sprite-scaling
+carnival=github:microsoft/arcade-carnival#v0.0.7
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
+balloon-images=github:microsoft/arcade-tutorial-extensions/balloon-images#v0.0.11
 ```
 
 
@@ -344,19 +359,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 carnival.startCountdownGame(20, carnival.WinTypes.Lose)
 scene.setBackgroundColor(1)
 
-```
-
-```customts
-namespace simplified{
-    /**
-    * just run the code
-    */
-    //% block="create player"
-    //% handlerStatement=1
-    export function wrap(handler: () => void) {
-        handler();
-    }
-}
 ```
 
 

@@ -1,6 +1,6 @@
 # MakeCode Arcade Wooden Cabinet
 
-This guide will let you build the same Arcade cabinets that are found in the MakeCode team room at the Microsoft offices.
+Creating your very own video Arcade machine for your school is easier than you think!  You can install it in a common area or the cafeteria of your school and showcase your student created games!
 
 ![Arcade cabinet](/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg)
 
@@ -18,8 +18,11 @@ Make sure to follow all safety procedures or ask a professional for help.
 The cabinet is built out of 3 - 8' x 4' plywood sheets of 1/2" thickness. 
 
 * **3** - 8' x 4' x 1/2" maple plywood sheets. Feel free to use other sheets based on your availability. 
-* **1** - arcade button set for 2 players (https://www.amazon.com/gp/product/B00WDQWK5M)
-* **1** - 22" monitor with HDMI input (https://www.amazon.com/gp/product/B072F3DL6P)
+* **1** - 22" monitor with HDMI input (i.e.  https://www.amazon.com/gp/product/B072F3DL6P)
+* Joystick and button controls for 2 players.  These will vary depending on whether you will be powering your Arcade with a Windows computer, or a Raspberry Pi.
+  *  Windows – see https://arcade.makecode.com/hardware/shoebox-controller
+  *  Raspberry Pi – see https://arcade.makecode.com/hardware/raspberry-pi
+* Paint, decals, chalkboard paper (https://www.amazon.com/s?k=chalkboard+paper) or other materials to decorate
 
 Tools needed
 
@@ -29,7 +32,7 @@ Tools needed
 
 ## Template
 
-Cut out this template precisely and keep as you master template for all future cuts.
+Cut out this template precisely and keep it as your master template for all future cuts.
 
 ![Side template](/static/hardware/raspberry-pi/wooden-cabinet/template.jpg)
 
@@ -85,7 +88,9 @@ Once all the boards are secured, attach the upper side of the arcade and you're 
 
 ## Control panel
 
-Follow the wiring instructions of the [cardboard control panel](/hardware/raspberry-pi/cardboard-control-panel) to wire the buttons and joysticks to the raspberry pi.
+Follow the wiring and assembly instructions for the joysticks and buttons depending on whether you will be powering your Arcade machine with a Windows computer, or a Raspberry Pi Zero.
+* Windows – use an old Windows laptop or a PC stick device (i.e.  https://www.amazon.com/dp/B08LYRQZ59) with Arcade Kiosk Mode (https://arcade.makecode.com/hardware/kiosk).  See Shoebox controller project (https://arcade.makecode.com/hardware/shoebox-controller) for control assembly.
+* Raspberry Pi Zero – see https://arcade.makecode.com/hardware/raspberry-pi for wiring instructions.
 
 ## Screen
 

@@ -1,36 +1,38 @@
 # Hero Banner
 
-Here are some cool activities to get you started with your @boardname@!
+Here are some cool activities to get you started!
 
 ## Intro Content
 
 ### ~ codecard
-* name: Stand with Wakanda
-* buttonLabel: Make it now
-* imageUrl: /static/hero-gallery/wakanda-banner.png
-* url: /tutorials/wakanda-forever
+* name: Start Coding
+* buttonLabel: Start Coding
+* description: New? Start here!
+* imageUrl: /static/hero-gallery/skillmap.png
+* url: /tutorials/intro
 * cardType: tutorial
 ---
-* name: Code a Carnival!
-* buttonLabel: Try Now
-* imageUrl: /static/hero-gallery/hoc-2022.png
-* url: https://arcade.makecode.com/hour-of-code-2022
+* name: Educator Resources
+* buttonLabel: Visit
+* description: Educator Resources
+* imageUrl: /static/educator/edu.jpg
+* url: /educators
 * cardType: link
 ---
-* name: Save the Turkeys!
-* buttonLabel: Play Now
-* imageUrl: /static/hero-gallery/turkey.png
-* url: https://arcade.makecode.com/--skillmap#docs:/skillmap/turkey
-* cardType: link
+* name: Snack Chase (Junior)
+* buttonLabel: Code Now
+* description: Snack Chase (Junior)
+* imageUrl: /static/hero-gallery/lyla-hero.jpg
+* url: /tutorials/lyla-jr
+* cardType: tutorial
 ---
-* name: How-to code a video game
-* imageUrl: /static/hero-gallery/how-to-code.png
-* youTubePlaylistId: PLMMBk9hE-SepfPK6z19t6aAfwbOQNY6K7
----
-* name: Join the Live Stream
-* buttonLabel: Watch Stream
-* imageUrl: /static/hero-gallery/stream.png
-* url: https://www.twitch.tv/msmakecode
-* cardType: link
+* name: Build a Bubble Popping Game
+* buttonLabel: Code Now
+* description: Build a Bubble Popping Game
+* imageUrl: /static/hero-gallery/io2_hero.jpg
+* url: /tutorials/bubbles
+* cardType: tutorial
+
+
 
 ### ~

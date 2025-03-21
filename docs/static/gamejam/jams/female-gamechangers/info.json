@@ -1,0 +1,205 @@
+{
+    "rules": {
+        "path": "/static/gamejam/jams/female-gamechangers/rules.md"
+    },
+    "featured": [
+        {
+            "id": "81763-74727-74866-09375",
+            "title": "Amanda Gorman and \"The Hill We Climb\"",
+            "author": "Ceggiebear",
+            "description": "Play as poet Amanda Gorman as she composes her poem for President Biden's inauguration!"
+        },
+        {
+            "id": "38226-95731-47070-73388",
+            "title": "Megan Rapinoe",
+            "author": "GoMustangs",
+            "description": "Play as Megan Rapinoe in this classic shmup game with a twist! Switch your hair color to wrack up a score multiplier for major points!"
+        },
+        {
+            "id": "75876-49918-50592-15147",
+            "title": "Amelia Earhart: Aviator Extraordinaire",
+            "author": "Blobbey",
+            "description": "Recreate famous flights from Amelia Earhart's life in this flight simulator!"
+        },
+        {
+            "id": "98398-96774-94162-09922",
+            "title": "Blast and Slash",
+            "author": "Lucas_M/DangerKitty",
+            "description": "Blast and slash your way through the desert in this addictive female-led roguelike game! Collect money to unlock upgrades in preparation for the climactic boss battle!"
+        },
+        {
+            "id": "76909-17578-71814-49492",
+            "title": "FOR ALL WOMANKIND",
+            "author": "Oscar",
+            "description": "Play as a team of astronauts trying to land their shuttlecraft in this game dedicated to Katherine Johnson!"
+        },
+        {
+            "id": "49970-33654-67029-92638",
+            "title": "Infiltration",
+            "author": "M1nt-Phoen1x",
+            "description": "Stand up to the tyranny of megacorporations and save your family in the metroidvania game!"
+        },
+        {
+            "id": "07354-43385-19795-87252",
+            "title": "BootlegMan",
+            "author": "Joe N"
+        },
+        {
+            "id": "84156-59508-41689-02284",
+            "title": "The Adventures of Julia the Superhero 1: Attack of the Jet-pack Men!",
+            "author": "Awesomefreez"
+        },
+        {
+            "id": "99147-48113-12204-08825",
+            "title": "Find your child",
+            "author": "Pins"
+        },
+        {
+            "id": "83889-78877-67770-53113",
+            "title": "Portal: Space edition",
+            "author": "PizzaNinja17"
+        },
+        {
+            "id": "94396-37551-34311-26986",
+            "title": "Rosa Park",
+            "author": "Anonymous"
+        },
+        {
+            "id": "46063-04959-16640-73087",
+            "title": "Voting Run",
+            "author": "I-am-cool"
+        },
+        {
+            "id": "09630-91455-62775-31183",
+            "title": "Marie Curie's Impact",
+            "author": "Aeth"
+        },
+        {
+            "id": "13291-46234-96045-98750",
+            "title": "Monika's Literature club activity",
+            "author": "Scott144"
+        },
+        {
+            "id": "93229-68745-57700-24671",
+            "title": "Earhart's Adventure!",
+            "author": "lazyfrog"
+        },
+        {
+            "id": "56948-93110-46205-88931",
+            "title": "Goal Keeper",
+            "author": "Arthur G"
+        },
+        {
+            "id": "07772-79468-80619-15682",
+            "title": "Women suffrage moment. ",
+            "author": "Muhammad Mr. Ahmed"
+        },
+        {
+            "id": "33348-22247-29839-27999",
+            "title": "damsel vs distress",
+            "author": "Louie"
+        },
+        {
+            "id": "01281-83250-56636-84525",
+            "title": "rachels adventure home",
+            "author": "wingweird"
+        },
+        {
+            "id": "66892-29375-71260-87726",
+            "title": "Knightnapped!",
+            "author": "Bugoi"
+        },
+        {
+            "id": "17426-35827-39847-31722",
+            "title": "Tu You You ",
+            "author": "ZiKk_l"
+        },
+        {
+            "id": "85019-68993-24232-29047",
+            "title": "Ghost Clone Invaders",
+            "author": "Monishka S"
+        },
+        {
+            "id": "14704-73542-39194-29081",
+            "title": "Jump Simone Jump",
+            "author": "Adrian"
+        },
+        {
+            "id": "33056-90694-14517-53070",
+            "title": "Be careful Marie",
+            "author": "Pablo"
+        },
+        {
+            "id": "37154-72490-65681-90108",
+            "title": "Cleopatra in trouble",
+            "author": "Pablo"
+        },
+        {
+            "id": "38756-57065-05774-13832",
+            "title": "Amelia Earhart",
+            "author": "Jose A"
+        },
+        {
+            "id": "36694-24124-09993-26840",
+            "title": "Cleopatra kill the snakes",
+            "author": "Clara"
+        },
+        {
+            "id": "61123-99901-00377-67993",
+            "title": "Valentina Tereshkova in space",
+            "author": "Jaime"
+        },
+        {
+            "id": "64477-56549-76019-31922",
+            "title": "Olga's goal",
+            "author": "Ismael"
+        },
+        {
+            "id": "65510-15821-73818-83251",
+            "title": "Valentina Tereshkova",
+            "author": "Diego - Alonso - Alvaro"
+        },
+        {
+            "id": "26967-12412-92781-54833",
+            "title": "Edurne Pasaban climb Everest",
+            "author": "Tomás"
+        },
+        {
+            "id": "72000-97996-42180-66653",
+            "title": "Teresa de Calcuta",
+            "author": "Javier"
+        },
+        {
+            "id": "96472-56984-79717-25218",
+            "title": "car racing(Danica Patrick)",
+            "author": "Grames"
+        },
+        {
+            "id": "51609-67658-77207-04230",
+            "title": "Hilma af Klint, true or false",
+            "author": "Bruno"
+        },
+        {
+            "id": "36472-43140-05348-98070",
+            "title": "Mission 79",
+            "author": "Octodemon6611"
+        },
+        {
+            "id": "72592-49869-73785-95313",
+            "title": "very fun cave game :):)",
+            "author": "gideon_loves_cats :):)"
+        },
+        {
+            "id": "86994-86785-55167-78927",
+            "title": "Annie and Mary",
+            "author": "hanki"
+        },
+        {
+            "id": "39130-17586-84955-97935",
+            "title": "ZANDOX",
+            "author": "NOVABOY"
+        }
+    ],
+    "start": "2024-3-1 00:00:01 GMT-0700",
+    "end": "2024-3-31 23:59:59 GMT-0700"
+}

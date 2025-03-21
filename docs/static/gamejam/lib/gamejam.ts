@@ -204,7 +204,7 @@ function makeGallery() {
             container.insertBefore(hint, parent);
         }
 
-        let selected = randomize(info.featured); // show all the games
+        let selected = randomize(info.featured?.filter(g => !g.description)); // show all the games
         let row = document.createElement("div");
         for (let i = 0; i < selected.length; i++) {
             row.appendChild(makeGameCard(selected[i]));
@@ -228,7 +228,41 @@ function makeGameCard(game: Game) {
     link.href = game.url || `https://arcade.makecode.com/${game.id}`;
     let textLink = link.cloneNode() as HTMLElement;
     let img = document.createElement("img");
-    img.src = `https://pxt.azureedge.net/api/${game.id}/thumb`;
+    img.src = `https://cdn.makecode.com/api/${game.id}/thumb`;
+    img.crossOrigin = "Anonymous";
+
+    const createPlaceholder = () => {
+        let div = document.createElement("div");
+        div.setAttribute("class", "placeholder");
+        let logo = document.createElement("img");
+        logo.src = "/static/logo.png";
+        div.appendChild(logo);
+        img.remove();
+        link.appendChild(div);
+    }
+
+    img.onerror = createPlaceholder;
+    img.onload = () => {
+        // sometimes the thumbnail is fully transparent even though the
+        // image loads
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        const context = canvas.getContext("2d")!;
+        context.drawImage(img, 0, 0);
+        const data = context.getImageData(0, 0, canvas.width, canvas.height);
+
+        for (let x = 0; x < data.width; x++) {
+            for (let y = 0; y < data.height; y++) {
+                const index = x * y * 4;
+                if (data.data[index + 3] !== 0) {
+                    return;
+                }
+            }
+        }
+        createPlaceholder();
+    }
     link.appendChild(img);
     card.appendChild(link);
 

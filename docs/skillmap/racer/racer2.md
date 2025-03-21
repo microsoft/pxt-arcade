@@ -1,6 +1,7 @@
 # Over and Under
+### @explicitHints true
 
-## Introduction @showdialog
+## {Introduction @showdialog}
 
 Now that you have a truck that moves, let's add the ability to jump and navigate around obstacles.
 
@@ -9,73 +10,66 @@ Now that you have a truck that moves, let's add the ability to jump and navigate
 
 
 
-## 2. Remember
+## {2. Remember}
 
-Take a look at the code that's already in your workspace.
+**Take a look at the code that's already in your workspace.**
 
 You should see the blocks that add gravity, make your truck start moving, and set the camera to follow you through the cave.
 
 
 
 
-## 3. Make the Jump
+## {3. Make the Jump}
 
-You'll notice some pits of acid in the road. Help your truck avoid them when you press the (A) button.
+**See the pits of acid in the road?**
+
+Make your truck avoid them when you press the (A) button (or space bar).
 
 ---
 
 
-- :game: From ``||controller:Controller||``, drag the <br/>
-``||controller:on [A] button [pressed]||`` <br/>
-container into an empty area of the workspace.
+- :game: From ``||controller:Controller||``, drag the<br/>
+``||controller:on [A] button [pressed]||``<br/>
+bundle into an **empty area** of the workspace.
 
-- :paper plane: Inside of the <br/>
-``||controller:on [A] button [pressed]||`` <br/>
-container, add a new <br/>
-``||sprites:set [mySprite] [x] to [0]||`` block.
 
-- :mouse pointer: Change ``||sprites:[x]||`` to ``||sprites:[vy (velocity y)]||`` <br/>
-so you can make the truck move in the up/down direction.
+Now, each time you press the (A) button, the truck will jump until gravity pulls it back down.
 
-- :mouse pointer: Change **0** to **-200** to send the truck upward with each press of the (A) button.
+
+#### ~ tutorialhint
 
 ```blocks
-let mySprite: Sprite = null
+let truck: Sprite = null
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.vy = -200
+    truck.vy = -200
 })
 ```
 
 
+## {Step 4}
 
-## 4. Play it Again
-
-Remember to play your game again each time you make a change.
-
-Can you see the effects of the code you just wrote?
+- :binoculars: Remember to keep looking back at the game window to see how your game changes with each bit of code you add.
 
 
 
+## {5. The Pits}
 
-## 5. The Pits
 
-
-Now that you can jump the pits, let's make them dangerous.
+**Now that you can jump the pits, let's make them dangerous.**
 
 ---
 
 - :tree: From ``||scene:Scene||``, drag the <br/>
-``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||`` <br/>
-container into an empty area of the workspace.
+``||scene:on [sprite] of kind [Player] overlaps [ ] at [location]||``<br/>
+bundle into an **empty area** of the workspace.
 
-- :paint brush: Click the checkerboard image and change it to the **acid** tile.<br/>
+- :paint brush: Click the empty tile image and change it to the **acid** tile.<br/>
 ![Make your truck jump dangerous pits of acid](/static/skillmap/racer/acid.png "Avoid the acid tiles")
 
-- :circle: From ``||game:Game||``, snap a <br/>
-``||game:game over <LOSE>||`` <br/>
-block into the new container.
 
+
+#### ~ tutorialhint
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
@@ -85,18 +79,25 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, loca
 
 
 
-## 6. The Spikes
+## {6. The Spikes}
 
-Pressing the (A) button more than once might send you into a spike. Let's make the spikes dangerous, too.
+**Don't fly into a spike!**
+
+Let's make the spikes dangerous, too.
 
 
 ---
 
-- :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the **spikes** as you did for the **acid** tile. <br/>
+- :mouse pointer:  Follow the same steps to end the game when your sprite overlaps the **spikes**
 ![Avoid the spikes!](/static/skillmap/racer/spikes.png "Avoid the spike tiles")
+as you did for the **acid** tile.
+
 
 _💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
 
+
+
+#### ~ tutorialhint
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
@@ -106,19 +107,17 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, lo
 
 
 
-## 7. Take a Look!
+## {Step 7}
 
-Click back to the game window to see how everything is coming together.
+- :binoculars: Take a look at the game window.
 
----
-
-You should be able to jump the acid pits by pressing the (A) button and the game should end when you hit the acid or a spike.
+You should be able to jump the acid pits by pressing the (A) button (or space bar) and the game should end when you hit the acid or a spike.
 
 
 
-## 8. End of the Tunnel
+## {8. End of the Tunnel}
 
-We have a way to lose, now we need a way to win.
+**We have a way to lose, now we need a way to win.**
 
 At the end of the cave, there is a set of pure black **empty cave** tiles.
 
@@ -130,8 +129,20 @@ an **empty cave** tile as you did for the **acid** tile.
 ![Get to the cave](/static/skillmap/racer/cave.png "Choose the cave tile")
 
 
-- :mouse pointer: Finish by changing the ``||game: game over <LOSE>||`` to say ``||game: game over <WIN>||``.
+- :mouse pointer:  This time, make sure the switch inside of the<br/>
+``||game:game over < >||`` block is set to **`<WIN>`**.
 
+
+_💡 Need a little help figuring out what this step should look like? Click the lightbulb button below for a peek at the blocks we recommend._
+
+
+```blockconfig.local
+scene.onOverlapTile(SpriteKind.Player, img`.`, function (sprite, location) {
+    game.over(true)
+})
+```
+
+#### ~ tutorialhint
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
@@ -139,61 +150,49 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite
 })
 ```
 
+## {Step 7}
 
-## Finale
+- :binoculars: Play your game!
+
+Can you make it all the way to the end and win?
+
+
+
+## {Finale}
 
 Congratulations!
 
-You've created your own Monster Racer game!
+You've created a Monster Racer game!
 
-Race to the end of the cave and once you're finished playing,
-click **Done** to head back out to the skillmap where you can
-play the next level and add customizations to your game.
+Once you're finished playing,
+click **Done** to head back out to the skillmap, then keep going to add
+fun customizations to your game.
 
 
-```template
-tiles.setTilemap(tilemap`level1`)
-scene.setBackgroundImage(assets.image`background`)
-let mySprite = sprites.create(assets.image`truck1`, SpriteKind.Player)
-mySprite.ay = 500
-mySprite.vx = 100
-scene.cameraFollowSprite(mySprite)
-```
 
-```ghost
-scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
-    game.over(true)
-})
+```blockconfig.global
+let truck = sprites.create(img`.`, SpriteKind.Player)
+truck.x = 0
+scene.cameraFollowSprite(truck)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
-        mySprite.vy = -200
-    }
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    speed += -50
-    mySprite.vx = speed
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    speed += 50
-    mySprite.vx = speed
+    truck.vy = -200
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
     game.over(false)
 })
-let mySprite: Sprite = null
-let speed = 0
-speed = 100
-scene.setBackgroundColor(9)
-scene.setBackgroundImage(assets.image`background`)
-tiles.setTilemap(tilemap`level1`)
-mySprite = sprites.create(assets.image`truck3`, SpriteKind.Player)
-mySprite.ay = 400
-mySprite.vx = speed
-scene.cameraFollowSprite(mySprite)
-
 ```
 
+```template
+let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
+truck.ay = 500
+truck.vx = 100
+scene.cameraFollowSprite(truck)
+```
+
+
 ```customts
+tiles.setTilemap(tilemap`level1`)
+scene.setBackgroundImage(assets.image`background`)
 for (let value of tiles.getTilesByType(assets.tile`acid`)) {
     tiles.setWallAt(value, false)
 }

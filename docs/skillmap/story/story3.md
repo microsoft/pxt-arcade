@@ -15,8 +15,8 @@ add style.
 
 ## {Step 2}
 
-To prepare for the next steps,  
-[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),  
+To prepare for the next steps,
+[__*click here to choose a joke from our list*__](#doc:/skillmap/story/joke-examples "Find a good two line joke here."),
  or create your own!
 
 ```hint
@@ -31,13 +31,13 @@ A: Because pepper makes them sneeze!
 
 Do you have a joke?
 
-**Now design your scene**  
+**Now design your scene**
 🎨 🎨 🎨
 
 ---
 
-- :tree:  Snap  
-``||scene: set background image to [ ]||``  
+- :tree:  Snap
+``||scene: set background image to [ ]||``
 into the
 ``||loops:on start||`` container already in the workspace.
 
@@ -185,8 +185,8 @@ We can add these characters as [__*sprites*__](#sprotes "2-D images that moves o
 
 ---
 
-- :paper plane:  To add a character, look in the ``||sprites:Sprites||`` category for  
-``||variables(sprites): set [mySprite] to sprite [ ] of kind [Player]||``  
+- :paper plane:  To add a character, look in the ``||sprites:Sprites||`` category for
+``||variables(sprites): set [mySprite] to sprite [ ] of kind [Player]||``
 and drag it into the bottom of the ``||loops:on start||`` container.
 
 - :mouse pointer:  Create the perfect character for your joke by clicking the grey box so you can draw something in the image editor.
@@ -322,19 +322,19 @@ let mySprite = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 
 ## {Step 5}
 
-One benefit of having text controlled by a button is that 
+One benefit of having text controlled by a button is that
 the reader gets to choose the timing of the joke.
 
 ---
 
 
-- :game:  From the ``||controller: Controller||`` category, drag an  
-``||controller:on [A] button [pressed]||`` 
+- :game:  From the ``||controller: Controller||`` category, drag an
+``||controller:on [A] button [pressed]||``
 container into the workspace.
 
-- :circle:  From the ``||game:Game||`` category, grab the  
-``||game: show long text [" "] [bottom]||``  
-block and snap it into the empty  
+- :circle:  From the ``||game:Game||`` category, grab the
+``||game: show long text [" "] [bottom]||``
+block and snap it into the empty
 ``||controller:on [A] button [pressed]||`` container.
 
 ```blocks
@@ -358,13 +358,13 @@ the last line, and it's the part that makes people laugh.
 
 ## {Step 6}
 
-- :mouse pointer:  Right-click and **duplicate** the  
-``||game: show long text [" "] [bottom]||``  
+- :mouse pointer:  Right-click and **duplicate** the
+``||game: show long text [" "] [bottom]||``
 block as many times as you need to fit your entire joke.
 
-- :mouse pointer:  Enter your punchline into the last  
-``||game: show long text [" "] [bottom]||``  
-block inside your   
+- :mouse pointer:  Enter your punchline into the last
+``||game: show long text [" "] [bottom]||``
+block inside your
 ``||controller:on [A] button [pressed]||`` container,
 and split the rest of the joke into other text blocks above it.
 
@@ -386,7 +386,7 @@ Is it funny?  Does the text overlap anything important on the screen?
 ---
 
 - :mouse pointer:   Experiment with the location of the text by changing the location to
-the **top**, **left**, or **right** in the  
+the **top**, **left**, or **right** in the
 ``||game: show long text [" "] [bottom]||`` block.
 
 Does the text flow better somewhere else?
@@ -404,8 +404,8 @@ End on a high note with confetti or a screen full of smiles.
 
 ---
 
-- :mouse pointer:  Grab  
-``||scene: start screen [confetti] effect||``  
+- :mouse pointer:  Grab
+``||scene: start screen [confetti] effect||``
 and snap it into **the end**
  of the ``||controller:on [A] button [pressed]||`` container.
 

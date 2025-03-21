@@ -1,4 +1,4 @@
-/// <reference path="../node_modules/pxt-core/built/pxteditor.d.ts" />
+/// <reference path="../node_modules/pxt-core/localtypings/pxteditor.d.ts" />
 
 namespace pxt.editor {
     function patchBlocks(pkgTargetVersion: string, dom: Element) {
@@ -91,6 +91,13 @@ namespace pxt.editor {
 
             paramValues.forEach(value => {
                 let oldVariableName = "";
+
+                const handlerVarShadow = getShadow(value, "variables_get_reporter");
+
+                if (!handlerVarShadow) {
+                    return;
+                }
+
                 const connectedVarBlock = getChildBlock(value, "variables_get");
 
                 if (connectedVarBlock) {
@@ -101,7 +108,6 @@ namespace pxt.editor {
                     value.removeChild(connectedVarBlock);
                 }
 
-                const handlerVarShadow = getShadow(value, "variables_get_reporter");
                 const handlerVarField = getField(handlerVarShadow, "VAR");
                 const argReporterName = handlerVarField.textContent;
                 oldVariableName = oldVariableName || argReporterName;
@@ -251,9 +257,7 @@ namespace pxt.editor {
                 tileHitParam.appendChild(shadow);
                 block.appendChild(tileHitParam);
             });
-        }
 
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "0.18.9") < 0) {
             /**
              * move from tilemap namespace to tiles namespace
              * <block type="tilemap_locationXY">
@@ -270,7 +274,150 @@ namespace pxt.editor {
                 xyField.textContent = (xyField.textContent || "").replace(/^tilemap./, "tiles.");
             });
         }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.12.34") < 0) {
+            const lang = pxt.BrowserUtils.getCookieLang();
+            if (lang == "es-MX") {
+                // on player 2 a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
+                .forEach(eventRoot => {
+                    swapFieldIfNotMatching(eventRoot, "button", "controller", "ControllerButton.");
+                });
+            } else if (lang === "es-ES") {
+                pxt.U.toArray(dom.querySelectorAll("[type=music_sounds]>field[name=note]"))
+                    .forEach(node => node.setAttribute("name", "name"));
+                // on a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=keyonevent]"))
+                    .forEach(eventRoot => {
+                        swapFieldIfNotMatching(eventRoot, "event", "button", "ControllerButtonEvent.");
+                    });
+                // on player 2 a button pressed
+                pxt.U.toArray(dom.querySelectorAll("block[type=ctrlonbuttonevent]"))
+                    .forEach(eventRoot => {
+                        swapFieldIfNotMatching(eventRoot, "button", "controller", "ControllerButton.");
+                    });
+            } else if (lang === "de") {
+                pxt.U.toArray(dom.querySelectorAll("block[type=image_create]>value[name=heNacht]"))
+                    .forEach(node => node.setAttribute("name", "height"));
+            }
+        }
+
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "1.0.0") < 0) {
+            // At some point Sprite.z switched from being a getter/setter to a property
+            pxt.U.toArray(dom.querySelectorAll("block[type=Sprite_blockCombine_set]>field[name=property]"))
+                .forEach(node => {
+                    if (node.textContent.trim() === "Sprite.z@set") {
+                        node.textContent = "Sprite.z";
+                    }
+                });
+
+            const performOldEnumShimUpgrade = (variableType: string, blockType: string) => {
+                const variableKinds = pxt.U.toArray(dom.querySelectorAll(`variable[type=${variableType}]`));
+
+                if (variableKinds.length) {
+                    pxt.U.toArray(dom.querySelectorAll(`block[type=${blockType}]>field[name=MEMBER]`))
+                        .concat(pxt.U.toArray(dom.querySelectorAll(`shadow[type=${blockType}]>field[name=MEMBER]`)))
+                        .forEach(node => {
+                            const value = node.textContent;
+                            if (!/^\d/.test(value)) {
+                                // The correct numerical value will be in the variables
+                                for (const kind of variableKinds) {
+                                    const match = /^\d+(.*)/.exec(kind.textContent);
+                                    if (match?.[1] === value) {
+                                        node.textContent = kind.textContent;
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                }
+            }
+
+
+            // The kind field used by the legacy animation editor switched to including the numerical
+            // enum value in the field (e.g. Walking -> 0Walking)
+            performOldEnumShimUpgrade("ActionKind", "action_enum_shim");
+
+            // same for SpriteKindLegacy
+            performOldEnumShimUpgrade("SpriteKindLegacy", "spritetype");
+        }
+
+        // Added the "use on-screen keyboard" options to the ask for number and ask for string blocks
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "2.0.35") < 0) {
+            const allPromptBlocks = U.toArray(dom.querySelectorAll("block[type=gameaskforstring]"))
+                .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskforstring]")))
+                .concat(U.toArray(dom.querySelectorAll("block[type=gameaskfornumber]")))
+                .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskfornumber]")));
+
+            for (const block of allPromptBlocks) {
+                if (getChildNode(block, "value", "name", "useOnScreenKeyboard")) {
+                    continue;
+                }
+                else {
+                    // preserve the old behavior by setting the value to true if not present
+                    const value = document.createElement("value");
+                    value.setAttribute("name", "useOnScreenKeyboard");
+
+                    const shadow = document.createElement("shadow");
+                    shadow.setAttribute("type", "logic_boolean");
+
+                    const field = document.createElement("field");
+                    field.setAttribute("name", "BOOL");
+                    field.textContent = "FALSE";
+
+                    shadow.appendChild(field);
+                    value.appendChild(shadow);
+                    block.appendChild(value);
+                }
+
+                // since we are going to expand the block, we also need to make sure that
+                // the other expandable parameter answerLength is present. the default values
+                // and min/max were taken from the source in pxt-common-packages prior to this change
+                const isStringBlock = block.getAttribute("type") === "gameaskforstring";
+                if (!getChildNode(block, "value", "name", "answerLength")) {
+                    const value = document.createElement("value");
+                    value.setAttribute("name", "answerLength");
+
+                    const shadow = document.createElement("shadow");
+                    shadow.setAttribute("type", "math_number_minmax");
+
+                    const mutation = document.createElement("mutation");
+                    mutation.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+                    mutation.setAttribute("min", "1");
+                    mutation.setAttribute("max", isStringBlock ? "24" : "10");
+                    mutation.setAttribute("label", "AnswerLength");
+                    mutation.setAttribute("prevision", "0");
+
+                    const field = document.createElement("field");
+                    field.setAttribute("name", "SLIDER");
+                    field.textContent = isStringBlock ? "12" : "6";
+
+                    shadow.appendChild(field);
+                    shadow.appendChild(mutation);
+                    value.appendChild(shadow);
+                    block.appendChild(value);
+                }
+            }
+        }
     }
+
+    function swapFieldIfNotMatching(
+        eventRoot: Element,
+        fieldAName: string,
+        fieldBName: string,
+        fieldAShouldStartWith: string
+    ) {
+        const fieldA = eventRoot.querySelector(`field[name=${fieldAName}]`);
+        const fieldB = eventRoot.querySelector(`field[name=${fieldBName}]`);
+        if (!fieldB || !fieldA) return;
+        if (!fieldA.innerHTML.startsWith(fieldAShouldStartWith)
+                && fieldB.innerHTML.startsWith(fieldAShouldStartWith)) {
+            // swapped by invalid translation we now catch; swap back
+            fieldA.setAttribute("name", fieldBName);
+            fieldB.setAttribute("name", fieldAName);
+        }
+    }
+
 
     function changeVariableToSpriteReporter(varBlockOrShadow: Element, reporterName: string) {
         const varField = getField(varBlockOrShadow, "VAR");

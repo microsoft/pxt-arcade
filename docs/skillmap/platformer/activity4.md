@@ -172,7 +172,7 @@ function again and again, even if you're doing something else inbetween.
 ► In the toolbox, expand the **˅ Advanced** tab and click
 on the ``||functions: Functions||`` category.
 
-► Press the ``||controller: Make a Function...||`` button to create your new function.
+► Press the **[ Make a Function... ]** button to create your new function.
 
 ► Click inside the textbox to name this function **startNextLevel**, then click **Done**.
 
@@ -405,7 +405,7 @@ We'll need to [**_increment_**](#addOn "add to")
 ---
 
 
-► Snap a ``||variables(noclick): change [currentLevel] by [1]||`` block
+► Snap a ``||variables: change [currentLevel] by [1]||`` block
 into the **top** of the **startNextLevel** function.
 
 

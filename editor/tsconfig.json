@@ -4,9 +4,10 @@
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "declaration": true,
-        "out": "../built/editor.js",
+        "outFile": "../built/editor.js",
         "rootDir": ".",
         "newLine": "LF",
+        "types": [],
         "sourceMap": false
     }
 }

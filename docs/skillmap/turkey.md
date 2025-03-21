@@ -56,7 +56,7 @@
 * position: 3 0
 * actions:
     * map: [Try Burstin' Balloons](/skillmap/balloon)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * editor: [Mod This Project](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/turkey-cert.pdf

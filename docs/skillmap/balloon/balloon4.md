@@ -1,4 +1,4 @@
-# Two Player
+# Two Player Party
 
 ### @explicitHints true
 
@@ -92,6 +92,7 @@ hint~
 
 
 #### ~ tutorialhint
+
 ```blocks
 let myMouse: Sprite = null
 let myBalloon: Sprite = null
@@ -103,9 +104,9 @@ let myBooth = sprites.create(assets.image`booth`, SpriteKind.Booth)
 myMouse = sprites.create(assets.image`mouse1-up`, SpriteKind.Mouse)
 myMouse.setPosition(50, 93)
 simplified.wrap(function () {
-    let myBalloon2 = sprites.create(img`.`, SpriteKind.Player)
+    let myBalloon2 = sprites.create(assets.image`balloon-2`, SpriteKind.Player)
     myBalloon2.setPosition(110, 93)
-    let myMouse2 = sprites.create(img`.`, SpriteKind.Mouse)
+    let myMouse2 = sprites.create(assets.image`mouse2-up`, SpriteKind.Mouse)
     myMouse2.setPosition(110, 93)
 })
 
@@ -207,6 +208,13 @@ Find a friend and have them press the (A) button or **space bar** while you pres
 
 
 
+```blockconfig.local
+let myMouse2: Sprite = null
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+        myMouse2.setImage(img`.`)
+})
+```
+
 
 
 ## {9. Add a Label}
@@ -217,7 +225,7 @@ Find a friend and have them press the (A) button or **space bar** while you pres
 ```block
 carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
 ```
-to **the end** of the ``||loops(noclick):on start||`` container to put a label on the booth so everyone knows the name of the game!
+to **the top** of the ``||loops(noclick):on start||`` container to put a label on the booth so everyone knows the name of the game!
 
 **Play your finished game a few times!  Who can get the best 2 out of 3?**
 
@@ -233,7 +241,13 @@ hint~
 
 
 
+
 ```blockconfig.local
+let myMouse2: Sprite = null
+controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+        myMouse2.setImage(img`.`)
+})
+
 simplified.wrap(function () {
     let myBalloon3 = sprites.create(img`.`, SpriteKind.Player)
     myBalloon3.setPosition(110, 93)
@@ -272,6 +286,20 @@ carnival.addLabelTo("Burstin' Balloons", carnival.Areas.Mid)
 **🥳 You've done it 🥳**
 
 You've finished your two-player game!
+
+
+~hint How do I share my game?💡
+
+---
+
+**Want to share your game?**
+
+Click "Done" to get back out to the skillmap, then look in the lower-right corner for the share button.
+
+![Share your card](/static/skillmap/balloon/share.gif )
+
+hint~
+
 
 When you're ready, click **Done** to return to the skillmap and click the button in the side panel to share your game with friends!
 
@@ -314,15 +342,14 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
     myMouse2.setImage(img`.`)
 })
 
-
-
 ```
 
 
 ```package
-pxt-sprite-scaling=github:microsoft/pxt-common-packages/libs/sprite-scaling
-carnival=github:microsoft/arcade-carnival
-simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks
+sprite-scaling
+carnival=github:microsoft/arcade-carnival#v0.0.7
+simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks#v0.0.7
+balloon-images=github:microsoft/arcade-tutorial-extensions/balloon-images#v0.0.11
 ```
 
 
@@ -355,18 +382,6 @@ myMouse.setPosition(80, 93)
 ```
 
 
-```customts
-namespace simplified{
-    /**
-    * just run the code
-    */
-    //% block="create player"
-    //% handlerStatement=1
-    export function wrap(handler: () => void) {
-        handler();
-    }
-}
-```
 
 
 

@@ -1,14 +1,12 @@
 # Princess Pizza
 
-[Open this tutorial in the editor!](/#tutorial:/concepts/princess-pizza)
-
 ## {Introduction @unplugged}
 
 ``||sprites:Sprites||`` that are moving will often have situations where two sprites end up on top of each other. The ``||sprites:sprite overlap||`` event can be used to handle interactions between ``||sprites:sprites||`` when this occurs.
 
 ## {Step 1 @fullscreen}
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``rename variable...``, and change the name from ``||variables:mySprite||`` to ``||variables:princess||``.
+Find ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Click on ``||variables:mySprite||``, select ``rename variable...``, and change the name from ``||variables:mySprite||`` to ``||variables:princess||``.
 
 ```blocks
 let princess = sprites.create(img`
@@ -86,7 +84,7 @@ controller.moveSprite(princess)
 
 ## {Step 4 @fullscreen}
 
-Find ``||variables:set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Rename ``||variables:mySprite||`` to ``||variables:pizza||``. Open the image editor, and select or create an image of a pizza.
+Find ``||variables(sprites):set mySprite to||`` in ``||sprites:Sprites||``. Drag it into the ``||loops:on start||``. Rename ``||variables:mySprite||`` to ``||variables:pizza||``. Open the image editor, and select or create an image of a pizza.
 
 ```blocks
 let pizza: Sprite = null
@@ -132,7 +130,7 @@ b 5 5 5 5 d d 4 4 4 4 . . . . .
 
 ## {Step 5 @fullscreen}
 
-Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``. Change ``||variables:mySprite||`` to ``||variables:pizza||``, ``||sprites:x||`` to 140, and ``||sprites:y||`` to 100.
+Find ``||sprites:set mySprite position to x 0 y 0||`` in ``||sprites:Sprites||``. Change ``||variables(noclick):mySprite||`` to ``||variables(noclick):pizza||``, ``||sprites:x||`` to 140, and ``||sprites:y||`` to 100.
 
 ```blocks
 let pizza: Sprite = null
@@ -332,4 +330,4 @@ pizza.setPosition(140, 100)
 
 ## {Complete}
 
-Congratulations, your game is complete! The player can move the ``||variables:princess||`` around as long as they want, so long as they avoid the ``||variables:pizza||``.
+Congratulations, your game is complete! The player can move the ``||variables(noclick):princess||`` around as long as they want, so long as they avoid the ``||variables(noclick):pizza||``.

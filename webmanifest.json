@@ -1,7 +1,5 @@
 {
     "name": "arcade.makecode.com",
-    "display": "fullscreen",
-    "orientation": "portrait",
     "icons": [
         {
             "src": "/static/icons/logo-192x192.png",

@@ -18,7 +18,7 @@ game.onUpdate(function () {
 
 ## {Step 2}
 
-From ``||sprites:Sprites||``, find the ``||variables:set projectile to||`` block that has a ``||sprites:projectile from side||`` inside of it. Drag it into the ``||game:on game update||``. Change `vx` to `0` and `vy` to `100`.
+From ``||sprites:Sprites||``, find the ``||variables(sprites):set projectile to||`` block that has a ``||sprites:projectile from side||`` inside of it. Drag it into the ``||game:on game update||``. Change `vx` to `0` and `vy` to `100`.
 
 ```blocks
 game.onUpdate(function () {
@@ -101,7 +101,7 @@ game.onUpdate(function () {
 
 ## {Step 5}
 
-Go back to ``||sprites:Sprites||`` and find the ``||sprites:set mySprite position to||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
+Go back to ``||sprites:Sprites||`` and find the ``||sprites:set mySprite position to||``. Place it after ``||variables(sprites):set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``.
 
 ```blocks
 game.onUpdate(function () {
@@ -225,7 +225,7 @@ Congratulations, your starfield is complete! Build any game you wish on top of i
 
 In reality, the stars in outer space are millions of light years away from anything else. So, they shouldn't interact or collide with other objects out there.
 
-Find ``||sprites:set mySprite auto destroy||`` in ``||sprites:Sprites||``. Place it after ``||variables:set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:auto destroy||`` to ``||sprites:ghost||``, and click on ``OFF`` to turn it ``ON``.
+Find ``||sprites:set mySprite auto destroy||`` in ``||sprites:Sprites||``. Place it after ``||variables(sprites):set projectile to||`` and change ``||variables:mySprite||`` to ``||variables:projectile||``. Change ``||sprites:auto destroy||`` to ``||sprites:ghost||``, and click on ``OFF`` to turn it ``ON``.
 
 This also has a large effect on the frame rate, as the game can skip processing any actions related to the stars overlapping other sprites in the game.
 

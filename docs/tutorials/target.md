@@ -21,13 +21,13 @@ Feel free to pause or restart the video as often as you need!
 
 Click  "Pop out video" to resize the video window or move it around the screen.
 
-![Balloon Bursting Carnival Intro](azuremedia:2593255d-ab7a-49e1-99b2-bbf59af49d97/Target-Practice.ism?start=29)
+![Balloon Bursting Carnival Intro](youtube:6Q35Rc6tIgg?start=29)
 
 
 
 ```package
 simple-blocks=github:microsoft/arcade-tutorial-extensions/simple-blocks/
-carnival=github:microsoft/arcade-carnival
+carnival=github:microsoft/arcade-carnival#v0.0.7
 ```
 
 
