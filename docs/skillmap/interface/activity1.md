@@ -1,42 +1,8 @@
 # Get to Know MakeCode Arcade
 
 
-```ghost
-let mySprite: Sprite = null;
-mySprite.startEffect(effects.spray)
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.showLongText("The little unicorn walked into the meadow.", DialogLayout.Top)
-    scene.cameraShake(4, 500)
-})
-scene.setBackgroundColor(9)
-scene.setBackgroundImage()
-mySprite.x += 0
-effects.confetti.startScreenEffect()
-effects.confetti.endScreenEffect()
-mySprite.setPosition(70, randint(100, 600))
-for (let index = 0; index < 4; index++) {
-    controller.moveSprite(mySprite)
-    music.setVolume(20)
-    music.playMelody("- - - - - - - - ", 120)
-}
-game.onUpdateInterval(5000, function () {
-    if (game.askForString("Continue?") == "Y" || game.askForString("Continue?") == "y") {
-        mySprite.say(":)")
-    }
-    game.splash("")
-})
-
-```
-
-
-```template
-game.splash("These blocks are in your workspace!")
-
-```
-
-### @explicitHints true
-
 ## {Introduction @unplugged}
+### @explicitHints true
 
 ![Psyched Monkey](/static/skillmap/interface/monkey.png "Psyched Monkey is Ready!" )
 
@@ -72,7 +38,7 @@ click the button with the lightbulb for an extra hint.
 
 #### ~ tutorialhint
 ```
-**You found the hints!**
+You found the hints!
 ```
 
 
@@ -326,3 +292,38 @@ You've learned everything you need to know to graduate to a new tutorial.
 
 Now you can click **Done** to continue on and create some games with MakeCode Arcade!
 
+
+
+
+```ghost
+let mySprite: Sprite = null;
+mySprite.startEffect(effects.spray)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    game.showLongText("The little unicorn walked into the meadow.", DialogLayout.Top)
+    scene.cameraShake(4, 500)
+})
+scene.setBackgroundColor(9)
+scene.setBackgroundImage()
+mySprite.x += 0
+effects.confetti.startScreenEffect()
+effects.confetti.endScreenEffect()
+mySprite.setPosition(70, randint(100, 600))
+for (let index = 0; index < 4; index++) {
+    controller.moveSprite(mySprite)
+    music.setVolume(20)
+    music.playMelody("- - - - - - - - ", 120)
+}
+game.onUpdateInterval(5000, function () {
+    if (game.askForString("Continue?") == "Y" || game.askForString("Continue?") == "y") {
+        mySprite.say(":)")
+    }
+    game.splash("")
+})
+
+```
+
+
+```template
+game.splash("These blocks are in your workspace!")
+
+```
