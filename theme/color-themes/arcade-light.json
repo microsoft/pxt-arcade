@@ -1,8 +1,9 @@
 {
     "id": "arcade-light",
-    "name": "Arcade Light",
+    "name": "Light",
     "weight": 40,
-    "overrideFiles": [],
+    "overrideFiles": [
+        "/overrides/arcade-light-overrides.css"],
     "colors": {
         "pxt-header-background": "#116E79",
         "pxt-header-foreground": "#FFFFFF",
@@ -20,7 +21,7 @@
         "pxt-secondary-foreground": "#F8FAFC",
         "pxt-secondary-background-hover": "#483c9a",
         "pxt-secondary-foreground-hover": "#F8FAFC",
-        "pxt-secondary-accent": "#7569c4",
+        "pxt-secondary-accent": "#403587",
 
         "pxt-tertiary-background": "#116E79",
         "pxt-tertiary-foreground": "#FFFFFF",
@@ -65,10 +66,12 @@
         "pxt-neutral-stencil3": "#FFFFFF",
         "pxt-neutral-background3-alpha90": "#4E5758E5",
 
+        "pxt-neutral-base": "rgba(0, 0, 0, 1)",
         "pxt-neutral-alpha0": "rgba(0, 0, 0, 0)",
         "pxt-neutral-alpha10": "rgba(0, 0, 0, 0.1)",
         "pxt-neutral-alpha20": "rgba(0, 0, 0, 0.2)",
         "pxt-neutral-alpha50": "rgba(0, 0, 0, 0.5)",
+        "pxt-neutral-alpha80": "rgba(0, 0, 0, 0.8)",
 
         "pxt-link": "#3977B4",
         "pxt-link-hover": "#204467",

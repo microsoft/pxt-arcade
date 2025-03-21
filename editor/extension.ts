@@ -311,41 +311,52 @@ namespace pxt.editor {
                     }
                 });
 
+            const performOldEnumShimUpgrade = (variableType: string, blockType: string) => {
+                const variableKinds = pxt.U.toArray(dom.querySelectorAll(`variable[type=${variableType}]`));
+
+                if (variableKinds.length) {
+                    pxt.U.toArray(dom.querySelectorAll(`block[type=${blockType}]>field[name=MEMBER]`))
+                        .concat(pxt.U.toArray(dom.querySelectorAll(`shadow[type=${blockType}]>field[name=MEMBER]`)))
+                        .forEach(node => {
+                            const value = node.textContent;
+                            if (!/^\d/.test(value)) {
+                                // The correct numerical value will be in the variables
+                                for (const kind of variableKinds) {
+                                    const match = /^\d+(.*)/.exec(kind.textContent);
+                                    if (match?.[1] === value) {
+                                        node.textContent = kind.textContent;
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                }
+            }
+
 
             // The kind field used by the legacy animation editor switched to including the numerical
             // enum value in the field (e.g. Walking -> 0Walking)
-            const actionKinds = pxt.U.toArray(dom.querySelectorAll("variable[type=ActionKind]"));
+            performOldEnumShimUpgrade("ActionKind", "action_enum_shim");
 
-            if (actionKinds.length) {
-                pxt.U.toArray(dom.querySelectorAll("block[type=action_enum_shim]>field[name=MEMBER]"))
-                    .concat(pxt.U.toArray(dom.querySelectorAll("shadow[type=action_enum_shim]>field[name=MEMBER]")))
-                    .forEach(node => {
-                        const value = node.textContent;
-                        if (!/^\d/.test(value)) {
-                            // The correct numerical value will be in the variables
-                            for (const kind of actionKinds) {
-                                const match = /^\d+(.*)/.exec(kind.textContent);
-                                if (match?.[1] === value) {
-                                    node.textContent = kind.textContent;
-                                    break;
-                                }
-                            }
-                        }
-                    });
-            }
+            // same for SpriteKindLegacy
+            performOldEnumShimUpgrade("SpriteKindLegacy", "spritetype");
         }
 
-        // Added the "use system keyboard" options to the ask for number and ask for string blocks
-        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "2.0.18") < 0) {
+        // Added the "use on-screen keyboard" options to the ask for number and ask for string blocks
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "2.0.35") < 0) {
             const allPromptBlocks = U.toArray(dom.querySelectorAll("block[type=gameaskforstring]"))
                 .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskforstring]")))
                 .concat(U.toArray(dom.querySelectorAll("block[type=gameaskfornumber]")))
                 .concat(U.toArray(dom.querySelectorAll("shadow[type=gameaskfornumber]")));
 
             for (const block of allPromptBlocks) {
-                if (!getChildNode(block, "value", "name", "useSystemKeyboard")) {
+                if (getChildNode(block, "value", "name", "useOnScreenKeyboard")) {
+                    continue;
+                }
+                else {
+                    // preserve the old behavior by setting the value to true if not present
                     const value = document.createElement("value");
-                    value.setAttribute("name", "useSystemKeyboard");
+                    value.setAttribute("name", "useOnScreenKeyboard");
 
                     const shadow = document.createElement("shadow");
                     shadow.setAttribute("type", "logic_boolean");
@@ -355,6 +366,34 @@ namespace pxt.editor {
                     field.textContent = "FALSE";
 
                     shadow.appendChild(field);
+                    value.appendChild(shadow);
+                    block.appendChild(value);
+                }
+
+                // since we are going to expand the block, we also need to make sure that
+                // the other expandable parameter answerLength is present. the default values
+                // and min/max were taken from the source in pxt-common-packages prior to this change
+                const isStringBlock = block.getAttribute("type") === "gameaskforstring";
+                if (!getChildNode(block, "value", "name", "answerLength")) {
+                    const value = document.createElement("value");
+                    value.setAttribute("name", "answerLength");
+
+                    const shadow = document.createElement("shadow");
+                    shadow.setAttribute("type", "math_number_minmax");
+
+                    const mutation = document.createElement("mutation");
+                    mutation.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+                    mutation.setAttribute("min", "1");
+                    mutation.setAttribute("max", isStringBlock ? "24" : "10");
+                    mutation.setAttribute("label", "AnswerLength");
+                    mutation.setAttribute("prevision", "0");
+
+                    const field = document.createElement("field");
+                    field.setAttribute("name", "SLIDER");
+                    field.textContent = isStringBlock ? "12" : "6";
+
+                    shadow.appendChild(field);
+                    shadow.appendChild(mutation);
                     value.appendChild(shadow);
                     block.appendChild(value);
                 }

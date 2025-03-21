@@ -1,6 +1,6 @@
 {
-    "id": "arcade-legacy",
-    "name": "Arcade Legacy",
+    "id": "arcade-orange",
+    "name": "Orange",
     "weight": 20,
     "overrideFiles": [],
     "colors": {
@@ -20,7 +20,7 @@
         "pxt-secondary-background-hover": "#015e69",
         "pxt-secondary-foreground": "#FFFFFF",
         "pxt-secondary-foreground-hover": "#FFFFFF",
-        "pxt-secondary-accent": "#58afba",
+        "pxt-secondary-accent": "#015964",
 
         "pxt-tertiary-background": "#028B9B",
         "pxt-tertiary-foreground": "#FFFFFF",
@@ -65,10 +65,12 @@
         "pxt-neutral-stencil3": "#FFFFFF",
         "pxt-neutral-background3-alpha90": "#4E5758E5",
 
+        "pxt-neutral-base": "rgba(0, 0, 0, 1)",
         "pxt-neutral-alpha0": "rgba(0, 0, 0, 0)",
         "pxt-neutral-alpha10": "rgba(0, 0, 0, 0.1)",
         "pxt-neutral-alpha20": "rgba(0, 0, 0, 0.2)",
         "pxt-neutral-alpha50": "rgba(0, 0, 0, 0.5)",
+        "pxt-neutral-alpha80": "rgba(0, 0, 0, 0.8)",
 
         "pxt-link": "#3977B4",
         "pxt-link-hover": "#204467",

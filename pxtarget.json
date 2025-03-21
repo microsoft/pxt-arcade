@@ -579,7 +579,8 @@
             "ko",
             "ru",
             "zh-CN",
-            "zh-TW"
+            "zh-TW",
+            "nl"
         ],
         "invertedMenu": true,
         "showHomeScreen": true,
@@ -621,7 +622,7 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
-        "defaultColorTheme": "arcade-light",
+        "defaultColorTheme": "arcade-orange",
         "highContrastColorTheme": "pxt-high-contrast",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
@@ -687,7 +688,7 @@
         "ocvFrameUrl": "https://admin-ignite.microsoft.com"
     },
     "queryVariants": {
-        "skillsMap=1": {
+        "skillmap=1": {
             "appTheme": {
                 "embeddedTutorial": true,
                 "allowParentController": true,

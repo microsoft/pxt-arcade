@@ -276,13 +276,6 @@ Games submitted by the MakeCode community.
         "description": ""
     },
     {
-        "url": "https://forum.makecode.com/t/adventures-of-sam-and-nate/1690",
-        "imageUrl": "/static/discourse/08526-04421-77887-45962.png",
-        "cardType": "forumUrl",
-        "name": "Adventures of Sam and Nate",
-        "description": ""
-    },
-    {
         "url": "https://forum.makecode.com/t/charred-earth-tank-game-update/1662",
         "imageUrl": "/static/discourse/72397-33207-92675-41376.png",
         "cardType": "forumUrl",
