@@ -40,7 +40,7 @@ controller.player2.dy()
 
 [on event](/reference/controller/button/on-event),
 [is pressed](/reference/controller/button/is-pressed),
-[on button event](/reference/controller/button/on-buttonevent),
+[on button event](/reference/controller/button/on-button-event),
 [move sprite](/reference/controller/move-sprite),
 [dx](/reference/controller/dx),
 [dy](/reference/controller/dy)
