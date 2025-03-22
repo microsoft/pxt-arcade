@@ -286,7 +286,9 @@ We'll fix that over the next couple of steps.
 <!-- **************************************************-->
 ## {Step 9}
 
-If we leave the sprites like this, you won't be able to see them all! Let's spread them out.
+If we leave the sprites like this, you won't be able to see all of them! 
+
+Let's spread them out.
 
 - :paper plane: From the ``||sprites:Sprites||`` category, grab
 ```block
@@ -318,7 +320,9 @@ for (let index = 0; index < 100; index++) {
 
 **Add some space.**
 
-Our loop spits out all the sprites at the same time. If we add a small pause, we can give them room to run!
+Our loop spits out all of the sprites at the same time. 
+
+If we add a small pause, we can give them room to run!
 
 - :redo: Help the sprites spread out horizontally by visiting the ``||loops:Loops||`` category and dragging
 ```block
@@ -351,10 +355,7 @@ Let's animate!
 
 ---
 
-- :chevron down: In the toolbox, click **Advanced** to reveal the ``||animation:Animation||`` category.
-
-
-- :sync: Drag
+- :sync: From the ``||animation:Animation||`` category, drag
 ```block
 animation.runImageAnimation(
 projectile,
@@ -455,7 +456,7 @@ true
 
 ---
 
-Now you have a hundred things to celebrate 100 days!
+Now you have 100 things to celebrate 100 days!
 
 Take a final look at your project in the game window. When you're finished, click **Done**, then share it with family and friends!
 

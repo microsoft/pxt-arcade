@@ -9,7 +9,7 @@
 {
   "name": "Pizza Party",
   "description": "Create a quick multiplayer game where you try to gather as much pizza as possible before your friends knock away your points!",
-  "url": "/tutorials/pizza-party",
+  "url": "/tutorials/new-pizza-party",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/pizza-party/playtime.png",
   "largeImageUrl": "/static/tutorials/pizza-party/playtime.png"

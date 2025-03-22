@@ -54,7 +54,7 @@
 * position: 4 0
 * actions:
     * map: [Try our Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * editor: [Mod Your Project](/)
 * rewards:
     * certificate: /static/skillmap/certificates/rockstar-cert.pdf
     * completion-badge: /static/badges/badge-rockstar.png

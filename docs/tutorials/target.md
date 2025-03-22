@@ -61,6 +61,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 let theTarget: Sprite = null
 let throwBall: Ball = null
 let myBall: Ball = null
+carnival.startCountdownGame(15, carnival.WinTypes.Win)
 scene.setBackgroundImage(assets.image`wildWest`)
 myBall = carnival.create(assets.image`ball-yellow`, SpriteKind.Player)
 myBall.setPosition(80, 90)

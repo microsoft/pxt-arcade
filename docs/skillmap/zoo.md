@@ -92,7 +92,7 @@
 * position: 5 0
 * actions:
     * map: [Try Beginner Skillmap](/skillmap/beginner)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * editor: [Mod Your Project](/)
 * rewards:
     * certificate:
         * url: /static/skillmap/certificates/zookeeper-license.pdf

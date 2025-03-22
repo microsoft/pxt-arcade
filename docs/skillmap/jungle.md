@@ -109,7 +109,7 @@
 * position: 4 1
 * actions:
     * map: [Try Space Explorer](/skillmap/space)
-    * editor: [Edit Your Project with a Full Toolbox](/)
+    * editor: [Mod Your Project](/)
 * rewards:
         * certificate:
             * url: /static/skillmap/certificates/jungle-cert.pdf

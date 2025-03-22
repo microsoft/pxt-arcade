@@ -390,7 +390,7 @@ to make decisions instead of creating new code for every possibility.
 
 
 ► To make a new variable, go to the ``||variables: Variables||`` menu
-and click on ``||controller: Make a Variable...||`` .
+and click on ``||variable: Make a Variable...||`` .
 
 ► Enter **currentLevel** in the textbox and click **OK**.
 

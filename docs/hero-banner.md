@@ -12,26 +12,27 @@ Here are some cool activities to get you started!
 * url: /tutorials/intro
 * cardType: tutorial
 ---
+* name: Arcade-Con 2025!
+* buttonLabel: Learn more
+* description: Arcade-Con 2025!
+* imageUrl: /static/courses/arcadecon/arcadecon-amc-banner.png
+* url: /courses/arcadecon/2025
+* cardType: link
+---
+* name: New Pizza Party!
+* buttonLabel: Code Now
+* description: New Pizza Party!
+* imageUrl: /static/hero-gallery/new-pizza-hero.jpg
+* url: /tutorials/new-pizza-party
+* cardType: tutorial
+---
 * name: Educator Resources
 * buttonLabel: Visit
 * description: Educator Resources
 * imageUrl: /static/educator/edu.jpg
 * url: /educators
 * cardType: link
----
-* name: Snack Chase (Junior)
-* buttonLabel: Code Now
-* description: Snack Chase (Junior)
-* imageUrl: /static/hero-gallery/lyla-hero.jpg
-* url: /tutorials/lyla-jr
-* cardType: tutorial
----
-* name: Build a Bubble Popping Game
-* buttonLabel: Code Now
-* description: Build a Bubble Popping Game
-* imageUrl: /static/hero-gallery/io2_hero.jpg
-* url: /tutorials/bubbles
-* cardType: tutorial
+
 
 
 
