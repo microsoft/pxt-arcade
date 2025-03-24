@@ -339,7 +339,6 @@ This will remove a life from the group whenever a projectile overlaps a player.
 
 
 ```blockconfig.local
-//@highlight
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
     sprites.destroy(sprite, effects.fire, 100)
     info.changeLifeBy(-1)
