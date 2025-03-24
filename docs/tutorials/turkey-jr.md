@@ -315,7 +315,6 @@ namespace turkey {
      * (Like on start, but jr)
      */
     //% color=#093330
-    //% help=game/on-start-simple 
     //% weight=1000
     //% afterOnStart=false
     //% blockId=on_start_simple 
@@ -334,7 +333,6 @@ namespace turkey {
     //% blockId=turkey_jump
     //% weight=900
     //% block="`ICON.turkey-right` jump"
-    //% help=github:docs/turkey_jump
     export function turkeyJump() {
         bigTurkey.vy = -300
     }
@@ -345,7 +343,6 @@ namespace turkey {
     //% blockId=free_turkey
     //% weight=300
     //% block="free `ICON.turkey-cage`"
-    //% help=github:docs/free_turkey
     export function freeTurkey() {
         tiles.setTileAt(cageLocation, assets.tile`transparency17`)
         turkey.freeTurkeys = sprites.create(turkey_imgs.lil, SpriteKind.Rescued)
@@ -358,7 +355,6 @@ namespace turkey {
     */
     //% blockId=add_turkey
     //% block="add `ICON.turkey-right`"
-    //% help=github:docs/add_turkey
     export function addTurkey() {
         bigTurkey = sprites.create(turkey_imgs.player, SpriteKind.Player)
         controller.moveSprite(bigTurkey, 100, 0)
@@ -372,7 +368,6 @@ namespace turkey {
     */
     //% blockId=turkey_timer
     //% block="start `ICON.clock-white`"
-    //% help=github:docs/turkey_timer
     export function turkeyTimer() {
         carnival.startTimer()
     }
@@ -385,7 +380,6 @@ namespace turkey {
     //% blockId=set_turkey_lose
     //% block="game over `ICON.frown-open-white`"
     //% group="Game"
-    //% help=github:docs/set_turkey_lose
     export function turkeyLoss() {
         game.setGameOverPlayable(false, music.createSoundEffect(WaveShape.Noise, 4173, 1026, 100, 0, 800, SoundExpressionEffect.Warble, InterpolationCurve.Curve), false)
         game.gameOver(false)
@@ -397,7 +391,6 @@ namespace turkey {
     */
     //% blockId=set_turkey_win
     //% block="game over `ICON.smile-beam-white`"
-    //% help=github:docs/set_turkey_win
     export function turkeyWin() {
         //carnival.onGameOverExpanded(carnival.WinTypes.Timed)
 
@@ -414,7 +407,6 @@ namespace turkey {
     //% weight=99 blockGap=8
     //% blockId=ctrlonA block="on `ICON.a-button-white-invert`"
     //% color=#093330
-    //% help=docs/on-a
     export function onA(handler: () => void) {
         controller.A.onEvent(ControllerButtonEvent.Pressed, handler)
     }
@@ -430,7 +422,6 @@ namespace turkey {
     //% blockId=gameonscore3
     //% block="on `ICON.turkey-cage` $score"
     //% score.defl=15
-    //% help=docs/on_score
     //% color=#093330
     export function onCages(score: number, handler: () => void) {
         info.player1.impl.onScore(score, handler);
@@ -447,7 +438,6 @@ namespace turkey {
     //% block="`ICON.turkey-right` `ICON.point-right-white` `ICON.turkey-cage`"
     //% draggableParameters = "reporter"
     //% color=#093330
-    //% help=docs/on-overlap-cage
     export function turkeyOverlapCage(handler: () => void) {
         if (!handler) return;
 
@@ -474,7 +464,6 @@ namespace turkey {
     //% blockId=set_turkey_override
     //% block="set `ICON.turkey-cage` to $thisScore"
     //% thisScore.defl=0
-    //% help=github:docs/set_turkey_override
     export function setScoreOverride(thisScore: number) {
         info.setScore(thisScore)
         turkey.scoreText.setText(" x " + convertToText(info.score()))
@@ -497,7 +486,6 @@ namespace turkey {
     //% weight=900
     //% block="`ICON.turkey-cage` + $thisScore"
     //% thisScore.defl=1
-    //% help=github:docs/change_turkey_override
     export function changeScoreOverride(thisScore: number) {
         info.changeScoreBy(thisScore)
         turkey.setScoreOverride(info.score())
