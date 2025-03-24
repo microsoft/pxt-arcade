@@ -129,5 +129,5 @@ In addition to the trainings found here, Arcade and micro:bit occasionally provi
 [Previous Webinars](https://www.youtube.com/playlist?list=PLUgoavxKsVdWuplcbeKe69efv7EF1m0bO) <br/>
 [YouTube Educator Channel](https://www.youtube.com/@MSMakeCode) <br/>
 [Arcade Courses Home Page](https://arcade.makecode.com/courses) <br/>
-[micro:bit Courses Home Page](https://makecode.microbit.org/courses) <br/>
+[micro:bit Training Home Page](https://microbit.org/teach/featured/) <br/>
 [Minecraft Lessons Home Page](https://education.minecraft.net/en-us/resources/explore-lessons)
