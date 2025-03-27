@@ -40,7 +40,7 @@
   "directOpen": true
 },
 {
-  "name": "Shark Attack",
+  "name": "Shark Splash",
   "cardType": "link",
   "description": "The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food!",
   "imageUrl": "/static/skillmap/backgrounds/shark-map.png",

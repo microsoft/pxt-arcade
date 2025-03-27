@@ -497,6 +497,12 @@
                     "typeName": "Image",
                     "icon": "image outline",
                     "defaultName": "myImage"
+                },
+                {
+                    "label": "Location",
+                    "typeName": "tiles.Location",
+                    "icon": "tree",
+                    "defaultName": "myLocation"
                 }
             ]
         },
@@ -700,6 +706,14 @@
             "appTheme": {
                 "hideMenuBar": true,
                 "workspaceSearch": true
+            }
+        },
+        "ninja=1": {
+            "appTheme": {
+                "embeddedTutorial": true,
+                "allowParentController": true,
+                "shareFinishedTutorials": false,
+                "hideReplaceMyCode": false
             }
         }
     },

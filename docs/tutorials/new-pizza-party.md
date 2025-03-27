@@ -6,11 +6,11 @@
 
 Are you ready to code a pizza party?
 
-Follow this tutorial to create your own multiplayer experience that you can play online together with family and friends!
+Follow this tutorial to create your own multiplayer experience that you can play online with family and friends!
 
 
 
-![Play Pizza Party](/static/tutorials/pizza-party/playtime.gif "You can play with up to 4 people!")
+![Play Pizza Party](https://makecode.com/api/_h9zXUDJP47oF/thumb "You can play with up to 4 people!")
 
 
 
@@ -34,8 +34,8 @@ In computer science, an **ARRAY** is an ordered list of items.
 
 We give this list a name, so that we can ask for items from this list later.
 
-For example, the list in our program is called **characters**.
-If we want to flip the first image from this list, we can add a block
+For example, we named the list in our program **characters**.
+If we want to flip the first image from this list horizontally, we could add a block
 like this to our program:
 
 
@@ -51,10 +51,10 @@ hint~
 let characters: Image[] = []
 
 characters = [
-pizzaassets.P1,
-pizzaassets.P2,
-pizzaassets.P3,
-pizzaassets.P4
+newpizzaassets.red,
+newpizzaassets.blue,
+newpizzaassets.orange,
+newpizzaassets.green
 ]
 ```
 
@@ -65,10 +65,10 @@ pizzaassets.P4
 let characters: Image[] = []
 
 characters = [
-pizzaassets.P1,
-pizzaassets.P2,
-pizzaassets.P3,
-pizzaassets.P4
+newpizzaassets.red,
+newpizzaassets.blue,
+newpizzaassets.orange,
+newpizzaassets.green
 ]
 ```
 
@@ -85,9 +85,7 @@ into **the end** of the<br/>
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-- :paint brush: Click the empty square in the background block and flip to the **Gallery** tab.
-![Switch to the Gallery tab](/static/skillmap/assets/gallery.png " ")
-then choose the first background image called **City**.
+💡 _If you want to choose a new background, click on the image inside the block and pick a new one from the **Gallery**._
 
 
 
@@ -98,14 +96,14 @@ then choose the first background image called **City**.
 let characters: Image[] = []
 
 characters = [
-pizzaassets.P1,
-pizzaassets.P2,
-pizzaassets.P3,
-pizzaassets.P4
+newpizzaassets.red,
+newpizzaassets.blue,
+newpizzaassets.orange,
+newpizzaassets.green
 ]
 
 //@highlight
-scene.setBackgroundImage(pizzaassets.City)
+scene.setBackgroundImage(newpizzaassets.city)
 ```
 
 
@@ -126,9 +124,9 @@ container already in the workspace.
 
 ---
 
-Within special tutorials, you'll sometimes see custom categories that we don't offer in our normal interface. These categories are **Extensions**.
+In some tutorials, you may see custom categories that we don't offer in our normal interface. These categories are **Extensions**.
 
-When creating custom projects or tutorials, people can craft their own blocks that others can add into their toolbox as an extension.  Since we can't get to the **Extensions** gallery from a tutorial, the categories you need have been provided in the toolbox by default.
+Anybody can craft special blocks that others can add to their toolbox as an extension.  Since we can't get to the **Extensions** gallery from a tutorial, the categories you need have been provided in the toolbox by default.
 
 If you want to use the ``||pizza:Pizza||`` category in another tutorial someday, make sure to grab the share link for this finished project and you'll be able to import the blocks from this tutorial into another project!
 
@@ -144,12 +142,12 @@ hint~
 let characters: Image[] = []
 
 characters = [
-pizzaassets.P1,
-pizzaassets.P2,
-pizzaassets.P3,
-pizzaassets.P4
+newpizzaassets.red,
+newpizzaassets.blue,
+newpizzaassets.orange,
+newpizzaassets.green
 ]
-scene.setBackgroundImage(pizzaassets.City)
+scene.setBackgroundImage(newpizzaassets.city)
 //@highlight
 pizza.setPlayersWith (characters, 1)
 ```
@@ -194,8 +192,6 @@ Now, when other players join, more sprites will appear in the game window.
 **Test it out by clicking the player icons to the left of the game window.**
 
 ![Test with the player buttons to the left of the game window](/static/tutorials/pizza-party/players1.png "An image highlighting the player icons")
-
-📝 _Note: In actual game play, each player will join in order. To simulate this, make sure to test with **Player 1** first, then **Player 2**, then **Player 3**, etc._
 
 
 
@@ -390,7 +386,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 <br/>
 This block deletes the pizza sprite (otherSprite) which was overlapped. It also
-adds a special disintigrate effect to the image while it's happening.
+adds a special disintigrate effect to the image while that's happening.
 
 ```block
     sprites.destroy(otherSprite, effects.disintegrate, 100)
@@ -492,8 +488,8 @@ mp.onScore(20, function (thisPlayer) {
 
 Let's make things a little more competitive by allowing sprites to bump one another out of the way.
 
-- :paper plane: Open the ``||sprites:Sprites||`` category and drag the<br/>
-``||sprites:on sprite of kind [Player] overlaps...||``
+- :group: Open the ``||mp:Multiplayer||`` category and drag the<br/>
+``||mp:on [A] button [pressed] for [player]||``
 <br/>bundle into **an empty** area of the workspace.
 
 
@@ -506,19 +502,62 @@ Let's take a look at the blocks you just added.
 ---
 
 <br/>
-This **event** block triggers an action whenever two Players (characters) overlap.
+This **event** block triggers an action whenever a player presses the A button.
 
 ```block
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {  })
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player) {})
 ```
 
 ---
 
 <br/>
-This block checks to see **if** the first player is holding down their (A) button. If so, the code inside will run.
+This block changes the type of the player who pressed the A button to **Enemy**. This also means that player can no longer get points from pizza.
 
 ```block
-    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {}
+    mp.getPlayerSprite(player).setKind(SpriteKind.Enemy)
+```
+
+---
+
+
+hint~
+
+
+#### ~ tutorialhint
+
+```blocks
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player) {
+    mp.getPlayerSprite(player).setKind(SpriteKind.Enemy)
+})
+```
+
+
+
+
+
+## {13. The Bump}
+
+Here, we can add the code that takes a point from another player when the new Enemy collides with them. 
+
+
+- :paper plane: Open the ``||sprites:Sprites||`` category and drag the<br/>
+``||sprites:on [sprite] of kind [Enemy] overlaps [otherSprite] of kind [Player]||``
+<br/>bundle into **an empty** area of the workspace.
+
+
+~hint What does this bundle do? 🤷🏽‍♂️
+
+---
+
+Let's take a look at the blocks you just added.
+
+---
+
+<br/>
+This **event** block triggers an action whenever the new Enemy overlaps with a Player.
+
+```block
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {  })
 ```
 
 ---
@@ -533,44 +572,40 @@ This code makes it look like the camera is shaking around by 4 pixels for half a
 ---
 
 <br/>
-This is a custom block made for this tutorial. It bumps the other sprite to the opposite side of the screen from where the first sprite is located.
+This block takes a point away from the Player sprite.
 
 ```block
-        pizza.bumpSprite(sprite, otherSprite)
+        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+```
+
+<br/>
+This block changes the Enemy back to a Player so the game can continue.
+
+```block
+    let sprite: Sprite = null
+       sprite.setKind(SpriteKind.Player)
 ```
 
 ---
 
-<br/>
-This block takes a point away from the other sprite.
-
-```block
-        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
-```
-
 
 hint~
-
 
 #### ~ tutorialhint
 
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pizza.bumpSprite(sprite, otherSprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
-    }
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
 })
 ```
 
 ```blockconfig.local
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pizza.bumpSprite(sprite, otherSprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
-    }
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
 })
 ```
 
@@ -578,147 +613,31 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherS
 
 
 
-## {13. Test!}
+## {14. Test!}
 
 
 - :binoculars: Test your project with two or more players.
 
-As **Player 1**, try holding down the (A) button (or space bar) and running into another player.  What happens?
+Click the green player to the side of the game window, then try pressing the (A) button (or space bar) and running into another player.  What happens?
 
 
-📝 _Note: At the moment, a player can only bump someone with a higher number. We'll fix that in the next step._
-
-
-
-
-
-
-
-## {14. Again}
-
-What if the other player is holding down _their_ (A) button?  Let's add code that reverses the whammy.
-
-- :mouse pointer: Right click on the ``||logic(noclick):if||`` statement and when the dropdown menu appears, select **Duplicate**.
-
-- :mouse pointer: Grab the deactivated ``||logic(noclick):if||`` statement and snap it in beneath the original.
-
-- :mouse pointer: Swap all of the ``||variables(noclick):sprite||`` and  ``||variables(noclick):otherSprite||`` variables within the second ``||logic(noclick):if||`` statement.
-
-
-![Duplicated the if-statement and swap sprite variables](/static/tutorials/pizza-party/duplicate.gif "Duplicate the if-statement and swap the sprite variables.")
-
-
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pizza.bumpSprite(sprite, otherSprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
-    }
-    if (mp.isButtonPressed(mp.getPlayerBySprite(otherSprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pizza.bumpSprite(otherSprite, sprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, -1)
-    }
-})
-```
-
-```blockconfig.local
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    if (mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pizza.bumpSprite(sprite, otherSprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
-    }
-    if (mp.isButtonPressed(mp.getPlayerBySprite(otherSprite), mp.MultiplayerButton.A)) {
-        scene.cameraShake(4, 500)
-        pizza.bumpSprite(otherSprite, sprite)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, -1)
-    }
-})
-```
-
-
-
-
-## {15. NOOP}
-
-The game won't be fun if everyone holds (A) the whole time! Let's make it so players only get a point if they're **not** holding the (A) button.
-
-- :binoculars: Find the **Player/Projectile** ``||sprites(noclick):on overlap||`` event that's **already in your workspace.**
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    sprites.destroy(otherSprite, effects.disintegrate, 100)
-    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
-})
-```
-
-
-- :random: from the``||logic:Logic||`` category, grab an empty <br/>
-``||logic:if <true> then||`` statement and snap it in **above** the <br/>
-``||sprites(noclick):destroy [otherSprite]...||`` block in your workspace.
-
-
-- :random: from the``||logic:Logic||`` category, grab<br/>
-``||logic:not < >||`` and snap it into the <br/>
-``||logic(noclick):if <true> then||`` statement to replace ``||logic(noclick):<true>||``
-
-
-
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    if (!(false)) {  }
-    sprites.destroy(otherSprite, effects.disintegrate, 100)
-    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
-})
-```
+📝 _Note: If both colliding players hit the space bar (or A button), they cancel each other out
+and not only does no one have points taken away, neither of the players are able to earn points until they bump into someone else!_
 
 
 ```blockconfig.local
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {  })
-```
-
-
-
-
-## {16. NOOP Cont.}
-
-
-- :mouse pointer: Right click on the
-```block
-let sprite: Sprite = null
-mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A
-```
-block already in the workspace and choose **Duplicate**.
-Drag the copy into the empty area inside <br/> ``||logic(noclick):not < > ||``.
-
-
-- :mouse pointer: Drag both of the blocks that were connected below the empty<br/>
-``||logic(noclick):if||`` statement and move them inside.
-
-
-#### ~ tutorialhint
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    if (!(mp.isButtonPressed(mp.getPlayerBySprite(sprite), mp.MultiplayerButton.A))) {
-        sprites.destroy(otherSprite, effects.disintegrate, 100)
-        mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
-    }
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
 })
 ```
 
 
+## {15. Ready, Set, Go}
 
-
-## {17. Ready, Set, Go}
-
-Make sure everyone is prepared to play by adding a holding screen with sound effects at the beginning of the game.
+Make sure everyone is ready for the game to start by adding a holding screen 
+with sound effects at the beginning of the game.
 
 - :circle: From the ``||game:Game||`` category, drag<br/>
 ``||game:splash ["Press (A) when everyone is"]...||`` into the end of the <br/>
@@ -736,19 +655,28 @@ container already in the workspace.
 
 
 
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
+})
+```
+
 #### ~ tutorialhint
 
 ```blocks
 let characters = [
-pizzaassets.P1,
-pizzaassets.P2,
-pizzaassets.P3,
-pizzaassets.P4
+newpizzaassets.red,
+newpizzaassets.blue,
+newpizzaassets.orange,
+newpizzaassets.green
 ]
-scene.setBackgroundImage(pizzaassets.City)
+scene.setBackgroundImage(newpizzaassets.city)
 pizza.setPlayersWith (characters, 1)
+//@highlight
 game.splash("Press (A) when everyone is", "ready to start the game")
-
+//@highlight
 music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.UntilDone)
 
 
@@ -765,16 +693,22 @@ music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.UntilDon
 
 You should be able to rack up points as you grab pizza until you press the (A) button, then the pizza should fly right by you.
 
-**For extra fun, login so you can play online with friends!**
+**For extra fun, log-in so you can play online with friends!**
 
 
-
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
+})
+```
 
 
 
 ## {Finale}
 
-**🍕 Cowabunga 🍕**
+**🍕 Gnarly, dude! 🍕**
 
 You have finished your multiplayer experience!
 
@@ -783,6 +717,13 @@ When you're ready, sign-in, then select **Done** to start an online multiplayer 
 **Who will be the first to score 20 points?**
 
 
+```blockconfig.local
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
+})
+```
 
 
 ```blockconfig.global
@@ -809,6 +750,11 @@ game.onUpdateInterval(500, function () {
 
 let characters: Image[] = []
 pizza.setPlayersWith(characters, 1)
+scene.setBackgroundImage(newpizzaassets.city)
+
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player) {
+    mp.getPlayerSprite(player).setKind(SpriteKind.Enemy)
+})
 
 mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
     pizza.setPlayersWith(characters, mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number))
@@ -836,10 +782,10 @@ game.splash("Press (A) when everyone is", "ready to start the game")
 let characters: Image[] = []
 
 characters = [
-pizzaassets.P1,
-pizzaassets.P2,
-pizzaassets.P3,
-pizzaassets.P4
+newpizzaassets.red,
+newpizzaassets.blue,
+newpizzaassets.orange,
+newpizzaassets.green
 ]
 
 
@@ -849,7 +795,39 @@ pizzaassets.P4
 
 ```ghost
 
-scene.setBackgroundColor(1)
+mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player2) {
+    mp.getPlayerSprite(player2).setKind(SpriteKind.Enemy)
+})
+mp.onControllerEvent(ControllerEvent.Connected, function (thisPlayer) {
+    pizza.setPlayersWith(characters, mp.getPlayerProperty(thisPlayer, mp.PlayerProperty.Number))
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite, effects.disintegrate, 100)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(sprite), MultiplayerState.score, 1)
+})
+mp.onScore(20, function (thisPlayer) {
+    game.gameOver(true)
+})
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    scene.cameraShake(4, 500)
+    mp.changePlayerStateBy(mp.getPlayerBySprite(otherSprite), MultiplayerState.score, -1)
+    sprite.setKind(SpriteKind.Player)
+})
+let projectile: Sprite = null
+let characters: Image[] = []
+game.splash("Press (A) when everyone is", "ready to start the game")
+characters = [
+assets.image`red`,
+assets.image`blue`,
+assets.image`orange`,
+assets.image`green`
+]
+scene.setBackgroundImage(newpizzaassets.city)
+pizza.setPlayersWith(characters, 1)
+music.play(music.createSong(assets.song`countdown`), music.PlaybackMode.UntilDone)
+game.onUpdateInterval(500, function () {
+    projectile = sprites.createProjectileFromSide(assets.image`pep`, randint(-100, 100), randint(-100, 100))
+})
 
 ```
 
@@ -857,13 +835,13 @@ scene.setBackgroundColor(1)
 
 ```package
 multiplayer
-pizza-assets=github:kiki-lee/pizza-assets#v0.0.4
+newpizzaassets=github:kiki-lee/new-pizza-assets#v0.0.3
 ```
 
 
 ```customts
 
-//% color=#b79900 icon="\uf1ce"
+//% color=#fe6e5f icon="\uf1ce"
 namespace pizza {
 
     // Make sure not to remove later player when earlier player tested
@@ -892,7 +870,7 @@ namespace pizza {
             90
             ]
             for (let index = 0; index < num; index++) {
-                if (mp.isConnected(mp.getPlayerByIndex(index)) && index + 1 <= list.length){
+                if (index + 1 <= list.length){
                     mp.setPlayerSprite(mp.getPlayerByIndex(index), sprites.create(list[index], SpriteKind.Player))
                     mp.getPlayerSprite(mp.getPlayerByIndex(index)).setStayInScreen(true)
                     mp.getPlayerSprite(mp.getPlayerByIndex(index)).setPosition(xloc.shift(), yloc.shift())
@@ -927,37 +905,6 @@ namespace logic{
 }
 
 
-//% color=#6d5ba4 icon="\uf0f2"
-namespace bundles{
-    /**
-    * this just holds code
-    */
-    //% block="check if A button pressed"  weight=300
-    //% handlerStatement=1
-    export function wrap1(handler: () => void) {
-        handler();
-    }
-
-    /**
-    * this just holds code
-    */
-    //% block="create finish line"  weight=300
-    //% handlerStatement=1
-    export function wrap2(handler: () => void) {
-        handler();
-    }
-
-    /**
-    * this just holds code
-    */
-    //% block="create players"  weight=300
-    //% handlerStatement=1
-    export function wrap3(handler: () => void) {
-        handler();
-    }
-
-}
-
 ```
 
 ```simtheme
@@ -966,18 +913,18 @@ namespace bundles{
         "#000000",
         "#FFFFFF",
         "#FF2121",
-        "#DFDDDE",
-        "#FF8135",
+        "#FDD3E6",
+        "#FB9556",
         "#FFF609",
-        "#8E2EC4",
-        "#408325",
+        "#249CA3",
+        "#78DC52",
         "#003FAD",
         "#87F2FF",
-        "#EBF8F9",
+        "#726977",
         "#A4839F",
-        "#F9F6E1",
+        "#5C406c",
         "#E5CDC4",
-        "#91463d",
+        "#AD7B76",
         "#000000"
     ]
 }
