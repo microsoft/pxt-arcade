@@ -47,7 +47,7 @@ scene.setBackgroundImage(flies_imgs.background)
 ---
 
 - :paper plane: From ``||sprites:Sprites||``, drag<br/>
-``||variables:set [frog] to sprite [ ] of kind [Player]||``<br/>
+``||variables(sprites):set [frog] to sprite [ ] of kind [Player]||``<br/>
 into **the end** of the<br/>
 ``||loops(noclick):on start||`` container.
 

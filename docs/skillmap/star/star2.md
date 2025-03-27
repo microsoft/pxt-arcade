@@ -223,7 +223,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.over(true, effects.confetti)
 })
 ```
 
