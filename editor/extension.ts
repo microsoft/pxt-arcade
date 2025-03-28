@@ -399,6 +399,17 @@ namespace pxt.editor {
                 }
             }
         }
+
+        // fixed a typing issue where the browserEvents_mouseButton_pauseUntil was using the wrong enum
+        if (pxt.semver.strcmp(pkgTargetVersion || "0.0.0", "2.0.41") < 0) {
+            for (const block of U.toArray(dom.querySelectorAll("block[type=browserEvents_mouseButton_pauseUntil]"))) {
+                const field = getChildNode(block, "field", "name", "event");
+                if (!field) continue;
+                if (field.textContent.startsWith("browserEvents.KeyEvent")) {
+                    field.textContent = field.textContent.replace("KeyEvent", "MouseButtonEvent")
+                }
+            }
+        }
     }
 
     function swapFieldIfNotMatching(
