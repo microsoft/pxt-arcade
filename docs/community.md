@@ -2,19 +2,37 @@
 
 Games submitted by the MakeCode community.
 
+<!--
+    Updating this list? For entries with the "shareUrl" property specified, you can run
+    this command from the root of the repo to download the images automatically:
+
+        node ./scripts/updateCommunityImages.js
+    
+    Make sure you check the output! The images downloaded are the thumbnails that were
+    selected when sharing the project.
+-->
+
 ## Getting started
 
 ```codecard
 [
     {
-        "name": "Salvo!",
-        "description": "Strategically place ships and fire torpedoes to win sea battles against your friends or AIs, by Alex Kulcsar",
-        "author": "Alex Kulcsar",
-        "url": "https://forum.makecode.com/t/presenting-salvo/199",
+        "name": "Sophie’s Castle Adventure",
+        "description": "Defend yourself against hordes of enemies while collecting powerups! By sylvancircle",
         "cardType": "forumUrl",
-        "imageUrl": "/static/community/salvo/salvo.png",
-        "largeImageUrl": "/static/community/salvo/salvo.gif",
-        "videoUrl": "/static/community/salvo/salvo.mp4"
+        "author": "sylvancircle",
+        "url": "https://forum.makecode.com/t/sophies-castle-adventure-vampire-survivor-like-game/14500",
+        "shareUrl": "https://arcade.makecode.com/76895-38185-68305-99984",
+        "imageUrl": "/static/discourse/76895-38185-68305-99984.png"
+    },
+    {
+        "name": "red-line",
+        "description": "Hack and slash your way through a world of red in this action game by danger_kitty! ",
+        "cardType": "forumUrl",
+        "author": "danger_kitty",
+        "url": "https://forum.makecode.com/t/red-line-beta/22830",
+        "shareUrl": "https://arcade.makecode.com/56033-30656-96947-29889",
+        "imageUrl": "/static/discourse/56033-30656-96947-29889.png"
     },
     {
         "name": "Blocky Boss Battle",
@@ -27,24 +45,121 @@ Games submitted by the MakeCode community.
         "videoUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.mp4"
     },
     {
-        "name": "Jewel Raider",
-        "description": "Collect jewels in this multi-level adventure, by Stu Lowe",
-        "author": "Stu Lowe",
-        "url": "https://forum.makecode.com/t/presenting-jewel-raider/127",
+        "name": "Pixel Smash",
+        "description": "Battle your friends in this fighting game with forum-submitted characters, by PixelDoodle",
         "cardType": "forumUrl",
-        "imageUrl": "/static/community/jewel-raider/jewel-raider.png",
-        "largeImageUrl": "/static/community/jewel-raider/jewel-raider.gif",
-        "videoUrl": "/static/community/jewel-raider/jewel-raider.mp4"
+        "author": "PixelDoodle",
+        "url": "https://forum.makecode.com/t/the-biggest-smash-bros-game/18456",
+        "shareUrl": "https://arcade.makecode.com/45186-56057-72052-53020",
+        "imageUrl": "/static/community/pixel-smash/pixel-smash.png"
     },
     {
-        "name": "Snowy Slopes",
-        "description": "Race down a snowy hill to avoid obstacles and collect goodies, by Nate Murray",
-        "author": "Nate Murray",
-        "url": "https://forum.makecode.com/t/snowy-slopes-game/52",
+        "name": "Deliverimania!",
+        "description": "Deliver the right packages to the right places in this fast paced arcade game! By Sarge",
         "cardType": "forumUrl",
-        "imageUrl": "/static/community/snowy-slopes/snowy-slopes.png",
-        "largeImageUrl": "/static/community/snowy-slopes/snowy-slopes.gif",
-        "videoUrl": "/static/community/snowy-slopes/snowy-slopes.mp4"
+        "author": "Sarge",
+        "url": "https://forum.makecode.com/t/deliverimania-a-fast-paced-infinite-runner-game/20309",
+        "shareUrl": "https://arcade.makecode.com/74369-27159-72606-77135",
+        "imageUrl": "/static/discourse/74369-27159-72606-77135.png"
+    },
+    {
+        "name": "3D Dinosaur Model",
+        "description": "This project renders an actual moving 3D model in MakeCode Arcade! By Brohann",
+        "cardType": "forumUrl",
+        "author": "Brohann",
+        "url": "https://forum.makecode.com/t/brohanns-3d-devlog/20917/15",
+        "shareUrl": "https://arcade.makecode.com/24794-44311-09711-13209",
+        "imageUrl": "/static/discourse/24794-44311-09711-13209.gif"
+    },
+    {
+        "name": "Space Rocks Revenge",
+        "description": "Blast enemy ships and avoid asteroids in this 3D space game! By kwx",
+        "cardType": "forumUrl",
+        "author": "kwx",
+        "url": "https://forum.makecode.com/t/repost-space-rocks-revenge/31570",
+        "shareUrl": "https://arcade.makecode.com/98627-64012-63379-77513",
+        "imageUrl": "/static/discourse/98627-64012-63379-77513.gif"
+    },
+    {
+        "name": "The MakeCode Forums",
+        "description": "Help save the MakeCode forums in this visual novel game! By ChimbroDaPro",
+        "cardType": "forumUrl",
+        "author": "ChimbroDaPro",
+        "url": "https://forum.makecode.com/t/the-makecode-forums-arcade-makecode-superheroes-in-my-community-game-jam-submission/24994",
+        "shareUrl": "https://arcade.makecode.com/32696-05327-02222-46404",
+        "imageUrl": "/static/discourse/32696-05327-02222-46404.png"
+    },
+    {
+        "name": "Fossil Clicker",
+        "description": "Build up ridiculously huge amounts of money in this prehistoric themed idle game! By UnsignedArduino",
+        "cardType": "forumUrl",
+        "author": "UnsignedArduino",
+        "url": "https://forum.makecode.com/t/fossil-clicker-my-prehistoric-game-jam-submission/21524",
+        "shareUrl": "https://arcade.makecode.com/71763-33937-86495-52184",
+        "imageUrl": "/static/discourse/71763-33937-86495-52184.png"
+    },
+    {
+        "name": "GravityCube",
+        "description": "Solve puzzles in this gravity warping game! By Sherbet_cookie",
+        "cardType": "forumUrl",
+        "author": "Sherbet_cookie",
+        "url": "https://forum.makecode.com/t/gravitycube-fixed-v1-4/27907",
+        "shareUrl": "https://arcade.makecode.com/31448-64570-29188-45537",
+        "imageUrl": "/static/discourse/31448-64570-29188-45537.png"
+    },
+    {
+        "name": "ROLLER",
+        "description": "Test your reflexes while flipping gravity in this fast paced game! By AbstractDesigner",
+        "cardType": "forumUrl",
+        "author": "AbstractDesigner",
+        "url": "https://forum.makecode.com/t/roller-abstractdesigner/21856",
+        "shareUrl": "https://arcade.makecode.com/54425-08314-78520-24092",
+        "imageUrl": "/static/discourse/54425-08314-78520-24092.png"
+    },
+    {
+        "name": "Diego The Spheroid: Illusions",
+        "description": "Who needs hedgehogs? We know who's REALLY the fastest. And he's a sphere named Diego. By JTSpeedRun",
+        "cardType": "forumUrl",
+        "author": "JtSpeedRun",
+        "url": "https://forum.makecode.com/t/diego-the-spheroid-illusions-dev-log/25179",
+        "shareUrl": "https://arcade.makecode.com/11539-91579-17424-21809",
+        "imageUrl": "/static/discourse/11539-91579-17424-21809.png"
+    },
+    {
+        "name": "Teeny Tiny Cat",
+        "description": "Explore caves in this moody platformer by WoofWoof",
+        "cardType": "forumUrl",
+        "author": "WoofWoof",
+        "url": "https://forum.makecode.com/t/teeny-tiny-cat-my-newest-platformer/24441",
+        "shareUrl": "https://arcade.makecode.com/06071-14450-82467-19330",
+        "imageUrl": "/static/discourse/06071-14450-82467-19330.png"
+    },
+    {
+        "name": "Seabird Watching Simulator",
+        "description": "Identify various seabirds in this bird watching simulator by Blobbey!",
+        "cardType": "forumUrl",
+        "author": "Blobbey",
+        "url": "https://forum.makecode.com/t/seabird-watching-simulator-my-new-best-game-yet/28754",
+        "shareUrl": "https://arcade.makecode.com/95419-57182-62819-08743",
+        "imageUrl": "/static/discourse/95419-57182-62819-08743.png"
+    },
+    {
+        "name": "Crate Dungeon",
+        "description": "Push crates around to solve puzzles! By ADM_F",
+        "cardType": "forumUrl",
+        "author": "ADM_F",
+        "url": "https://forum.makecode.com/t/the-adm-f-makecade/27695",
+        "shareUrl": "https://arcade.makecode.com/24798-37765-70019-02236",
+        "imageUrl": "/static/discourse/24798-37765-70019-02236.png"
+    },
+    {
+        "name": "AI Fashion Frogs",
+        "description": "Answer questions to train some AI frogs so that they can identify your favorite color! By randomuser",
+        "cardType": "forumUrl",
+        "author": "randomuser",
+        "url": "https://forum.makecode.com/t/help-me-choose-a-future-makecode-arcade-project/19234/46",
+        "shareUrl": "https://arcade.makecode.com/03097-74575-96505-72304",
+        "imageUrl": "/static/discourse/03097-74575-96505-72304.png"
     },
     {
         "name": "Raptor Run",
@@ -55,232 +170,6 @@ Games submitted by the MakeCode community.
         "imageUrl": "/static/community/raptor-run/raptor-run.png",
         "largeImageUrl": "/static/community/raptor-run/raptor-run.gif",
         "videoUrl": "/static/community/raptor-run/raptor-run.mp4"
-    },
-    {
-        "name": "Jetpack Jenny",
-        "description": "Avoid missiles, asteroids, and electric charges in this side scrolling adventure, by Stu Lowe",
-        "author": "Stu Lowe",
-        "url": "https://forum.makecode.com/t/jet-pack-jenny-game/113",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/jetpack-jenny/jetpack-jenny.png",
-        "largeImageUrl": "/static/community/jetpack-jenny/jetpack-jenny.gif",
-        "videoUrl": "/static/community/jetpack-jenny/jetpack-jenny.mp4"
-    },
-    {
-        "name": "Chicken Run",
-        "description": "Cross the road during rush hour traffic to save your eggs, by Greg Norris",
-        "author": "Greg Norris",
-        "url": "https://forum.makecode.com/t/chicken-run-game/34",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/chicken-run/chicken-run.png",
-        "largeImageUrl": "/static/community/chicken-run/chicken-run.gif",
-        "videoUrl": "/static/community/chicken-run/chicken-run.mp4"
-    },
-    {
-        "name": "Jumpy Mateo Platformer",
-        "description": "Jump to move up or avoid pitfalls, get the flag at the end of each level, by Adri314",
-        "author": "Adri314",
-        "url": "https://forum.makecode.com/t/jumping-mateo-platformer/230",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/jumping-mateo-platformer/jumping-mateo-platformer.png",
-        "largeImageUrl": "/static/community/jumping-mateo-platformer/jumping-mateo-platformer.gif",
-        "videoUrl": "/static/community/jumping-mateo-platformer/jumping-mateo-platformer.mp4"
-    },
-    {
-        "name": "DuckSplat!",
-        "description": "Avoid the falling plungers or you'll go splat, by Dean Faizal",
-        "author": "Dean Faizal",
-        "url": "https://forum.makecode.com/t/ducksplat-game/196",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/ducksplat/ducksplat.png",
-        "largeImageUrl": "/static/community/ducksplat/ducksplat.gif",
-        "videoUrl": "/static/community/ducksplat/ducksplat.mp4"
-    },
-    {
-        "name": "Space Fight",
-        "description": "Compete with a friend for the high score in a space adventure, by Alex Kulcsar",
-        "author": "Alex Kulcsar",
-        "url": "https://forum.makecode.com/t/presenting-spacewar/107",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/spacefight/spacefight.png",
-        "largeImageUrl": "/static/community/spacefight/spacefight.gif",
-        "videoUrl": "/static/community/spacefight/spacefight.mp4"
-    },
-    {
-        "name": "American Sign Language",
-        "description": "Learn ASL sign letters with this quiz game, by Greg Norris",
-        "author": "Greg Norris",
-        "url": "https://forum.makecode.com/t/american-sign-language-game/471",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/asl/gallery.png",
-        "largeImageUrl": "/static/community/asl/gallery.gif",
-        "videoUrl": "/static/community/asl/gallery.mp4"
-    },
-    {
-        "name": "3D map",
-        "description": "Navigate 3D dungeons, by Michal Moskal",
-        "author": "Michal Moskal",
-        "url": "https://forum.makecode.com/t/3d-raycasting-in-arcade/474",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/3dmap/gallery.png",
-        "largeImageUrl": "/static/community/3dmap/gallery.gif",
-        "videoUrl": "/static/community/3dmap/gallery.mp4"
-    },
-    {
-        "name": "HackMan",
-        "description": "Eat the 0s and 1, by Greg Norris",
-        "author": "Greg Norris",
-        "url": "https://forum.makecode.com/t/hackman-game/526",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/hackman/gallery.png",
-        "largeImageUrl": "/static/community/hackman/gallery.gif",
-        "videoUrl": "/static/community/hackman/gallery.mp4"
-    },
-    {
-        "name": "Warehouse",
-        "description": "Move the inventory into the right places, by Adri314",
-        "author": "Adri314",
-        "url": "https://forum.makecode.com/t/warehouse-updated/658",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/warehouse/gallery.png",
-        "largeImageUrl": "/static/community/warehouse/gallery.gif",
-        "videoUrl": "/static/community/warehouse/gallery.mp4"
-    },
-    {
-        "name": "BAFTA YGD",
-        "description": "A YGD BAFTA style game design idea generator, by kjw",
-        "author": "kjw",
-        "url": "https://forum.makecode.com/t/presenting-bafta-ygd-idea-generator-for-makecode-arcade/608",
-        "cardType": "forumUrl",
-        "imageUrl": "/static/community/bafta-ygd/gallery.png",
-        "largeImageUrl": "/static/community/bafta-ygd/gallery.gif",
-        "videoUrl": "/static/community/bafta-ygd/gallery.mp4"
-    },
-    {
-        "name": "North Shore Winter Adventure",
-        "url": "https://forum.makecode.com/t/north-shore-winter-adventure/1313",
-        "imageUrl": "/static/discourse/22765-98788-64181-21037.png",
-        "largeImageUrl": "/static/discourse/22765-98788-64181-21037.gif",
-        "videoUrl": "/static/discourse/22765-98788-64181-21037.mp4",
-        "author": "",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "Space in breakout",
-        "url": "https://forum.makecode.com/t/space-in-breakout/1266",
-        "imageUrl": "/static/discourse/63642-20606-38782-29855.png",
-        "author": "asdfgh",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "Accel Racing",
-        "url": "https://forum.makecode.com/t/accel-racing/1208",
-        "imageUrl": "/static/discourse/86233-37819-25265-86211.png",
-        "largeImageUrl": "/static/discourse/86233-37819-25265-86211.gif",
-        "videoUrl": "/static/discourse/86233-37819-25265-86211.mp4",
-        "author": "Minatsu Tukisima",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "Mini wars",
-        "url": "https://forum.makecode.com/t/mini-wars/951",
-        "imageUrl": "/static/discourse/09363-09116-82494-33886.png",
-        "author": "asdfgh",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "10 PRINT",
-        "url": "https://forum.makecode.com/t/introducing-10-print/1203",
-        "imageUrl": "/static/discourse/95293-25888-76147-12382.png",
-        "largeImageUrl": "/static/discourse/95293-25888-76147-12382.gif",
-        "videoUrl": "/static/discourse/95293-25888-76147-12382.mp4",
-        "author": "Adri314",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "Fresh Slice!",
-        "url": "https://forum.makecode.com/t/fresh-slice/1025",
-        "imageUrl": "/static/discourse/61682-36649-87994-88813.png",
-        "largeImageUrl": "/static/discourse/61682-36649-87994-88813.gif",
-        "videoUrl": "/static/discourse/61682-36649-87994-88813.mp4",
-        "author": "Pete",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "Pergamon arcade",
-        "url": "https://forum.makecode.com/t/pergamon-arcade/1078",
-        "imageUrl": "/static/discourse/36215-64773-32912-78425.png",
-        "author": "Clemens",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "name": "Bat dungeon",
-        "url": "https://forum.makecode.com/t/bat-dungeon/1004",
-        "imageUrl": "/static/discourse/76866-08647-86101-41081.png",
-        "largeImageUrl": "/static/discourse/76866-08647-86101-41081.gif",
-        "videoUrl": "/static/discourse/76866-08647-86101-41081.mp4",
-        "author": "asdfgh",
-        "cardType": "forumUrl",
-        "description": ""
-    },
-    {
-        "url": "https://forum.makecode.com/t/castle-crawler/1343",
-        "imageUrl": "/static/discourse/35254-56735-93739-40713.png",
-        "cardType": "forumUrl",
-        "name": "Castle crawler",
-        "description": "",
-        "largeImageUrl": "/static/discourse/35254-56735-93739-40713.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/dungeon/1906",
-        "imageUrl": "/static/discourse/71680-30649-43580-11759.png",
-        "cardType": "forumUrl",
-        "name": "Dungeon",
-        "description": "",
-        "largeImageUrl": "/static/discourse/71680-30649-43580-11759.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/brailletranslator/1912",
-        "imageUrl": "/static/discourse/53929-36727-20379-52814.png",
-        "cardType": "forumUrl",
-        "name": "Brailletranslator",
-        "description": "",
-        "largeImageUrl": "/static/discourse/53929-36727-20379-52814.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/fight-in-planes/1752",
-        "imageUrl": "/static/discourse/70817-67971-57383-73429.png",
-        "cardType": "forumUrl",
-        "name": "Fight-in-planes",
-        "description": ""
-    },
-    {
-        "url": "https://forum.makecode.com/t/alfies-adventure-v5/1677",
-        "imageUrl": "/static/discourse/46301-07177-85751-53625.png",
-        "cardType": "forumUrl",
-        "name": "Alfie's Adventure v5",
-        "description": ""
-    },
-    {
-        "url": "https://forum.makecode.com/t/bobo-the-monkey-a-platform-game/1844",
-        "imageUrl": "/static/discourse/04542-56087-78227-55343.png",
-        "cardType": "forumUrl",
-        "name": "Bobo the Monkey - A platform game",
-        "description": ""
-    },
-    {
-        "url": "https://forum.makecode.com/t/charred-earth-tank-game-update/1662",
-        "imageUrl": "/static/discourse/72397-33207-92675-41376.png",
-        "cardType": "forumUrl",
-        "name": "Charred Earth tank game update",
-        "description": ""
     },
     {
         "url": "https://forum.makecode.com/t/racquetball/1483",
@@ -298,23 +187,6 @@ Games submitted by the MakeCode community.
         "name": "Tiny Soccer Cars",
         "description": "",
         "largeImageUrl": "/static/discourse/32925-95037-89550-06105.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/boss-rush/2165",
-        "imageUrl": "/static/discourse/35411-81806-93118-90238.png",
-        "author": "darzu",
-        "cardType": "forumUrl",
-        "name": "Boss Rush!",
-        "description": "",
-        "largeImageUrl": "/static/discourse/35411-81806-93118-90238.gif"
-    },
-    {
-        "url": "https://forum.makecode.com/t/freakout-bug-fix-update/2073",
-        "imageUrl": "/static/discourse/02852-65228-19302-51450.png",
-        "author": "oxters168",
-        "cardType": "forumUrl",
-        "name": "Freakout Bug Fix Update",
-        "description": ""
     }
 ]
 ```
