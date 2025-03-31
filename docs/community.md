@@ -117,6 +117,15 @@ Games submitted by the MakeCode community.
         "imageUrl": "/static/discourse/54425-08314-78520-24092.png"
     },
     {
+        "name": "Magnate",
+        "description": "Battle mechs in this randomly generated RPG! By Octodemon",
+        "cardType": "forumUrl",
+        "author": "Octodemon",
+        "url": "https://forum.makecode.com/t/magnate-by-octodemon/30030",
+        "shareUrl": "https://arcade.makecode.com/20018-79641-30906-45538",
+        "imageUrl": "/static/discourse/20018-79641-30906-45538.png"
+    },
+    {
         "name": "Diego The Spheroid: Illusions",
         "description": "Who needs hedgehogs? We know who's REALLY the fastest. And he's a sphere named Diego. By JTSpeedRun",
         "cardType": "forumUrl",
