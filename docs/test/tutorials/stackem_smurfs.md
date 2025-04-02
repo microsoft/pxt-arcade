@@ -1,71 +1,124 @@
 # Stack'em Smurfs
 ### @explicitHints true
 
+## Intro @showdialog
 
-## Introduction @showdialog
-
-![Game animation](/static/tutorials/chase-the-pizza/chasing.gif)
-
-Create a game where the goal is to eat as much pizza as you can 
-before the time runs out! 
+Are you ready to try something new with Joy and the rest of the emotions from <br/>
+Disney and Pixar's Inside Out 2? Click **Next** to make your own game!
 
 
-## {Step 2}
+![Play Bubble Stacking with Joy](/static/tutorials/bubbles/io2_title.jpg "How many memories can you store?")
 
-**Set the background color**
+
+
+
+
+
+## {2. Your First Block}
+
+**Ready to start coding?**
+
+Let's set the scene by adding "core memories" to the game window.
+
 
 ---
 
-- :tree: Open the <br/>
-``||scene:Scene||``<br/>
-toolbox drawer and drag <br/>
-``||scene:set background color [ ]||`` <br/>
-into **the empty** ``||loops(noclick):on start||`` container already in your workspace. 
+
+- :dot circle: Open the ``||bubble: Bubble||`` category **in the toolbox** and grab <br/>
+``||bubble:create board||``<br/>
+then snap it inside the empty <br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
+
+---
+
 
 ~hint What does that mean? 🤷🏽
 
 ---
 
-When giving instructions, we'll highlight some text to give you a better idea of what you are looking for.
+When giving instructions, we'll color some text to give you a better idea of what you are looking for.
 
 For example, when we suggest the <br/>
-``||scene:set background color to [ ]||``<br/>
+``||bubble:create board||``<br/>
 block, we are pointing you toward <br/>
 
 ```block
-scene.setBackgroundColor(13)
+bubble.createBoard()
 ```
 
 hint~
 
-💡 _Feel free to choose your own color if you don't like the swatch in the block._ 
-
-
----
-
-- :mouse pointer: Click the button that says **Next** to go to the 
-next step of the tutorial.
 
 
 #### ~ tutorialhint
+
 ```blocks
-// @highlight
-scene.setBackgroundColor(13)
+//@highlight
+bubble.createBoard()
 ```
 
 
-## {Step 3}
 
-Add a player **sprite**.
+
+## {3. Check Your Screen!}
+
+
+- :binoculars: Look at your project in the game window to see what your code has done.
+
+You should see two rows of memory bubbles lining the top of the game window. 
+
+![The game window is in the lower left corner](/static/tutorials/bubbles/game.png "Your game will automatically load in this window after every step.")
+
+
+
+## {4. Add Bubble}
+
+**Let's add a memory bubble to aim.**
 
 ---
 
-- :paper plane: Open the ``||sprites:Sprites||`` drawer and drag <br/>
-``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
-into **the end of** the  ``||loops(noclick):on start||`` block already in your workspace.
+
+- :dot circle: Open the ``||bubble: Bubble||`` category **in the toolbox** and grab <br/>
+``||bubble:load new bubble||``<br/>
+then snap it inside at **the end of** the <br/>
+``||loops(noclick): on start||`` <br/>
+block already in the workspace.
 
 ---
 
+~hint ⁉️ No bubbles showing?
+
+---
+
+This game relies on setting the scene before you add your main bubble.  If you don't see anything loaded in your game window, you may have instructions in the wrong order.  
+
+Check to see that your code looks like this:
+
+```blocks
+bubble.createBoard()
+//@highlight
+bubble.load_bubble()
+```
+
+hint~
+
+
+#### ~ tutorialhint
+
+```blocks
+bubble.createBoard()
+//@highlight
+bubble.load_bubble()
+```
+
+
+
+## {5. Gaming with Joy}
+
+**Add your emotion!**
+
+To do this, we'll need to add a **sprite** to the bottom of the screen.
 
 ~hint What's a sprite? 💡
 
@@ -73,322 +126,254 @@ into **the end of** the  ``||loops(noclick):on start||`` block already in your w
 
 In Arcade, each character or image that does something is called a **SPRITE**.
 
-Sprites have properties that you can use and change — 
-things like scale, position, and lifespan are all properties of sprites.
+Sprites have properties that you can use and change -- things like scale, position, and lifespan are all properties of sprites.
 
-Our player will be a sprite, too.
-
-hint~
-
-
-~hint Show me 🔍
-
-![Add a sprite block](/static/tutorials/chase-the-pizza/mySprite.gif)
+Our characters will be sprites, too.
 
 hint~
+
+- :paper plane: Open the ``||sprites:Sprites||`` category and drag <br/>
+``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||``<br/>
+into the **end of** the <br/>
+``||loops(noclick): on start||`` <br/>
+container already in the workspace.
+
+💡 _To change sprites, click the character in the box and look under the **Gallery** tab._
 
 
 #### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = null
-scene.setBackgroundColor(13)
-// @highlight
-mySprite = sprites.create(img`.`, SpriteKind.Player)
-```
-
-## {Step 4}
-
-- :mouse pointer: Draw your sprite by clicking on the empty grey square in the <br/> 
-``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` <br/>
-block to open the **Sprite Editor**. 
-
-
-- :mouse pointer: Click **Done** when you are finished drawing.
-
-~hint Show me 🔍
-
-![Image editor](/static/tutorials/chase-the-pizza/draw.gif)
-
-hint~
-
-
-
-#### ~ tutorialhint
-```blocks
-let mySprite: Sprite = null
-scene.setBackgroundColor(13)
-// @highlight
-mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 5 . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-. 5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 
-. 5 5 5 5 f f 5 5 5 f f 5 5 5 5 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-. 5 5 5 f f f f f f f f f 5 5 5 
-. 5 5 5 5 f b b b b b f 5 5 5 5 
-. . 5 5 5 5 f b b b f 5 5 5 5 . 
-. . 5 5 5 5 5 f f f 5 5 5 5 5 . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . . . . 5 5 5 5 5 5 5 . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
+bubble.createBoard()
+bubble.load_bubble()
+//@highlight
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
 ```
 
 
-## {Step 5}
 
-**Make the sprite move**
+## {6. Check Your Game!}
+
+
+- :binoculars: Take a look at the game window again.
+
+Your sprite should be in the middle of the screen.  
+
+In the next step, we'll move it to a location that makes it look like it's aiming the bubble.
+
+
+
+
+
+## {7. Gaming with Joy}
+
+**Move your sprite.**
+
+Let's add a block to make sure that the top of the sprite is right below the memory bubble. 
+
+
+- :paper plane: Open the ``||sprites:Sprites||`` category and drag <br/>
+``||sprites:set [mySprite] [top] to [102]||``<br/>
+into the **end of** the <br/>
+``||loops(noclick): on start||`` <br/>
+container already in the workspace.
 
 ---
 
-- :game: Open ``||controller:Controller||`` and drag<br/> 
-``||controller:move [mySprite] with buttons||``<br/>
-into **the end of** the <br/>
-``||loops(noclick):on start||`` block already in your workspace.
+~hint Why 102? 🤷🏽‍♀️
 
-Now you can move your sprite around the screen using the arrow buttons on the game pad or your keyboard. 
+---
 
+The coordinates of our screen go from **0** at the top to **120** at the very bottom. 
 
-~hint Show me 🔍
+Since we want just a little bit of our character peeking up from below, we'll set the top of our character to **102** so it rests just below the bubble that we will be aiming. 
 
-![Add the move block](/static/tutorials/chase-the-pizza/move.gif)
 
 hint~
 
 
 #### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = null
-scene.setBackgroundColor(13)
-mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 5 . . . . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-. . 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-. 5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 
-. 5 5 5 5 f f 5 5 5 f f 5 5 5 5 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-. 5 5 5 f f f f f f f f f 5 5 5 
-. 5 5 5 5 f b b b b b f 5 5 5 5 
-. . 5 5 5 5 f b b b f 5 5 5 5 . 
-. . 5 5 5 5 5 f f f 5 5 5 5 5 . 
-. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . . . . 5 5 5 5 5 5 5 . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-// @highlight
-controller.moveSprite(mySprite)
+bubble.createBoard()
+bubble.load_bubble()
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
+//@highlight
+mySprite.top = 102
+
 ```
 
 
 
 
-## {Step 6}
+## {8. Aim the Bubble Right}
 
+**Now that everything is on screen, it's time to aim your shot.**
 
-- :binoculars: Test your project in the game window!
-
-You should be able to move your sprite with the joypad or arrow keys on your keyboard.
-
-
-![Look for the game window in the lower right](/static/tutorials/chase-the-pizza/game.png)
-
-
-
-
-
-
-
-## {Step 7}
-
-**Add some pizza**
+- :game: Open the ``||controller:Controller||`` category and drag the<br/>
+``||controller:on [right] button [repeat]||``<br/>
+bundle into **an empty area** of the workspace. <br/>
 
 ---
 
-- :paper plane: Open ``||sprites:Sprites||`` and drag<br/> 
-``||variables(sprites):set [pizza] to sprite [ ] of kind [Player]||``<br/> 
-into **the end of** the <br/>
-``||loops(noclick):on start||`` block already in your workspace.
-
-
-- :mouse pointer: Click **Player** in<br/>
-``||variables(noclick):set [pizza] to sprite [ ] of kind [Player]||``<br/> 
-and choose  **Food** instead. 
-
----
-
-~hint Show me 🔍
-
-![Change the pizza to food](/static/tutorials/chase-the-pizza/food.gif)
-
-hint~
-
-
-```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
-```
+You should be able to aim your bubble further to the right. 
 
 
 #### ~ tutorialhint
+
 ```blocks
-let mySprite: Sprite = null
-let pizza: Sprite = null
-scene.setBackgroundColor(13)
-mySprite = sprites.create(img`
-. . . . 5 5 5 5 5 5 5 . . . . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 . 
-5 5 5 5 f f 5 5 5 f f 5 5 5 5 . 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-5 5 5 f f f f f f f f f 5 5 5 . 
-5 5 5 5 f b b b b b f 5 5 5 5 . 
-5 5 5 5 5 f b b b f 5 5 5 5 5 . 
-. 5 5 5 5 5 f f f 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
-. . . . 5 5 5 5 5 5 5 . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-// @highlight
-pizza = sprites.create(img`.`, SpriteKind.Food)
-```
 
-
-## {Step 8}
-
-
-- :mouse pointer: Choose your pizza by clicking the empty grey square inside <br/> 
-``||variables(noclick):set [pizza] to sprite [ ] of kind [Food]||`` <br/>
-to open the **Sprite Editor**. 
-
-- :mouse pointer: Switch to the **Gallery** tab at the top. 
-![Select the gallery](/static/skillmap/assets/gallery.png)
-
-
-- :mouse pointer: Choose your pizza, then click **Done**.
-
-~hint Show me 🔍
-
-![Image gallery](/static/tutorials/chase-the-pizza/gallery.gif)
-
-hint~
-
-
-💡 _Feel free to draw your own pizza if you prefer!_
-
-```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
-```
-
-
-#### ~ tutorialhint
-```blocks
-let pizza: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(13)
-mySprite = sprites.create(img`
-. . . . 5 5 5 5 5 5 5 . . . . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-5 5 5 5 f 5 5 5 5 f 5 5 5 5 5 . 
-5 5 5 5 f f 5 5 5 f f 5 5 5 5 . 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-5 5 5 f f f f f f f f f 5 5 5 . 
-5 5 5 5 f b b b b b f 5 5 5 5 . 
-5 5 5 5 5 f b b b f 5 5 5 5 5 . 
-. 5 5 5 5 5 f f f 5 5 5 5 5 . . 
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-. . 5 5 5 5 5 5 5 5 5 5 5 . . . 
-. . . . 5 5 5 5 5 5 5 . . . . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-pizza = sprites.create(img`
-. . . . . . b b b b . . . . . .
-. . . . . . b 4 4 4 b . . . . .
-. . . . . . b b 4 4 4 b . . . .
-. . . . . b 4 b b b 4 4 b . . .
-. . . . b d 5 5 5 4 b 4 4 b . .
-. . . . b 3 2 3 5 5 4 e 4 4 b .
-. . . b d 2 2 2 5 7 5 4 e 4 4 e
-. . . b 5 3 2 3 5 5 5 5 e e e e
-. . b d 7 5 5 5 3 2 3 5 5 e e e
-. . b 5 5 5 5 5 2 2 2 5 5 d e e
-. b 3 2 3 5 7 5 3 2 3 5 d d e 4
-. b 2 2 2 5 5 5 5 5 5 d d e 4 .
-b d 3 2 d 5 5 5 d d d 4 4 . . .
-b 5 5 5 5 d d 4 4 4 4 . . . . .
-4 d d d 4 4 4 . . . . . . . . .
-4 4 4 4 . . . . . . . . . . . .
-`, SpriteKind.Food)
-```
-
-
-
-## {Step 9}
-
-**Make something happen when the sprites overlap!**
-
----
-
-- :paper plane: Open ``||sprites:Sprites||`` and drag the<br/>
-``||sprites:on [sprite] of kind [Player] overlaps [otherSprite] of kind [Food]||``<br/>
-container into **an empty area** of the workspace.
-
-
-🤷🏽‍♀️ _Need help? Click the lightbulb in the circle below to see what blocks you need in this step._
-
-
-
-```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
-```
-
-
-#### ~ tutorialhint
-```blocks
-// @highlight
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-
+//@highlight
+controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Right)
 })
 ```
 
 
 
-## {Step 10}
+## {9. Aim the Bubble Left}
 
-**Add a point when the sprites overlap**
+- :mouse pointer: Right-click to **Duplicate** your <br/>
+``||controller:on [right] button [repeat]||``<br/>
+bundle, then change both **right** options to say **left**. <br/>
 
 ---
 
-- :id card: Open ``||info:Info||`` and drag<br/> 
-``||info:change score by [1]||``<br/> 
-into **the empty** <br/>
-``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
+You should now be able to aim your bubble further to the left. 
+
+
+#### ~ tutorialhint
+
+```blocks
+
+//@highlight
+controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Left)
+})
+```
+
+
+
+## {10. Time to Toss}
+
+**Time to toss!**
+
+- :game: Open the ``||controller:Controller||`` category and drag the<br/>
+``||controller:on [A] button [pressed]||``<br/>
+bundle into **an empty area** of the workspace. <br/>
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+
+//@highlight
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+
+## {11. Test!}
+
+
+- :binoculars: Test your game.
+
+You should be able to toss a bubble in the direction it's aimed when you press either the (A) button or the **space bar**.
+
+Give it a try!
+
+💡 _Notice that your bubble doesn't properly stick where it hits, yet. There's also no option to throw another bubble. We'll fix both of those things in the steps that follow._
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+
+
+## {12. Connecting Bubbles}
+
+**Time to make the memories stick!**
+
+We want the bubbles to stick whenever they connect to the top wall or to another bubble.
+
+---
+
+- :tree: Open the ``||scene: Scene||`` category and grab the<br/>
+``||scene:on [sprite] of kind [Bubble] ...||``<br/>
+bundle and drop it into **an empty** area of the workspace. <br/>
+
+
+```blockconfig.local
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+})
+```
+
+#### ~ tutorialhint
+
+```blocks
+//@highlight
+scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
+    bubble.stick_to_wall(sprite, location)
+})
+```
+
+
+
+
+## {13. Check Your Screen!}
+
+
+- :binoculars: Take a shot in the game window!
+
+When your bubble hits a grouping at the top, it should stick! If that grouping has three or more of the same color, you should also get points as they pop.
+
+
+
+
+
+
+## {14. Need a Refill?}
+
+**Let's load a new bubble every time we toss the old one.**
+
+---
+
+- :dot circle: Open the ``||bubble: Bubble||`` category **in the toolbox** and grab <br/>
+``||bubble:load new bubble||``<br/>
+then snap it inside at **the end of** the <br/>
+``||controller(noclick):on [A] button [pressed]||``<br/>
 container already in the workspace.
 
 
+
 ```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+    bubble.load_bubble()
+})
 ```
 
+
+
 #### ~ tutorialhint
+
 ```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    // @highlight
-	info.changeScoreBy(1)
+
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+        //@highlight
+    bubble.load_bubble()
 })
 ```
 
@@ -396,172 +381,138 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 
 
 
-## {Step 11}
+
+## {15. Test It}
 
 
-- :binoculars: Check your game!
+- :binoculars: **Time to play your finished game!**
 
-Notice that you get WAAAYYYYY too many points when your player 
-sprite overlaps the pizza?  
+Aim your bubble using the arrow keys, then toss with the (A) button or **space bar**.
 
-We'll fix that in the next step.
+Can you clear the board fast enough to get a bonus?
 
-
-
-
-## {Step 12}
-
-**Teleport the pizza to a random location each time the sprites overlap.**
-
-~hint What is random? 🤷🏽‍♀️
+~hint Want to add more? 🫧
 
 ---
 
-A "random" number is a value that you can't predict ahead of time. 
+Feel like going above and beyond? There are enough blocks in the toolbox to make these customizations:
 
-In Arcade, we use this block:
-
-```block
-randint(0, scene.screenWidth())
-```
-
-to ask for a random number between **0** and the **width of the screen**.
+- Add music in the background
+- Add a background color to the board
+- Win the game by reaching a score instead of clearing the board
+- Change your character with each new ball
 
 hint~
 
----
-
-- :paper plane: Open ``||sprites:Sprites||``, and drag <br/>
-``||sprites:set [pizza] position to...||``<br/> 
-into the **end of the** <br/>
-``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
-container already in the workspace.
-
 
 ```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
-```
-
-#### ~ tutorialhint
-```blocks
-let pizza: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	info.changeScoreBy(1)
-    // @highlight
-    pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+    bubble.load_bubble()
 })
 ```
 
 
-
-
-## {Step 13}
-
-**Let’s start a countdown each time the sprites overlap.**
-
----
-
-- :id card: From ``||info:Info||``, drag <br/>
-``||info:start countdown [3] (s)||`` <br/> 
-into the **end of the** <br/>
-``||sprites(noclick):on [sprite] ... overlaps [otherSprite]||`` <br/>
-container already in the workspace.
-
-
-```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
-```
-
-#### ~ tutorialhint
-```blocks
-let pizza: Sprite = null
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	info.changeScoreBy(1)
-    pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
-    // @highlight
-    info.startCountdown(3)
-})
-```
 
 
 ## {Finale}
 
-**🎉 Great job! 🎉**
+**🥳 Great Job 🥳**
 
-You've made a **Chase the Pizza** game.
+You have finished the tutorial!
 
-Try playing your game. How many points can you get before time runs out?
-
-When you're finished playing, click **Done** to share your game with family and friends!
+When you're ready, click **Done** to share your game with family and friends!
 
 
 
-```blockconfig.local
-let pizza = sprites.create(img`.`, SpriteKind.Player)
-```
-
-#### ~ tutorialhint
-```blocks
-let pizza: Sprite = null
-let mySprite: Sprite = null
-scene.setBackgroundColor(13)
-mySprite = sprites.create(img`
-. . . . . 5 5 5 5 5 5 . . . . .
-. . . 5 5 5 5 5 5 5 5 5 5 . . .
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 .
-. 5 5 5 f f 5 5 5 5 f f 5 5 5 .
-5 5 5 5 f f 5 5 5 5 f f 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-5 5 f 5 5 5 5 5 5 5 5 5 5 f 5 5
-5 5 5 f 5 5 5 5 5 5 5 5 f 5 5 5
-. 5 5 5 f 5 5 5 5 5 5 f 5 5 5 .
-. 5 5 5 5 f f f f f f 5 5 5 5 .
-. . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-. . . 5 5 5 5 5 5 5 5 5 5 . . .
-. . . . . 5 5 5 5 5 5 . . . . .
-`, SpriteKind.Player)
-controller.moveSprite(mySprite)
-pizza = sprites.create(img`
-. . . . . . b b b b . . . . . .
-. . . . . . b 4 4 4 b . . . . .
-. . . . . . b b 4 4 4 b . . . .
-. . . . . b 4 b b b 4 4 b . . .
-. . . . b d 5 5 5 4 b 4 4 b . .
-. . . . b 3 2 3 5 5 4 e 4 4 b .
-. . . b d 2 2 2 5 7 5 4 e 4 4 e
-. . . b 5 3 2 3 5 5 5 5 e e e e
-. . b d 7 5 5 5 3 2 3 5 5 e e e
-. . b 5 5 5 5 5 2 2 2 5 5 d e e
-. b 3 2 3 5 7 5 3 2 3 5 d d e 4
-. b 2 2 2 5 5 5 5 5 5 d d e 4 .
-b d 3 2 d 5 5 5 d d d 4 4 . . .
-b 5 5 5 5 d d 4 4 4 4 . . . . .
-4 d d d 4 4 4 . . . . . . . . .
-4 4 4 4 . . . . . . . . . . . .
-`, SpriteKind.Food)
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-	info.changeScoreBy(1)
-    pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
-    info.startCountdown(3)
-})
-```
 
 
 ```blockconfig.global
-let pizza: Sprite = null
 
-scene.setBackgroundColor(13)
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})
-randint(0, scene.screenWidth())
-pizza.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
-info.startCountdown(3)
+let characters: Image[] = []
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
+mySprite.top = 102
+controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Right)
+})
+scene.setBackgroundColor(14)
+
+music.play(music.createSong(hex`0096000408080106001c00010a006400f401640000040000000000000000000000000000000002d80000000200011608000a00011110001200011618001a00011120002200011628002a00011130003200011638003a00011140004200011848004a00011150005200011858005a00011160006200011868006a00011170007200011878007a00011180008200011288008a00010d90009200011298009a00010da000a2000112a800aa00010db000b2000112b800ba00010dc000c2000118c400c6000118cc00ce000118d000d2000118d800da00011ddc00de00011de400e600011de800ea00011df000f2000120f400f6000120f800fa000120fc00fe000120`), music.PlaybackMode.LoopingInBackground)
+scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
+    bubble.stick_to_wall(sprite, location)
+})
+mySprite.setImage(io2_images.fear)
+characters = [io2_images.joy, io2_images.anger, io2_images.envy, io2_images.fear]
+mySprite.setImage(characters[randint(0, characters.length - 1)])
 
 ```
+
+
+
+```ghost
+
+let characters: Image[] = []
+scene.onHitWall(SpriteKind.Bubble, function (sprite, location) {
+    bubble.stick_to_wall(sprite, location)
+    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    bubble.tossBubble()
+    bubble.load_bubble()
+})
+controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Right)
+})
+info.onScore(100, function () {
+    game.setGameOverEffect(true, effects.confetti)
+    game.setGameOverPlayable(true, music.melodyPlayable(music.powerUp), false)
+    game.setGameOverMessage(true, "GAME OVER!")
+})
+controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
+    bubble.tilt_angle(bubble.Choice.Left)
+})
+scene.setBackgroundColor(14)
+music.play(music.createSong(hex`0096000408080106001c00010a006400f401640000040000000000000000000000000000000002d80000000200011608000a00011110001200011618001a00011120002200011628002a00011130003200011638003a00011140004200011848004a00011150005200011858005a00011160006200011868006a00011170007200011878007a00011180008200011288008a00010d90009200011298009a00010da000a2000112a800aa00010db000b2000112b800ba00010dc000c2000118c400c6000118cc00ce000118d000d2000118d800da00011ddc00de00011de400e600011de800ea00011df000f2000120f400f6000120f800fa000120fc00fe000120`), music.PlaybackMode.LoopingInBackground)
+let mySprite = sprites.create(io2_images.joy, SpriteKind.Player)
+mySprite.top = 102
+mySprite.startEffect(effects.fountain)
+bubble.createBoard()
+bubble.load_bubble()
+mySprite.setImage(io2_images.fear)
+characters = [io2_images.joy, io2_images.anger, io2_images.envy, io2_images.fear]
+mySprite.setImage(characters[randint(0, characters.length - 1)])
+
+```
+
+
 
 ```package
-chase-the-pizza=github:kiki-lee/chase-the-pizza
+multiplayer
+io2_images=github:kiki-lee/io2_images#v0.0.1
+bubble=github:kiki-lee/bubble_ext#v0.1.0
 ```
+
+
+```simtheme
+{
+    "palette": [
+        "#000000",
+        "#FFFFFF",
+        "#E40C0C",
+        "#FF8FDB",
+        "#FFF700",
+        "#3AF2B5",
+        "#0B9EF9",
+        "#56E3F5",
+        "#C4C3F4",
+        "#E0E6E6",
+        "#729280",
+        "#A4839F",
+        "#5C406c",
+        "#f9cb84",
+        "#8A0A0A",
+        "#000000"
+    ]
+}
+```
+
