@@ -386,7 +386,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 <br/>
 This block deletes the pizza sprite (otherSprite) which was overlapped. It also
-adds a special disintigrate effect to the image while that's happening.
+adds a special disintegrate effect to the image while that's happening.
 
 ```block
     sprites.destroy(otherSprite, effects.disintegrate, 100)
@@ -450,7 +450,7 @@ Let's take a look at the blocks you just added.
 ---
 
 <br/>
-This **event** block triggers an action when a player's score reaches 20. (It even has the potential to tell which player reached that score, though we won't use that feature.)
+This **event** block triggers an action when any player's score reaches 20. 
 
 ```block
 mp.onScore(20, function (thisPlayer) { })
@@ -618,11 +618,10 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
 
 - :binoculars: Test your project with two or more players.
 
-Click the green player to the side of the game window, then try pressing the (A) button (or space bar) and running into another player.  What happens?
+Click the green player to the side of the game window, then try pressing the (A) button (or space bar) before running into another player.  What happens?
 
 
-📝 _Note: If both colliding players hit the space bar (or A button), they cancel each other out
-and not only does no one have points taken away, neither of the players are able to earn points until they bump into someone else!_
+📝 _Note: If both colliding players hit the space bar (or A button), they cancel each other out and no points are taken from anyone. You will need to keep bumping into players until you see the camera shake if you want to be able to earn points again!_
 
 
 ```blockconfig.local
