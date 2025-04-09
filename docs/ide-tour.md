@@ -26,10 +26,12 @@ The main areas of the interface are:
 * **Workspace** - is where you can build your program.  Drag code elements from the Toolbox into the Workspace and assemble them to form your game code.
 
 Some additional interface features in each of the screen areas include:
+
 ### Top Bar
 On the top bar you can find the Editor toggle buttons which allow you to switch between **Blocks**, **JavaScript**, or **Python** code editors.  You can edit your code in any editor and switch between them.  The **Assets** button will show you all the assets (images, animations, songs) in your game.  On the right side of the top bar, the **Home** button will take you back to the Home Page, and the **Share** button will give you a link to share your game with others.
 
 ### Game Window
+
 * **Game controls** - include the on-screen joystick and A and B buttons which allow you to play your game.  Note – you will have to move your mouse over the game controls to activate them. 
 * **Game toolbar** - includes buttons to:
   * Stop and Start the game
@@ -41,6 +43,7 @@ On the top bar you can find the Editor toggle buttons which allow you to switch 
   * Toggle the game to Fullscreen mode
 
 ### Bottom Bar
+
 * **Download** - your game onto a hand-held Arcade device.  [Learn more](https://arcade.makecode.com/hardware).
 * **Name and Save** - your game onto your computer in the Downloads folder as a .png file.  Note – the code is embedded in the file which you can Import from the Home Page.
 * **GitHub** - store your game in a GitHub repo.  [Learn more](https://arcade.makecode.com/github).
