@@ -21,6 +21,7 @@ The MakeCode Arcade Editor is where you will be coding your games.
 ![IDE tour slide 2](/static/ide-tour/ide-tour2.png)
 
 The main areas of the interface are:
+
 * **Game Window** - where you can play, test and debug your games.
 * **Toolbox** - which contains all the game code elements (blocks or code snippets) that you can add to your game.  The code elements are organized into different categories, or Toolbox drawers, that you can click on to open.  The Toolbox has an Advanced section which includes even more code categories, and the ability to add Extensions, or custom code, to the Toolbox.  The Toolbox also acts as a trash bin – you can drag code blocks from the Workspace and drop onto the Toolbox to delete.
 * **Workspace** - is where you can build your program.  Drag code elements from the Toolbox into the Workspace and assemble them to form your game code.
