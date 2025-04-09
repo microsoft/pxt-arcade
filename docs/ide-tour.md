@@ -1,36 +1,53 @@
-# MakeCode @boardname@ Tour
+# MakeCode Arcade Interface
 
-The MakeCode @boardname@ editor is a full-featured coding platform for creating games using Blocks, JavaScript, and Python. It includes both Blocks, JavaScript, and Python editors with access to code elements to build any console style game you can think of. The editor is comes with a game simulator to test, play, and debug the game code you create.
-
-Along with the editor, there are resources on the [Home Page](@homeurl@) to create projects, try tutorials, explore examples, do lessons, and more!
+MakeCode Arcade is a full-featured game development platform for creating arcade-style video games using Blocks, JavaScript, or Python. The diagrams below showcase some of the features of the MakeCode Arcade user interface.
 
 ## Home Page
 
-The **Home Page** is where you begin your game coding experience. It offers selections to work on a project, try a tutorial, explore some examples, start a coding lesson, or watch an informative video.
+The Home Page is where you begin your game coding experience. It offers options to create a new project, open or import an existing project, try a skillmap or tutorial, or explore other learning resources.
 
 ![IDE tour slide 1](/static/ide-tour/ide-tour1.png)
 
-* **MyProjects**: Create a new project to start fresh with a blank slate.
-* **Tutorials**: A selection of step-by-step tutorials to introduce you to game programming.
-* **Game Examples**: A wide selection of examples for coding games and learning game design concepts.
-* **Import**: Import projects from your computer or elsewhere on the web.
-* **Open a project**: Open one of your recent projects and continue building your game.
+* **Settings menu** - provides options to set the Language and Theme.
+* **Sign In** - is optional, and provides the ability to save projects to the user’s account in the cloud.  [Learn more](https://arcade.makecode.com/identity/sign-in).
+* **My Projects** - this first row allows you to create a new blank project or access your recent projects.
+* **Import** - existing projects from a file on your computer, a shared link, or a GitHub repo.
+* **Skillmaps and Tutorials** - are available as well as videos, game examples, courses and other learning resources further down the page.
 
-## In the Editor
+## Editor
 
-In the **Editor** you create your Blocks, JavaScript, or Python code. There's a Toolbox with the code functions and methods to use for building your game. You can save and share projects, and even put them on GitHub. There's a complete game simulator so you can try your game at any time while you build it.
+The MakeCode Arcade Editor is where you will be coding your games.
 
 ![IDE tour slide 2](/static/ide-tour/ide-tour2.png)
 
-* **Share**: Share your game in the Cloud and get a share link to give to others.
-* **Game Simulator**: Run, test, and debug your game code in a fully functioning game board simulator.
-* **Game controls**: Move your player or press function buttons. Toggle the menu or restart your game.
-* **Simulator toolbar**: The Simulator toolbar has buttons to run, pause, restart, turn on debugging, and control the display of your game. 
-* **Download**: Download your code to the @boardname@ hardware.
-* **Toolbox**: The Toolbox has all of the game code elements you need build your game. The game functions and methods are contained inside their related category drawers.
-* **Workspace**: The Workspace is where you make your game. You drag out your blocks from the toolbox and snap them in place where you want them to go. Once out on the Workspace, Blocks are copied, moved around, or have their properties changed.
-* **Editor toggle**: You can switch between the Blocks, JavaScript, or Python editors by just clicking the editor toggle at the top of the screen. It's the same code but one view is Blocks and the other is JavaScript or Python!
-* **Assets**: View, add, and edit your game's sprites and tilemaps.
-* **Workspace toolbar**: Undo or redo changes to your code. Zoom in or out to see more or less code on the Workspace.
-* **Save Project**: Save your game project to a file, you give it the name want. Also, the GitHub button if you want your game in a GitHub repository.
-* **GitHub**: Create a GitHub repository for your game project.
+The main areas of the interface are:
+
+* **Game Window** - where you can play, test and debug your games.
+* **Toolbox** - which contains all the game code elements (blocks or code snippets) that you can add to your game.  The code elements are organized into different categories, or Toolbox drawers, that you can click on to open.  The Toolbox has an Advanced section which includes even more code categories, and the ability to add Extensions, or custom code, to the Toolbox.  The Toolbox also acts as a trash bin – you can drag code blocks from the Workspace and drop onto the Toolbox to delete.
+* **Workspace** - is where you can build your program.  Drag code elements from the Toolbox into the Workspace and assemble them to form your game code.
+
+Some additional interface features in each of the screen areas include:
+
+### Top Bar
+On the top bar you can find the Editor toggle buttons which allow you to switch between **Blocks**, **JavaScript**, or **Python** code editors.  You can edit your code in any editor and switch between them.  The **Assets** button will show you all the assets (images, animations, songs) in your game.  On the right side of the top bar, the **Home** button will take you back to the Home Page, and the **Share** button will give you a link to share your game with others.
+
+### Game Window
+
+* **Game controls** - include the on-screen joystick and A and B buttons which allow you to play your game.  Note – you will have to move your mouse over the game controls to activate them. 
+* **Game toolbar** - includes buttons to:
+  * Stop and Start the game
+  * Restart the game
+  * Run the game in Debug Mode
+  * Mute the game
+  * Show the keyboard mapping for game controls
+  * Take a screenshot of the game
+  * Toggle the game to Fullscreen mode
+
+### Bottom Bar
+
+* **Download** - your game onto a hand-held Arcade device.  [Learn more](https://arcade.makecode.com/hardware).
+* **Name and Save** - your game onto your computer in the Downloads folder as a .png file.  Note – the code is embedded in the file which you can Import from the Home Page.
+* **GitHub** - store your game in a GitHub repo.  [Learn more](https://arcade.makecode.com/github).
+* **Undo/Redo** - buttons undo or redo the last coding actions in the Workspace.
+* **Zoom** -  in or out buttons magnify or minimize the size of the Workspace.
+
