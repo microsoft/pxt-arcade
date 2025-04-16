@@ -713,7 +713,8 @@
                 "embeddedTutorial": true,
                 "allowParentController": true,
                 "shareFinishedTutorials": false,
-                "hideReplaceMyCode": false
+                "hideReplaceMyCode": false,
+                "showOpenInVscode": false
             }
         }
     },
