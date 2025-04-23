@@ -75,6 +75,7 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
 ## See also
 
 [Cozy Jam](/gamejam/cozy),
+[Female Gamechangers](/gamejam/female-gamechangers),
 [Five Second Games](https://itch.io/jam/makecode-game-jam),
 [One Room](https://itch.io/jam/makecode-arcade-game-jam-2),
 [Time Jam](/gamejam/time),
