@@ -11,11 +11,11 @@ _(Click tile to register for free)_
 ```codecard
 [
     {
-        "name": "MakeCode Arcade-Con!",
-        "description": "Save the date for this 6-hour online professional learning conference, centered around Microsoft MakeCode Arcade.",
+        "name": "Watch Arcade-Con!",
+        "description": "Did you miss the first Arcade-Con? You can still catch the recordings on our Educator YouTube channel!",
         "label": "April 23, 2025",
         "labelClass": "purple ribbon large",
-        "url":"https://developer.microsoft.com/en-us/reactor/events/25467/",
+        "url":"https://www.youtube.com/playlist?list=PLUgoavxKsVdW6HuW4SuHrpd4jdug59-OC",
         "imageUrl": "/static/courses/arcadecon/ac2025card.png"
     }
     

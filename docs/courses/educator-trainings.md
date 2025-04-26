@@ -17,10 +17,8 @@ _(Click tile to register for free)_
 [
     {
         "name": "MakeCode Arcade-Con!",
-        "description": "Save the date for this 6-hour online professional learning conference, centered around Microsoft MakeCode Arcade.",
-        "label": "April 23, 2025",
-        "labelClass": "purple ribbon large",
-        "url":"https://developer.microsoft.com/en-us/reactor/events/25467/",
+        "description": "Watch the complete video set from our first ever Arcade-Con on our Educator YouTube channel.",
+        "url":"https://www.youtube.com/playlist?list=PLUgoavxKsVdW6HuW4SuHrpd4jdug59-OC",
         "imageUrl": "/static/courses/arcadecon/ac2025card.png"
     }, {
         "name": "Arcade at CSTA!",
