@@ -89,7 +89,7 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "imageUrl": "/static/hardware/kitronik-arcade-max.png",
         "url": "https://kitronik.co.uk/5357",
         "variant": "hw---samd51"
-    },
+    }
 ]
 ```
 ##  micro:bit shields for Arcade
