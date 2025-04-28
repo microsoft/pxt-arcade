@@ -157,7 +157,7 @@ Games submitted by the MakeCode community.
         "description": "Push crates around to solve puzzles! By ADM_F",
         "cardType": "forumUrl",
         "author": "ADM_F",
-        "url": "https://forum.makecode.com/t/the-adm-f-makecade/27695",
+        "url": "https://forum.makecode.com/t/crate-dungeons/36126",
         "shareUrl": "https://arcade.makecode.com/24798-37765-70019-02236",
         "imageUrl": "/static/discourse/24798-37765-70019-02236.png"
     },
