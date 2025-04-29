@@ -42,7 +42,7 @@ jobs:
 
       - name: npm ci (with publish capability)
         run: |
-          npm ci --publish
+          npm ci --publish --debug
         env:
           PXT_ACCESS_TOKEN: ${{ secrets.PXT_ACCESS_TOKEN }}
           PXT_RELEASE_REPO: ${{ secrets.PXT_RELEASE_REPO }}
