@@ -5,7 +5,10 @@ reward days, or even days requiring unplanned substitutes.
 
 
 ## Activity 1: Code an Arcade Carnival Game
-Choose one of the options below to get started with your online carnival game!
+Choose one of the options below to get started with your online carnival game!<br/>
+[Mini Lesson Plan](https://1drv.ms/b/c/416406873cb120ab/EdvMCxhXkV5NrdmZyg_ts8ABEHexYrBeyY2HL9CE8ZLynQ?e=EQbOcN)<br/>
+[Mini Slide Deck](https://1drv.ms/p/c/416406873cb120ab/EX9zS3X5R9hNpdK8IYJCD_QBSvPA9sdlsjPFh0kGef6JnQ?e=6e6K1v)
+
 
 ```codecard
 [
@@ -46,7 +49,7 @@ These activities are code-adjacent, but don't require as large of a lift.
 {
   "name": "Word Search",
   "description": "Complete the word search, then do a scavenger hunt in Arcade to answer some thought exercises.",
-  "url": "https://1drv.ms/b/s!AqsgsTyHBmRBnVSIXNe22i0bwfap?e=3vxNKn",
+  "url": "https://1drv.ms/b/c/416406873cb120ab/EVTnGK-iJItHgD9LJo1spFUBCYJ5OS9ZKa43mIuRprxtOw?e=j2ZOkO",
   "imageUrl": "/static/courses/carnival/projectPlanning.png"
 },
 {
@@ -71,7 +74,7 @@ These are intended to be complete packages that can be picked up and run without
 {
   "name": "Cryptic Coordinates",
   "description": "Your students have been given a secret assignment. Can they save Agent Whiskers?",
-  "url": "https://aka.ms/decrypt",
+  "url": "https://1drv.ms/p/c/416406873cb120ab/ETsbPxUeVlpIh9nq7FaBIucB0Rri_1zruxhN7lIblD7Vng?e=nhZBIu",
   "imageUrl": "https://makecode.com/api/_EbdVzJJPa7m0/thumb"
 }
 ]
