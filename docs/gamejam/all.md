@@ -10,6 +10,12 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
 
 ```codecard
 [   {
+        "name": "Cozy Jam",
+        "description": "Games that create a 'cozy,' or, maybe, relaxing atmosphere rather than a stressful one.",
+        "url": "/gamejam/cozy",
+        "imageUrl": "/static/gamejam/jams/cozy/assets/preview.png"
+    },
+    {
         "name": "Female Gamechangers",
         "description": "Celebrate Women's History Month with Microsoft MakeCode Arcade!",
         "url": "/gamejam/female-gamechangers",
@@ -68,6 +74,8 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
 
 ## See also
 
+[Cozy Jam](/gamejam/cozy),
+[Female Gamechangers](/gamejam/female-gamechangers),
 [Five Second Games](https://itch.io/jam/makecode-game-jam),
 [One Room](https://itch.io/jam/makecode-arcade-game-jam-2),
 [Time Jam](/gamejam/time),

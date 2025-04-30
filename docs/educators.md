@@ -3,8 +3,28 @@
 
 # MakeCode Arcade Educator Page
 
+
+## Watch Recordings of Arcade-Con!
+
+
+```codecard
+[
+    {
+        "name": "Watch Arcade-Con!",
+        "description": "Catch recordings of our very first Arcade-Con on our Educator YouTube channel!",
+        "url":"https://www.youtube.com/playlist?list=PLUgoavxKsVdW6HuW4SuHrpd4jdug59-OC",
+        "imageUrl": "/static/courses/arcadecon/ac2025card.png"
+    }
+    
+]
+```
+
+
+
+
+
 ## Educator Resources
-We have gathered all of our best educator resources and collected them all right here for your convenience. 
+We have gathered all of our best educator resources in one place for your convenience. 
 
 
 ```codecard
@@ -15,30 +35,40 @@ We have gathered all of our best educator resources and collected them all right
         "url":"/educators#quicklinks",
         "imageUrl": "static/tutorials/froggy/frog.gif"
     },{
+        "name": "Educator Training",
+        "description": "Learn more about MakeCode!",
+        "url":"/courses/educator-trainings",
+        "imageUrl": "/static/livestream-games/hamlet.png"
+    },{
         "name": "Complete Courses",
         "description": "Full course sets for dedicated STEM or CS classrooms.",
         "url":"/educators#courses",
         "imageUrl": "static/courses/teals-introcs.jpg"
+    },{
+        "name": "Friday Fun Day",
+        "description": "Want to run a lesson with very little prep?",
+        "url":"/friday-fun-day",
+        "imageUrl": "/static/skillmap/backgrounds/mole.gif"
+    },{
+        "name": "Junior Tutorials",
+        "description": "These tutorials are perfect for new readers.",
+        "url":"/jr-tutorials",
+        "imageUrl": "/static/tutorials/lyla/card.jpg"
     },{
         "name": "Educator Videos",
         "description": "Visit our educator YouTube channel.",
         "url":"https://www.youtube.com/@msmakecode",
         "imageUrl": "static/educator/video_thumb.png"
     },{
-        "name": "Fun Additions",
-        "description": "Check out these fun tools that make great additions to the classroom.",
-        "url":"/educators#fun",
-        "imageUrl": "static/hardware/arcade-kiosks/cardboard-kiosk.png"
-    },{
         "name": "Arcade Blogs",
         "description": "Read tips and tricks that can elevate your class projects.",
         "url":"/educators#blogs",
         "imageUrl": "/static/skillmap/story/story-comp.png"
     },{
-        "name": "Educator Training",
-        "description": "Learn more about MakeCode!",
-        "url":"/courses/educator-trainings",
-        "imageUrl": "/static/livestream-games/hamlet.png"
+        "name": "Delightful Additions",
+        "description": "Check out these fun tools that make great additions to the classroom.",
+        "url":"/educators#fun",
+        "imageUrl": "static/hardware/arcade-kiosks/cardboard-kiosk.png"
     }
 ]
 ```
@@ -116,14 +146,14 @@ We have gathered all of our best educator resources and collected them all right
 
 <a name="fun"> --- </a>
 
-## Fun Additions
+## Delightful Additions
 
 ```codecard
 [
     {
         "name": "Arcade Kiosk",
         "description": "Bring the arcade to your classroom with this kiosk-style interface.",
-        "url":"/hardware/kiosk",
+        "url":"/hardware/cabinets",
         "imageUrl": "/static/hardware/kiosk/makecode-arcade-machines.jpg"
     }, {
         "name": "Multiplayer",
@@ -131,9 +161,9 @@ We have gathered all of our best educator resources and collected them all right
         "url":"/multiplayer",
         "imageUrl": "static/multiplayer/help/hosted-game.png"
     }, {
-        "name": "Evaluation Tool",
-        "description": "Inspect programs to make sure they're headed the right direction.",
-        "url":"https://makecode.microbit.org/beta--eval",
+        "name": "Xbox App",
+        "description": "Upload your games to the Xbox",
+        "url":"https://medium.com/kikis-corner/xbox-00d8868e4778",
         "imageUrl": "static/skillmap/puzzle/puzzle-activity1.png"
     }
 ]
@@ -154,7 +184,7 @@ We have gathered all of our best educator resources and collected them all right
     }, {
         "name": "Richard's Tips",
         "description": "Visit our forum to read Richard's Arcade Tips. You're bound to learn something new!",
-        "url":"https://forum.makecode.com/search?q=%22Richard%27s%20Arcade%20Tips%22",
+        "url":"https://forum.makecode.com/search?q=richard%27s%20arcade%20tips%20%23blog%20%40richard%20in%3Atitle",
         "imageUrl": "/static/livestream-games/bartholomew.png"
     }
 ]

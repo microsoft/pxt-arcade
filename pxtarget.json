@@ -691,7 +691,14 @@
         "timeMachineSnapshotInterval": 1800000,
         "feedbackEnabled": true,
         "ocvAppId": 50315,
-        "ocvFrameUrl": "https://admin-ignite.microsoft.com"
+        "ocvFrameUrl": "https://admin-ignite.microsoft.com",
+        "pxtJsonOptions": [
+            {
+                "label": "Import as asset pack",
+                "property": "assetPack",
+                "type": "checkbox"
+            }
+        ]
     },
     "queryVariants": {
         "skillmap=1": {
