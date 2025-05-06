@@ -288,7 +288,7 @@ If you don't have any paper handouts, you may find these clues helpful:
 
 Click the image to open the folder in a new tab.
 
-[![Classified Folder](static/courses/ffd/decrypt/top_secret.png)]([static/courses/ffd/decrypt/top_secret.png](https://1drv.ms/i/c/416406873cb120ab/Eeacs6cIIx5Ds9hcucKZZh8BJcnk9sBtvM6sU5Mp-5FrtA?e=JMblge))
+[![Classified Folder](static/courses/ffd/decrypt/top_secret.png)](https://1drv.ms/i/c/416406873cb120ab/Eeacs6cIIx5Ds9hcucKZZh8BJcnk9sBtvM6sU5Mp-5FrtA?e=JMblge)
 
 
 hint~
@@ -301,7 +301,7 @@ hint~
 
 Click the image to open the map in a new tab.
 
-[![Grid Map](static/courses/ffd/decrypt/grid_map.png)]([static/courses/ffd/decrypt/grid_map.png](https://1drv.ms/i/c/416406873cb120ab/EU0g-wk7t6xIjgqozmLqxVwBdVrtKWy1MmQ5U1ZHEYgZ7A?e=ULaUlr))
+[![Grid Map](static/courses/ffd/decrypt/grid_map.png)](https://1drv.ms/i/c/416406873cb120ab/EU0g-wk7t6xIjgqozmLqxVwBdVrtKWy1MmQ5U1ZHEYgZ7A?e=ULaUlr)
 
 
 hint~

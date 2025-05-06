@@ -4,17 +4,14 @@
 # MakeCode Arcade Educator Page
 
 
-## Register Free for Arcade-Con!
-_(Click tile to register for free)_
+## Watch Recordings of Arcade-Con!
 
 
 ```codecard
 [
     {
         "name": "Watch Arcade-Con!",
-        "description": "Did you miss the first Arcade-Con? You can still catch the recordings on our Educator YouTube channel!",
-        "label": "April 23, 2025",
-        "labelClass": "purple ribbon large",
+        "description": "Catch recordings of our very first Arcade-Con on our Educator YouTube channel!",
         "url":"https://www.youtube.com/playlist?list=PLUgoavxKsVdW6HuW4SuHrpd4jdug59-OC",
         "imageUrl": "/static/courses/arcadecon/ac2025card.png"
     }
@@ -27,7 +24,7 @@ _(Click tile to register for free)_
 
 
 ## Educator Resources
-We have gathered all of our best educator resources and collected them all right here for your convenience. 
+We have gathered all of our best educator resources in one place for your convenience. 
 
 
 ```codecard
@@ -37,6 +34,11 @@ We have gathered all of our best educator resources and collected them all right
         "description": "A table of our most popular activities and their associated URLS and teacher resources.",
         "url":"/educators#quicklinks",
         "imageUrl": "static/tutorials/froggy/frog.gif"
+    },{
+        "name": "Educator Training",
+        "description": "Learn more about MakeCode!",
+        "url":"/courses/educator-trainings",
+        "imageUrl": "/static/livestream-games/hamlet.png"
     },{
         "name": "Complete Courses",
         "description": "Full course sets for dedicated STEM or CS classrooms.",
@@ -48,6 +50,11 @@ We have gathered all of our best educator resources and collected them all right
         "url":"/friday-fun-day",
         "imageUrl": "/static/skillmap/backgrounds/mole.gif"
     },{
+        "name": "Junior Tutorials",
+        "description": "These tutorials are perfect for new readers.",
+        "url":"/jr-tutorials",
+        "imageUrl": "/static/tutorials/lyla/card.jpg"
+    },{
         "name": "Educator Videos",
         "description": "Visit our educator YouTube channel.",
         "url":"https://www.youtube.com/@msmakecode",
@@ -57,11 +64,6 @@ We have gathered all of our best educator resources and collected them all right
         "description": "Read tips and tricks that can elevate your class projects.",
         "url":"/educators#blogs",
         "imageUrl": "/static/skillmap/story/story-comp.png"
-    },{
-        "name": "Educator Training",
-        "description": "Learn more about MakeCode!",
-        "url":"/courses/educator-trainings",
-        "imageUrl": "/static/livestream-games/hamlet.png"
     },{
         "name": "Delightful Additions",
         "description": "Check out these fun tools that make great additions to the classroom.",
