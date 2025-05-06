@@ -82,6 +82,13 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "imageUrl": "/static/hardware/adafruitm4.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
+    },
+    {
+        "name": "Kitronik ARCADE Max",
+        "description": "Program fun and educational games with the Kitronik ARCADE Max",
+        "imageUrl": "/static/hardware/kitronik-arcade-max.png",
+        "url": "https://kitronik.co.uk/5357",
+        "variant": "hw---samd51"
     }
 ]
 ```
