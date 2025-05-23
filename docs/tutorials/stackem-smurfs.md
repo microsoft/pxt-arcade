@@ -5,7 +5,7 @@
 
 Something smurfy is going on around here! 
 
-![Code a game starring The Smurfs](/static/tutorials/stackem-smurfs.gif "An animated image of Smurfs falling from the sky in a sample game.")
+![Code a game starring The Smurfs](/static/tutorials/stackem-smurfs/stackem-smurfs.gif "An animated image of Smurfs falling from the sky in a sample game.")
 
 This tutorial will show you how to code your very own retro-style arcade game, featuring The Smurfs!
 
