@@ -99,7 +99,14 @@
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/valentine/valentine.png",
   "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
-},{
+}, {
+  "name": "Stack'em Smurfs",
+  "description": "Stack the Smurfs as they appear from above, don't let anyone drop!",
+  "url": "/tutorials/stackem-smurfs",
+  "cardType": "tutorial",
+  "imageUrl": "/static/tutorials/stackem-smurfs/stackem-smurfs.png",
+  "largeImageUrl": "/static/tutorials/stackem-smurfs/stackem-smurfs.gif"
+}, {
   "name": "Happy Flower",
   "description": "Create a flower that sends back happy bees",
   "url": "/tutorials/happy-flower",
