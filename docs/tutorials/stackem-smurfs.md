@@ -5,7 +5,7 @@
 
 Something smurfy is going on around here! 
 
-![Code a game starring The Smurfs](https://makecode.com/api/_cYJ8zvdaC9Tp/thumb "An animated image of Smurfs falling from the sky in a sample game.")
+![Code a game starring The Smurfs](/static/tutorials/stackem-smurfs.gif "An animated image of Smurfs falling from the sky in a sample game.")
 
 This tutorial will show you how to code your very own retro-style arcade game, featuring The Smurfs!
 
@@ -69,10 +69,10 @@ smurfy.set_first_smurf(assets.image`jump`)
 
 You should see a Smurf sitting on the ground.
 
-![The game window is in the lower left corner](/static/tutorials/smurfs/game.jpg "Your game will automatically load in this window after every step.")
-
-
 ---
+
+![The game window is in the lower left corner](/static/tutorials/stackem-smurfs/game.jpg "Your game will automatically load in this window after every step.")
+
 
 ## {4. Add Some Color}
 
@@ -192,6 +192,7 @@ or if you want to play music, but our example uses a **water drop** sound effect
 sound effects **Gallery**. 
 
 ```block
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     music.play(music.createSoundEffect(WaveShape.Sine, 200, 600, 255, 0, 150, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
 })
 ```
