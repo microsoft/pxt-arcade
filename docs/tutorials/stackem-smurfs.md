@@ -45,7 +45,7 @@ For example, when we suggest the <br/>
 block, we are pointing you toward <br/>
 
 ```block
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 ```
 
 hint~
@@ -56,7 +56,7 @@ hint~
 
 ```blocks
 //@highlight
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 ```
 
 
@@ -92,7 +92,7 @@ if you like._
 #### ~ tutorialhint
 
 ```blocks
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 //@highlight
 scene.setBackgroundColor(13)
 ```
@@ -124,7 +124,7 @@ hint~
 #### ~ tutorialhint
 
 ```blocks
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 scene.setBackgroundColor(13)
 //@highlight
 smurfy.add_floating_smurf()
@@ -150,7 +150,7 @@ container that's now in the workspace.
 
 ---
 
-Give your game a try!  You should be able to drop your Smurf by pressing the (A) button
+Give your game a try! You should be able to drop your Smurf by pressing the (A) button
 in the game window, or pressing the **space bar** on your keyboard. 
 
 
@@ -235,7 +235,7 @@ block into **the end** of your <br/>
 #### ~ tutorialhint
 
 ```blocks
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 scene.setBackgroundColor(13)
 smurfy.add_floating_smurf()
 //@highlight
@@ -304,7 +304,7 @@ That's it!  Now play your game and see if you can make it to the top!
 #### ~ tutorialhint
 
 ```blocks
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 scene.setBackgroundColor(13)
 smurfy.add_floating_smurf()
 info.startCountdown(10)
@@ -344,7 +344,7 @@ info.onCountdownEnd(function () {
     info.startCountdown(10)
     info.changeLifeBy(-1)
 })
-smurfy.set_first_smurf(new_smurf_imgs.jump)
+smurfy.set_first_smurf(assets.image`jump`)
 scene.setBackgroundColor(13)
 smurfy.add_floating_smurf()
 info.setLife(3)
@@ -356,7 +356,6 @@ music.baDing.play()
 
 
 ```package
-new_smurf_imgs=github:kiki-lee/new_smurf_imgs
 arcade-sprite-data=github:microsoft/arcade-sprite-data#v0.0.5
 ```
 
@@ -384,10 +383,10 @@ namespace smurfy {
     let village: Image[] = []
     export let speed = 60
 
-    village = [new_smurf_imgs.sit, new_smurf_imgs.squat, new_smurf_imgs.float, new_smurf_imgs.smurfette, 
-    new_smurf_imgs.jump, new_smurf_imgs.ken, new_smurf_imgs.profile]
+    village = [assets.image`sit`, assets.image`squat`, assets.image`float`, assets.image`smurfette`, 
+    assets.image`jump`, assets.image`ken`, assets.image`profile`]
 
-    scene.onOverlapTile(SpriteKind.Smurf, new_smurf_imgs.winCloud, function (sprite, location) {
+    scene.onOverlapTile(SpriteKind.Smurf, assets.image`winCloud`, function (sprite, location) {
         game.gameOver(true)
     })
 
@@ -456,10 +455,10 @@ namespace smurfy {
     //% blockId=first_smurf 
     //% block="set first Smurf $myImage"
     //% myImage.shadow=screen_image_picker
-    //% myImage.defl=new_smurf_imgs.jump
+    //% myImage.defl=assets.image`jump`
     //% weight=200
     export function set_first_smurf(myImage: Image) {
-        tiles.setTilemap(new_smurf_imgs.level2)
+        tiles.setTilemap(assets.tilemap`level1`)
         smurf = sprites.create(myImage, SpriteKind.Mountain)
         smurf.ay = 300
         smurf.setPosition(80, 1225)
@@ -510,6 +509,11 @@ namespace smurfy {
         }
     })
 }
+```
 
-
+```assetjson
+{
+    "tilemap.g.jres": "{\n    \"transparency16\": {\n        \"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true\n    },\n    \"tile1\": {\n        \"data\": \"hwQQABAAAAAAAAAQAQAAAAAAABEBAAAAAAAAEQEAAAAAABARAQAAAAAAEREBAAAAAAAREQEAAAAAEBERAQAAAAAQEREBAAAAABAREQEAAAAAABERAQAAAAAAEBEBAAAAAAAQEQEAAAAAABARAQAAAAAAEBEBAAAAAAAAEQEAAAAAAAAQAQAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"cloud1\"\n    },\n    \"tile3\": {\n        \"data\": \"hwQQABAAAAAAAAAQAQAAAAAAABEBAAAAAAAQEQEAAAAAABARAQAAAAAAEBEBAAAAAAAQEQEAAAAAABERAQAAAAAQEREBAAAAABAREQEAAAAAEBERAQAAAAAAEREBAAAAAAAREQEAAAAAABARAQAAAAAAABEBAAAAAAAAEQEAAAAAAAAQAQAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"cloud2\"\n    },\n    \"tile2\": {\n        \"data\": \"hwQQABAAAAAAAAAQCQAAAAAAABEJAAAAAAAQEQkAAAAAABARCQAAAAAAEBEJAAAAAAAQEQkAAAAAABERCQAAAAAQEREJAAAAABAREQkAAAAAEBERCQAAAAAAEREJAAAAAAAREQkAAAAAABARCQAAAAAAABEJAAAAAAAAEQkAAAAAAAAQCQAAAA==\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"tilemapTile\": true,\n        \"displayName\": \"winCloud\"\n    },\n    \"level1\": {\n        \"id\": \"level1\",\n        \"mimeType\": \"application/mkcd-tilemap\",\n        \"data\": \"MTAwYTAwNTAwMDAzMDMwMzAzMDMwMzAzMDMwMzAzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMTAxMDEwMTAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjIyMjIyMjIyMg==\",\n        \"tileset\": [\n            \"myTiles.transparency16\",\n            \"sprites.castle.tilePath2\",\n            \"myTiles.tile1\",\n            \"myTiles.tile2\"\n        ],\n        \"displayName\": \"level1\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myTiles\"\n    }\n}",
+    "images.g.jres": "{\n    \"image13\": {\n        \"data\": \"hwQYACAAAAAAAAAAAAAAAAAAAPD/DwAAAAAAAAAAAAAAAADf3f0PAAAAAAAAAAAAAADw0d3d/QAAAAAAAAAAAAAA8NHd3d0PAAAAAAAAAAAA8P/R3d3dDwAAAAAA/wAAAJ/5HxHd3Q8AAAAA8JkPAPCZmf//EfEAAADwD///+QDwmZ//Ef8PAAD/n/mZmf8A8Jn5H/EPAADw/Z+Zn5/5AJ/5/xH//wAAH9H/mZ/5mQ+Z//nx3d3/AB8RH5+ZmZ//+ZmZH93d3Q8fER/xmZmfn5mZmR/d3d39HxEfn5mZn5+ZmZkf3d3d/R8RHx+Z+ZmZmZn58RHR3f0fER+f+Z+Z/5mZ+RH/HxEP8BHR8ZmZmQ/5mR/xEfH/APAdERH/mfkAmf8fEfEPAAAA3xER8ZkPAJ/5+d0PAAAAAPDdEZ+Z+QDwmfn/AAAAAAAA/92fn/kA8JmZ+QAAAAAAAAD/n//5APCZmfkAAAAAAAAAAPCZDwAAn5n/AAAAAAAAAAAA/wAAAPD/DwAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"sit\"\n    },\n    \"image12\": {\n        \"data\": \"hwQYABoAAAAAAADwDwAAAAD/DwAAAAAAAAAAn/kAAADwmfkAAAAAAAAAAJ+ZDwAA/5n5AAAAAAAA/wDwmf8AAJ+Z+QAAAAAA8N0P8J+ZDwDwmfnwDwAAAPDRDx/xn/kA8JkP3/0AAAAf0f8fEZ/5AJ/58P3/AAAAH9Hf//+ZmQ+f//Df/QAAAB/RH5+ZmZ//md//HfEAAAAfER/xmZmZ//n//RHxAAAAHxHREZ+ZmZ/5Ef8R8QAAAB8RERGfmZmfHxHxH/EAAAAfERER8Zn5mR8RER/xAAAA8BEREZ+Z+ZkfERHx8QAAAPAdEfGZn/+Z/xEf8fEAAAAA3xHx+ZmfmfkR/RHxAAAAAPDd8fmf/5mZH/ER8QAAAAAA/92f+fCZmR/RH/EAAAAAAAD//w8An5kf0R/xAAAAAAAAAAAAAPCZH9Hf/QAAAAAAAAAAAAAA/9398A8AAAAAAAAAAAAAAJ//DwAAAAAAAAAAAAAAAACf+QAAAAAAAAAAAAAAAAAA8A8AAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"squat\"\n    },\n    \"image2\": {\n        \"data\": \"hwQSACAAAAAAAAAA8A8AAAAA8A8AAAAAAAD/BJ/5AADwAJ8JAAAAAADwRACf+Q8Anw+f/wAAAAAAT/Xw8fn58JkP/90PAAAAAE9FH5mZmf+Z/9/RDwAA/wBPVZ/xmZ8Pn/8R8f8P8PkA8FQfEZmf//GZH/GZ+Z/5APBUH5H5mR8Rn/kRn5mf+fD/T/WZmZn//5n5Ef+fmfHf/fH/mZn/VEWfH/GZ+RkP3/Ed8Z//VVVU9RHxmZn/8R8R3xHxX0RERVXfEf+Z/w/fEfEdEfH1X1RU9B3/mZ/53xERERHR//BFRUX/9Z+Z+fAdERER3Q8AX1RVVfSRmfEAHxER3f0AAE9FVEX/HxEPAPAf0f0PAADwVFX/8PH/AAAA8P8PAAAAAP//AAAPAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"smurfette\"\n    },\n    \"image14\": {\n        \"data\": \"hwQhACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPD//wAAAAAAAAAAAAAAAAAAAAAAn5+fDwAAAAAAAAAAAAAAAAAAAACf//8PAAAAAAAAAAAAAAAAAAAAAP+Znw8AAP//AAAAAAAAAAAAAAAA8PmZDwDw3d3/AAAAAAAAAAAAAPAPn/kAAB/d3d0PAAAAAAAAAAAAn/nw+QAAH93d3f0AAAAAAAAA8P/5n//5AAAf3d3d/QAAAAAAAPDf/fmZ//kA/x/R3d3dDwAAAAAA3x3xmZn/+fCZ/x/R3d0PAAAAAPAdEdGf+fD58P8f8R/d3Q8AAAAA3xER8Z+Zn/n/ERER/xHxAAAAAAAfERGfmZmfmZkfEfEA/w8AAAAA8BHx8Zn/n5mZmR8RDwAAAAAAAADwEfHxmfnx+ZmZ+REPAAAAAAAAAPAR/fGZ+fH5mZn5EQ8AAAAAAAAA8BH9EZ/5//mZmfkRDwAAAAAAAADwEf3xmfmf+ZmZ+REPAAAAAAAAAPAR/Z/5+Z//n5n5EQ8AAAAAAAAAAN//mfn5mf/5/x/x/fD/AAAAAAAA8P+Zn5n5//kA8B8RHxEPAAAAAAAAAP/w/5//+QAA8P/R3f0AAAAAAAAAAACf+fD5AAD/Ed3d/QAAAAAAAAAAAPAPn/kA8BHd3d39AAAAAAAAAAAAAPD5mQ/w0d3d3Q8AAAAAAAAAAAAA/5mfD/DR3d3dDwAAAAAAAAAAAACf//8P8NHd3f0AAAAAAAAAAAAAAJ+fnw8A3939DwAAAAAAAAAAAAAA8P//AADw/w8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"jump\"\n    },\n    \"image11\": {\n        \"data\": \"hwQTACAAAAAAAADwDwAAAAAAAAAAAAAAAAAAn/kAAAAAAAAAAADwDwD/AJ+Z/w8AAAAAAAAAL/LwIg/wmU//DwAAAAAA8PL/8CIP//9E9PQAAAAAAPAv8i8i/x//RPT0APD/AADwIvIvIi8f8U/09PD/Iv//8CLyLyIv/5//T/T/mS8vIv8i8i8iL5/5RET/mZkv8v//IvIvIiL/T0REn/n///8v8i/yLyIiIk9ERJ+ZmZmZ+SIv8i8iIiLyRESfmZmZmZkvIvIvIiIin0/0/////5mfLyLy8CIi8pn//wDwLyKf//Ai8vAiIvL5mQ8AAPAi/w8AL/IALyLy+Z8PAADw/w8AAC/yAPAiIp/5DwAAn/kAAADwDwAA/yLy/wAAAJ/5AAAAAAAAAAD//w8AAADwDwAAAAAA\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"ken\"\n    },\n    \"image10\": {\n        \"data\": \"hwQTACAAAAAAAAD//w8AAADwDwAAAAAAAAD/3f3/AAAAn/kAAAAAAADw3RGf+Q8AAJ/5AAAA8A8A3xHx+Z8PAADw/w8AAN/98B0R8fmZ/wAA8N3/DwAf/fAREfGZn/kA8B8Rn//wEfEfERERn5n5/////5mfHxHxHxEREfGZmZmZmZmZmR8R8R8RERGfmZmfmZmZmfkRH/EfEdERn5mZn/n///8f8R/xHxEf8Zn5mf+ZmR/x//8R8R8RH/+f+Z8P/5kfHxH/EfEfEd8f8Zn5D/D/Ef//8BHxHxH/H/+Z+QAA8P8AAPAd/fDRD/+fmQ8AAAAAAADw3/3w3Q/wmf8AAAAAAAAA8P3/AP8An5kPAAAAAAAAAADf/QAAAJ/5AAAAAAAAAAAA8A8AAADwDwAAAAAAAAAAAAAA\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"profile\"\n    },\n    \"image15\": {\n        \"data\": \"hwQYACAAAAAAAAAAAAAAAAD///D//w8AAAAAAAAAAADwmfnf3d39DwAAAAAAAAAAn5mZHxER0f0AAAAAAAAAAJ+ZmR8RERHxAAAAAP8PAACfmf/w8RER8QAAAP+f+QDwmZ////EfEfEAAP/9+Z8P8Jn/3R/x/REPAPDd8fmZD5/53xER8RH//wDfEfGZnw+fnx8RER8REfHwHRERn5n5mZn5Ef//HxHx8B0REfGZ+ZmZ+RHfDx8R8d8RERGfmfmZmfkRHw/wEQ8fERERn5mZn5n5EfEPAP8AHxEf8Zn/n/+f+RH/AAAAAB8RH5+Z+Z8P////+QAAAAAfEd//n/mfDwCf+fkAAAAAHxH/EfH5mQ8A8Jn5AAAAAB/R/xH/+fkAAAD/DwAAAAAf0Q//n5n5AAAAAAAAAAAA8P0PH5+fDwAAAAAAAAAAAAD/APCZ/wAAAAAAAAAAAAAAAACfmQ8AAAAAAAAAAAAAAAAAn/kAAAAAAAAAAAAAAAAAAPAPAAAAAAAAAAAAAAA=\",\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"displayName\": \"float\"\n    },\n    \"*\": {\n        \"mimeType\": \"image/x-mkcd-f4\",\n        \"dataEncoding\": \"base64\",\n        \"namespace\": \"myImages\"\n    }\n}"
+}
 ```
