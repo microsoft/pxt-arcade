@@ -13,10 +13,10 @@ Here are some cool activities to get you started!
 * cardType: tutorial
 ---
 * name: Arcade-Con 2025!
-* buttonLabel: Learn more
+* buttonLabel: View recordings
 * description: Arcade-Con 2025!
 * imageUrl: /static/courses/arcadecon/arcadecon-amc-banner.png
-* url: /courses/arcadecon/2025
+* url: https://www.youtube.com/playlist?list=PLUgoavxKsVdW6HuW4SuHrpd4jdug59-OC
 * cardType: link
 ---
 * name: New Pizza Party!

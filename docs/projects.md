@@ -63,9 +63,9 @@
     {
         "name": "Community Games",
         "url": "/community",
-        "imageUrl": "/static/community/salvo/salvo.png",
-        "largeImageUrl": "/static/community/salvo/salvo.gif",
-        "videoUrl": "/static/community/salvo/salvo.mp4"
+        "imageUrl": "/static/discourse/76895-38185-68305-99984.png",
+        "largeImageUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.gif",
+        "videoUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.mp4"
     },
     {
         "name": "Game Design Concepts",
