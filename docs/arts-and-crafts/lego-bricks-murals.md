@@ -7,7 +7,7 @@ With this **Arcade Stencilr** you will be able to take your pixel art painted in
 * open the sprite you want to recreate with LEGO
 * select the image area you want to recreate with the **Marquee** tool
 * press Ctrl+C or Command+C to copy the image in the clipboard
-* open [MakeCode Arcade Stencilr](https://arcade-stencils.glitch.me/) (on glitch.me).
+* open [MakeCode Arcade Stencilr](https://riknoll.github.io/arcade-stenciler/) (on GitHub pages).
 * press Ctrl+V or Command+V to paste the image in the image text box
 * download the LEGO instructions and have fun!
 

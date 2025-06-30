@@ -40,4 +40,4 @@ into real world art! Please drop us a message if you know another tool to be add
 * [LEGO Bricks Murals](/arts-and-crafts/lego-bricks-murals)
 * [Laser-cut Stencils](/arts-and-crafts/laser-cut-stencils)
 * [Perler Bead Sprites](/arts-and-crafts/perler-bead-sprites)
-* [Arcade Stencilr](https://arcade-stencils.glitch.me/)
+* [Arcade Stencilr](https://riknoll.github.io/arcade-stenciler/)
