@@ -100,4 +100,4 @@ _Note: Be sure to secure the top to the bottom with screws (even if temporarily)
 ## Decoration
 
 This is your cabinet, have fun decorating it and personalize it the way you like! We have used
-https://arcade-stencils.glitch.me/ to generate stencils and drawing for cabinets in the past, but feel free to paint freehand in any way that represents your project.
+[Arcade Stencilr](https://riknoll.github.io/arcade-stenciler/) to generate stencils and drawing for cabinets in the past, but feel free to paint freehand in any way that represents your project.

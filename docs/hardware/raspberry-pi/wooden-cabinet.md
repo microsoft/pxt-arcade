@@ -103,4 +103,4 @@ To make it easier, we recommend building a jig to position and build this part.
 ## Decoration
 
 This is your cabinet, have fun decorating it and personalize it the way you like! We used the
-https://arcade-stencils.glitch.me/ to generate stencils and drawing on our cabinets.
+[Arcade Stencilr](https://riknoll.github.io/arcade-stenciler/) to generate stencils and drawing on our cabinets.
