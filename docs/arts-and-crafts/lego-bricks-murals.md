@@ -20,4 +20,3 @@ Grab your LEGO bricks or get some new classic kits and start building!
 ### Disclaimer
 
 LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.
-
