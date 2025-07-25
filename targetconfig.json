@@ -348,7 +348,7 @@
         },
         {
             "name": "Newbit Arcade Shield",
-            "description": "Use the micro:bit with an expansion board from KittenBot",
+            "description": "Create fun and educational games with the adorable, easy-to-hold KittenBot Newbit Arcade Shield.",
             "imageUrl": "/static/hardware/newbit.png",
             "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
             "variant": "hw---n3"
