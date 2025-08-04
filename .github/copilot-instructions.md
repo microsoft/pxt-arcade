@@ -3,6 +3,22 @@
 ## Workspace Overview
 This is a **multi-repository development workspace** for the Microsoft MakeCode Arcade ecosystem. The workspace contains four linked repositories that work together to provide a complete block-based and TypeScript programming environment for creating retro-style arcade games.
 
+## General Development Guidelines
+
+### Code Quality Standards
+- Follow TypeScript strict mode conventions
+- Use semantic versioning for all packages
+- Maintain backward compatibility when possible
+- Write clear, self-documenting code with JSDoc comments
+- Follow the existing code style and patterns in each component
+
+### Code Generation Standards
+- Always include proper type annotations
+- Use `export` statements for public APIs
+- Prefer `const` over `let` where possible
+- Use arrow functions for callbacks and short functions
+- Include error handling for async operations
+
 ## Workspace Structure & Repository Responsibilities
 
 ### Workspace Layout
@@ -244,6 +260,10 @@ When editing files, be aware of which repository they belong to:
 - **Tutorial Content**: Place in `docs/` with proper markdown formatting
 - **Code Examples**: Include practical, tested examples
 - **Screenshots**: Use for UI changes and place in `docs/static/`
+- **Breaking Changes**: Document breaking changes clearly in commit messages
+- **README Updates**: Update relevant README files when adding features
+- **Inline Documentation**: Include inline documentation for complex algorithms
+- **API Examples**: Provide examples for new API functions
 
 ### Build and Deployment Considerations:
 - **Target Configuration**: Changes to `pxtarget.json` require full rebuild
@@ -353,6 +373,18 @@ When editing files, be aware of which repository they belong to:
 - Validate user-generated content
 - Secure handling of shared projects
 - Privacy considerations for educational use
+
+## Testing Requirements
+
+### Testing Standards:
+- **Unit Tests**: Write unit tests for new functionality
+- **UI Testing**: Include accessibility tests for UI components
+- **Simulator Testing**: Test simulator features across different browsers
+- **Compilation Testing**: Validate TypeScript compilation without errors
+- **Cross-Target Testing**: Ensure changes don't break other MakeCode targets
+- **Cross-Repository Testing**: Test compatibility when making changes to pxt-core or pxt-common-packages
+- **Documentation Testing**: Test examples with real scenarios
+- **Hardware Testing**: Validate on actual hardware devices when applicable
 
 ## Code Review Guidelines
 

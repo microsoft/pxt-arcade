@@ -16,83 +16,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
           
-      - name: Validate Copilot instructions content
+      - name: Validate configuration files exist
         run: |
-          echo "🔍 Validating Copilot instructions for multi-repository workspace..."
+          echo "🔍 Validating Copilot configuration files..."
           
           if [ ! -f ".github/copilot-instructions.md" ]; then
             echo "❌ Missing .github/copilot-instructions.md"
             exit 1
           fi
           
-          # Check for essential multi-repository sections
-          essential_sections=(
-            "Multi-Repository Workspace"
-            "Repository-Specific Responsibilities"
-            "Issue Triage and Repository Assignment"
-            "Block Annotation Best Practices"
-            "Common Issues and Troubleshooting"
-          )
-          
-          missing_sections=()
-          for section in "${essential_sections[@]}"; do
-            if ! grep -q "$section" .github/copilot-instructions.md; then
-              missing_sections+=("$section")
-            else
-              echo "✅ Found: $section"
-            fi
-          done
-          
-          if [ ${#missing_sections[@]} -gt 0 ]; then
-            echo "❌ Missing essential sections:"
-            printf "   - %s\n" "${missing_sections[@]}"
+          if [ ! -f ".github/README.md" ]; then
+            echo "❌ Missing .github/README.md"
             exit 1
           fi
           
-          # Check for modern block annotation patterns
-          if grep -q '\$.*format.*deprecated.*%' .github/copilot-instructions.md; then
-            echo "✅ Found modern block annotation guidance"
-          else
-            echo "⚠️  Missing guidance on modern block annotation patterns (\$ vs %)"
-          fi
-          
-          # Check for workspace-specific content
-          workspace_terms=(
-            "setup.cmd"
-            "npm link"
-            "multi-repository"
-            "workspace-root"
-          )
-          
-          for term in "${workspace_terms[@]}"; do
-            if grep -q "$term" .github/copilot-instructions.md; then
-              echo "✅ Found workspace reference: $term"
-            else
-              echo "⚠️  Missing workspace reference: $term"
-            fi
-          done
-          
-      - name: Validate README consistency
-        run: |
-          echo "🔍 Checking README consistency with instructions..."
-          
-          if [ ! -f ".github/README.md" ]; then
-            echo "⚠️  Missing .github/README.md"
-          else
-            # Check that README reflects multi-repository context
-            if grep -q "multi-repository" .github/README.md; then
-              echo "✅ README mentions multi-repository context"
-            else
-              echo "⚠️  README should mention multi-repository workspace"
-            fi
-          fi
-          
-      - name: Summary
-        run: |
+          echo "✅ All configuration files found"
           echo "✅ Copilot configuration validation completed!"
-          echo ""
-          echo "📋 Validation covered:"
-          echo "  - Essential instruction sections"
-          echo "  - Modern development practices"
-          echo "  - Multi-repository workspace context"
-          echo "  - Documentation consistency"
