@@ -226,13 +226,6 @@ When editing files, be aware of which repository they belong to:
      - ❌ Avoid: `//% block="my $sprite=variables_get"`
    - **Localization**: Separating shadow configuration from block text makes translation easier
 
-3. **API Design Principles**:
-   - Keep APIs simple and discoverable
-   - Use consistent naming patterns
-   - Provide good default values
-   - Consider both block and text programming users
-   - Follow TypeScript best practices
-
 3. **Cross-Repository Dependencies**:
    - Core APIs go in pxt-core `libs/`
    - Cross-target game APIs go in pxt-common-packages `libs/`
