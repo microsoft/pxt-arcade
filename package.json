@@ -31,8 +31,8 @@
         "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "12.3.5",
-        "pxt-core": "11.4.16"
+        "pxt-common-packages": "13.1.0",
+        "pxt-core": "12.1.6"
     },
     "optionalDependencies": {
         "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.11.14"
