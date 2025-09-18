@@ -30,12 +30,6 @@ platformer_code_along.onGameStart(function () {
 })
 ```
 
-```template
-platformer_code_along.onGameStart(function () {
-
-})
-```
-
 ## {Draw Hazards @requiresValidation}
 
 **Draw Hazards**
@@ -227,4 +221,10 @@ Want to do more? Try these bonus ideas:
 
 ```package
 platformer-code-along=github:thsparks/platformer-code-along-tutorial#v0.0.14
+```
+
+```template
+platformer_code_along.onGameStart(function () {
+
+})
 ```
