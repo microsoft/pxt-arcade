@@ -16,6 +16,13 @@
   "label": "New? Try This!",
   "labelClass": "orange ribbon large"
 },{
+  "name": "Platformer Code-Along",
+  "description": "Hackathon testing!",
+  "url": "/tutorials/platformer-test",
+  "imageUrl": "/static/blocks-games/cat-platformer.png",
+  "largeImageUrl": "/static/blocks-games/cat-platformer.gif",
+  "cardType": "tutorial"
+}, {
   "name": "Chase the Pizza",
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
