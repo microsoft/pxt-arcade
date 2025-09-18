@@ -2,13 +2,11 @@
 
 ## Introduction
 
-Let's create a platformer! We'll learn about:
-- Tilemaps
-- Walls
-- Hazards
-- Sprites and Movement
-- Jumping
-- Game Over Lose and Win
+Let's build a platformer game! You'll learn:
+- Creating tilemaps
+- Adding walls and hazards
+- Sprite movement and jumping
+- Win and lose conditions
 
 V0.0.11
 
@@ -16,16 +14,16 @@ V0.0.11
 
 **Create the Tilemap**
 
-Drag the ``||scene:Set Tilemap||`` block into the ``||platformer_code_along(no_click):on game start||`` block.
+Drag ``||scene:Set Tilemap||`` into the ``||platformer_code_along(no_click):on game start||`` block.
 
-Click on the gray square to open the Tilemap Editor.
+Click the gray square to open the Tilemap Editor.
 
-With the Tilemap Editor Open:
-- Set the canvas size to **50 x 8** pixels.
-- Create a tile for the sky and fill the tilemap using the Fill tool.
-- Paint the ground tiles along the bottom.
+In the Tilemap Editor:
+- Set canvas size to **50 x 8** pixels
+- Create a sky tile and fill the tilemap with the Fill tool
+- Paint ground tiles along the bottom
 
-💡 _Feel free to make your own tile, or pick one from the gallery._ 
+💡 _Feel free to make your own tile or pick one from the gallery._ 
 
 
 ```blocks
@@ -44,35 +42,41 @@ platformer_code_along.onGameStart(function () {
 
 **Draw Hazards**
 
-Choose a tile to represent some hazard (like lava or a dangerous pitfall)!
+Choose a tile that will be a hazard for the player to avoid (like lava or a pitfall).
 
-Paint the tile into your tilemap
+Paint the hazard tile into your tilemap.
 
-Feel free to add some platforms above the hazard for your player to jump onto.
+Optionally, add some platforms above the hazard for your player to jump on.
 
 ## {Add Walls @requiresValidation}
 
 **Add Walls**
 
-You know which tiles should be solid, but the computer doesn't have this information yet!
+Your tiles may _look_ solid, but the computer doesn't know that! We need to tell it.
 
-Use the Wall Tool in the tilemap editor to paint walls on the ground and platforms. Walls are solid tiles the player can't pass through.
+Use the Wall Tool in the tilemap editor to paint walls on the ground and platforms. Walls are solid tiles that players can't pass through.
 
-💡 _Since the player will need to overlap our hazard tiles, those should **not** be Walls_ 
+💡 _Hazard tiles should **not** be walls, since the player needs to overlap them._ 
 
 ## {Add a Goal @requiresValidation}
 
 **Add a Goal**
 
-Choose a tile to represent the player's goal, then paint that into your tilemap.
+Choose a tile to represent the player's goal.
+
+Paint that tile into your tilemap.
+
+💡 _Goal tiles should **not** be walls, since the player needs to overlap them._ 
 
 ## {Create Your Player Sprite @requiresValidation}
 
 **Create Your Player Sprite**
 
-From the Sprites toolbox, drag a ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` block into the ``||platformer_code_along(no_click):on game start||`` block.
+Drag ``||variables(sprites):set [mySprite] to sprite [ ] of kind [Player]||`` into the ``||platformer_code_along(no_click):on game start||`` block.
 
-Click the grey square to open the Image Editor and draw your player character, or pick one from the Gallery.
+Click the gray square to open the Image Editor.
+
+Draw your player character or pick one from the Gallery.
 
 ```blocks
 let mySprite = sprites.create(img`
@@ -91,7 +95,7 @@ let mySprite = sprites.create(img`
 
 **Set the Starting Position**
 
-Drag a ``||sprites:set [mySprite] position to x [x] y [y]||`` block into the ``||platformer_code_along(no_click):on game start||`` block.
+Drag ``||sprites:set [mySprite] position to x [x] y [y]||`` into the ``||platformer_code_along(no_click):on game start||`` block.
 
 Use the coordinate picker to place your sprite at the bottom left above the ground.
 
@@ -104,9 +108,11 @@ mySprite.setPosition(25, 90)
 
 **Move Side-to-Side**
 
-From the Controller toolbox, drag a ``||controller:move [mySprite] with buttons||`` block into the ``||platformer_code_along(no_click):on game start||`` block.
+Drag ``||controller:move [mySprite] with buttons||`` into the ``||platformer_code_along(no_click):on game start||`` block.
 
-Use the + button to expand the block, then set `vy` (vertical velocity) to 0 so the sprite only moves left and right.
+Click the + button to expand the block.
+
+Set `vy` (vertical velocity) to 0 so the sprite only moves left and right.
 
 ```blocks
 let mySprite: Sprite = null
@@ -117,11 +123,13 @@ controller.moveSprite(mySprite, 100, 0)
 
 **Add Gravity**
 
-Drag a ``||sprites:set [mySprite] [x] to [value]||`` block into the ``||platformer_code_along(no_click):on game start||`` block.
+Drag ``||sprites:set [mySprite] [x] to [value]||`` into the ``||platformer_code_along(no_click):on game start||`` block.
 
-Use the dropdown to change the property from `x` to `ay` (vertical acceleration), and set the value to 400 to simulate gravity.
+Change the property from `x` to `ay` (vertical acceleration).
 
-The value 400 is just a recommendation. Feel free to try it and make adjustments!
+Set the value to 400 to simulate gravity.
+
+💡 _400 is just a suggestion - try it and adjust as needed!_
 
 ```blocks
 let mySprite: Sprite = null
@@ -132,7 +140,9 @@ mySprite.ay = 400
 
 **Camera Follow**
 
-You may have noticed, your character can walk outside the screen! Let's make the camera follow the player by using the ``||scene:camera follow sprite [mySprite]||`` block.
+Did you notice your character can walk off-screen?
+
+Make the camera follow the player with ``||scene:camera follow sprite [mySprite]||``.
 
 ```blocks
 let mySprite: Sprite = null
@@ -143,9 +153,15 @@ scene.cameraFollowSprite(mySprite)
 
 **Jump!**
 
-Grab an ``||controller:on [a] button pressed||`` block from the toolbox and place it anywhere in the workspace.
+Get ``||controller:on [a] button pressed||`` from the toolbox and place it anywhere in the workspace.
 
-Inside that block, add an ``||logic:if <true> then||`` block and use ``||scene:is [mySprite] hitting wall [direction]||`` with `bottom` to check if the sprite is on the ground. Then set `vy` to -200 to make the sprite jump.
+We only want the player to be able to jump when they're on the ground. To do that, we'll use a **conditional statement**.
+
+Inside that block, add ``||logic:if <true> then||``.
+
+Use ``||scene:is [mySprite] hitting wall [left]||`` and change `left` to `bottom` to check if the sprite is on the ground.
+
+Inside the if block, set `vy` to -200 to make the sprite jump.
 
 ```blocks
 let mySprite: Sprite = null
@@ -201,7 +217,13 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileGrass2, function (spri
 
 **Danger!**
 
-Drag an ``||scene:on [sprite] of kind [player] overlaps [tile] at [location]||`` block onto the workspace. Select your hazard tile. Then, inside that block drag a ``||game:game over <LOSE>||`` block. Make sure it's set to LOSE!
+Drag ``||scene:on [sprite] of kind [player] overlaps [tile] at [location]||`` onto the workspace.
+
+Select your hazard tile.
+
+Inside that block, drag ``||game:game over <LOSE>||``. 
+
+Make sure it's set to LOSE!
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava, function (sprite, location) {
@@ -213,7 +235,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava, function (spr
 
 **Win!**
 
-From the Scene toolbox, drag another ``||scene:on [sprite] of kind [player] overlaps [tile] at [location]||`` block onto the workspace, but this time, select your goal tile and set the ``||game:game over||`` block to WIN!
+From Scene, drag another ``||scene:on [sprite] of kind [player] overlaps [tile] at [location]||`` onto the workspace.
+
+This time, select your goal tile.
+
+Add the ``||game:game over||`` block and set it to WIN!
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, function (sprite, location) {
@@ -225,15 +251,14 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, fu
 
 **Congratulations!**
 
-Congrats, you did it!
+You did it! Play your game and have fun!
 
-Play your game and have fun!
+Want to do more? Try these bonus ideas:
 
-Want to do more? Consider these bonus objectives!
-
-- You can add objects to collect, enemies, score, music, sound effects, animations, and multiple levels!
-- Decorate your game and share it with friends.
-
+- Add collectible objects, enemies, and scoring
+- Include music, sound effects, and animations  
+- Create multiple levels
+- Decorate your game and share it with friends
 
 ```package
 platformer-code-along=github:thsparks/platformer-code-along-tutorial#v0.0.11
