@@ -8,7 +8,7 @@ Let's build a platformer game! You'll learn:
 - Sprite movement and jumping
 - Win and lose conditions
 
-V0.0.11
+V0.0.12
 
 ## {Create the Tilemap @requiresValidation}
 
@@ -261,5 +261,5 @@ Want to do more? Try these bonus ideas:
 - Decorate your game and share it with friends
 
 ```package
-platformer-code-along=github:thsparks/platformer-code-along-tutorial#v0.0.11
+platformer-code-along=github:thsparks/platformer-code-along-tutorial#v0.0.12
 ```
