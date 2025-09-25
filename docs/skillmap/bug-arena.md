@@ -1,4 +1,4 @@
-# bug
+# Bug Arena
 * name: Bug Arena
 * description: Code your own bug to think for itself using Artificial Intelligence (AI) and challenge other AI bugs in the Arena!
 * infoUrl: skillmap/educator-info/bug-arena-info
@@ -29,7 +29,7 @@
 * name: Random Algorithm
 * type: tutorial
 * description: 
-* url: /skillmap/bug/bug-arena-scribble
+* url: /skillmap/bug-arena/bug-arena-scribble
 * imageUrl: /static/skillmap/bug-arena/random.gif
 * tags: beginner, hour of ai, hour of code
 * next: bug-arena-tower
