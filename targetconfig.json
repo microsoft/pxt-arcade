@@ -232,6 +232,7 @@
         "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
             "beginner": "docs:/skillmap/beginner-skillmap",
+            "bug": "docs:/skillmap/bug-arena",
             "zoo": "docs:/skillmap/zoo",
             "space": "docs:/skillmap/space",
             "platformer": "docs:/skillmap/platformer",
