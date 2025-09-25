@@ -22,7 +22,7 @@
 * url: /skillmap/bug-arena/introduction
 * imageUrl: /static/skillmap/bug-arena/game.gif
 * tags: beginner, hour of ai, hour of code
-* next: bug-arena-scribble, bug-arena-squares, back-and-forth
+* next: bug-arena-scribble, bug-arena-squares, bug-arena-backandforth
 * position: 0 1
 
 ### bug-arena-scribble
