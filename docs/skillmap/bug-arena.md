@@ -29,7 +29,7 @@
 * name: Random Algorithm
 * type: tutorial
 * description: 
-* url: /skillmap/bug-arena/bug-arena-scribble
+* url: /skillmap/bug-arena/scribble
 * imageUrl: /static/skillmap/bug-arena/random.gif
 * tags: beginner, hour of ai, hour of code
 * next: bug-arena-tower
