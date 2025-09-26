@@ -88,7 +88,7 @@ When you code an algorithm for your bug, you're giving it **Artificial Intellige
 
 hint~
 
-## Types of Algorithms @showdialog
+## Types of Algorithms
 
 ![Example Algorithms](/static/skillmap/bug-arena/algorithms.gif "animation of 3 types of algorithms")
 
