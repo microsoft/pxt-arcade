@@ -60,7 +60,7 @@ You will learn more about the Tower in the last Bug Arena tutorial.
 
 Click the Fullscreen button to expand the Game Window.  When you're done, click Exit fullscreen to go back to coding.
 
-![Fullscreen button](/static/skillmap/bug-arena//fullscreen.png "fullscreen button")
+![Fullscreen button](/static/skillmap/bug-arena/fullscreen.png "fullscreen button")
 
 hint~
 
