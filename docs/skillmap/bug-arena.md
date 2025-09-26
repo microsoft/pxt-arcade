@@ -3,12 +3,13 @@
 * description: Code your own bug to think for itself using Artificial Intelligence (AI) and challenge other AI bugs in the Arena!
 * infoUrl: skillmap/educator-info/bug-arena-info
 * bannerUrl: /static/skillmap/bug-arena/game.gif
-* backgroundurl: /static/skillmap/backgrounds/bug-comp.png
-* primarycolor: 
-* secondarycolor: 
-* tertiarycolor: 
-* completednodecolor: 
-* highlightcolor: 
+* backgroundurl: /static/skillmap/bug-arena/bug-bg.gif
+* pixelatedbackground: true
+* primarycolor: #bebebe
+* secondarycolor: #ffb200
+* tertiarycolor: #47df6f
+* completednodecolor: #5f282a
+* highlightcolor: #ffff00
 * allowcodecarryover: true
 * tags: beginner, hour of ai, hour of code
 
