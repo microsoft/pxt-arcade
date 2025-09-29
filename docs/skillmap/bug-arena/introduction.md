@@ -10,16 +10,6 @@ Get ready to code your own super-smart bug using **Artificial Intelligence (AI)*
 
 Your mission: splash your bug's paint 🎨 all over the screen and out-color 🖌️ your rivals. The more you cover, the closer you are to victory!
 
-## 🛠️ How to use MakeCode Arcade @showdialog
-
-![Tutorial Screenshot](/static/skillmap/bug-arena/tutorial-screen.png "tutorial screen")
-
-Look on the left for instructions 📝 - they'll tell you what to do.
-
-In the middle is the Toolbox 🧰.  Drag out code blocks from here and assemble on the Workspace 🧩 to build your program.
-
-The Game Window 🕹️ is in the bottom right corner.  This is where you can play and test your game.  
-
 ## Practice mode
 
 Go to the Game Window 🖼️ (bottom right corner) and click on the **Practice** button.
