@@ -16,6 +16,7 @@
             "microsoft/pxt-tilemaps",
             "microsoft/pxt-skillmap-sample",
             "microsoft/pxt-jacdac",
+            "jacdac/pxt-jacdac",
             "mr-coxall/turtle-logo",
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
@@ -95,7 +96,15 @@
             },
             "microsoft/pxt-skillmap-sample": {},
             "microsoft/pxt-jacdac": {
-                "tags": [ "Hardware" ]
+                "tags": [ "Hardware" ],
+                "upgrades": [ "move:jacdac/pxt-jacdac" ],
+                "hidden": true
+            },
+            "jacdac/pxt-jacdac": {
+                "simx": {
+                    "sha": "1ef117792fecdb6ce91165cc67ff855e540a589a",
+                    "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
+                }
             },
             "microsoft/arcade-storytelling": {
                 "preferred": true,
@@ -223,6 +232,7 @@
         "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
             "beginner": "docs:/skillmap/beginner-skillmap",
+            "bug": "docs:/skillmap/bug-arena",
             "zoo": "docs:/skillmap/zoo",
             "space": "docs:/skillmap/space",
             "platformer": "docs:/skillmap/platformer",
