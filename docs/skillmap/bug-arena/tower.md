@@ -1,4 +1,5 @@
 # Bug Arena Tower
+### @hideReplaceMyCode true
 
 ## Let the battle begin! @showdialog
 
@@ -25,6 +26,30 @@ If you lose ❌, you'll have an option to go back to the Practice grounds refine
 ![Continue or New](/static/skillmap/bug-arena/continue-new.png "Continue or New")
 
 Good luck! 🍀 Click **Done** below to claim your certificate and badge. 🏅
+
+```hiddennamespaces
+paths
+angleutil
+sprites
+controller
+game
+music
+scene
+info
+loops
+fancyText
+transitions
+screenTransitions
+animation
+animations
+sound
+browserEvents
+images
+arrays
+console
+functions
+function
+```
 
 ```package
 hourOfAi=github:riknoll/bug-arena

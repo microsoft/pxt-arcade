@@ -62,6 +62,7 @@
 * description: 
 * url: /skillmap/bug-arena/tower
 * imageUrl: /static/skillmap/bug-arena/tower-battle.gif
+* allowCodeCarryover: true
 * tags: beginner, hour of ai, hour of code
 * position: 2 0
 
