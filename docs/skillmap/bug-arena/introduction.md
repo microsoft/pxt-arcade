@@ -6,7 +6,7 @@ Welcome to the 👾 **Bug Arena** 👾 where the smartest bugs battle for glory!
 
 ![Bug Arena Gameplay](/static/skillmap/bug-arena/game.gif "animation of game")
 
-Get ready to code your own super-smart bug using **Artificial Intelligence (AI)** and challenge other AI bugs to see who rules the arena!
+This first tutorial will introduce you to the mechanics of the Bug Arena game. You won't be doing any coding, but you'll get ready to create your own super-smart bug using **Artificial Intelligence (AI)** and challenge other AI bugs to see who rules the arena!
 
 Your mission: splash your bug's paint 🎨 all over the screen and out-color 🖌️ your rivals. The more you cover, the closer you are to victory!
 
