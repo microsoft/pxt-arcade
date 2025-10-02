@@ -6,7 +6,7 @@ Does that mean your game has to be about robbing banks? Not at all! Your game co
 
 Some good interpretations of this theme:
 
-* A game where you control a rabbit stealing crops from a curmudgeony farmer
+* A game where you control a rabbit stealing crops from a curmudgeonly farmer
 * A fantasy game where you have to recover a kingdom's stolen amulet
 * A dating game where you have to steal the hearts of suitors
 * ...and of course a game where you rob a bank
