@@ -16,6 +16,7 @@
             "microsoft/pxt-tilemaps",
             "microsoft/pxt-skillmap-sample",
             "microsoft/pxt-jacdac",
+            "jacdac/pxt-jacdac",
             "mr-coxall/turtle-logo",
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
@@ -95,7 +96,16 @@
             },
             "microsoft/pxt-skillmap-sample": {},
             "microsoft/pxt-jacdac": {
-                "tags": [ "Hardware" ]
+                "tags": [ "Hardware" ],
+                "upgrades": [ "move:jacdac/pxt-jacdac" ],
+                "hidden": true
+            },
+            "jacdac/pxt-jacdac": {
+                "tags": [ "Hardware" ],
+                "simx": {
+                    "sha": "1ef117792fecdb6ce91165cc67ff855e540a589a",
+                    "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
+                }
             },
             "microsoft/arcade-storytelling": {
                 "preferred": true,
@@ -198,10 +208,7 @@
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
-        },
-        "approvedEditorExtensionUrls": [
-            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
-        ]
+        }
     },
     "shareLinks": {
         "approved": [
