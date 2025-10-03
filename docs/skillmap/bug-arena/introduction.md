@@ -1,4 +1,5 @@
 # Bug Arena Introduction
+### @hideReplaceMyCode true
 
 ## ✨ AI Challenge Accepted! @showdialog
 
