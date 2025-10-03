@@ -1,4 +1,5 @@
 # Bug Arena Back and Forth
+### @hideReplaceMyCode true
 
 ## Bug Arena: Back-and-Forth Algorithm @showdialog
 
