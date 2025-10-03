@@ -15,9 +15,13 @@ Your mission: splash your bug's paint 🎨 all over the screen and out-color �
 
 Go to the Game Window 🖼️ (bottom right corner) and click on the **Practice** button.
 
-You can pick **No Opponent** or select from various different challengers 💪 to train your bug's AI.
+![Practice Button](/static/skillmap/bug-arena/practice-button.png "practice button")
 
-Then click to select a **Timed Match** or **Infinite** to play without a clock. 🕓
+You can pick No Opponent or select from various different challengers 💪 to train your bug's AI. To unlock more opponents, battle them in the Tower.
+
+Click on **Stinky** as your practice opponent.
+
+Then click to select a **Timed Match** 🕓. Infinite mode allows you to play without a clock.
 
 Click **Next** below for more information about the game screen.
 
@@ -31,7 +35,7 @@ At the top of the screen you'll see graphs showing you the percentage of the scr
 
 If you selected a Timed Match, you will also see a clock timer 🕓 at the top. In Practice mode, there is no time limit.
 
-Speed things up or slow them down using the ⚡ Speed slider at the bottom of the screen.
+Speed things up or slow them down using the **SPEED** slider at the bottom of the screen.
 
 Watch them zoom around! The bugs move on their own, thanks to their smart ✨ AI brains.
 
@@ -83,7 +87,7 @@ hint~
 
 ![Example Algorithms](/static/skillmap/bug-arena/algorithms.gif "animation of 3 types of algorithms")
 
-- Scribble
+- Random
 - Squares
 - Back and forth
 
