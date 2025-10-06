@@ -4,11 +4,11 @@
 
 The **Bug Arena** skillmap introduces students to Artificial Intelligence (AI) through a fun, iterative, game-based learning approach.
 
-In this set of activities, students will code their own AI Bug using a variety of different algorithms.  They can then compete against other AI bugs to cover the screen with paint.
+In this set of activities, students will code their own AI Bug using a variety of different algorithms. They can then compete against other AI bugs to cover the screen with paint.
 
-This skillmap is designed for students between the ages of 8 and 15 years old and takes approximately 45 minutes (including game play) to complete.  No previous coding background is required, and students will not be exposed to an AI chatbot through this experience.
+This skillmap is designed for students between the ages of 8 and 15 years old and takes approximately 45 minutes (including game play) to complete.  No previous coding background is required and students will not be exposed to an AI chatbot through this experience.
 
-There are 3 required tutorials, and 2 additional optional tutorials.  At the end of the learning path, students will receive a certificate of completion and a badge.
+There are 3 required tutorials and 2 additional optional tutorials. At the end of the learning path, students will receive a certificate of completion and a badge.
 
 |  Tutorial                 | Duration   |  Description |
 | ------------------------- | ---------- | ------------ |
@@ -20,9 +20,9 @@ There are 3 required tutorials, and 2 additional optional tutorials.  At the end
 
 \* Students should select one of the algorithms to complete before moving on to the Tower.
 
-Notes:
+**Notes**:
 - Duration is approximate based on time to follow instructions as written. Providing extra time for creativity, debugging and game play is encouraged!
-- When selecting from the three provided algorithms, they are ordered from easiest to hardest: Random, Squares and Back-and-Forth.
+- When selecting from the three provided algorithms, they are ordered from easiest to hardest: Random, Squares, and Back-and-Forth.
 
 ## Learning Objectives
 
@@ -53,7 +53,7 @@ Materials available to use for this lesson include:
 - Student worksheet example solution
 - Certificate to print
 
-Materials are all posted at:  [https://aka.ms/bug-arena-educator](https://aka.ms/bug-arena-educator) 
+All materials are posted at: [https://aka.ms/bug-arena-educator](https://aka.ms/bug-arena-educator) 
 
 ## Code definitions
 
