@@ -1,4 +1,5 @@
 # Bug Arena Squares
+### @hideReplaceMyCode true
 
 ## Bug Arena: Squares Algorithm @showdialog
 

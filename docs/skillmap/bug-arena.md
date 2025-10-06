@@ -19,7 +19,7 @@
 ### bug-arena-introduction
 * name: Introduction
 * type: tutorial
-* description: Intro to MakeCode Arcade and Bug Arena
+* description: Intro to MakeCode Arcade and Bug Arena (no coding)
 * url: /skillmap/bug-arena/introduction
 * imageUrl: /static/skillmap/bug-arena/game.gif
 * tags: beginner, hour of ai, hour of code
@@ -29,7 +29,7 @@
 ### bug-arena-scribble
 * name: Random Algorithm
 * type: tutorial
-* description: 
+* description: Create an AI algorithm that will make your bug walk in random patterns
 * url: /skillmap/bug-arena/scribble
 * imageUrl: /static/skillmap/bug-arena/random.gif
 * tags: beginner, hour of ai, hour of code
@@ -39,7 +39,7 @@
 ### bug-arena-squares
 * name: Squares Algorithm
 * type: tutorial
-* description: 
+* description: Code your AI bug to draw squares around the screen
 * url: /skillmap/bug-arena/squares
 * imageUrl: /static/skillmap/bug-arena/squares.gif
 * tags: beginner, hour of ai, hour of code
@@ -49,7 +49,7 @@
 ### bug-arena-backandforth
 * name: Back and Forth Algorithm
 * type: tutorial
-* description: 
+* description: Code your bug's AI algorithm to move back and forth across the screen
 * url: /skillmap/bug-arena/back-and-forth
 * imageUrl: /static/skillmap/bug-arena/back-and-forth.gif
 * tags: beginner, hour of ai, hour of code
@@ -59,7 +59,7 @@
 ### bug-arena-tower
 * name: Tower Battle
 * type: tutorial
-* description: 
+* description: Battle other AI bugs in the Tower and level up with every win!
 * url: /skillmap/bug-arena/tower
 * imageUrl: /static/skillmap/bug-arena/tower-battle.gif
 * allowCodeCarryover: true
