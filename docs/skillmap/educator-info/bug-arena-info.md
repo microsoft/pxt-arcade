@@ -123,7 +123,7 @@ Mod Suggestions:
 
 When students are finished with **Bug Arena** consider encouraging them to complete another skillmap.
 
-- [Try the Jungle Monkey Skillmap](/skillmap/jungle)
-- [Try the Save the Galaxy Map](/skillmap/galaxy)
-- [Try our Time Flies Tutorial](/tutorials/froggy)
+- [Try the Jungle Monkey Skillmap](@homeurl@--skillmap#docs:/skillmap/jungle)
+- [Try the Save the Galaxy Map](@homeurl@--skillmap#docs:/skillmap/galaxy)
+- [Try our Time Flies Tutorial](@homeurl@#tutorial:/tutorials/froggy)
 
