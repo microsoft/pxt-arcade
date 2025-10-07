@@ -1,4 +1,5 @@
 # Bug Arena Scribble
+### @hideReplaceMyCode true
 
 ## Bug Arena: Random Algorithm @showdialog
 
