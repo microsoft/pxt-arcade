@@ -19,9 +19,9 @@ Go to the Game Window 🖼️ (bottom right corner) and click on the **Practice*
 
 You can pick No Opponent or select from various different challengers 💪 to train your bug's AI. To unlock more opponents, battle them in the Tower.
 
-Click on **Stinky** as your practice opponent.
+Click on **Waftsworth** as your practice opponent.
 
-Then click to select a **Timed Match** 🕓. Infinite mode allows you to play without a clock.
+Then click to select a **Timed Match**. Infinite mode allows you to play without a clock.
 
 Click **Next** below for more information about the game screen.
 
@@ -45,7 +45,7 @@ In the Game Window 🖼️, click on the **Menu** button to return to the main m
 
 ![Menu button](/static/skillmap/bug-arena/menu-button.png "menu button")
 
-Now click on the **Tower** button. When you have finished training your AI bug, you can battle other bugs and climb the Tower for ultimate Bug Arena glory! 🏆
+When you have finished training your AI bug, clicking on the **Tower** button will allow you to battle other bugs and climb the Tower for ultimate Bug Arena glory! 🏆
 
 You will learn more about the Tower in the last Bug Arena tutorial.
 
