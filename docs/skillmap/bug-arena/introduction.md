@@ -87,10 +87,6 @@ hint~
 
 ![Example Algorithms](/static/skillmap/bug-arena/algorithms.gif "animation of 3 types of algorithms")
 
-- Random
-- Squares
-- Back and forth
-
 After you click Done ✅, select your next tutorial based on the type of coloring algorithm you want to use for your bug.
 
 ```template
