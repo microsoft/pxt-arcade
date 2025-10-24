@@ -1,9 +1,15 @@
 # Bug Arena Back and Forth
 ### @hideReplaceMyCode true
 
-## Bug Arena: Back-and-Forth Algorithm @showdialog
+## Bug Arena Introduction @showdialog
 
 Welcome to the 👾 **Bug Arena** 👾 where the smartest bugs battle for glory!
+
+Watch this introduction video to get started, and then click Ok.
+
+![Bug Arena Intro](youtube:gu3zv7TQwnk "video introduction of bug arena")
+
+## Back-and-Forth Algorithm
 
 ![Bug Arena Back and Forth](/static/skillmap/bug-arena/back-and-forth.gif "animation of back and forth pattern")
 
@@ -17,6 +23,10 @@ Our bug moves on its own, but it's important to make sure that it starts out mov
 
 From the ``||hourOfAi:Hour of AI||`` Toolbox category, drag a ``||hourOfAi:face towards 0||`` block out and drop into the ``||hourOfAi:on start||`` block.
 
+~hint What does this do?
+
+---
+
 ``||hourOfAi:Face towards||`` will turn your bug to face a specific angle in degrees where:
 - 0 = right
 - 90 = down
@@ -27,8 +37,11 @@ From the ``||hourOfAi:Hour of AI||`` Toolbox category, drag a ``||hourOfAi:face 
 
 So our bug will start off moving towards the right side of the screen.
 
+hint~
+
 ```blocks
 hourOfAi.onStart(function () {
+    //@highlight
     hourOfAi.turnTowards(0)
 })
 ```
@@ -54,38 +67,52 @@ hourOfAi.onBumpWall(function () {
 ## Turn 90 degrees
 
 From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:turn 90||`` block and drop it into the ``||hourOfAi:on bump wall||`` block.
+<br/>
+<br/>
 
-The turn block ↩️ will turn our bug a certain number of degrees. A positive number ➕ is clockwise, and a negative number ➖ is counter-clockwise.
+~hint What does turn 90 do?
+
+---
+
+The turn block ↩️ will turn our bug a certain number of degrees from its current direction. A positive number ➕ is clockwise, and a negative number ➖ is counter-clockwise.
 
 ![Turn angle](/static/skillmap/bug-arena/turn-angle.png "turn angle")
 
+hint~
+
 ```blocks
 hourOfAi.onBumpWall(function () {
+    //@highlight
     hourOfAi.turnBy(90)
 })
 ```
 
 ## ⬇️ Move down
 
-In this case, we want to turn our bug 90 degrees so it's facing down ⤵️, move a bit ⬇️, then turn another 90 degrees so it's facing back the way we came. ↩️
+We want to turn our bug 90 degrees so it's facing down ⤵️, move a bit ⬇️, then turn another 90 degrees so it's facing back the way we came. ↩️
 
 To do that, we need to use a block that will wait a certain amount of time ⏱️ before turning again.
 
-From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:run after 500 ms||`` block out and drop it after the ``||hourOfAi:turn 90||`` block.
-
-In the ``||hourOfAi:run after 500 ms||`` block, click on the **500** ms drop-down and change to **1 second**, or 1000 milliseconds (ms).
+From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:run after 1000 ms||`` block out and drop it after the ``||hourOfAi:turn 90||`` block.
 
 ~hint What does this do?
 
 ---
 
-The ``||hourOfAi:run after||`` block will run the code inside of it after waiting a specified amount of time ⏳.  In this case, we are going to wait 1 second until we turn around again.
+The ``||hourOfAi:run after||`` block will run the code inside of it after waiting a specified amount of time ⏳.  In this case, we are going to wait 1 second, or 1000 milliseconds (ms), until we turn around again.
 
 hint~
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
     hourOfAi.turnBy(90)
+    //@highlight
     hourOfAi.doAfter(1000, function () {
  
     })
@@ -100,6 +127,7 @@ From the ``||hourOfAi:Hour of AI||`` category, drag another ``||hourOfAi:turn 90
 hourOfAi.onBumpWall(function () {
     hourOfAi.turnBy(90)
     hourOfAi.doAfter(1000, function () {
+        //@highlight
         hourOfAi.turnBy(90)
     })
 })
@@ -117,9 +145,9 @@ How do we make our bug keep moving down ⬇️ so it fills in the whole arena?
 
 ## Create a variable
 
-We need to change the direction our bug is turning each time it hits a wall - at first it turns towards the right (90 degrees), and then we want it to turn towards the left (-90 degrees), and so on. ↔️
+We need to change the direction our bug is turning each time it hits a wall.  At first it turns towards the right ➡️ (90 degrees), and then we want it to turn towards the left ⬅️ (-90 degrees), and so on back and forth.
 
-To do that, let's first create a variable. 🏷️
+To do that, let's first create a variable.
 
 ~hint What is a variable?
 
@@ -141,17 +169,19 @@ Type in **-90** as the value for the angle variable, replacing **0**.
 let angle = 0
 hourOfAi.onStart(function () {
     hourOfAi.turnTowards(0)
+    //@highlight
     angle = -90
 })
 ```
 
 ## Multiply by -1
 
-To change back and forth between 90 and -90 degrees, we'll multiply ✖️ by -1.
+To change back and forth between 90 and -90 degrees, we'll multiply by -1.
 
-Drag another ``||Variables:set angle to||`` block into the top of the ``||hourOfAi:on bump wall||`` block.
+Drag another ``||Variables:set angle to||`` block into the top of the <br/>
+``||hourOfAi:on bump wall||`` block.
 
-From the ``||Math:Math||`` Toolbox category, drag out a ``||Math:multiplication (0 x 0)||`` block and drop into the ``||Variables:set angle to||`` block replacing the **0**.
+From the ``||Math:Math||`` Toolbox category, drag out a ``||Math:multiplication||`` block and drop into the ``||Variables:set angle to||`` block replacing the **0**.
 
 From the ``||Variables:Variables||`` category, drag an ``||Variables:angle||`` block out and drop into the ``||Math:multiplication||`` block replacing the first **0**.
 
@@ -159,6 +189,7 @@ Type in **-1** for the second value in the ``||Math:multiplication||`` block.
 
 ```blocks
 hourOfAi.onBumpWall(function () {
+    //@highlight
     angle = angle * -1
     hourOfAi.turnBy(90)
     hourOfAi.doAfter(1000, function () {
@@ -169,15 +200,17 @@ hourOfAi.onBumpWall(function () {
 
 ## Turn angle
 
-Now we need to replace our 90 degree turns with our ``||Variables:angle||`` variable. 🏷️
+Now we need to replace our 90 degree turns with our ``||Variables:angle||`` variable.
 
 From the ``||Variables:Variables||`` category, drag two ``||Variables:angle||`` blocks out and drop one into each ``||hourOfAi:turn||`` block replacing the **90** degrees.
 
 ```blocks
 hourOfAi.onBumpWall(function () {
     angle = angle * -1
+    //@highlight
     hourOfAi.turnBy(angle)
     hourOfAi.doAfter(1000, function () {
+        //@highlight
         hourOfAi.turnBy(angle)
     })
 })
@@ -187,9 +220,9 @@ hourOfAi.onBumpWall(function () {
 
 Test your game again in the 🕹️ Game Window.
 
-You can move the slider to the right ➡️ to watch your bug go back and forth filling the screen with glorious paint! 🎨
+You can move the slider to the right ➡️ to watch your bug go back and forth filling the screen with glorious paint!
 
-Nice work! ⭐ You've coded a smart AI algorithm ✨ that will mow down 🍃 your competitors in the Bug Arena!
+👏 Nice work! You've coded a smart AI algorithm ✨ that will mow down 🍃 your competitors in the Bug Arena!
 
 Move on to the 🏰 Tower Battle to challenge your Bug rivals!
 
