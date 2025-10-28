@@ -56,9 +56,11 @@ The course materials include:
 
 #### Access Course Materials
 
-You must be a verified educator to download the course materials. Please create a GitHub Educator account, see the instructions here ([https://makecode.com/github-teacher-verification](https://makecode.com/github-teacher-verification)).
+You must be a verified educator to download the course materials which are hosted in a GitHub repository. 
 
-Download the course materials: https://aka.ms/TEALSintroCS
+Please create a GitHub account (which is free), and complete an application to be a verified GitHub Educator. See the instructions here: [https://makecode.com/github-teacher-verification](https://makecode.com/github-teacher-verification).
+
+Once your Academic status has been approved by GitHub, please fill out this form to receive an invitation to the curriculum repository: [https://forms.office.com/r/gCC9sC0krg](https://forms.office.com/r/gCC9sC0krg).
 
 ### ~
 
