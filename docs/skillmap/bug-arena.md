@@ -14,6 +14,7 @@
 * tags: beginner, hour of ai, hour of code
 
 ## bug-arena-1
+* name: Arena One
 * layout: manual
 
 ### bug-arena-scribble
@@ -55,6 +56,7 @@
         * name: Bug Arena
 
 ## bug-arena-2
+* name: Arena Two
 * layout: manual
 
 ### bug-arena-squares
@@ -96,6 +98,7 @@
         * name: Bug Arena
 
 ## bug-arena-3
+* name: Arena Three
 * layout: manual
 
 ### bug-arena-backandforth
