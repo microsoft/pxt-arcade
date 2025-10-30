@@ -109,7 +109,7 @@
 * imageUrl: /static/skillmap/bug-arena/back-and-forth.gif
 * tags: beginner, hour of ai, hour of code
 * next: bug-arena-tower
-* position: 1 2
+* position: 1 1
 
 ### bug-arena-tower
 * name: Tower Battle
@@ -120,7 +120,7 @@
 * allowCodeCarryover: true
 * tags: beginner, hour of ai, hour of code
 * next: bug-cert
-* position: 2 2
+* position: 2 1
 
 ### bug-cert
 * name: Congrats!
@@ -128,7 +128,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/bug-cert.pdf
 * imageUrl: /static/skillmap/certificates/bug-cert.png
-* position: 3 2
+* position: 3 1
 * actions:
     * editor: [Edit in Creative Mode](/)
 * rewards:
