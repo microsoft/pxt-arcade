@@ -167,15 +167,6 @@ hourOfAi.onStart(function () {
 })
 ```
 
-```ghost
-music.play(music.stringPlayable("- - - - - - - - ", 120), music.PlaybackMode.UntilDone)
-music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.UntilDone)
-music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
-music.play(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
-effects.confetti.startScreenEffect()
-scene.cameraShake(4, 500)
-```
-
 ```package
 hourOfAi=github:riknoll/bug-arena
 ```
