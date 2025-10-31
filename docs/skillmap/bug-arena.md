@@ -13,18 +13,9 @@
 * allowcodecarryover: true
 * tags: beginner, hour of ai, hour of code
 
-## bug-arena
+## bug-arena-1
+* name: Arena One
 * layout: manual
-
-### bug-arena-introduction
-* name: Introduction
-* type: tutorial
-* description: Intro to MakeCode Arcade and Bug Arena (no coding)
-* url: /skillmap/bug-arena/introduction
-* imageUrl: /static/skillmap/bug-arena/game.gif
-* tags: beginner, hour of ai, hour of code
-* next: bug-arena-scribble, bug-arena-squares, bug-arena-backandforth
-* position: 0 1
 
 ### bug-arena-scribble
 * name: Random Algorithm
@@ -36,6 +27,38 @@
 * next: bug-arena-tower
 * position: 1 0
 
+### bug-arena-tower
+* name: Tower Battle
+* type: tutorial
+* description: Battle other AI bugs in the Tower and level up with every win!
+* url: /skillmap/bug-arena/tower
+* imageUrl: /static/skillmap/bug-arena/tower-battle.gif
+* allowCodeCarryover: true
+* tags: beginner, hour of ai, hour of code
+* next: bug-cert
+* position: 2 0
+
+### bug-cert
+* name: Congrats!
+* kind: completion
+* type: certificate
+* url: /static/skillmap/certificates/bug-cert.pdf
+* imageUrl: /static/skillmap/certificates/bug-cert.png
+* position: 3 0
+* actions:
+    * editor: [Edit in Creative Mode](/)
+* rewards:
+    * certificate:
+        * url: /static/skillmap/certificates/bug-cert.pdf
+        * preview: /static/skillmap/certificates/bug-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-bug.png
+        * name: Bug Arena
+
+## bug-arena-2
+* name: Arena Two
+* layout: manual
+
 ### bug-arena-squares
 * name: Squares Algorithm
 * type: tutorial
@@ -46,6 +69,38 @@
 * next: bug-arena-tower
 * position: 1 1
 
+### bug-arena-tower
+* name: Tower Battle
+* type: tutorial
+* description: Battle other AI bugs in the Tower and level up with every win!
+* url: /skillmap/bug-arena/tower
+* imageUrl: /static/skillmap/bug-arena/tower-battle.gif
+* allowCodeCarryover: true
+* tags: beginner, hour of ai, hour of code
+* next: bug-cert
+* position: 2 1
+
+### bug-cert
+* name: Congrats!
+* kind: completion
+* type: certificate
+* url: /static/skillmap/certificates/bug-cert.pdf
+* imageUrl: /static/skillmap/certificates/bug-cert.png
+* position: 3 1
+* actions:
+    * editor: [Edit in Creative Mode](/)
+* rewards:
+    * certificate:
+        * url: /static/skillmap/certificates/bug-cert.pdf
+        * preview: /static/skillmap/certificates/bug-cert.png
+    * completion-badge:
+        * image: /static/badges/badge-bug.png
+        * name: Bug Arena
+
+## bug-arena-3
+* name: Arena Three
+* layout: manual
+
 ### bug-arena-backandforth
 * name: Back and Forth Algorithm
 * type: tutorial
@@ -54,7 +109,7 @@
 * imageUrl: /static/skillmap/bug-arena/back-and-forth.gif
 * tags: beginner, hour of ai, hour of code
 * next: bug-arena-tower
-* position: 1 2
+* position: 1 1
 
 ### bug-arena-tower
 * name: Tower Battle
@@ -64,7 +119,8 @@
 * imageUrl: /static/skillmap/bug-arena/tower-battle.gif
 * allowCodeCarryover: true
 * tags: beginner, hour of ai, hour of code
-* position: 2 0
+* next: bug-cert
+* position: 2 1
 
 ### bug-cert
 * name: Congrats!
@@ -72,7 +128,7 @@
 * type: certificate
 * url: /static/skillmap/certificates/bug-cert.pdf
 * imageUrl: /static/skillmap/certificates/bug-cert.png
-* position: 3 0
+* position: 3 1
 * actions:
     * editor: [Edit in Creative Mode](/)
 * rewards:
