@@ -7,7 +7,7 @@ Welcome to the 👾 **Bug Arena** 👾 where the smartest bugs battle for glory!
 
 Watch this introduction video to get started, and then click Ok.
 
-![Bug Arena Intro](youtube:gu3zv7TQwnk "video introduction of bug arena")
+![Bug Arena Intro](youtube:U_bcAht2o0A "video introduction of bug arena")
 
 ## Random Algorithm 
 
@@ -23,7 +23,7 @@ Our bug moves on its own, so we just need to determine when and in which directi
 
 Let's have our bug turn a different direction every 5 seconds.  To do this, we'll use a time interval block. 🕓
 
-From the ``||hourOfAi:Hour of AI||`` toolbox category, drag an ``||hourOfAi:every 5000 ms||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` toolbox category, drag an ``||hourOfAi:every 5000 ms||`` block out onto the Workspace - you can put it anywhere.
 
 ~hint What does this do?
 
@@ -47,7 +47,7 @@ hourOfAi.every(5000, function () {
 
 ## Turn your bug!
 
-From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||hourOfAi:every 5000 ms||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||hourOfAi:every 5000 ms||`` block.
 <br/>
 <br/>
 
@@ -116,7 +116,7 @@ It gets stuck for a little while until it can turn again. 😣  Let's fix that i
 
 Let's add some code to make our bug turn ↩️ when it hits a wall.
 
-From the ``||hourOfAi:Hour of AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
 
 Now drag another ``||hourOfAi:turn 90||`` block and drop it into the ``||hourOfAi:on bump wall||`` block.
 
