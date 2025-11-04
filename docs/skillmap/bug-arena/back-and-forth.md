@@ -7,7 +7,7 @@ Welcome to the 👾 **Bug Arena** 👾 where the smartest bugs battle for glory!
 
 Watch this introduction video to get started, and then click Ok.
 
-![Bug Arena Intro](youtube:gu3zv7TQwnk "video introduction of bug arena")
+![Bug Arena Intro](youtube:U_bcAht2o0A "video introduction of bug arena")
 
 ## Back-and-Forth Algorithm
 
@@ -21,7 +21,7 @@ Follow these directions to code your bug's AI algorithm ✨ to move back and for
 
 Our bug moves on its own, but it's important to make sure that it starts out moving in the right direction! 🗺️
 
-From the ``||hourOfAi:Hour of AI||`` Toolbox category, drag a ``||hourOfAi:face towards 0||`` block out and drop into the ``||hourOfAi:on start||`` block.
+From the ``||hourOfAi:Bug AI||`` Toolbox category, drag a ``||hourOfAi:face towards 0||`` block out and drop into the ``||hourOfAi:on start||`` block.
 
 ~hint What does this do?
 
@@ -56,7 +56,7 @@ Do you see your bug move to the right?  Nice! 😊 But what happens when your bu
 
 Nothing 🥺 So let's add some code for when it hits a wall.
 
-From the ``||hourOfAi:Hour of AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -66,7 +66,7 @@ hourOfAi.onBumpWall(function () {
 
 ## Turn 90 degrees
 
-From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:turn 90||`` block and drop it into the ``||hourOfAi:on bump wall||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block and drop it into the ``||hourOfAi:on bump wall||`` block.
 <br/>
 <br/>
 
@@ -93,7 +93,7 @@ We want to turn our bug 90 degrees so it's facing down ⤵️, move a bit ⬇️
 
 To do that, we need to use a block that will wait a certain amount of time ⏱️ before turning again.
 
-From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:run after 1000 ms||`` block out and drop it after the ``||hourOfAi:turn 90||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:run after 1000 ms||`` block out and drop it after the ``||hourOfAi:turn 90||`` block.
 
 ~hint What does this do?
 
@@ -121,7 +121,7 @@ hourOfAi.onBumpWall(function () {
 
 ## ↩️ Now turn around
 
-From the ``||hourOfAi:Hour of AI||`` category, drag another ``||hourOfAi:turn 90||`` block out and drop it into the ``||hourOfAi:run after||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag another ``||hourOfAi:turn 90||`` block out and drop it into the ``||hourOfAi:run after||`` block.
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -220,7 +220,7 @@ hourOfAi.onBumpWall(function () {
 
 Test your game again in the 🕹️ Game Window.
 
-You can move the slider to the right ➡️ to watch your bug go back and forth filling the screen with glorious paint!
+You can move the **SPEED** slider to the right ➡️ to watch your bug go back and forth filling the screen with glorious paint!
 
 👏 Nice work! You've coded a smart AI algorithm ✨ that will mow down 🍃 your competitors in the Bug Arena!
 
