@@ -7,7 +7,7 @@ Welcome to the 👾 **Bug Arena** 👾 where the smartest bugs battle for glory!
 
 Watch this introduction video to get started, and then click Ok.
 
-![Bug Arena Intro](youtube:gu3zv7TQwnk "video introduction of bug arena")
+![Bug Arena Intro](youtube:U_bcAht2o0A "video introduction of bug arena")
 
 ## Squares Algorithm
 
@@ -21,7 +21,7 @@ Let's code your bug to move around the screen coloring the arena in a square pat
 
 Our bug moves on its own, but it's important to make sure that it starts out moving in the right direction! 🗺️
 
-From the ``||hourOfAi:Hour of AI||`` Toolbox category, drag the ``||hourOfAi:face towards 0||`` block out and drop into the ``||hourOfAi:on start||`` block.
+From the ``||hourOfAi:Bug AI||`` Toolbox category, drag the ``||hourOfAi:face towards 0||`` block out and drop into the ``||hourOfAi:on start||`` block.
 
 ~hint What does this do?
 
@@ -58,7 +58,7 @@ Uh-oh!  It gets stuck! 🔄
 
 Let's code in some behavior for when it hits a wall. 🧱
 
-From the ``||hourOfAi:Hour of AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -68,7 +68,7 @@ hourOfAi.onBumpWall(function () {
 
 ## Turn 90 degrees
 
-From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:turn 90||`` block, and drop it into the ``||hourOfAi:on bump wall||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block, and drop it into the ``||hourOfAi:on bump wall||`` block.
 <br/>
 <br/>
 
@@ -115,7 +115,7 @@ hint~
 
 We need to have our bug check to make sure it's not on a part of the screen that's already covered with its paint color 🎨 before turning.
 
-From the ``||hourOfAi:Hour of AI||`` category, drag the ``||hourOfAi:every 500 ms||`` group of blocks out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag the ``||hourOfAi:every 500 ms||`` group of blocks out onto the Workspace - you can put it anywhere.
 
 ~hint What does this do?
 
@@ -145,7 +145,7 @@ hourOfAi.every(500, function () {
 
 When the distance from our bug to its own paint color is 0, then we should make a right turn. ↩️
 
-From the ``||hourOfAi:Hour of AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||Logic:if then||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||Logic:if then||`` block.
 
 ```blocks
 hourOfAi.every(500, function () {
@@ -160,7 +160,7 @@ hourOfAi.every(500, function () {
 
 Test your game again in the 🕹️ Game Window below.
 
-You can move the slider to the right ➡️ to watch your bug make perfect squares! 🟨🟦🟩
+You can move the **SPEED** slider to the right ➡️ to watch your bug make perfect squares! 🟨🟦🟩
 
 Nice work! 👍 You've coded a smart AI algorithm ✨ that will box in your competitors in the Bug Arena!
 
