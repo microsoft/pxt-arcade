@@ -9,7 +9,7 @@ Watch this introduction video to get started, and then click Ok.
 
 ![Bug Arena Intro](youtube:U_bcAht2o0A "video introduction of bug arena")
 
-## Random Algorithm 
+## Random Algorithm @showdialog
 
 ![Bug Arena Random](/static/skillmap/bug-arena/random.gif "animation of random pattern")
 
@@ -19,11 +19,11 @@ In this tutorial we'll code our bug's AI algorithm ✨ to move in random pattern
 
 ## When to turn 
 
-Our bug moves on its own, so we just need to determine when and in which direction for it to turn.
-
 Let's have our bug turn a different direction every 5 seconds.  To do this, we'll use a time interval block. 🕓
 
 From the ``||hourOfAi:Bug AI||`` toolbox category, drag an ``||hourOfAi:every 5000 ms||`` block out onto the Workspace - you can put it anywhere.
+
+![Drag and drop blocks](/static/skillmap/bug-arena/dragdrop.gif "animation of dragging and dropping blocks")
 
 ~hint What does this do?
 
@@ -33,11 +33,7 @@ The ``||hourOfAi:every 5000 ms||`` block will run the code you put inside of it 
 
 hint~
 
-```blockconfig.local
-hourOfAi.every(5000, function () {
-
-})
-```
+Click the lightbulb 💡 if you need help, or click **Next** to continue.
 
 ```blocks
 hourOfAi.every(5000, function () {
@@ -84,10 +80,6 @@ The ``||Math:pick random||`` block will return a random number 🎲 between a mi
 
 hint~
 
-```blockconfig.local
-randint(-180, 180)
-```
-
 ```blocks
 hourOfAi.every(5000, function () {
     //@highlight
@@ -103,14 +95,7 @@ In the Game Window 🖼️, click on the **Practice** button.
 
 Then select **No Opponent** and **Infinite**.
 
-Is your bug changing direction every 5 seconds?
-
-Very cool! 😎
-
-But do you notice what happens when your bug runs into a wall? 🧱
-
-It gets stuck for a little while until it can turn again. 😣  Let's fix that in the next step!
-
+Is your bug changing direction every 5 seconds?  Very cool! 😎
 
 ## 🧱 Bump Wall
 
@@ -132,16 +117,13 @@ Again, we want our bug to turn in a random direction, so let's use the 🎲 Pick
 
 From the ``||Math:Math||`` Toolbox drawer, drag another ``||Math:pick random||`` block and drop in the ``||hourOfAi:turn||`` block, replacing the **90**.
 
-```blockconfig.local
-randint(-180, 180)
-```
-
 ```blocks
 hourOfAi.onBumpWall(function () {
     //@highlight
     hourOfAi.turnBy(randint(-180, 180))
 })
 ```
+
 ## 🎉 Great job! 🎉
 
 Test your game again in the 🕹️ Game Window.
@@ -165,6 +147,13 @@ hourOfAi.onBumpWall(function () {
 hourOfAi.onStart(function () {
 	
 })
+```
+
+```blockconfig.global
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
 ```
 
 ```package
