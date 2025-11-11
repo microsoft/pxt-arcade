@@ -2,27 +2,22 @@
 
 **A page for Educators & Parents**
 
-The **Bug Arena** skillmap introduces students to Artificial Intelligence (AI) through a fun, iterative, game-based learning approach.
+The **[Bug Arena](https://aka.ms/ba)** skillmap introduces students to Artificial Intelligence (AI) through a fun, iterative, game-based learning approach.
 
 In this set of activities, students will code their own AI Bug using a variety of different algorithms. They can then compete against other AI bugs to cover the screen with paint.
 
 This skillmap is designed for students between the ages of 8 and 15 years old and takes approximately 45 minutes (including game play) to complete.  No previous coding background is required and students will not be exposed to an AI chatbot through this experience.
 
-There are 3 required tutorials and 2 additional optional tutorials. At the end of the learning path, students will receive a certificate of completion and a badge.
+There are 3 learning paths available for students to choose from.  At the end of the learning path, students will receive a certificate of completion and a badge.
 
-|  Tutorial                 | Duration   |  Description |
-| ------------------------- | ---------- | ------------ |
-| Introduction              | 7 minutes  | Students gain familiarity with the MakeCode interface, learn how to play the Bug Arena game, and are introduced to key AI concepts and terms. |
-| Random Algorithm*         | 8 minutes  | Students learn how to code a Random algorithm for their bug.  ([solution](https://makecode.com/_YHA76faXLVgx)) |
-| Squares Algorithm*        | 10 minutes | Students learn how to code an algorithm for their bug to move in concentric squares.  ([solution]( https://makecode.com/_HFrcvoUYaMg7)) |
-| Back-and-Forth Algorithm* | 11 minutes | Students learn how to code an algorithm for their bug to move back and forth across the screen.  ([solution]( https://makecode.com/_aipRXiJfsX6T)) |
-| Tower Battle              | 2 minutes  | Students will take the AI algorithms they have created and compete with other AI bugs in the Tower. |
+|  Tutorial                 | Duration   |  Difficulty |  Description |
+| ------------------------- | ---------- | ----------- | ------------ |
+| Random Algorithm          | 8 minutes  | easy        | Students learn how to code a Random algorithm for their bug.  ([solution](https://makecode.com/_YHA76faXLVgx)) |
+| Squares Algorithm         | 10 minutes | medium      | Students learn how to code an algorithm for their bug to move in concentric squares.  ([solution]( https://makecode.com/_HFrcvoUYaMg7)) |
+| Back-and-Forth Algorithm  | 11 minutes | hard        | Students learn how to code an algorithm for their bug to move back and forth across the screen.  ([solution]( https://makecode.com/_aipRXiJfsX6T)) |
+| Tower Battle              | 2 minutes  | game play   | Students will take the AI algorithms they have created and compete with other AI bugs in the Tower. |
 
-\* Students should select one of the algorithms to complete before moving on to the Tower.
-
-**Notes**:
-- Duration is approximate based on time to follow instructions as written. Providing extra time for creativity, debugging and game play is encouraged!
-- When selecting from the three provided algorithms, they are ordered from easiest to hardest: Random, Squares, and Back-and-Forth.
+Note - duration is approximate based on time to follow instructions as written. Providing extra time for creativity, debugging and game play is encouraged!
 
 ## Learning Objectives
 
@@ -108,16 +103,6 @@ Will return the distance in pixels from the front of the bug to its own paint co
 ![Pick Random](/static/skillmap/bug-arena/pickrandom.png "pick random")
 
 Will return a random whole number between a minimum and maximum value.
-
-## Game Mod Ideas
-
-Once students have completed the Bug Arena skillmap, they can modify (mod) their programs using the full MakeCode editor. Use the **[SAVE TO MY PROJECTS]** button in the Skillmap to continue editing the code. 
-
-Mod Suggestions: 
-
-- Add music or sound effects
-- Add screen effects
-- Try using different algorithm strategies to beat the Tower
 
 ## What's Next?
 
