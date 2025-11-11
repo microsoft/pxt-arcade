@@ -9,7 +9,7 @@ Watch this introduction video to get started, and then click Ok.
 
 ![Bug Arena Intro](youtube:U_bcAht2o0A "video introduction of bug arena")
 
-## Squares Algorithm
+## Squares Algorithm @showdialog
 
 ![Bug Arena Squares](/static/skillmap/bug-arena/squares.gif "animation of squares pattern")
 
@@ -95,9 +95,7 @@ hourOfAi.onBumpWall(function () {
 
 Let's test our algorithm to see if our bug is moving in a square. 🟨
 
-Look at our bug moving in the Game Window 🖼️.
-
-What happens when our bug covers all 4 sides of the arena?
+In the Game Window 🖼️, what happens when our bug covers all 4 sides of the arena?
 
 Yikes!  It just keeps moving in the same square pattern! ⏹️
 
@@ -113,7 +111,7 @@ hint~
 
 ## When to turn
 
-We need to have our bug check to make sure it's not on a part of the screen that's already covered with its paint color 🎨 before turning.
+We need to have our bug check to make sure it's not on a part of the screen that's already covered with its own paint color 🎨 before turning.
 
 From the ``||hourOfAi:Bug AI||`` category, drag the ``||hourOfAi:every 500 ms||`` group of blocks out onto the Workspace - you can put it anywhere.
 
@@ -124,14 +122,6 @@ From the ``||hourOfAi:Bug AI||`` category, drag the ``||hourOfAi:every 500 ms||`
 The ``||hourOfAi:every 500 ms||`` block will run the code you put inside of it on a specified time interval ⏱️, in this case every 500 milliseconds (ms), or half a second.  The ``||hourOfAi:distance to my color||`` block will return the distance in pixels from the front of our bug to its own paint color 🎨. If the distance equals 0, then our bug is standing on it's own paint!
 
 hint~
-
-```blockconfig.local
-hourOfAi.every(500, function () {
-    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
-    	
-    }
-})
-```
 
 ```blocks
 hourOfAi.every(500, function () {
@@ -183,6 +173,14 @@ hourOfAi.every(500, function () {
 ```template
 hourOfAi.onStart(function () {
 	
+})
+```
+
+```blockconfig.global
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
 })
 ```
 
