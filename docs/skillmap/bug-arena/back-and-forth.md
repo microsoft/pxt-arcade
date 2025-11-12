@@ -9,7 +9,7 @@ Watch this introduction video to get started, and then click Ok.
 
 ![Bug Arena Intro](youtube:U_bcAht2o0A "video introduction of bug arena")
 
-## Back-and-Forth Algorithm
+## Back-and-Forth Algorithm @showdialog
 
 ![Bug Arena Back and Forth](/static/skillmap/bug-arena/back-and-forth.gif "animation of back and forth pattern")
 
@@ -103,12 +103,6 @@ The ``||hourOfAi:run after||`` block will run the code inside of it after waitin
 
 hint~
 
-```blockconfig.local
-hourOfAi.doAfter(1000, function () {
-
-})
-```
-
 ```blocks
 hourOfAi.onBumpWall(function () {
     hourOfAi.turnBy(90)
@@ -149,6 +143,10 @@ We need to change the direction our bug is turning each time it hits a wall.  At
 
 To do that, let's first create a variable.
 
+Open the ``||Variables:Variables||`` category in the Toolbox and click on the **Make a Variable** button.  
+
+Name the variable **angle** and click Ok.
+
 ~hint What is a variable?
 
 ---
@@ -157,11 +155,9 @@ A **variable** is like a container 🪣 that holds a value. Variables have names
 
 hint~
 
-Open the ``||Variables:Variables||`` category in the Toolbox and click on **Make a Variable**.  
+## Set the variable value
 
-Name the variable **angle**.
-
-Now from the ``||Variables:Variables||`` category, drag a ``||Variables:set angle to||`` block into the ``||hourOfAi:on start||`` block.
+From the ``||Variables:Variables||`` category, drag a ``||Variables:set angle to 0||`` block into the ``||hourOfAi:on start||`` block.
 
 Type in **-90** as the value for the angle variable, replacing **0**.
 
@@ -173,13 +169,24 @@ hourOfAi.onStart(function () {
     angle = -90
 })
 ```
+## Change the variable value on bump wall
+
+From the ``||Variables:Variables||`` category, drag another ``||Variables:set angle to 0||`` block into the top of the ``||hourOfAi:on bump wall||`` block.
+
+```blocks
+hourOfAi.onBumpWall(function () {
+    //@highlight
+    angle = 0
+    hourOfAi.turnBy(90)
+    hourOfAi.doAfter(1000, function () {
+        hourOfAi.turnBy(90)
+    })
+})
+```
 
 ## Multiply by -1
 
 To change back and forth between 90 and -90 degrees, we'll multiply by -1.
-
-Drag another ``||Variables:set angle to||`` block into the top of the <br/>
-``||hourOfAi:on bump wall||`` block.
 
 From the ``||Math:Math||`` Toolbox category, drag out a ``||Math:multiplication||`` block and drop into the ``||Variables:set angle to||`` block replacing the **0**.
 
@@ -244,6 +251,12 @@ hourOfAi.onBumpWall(function () {
 ```template
 hourOfAi.onStart(function () {
 	
+})
+```
+
+```blockconfig.global
+hourOfAi.doAfter(1000, function () {
+
 })
 ```
 
