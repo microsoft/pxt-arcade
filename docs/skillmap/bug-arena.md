@@ -13,6 +13,16 @@
 * allowcodecarryover: true
 * tags: beginner, hour of ai, hour of code
 
+```intro
+Welcome to the 👾 **Bug Arena** 👾 where the smartest AI bugs battle for glory!
+Select one of the three paths to code an algorithm for your AI bug to follow:
+- Top path: Random (easier)
+- Middle path: Squares (intermediate)
+- Bottom path: Back and forth (more challenging)
+
+![tracking](https://studio.code.org/api/hour/begin_bugarena.png)
+```
+
 ## bug-arena-1
 * name: Arena One
 * layout: manual
