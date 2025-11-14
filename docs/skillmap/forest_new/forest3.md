@@ -126,8 +126,8 @@ into an **empty area** of the workspace.
 #### ~ tutorialhint
 ```blocks
 scene.onOverlapTile(SpriteKind.Water, assets.tile`tree fire`, function (sprite, location) {
-    sprite.destroy()
     sprites.change_flame_strength_by(location, -1)
+    sprite.destroy()
 })
 ```
 
