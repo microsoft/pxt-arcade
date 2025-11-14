@@ -10,7 +10,7 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
         "name": "Bug Arena",
         "description": "Code your own AI Bug and battle others in this Hour of AI challenge",
         "url": "https://arcade.makecode.com/--skillmap#bug",
-        "imageUrl": "/static/skillmap/bug-arena/game.gif",
+        "imageUrl": "/static/skillmap/bug-arena/game.gif"
     }
 ]
 ```
@@ -24,19 +24,19 @@ Join us in celebrating Computer Science Education Week by playing, designing, an
         "name": "Snack Chase",
         "description": "Code a snack chase game with characters from Lyla in the Loop on PBS KIDS",
         "url": "https://arcade.makecode.com/#tutorial:/tutorials/lyla-jr",
-        "imageUrl": "/static/tutorials/lyla/card.jpg",
+        "imageUrl": "/static/tutorials/lyla/card.jpg"
     },
     {
         "name": "Inside Out 2",
         "description": "Create a bubble popping game, featuring the stars of Disney and Pixar's Inside Out 2",
         "url": "https://arcade.makecode.com/#tutorial:/tutorials/bubbles",
-        "imageUrl": "/static/tutorials/bubbles/card.jpg",
+        "imageUrl": "/static/tutorials/bubbles/card.jpg"
     },
     {
         "name": "Mission to Hubble",
         "description": "Follow along with the steps of this tutorial to create a game based on Scott Kelly's first space flight",
         "url": "https://forms.codeninjas.com/back-to-school-game-building-session/?utm-source=makecode&utm_medium=partner&utm_campaign=bts_gbs",
-        "imageUrl": "/static/tutorials/hubble/hubble_4x3.jpg",
+        "imageUrl": "/static/tutorials/hubble/hubble_4x3.jpg"
     },
     {
         "name": "Sparks Flying",
