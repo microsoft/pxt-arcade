@@ -638,13 +638,16 @@
         "saveInMenu": false,
         "debugger": true,
         "importExtensionFiles": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {}
+        },
         "experiments": [
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList",
             "identity",
             "accessibleBlocks",
             "palettePicker"
