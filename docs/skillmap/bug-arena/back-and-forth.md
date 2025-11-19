@@ -39,6 +39,12 @@ So our bug will start off moving towards the right side of the screen.
 
 hint~
 
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
+
 ```blocks
 hourOfAi.onStart(function () {
     //@highlight
@@ -57,6 +63,12 @@ Do you see your bug move to the right?  Nice! 😊 But what happens when your bu
 Nothing 🥺 So let's add some code for when it hits a wall.
 
 From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -79,6 +91,12 @@ The turn block ↩️ will turn our bug a certain number of degrees from its cur
 ![Turn angle](/static/skillmap/bug-arena/turn-angle.png "turn angle")
 
 hint~
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -103,6 +121,12 @@ The ``||hourOfAi:run after||`` block will run the code inside of it after waitin
 
 hint~
 
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
+
 ```blocks
 hourOfAi.onBumpWall(function () {
     hourOfAi.turnBy(90)
@@ -116,6 +140,12 @@ hourOfAi.onBumpWall(function () {
 ## ↩️ Now turn around
 
 From the ``||hourOfAi:Bug AI||`` category, drag another ``||hourOfAi:turn 90||`` block out and drop it into the ``||hourOfAi:run after||`` block.
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -137,6 +167,12 @@ Our bug does go back and forth, but it just keeps moving back and forth at the t
 
 How do we make our bug keep moving down ⬇️ so it fills in the whole arena?
 
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
+
 ## Create a variable
 
 We need to change the direction our bug is turning each time it hits a wall.  At first it turns towards the right ➡️ (90 degrees), and then we want it to turn towards the left ⬅️ (-90 degrees), and so on back and forth.
@@ -155,11 +191,23 @@ A **variable** is like a container 🪣 that holds a value. Variables have names
 
 hint~
 
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
+
 ## Set the variable value
 
 From the ``||Variables:Variables||`` category, drag a ``||Variables:set angle to 0||`` block into the ``||hourOfAi:on start||`` block.
 
 Type in **-90** as the value for the angle variable, replacing **0**.
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 let angle = 0
@@ -172,6 +220,12 @@ hourOfAi.onStart(function () {
 ## Change the variable value on bump wall
 
 From the ``||Variables:Variables||`` category, drag another ``||Variables:set angle to 0||`` block into the top of the ``||hourOfAi:on bump wall||`` block.
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -194,6 +248,12 @@ From the ``||Variables:Variables||`` category, drag an ``||Variables:angle||`` b
 
 Type in **-1** for the second value in the ``||Math:multiplication||`` block.
 
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
+
 ```blocks
 hourOfAi.onBumpWall(function () {
     //@highlight
@@ -210,6 +270,12 @@ hourOfAi.onBumpWall(function () {
 Now we need to replace our 90 degree turns with our ``||Variables:angle||`` variable.
 
 From the ``||Variables:Variables||`` category, drag two ``||Variables:angle||`` blocks out and drop one into each ``||hourOfAi:turn||`` block replacing the **90** degrees.
+
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -233,6 +299,12 @@ You can move the **SPEED** slider to the right ➡️ to watch your bug go back 
 
 Move on to the 🏰 Tower Battle to challenge your Bug rivals!
 
+```blockconfig.local
+hourOfAi.doAfter(1000, function () {
+
+})
+```
+
 ```blocks
 let angle = 0
 hourOfAi.onStart(function () {
@@ -251,12 +323,6 @@ hourOfAi.onBumpWall(function () {
 ```template
 hourOfAi.onStart(function () {
 	
-})
-```
-
-```blockconfig.global
-hourOfAi.doAfter(1000, function () {
-
 })
 ```
 
