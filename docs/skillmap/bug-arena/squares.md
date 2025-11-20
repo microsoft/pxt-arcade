@@ -39,6 +39,14 @@ So our bug will start off moving towards the right side of the screen.
 
 hint~
 
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
+
 ```blocks
 hourOfAi.onStart(function () {
     //@highlight
@@ -59,6 +67,14 @@ Uh-oh!  It gets stuck! 🔄
 Let's code in some behavior for when it hits a wall. 🧱
 
 From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -83,6 +99,14 @@ The turn block ↩️ will turn our bug a certain number of degrees.  A positive
 In this case, we will keep it at 90 degrees, since we want our bug to turn a full right angle at the corner of the screen.
 
 hint~
+
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -109,6 +133,14 @@ How do we make our bug move in a concentric square pattern so it fills in the wh
 
 hint~
 
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
+
 ## When to turn
 
 We need to have our bug check to make sure it's not on a part of the screen that's already covered with its own paint color 🎨 before turning.
@@ -123,6 +155,14 @@ The ``||hourOfAi:every 500 ms||`` block will run the code you put inside of it o
 
 hint~
 
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
+
 ```blocks
 hourOfAi.every(500, function () {
     if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
@@ -136,6 +176,14 @@ hourOfAi.every(500, function () {
 When the distance from our bug to its own paint color is 0, then we should make a right turn. ↩️
 
 From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||Logic:if then||`` block.
+
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
 
 ```blocks
 hourOfAi.every(500, function () {
@@ -156,6 +204,14 @@ Nice work! 👍 You've coded a smart AI algorithm ✨ that will box in your comp
 
 Move on to the 🏰 Tower Battle to challenge your Bug rivals!
 
+```blockconfig.local
+hourOfAi.every(500, function () {
+    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
+    	
+    }
+})
+```
+
 ```blocks
 hourOfAi.onStart(function () {
     hourOfAi.turnTowards(0)
@@ -173,14 +229,6 @@ hourOfAi.every(500, function () {
 ```template
 hourOfAi.onStart(function () {
 	
-})
-```
-
-```blockconfig.global
-hourOfAi.every(500, function () {
-    if (hourOfAi.distanceToColor(ColorType.MyColor) == 0) {
-    	
-    }
 })
 ```
 

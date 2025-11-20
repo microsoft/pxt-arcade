@@ -35,6 +35,13 @@ hint~
 
 Click the lightbulb 💡 if you need help, or click **Next** to continue.
 
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
+
 ```blocks
 hourOfAi.every(5000, function () {
 
@@ -56,6 +63,13 @@ The turn block ↩️ will turn our bug a certain number of degrees from its cur
 ![Turn angle](/static/skillmap/bug-arena/turn-angle.png "turn angle")
 
 hint~
+
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
 
 ```blocks
 hourOfAi.every(5000, function () {
@@ -80,6 +94,13 @@ The ``||Math:pick random||`` block will return a random number 🎲 between a mi
 
 hint~
 
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
+
 ```blocks
 hourOfAi.every(5000, function () {
     //@highlight
@@ -97,6 +118,13 @@ Then select **No Opponent** and **Infinite**.
 
 Is your bug changing direction every 5 seconds?  Very cool! 😎
 
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
+
 ## 🧱 Bump Wall
 
 Let's add some code to make our bug turn ↩️ when it hits a wall.
@@ -104,6 +132,13 @@ Let's add some code to make our bug turn ↩️ when it hits a wall.
 From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
 
 Now drag another ``||hourOfAi:turn 90||`` block and drop it into the ``||hourOfAi:on bump wall||`` block.
+
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -116,6 +151,13 @@ hourOfAi.onBumpWall(function () {
 Again, we want our bug to turn in a random direction, so let's use the 🎲 Pick Random function again.
 
 From the ``||Math:Math||`` Toolbox drawer, drag another ``||Math:pick random||`` block and drop in the ``||hourOfAi:turn||`` block, replacing the **90**.
+
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
 
 ```blocks
 hourOfAi.onBumpWall(function () {
@@ -134,6 +176,13 @@ Nice work! 👍 You've coded a smart AI algorithm ✨ that will confuse and conf
 
 Move on to the 🏰 Tower Battle to challenge your Bug rivals!
 
+```blockconfig.local
+hourOfAi.every(5000, function () {
+
+})
+randint(-180, 180)
+```
+
 ```blocks
 hourOfAi.every(5000, function () {
     hourOfAi.turnBy(randint(-180, 180))
@@ -147,13 +196,6 @@ hourOfAi.onBumpWall(function () {
 hourOfAi.onStart(function () {
 	
 })
-```
-
-```blockconfig.global
-hourOfAi.every(5000, function () {
-
-})
-randint(-180, 180)
 ```
 
 ```package
