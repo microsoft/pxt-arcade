@@ -642,6 +642,9 @@
             "blocksErrorList": {},
             "aiErrorHelp": {}
         },
+        "supportedExperiences": [
+            "code-eval"
+        ],
         "experiments": [
             "debugExtensionCode",
             "snippetBuilder",
@@ -707,7 +710,8 @@
         "teachertool=1": {
             "appTheme": {
                 "hideMenuBar": true,
-                "workspaceSearch": true
+                "workspaceSearch": true,
+                "noReloadOnUpdate": true
             }
         },
         "ninja=1": {
