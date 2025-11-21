@@ -15,6 +15,15 @@ Try these multiplayer games with your friends!
 * cardType: link
 * otherAction: _bz3CCuWFiepH, , sharedExample
 ---
+* name: Paint Party
+* description: Show your artistic side and paint a picture with up to 4 friends!
+* buttonLabel: Host Game
+* actionIcon: xicon multiplayer
+* imageUrl: /static/multiplayer/paint-party.png
+* url: /--multiplayer?host=_Ka770J6Laeva
+* cardType: link
+* otherAction: _Ka770J6Laeva, , sharedExample
+---
 * name: Galga
 * description: Controlling a starship, up to 4 players can help destroy the Galga forces, while avoiding enemies. Each player has 3 lives, last player alive wins the game!
 * buttonLabel: Host Game
@@ -54,16 +63,6 @@ Try these multiplayer games with your friends!
 * url: /--multiplayer?host=_1DogpPTpb8fK
 * cardType: link
 * otherAction: _1DogpPTpb8fK, , sharedExample
----
-* name: Painting Together
-* description: Up to 4 people can paint together. Paint by holding down the A button and moving the arrow keys. Change the brush size by clicking the B button.
-* buttonLabel: Host Game
-* actionIcon: xicon multiplayer
-* imageUrl: /static/multiplayer/painting.png
-* largeImageUrl: /static/multiplayer/painting.gif
-* url: /--multiplayer?host=_FdYfDwixRTAw
-* cardType: link
-* otherAction: _FdYfDwixRTAw, , sharedExample
 ---
 * name: Eat the Fruit
 * description: Who can eat the most fruit? Try to out eat the other players and eat up all the fruit that comes at you!
