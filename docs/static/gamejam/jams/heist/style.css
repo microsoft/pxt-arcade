@@ -1,0 +1,40 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner > img {
+    width: 100%;
+    max-width: 54rem;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+body {
+    background-size: 256px;
+    background-color: #060c33;
+    image-rendering: pixelated;
+}
+
+footer {
+    background-color: #DDDDDD !important;
+}
+
+footer a.item, footer div.item {
+    color: black !important;
+}
+
+@media (max-width: 768px) {
+    .banner > img {
+        width: 100%;
+        height: 100%;
+        transform: unset;
+        margin-left: unset;
+    }
+    .banner .top {
+        height: 14rem;
+    }
+    .banner .bottom {
+        height: 5rem;
+    }
+}

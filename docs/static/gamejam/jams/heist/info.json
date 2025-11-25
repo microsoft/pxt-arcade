@@ -1,0 +1,434 @@
+{
+    "rules": {
+        "path": "/static/gamejam/jams/heist/rules.md"
+    },
+    "featured": [
+        {
+            "id": "_6PqCqEKoEduY",
+            "title": "Zelin,Yang",
+            "author": "Zsjt"
+        },
+        {
+            "id": "_J0F8bVY9Md8A",
+            "title": "Robber Frog",
+            "author": "Munchcoder"
+        },
+        {
+            "id": "_PtkPvtaje9hp",
+            "title": "Apple heist rush",
+            "author": "Nikoloz V."
+        },
+        {
+            "id": "_hTc8iygyj0dF",
+            "title": "Nowhere",
+            "author": "Longlinh"
+        },
+        {
+            "id": "_h8DEHD6bH7H2",
+            "title": "Epic Bird Heist",
+            "author": "RoboVacDev"
+        },
+        {
+            "id": "_g1hhjr1Ef5sC",
+            "title": "Ink-Fueled",
+            "author": "M1ntPhoen1x"
+        },
+        {
+            "id": "_X4fgxCWq3MFd",
+            "title": "Maze Glider: A Wall Glider Heist",
+            "author": "MyCraft_Steve"
+        },
+        {
+            "id": "_Tx5hFT4xjPmv",
+            "title": "Collect the chest",
+            "author": "Anonymous"
+        },
+        {
+            "id": "_PYU1M344mck4",
+            "title": "diamond heist",
+            "author": "Jay"
+        },
+        {
+            "id": "_T0XXiM8msafb",
+            "title": "Escape The Bank",
+            "author": "Jo-Heist-1"
+        },
+        {
+            "id": "_7CUPtb3qXi56",
+            "title": "Escape impossible!!!",
+            "author": "Angel L."
+        },
+        {
+            "id": "_ATPUrXCFRPmd",
+            "title": "Heist Bunny",
+            "author": "Viktooriia H."
+        },
+        {
+            "id": "_LvUJ4b0Ap33o",
+            "title": "Thieves escape alive",
+            "author": "lni"
+        },
+        {
+            "id": "_KW25C9WF8LP9",
+            "title": "Robin Banks Grand Heist",
+            "author": "Christian"
+        },
+        {
+            "id": "_CPLDyD8R5bm4",
+            "title": "Steal the Coins! (Challenging)",
+            "author": "David"
+        },
+        {
+            "id": "_VFa9d6Jkrccm",
+            "title": "Bank Vault Heist",
+            "author": "Anonymous"
+        },
+        {
+            "id": "_EXtDuiePm1Cw",
+            "title": "Historical Robbery",
+            "author": "ZerotwoOnTop"
+        },
+        {
+            "id": "_UmPYAYEbaWwt",
+            "title": "One Last Heist",
+            "author": "Nathaniel L."
+        },
+        {
+            "id": "_EWiUchRXTEhA",
+            "title": "dungeon heist ",
+            "author": "YUHUAN"
+        },
+        {
+            "id": "_Wu0h8C5caKo5",
+            "title": "Steal and Avoid",
+            "author": "Loke939"
+        },
+        {
+            "id": "_5u196JVToDPm",
+            "title": "Robbing the Billionaire",
+            "author": "nc_lab"
+        },
+        {
+            "id": "_Uyme1XH36FRa",
+            "title": "Midnight Vault Heist",
+            "author": "Vkay"
+        },
+        {
+            "id": "_89fcKDhRPKrR",
+            "title": "Invisible 0.1 ",
+            "author": "Anri and Vlad "
+        },
+        {
+            "id": "_Kem577HmMePJ",
+            "title": "The Little Thief Puppy",
+            "author": "xin"
+        },
+        {
+            "id": "_aRwVEFEVFM7m",
+            "title": "Stealthy Stealer Game Jam Edition",
+            "author": "Awesomefreez"
+        },
+        {
+            "id": "_7xgij4hpucVF",
+            "title": "Gallery Getaway",
+            "author": "Fluffy"
+        },
+        {
+            "id": "_covVfxezxLRJ",
+            "title": "Lawless Heist (Hard Game)",
+            "author": "mp1909"
+        },
+        {
+            "id": "_0jgbvHfALL6y",
+            "title": "jewel heist",
+            "author": "Anonymous"
+        },
+        {
+            "id": "_2Ct9WRdbuYr2",
+            "title": "AFTER HEIST",
+            "author": "TA NORIZAM"
+        },
+        {
+            "id": "_aWqCyy6ypJmP",
+            "title": "Runaway Robber",
+            "author": "Matt D."
+        },
+        {
+            "id": "_VjRAxi9evMrf",
+            "title": "Donut heist",
+            "author": "PrecisePepper"
+        },
+        {
+            "id": "_3UMMYWRTP9jk",
+            "title": "Mystery",
+            "author": "Zachary D."
+        },
+        {
+            "id": "_c8UFwACDETW1",
+            "title": "The ring robber",
+            "author": "Her267"
+        },
+        {
+            "id": "_3EtUHEXPgTaX",
+            "title": "steal grandma's cookies!",
+            "author": "Michael, or c00lPlayz"
+        },
+        {
+            "id": "_XhkP0304i4eH",
+            "title": "heist",
+            "author": "Noah"
+        },
+        {
+            "id": "_F5A4vjKbbL4P",
+            "title": "Cute dog robbery heh haw",
+            "author": "Glen B."
+        },
+        {
+            "id": "_8iU6aAei4XFw",
+            "title": "heist time",
+            "author": "Angel R."
+        },
+        {
+            "id": "_2Hz59d32HJwa",
+            "title": "heist",
+            "author": "Aiden"
+        },
+        {
+            "id": "_2f1TrVTU4Kr2",
+            "title": "Lunar",
+            "author": "Cookie"
+        },
+        {
+            "id": "_TAvWmVek25Eu",
+            "title": "Heist Jam 1",
+            "author": "Carson G."
+        },
+        {
+            "id": "_Au7PxdTPbct7",
+            "title": "Money Jungle",
+            "author": "Ariful R."
+        },
+        {
+            "id": "_1HoHTi2h5HCm",
+            "title": "heist jam",
+            "author": "darin"
+        },
+        {
+            "id": "_MK2EKY34UM92",
+            "title": "The Louvre Heist: The Epic Game ",
+            "author": "Nishaaj"
+        },
+        {
+            "id": "_VhxPRzAh88Pf",
+            "title": "Prisoner Raccoon Treasure Hunt Maze",
+            "author": "Shu.leepy"
+        },
+        {
+            "id": "_AxD7eqCqu4RC",
+            "title": "Gem Thief",
+            "author": "anonymous"
+        },
+        {
+            "id": "_Ch2avUKPHfXm",
+            "title": "steal the cheese",
+            "author": "Catherine B."
+        },
+        {
+            "id": "_FLjJx2260PD7",
+            "title": "Duengon",
+            "author": "Ahmed A."
+        },
+        {
+            "id": "_agdE5KiKAHH9",
+            "title": "pay time",
+            "author": "Zakuro"
+        },
+        {
+            "id": "_cYmUqvAmTCp4",
+            "title": "Take The World ",
+            "author": "Jahvid X."
+        },
+        {
+            "id": "_DwbFvTThTXa2",
+            "title": "Slime",
+            "author": "Failed"
+        },
+        {
+            "id": "_W5LWfcJj4X1w",
+            "title": "The Greedy Usagi",
+            "author": "Gato_:3"
+        },
+        {
+            "id": "_gP7PmdKFtbTd",
+            "title": "The Heist of the Alien Apocalypse",
+            "author": "Kourtney T."
+        },
+        {
+            "id": "_7mRFJ6MRwH6L",
+            "title": "a small robbery",
+            "author": "anonymous"
+        },
+        {
+            "id": "_86RLmsYAjchA",
+            "title": "BicuitsHeist",
+            "author": "Lucas"
+        },
+        {
+            "id": "_XTfPTLMtuEcp",
+            "title": "Button Wars MMA",
+            "author": "Jacob P."
+        },
+        {
+            "id": "_MY4RsA90Ley6",
+            "title": "Under Surveillance",
+            "author": "Bilangus"
+        },
+        {
+            "id": "_AcxPaJh2Ec4H",
+            "title": "Thrill of the Heist",
+            "author": "Snake_Oil"
+        },
+        {
+            "id": "_9VYFR9d0b6fA",
+            "title": "Luo Xiaohei's Diamond Diary",
+            "author": "Kaji"
+        },
+        {
+            "id": "_HPk9sETfrJXE",
+            "title": "payday",
+            "author": "saucey"
+        },
+        {
+            "id": "_dXH6wR9CaUt9",
+            "title": "Perfect Heist",
+            "author": "Andy"
+        },
+        {
+            "id": "_C4bR3cL3XRPC",
+            "title": "Escape dungeon with gold!",
+            "author": "DAFOOD"
+        },
+        {
+            "id": "_413Lc4hze0ia",
+            "title": "Investigators Alligators",
+            "author": "shezowww"
+        },
+        {
+            "id": "_Kpw4UT7dt1yz",
+            "title": "Ratty Runner",
+            "author": "Marcos S."
+        },
+        {
+            "id": "_922eDfiyMFiU",
+            "title": "Nine Cores",
+            "author": "Rune"
+        },
+        {
+            "id": "_Mv7gHsVTxMKT",
+            "title": "Tilegame 2: Bent Rules",
+            "author": "GreenLockGuy17"
+        },
+        {
+            "id": "_gbfiaFCoTf9s",
+            "title": "The Fey Caper (Aka, the cursed heist)",
+            "author": "Bass.Games"
+        },
+        {
+            "id": "_4Em2dPiC8b5u",
+            "title": "Jailbreak",
+            "author": "Kevin"
+        },
+        {
+            "id": "_8emThsKFkeWx",
+            "title": "Sneaky Mage",
+            "author": "The_Tiniest_Ant"
+        },
+        {
+            "id": "_LrV7Vf7VqTXu",
+            "title": "The Safe Cracker",
+            "author": "TeddyB"
+        },
+        {
+            "id": "_arsUws4J2KFD",
+            "title": "Steal The MOON!",
+            "author": "Nuggetzzz"
+        },
+        {
+            "id": "_7pqVCwcUo3A3",
+            "title": "Guard",
+            "author": "Rudo"
+        },
+        {
+            "id": "_R6wbAcEeK0hj",
+            "title": "Crossy Road-ish Key Snatch",
+            "author": "Refresh Kid"
+        },
+        {
+            "id": "_FM3b8dfFLiPM",
+            "title": "Match 3",
+            "author": "Oliver"
+        },
+        {
+            "id": "_hrk7CiDH56Ag",
+            "title": "Owl House",
+            "author": "Jordan"
+        },
+        {
+            "id": "_YPDTqhDxc0Ei",
+            "title": "Heist! WIP",
+            "author": "Sam"
+        },
+        {
+            "id": "_FvTPaW3k3LPm",
+            "title": "Duck House: Robbed of Sleep",
+            "author": "randomuser"
+        },
+        {
+            "id": "_M7H8c6DXC0CW",
+            "title": "Grave Escape",
+            "author": "9DeeStar"
+        },
+        {
+            "id": "_FPg49tVKhcRc",
+            "title": "Heistenberg",
+            "author": "Kebab"
+        },
+        {
+            "id": "_1pjJojc7DF6u",
+            "title": "KELANA CRYTAL",
+            "author": "Aouky12"
+        },
+        {
+            "id": "_4hTeY5iT3Ugv",
+            "title": "cyber heist",
+            "author": "Joni"
+        },
+        {
+            "id": "_VkXTwb5HgJdt",
+            "title": "Very ordinary game",
+            "author": "SAKU"
+        },
+        {
+            "id": "_eYjTRtK0AHgs",
+            "title": "Dinero-Misterio",
+            "author": "Snickers101"
+        },
+        {
+            "id": "_JEzfFmdeTbUq",
+            "title": "baddddd cat",
+            "author": "????????"
+        },
+        {
+            "id": "_6iUP8x7LK8wo",
+            "title": "Amalgatron (Unfinshed)",
+            "author": "Ribbit4084"
+        },
+        {
+            "id": "_ixDHwLH2D1gv",
+            "title": "Katandra: Hollow Heist",
+            "author": "CopySprite"
+        }
+    ],
+    "start": "2025-10-1 00:00:01 GMT-0700",
+    "end": "2025-11-15 23:59:59 GMT-0700"
+}
