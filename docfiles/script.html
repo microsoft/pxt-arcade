@@ -24,6 +24,7 @@
                     </div>
                     <div class="page-header-item show-code-toggle">
                         <button id="show-code-button" class="ui mini default button" role="menuitem">Show Code</button>
+                        <a id="share-eval-button" href="/--eval#project=@id@" class="ui mini button" role="menuitem">Evaluate</a>
                         <a id="editCodeButton" href="/@versionsuff@#pub:@id@" class="ui mini button landscape only" role="menuitem">Edit Code</a>
                     </div>
                     <div class="page-header-item no-grow">
@@ -225,6 +226,14 @@
                             'approved.shareurl.loaded',
                             { shareurl: "@id@",  target: "arcade", cookie: "true" },
                         );
+                    }
+
+                    var evalEnabled = targetConfig && targetConfig.teachertool && targetConfig.teachertool.showSharePageEvalButton;
+                    if (!evalEnabled) {
+                        var evalButton = document.getElementById("share-eval-button");
+                        if (evalButton) {
+                            evalButton.remove();
+                        }
                     }
                 });
 
