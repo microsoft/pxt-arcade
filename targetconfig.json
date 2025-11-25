@@ -420,6 +420,9 @@
     "electronManifest": {
         "latest": "v2.0.56"
     },
+    "teachertool": {
+        "showSharePageEvalButton": true
+    },
     "kiosk": {
         "games": [
             {
