@@ -297,17 +297,17 @@
             "variant": "hw---stm32f401"
         },
         {
+            "name": "micro:bit Retro Shield",
+            "description": "Use the micro:bit with an expansion board from Elecfreaks",
+            "imageUrl": "/static/hardware/retro-shield.jpg",
+            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
+            "variant": "hw---n3"
+        },
+        {
             "name": "TinkerGen GameGo",
             "description": "A fun-sized console to play the games you code.",
             "imageUrl": "/static/hardware/gamego.jpg",
             "url": "https://www.tinkergen.com/gamego",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "MRT Game Maker Kit",
-            "description": " Sleek hand-held game device with a hard case and a USB-C port.",
-            "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
-            "url": "https://www.myrobottime.co.kr/gamemakerkit",
             "variant": "hw---stm32f401"
         },
         {
@@ -317,6 +317,20 @@
             "url": "https://www.kitronik.co.uk/arcade",
             "variant": "hw---samd51"
         },
+        {
+            "name": "MRT Game Maker Kit",
+            "description": " Sleek hand-held game device with a hard case and a USB-C port.",
+            "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
+            "url": "https://www.myrobottime.co.kr/gamemakerkit",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "Kitronik Arcade for micro:bit",
+            "description": "Use the micro:bit with an expansion board from Kitronik",
+            "imageUrl": "/static/hardware/kitronik-shield.png",
+            "url": "https://kitronik.co.uk/56116",
+            "variant": "hw---n3"
+        }
         {
             "name": "Adafruit PyBadge",
             "description": "It's a badge, it's an arcade, it's a PyBadge",
@@ -374,24 +388,10 @@
             "variant": "hw---n3"
         },
         {
-            "name": "micro:bit Retro Shield",
-            "description": "Use the micro:bit with an expansion board from Elecfreaks",
-            "imageUrl": "/static/hardware/retro-shield.jpg",
-            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
-            "variant": "hw---n3"
-        },
-        {
             "name": "micro:bit Game:Bit Shield",
             "description": "Use the micro:bit with an expansion board from iCShop",
             "imageUrl": "/static/hardware/bit-shield.png",
             "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "Kitronik Arcade for micro:bit",
-            "description": "Use the micro:bit with an expansion board from Kitronik",
-            "imageUrl": "/static/hardware/kitronik-shield.png",
-            "url": "https://kitronik.co.uk/56116",
             "variant": "hw---n3"
         }
     ],
