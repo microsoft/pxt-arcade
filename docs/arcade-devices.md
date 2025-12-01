@@ -54,7 +54,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "imageUrl": "/static/hardware/kitronik-shield.png",
         "url": "https://kitronik.co.uk/56116",
         "variant": "hw---n3"
-    }
+    },
     {
         "name": "Adafruit PyBadge",
         "description": "It's a badge, it's an arcade, it's a PyBadge",
