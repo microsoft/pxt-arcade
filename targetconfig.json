@@ -72,7 +72,7 @@
             "microsoft/arcade-sprite-data": {
                 "preferred": true,
                 "tags": [ "Utility" ],
-                "upgrades": [ "min:v0.0.6" ]
+                "upgrades": "min:v0.0.6"
             },
             "microsoft/arcade-grid": {
                 "preferred": true,
@@ -101,8 +101,9 @@
                 "hidden": true
             },
             "jacdac/pxt-jacdac": {
+                "tags": [ "Hardware" ],
                 "simx": {
-                    "sha": "9a567f397293aa27a06eab91910838f62a100753",
+                    "sha": "80d8581b59c501e4cdfaf8ec84e00682264dd9f6",
                     "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
                 }
             },
@@ -207,10 +208,7 @@
         "upgrades": {
             "microsoft/pxt-tilemaps": "min:v1.8.1",
             "microsoft/arcade-sprite-data": "min:v0.0.6"
-        },
-        "approvedEditorExtensionUrls": [
-            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
-        ]
+        }
     },
     "shareLinks": {
         "approved": [
@@ -232,7 +230,6 @@
         "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
             "beginner": "docs:/skillmap/beginner-skillmap",
-            "bug": "docs:/skillmap/bug-arena",
             "zoo": "docs:/skillmap/zoo",
             "space": "docs:/skillmap/space",
             "platformer": "docs:/skillmap/platformer",
@@ -268,10 +265,10 @@
                 "image": "/static/multiplayer/galga.png"
             },
             {
-                "shareId": "_Ka770J6Laeva",
-                "title": "Paint Party",
+                "shareId": "_FdYfDwixRTAw",
+                "title": "Painting Together",
                 "subtitle": "1-4 player",
-                "image": "/static/multiplayer/paint-party.png"
+                "image": "/static/multiplayer/painting.png"
             },
             {
                 "shareId": "_1DogpPTpb8fK",
@@ -297,17 +294,17 @@
             "variant": "hw---stm32f401"
         },
         {
+            "name": "micro:bit Retro Shield",
+            "description": "Use the micro:bit with an expansion board from Elecfreaks",
+            "imageUrl": "/static/hardware/retro-shield.jpg",
+            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
+            "variant": "hw---n3"
+        },
+        {
             "name": "TinkerGen GameGo",
             "description": "A fun-sized console to play the games you code.",
             "imageUrl": "/static/hardware/gamego.jpg",
             "url": "https://www.tinkergen.com/gamego",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "MRT Game Maker Kit",
-            "description": " Sleek hand-held game device with a hard case and a USB-C port.",
-            "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
-            "url": "https://www.myrobottime.co.kr/gamemakerkit",
             "variant": "hw---stm32f401"
         },
         {
@@ -317,6 +314,20 @@
             "url": "https://www.kitronik.co.uk/arcade",
             "variant": "hw---samd51"
         },
+        {
+            "name": "MRT Game Maker Kit",
+            "description": " Sleek hand-held game device with a hard case and a USB-C port.",
+            "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
+            "url": "https://www.myrobottime.co.kr/gamemakerkit",
+            "variant": "hw---stm32f401"
+        },
+        {
+            "name": "Kitronik Arcade for micro:bit",
+            "description": "Use the micro:bit with an expansion board from Kitronik",
+            "imageUrl": "/static/hardware/kitronik-shield.png",
+            "url": "https://kitronik.co.uk/56116",
+            "variant": "hw---n3"
+        }
         {
             "name": "Adafruit PyBadge",
             "description": "It's a badge, it's an arcade, it's a PyBadge",
@@ -360,13 +371,6 @@
             "variant": "hw---samd51"
         },
         {
-            "name": "Kitronik ARCADE Max",
-            "description": "Program fun and educational games with the Kitronik ARCADE Max",
-            "imageUrl": "/static/hardware/kitronik-arcade-max.png",
-            "url": "https://kitronik.co.uk/5357",
-            "variant": "hw---samd51"
-        },
-        {
             "name": "Newbit Arcade Shield",
             "description": "Use the micro:bit with an expansion board from KittenBot",
             "imageUrl": "/static/hardware/newbit.png",
@@ -374,24 +378,10 @@
             "variant": "hw---n3"
         },
         {
-            "name": "micro:bit Retro Shield",
-            "description": "Use the micro:bit with an expansion board from Elecfreaks",
-            "imageUrl": "/static/hardware/retro-shield.jpg",
-            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
-            "variant": "hw---n3"
-        },
-        {
             "name": "micro:bit Game:Bit Shield",
             "description": "Use the micro:bit with an expansion board from iCShop",
             "imageUrl": "/static/hardware/bit-shield.png",
             "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "Kitronik Arcade for micro:bit",
-            "description": "Use the micro:bit with an expansion board from Kitronik",
-            "imageUrl": "/static/hardware/kitronik-shield.png",
-            "url": "https://kitronik.co.uk/56116",
             "variant": "hw---n3"
         }
     ],
@@ -418,10 +408,7 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v2.0.56"
-    },
-    "teachertool": {
-        "showSharePageEvalButton": true
+        "latest": "v1.12.41"
     },
     "kiosk": {
         "games": [
