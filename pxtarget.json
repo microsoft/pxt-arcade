@@ -89,6 +89,7 @@
         "libs/screen",
         "libs/screen---ext",
         "libs/screen---linux",
+        "libs/screen---n3",
         "libs/screen---st7735",
         "libs/serial",
         "libs/serial---linux",
