@@ -24,8 +24,5 @@
         "jddisplay.h",
         "jddisplay.cpp"
     ],
-    "dependencies": {
-        "core": "file:../core"
-    },
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/screen---st7735"
 }

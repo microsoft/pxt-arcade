@@ -366,7 +366,7 @@
                 "codalTarget": {
                     "name": "codal-nrf52833-dk",
                     "url": "https://github.com/thomasjball/codal-nrf52833-arcade",
-                    "branch": "491f1a17c0fe3d8da57f5420e63525c657b2e61f",
+                    "branch": "04eb436c3b34bace6efabb2e21603566e940eadb",
                     "type": "git"
                 },
                 "codalBinary": "NRF52840_DK",

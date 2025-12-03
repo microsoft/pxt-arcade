@@ -1,0 +1,868 @@
+tball@Thomass-MacBook-Pro pxt-arcade % pxt serve
+Using target arcade with build engine codal
+  target: v /Users/tball/github/pxt/pxt-arcade
+  pxt-core: v /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core
+copying common-sim...
+Loading color themes...
+Loaded theme pxt-high-contrast
+Loaded theme arcade-dark
+Loaded theme arcade-light
+Loaded theme arcade-orange
+building target.json in /Users/tball/github/pxt/pxt-arcade...
+building /Users/tball/github/pxt/pxt-arcade/libs/animation
+building /Users/tball/github/pxt/pxt-arcade/libs/accelerometer
+building /Users/tball/github/pxt/pxt-arcade/libs/azureiot
+azureiot.ts(38,35): error TS2304: Cannot find name 'crypto'.
+
+building /Users/tball/github/pxt/pxt-arcade/libs/base
+building /Users/tball/github/pxt/pxt-arcade/libs/buttons
+building /Users/tball/github/pxt/pxt-arcade/libs/color
+building /Users/tball/github/pxt/pxt-arcade/libs/color-coded-tilemap
+building /Users/tball/github/pxt/pxt-arcade/libs/controller
+building /Users/tball/github/pxt/pxt-arcade/libs/controller---none
+building /Users/tball/github/pxt/pxt-arcade/libs/core
+building /Users/tball/github/pxt/pxt-arcade/libs/core---nrf52
+building /Users/tball/github/pxt/pxt-arcade/libs/core---vm
+building /Users/tball/github/pxt/pxt-arcade/libs/corgio
+building /Users/tball/github/pxt/pxt-arcade/libs/darts
+building /Users/tball/github/pxt/pxt-arcade/libs/device
+building /Users/tball/github/pxt/pxt-arcade/libs/edge-connector
+building /Users/tball/github/pxt/pxt-arcade/libs/game
+building /Users/tball/github/pxt/pxt-arcade/libs/game---light
+building /Users/tball/github/pxt/pxt-arcade/libs/hw
+building /Users/tball/github/pxt/pxt-arcade/libs/hw---n3
+building /Users/tball/github/pxt/pxt-arcade/libs/keyboard
+building /Users/tball/github/pxt/pxt-arcade/libs/light
+building /Users/tball/github/pxt/pxt-arcade/libs/lightsensor
+building /Users/tball/github/pxt/pxt-arcade/libs/microphone
+building /Users/tball/github/pxt/pxt-arcade/libs/mixer
+building /Users/tball/github/pxt/pxt-arcade/libs/mixer---nrf52
+building /Users/tball/github/pxt/pxt-arcade/libs/mouse
+building /Users/tball/github/pxt/pxt-arcade/libs/mqtt
+building /Users/tball/github/pxt/pxt-arcade/libs/multiplayer
+building /Users/tball/github/pxt/pxt-arcade/libs/net
+building /Users/tball/github/pxt/pxt-arcade/libs/net-game
+building /Users/tball/github/pxt/pxt-arcade/libs/palette
+building /Users/tball/github/pxt/pxt-arcade/libs/power
+building /Users/tball/github/pxt/pxt-arcade/libs/radio
+building /Users/tball/github/pxt/pxt-arcade/libs/radio-broadcast
+building /Users/tball/github/pxt/pxt-arcade/libs/rotary-encoder
+building /Users/tball/github/pxt/pxt-arcade/libs/screen
+building /Users/tball/github/pxt/pxt-arcade/libs/screen---ext
+building /Users/tball/github/pxt/pxt-arcade/libs/screen---linux
+building /Users/tball/github/pxt/pxt-arcade/libs/screen---st7735
+building /Users/tball/github/pxt/pxt-arcade/libs/serial
+building /Users/tball/github/pxt/pxt-arcade/libs/serial---linux
+building /Users/tball/github/pxt/pxt-arcade/libs/servo
+building /Users/tball/github/pxt/pxt-arcade/libs/settings
+building /Users/tball/github/pxt/pxt-arcade/libs/settings---files
+building /Users/tball/github/pxt/pxt-arcade/libs/sevenseg
+building /Users/tball/github/pxt/pxt-arcade/libs/shader
+building /Users/tball/github/pxt/pxt-arcade/libs/sprite-scaling
+building /Users/tball/github/pxt/pxt-arcade/libs/storyboard
+building /Users/tball/github/pxt/pxt-arcade/libs/template
+building /Users/tball/github/pxt/pxt-arcade/libs/thermometer
+building /Users/tball/github/pxt/pxt-arcade/libs/browser-events
+browserEvents.ts(76,13): error TS2304: Cannot find name 'game'.
+
+browserEvents.ts(79,13): error TS2304: Cannot find name 'game'.
+
+keyboard.ts(281,13): error TS2304: Cannot find name 'game'.
+
+keyboard.ts(285,13): error TS2304: Cannot find name 'game'.
+
+keyboard.ts(344,37): error TS2304: Cannot find name 'game'.
+
+keyboard.ts(359,13): error TS2304: Cannot find name 'game'.
+
+keyboard.ts(359,54): error TS2304: Cannot find name 'scene'.
+
+looking for tutorial markdown in skillmap/space
+looking for tutorial markdown in skillmap/platformer
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 0)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 1)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 2)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 12)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 13)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 14)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 15)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 16)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 3)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 4)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 5)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 6)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 7)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 8)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 9)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 10)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+Error: Missing dependencies in config of: core
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at Package.validateConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:113993:23)
+    at Package.parseConfig (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114237:18)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114296:22)
+    at loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:35)
+    at Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async Package.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async loadDepsRecursive (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114459:25)
+    at async MainPackage.loadAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114463:13)
+    at async Promise.all (index 11)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164945:28)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5) {
+  isUserError: true
+}
+cached tutorial used blocks
+building bundled libs/animation
+Updating cached API info for animation
+building bundled libs/accelerometer
+Updating cached API info for accelerometer
+building bundled libs/azureiot
+Updating cached API info for azureiot
+building bundled libs/base
+Updating cached API info for base
+building bundled libs/buttons
+Updating cached API info for buttons
+building bundled libs/color
+Updating cached API info for color
+building bundled libs/color-coded-tilemap
+Updating cached API info for color-coded-tilemap
+building bundled libs/controller
+Updating cached API info for controller
+building bundled libs/controller---none
+Updating cached API info for controller---none
+building bundled libs/core
+Updating cached API info for core
+building bundled libs/core---nrf52
+Updating cached API info for core---nrf52
+building bundled libs/core---vm
+Updating cached API info for core---vm
+building bundled libs/corgio
+Updating cached API info for corgio
+building bundled libs/darts
+Updating cached API info for darts
+building bundled libs/device
+Updating cached API info for device
+building bundled libs/edge-connector
+Updating cached API info for edge-connector
+building bundled libs/game
+Updating cached API info for game
+building bundled libs/game---light
+Updating cached API info for game---light
+building bundled libs/hw
+Updating cached API info for hw
+building bundled libs/hw---n3
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #1)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #2)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #3)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #4)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #5)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #6)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #7)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #8)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #9)
+waiting 8s for C++ build...
+polling C++ build https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.json (attempt #10)
+build log https://makecode.com/compile/20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed.log
+build failed
+Cloning into '/home/build/prjclone'...
+Note: checking out '7cf09a3a37c8aca6e100b7265c81e6cdf6129dd2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+Creating libraries folder
+Cloning into: https://github.com/thomasjball/codal-nrf52833-arcade
+Cloning into 'codal-nrf52833-dk'...
+Checking out branch: 04eb436c3b34bace6efabb2e21603566e940eadb
+HEAD is now at 04eb436 update pull mode per mmoskal
+Set target: codal-nrf52833-dk 
+Using target-locked.json
+Targeting codal-nrf52833-dk
+Supressing -Wexpansion-to-defined.
+Installing dependencies...
+Cloning into: https://github.com/lancaster-university/codal-core
+Cloning into 'codal-core'...
+Checking out branch: 1bc6d4d10c47f4fe34e2a54004530d5071e892d4
+HEAD is now at 1bc6d4d ST7735 driver fix for screen hanging. (#186)
+Cloning into: https://github.com/lancaster-university/codal-nrf52
+Cloning into 'codal-nrf52'...
+Submodule 'nrfx' (https://github.com/NordicSemiconductor/nrfx) registered for path 'nrfx'
+Cloning into '/home/build/prjclone/libraries/codal-nrf52/nrfx'...
+Checking out branch: 1fbb7240290fe36a55c61378f5cdeb7640f3ec4a
+HEAD is now at 1fbb724 Merge pull request #56 from lancaster-university/audio-refactor
+Cloning into: https://github.com/microbit-foundation/codal-microbit-nrf5sdk
+Cloning into 'codal-microbit-nrf5sdk'...
+Checking out branch: 4b8abc690f6c9fca6132e6db5ee13a795a263f88
+HEAD is now at 4b8abc6 Suppress all warnings from this target as it's 3rd party code. (#18)
+Using library: codal-nrf52833-dk
+Using library: codal-core
+fatal: No names found, cannot describe anything.
+Using library: codal-nrf52
+Using library: codal-microbit-nrf5sdk
+/tmp/cctBvuNv.s: Assembler messages:
+/tmp/cctBvuNv.s:110: Warning: setting incorrect section attributes for .data.ramfuncs
+/home/build/prjclone/pxtapp/core---nrf52/keyvaluestorage.cpp:10:19: error: cannot declare field 'pxt::WKeyValueStorage::controller' to be of abstract type 'codal::NVMController'
+     NVMController controller;
+                   ^~~~~~~~~~
+In file included from /home/build/prjclone/libraries/codal-core/./inc/drivers/KeyValueStorage.h:32:0,
+                 from /home/build/prjclone/pxtapp/core---nrf52/keyvaluestorage.cpp:2:
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:9:11: note:   because the following virtual functions are pure within 'codal::NVMController':
+     class NVMController
+           ^~~~~~~~~~~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:20:26: note:      virtual uint32_t codal::NVMController::getFlashStart()
+         virtual uint32_t getFlashStart() =0;
+                          ^~~~~~~~~~~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:28:26: note:      virtual uint32_t codal::NVMController::getFlashEnd()
+         virtual uint32_t getFlashEnd() = 0;
+                          ^~~~~~~~~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:37:26: note:      virtual uint32_t codal::NVMController::getPageSize()
+         virtual uint32_t getPageSize() = 0;
+                          ^~~~~~~~~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:44:26: note:      virtual uint32_t codal::NVMController::getFlashSize()
+         virtual uint32_t getFlashSize() = 0;
+                          ^~~~~~~~~~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:53:21: note:      virtual int codal::NVMController::read(uint32_t*, uint32_t, uint32_t)
+         virtual int read(uint32_t* dest, uint32_t source, uint32_t size) = 0;
+                     ^~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:62:21: note:      virtual int codal::NVMController::write(uint32_t, uint32_t*, uint32_t)
+         virtual int write(uint32_t dest, uint32_t* source, uint32_t size) = 0;
+                     ^~~~~
+/home/build/prjclone/libraries/codal-core/./inc/driver-models/NVMController.h:69:21: note:      virtual int codal::NVMController::erase(uint32_t)
+         virtual int erase(uint32_t page) = 0;
+                     ^~~~~
+make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/keyvaluestorage.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/MICROBIT.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2
+
+-- The C compiler identification is GNU 7.3.1
+-- The CXX compiler identification is GNU 7.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Adding library path: (/home/build/prjclone/libraries)
+Submodule path 'nrfx': checked out '281cc2e178fd9a470d844b3afdea9eb322a0b0e8'
+Synchronizing submodule url for 'nrfx'
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/build/prjclone/build
+Scanning dependencies of target codal-core
+[  1%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalAssert.cpp.o
+[  1%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalDmesg.cpp.o
+[  2%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/MemberFunctionCallback.cpp.o
+[  2%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalDevice.cpp.o
+[  3%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalListener.cpp.o
+[  4%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalCompat.cpp.o
+[  4%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalHeapAllocator.cpp.o
+[  4%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalFiber.cpp.o
+[  5%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalComponent.cpp.o
+[  5%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/CodalUtil.cpp.o
+[  5%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/gcc_compat.cpp.o
+[  5%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/core/codal_default_target_hal.cpp.o
+[  6%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/AbstractButton.cpp.o
+[  6%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Accelerometer.cpp.o
+[  7%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/CodalUSB.cpp.o
+[  8%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Display.cpp.o
+[  8%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Compass.cpp.o
+[  8%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Gyroscope.cpp.o
+[  8%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/I2C.cpp.o
+[  9%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/PinPeripheral.cpp.o
+[  9%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/SPI.cpp.o
+[ 10%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Sensor.cpp.o
+[ 10%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Serial.cpp.o
+[ 11%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/AnalogSensor.cpp.o
+[ 11%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/driver-models/Timer.cpp.o
+[ 11%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/AnimatedDisplay.cpp.o
+[ 12%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/AsciiKeyMap.cpp.o
+[ 12%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/Button.cpp.o
+[ 13%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/FXOS8700.cpp.o
+[ 13%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/GhostFAT.cpp.o
+[ 13%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/HID.cpp.o
+[ 13%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/HIDKeyboard.cpp.o
+[ 14%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/HIDJoystick.cpp.o
+[ 15%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/HIDMouse.cpp.o
+[ 15%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/ILI9341.cpp.o
+[ 15%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/LEDMatrix.cpp.o
+[ 16%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/KeyValueStorage.cpp.o
+[ 16%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/LIS3DH.cpp.o
+[ 17%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/LSM303Accelerometer.cpp.o
+[ 17%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/LSM303Magnetometer.cpp.o
+[ 18%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/LinearAnalogSensor.cpp.o
+[ 18%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/MAG3110.cpp.o
+[ 18%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/MMA8653.cpp.o
+[ 19%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/MPU6050.cpp.o
+[ 19%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/MessageBus.cpp.o
+[ 20%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/MultiButton.cpp.o
+[ 20%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/NonLinearAnalogSensor.cpp.o
+[ 20%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/PulseIn.cpp.o
+[ 21%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/PearsonHash.cpp.o
+[ 21%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/ST7735.cpp.o
+[ 22%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/ScreenIO.cpp.o
+[ 23%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/TouchButton.cpp.o
+[ 23%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/StandardSPIFlash.cpp.o
+[ 23%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/TouchSensor.cpp.o
+[ 24%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/drivers/USBMSC.cpp.o
+[ 24%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/DataStream.cpp.o
+[ 24%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/EffectFilter.cpp.o
+[ 24%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/LevelDetectorSPL.cpp.o
+[ 25%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/LevelDetector.cpp.o
+[ 26%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/LowPassFilter.cpp.o
+[ 26%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/MemorySource.cpp.o
+[ 26%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/Mixer.cpp.o
+[ 26%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/StreamAnalyzer.cpp.o
+[ 27%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/StreamNormalizer.cpp.o
+[ 28%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/SerialStreamer.cpp.o
+[ 29%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/StreamSplitter.cpp.o
+[ 29%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/StreamRecording.cpp.o
+[ 29%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/streams/Synthesizer.cpp.o
+[ 29%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/BitmapFont.cpp.o
+[ 30%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/CoordinateSystem.cpp.o
+[ 30%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/Event.cpp.o
+[ 31%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/Image.cpp.o
+[ 31%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/ManagedBuffer.cpp.o
+[ 32%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/ManagedString.cpp.o
+[ 32%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/RefCounted.cpp.o
+[ 32%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/Matrix4.cpp.o
+[ 33%] Building CXX object libraries/codal-core/CMakeFiles/codal-core.dir/source/types/RefCountedInit.cpp.o
+[ 33%] Linking CXX static library ../../libcodal-core.a
+[ 33%] Built target codal-core
+Scanning dependencies of target codal-nrf52
+[ 34%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52I2C.cpp.o
+[ 34%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52ADC.cpp.o
+[ 34%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52Radio.cpp.o
+[ 35%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52Pin.cpp.o
+[ 35%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52PWM.cpp.o
+[ 36%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52SPI.cpp.o
+[ 36%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52Serial.cpp.o
+[ 37%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52PDM.cpp.o
+[ 37%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52RadioDatagram.cpp.o
+[ 37%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52RadioEvent.cpp.o
+[ 37%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52TouchSensor.cpp.o
+[ 38%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRF52USB.cpp.o
+[ 38%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/NRFLowLevelTimer.cpp.o
+[ 39%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/WS2812B.cpp.o
+[ 39%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/ZSingleWireSerial.cpp.o
+[ 40%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/codal_target_hal_base.cpp.o
+[ 40%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/peripheral_alloc.cpp.o
+[ 41%] Building ASM object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/asm/CortexContextSwitch.s.o
+[ 41%] Building CXX object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/source/neopixel.cpp.o
+[ 41%] Building C object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/nrfx/mdk/system_nrf52833.c.o
+[ 42%] Building ASM object libraries/codal-nrf52/CMakeFiles/codal-nrf52.dir/nrfx_mods/mdk/gcc_startup_nrf52833.S.o
+[ 42%] Linking CXX static library ../../libcodal-nrf52.a
+[ 42%] Built target codal-nrf52
+Scanning dependencies of target codal-microbit-nrf5sdk
+[ 43%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK_mods/nrf_log_backend_dmesg.c.o
+[ 43%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/log/src/nrf_log_backend_serial.c.o
+[ 44%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/util/app_util_platform.c.o
+[ 44%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/util/app_error_weak.c.o
+[ 45%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/log/src/nrf_log_frontend.c.o
+[ 45%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK_mods/drv_rtc.c.o
+[ 45%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/log/src/nrf_log_str_formatter.c.o
+[ 45%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK_mods/app_timer2.c.o
+[ 46%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/util/app_error_handler_gcc.c.o
+[ 46%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/util/app_error.c.o
+[ 47%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/crc32/crc32.c.o
+[ 47%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/fds/fds.c.o
+[ 48%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/atomic_fifo/nrf_atfifo.c.o
+[ 48%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/atomic_flags/nrf_atflags.c.o
+[ 49%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/atomic/nrf_atomic.c.o
+[ 49%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/balloc/nrf_balloc.c.o
+[ 50%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/external/fprintf/nrf_fprintf.c.o
+[ 50%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/external/fprintf/nrf_fprintf_format.c.o
+[ 50%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/fstorage/nrf_fstorage.c.o
+[ 51%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/fstorage/nrf_fstorage_sd.c.o
+[ 51%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/memobj/nrf_memobj.c.o
+[ 52%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK_mods/nrf_pwr_mgmt.c.o
+[ 52%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/ringbuf/nrf_ringbuf.c.o
+[ 52%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/experimental_section_vars/nrf_section_iter.c.o
+[ 53%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/strerror/nrf_strerror.c.o
+[ 53%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/sortlist/nrf_sortlist.c.o
+[ 54%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/libraries/bootloader/dfu/nrf_dfu_svci.c.o
+[ 54%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/common/ble_advdata.c.o
+[ 55%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/common/ble_conn_state.c.o
+[ 55%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/common/ble_conn_params.c.o
+[ 55%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/common/ble_srv_common.c.o
+[ 56%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/nrf_ble_gatt/nrf_ble_gatt.c.o
+[ 57%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/gatts_cache_manager.c.o
+[ 57%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/gatt_cache_manager.c.o
+[ 57%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/id_manager.c.o
+[ 57%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/peer_data_storage.c.o
+[ 58%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/peer_database.c.o
+[ 58%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/peer_id.c.o
+[ 58%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/peer_manager_handler.c.o
+[ 59%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/peer_manager.c.o
+[ 60%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/pm_buffer.c.o
+[ 60%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/security_dispatcher.c.o
+[ 60%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/peer_manager/security_manager.c.o
+[ 61%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/softdevice/common/nrf_sdh.c.o
+[ 61%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/softdevice/common/nrf_sdh_ble.c.o
+[ 62%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK_mods/nrf_sdh_soc.c.o
+[ 62%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/ble_services/ble_dfu/ble_dfu.c.o
+[ 63%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/ble_services/ble_dfu/ble_dfu_unbonded.c.o
+[ 63%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK_mods/ble_dfu_bonded.c.o
+[ 63%] Building C object libraries/codal-microbit-nrf5sdk/CMakeFiles/codal-microbit-nrf5sdk.dir/nRF5SDK/components/ble/ble_services/ble_dis/ble_dis.c.o
+[ 64%] Linking CXX static library ../../libcodal-microbit-nrf5sdk.a
+[ 64%] Built target codal-microbit-nrf5sdk
+Scanning dependencies of target codal-nrf52833-arcade
+[ 64%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/FSCache.cpp.o
+[ 65%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitAccelerometer.cpp.o
+[ 66%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitCompass.cpp.o
+Scanning dependencies of target MICROBIT
+[ 67%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitCompat.cpp.o
+[ 67%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitCompassCalibrator.cpp.o
+[ 68%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitFile.cpp.o
+[ 68%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitDisplay.cpp.o
+[ 68%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitAudio.cpp.o
+[ 68%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitDevice.cpp.o
+[ 68%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/accelerometer/accelerometer.cpp.o
+[ 68%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitFileSystem.cpp.o
+[ 69%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitFlash.cpp.o
+[ 69%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitLog.cpp.o
+[ 70%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitMemoryMap.cpp.o
+[ 70%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitPowerManager.cpp.o
+[ 70%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitRadio.cpp.o
+[ 71%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitRadioDatagram.cpp.o
+[ 72%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitThermometer.cpp.o
+[ 72%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitRadioEvent.cpp.o
+[ 72%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/accelerometer/accelhw.cpp.o
+[ 72%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroBitUSBFlashManager.cpp.o
+[ 73%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/advmath.cpp.o
+[ 73%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/MicroSynth.cpp.o
+[ 74%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/Mixer2.cpp.o
+[ 74%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/NRF52FlashManager.cpp.o
+[ 75%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/NRF52LedMatrix.cpp.o
+[ 75%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/buffer.cpp.o
+[ 75%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/controlgc.cpp.o
+[ 76%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/control.cpp.o
+[ 76%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/PacketBuffer.cpp.o
+[ 77%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/SampleSource.cpp.o
+[ 77%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/SoundEmojiSynthesizer.cpp.o
+[ 77%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/SoundExpressions.cpp.o
+[ 77%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/core.cpp.o
+[ 78%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/SoundOutputPin.cpp.o
+[ 79%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/gc.cpp.o
+[ 79%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/SoundSynthesizerEffects.cpp.o
+[ 80%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/codal_target_hal.cpp.o
+[ 80%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/loops.cpp.o
+[ 81%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/pxt.cpp.o
+[ 81%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/base/trig.cpp.o
+[ 81%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/compat/MbedMemberFunctionCallback.cpp.o
+[ 82%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/compat/MicroBitButton.cpp.o
+[ 83%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/codal.cpp.o
+[ 83%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/control.cpp.o
+[ 83%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/dmac.cpp.o
+[ 83%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/compat/MicroBitI2C.cpp.o
+[ 84%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/hf2.cpp.o
+[ 85%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/keyvaluestorage.cpp.o
+[ 85%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/i2c.cpp.o
+[ 85%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/source/compat/MicroBitSerial.cpp.o
+[ 86%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/model/BLENano.cpp.o
+[ 86%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/model/BLENanoIO.cpp.o
+[ 86%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/light.cpp.o
+[ 87%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/pins.cpp.o
+[ 87%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/pinsAnalog.cpp.o
+[ 88%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/model/MicroBit.cpp.o
+[ 88%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/pinsDigital.cpp.o
+[ 88%] Building CXX object libraries/codal-nrf52833-dk/CMakeFiles/codal-nrf52833-arcade.dir/model/MicroBitIO.cpp.o
+[ 89%] Building CXX object CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/pinsPWM.cpp.o
+CMakeFiles/MICROBIT.dir/build.make:446: recipe for target 'CMakeFiles/MICROBIT.dir/pxtapp/core---nrf52/keyvaluestorage.cpp.o' failed
+[ 90%] Linking CXX static library ../../libcodal-nrf52833-arcade.a
+CMakeFiles/Makefile2:69: recipe for target 'CMakeFiles/MICROBIT.dir/all' failed
+[ 90%] Built target codal-nrf52833-arcade
+Makefile:83: recipe for target 'all' failed
+
+TypeError: Cannot read properties of null (reading 'length')
+    at compressHex (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:105804:37)
+    at /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:105733:36
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fillExtInfoAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114786:47)
+    at async /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114829:33
+    at async Promise.all (index 0)
+    at async MainPackage.getCompileOptionsAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:114825:13)
+    at async /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164964:19
+    at async /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:99633:42
+    at async Promise.all (index 0)
+    at async promisePoolAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:99639:21)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164946:5)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5)
+{
+  sha: '20fa35642b9b605e0e5138eef4e92aa3515de6176b49c0484243e66d3cf8a3ed'
+}
+pxt_modules/base/pxt-core.d.ts(1,1): error TS9043: The hex file is not available, please connect to internet and try again.
+
+
+***
+*** Build failed: target build failed: Compiler test failed
+Error: Compiler test failed
+    at Object.userError (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:98981:25)
+    at /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:166434:19
+    at async /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164964:19
+    at async /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:99633:42
+    at async Promise.all (index 0)
+    at async promisePoolAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:99639:21)
+    at async buildTargetCoreAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164946:5)
+    at async internalBuildTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:164045:9)
+    at async buildTarget (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165201:13)
+    at async buildAndWatchTargetAsync (/Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core/built/pxt.js:165233:5)
+***
+
+Starting server in /Users/tball/github/pxt/pxt-arcade
+With pxt core at /Users/tball/github/pxt/pxt-arcade/node_modules/pxt-core
+starting local ws server at 3233...
+Server listening on port 3232
+---------------------------------------------
+
+To launch the editor, open this URL:
+http://localhost:3232/#local_token=a6f8d820-e700-4163-9352-01fcc53c5b74&wsport=3233
+
+---------------------------------------------
+opening http://localhost:3232/#local_token=a6f8d820-e700-4163-9352-01fcc53c5b74&wsport=3233
