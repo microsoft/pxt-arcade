@@ -1,0 +1,26 @@
+From 05992d6accdafa41b971f3dbf84050f72fe9a0fd Mon Sep 17 00:00:00 2001
+From: GitHub Copilot <copilot@github.com>
+Date: Wed, 3 Dec 2025 23:43:41 +0000
+Subject: [PATCH] Increase AI question limit from 5 to 10 in teachertool
+ catalog
+
+---
+ common-docs/teachertool/catalog-shared.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/common-docs/teachertool/catalog-shared.json b/common-docs/teachertool/catalog-shared.json
+index acca054e2..a20e8104d 100644
+--- a/common-docs/teachertool/catalog-shared.json
++++ b/common-docs/teachertool/catalog-shared.json
+@@ -6,7 +6,7 @@
+             "template": "Ask AI: ${question}",
+             "description": "Experimental: AI outputs may not be accurate. Use with caution and always review responses.",
+             "docPath": "/teachertool",
+-            "maxCount": 5,
++            "maxCount": 10,
+             "tags": ["General"],
+             "requestFeedback": true,
+             "params": [
+-- 
+2.52.0
+
