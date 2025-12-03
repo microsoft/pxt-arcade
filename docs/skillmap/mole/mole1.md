@@ -6,14 +6,20 @@
 
 ![whack-the-mole](youtube:UKYPIXl7agI)
 
+~hint Click here view the intro video with ASL
+
+![ASL Whack-the-Mole Intro](youtube:5_5nLvPNqdk)
+
+hint~
+
+---
+
+Thank you to Deaf Kids Code for providing ASL video translations.
+![Deaf Kids Code Logo](/static/skillmap/assets/dkc-logo-small.png " ")
+
 ---
 
 Special thanks to MakeCode forum User _SoftTalker_ for this submission.
-
-
-
-
-
 
 ## {2. Your First Block}
 
