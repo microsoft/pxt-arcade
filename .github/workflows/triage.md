@@ -115,8 +115,7 @@ Analyze and determine:
 
 - `bug` - Defect in existing functionality causing incorrect behavior
 - `feature` - Request for new functionality or enhancement
-- `question` - Request for help or clarification (not a bug/feature)
-- `documentation` - Issues with docs, tutorials, or help content
+- `task` - Work item for improvements, maintenance, or other tasks
 
 **Information Status**:
 
@@ -153,9 +152,11 @@ Create a triage comment with this structure:
 
 ## Triage Summary
 
+**Issue Type**: [bug | feature | task]
+
 **Status**: [info-complete | info-needed]
 
-**Area(s)**: [list of component labels separated by commas]
+**Label(s)**: [list of component labels separated by commas]
 
 **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
 
@@ -171,7 +172,7 @@ Create a triage comment with this structure:
 
 ### Analysis
 
-[2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you classify it this way?]
+[2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you assign this issue type, priority, and complexity?]
 
 ---
 
