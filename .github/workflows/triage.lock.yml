@@ -136,7 +136,25 @@
 # - Related issues that provide context or workarounds
 # - Historical patterns (recurring problems)
 #
-# ### 3. Search Relevant Code
+# ### 3. Determine Correct Repository
+#
+# **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+#
+# Based on the issue description and your workspace knowledge:
+#
+# - **pxt-arcade issues**: Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
+# - **pxt-core issues**: Core editor functionality, build system, Monaco/block editor, package management, language services, cloud/sharing, cross-target core APIs
+# - **pxt-common-packages issues**: Cross-target game engine (sprites, physics, controller), hardware abstraction layers shared across targets
+#
+# **If the issue clearly belongs to a different repository:**
+# - Skip detailed classification (steps 4-5)
+# - Use the simplified "Wrong Repository" output format (see Output Format section)
+# - Provide brief explanation of why it belongs elsewhere and which repository is appropriate
+#
+# **If uncertain or if the issue legitimately affects pxt-arcade:**
+# - Proceed with full triage workflow
+#
+# ### 4. Search Relevant Code
 #
 # **Use local tools first** (faster), then GitHub tools if needed:
 #
@@ -150,7 +168,7 @@
 #
 # Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
 #
-# ### 4. Classify the Issue
+# ### 5. Classify the Issue
 #
 # Analyze and determine:
 #
@@ -189,6 +207,26 @@
 #
 # ## Output Format
 #
+# ### Format A: Wrong Repository Issue
+#
+# **Use this format ONLY when the issue clearly belongs in a different repository:**
+#
+# ---
+#
+# ## Wrong Repository
+#
+# **Correct Repository**: [microsoft/pxt | microsoft/pxt-common-packages | other]
+#
+# **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+#
+# **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+#
+# ---
+#
+# ### Format B: Standard Triage (pxt-arcade issue)
+#
+# **Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+#
 # Create a triage comment with this structure:
 #
 # ---
@@ -203,7 +241,7 @@
 #
 # **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
 #
-# **Related Issue(s)**: [list of related issues if any. Else "No related issue found"]
+# **Likely Related**: [list of related issues if any. Else "No related issue found"]
 #
 # **Suggested Priority**: [p1 | p2 | P3]
 #
@@ -2452,7 +2490,25 @@ jobs:
           - Related issues that provide context or workarounds
           - Historical patterns (recurring problems)
           
-          ### 3. Search Relevant Code
+          ### 3. Determine Correct Repository
+          
+          **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+          
+          Based on the issue description and your workspace knowledge:
+          
+          - **pxt-arcade issues**: Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
+          - **pxt-core issues**: Core editor functionality, build system, Monaco/block editor, package management, language services, cloud/sharing, cross-target core APIs
+          - **pxt-common-packages issues**: Cross-target game engine (sprites, physics, controller), hardware abstraction layers shared across targets
+          
+          **If the issue clearly belongs to a different repository:**
+          - Skip detailed classification (steps 4-5)
+          - Use the simplified "Wrong Repository" output format (see Output Format section)
+          - Provide brief explanation of why it belongs elsewhere and which repository is appropriate
+          
+          **If uncertain or if the issue legitimately affects pxt-arcade:**
+          - Proceed with full triage workflow
+          
+          ### 4. Search Relevant Code
           
           **Use local tools first** (faster), then GitHub tools if needed:
           
@@ -2466,7 +2522,7 @@ jobs:
           
           Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
           
-          ### 4. Classify the Issue
+          ### 5. Classify the Issue
           
           Analyze and determine:
           
@@ -2505,6 +2561,26 @@ jobs:
           
           ## Output Format
           
+          ### Format A: Wrong Repository Issue
+          
+          **Use this format ONLY when the issue clearly belongs in a different repository:**
+          
+          ---
+          
+          ## Wrong Repository
+          
+          **Correct Repository**: [microsoft/pxt | microsoft/pxt-common-packages | other]
+          
+          **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+          
+          **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+          
+          ---
+          
+          ### Format B: Standard Triage (pxt-arcade issue)
+          
+          **Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+          
           Create a triage comment with this structure:
           
           ---
@@ -2519,7 +2595,7 @@ jobs:
           
           **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
           
-          **Related Issue(s)**: [list of related issues if any. Else "No related issue found"]
+          **Likely Related**: [list of related issues if any. Else "No related issue found"]
           
           **Suggested Priority**: [p1 | p2 | P3]
           
