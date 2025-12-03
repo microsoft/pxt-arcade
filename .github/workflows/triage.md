@@ -19,6 +19,7 @@ engine:
   id: copilot
 
 tools:
+  cache-memory: true
   bash: true
   github:
     toolsets:
