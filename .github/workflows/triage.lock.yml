@@ -40,6 +40,7 @@
 #   id: copilot
 #
 # tools:
+#   cache-memory: true
 #   bash: true
 #   github:
 #     toolsets:
@@ -135,7 +136,25 @@
 # - Related issues that provide context or workarounds
 # - Historical patterns (recurring problems)
 #
-# ### 3. Search Relevant Code
+# ### 3. Determine Correct Repository
+#
+# **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+#
+# Based on the issue description and your workspace knowledge:
+#
+# - **pxt-arcade issues**: Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
+# - **pxt-core issues**: Core editor functionality, build system, Monaco/block editor, package management, language services, cloud/sharing, cross-target core APIs
+# - **pxt-common-packages issues**: Cross-target game engine (sprites, physics, controller), hardware abstraction layers shared across targets
+#
+# **If the issue clearly belongs to a different repository:**
+# - Skip detailed classification (steps 4-5)
+# - Use the simplified "Wrong Repository" output format (see Output Format section)
+# - Provide brief explanation of why it belongs elsewhere and which repository is appropriate
+#
+# **If uncertain or if the issue legitimately affects pxt-arcade:**
+# - Proceed with full triage workflow
+#
+# ### 4. Search Relevant Code
 #
 # **Use local tools first** (faster), then GitHub tools if needed:
 #
@@ -149,7 +168,7 @@
 #
 # Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
 #
-# ### 4. Classify the Issue
+# ### 5. Classify the Issue
 #
 # Analyze and determine:
 #
@@ -157,8 +176,7 @@
 #
 # - `bug` - Defect in existing functionality causing incorrect behavior
 # - `feature` - Request for new functionality or enhancement
-# - `question` - Request for help or clarification (not a bug/feature)
-# - `documentation` - Issues with docs, tutorials, or help content
+# - `task` - Work item for improvements, maintenance, or other tasks
 #
 # **Information Status**:
 #
@@ -189,19 +207,41 @@
 #
 # ## Output Format
 #
+# ### Format A: Wrong Repository Issue
+#
+# **Use this format ONLY when the issue clearly belongs in a different repository:**
+#
+# ---
+#
+# ## Wrong Repository
+#
+# **Correct Repository**: [microsoft/pxt | microsoft/pxt-common-packages | other]
+#
+# **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+#
+# **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+#
+# ---
+#
+# ### Format B: Standard Triage (pxt-arcade issue)
+#
+# **Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+#
 # Create a triage comment with this structure:
 #
 # ---
 #
 # ## Triage Summary
 #
+# **Issue Type**: [bug | feature | task]
+#
 # **Status**: [info-complete | info-needed]
 #
-# **Area(s)**: [list of component labels separated by commas]
+# **Label(s)**: [list of component labels separated by commas]
 #
 # **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
 #
-# **Related Issue(s)**: [list of related issues if any. Else "No related issue found"]
+# **Likely Related**: [list of related issues if any. Else "No related issue found"]
 #
 # **Suggested Priority**: [p1 | p2 | P3]
 #
@@ -213,7 +253,7 @@
 #
 # ### Analysis
 #
-# [2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you classify it this way?]
+# [2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you assign this issue type, priority, and complexity?]
 #
 # ---
 #
@@ -303,6 +343,8 @@
 # ```
 #
 # Pinned GitHub Actions:
+#   - actions/cache@v4 (0057852bfaa89a56745cba8c7296529d2fc39830)
+#     https://github.com/actions/cache/commit/0057852bfaa89a56745cba8c7296529d2fc39830
 #   - actions/checkout@v5 (93cb6efe18208431cddfb8368fd83d5badbf9bfd)
 #     https://github.com/actions/checkout/commit/93cb6efe18208431cddfb8368fd83d5badbf9bfd
 #   - actions/download-artifact@v6 (018cc2cf5baa6db3ef3c5f8a56943fffe632ef53)
@@ -1059,6 +1101,26 @@ jobs:
         run: |
           mkdir -p /tmp/gh-aw/agent
           echo "Created /tmp/gh-aw/agent directory for agentic workflow temporary files"
+      # Cache memory file share configuration from frontmatter processed below
+      - name: Create cache-memory directory
+        run: |
+          mkdir -p /tmp/gh-aw/cache-memory
+          echo "Cache memory directory created at /tmp/gh-aw/cache-memory"
+          echo "This folder provides persistent file storage across workflow runs"
+          echo "LLMs and agentic tools can freely read and write files in this directory"
+      - name: Cache memory file share data
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          key: memory-${{ github.workflow }}-${{ github.run_id }}
+          path: /tmp/gh-aw/cache-memory
+          restore-keys: |
+            memory-${{ github.workflow }}-
+            memory-
+      - name: Upload cache-memory data as artifact
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: cache-memory
+          path: /tmp/gh-aw/cache-memory
       - name: Configure Git credentials
         env:
           REPO_NAME: ${{ github.repository }}
@@ -2428,7 +2490,25 @@ jobs:
           - Related issues that provide context or workarounds
           - Historical patterns (recurring problems)
           
-          ### 3. Search Relevant Code
+          ### 3. Determine Correct Repository
+          
+          **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+          
+          Based on the issue description and your workspace knowledge:
+          
+          - **pxt-arcade issues**: Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
+          - **pxt-core issues**: Core editor functionality, build system, Monaco/block editor, package management, language services, cloud/sharing, cross-target core APIs
+          - **pxt-common-packages issues**: Cross-target game engine (sprites, physics, controller), hardware abstraction layers shared across targets
+          
+          **If the issue clearly belongs to a different repository:**
+          - Skip detailed classification (steps 4-5)
+          - Use the simplified "Wrong Repository" output format (see Output Format section)
+          - Provide brief explanation of why it belongs elsewhere and which repository is appropriate
+          
+          **If uncertain or if the issue legitimately affects pxt-arcade:**
+          - Proceed with full triage workflow
+          
+          ### 4. Search Relevant Code
           
           **Use local tools first** (faster), then GitHub tools if needed:
           
@@ -2442,7 +2522,7 @@ jobs:
           
           Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
           
-          ### 4. Classify the Issue
+          ### 5. Classify the Issue
           
           Analyze and determine:
           
@@ -2450,8 +2530,7 @@ jobs:
           
           - `bug` - Defect in existing functionality causing incorrect behavior
           - `feature` - Request for new functionality or enhancement
-          - `question` - Request for help or clarification (not a bug/feature)
-          - `documentation` - Issues with docs, tutorials, or help content
+          - `task` - Work item for improvements, maintenance, or other tasks
           
           **Information Status**:
           
@@ -2482,19 +2561,41 @@ jobs:
           
           ## Output Format
           
+          ### Format A: Wrong Repository Issue
+          
+          **Use this format ONLY when the issue clearly belongs in a different repository:**
+          
+          ---
+          
+          ## Wrong Repository
+          
+          **Correct Repository**: [microsoft/pxt | microsoft/pxt-common-packages | other]
+          
+          **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+          
+          **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+          
+          ---
+          
+          ### Format B: Standard Triage (pxt-arcade issue)
+          
+          **Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+          
           Create a triage comment with this structure:
           
           ---
           
           ## Triage Summary
           
+          **Issue Type**: [bug | feature | task]
+          
           **Status**: [info-complete | info-needed]
           
-          **Area(s)**: [list of component labels separated by commas]
+          **Label(s)**: [list of component labels separated by commas]
           
           **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
           
-          **Related Issue(s)**: [list of related issues if any. Else "No related issue found"]
+          **Likely Related**: [list of related issues if any. Else "No related issue found"]
           
           **Suggested Priority**: [p1 | p2 | P3]
           
@@ -2506,7 +2607,7 @@ jobs:
           
           ### Analysis
           
-          [2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you classify it this way?]
+          [2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you assign this issue type, priority, and complexity?]
           
           ---
           
@@ -2627,6 +2728,31 @@ jobs:
           <instruction>When you need to create temporary files or directories during your work, always use the /tmp/gh-aw/agent/ directory that has been pre-created for you. Do NOT use the root /tmp/ directory directly.</instruction>
           </temporary-files>
           
+          PROMPT_EOF
+      - name: Append cache memory instructions to prompt
+        env:
+          GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
+        run: |
+          cat << 'PROMPT_EOF' | envsubst >> "$GH_AW_PROMPT"
+          
+          ---
+          
+          ## Cache Folder Available
+          
+          You have access to a persistent cache folder at `/tmp/gh-aw/cache-memory/` where you can read and write files to create memories and store information.
+          
+          - **Read/Write Access**: You can freely read from and write to any files in this folder
+          - **Persistence**: Files in this folder persist across workflow runs via GitHub Actions cache
+          - **Last Write Wins**: If multiple processes write to the same file, the last write will be preserved
+          - **File Share**: Use this as a simple file share - organize files as you see fit
+          
+          Examples of what you can store:
+          - `/tmp/gh-aw/cache-memory/notes.txt` - general notes and observations
+          - `/tmp/gh-aw/cache-memory/preferences.json` - user preferences and settings
+          - `/tmp/gh-aw/cache-memory/history.log` - activity history and logs
+          - `/tmp/gh-aw/cache-memory/state/` - organized state files in subdirectories
+          
+          Feel free to create, read, update, and organize files in this folder as needed for your tasks.
           PROMPT_EOF
       - name: Append safe outputs instructions to prompt
         env:
@@ -2799,8 +2925,9 @@ jobs:
           mkdir -p /tmp/
           mkdir -p /tmp/gh-aw/
           mkdir -p /tmp/gh-aw/agent/
+          mkdir -p /tmp/gh-aw/cache-memory/
           mkdir -p /tmp/gh-aw/sandbox/agent/logs/
-          copilot --add-dir /tmp/ --add-dir /tmp/gh-aw/ --add-dir /tmp/gh-aw/agent/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --disable-builtin-mcps --allow-all-tools --prompt "$COPILOT_CLI_INSTRUCTION" 2>&1 | tee /tmp/gh-aw/agent-stdio.log
+          copilot --add-dir /tmp/ --add-dir /tmp/gh-aw/ --add-dir /tmp/gh-aw/agent/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --disable-builtin-mcps --allow-all-tools --add-dir /tmp/gh-aw/cache-memory/ --prompt "$COPILOT_CLI_INSTRUCTION" 2>&1 | tee /tmp/gh-aw/agent-stdio.log
         env:
           COPILOT_AGENT_RUNNER_TYPE: STANDALONE
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN || secrets.COPILOT_CLI_TOKEN  }}
