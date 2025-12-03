@@ -100,17 +100,26 @@ Identify:
 
 Based on the issue description and your workspace knowledge:
 
-- **pxt-arcade issues**: Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
-- **pxt-core issues**: Core editor functionality, build system, Monaco/block editor, package management, language services, cloud/sharing, cross-target core APIs
-- **pxt-common-packages issues**: Cross-target game engine (sprites, physics, controller), hardware abstraction layers shared across targets
+- **pxt-arcade issues (CORRECT REPOSITORY)**:
+  - Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
+  - Core editor functionality, build system, Monaco/block editor, package management, language services (pxt-core issues are OK here)
+  - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
+  - Any issues affecting the Arcade target implementation
 
-**If the issue clearly belongs to a different repository:**
+- **Wrong repository - file elsewhere**:
+  - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
+  - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
+  - third-party extensions
+
+**If the issue clearly belongs to Minecraft, micro:bit, or a third party extension:**
+
 - Skip detailed classification (steps 4-5)
 - Use the simplified "Wrong Repository" output format (see Output Format section)
-- Provide brief explanation of why it belongs elsewhere and which repository is appropriate
+- Provide brief explanation of why it belongs in the other MakeCode target repository
 
-**If uncertain or if the issue legitimately affects pxt-arcade:**
-- Proceed with full triage workflow
+**Otherwise (including pxt-core and pxt-common-packages issues):**
+
+- Proceed with full triage workflow - these are acceptable in pxt-arcade
 
 ### 4. Search Relevant Code
 
@@ -173,7 +182,7 @@ Analyze and determine:
 
 ## Wrong Repository
 
-**Correct Repository**: [microsoft/pxt | microsoft/pxt-common-packages | other]
+**Correct Repository**:
 
 **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
 
@@ -284,12 +293,6 @@ If you couldn't find specific files, explain what you searched for.]
 - Note that it contains multiple distinct issues
 - Suggest splitting into separate issues for better tracking
 - List the distinct issues you identified
-
-**If it's actually a pxt-core issue:**
-
-- Note that this affects the core framework, not just Arcade
-- Suggest filing in microsoft/pxt if not already there
-- Explain why (e.g., "This affects all MakeCode editors")
 
 **If caused by external factors:**
 
