@@ -31,6 +31,7 @@
             "DEVICE_JACDAC_DEBUG": 1
         },
         "config": {
+            "DEVICE_BLE": 0,
             "DEVICE_USB": 0,
             "DEVICE_WEBUSB": 0
         }
