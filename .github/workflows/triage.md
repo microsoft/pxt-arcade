@@ -84,10 +84,6 @@ Extract:
 
 Use `github/semantic_issue_similarity_search` to find semantically similar issues in **microsoft/pxt-arcade**:
 
-- Set similarity threshold to 0.75 or higher for potential duplicates
-- Look for issues with >80% similarity as likely duplicates
-- Identify related issues (60-80% similarity) for additional context
-
 If semantic search doesn't yield results, supplement with `github/search_issues` using key terms from the issue.
 
 Identify:
@@ -108,10 +104,8 @@ Identify:
 **GitHub search (when needed)**:
 
 - Use `github/search_code` for repository-wide searches
-- Focus on: error messages, component names, file paths mentioned in issue
-- Look for: related functions, classes, recent changes that might have caused regression
 
-Provide **specific file paths** in your analysis, not guesses.
+Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
 
 ### 4. Classify the Issue
 
@@ -149,7 +143,7 @@ Analyze and determine:
 - `p1` - Critical: blocks basic functionality, data loss, security, major regression
 - `p2` - High: significant impairment, painful workaround, accessibility blocker
 - `P3` - Medium: minor functionality issues, cosmetic with some impact
-- `p4` - Low: cosmetic minimal impact, edge cases, polish items
+- `unknown` - Cannot determine without human in the loop. (Specify why)
 
 ## Output Format
 
@@ -208,18 +202,6 @@ If you couldn't find specific files, explain what you searched for.]
 
 ### Next Steps
 
-[Choose ONE of these sections based on info status:]
-
-**If info-needed:**
-@[reporter] - Thank you for reporting! To help us investigate, please provide:
-
-1. [Specific question 1]
-2. [Specific question 2]
-3. [Additional info needed]
-
-**If info-complete:**
-[Describe what should happen next - who should look at this, what investigation is needed, or if it's ready for implementation]
-
 ---Copilot Coding Agent Assessment
 
 **Can assign to Copilot Coding Agent**: [✅ Yes, ready as-is | ⚠️ Yes, after clarification | ❌ No, human needed | 🤔 Cannot assess yet]
@@ -244,7 +226,7 @@ If you couldn't find specific files, explain what you searched for.]
 
 **For code search:**
 
-- Start with local `semantic_search` or `grep` (faster access to workspace)
+- Start with local `grep` (faster access to workspace)
 - Search for error messages in quotes: "specific error text"
 - Search for component names: "Toolbox", "BlockEditor", "Simulator"
 - Look for recent changes if it's a regression: check git history patterns
