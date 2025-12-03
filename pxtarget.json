@@ -364,7 +364,7 @@
             },
             "compileService": {
                 "codalTarget": {
-                    "name": "codal-nrf52833-dk",
+                    "name": "codal-nrf52833-arcade",
                     "url": "https://github.com/thomasjball/codal-nrf52833-arcade",
                     "branch": "04eb436c3b34bace6efabb2e21603566e940eadb",
                     "type": "git"
