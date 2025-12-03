@@ -363,22 +363,19 @@
                 "deployFileMarker": "DETAILS.TXT"
             },
             "compileService": {
+                "buildEngine": "codal",
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/lancaster-university/codal-microbit-v2",
                     "branch": "v0.3.4",
                     "type": "git"
                 },
-                "codalBinary": "NRF52840_DK",
-                "serviceId": "codal2nrf52840",
+                "codalBinary": "MICROBIT",
+                "githubCorePackage": "lancaster-university/microbit-v2-samples",
+                "gittag": "v0.2.13",
+                "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
-                "yottaConfig": {
-                    "pxt": {
-                        "board": {
-                            "id": "BOARD_ID_NRF52833"
-                        }
-                    }
-                }
+                "yottaConfigCompatibility": true
             }
         },
         "rp2040": {
