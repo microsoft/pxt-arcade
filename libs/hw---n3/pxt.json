@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "core---nrf52": "file:../core---nrf52",
-        "screen---st7735": "file:../screen---st7735",
+        "screen---n3": "file:../screen---n3",
         "mixer---nrf52": "file:../mixer---nrf52",
         "game": "file:../game"
     },
