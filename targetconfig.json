@@ -23,7 +23,8 @@
             "microsoft/arcade-character-animations",
             "microsoft/arcade-tile-util",
             "aqeeaqee/pxt-raycasting",
-            "joylabz/makeymakey-makecode-arcade-extension"
+            "joylabz/makeymakey-makecode-arcade-extension",
+            "juliekol/pxt-levels"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
