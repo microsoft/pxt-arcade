@@ -25,7 +25,6 @@ tools:
   cache-memory: true
   bash: true
   github:
-    mode: remote
     read-only: true
     toolsets: ['all']
     allowed:
