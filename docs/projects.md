@@ -86,11 +86,6 @@
         "imageUrl": "/static/arts-and-crafts/tshirt.png"
     },
     {
-        "name": "Lessons",
-        "url": "/lessons",
-        "imageUrl": "/static/lessons/cherry-pickr.png"
-    },
-    {
         "name": "Courses",
         "url": "/courses",
         "imageUrl": "/static/courses/csp.png",
@@ -135,7 +130,6 @@
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Arts and Crafts](/arts-and-crafts),
-[Lessons](/lessons),
 [Courses](/courses),
 [Arcade Compatible Devices](/arcade-devices),
 [DIY Hardware](/diy-hardware),
