@@ -93,6 +93,8 @@ Identify:
 - Related issues that provide context or workarounds
 - Historical patterns (recurring problems)
 
+Only mention duplicates and related issues that were recent (within the last 100 issues)
+
 ### 3. Determine Correct Repository
 
 **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
