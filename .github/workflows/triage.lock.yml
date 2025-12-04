@@ -30,6 +30,9 @@
 #   issues: read
 #   pull-requests: read
 #   discussions: read
+#   actions: read
+#   repository-projects: read
+#   security-events: read
 #
 # safe-outputs:
 #   add-comment:
@@ -45,12 +48,7 @@
 #   github:
 #     mode: remote
 #     read-only: true
-#     toolsets:
-#       - repos
-#       - issues
-#       - pull_requests
-#       - discussions
-#       - labels
+#     toolsets: ['all']
 #     allowed:
 #       - search_code
 #       - semantic_issues_search
@@ -380,10 +378,13 @@ name: "pxt-arcade Issue Triage Assistant"
     - labeled
 
 permissions:
+  actions: read
   contents: read
   discussions: read
   issues: read
   pull-requests: read
+  repository-projects: read
+  security-events: read
 
 concurrency:
   group: "gh-aw-${{ github.workflow }}-${{ github.event.issue.number }}"
@@ -1096,10 +1097,13 @@ jobs:
     needs: activation
     runs-on: ubuntu-latest
     permissions:
+      actions: read
       contents: read
       discussions: read
       issues: read
       pull-requests: read
+      repository-projects: read
+      security-events: read
     env:
       GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
       GH_AW_SAFE_OUTPUTS: /tmp/gh-aw/safeoutputs/outputs.jsonl
@@ -2440,7 +2444,7 @@ jobs:
                 "headers": {
                   "Authorization": "Bearer \${GITHUB_PERSONAL_ACCESS_TOKEN}",
                   "X-MCP-Readonly": "true",
-                  "X-MCP-Toolsets": "repos,issues,pull_requests,discussions,labels"
+                  "X-MCP-Toolsets": "all"
                 },
                 "tools": [
                   "search_code",
