@@ -147,6 +147,12 @@
 #   - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
 #   - Any issues affecting the Arcade target implementation
 #
+# correct repositories:
+#
+# - microsoft/pxt-arcade
+# - microsoft/pxt
+# - microsoft/pxt-common-packages
+#
 # - **Wrong repository - file elsewhere**:
 #   - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
 #   - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
@@ -2646,6 +2652,12 @@ jobs:
             - Core editor functionality, build system, Monaco/block editor, package management, language services (pxt-core issues are OK here)
             - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
             - Any issues affecting the Arcade target implementation
+          
+          correct repositories:
+          
+          - microsoft/pxt-arcade
+          - microsoft/pxt
+          - microsoft/pxt-common-packages
           
           - **Wrong repository - file elsewhere**:
             - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft

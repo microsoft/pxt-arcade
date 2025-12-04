@@ -105,6 +105,12 @@ Based on the issue description and your workspace knowledge:
   - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
   - Any issues affecting the Arcade target implementation
 
+correct repositories:
+
+- microsoft/pxt-arcade
+- microsoft/pxt
+- microsoft/pxt-common-packages
+
 - **Wrong repository - file elsewhere**:
   - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
   - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
