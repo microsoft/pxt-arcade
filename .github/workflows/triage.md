@@ -22,6 +22,8 @@ tools:
   cache-memory: true
   bash: true
   github:
+    mode: remote
+    github-token: "${{ secrets.GH_MCP_TOKEN }}"
     toolsets:
       - repos
       - issues
