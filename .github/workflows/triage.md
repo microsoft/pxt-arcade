@@ -23,7 +23,7 @@ tools:
   bash: true
   github:
     mode: remote
-    github-token: "${{ secrets.GH_MCP_TOKEN }}"
+    github-token: "${{ secrets.COPILOT_GITHUB_TOKEN }}"
     toolsets:
       - repos
       - issues
