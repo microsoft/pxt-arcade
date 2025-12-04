@@ -23,7 +23,7 @@ declare interface RotaryEncoder {
      */
     //% blockNamespace="encoders"
     //% blockId=rotaryencoderonchaned block="on %this changed"
-    //% weight=80 blockGap=8 shim=RotaryEncoderMethods::onChanged
+    //% weight=80 blockGap=8 help=encoders/on-changed shim=RotaryEncoderMethods::onChanged
     onChanged(body: () => void): void;
 
     /**
@@ -31,7 +31,7 @@ declare interface RotaryEncoder {
      */
     //% blockNamespace="encoders"
     //% blockId=rotaryencoderposition block="%this position"
-    //% weight=79 blockGap=8 shim=RotaryEncoderMethods::position
+    //% weight=79 blockGap=8 help=encoders/position shim=RotaryEncoderMethods::position
     position(): int32;
 }
 
