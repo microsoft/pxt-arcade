@@ -22,6 +22,8 @@ tools:
   cache-memory: true
   bash: true
   github:
+    mode: remote
+    github-token: "${{ secrets.COPILOT_GITHUB_TOKEN }}"
     toolsets:
       - repos
       - issues
@@ -180,13 +182,20 @@ Analyze and determine:
 
 ---
 
-## Wrong Repository
+## Recommendation for Triage
+
+**This issue might be better filed in a different repository.**
 
 **Correct Repository**:
 
 **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
 
+<details>
+<summary>Recommendations for Assignee</summary>
+
 **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+
+</details>
 
 ---
 
@@ -198,7 +207,7 @@ Create a triage comment with this structure:
 
 ---
 
-## Triage Summary
+## Recommendation for Triage
 
 **Issue Type**: [bug | feature | task]
 
@@ -216,7 +225,8 @@ Create a triage comment with this structure:
 
 **Copilot Agent Ready**: [✅ Yes | ⚠️ Needs clarification | ❌ No]
 
----
+<details>
+<summary>Recommendations for Assignee</summary>
 
 ### Analysis
 
@@ -251,11 +261,13 @@ If you couldn't find specific files, explain what you searched for.]
 
 ### Next Steps
 
----Copilot Coding Agent Assessment
+**Copilot Coding Agent Assessment**:
 
 **Can assign to Copilot Coding Agent**: [✅ Yes, ready as-is | ⚠️ Yes, after clarification | ❌ No, human needed | 🤔 Cannot assess yet]
 
 **Reasoning**: [2-3 sentences explaining the assessment]
+
+</details>
 
 ---
 
