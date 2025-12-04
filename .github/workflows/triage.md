@@ -23,7 +23,7 @@ tools:
   bash: true
   github:
     mode: remote
-    github-token: "${{ secrets.COPILOT_GITHUB_TOKEN }}"
+    read-only: true
     toolsets:
       - repos
       - issues
