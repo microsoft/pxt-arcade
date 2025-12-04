@@ -9,6 +9,9 @@ permissions:
   issues: read
   pull-requests: read
   discussions: read
+  actions: read
+  repository-projects: read
+  security-events: read
 
 safe-outputs:
   add-comment:
@@ -23,13 +26,8 @@ tools:
   bash: true
   github:
     mode: remote
-    github-token: "${{ secrets.COPILOT_GITHUB_TOKEN }}"
-    toolsets:
-      - repos
-      - issues
-      - pull_requests
-      - discussions
-      - labels
+    read-only: true
+    toolsets: ['all']
     allowed:
       - search_code
       - semantic_issues_search
