@@ -93,7 +93,7 @@ Identify:
 - Related issues that provide context or workarounds
 - Historical patterns (recurring problems)
 
-Only mention duplicates and related issues that were recent (within the last 100 issues)
+Only mention duplicates and related issues that were either open or if closed recent (within the last 100 issues)
 
 ### 3. Determine Correct Repository
 
