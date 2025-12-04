@@ -46,7 +46,6 @@
 #   cache-memory: true
 #   bash: true
 #   github:
-#     mode: remote
 #     read-only: true
 #     toolsets: ['all']
 #     allowed:
@@ -1229,6 +1228,10 @@ jobs:
           awf --version
       - name: Install GitHub Copilot CLI
         run: npm install -g @github/copilot@0.0.366
+      - name: Downloading container images
+        run: |
+          set -e
+          docker pull ghcr.io/github/github-mcp-server:v0.24.0
       - name: Write Safe Outputs Config
         run: |
           mkdir -p /tmp/gh-aw/safeoutputs
@@ -2439,13 +2442,20 @@ jobs:
           {
             "mcpServers": {
               "github": {
-                "type": "http",
-                "url": "https://api.githubcopilot.com/mcp/",
-                "headers": {
-                  "Authorization": "Bearer \${GITHUB_PERSONAL_ACCESS_TOKEN}",
-                  "X-MCP-Readonly": "true",
-                  "X-MCP-Toolsets": "all"
-                },
+                "type": "local",
+                "command": "docker",
+                "args": [
+                  "run",
+                  "-i",
+                  "--rm",
+                  "-e",
+                  "GITHUB_PERSONAL_ACCESS_TOKEN",
+                  "-e",
+                  "GITHUB_READ_ONLY=1",
+                  "-e",
+                  "GITHUB_TOOLSETS=all",
+                  "ghcr.io/github/github-mcp-server:v0.24.0"
+                ],
                 "tools": [
                   "search_code",
                   "semantic_issues_search",
