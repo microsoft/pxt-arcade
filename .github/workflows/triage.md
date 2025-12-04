@@ -93,6 +93,8 @@ Identify:
 - Related issues that provide context or workarounds
 - Historical patterns (recurring problems)
 
+Only mention duplicates and related issues that were either open or if closed recent (within the last 100 issues)
+
 ### 3. Determine Correct Repository
 
 **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
@@ -104,6 +106,12 @@ Based on the issue description and your workspace knowledge:
   - Core editor functionality, build system, Monaco/block editor, package management, language services (pxt-core issues are OK here)
   - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
   - Any issues affecting the Arcade target implementation
+
+correct repositories:
+
+- microsoft/pxt-arcade
+- microsoft/pxt
+- microsoft/pxt-common-packages
 
 - **Wrong repository - file elsewhere**:
   - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
