@@ -248,6 +248,17 @@ Create a triage comment with this structure:
 
 ---
 
+### Location Hints
+
+[Provide specific file paths where this issue likely exists, based on code search. Format as:
+
+- `path/to/file.ts` - Brief description of what this file handles
+- `another/file.tsx` - Why this file is relevant
+
+If you couldn't find specific files, explain what you searched for.]
+
+---
+
 ### Next Steps
 
 **Copilot Coding Agent Assessment**:

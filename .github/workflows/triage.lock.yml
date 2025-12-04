@@ -226,7 +226,7 @@
 #
 # ## Recommendation for Triage
 #
-# **This issue appears to belong in a different repository.**
+# **This issue might be better filed in a different repository.**
 #
 # **Correct Repository**:
 #
@@ -287,6 +287,17 @@
 #
 # - [If found: #234 (similar problem in different area), #567 (potential workaround)]
 # - [If none: No closely related issues found]
+#
+# ---
+#
+# ### Location Hints
+#
+# [Provide specific file paths where this issue likely exists, based on code search. Format as:
+#
+# - `path/to/file.ts` - Brief description of what this file handles
+# - `another/file.tsx` - Why this file is relevant
+#
+# If you couldn't find specific files, explain what you searched for.]
 #
 # ---
 #
@@ -2571,7 +2582,7 @@ jobs:
           
           ## Recommendation for Triage
           
-          **This issue appears to belong in a different repository.**
+          **This issue might be better filed in a different repository.**
           
           **Correct Repository**:
           
@@ -2632,6 +2643,17 @@ jobs:
           
           - [If found: #234 (similar problem in different area), #567 (potential workaround)]
           - [If none: No closely related issues found]
+          
+          ---
+          
+          ### Location Hints
+          
+          [Provide specific file paths where this issue likely exists, based on code search. Format as:
+          
+          - `path/to/file.ts` - Brief description of what this file handles
+          - `another/file.tsx` - Why this file is relevant
+          
+          If you couldn't find specific files, explain what you searched for.]
           
           ---
           
