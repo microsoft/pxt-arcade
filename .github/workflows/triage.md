@@ -182,7 +182,7 @@ Analyze and determine:
 
 ## Recommendation for Triage
 
-**This issue appears to belong in a different repository.**
+**This issue might be better filed in a different repository.**
 
 **Correct Repository**:
 
