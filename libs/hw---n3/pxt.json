@@ -31,9 +31,11 @@
             "DEVICE_JACDAC_DEBUG": 1
         },
         "config": {
+            "DMESG_SERIAL_DEBUG": 1,
+            "DEVICE_DMESG_BUFFER_SIZE": 1024,
             "DEVICE_BLE": 0,
             "DEVICE_USB": 0,
-            "DEVICE_WEBUSB": 0
+            "DEVICE_WEBUSB": 1
         }
     },
     "dalDTS": {
