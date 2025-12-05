@@ -123,13 +123,6 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "description": "Use the micro:bit with an expansion board from Kitronik",
         "imageUrl": "/static/hardware/kitronik-shield.png",
         "url": "http://www.kitronik.co.uk/56116"
-    },
-    { 
-        "name": "micro:bit Arcade Pro",
-        "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
-        "imageUrl": "/static/hardware/arcade-pro-ef.png",
-        "url": "https://shop.elecfreaks.com/products/elecfreaks-microsoft-makecode-micro-bit-arcade-pro",
-        "variant": "hw---n3"
     }
 ]
 ```

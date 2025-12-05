@@ -111,13 +111,6 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
         "variant": "hw---n3"
     },
-    { 
-        "name": "micro:bit Arcade Pro",
-        "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
-        "imageUrl": "/static/hardware/arcade-pro-ef.png",
-        "url": "https://shop.elecfreaks.com/products/elecfreaks-microsoft-makecode-micro-bit-arcade-pro",
-        "variant": "hw---n3"
-    },
     {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
