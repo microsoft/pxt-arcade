@@ -21,7 +21,7 @@ Note - duration is approximate based on time to follow instructions as written. 
 
 ## AI Skills Acquisition
 
-AI Bug Arena teaches AI in the _classical_ sense. The earliest AI systems were built as algorithms that learned to solve problems like navigating mazes and competing in simple games. In Bug Arena, students do exactly that by designing strategies and iterating on them through observation and experimentation.
+The Bug Arena skillmap teaches AI in the _classical_ sense. The earliest AI systems were built as algorithms that learned to solve problems like navigating mazes and competing in simple games. In Bug Arena, students do exactly that by designing strategies and iterating on them through observation and experimentation.
  
 It also builds true AI literacy. Students must analyze how their opponent’s algorithm behaves, infer how it is "thinking", and adapt their own strategy in response. These are the same critical skills used today to evaluate real AI systems understanding behavior, identifying bias, and reasoning about how models make decisions.
 
