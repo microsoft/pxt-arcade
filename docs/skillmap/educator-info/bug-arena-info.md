@@ -25,16 +25,16 @@ The Bug Arena skillmap teaches AI in the _classical_ sense. The earliest AI syst
  
 As a type of video game, Bug Arena does not use Generative AI or Machine Learning AI - rather, it focuses more on [Game AI](https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games) to simulate strategic decision making by non-player characters.
 
-It also builds true AI literacy. Students must analyze how their opponent’s algorithm behaves, infer how it is "thinking", and adapt their own strategy in response. These are the same critical skills used today to evaluate real AI systems understanding behavior, identifying bias, and reasoning about how models make decisions.
+The learning objective of the Bug Arena lesson is to build AI literacy. This means that students must analyze how their opponent’s algorithm behaves, infer how it is "thinking", and adapt their own strategy in response. These are the same critical skills used today to evaluate real AI systems understanding behavior, identifying bias, and reasoning about how models make decisions.
 
 Some historical references can provide a background in these classical AI systems and strategies:
 
 | Early AI System | Skill in Bug Arena | Earliest AI System (Link) |
 |-|-|-|
-| Maze-solving mice	| Path strategy	| **Theseus (1950–1951)** – [Theseus - History of AI](https://historyof.ai/shannon) |
-| Checkers AI | **Opponent prediction**	| **Arthur Samuel’s Checkers Program (1952)** – [Arthur Samuel (computer scientist) - Wikipedia](https://en.wikipedia.org/wiki/Arthur_Samuel_%28computer_scientist%29) |
-|Search algorithms | Best-move selection | **Depth/Breadth-First Search (1950s)** – [Breadth-first_search - Wikipedia](https://en.wikipedia.org/wiki/Breadth-first_search) |
-| Shakey robot | Planning before acting | **Shakey the Robot (1966–1972)** – [Shakey the Robot - Wikipedia](https://en.wikipedia.org/wiki/Shakey_the_robot) |
+| Maze-solving mice	| Path strategy	| [Theseus (1950–1951)](https://historyof.ai/shannon) |
+| Checkers AI | Opponent prediction	| [Arthur Samuel’s Checkers Program (1952)](https://en.wikipedia.org/wiki/Arthur_Samuel_%28computer_scientist%29) and [IBM's Deep Blue (1995)](https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)) |
+|Search algorithms | Best-move selection | [Depth/Breadth-First Search (1950s)](https://en.wikipedia.org/wiki/Breadth-first_search) |
+| Shakey robot | Planning before acting | [Shakey the Robot (1966–1972)](https://en.wikipedia.org/wiki/Shakey_the_robot) |
 
 ## Learning Objectives
 
