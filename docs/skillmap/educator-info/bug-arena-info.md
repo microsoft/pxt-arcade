@@ -33,7 +33,6 @@ Some historical references can provide a background in these classical AI system
 | Checkers AI | **Opponent prediction**	| **Arthur Samuel’s Checkers Program (1952)** – [Arthur Samuel (computer scientist) - Wikipedia](https://en.wikipedia.org/wiki/Arthur_Samuel_%28computer_scientist%29) |
 |Search algorithms | Best-move selection | **Depth/Breadth-First Search (1950s)** – [Breadth-first_search - Wikipedia](https://en.wikipedia.org/wiki/Breadth-first_search) |
 | Shakey robot | Planning before acting | **Shakey the Robot (1966–1972)** – [Shakey the Robot - Wikipedia](https://en.wikipedia.org/wiki/Shakey_the_robot) |
- 
 
 ## Learning Objectives
 
