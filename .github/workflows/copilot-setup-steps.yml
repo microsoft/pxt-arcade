@@ -10,7 +10,7 @@ on:
       - '.github/README.md'
 
 jobs:
-  validate-copilot-config:
+  copilot-setup-steps:
     runs-on: ubuntu-latest
     name: Validate GitHub Copilot Configuration
     

@@ -9,6 +9,9 @@ permissions:
   issues: read
   pull-requests: read
   discussions: read
+  actions: read
+  repository-projects: read
+  security-events: read
 
 safe-outputs:
   add-comment:
@@ -22,12 +25,8 @@ tools:
   cache-memory: true
   bash: true
   github:
-    toolsets:
-      - repos
-      - issues
-      - pull_requests
-      - discussions
-      - labels
+    read-only: true
+    toolsets: ['all']
     allowed:
       - search_code
       - semantic_issues_search
@@ -94,7 +93,42 @@ Identify:
 - Related issues that provide context or workarounds
 - Historical patterns (recurring problems)
 
-### 3. Search Relevant Code
+Only mention duplicates and related issues that were either open or if closed recent (within the last 100 issues)
+
+### 3. Determine Correct Repository
+
+**Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+
+Based on the issue description and your workspace knowledge:
+
+- **pxt-arcade issues (CORRECT REPOSITORY)**:
+  - Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
+  - Core editor functionality, build system, Monaco/block editor, package management, language services (pxt-core issues are OK here)
+  - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
+  - Any issues affecting the Arcade target implementation
+
+correct repositories:
+
+- microsoft/pxt-arcade
+- microsoft/pxt
+- microsoft/pxt-common-packages
+
+- **Wrong repository - file elsewhere**:
+  - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
+  - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
+  - third-party extensions
+
+**If the issue clearly belongs to Minecraft, micro:bit, or a third party extension:**
+
+- Skip detailed classification (steps 4-5)
+- Use the simplified "Wrong Repository" output format (see Output Format section)
+- Provide brief explanation of why it belongs in the other MakeCode target repository
+
+**Otherwise (including pxt-core and pxt-common-packages issues):**
+
+- Proceed with full triage workflow - these are acceptable in pxt-arcade
+
+### 4. Search Relevant Code
 
 **Use local tools first** (faster), then GitHub tools if needed:
 
@@ -108,7 +142,7 @@ Identify:
 
 Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
 
-### 4. Classify the Issue
+### 5. Classify the Issue
 
 Analyze and determine:
 
@@ -147,11 +181,38 @@ Analyze and determine:
 
 ## Output Format
 
+### Format A: Wrong Repository Issue
+
+**Use this format ONLY when the issue clearly belongs in a different repository:**
+
+---
+
+## Recommendation for Triage
+
+**This issue might be better filed in a different repository.**
+
+**Correct Repository**:
+
+**Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+
+<details>
+<summary>Recommendations for Assignee</summary>
+
+**Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+
+</details>
+
+---
+
+### Format B: Standard Triage (pxt-arcade issue)
+
+**Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+
 Create a triage comment with this structure:
 
 ---
 
-## Triage Summary
+## Recommendation for Triage
 
 **Issue Type**: [bug | feature | task]
 
@@ -161,7 +222,7 @@ Create a triage comment with this structure:
 
 **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
 
-**Related Issue(s)**: [list of related issues if any. Else "No related issue found"]
+**Likely Related**: [list of related issues if any. Else "No related issue found"]
 
 **Suggested Priority**: [p1 | p2 | P3]
 
@@ -169,7 +230,8 @@ Create a triage comment with this structure:
 
 **Copilot Agent Ready**: [✅ Yes | ⚠️ Needs clarification | ❌ No]
 
----
+<details>
+<summary>Recommendations for Assignee</summary>
 
 ### Analysis
 
@@ -204,11 +266,13 @@ If you couldn't find specific files, explain what you searched for.]
 
 ### Next Steps
 
----Copilot Coding Agent Assessment
+**Copilot Coding Agent Assessment**:
 
 **Can assign to Copilot Coding Agent**: [✅ Yes, ready as-is | ⚠️ Yes, after clarification | ❌ No, human needed | 🤔 Cannot assess yet]
 
 **Reasoning**: [2-3 sentences explaining the assessment]
+
+</details>
 
 ---
 
@@ -246,12 +310,6 @@ If you couldn't find specific files, explain what you searched for.]
 - Note that it contains multiple distinct issues
 - Suggest splitting into separate issues for better tracking
 - List the distinct issues you identified
-
-**If it's actually a pxt-core issue:**
-
-- Note that this affects the core framework, not just Arcade
-- Suggest filing in microsoft/pxt if not already there
-- Explain why (e.g., "This affects all MakeCode editors")
 
 **If caused by external factors:**
 
