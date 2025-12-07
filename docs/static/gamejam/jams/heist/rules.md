@@ -26,7 +26,7 @@ This game is also jam-packed with all sorts of heist-y details: you can climb th
 | [!["Nine Cores" game screenshot](https://cdn.makecode.com/api/24442-87185-99963-39751/thumb)](https://arcade.makecode.com/24442-87185-99963-39751) |
 | &nbsp; |
 
-[Nine Cores](https://arcade.makecode.com/24442-87185-99963-39751) by **Rune** is one of the best "twin stick shooter" type games that we've seen in MakeCode Arcade! The combat feels really good... *really*, really good. And the minimal graphics give the game a great streamlined feel. Combine that with the awesome music and addictive upgrade cycle and you've got yourself a recipe for a game with lots of replay value! Just be aware, the timing is *tight* on the getaway for this heist.
+[Nine Cores](https://arcade.makecode.com/24442-87185-99963-39751) by **Rune** is one of the best "twin stick shooter" type games that we've seen in MakeCode Arcade! The combat feels really good... *really, really* good. And the minimal graphics give the game a great streamlined feel. Combine that with the awesome music and addictive upgrade cycle and you've got yourself a recipe for a game with lots of replay value! Just be aware, the timing is *tight* on the getaway for this heist.
 
 ## Third Place (tie): Katandra: Hollow Heist
 | |
