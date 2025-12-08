@@ -101,32 +101,35 @@ Only mention duplicates and related issues that were either open or if closed re
 
 Based on the issue description and your workspace knowledge:
 
-- **pxt-arcade issues (CORRECT REPOSITORY)**:
+- **pxt-arcade issues (CORRECT REPOSITORY - TRIAGE THESE)**:
   - Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
-  - Core editor functionality, build system, Monaco/block editor, package management, language services (pxt-core issues are OK here)
-  - Cross-target game engine issues (sprites, physics, controller) from pxt-common-packages (OK here)
-  - Any issues affecting the Arcade target implementation
+  - **IMPORTANT: Issues affecting microsoft/pxt (pxt-core) ARE ALLOWED HERE** - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
+  - **IMPORTANT: Issues affecting microsoft/pxt-common-packages ARE ALLOWED HERE** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
+  - Any issues affecting the Arcade target implementation or development environment
 
-correct repositories:
+**⚠️ CRITICAL: The following repositories' issues should be triaged normally in pxt-arcade:**
 
-- microsoft/pxt-arcade
-- microsoft/pxt
-- microsoft/pxt-common-packages
+- microsoft/pxt-arcade (obviously)
+- **microsoft/pxt** (pxt-core) - DO NOT redirect these issues
+- **microsoft/pxt-common-packages** - DO NOT redirect these issues
 
-- **Wrong repository - file elsewhere**:
+These repositories form the MakeCode Arcade development workspace and issues affecting any of them belong here.
+
+- **Wrong repository - file elsewhere (ONLY these)**:
   - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
   - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
-  - third-party extensions
+  - third-party extensions not maintained in the Arcade workspace
 
-**If the issue clearly belongs to Minecraft, micro:bit, or a third party extension:**
+**If the issue clearly belongs ONLY to Minecraft, micro:bit, or a third party extension:**
 
 - Skip detailed classification (steps 4-5)
 - Use the simplified "Wrong Repository" output format (see Output Format section)
 - Provide brief explanation of why it belongs in the other MakeCode target repository
 
-**Otherwise (including pxt-core and pxt-common-packages issues):**
+**Otherwise (including ALL pxt-core and pxt-common-packages issues):**
 
-- Proceed with full triage workflow - these are acceptable in pxt-arcade
+- **PROCEED WITH FULL TRIAGE** - these issues are completely acceptable and expected in pxt-arcade
+- Do NOT suggest redirecting to microsoft/pxt or microsoft/pxt-common-packages repositories
 
 ### 4. Search Relevant Code
 
