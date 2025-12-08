@@ -58,8 +58,17 @@
 #       - get_file_contents
 #       - search_pull_requests
 #
+# imports:
+#   - ../agents/triage.agent.md
+#   - ../prompts/makecode-triage.prompt.md
+#
 # timeout-minutes: 10
 # ```
+#
+# Resolved workflow manifest:
+#   Imports:
+#     - ../agents/triage.agent.md
+#     - ../prompts/makecode-triage.prompt.md
 #
 # Job Dependency Graph:
 # ```mermaid
@@ -82,13 +91,9 @@
 #
 # Original Prompt:
 # ```markdown
-# # pxt-arcade Issue Triage Assistant
+# # Generic Issue Triage Specialist
 #
-# You are a triage specialist for the **microsoft/pxt-arcade** repository (Microsoft MakeCode Arcade).
-#
-# ## Issue Being Triaged
-#
-# **Issue Number**: #${{ github.event.issue.number }}
+# You are a triage specialist for GitHub issues. Your role is to analyze issues systematically and provide comprehensive recommendations for human reviewers.
 #
 # ## Your Role & Constraints
 #
@@ -97,22 +102,13 @@
 # - **All recommendations go in your comment** for humans to review and apply
 # - **Your role is advisory only** - humans make final decisions
 #
-# ## Context
-#
-# This is a GitHub Actions workflow triggered when the `ai-triage` label is added to an issue. You have access to the repository codebase and can search for related issues and code.
-#
-# ## Your Task
-#
-# Perform comprehensive triage analysis and provide recommendations through a **single comment only** for a human to review.
-#
 # ## Triage Workflow
 #
 # ### 1. Fetch Issue Details
 #
-# Use `github/issue_read` with method `get` to retrieve full details of issue #${{ github.event.issue.number }} from **microsoft/pxt-arcade**.
+# Use `github/issue_read` with method `get` to retrieve full details of the issue being triaged.
 #
 # Extract:
-#
 # - Title and body/description
 # - Current labels (if any)
 # - Author and creation date
@@ -124,12 +120,11 @@
 #
 # **Always check for duplicates first** to avoid redundant work:
 #
-# Use `github/semantic_issue_similarity_search` to find semantically similar issues in **microsoft/pxt-arcade**:
+# Use `github/semantic_issue_similarity_search` to find semantically similar issues.
 #
 # If semantic search doesn't yield results, supplement with `github/search_issues` using key terms from the issue.
 #
 # Identify:
-#
 # - Exact duplicates (close this issue and link to original)
 # - Near duplicates (may need merging or linking)
 # - Related issues that provide context or workarounds
@@ -139,50 +134,25 @@
 #
 # ### 3. Determine Correct Repository
 #
-# **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+# Based on the issue description and repository-specific context provided by the importing workflow:
 #
-# Based on the issue description and your workspace knowledge:
-#
-# - **pxt-arcade issues (CORRECT REPOSITORY - TRIAGE THESE)**:
-#   - Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
-#   - **IMPORTANT: Issues affecting microsoft/pxt (pxt-core) ARE ALLOWED HERE** - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
-#   - **IMPORTANT: Issues affecting microsoft/pxt-common-packages ARE ALLOWED HERE** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
-#   - Any issues affecting the Arcade target implementation or development environment
-#
-# **⚠️ CRITICAL: The following repositories' issues should be triaged normally in pxt-arcade:**
-#
-# - microsoft/pxt-arcade (obviously)
-# - **microsoft/pxt** (pxt-core) - DO NOT redirect these issues
-# - **microsoft/pxt-common-packages** - DO NOT redirect these issues
-#
-# These repositories form the MakeCode Arcade development workspace and issues affecting any of them belong here.
-#
-# - **Wrong repository - file elsewhere (ONLY these)**:
-#   - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
-#   - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
-#   - third-party extensions not maintained in the Arcade workspace
-#
-# **If the issue clearly belongs ONLY to Minecraft, micro:bit, or a third party extension:**
-#
+# **If the issue clearly belongs in a different repository:**
 # - Skip detailed classification (steps 4-5)
-# - Use the simplified "Wrong Repository" output format (see Output Format section)
-# - Provide brief explanation of why it belongs in the other MakeCode target repository
+# - Use the simplified "Wrong Repository" output format
+# - Provide brief explanation of why it belongs in the other repository
 #
-# **Otherwise (including ALL pxt-core and pxt-common-packages issues):**
-#
-# - **PROCEED WITH FULL TRIAGE** - these issues are completely acceptable and expected in pxt-arcade
-# - Do NOT suggest redirecting to microsoft/pxt or microsoft/pxt-common-packages repositories
+# **Otherwise:**
+# - **PROCEED WITH FULL TRIAGE** - the issue belongs in this repository
+# - Continue to steps 4 and 5
 #
 # ### 4. Search Relevant Code
 #
 # **Use local tools first** (faster), then GitHub tools if needed:
 #
 # **Local search (preferred)**:
-#
 # - Use `grep` for file or code patterns
 #
 # **GitHub search (when needed)**:
-#
 # - Use `github/search_code` for repository-wide searches
 #
 # Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
@@ -192,33 +162,23 @@
 # Analyze and determine:
 #
 # **Issue Type** (choose ONE primary type):
-#
 # - `bug` - Defect in existing functionality causing incorrect behavior
 # - `feature` - Request for new functionality or enhancement
 # - `task` - Work item for improvements, maintenance, or other tasks
 #
 # **Information Status**:
-#
 # - `info-complete` - Has all necessary details (repro steps, expected/actual behavior, environment)
 # - `info-needed` - Missing critical information (specify what's missing)
 #
-# **Components Affected** (can select multiple):
-#
-# - Core: `blocks`, `toolbox`, `simulator`, `assets`, `monaco`
-# - Features: `tutorial`, `extension`, `multiplayer`, `hardware`, `github-integration`
-# - UI/UX: `homescreen`, `sidedocs`, `Theme`, `high contrast`, `accessibility`, `keyboardnav`
-# - Quality: `reliability`, `browser compat`, `performance`
-# - Content: `documentation`, `HoAI`
+# **Components Affected** (based on repository-specific component taxonomy provided by importing workflow)
 #
 # **Complexity Assessment**:
-#
 # - `low` - Single file, isolated change, clear fix (good for contributors/automation)
 # - `medium` - Multiple files, requires investigation, non-trivial logic
 # - `high` - Architectural changes, cross-cutting concerns, core systems
 # - `unknown` - Cannot determine without more investigation
 #
 # **Priority Suggestion** (based on impact):
-#
 # - `p1` - Critical: blocks basic functionality, data loss, security, major regression
 # - `p2` - High: significant impairment, painful workaround, accessibility blocker
 # - `P3` - Medium: minor functionality issues, cosmetic with some impact
@@ -236,7 +196,7 @@
 #
 # **This issue might be better filed in a different repository.**
 #
-# **Correct Repository**:
+# **Correct Repository**: [repository name]
 #
 # **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
 #
@@ -249,9 +209,9 @@
 #
 # ---
 #
-# ### Format B: Standard Triage (pxt-arcade issue)
+# ### Format B: Standard Triage
 #
-# **Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+# **Use this format when the issue belongs in this repository OR when you're uncertain:**
 #
 # Create a triage comment with this structure:
 #
@@ -287,12 +247,10 @@
 # ### Duplicate & Related Issues
 #
 # **Duplicates**:
-#
 # - [If found: Link to #123 (exact duplicate), #456 (very similar)]
 # - [If none: No duplicates found via semantic search]
 #
 # **Related Issues**:
-#
 # - [If found: #234 (similar problem in different area), #567 (potential workaround)]
 # - [If none: No closely related issues found]
 #
@@ -301,7 +259,6 @@
 # ### Location Hints
 #
 # [Provide specific file paths where this issue likely exists, based on code search. Format as:
-#
 # - `path/to/file.ts` - Brief description of what this file handles
 # - `another/file.tsx` - Why this file is relevant
 #
@@ -321,48 +278,144 @@
 #
 # ---
 #
-# **Remember**: Keep the report focused, actionable, and helpful. Use the search tools to provide specific evidence rather than guesses.
-#
-# ---
-#
 # ## Best Practices & Tips
 #
 # ### Effective Searching
 #
 # **For duplicate detection:**
-#
 # - Always run `semantic_issue_similarity_search` first (it's faster and more accurate)
 # - Use threshold 0.75-0.85 for broad matches, 0.85+ for close duplicates
 # - Search by issue number, not just title/description
 #
 # **For code search:**
-#
 # - Start with local `grep` (faster access to workspace)
 # - Search for error messages in quotes: "specific error text"
-# - Search for component names: "Toolbox", "BlockEditor", "Simulator"
+# - Search for component names as provided by repository context
 # - Look for recent changes if it's a regression: check git history patterns
 #
 # ### Special Situations
 #
 # **If it's a duplicate:**
-#
 # - Link to the original issue clearly
 # - Note if this has additional information worth merging
 # - Suggest closing with "Duplicate of #XXX"
 #
 # **If multiple issues in one report:**
-#
 # - Note that it contains multiple distinct issues
 # - Suggest splitting into separate issues for better tracking
 # - List the distinct issues you identified
 #
 # **If caused by external factors:**
-#
 # - Identify the external cause (browser bug, OS issue, third-party extension)
 # - Provide evidence/links if possible
 # - Suggest workarounds or when fix might be available
 #
+# **Remember**: Keep the report focused, actionable, and helpful. Use the search tools to provide specific evidence rather than guesses.
+#
+# # MakeCode Arcade Issue Triage
+#
+# Perform comprehensive triage for issue #${{ github.event.issue.number }} in the **microsoft/pxt-arcade** repository using the imported generic triage agent.
+#
+# ## MakeCode Arcade Context
+#
+# You are triaging issues for **Microsoft MakeCode Arcade**, a multi-repository development workspace consisting of:
+# - **pxt-arcade**: Arcade-specific target configuration, extensions, and documentation
+# - **pxt** (pxt-core): Core MakeCode framework (editor, build system, compiler)
+# - **pxt-common-packages**: Cross-target game engine APIs (sprites, physics, controller)
+#
+# ### Repository Routing Rules
+#
+# **TRIAGE NORMALLY in pxt-arcade (these issues belong here):**
+# - microsoft/pxt-arcade - Arcade-specific features, target config, arcade blocks/APIs, arcade hardware, arcade documentation
+# - **microsoft/pxt** (pxt-core) - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
+# - **microsoft/pxt-common-packages** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
+# - Any issues affecting the Arcade target implementation or development environment
+#
+# ⚠️ **CRITICAL**: Issues affecting pxt-core or pxt-common-packages ARE ALLOWED HERE - these repositories form the MakeCode Arcade development workspace.
+#
+# **REDIRECT to other repositories (ONLY these):**
+# - **microsoft/pxt-minecraft** - Issues specific to MakeCode for Minecraft blocks, Minecraft gameplay, Minecraft-specific features
+# - **microsoft/pxt-microbit** - Issues specific to MakeCode for micro:bit, BBC micro:bit hardware/sensors
+# - Third-party extensions not maintained in the Arcade workspace
+#
+# ### Component Taxonomy
+#
+# When classifying issues, use these component labels:
+#
+# **Core Components:**
+# - `blocks` - Block editor, blockly integration, block definitions
+# - `toolbox` - Block toolbox, category organization, search
+# - `simulator` - Game simulator, rendering, display
+# - `assets` - Asset editor, sprites, images, tiles
+# - `monaco` - Text/TypeScript editor, IntelliSense
+#
+# **Features:**
+# - `tutorial` - In-editor tutorials, tutorial engine
+# - `extension` - Extensions, package management
+# - `multiplayer` - Multiplayer features, networking
+# - `hardware` - Hardware devices, arcade cabinets
+# - `github-integration` - GitHub import/export, sharing
+#
+# **UI/UX:**
+# - `homescreen` - Home screen, project gallery
+# - `sidedocs` - Documentation panel, help
+# - `Theme` - Visual themes, styling
+# - `high contrast` - High contrast mode
+# - `accessibility` - Accessibility features, screen readers
+# - `keyboardnav` - Keyboard navigation
+#
+# **Quality:**
+# - `reliability` - Crashes, stability issues
+# - `browser compat` - Browser-specific issues
+# - `performance` - Performance, speed, memory
+#
+# **Content:**
+# - `documentation` - Docs in docs/ folder
+# - `HoAI` - Hour of Code content
+#
+# ### MakeCode-Specific Code Search Hints
+#
+# When searching for code, consider these common file patterns:
+#
+# **Arcade-specific files (pxt-arcade repo):**
+# - `pxtarget.json` - Target configuration (released version)
+# - `targetconfig.json` - Live configuration (served between releases)
+# - `libs/*/` - Arcade-specific library extensions
+# - `docs/` - Arcade documentation
+# - `editor/` - Editor customizations
+# - `theme/` - Arcade themes
+#
+# **Core framework files (pxt repo):**
+# - `webapp/`, `pxteditor/` - Web app and editor
+# - `pxtcompiler/` - Language services, compiler
+# - `libs/base/`, `libs/core/` - Core TypeScript APIs
+# - `gulpfile.js`, `Makefile` - Build system
+#
+# **Game engine files (pxt-common-packages repo):**
+# - `libs/game/` - Game engine (sprites, physics)
+# - `libs/controller/` - Input handling
+# - `libs/screen/` - Display APIs
+# - `sim/` - Shared simulator
+#
+# ### MakeCode-Specific Considerations
+#
+# **Block Annotations:**
+# - Prefer `$variable` format over deprecated `%variable` format in block annotations
+# - Shadow values should be configured separately for better localization
+#
+# **Multi-Repository Workspace:**
+# - Changes may require coordination across repositories
+# - File paths should specify which repository they're in
+# - Development setup uses `setup.cmd` scripts for linking repos
+#
+# **Development Environment:**
+# - Uses npm link for repository dependencies
+# - Daily workflow: `gulp watch` in pxt + `npm run serve` in pxt-arcade
+# - Compilation: `npm run build` or gulp tasks
+#
 # ---
+#
+# Execute the triage workflow from the imported agent, applying the MakeCode Arcade-specific context above.
 # ```
 #
 # Pinned GitHub Actions:
@@ -379,7 +432,7 @@
 #   - actions/upload-artifact@v5 (330a01c490aca151604b8cf639adc76d48f6c5d4)
 #     https://github.com/actions/upload-artifact/commit/330a01c490aca151604b8cf639adc76d48f6c5d4
 
-name: "pxt-arcade Issue Triage Assistant"
+name: "Triage"
 "on":
   issues:
     # names: # Label filtering applied via job conditions
@@ -399,7 +452,7 @@ permissions:
 concurrency:
   group: "gh-aw-${{ github.workflow }}-${{ github.event.issue.number }}"
 
-run-name: "pxt-arcade Issue Triage Assistant"
+run-name: "Triage"
 
 jobs:
   activation:
@@ -544,7 +597,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
           GH_AW_COMMENT_TARGET: "triggering"
-          GH_AW_WORKFLOW_NAME: "pxt-arcade Issue Triage Assistant"
+          GH_AW_WORKFLOW_NAME: "Triage"
           GH_AW_ENGINE_ID: "copilot"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -2520,7 +2573,7 @@ jobs:
               model: "",
               version: "",
               agent_version: "0.0.366",
-              workflow_name: "pxt-arcade Issue Triage Assistant",
+              workflow_name: "Triage",
               experimental: false,
               supports_tools_allowlist: true,
               supports_http_transport: true,
@@ -2596,13 +2649,9 @@ jobs:
           PROMPT_DIR="$(dirname "$GH_AW_PROMPT")"
           mkdir -p "$PROMPT_DIR"
           cat << 'PROMPT_EOF' | envsubst > "$GH_AW_PROMPT"
-          # pxt-arcade Issue Triage Assistant
+          # Generic Issue Triage Specialist
           
-          You are a triage specialist for the **microsoft/pxt-arcade** repository (Microsoft MakeCode Arcade).
-          
-          ## Issue Being Triaged
-          
-          **Issue Number**: #${GH_AW_GITHUB_EVENT_ISSUE_NUMBER}
+          You are a triage specialist for GitHub issues. Your role is to analyze issues systematically and provide comprehensive recommendations for human reviewers.
           
           ## Your Role & Constraints
           
@@ -2611,22 +2660,13 @@ jobs:
           - **All recommendations go in your comment** for humans to review and apply
           - **Your role is advisory only** - humans make final decisions
           
-          ## Context
-          
-          This is a GitHub Actions workflow triggered when the `ai-triage` label is added to an issue. You have access to the repository codebase and can search for related issues and code.
-          
-          ## Your Task
-          
-          Perform comprehensive triage analysis and provide recommendations through a **single comment only** for a human to review.
-          
           ## Triage Workflow
           
           ### 1. Fetch Issue Details
           
-          Use `github/issue_read` with method `get` to retrieve full details of issue #${GH_AW_GITHUB_EVENT_ISSUE_NUMBER} from **microsoft/pxt-arcade**.
+          Use `github/issue_read` with method `get` to retrieve full details of the issue being triaged.
           
           Extract:
-          
           - Title and body/description
           - Current labels (if any)
           - Author and creation date
@@ -2638,12 +2678,11 @@ jobs:
           
           **Always check for duplicates first** to avoid redundant work:
           
-          Use `github/semantic_issue_similarity_search` to find semantically similar issues in **microsoft/pxt-arcade**:
+          Use `github/semantic_issue_similarity_search` to find semantically similar issues.
           
           If semantic search doesn't yield results, supplement with `github/search_issues` using key terms from the issue.
           
           Identify:
-          
           - Exact duplicates (close this issue and link to original)
           - Near duplicates (may need merging or linking)
           - Related issues that provide context or workarounds
@@ -2653,50 +2692,25 @@ jobs:
           
           ### 3. Determine Correct Repository
           
-          **Before proceeding with detailed triage, determine if this issue belongs in pxt-arcade or should be filed elsewhere:**
+          Based on the issue description and repository-specific context provided by the importing workflow:
           
-          Based on the issue description and your workspace knowledge:
-          
-          - **pxt-arcade issues (CORRECT REPOSITORY - TRIAGE THESE)**:
-            - Arcade-specific features, target configuration, arcade-specific blocks/APIs, arcade hardware support, arcade-specific documentation
-            - **IMPORTANT: Issues affecting microsoft/pxt (pxt-core) ARE ALLOWED HERE** - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
-            - **IMPORTANT: Issues affecting microsoft/pxt-common-packages ARE ALLOWED HERE** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
-            - Any issues affecting the Arcade target implementation or development environment
-          
-          **⚠️ CRITICAL: The following repositories' issues should be triaged normally in pxt-arcade:**
-          
-          - microsoft/pxt-arcade (obviously)
-          - **microsoft/pxt** (pxt-core) - DO NOT redirect these issues
-          - **microsoft/pxt-common-packages** - DO NOT redirect these issues
-          
-          These repositories form the MakeCode Arcade development workspace and issues affecting any of them belong here.
-          
-          - **Wrong repository - file elsewhere (ONLY these)**:
-            - **microsoft/pxt-minecraft**: Issues specific to MakeCode for Minecraft
-            - **microsoft/pxt-microbit**: Issues specific to MakeCode for micro:bit
-            - third-party extensions not maintained in the Arcade workspace
-          
-          **If the issue clearly belongs ONLY to Minecraft, micro:bit, or a third party extension:**
-          
+          **If the issue clearly belongs in a different repository:**
           - Skip detailed classification (steps 4-5)
-          - Use the simplified "Wrong Repository" output format (see Output Format section)
-          - Provide brief explanation of why it belongs in the other MakeCode target repository
+          - Use the simplified "Wrong Repository" output format
+          - Provide brief explanation of why it belongs in the other repository
           
-          **Otherwise (including ALL pxt-core and pxt-common-packages issues):**
-          
-          - **PROCEED WITH FULL TRIAGE** - these issues are completely acceptable and expected in pxt-arcade
-          - Do NOT suggest redirecting to microsoft/pxt or microsoft/pxt-common-packages repositories
+          **Otherwise:**
+          - **PROCEED WITH FULL TRIAGE** - the issue belongs in this repository
+          - Continue to steps 4 and 5
           
           ### 4. Search Relevant Code
           
           **Use local tools first** (faster), then GitHub tools if needed:
           
           **Local search (preferred)**:
-          
           - Use `grep` for file or code patterns
           
           **GitHub search (when needed)**:
-          
           - Use `github/search_code` for repository-wide searches
           
           Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
@@ -2706,33 +2720,23 @@ jobs:
           Analyze and determine:
           
           **Issue Type** (choose ONE primary type):
-          
           - `bug` - Defect in existing functionality causing incorrect behavior
           - `feature` - Request for new functionality or enhancement
           - `task` - Work item for improvements, maintenance, or other tasks
           
           **Information Status**:
-          
           - `info-complete` - Has all necessary details (repro steps, expected/actual behavior, environment)
           - `info-needed` - Missing critical information (specify what's missing)
           
-          **Components Affected** (can select multiple):
-          
-          - Core: `blocks`, `toolbox`, `simulator`, `assets`, `monaco`
-          - Features: `tutorial`, `extension`, `multiplayer`, `hardware`, `github-integration`
-          - UI/UX: `homescreen`, `sidedocs`, `Theme`, `high contrast`, `accessibility`, `keyboardnav`
-          - Quality: `reliability`, `browser compat`, `performance`
-          - Content: `documentation`, `HoAI`
+          **Components Affected** (based on repository-specific component taxonomy provided by importing workflow)
           
           **Complexity Assessment**:
-          
           - `low` - Single file, isolated change, clear fix (good for contributors/automation)
           - `medium` - Multiple files, requires investigation, non-trivial logic
           - `high` - Architectural changes, cross-cutting concerns, core systems
           - `unknown` - Cannot determine without more investigation
           
           **Priority Suggestion** (based on impact):
-          
           - `p1` - Critical: blocks basic functionality, data loss, security, major regression
           - `p2` - High: significant impairment, painful workaround, accessibility blocker
           - `P3` - Medium: minor functionality issues, cosmetic with some impact
@@ -2750,7 +2754,7 @@ jobs:
           
           **This issue might be better filed in a different repository.**
           
-          **Correct Repository**:
+          **Correct Repository**: [repository name]
           
           **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
           
@@ -2763,9 +2767,9 @@ jobs:
           
           ---
           
-          ### Format B: Standard Triage (pxt-arcade issue)
+          ### Format B: Standard Triage
           
-          **Use this format when the issue belongs in pxt-arcade OR when you're uncertain:**
+          **Use this format when the issue belongs in this repository OR when you're uncertain:**
           
           Create a triage comment with this structure:
           
@@ -2801,12 +2805,10 @@ jobs:
           ### Duplicate & Related Issues
           
           **Duplicates**:
-          
           - [If found: Link to #123 (exact duplicate), #456 (very similar)]
           - [If none: No duplicates found via semantic search]
           
           **Related Issues**:
-          
           - [If found: #234 (similar problem in different area), #567 (potential workaround)]
           - [If none: No closely related issues found]
           
@@ -2815,7 +2817,6 @@ jobs:
           ### Location Hints
           
           [Provide specific file paths where this issue likely exists, based on code search. Format as:
-          
           - `path/to/file.ts` - Brief description of what this file handles
           - `another/file.tsx` - Why this file is relevant
           
@@ -2835,48 +2836,144 @@ jobs:
           
           ---
           
-          **Remember**: Keep the report focused, actionable, and helpful. Use the search tools to provide specific evidence rather than guesses.
-          
-          ---
-          
           ## Best Practices & Tips
           
           ### Effective Searching
           
           **For duplicate detection:**
-          
           - Always run `semantic_issue_similarity_search` first (it's faster and more accurate)
           - Use threshold 0.75-0.85 for broad matches, 0.85+ for close duplicates
           - Search by issue number, not just title/description
           
           **For code search:**
-          
           - Start with local `grep` (faster access to workspace)
           - Search for error messages in quotes: "specific error text"
-          - Search for component names: "Toolbox", "BlockEditor", "Simulator"
+          - Search for component names as provided by repository context
           - Look for recent changes if it's a regression: check git history patterns
           
           ### Special Situations
           
           **If it's a duplicate:**
-          
           - Link to the original issue clearly
           - Note if this has additional information worth merging
           - Suggest closing with "Duplicate of #XXX"
           
           **If multiple issues in one report:**
-          
           - Note that it contains multiple distinct issues
           - Suggest splitting into separate issues for better tracking
           - List the distinct issues you identified
           
           **If caused by external factors:**
-          
           - Identify the external cause (browser bug, OS issue, third-party extension)
           - Provide evidence/links if possible
           - Suggest workarounds or when fix might be available
           
+          **Remember**: Keep the report focused, actionable, and helpful. Use the search tools to provide specific evidence rather than guesses.
+          
+          # MakeCode Arcade Issue Triage
+          
+          Perform comprehensive triage for issue #${GH_AW_GITHUB_EVENT_ISSUE_NUMBER} in the **microsoft/pxt-arcade** repository using the imported generic triage agent.
+          
+          ## MakeCode Arcade Context
+          
+          You are triaging issues for **Microsoft MakeCode Arcade**, a multi-repository development workspace consisting of:
+          - **pxt-arcade**: Arcade-specific target configuration, extensions, and documentation
+          - **pxt** (pxt-core): Core MakeCode framework (editor, build system, compiler)
+          - **pxt-common-packages**: Cross-target game engine APIs (sprites, physics, controller)
+          
+          ### Repository Routing Rules
+          
+          **TRIAGE NORMALLY in pxt-arcade (these issues belong here):**
+          - microsoft/pxt-arcade - Arcade-specific features, target config, arcade blocks/APIs, arcade hardware, arcade documentation
+          - **microsoft/pxt** (pxt-core) - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
+          - **microsoft/pxt-common-packages** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
+          - Any issues affecting the Arcade target implementation or development environment
+          
+          ⚠️ **CRITICAL**: Issues affecting pxt-core or pxt-common-packages ARE ALLOWED HERE - these repositories form the MakeCode Arcade development workspace.
+          
+          **REDIRECT to other repositories (ONLY these):**
+          - **microsoft/pxt-minecraft** - Issues specific to MakeCode for Minecraft blocks, Minecraft gameplay, Minecraft-specific features
+          - **microsoft/pxt-microbit** - Issues specific to MakeCode for micro:bit, BBC micro:bit hardware/sensors
+          - Third-party extensions not maintained in the Arcade workspace
+          
+          ### Component Taxonomy
+          
+          When classifying issues, use these component labels:
+          
+          **Core Components:**
+          - `blocks` - Block editor, blockly integration, block definitions
+          - `toolbox` - Block toolbox, category organization, search
+          - `simulator` - Game simulator, rendering, display
+          - `assets` - Asset editor, sprites, images, tiles
+          - `monaco` - Text/TypeScript editor, IntelliSense
+          
+          **Features:**
+          - `tutorial` - In-editor tutorials, tutorial engine
+          - `extension` - Extensions, package management
+          - `multiplayer` - Multiplayer features, networking
+          - `hardware` - Hardware devices, arcade cabinets
+          - `github-integration` - GitHub import/export, sharing
+          
+          **UI/UX:**
+          - `homescreen` - Home screen, project gallery
+          - `sidedocs` - Documentation panel, help
+          - `Theme` - Visual themes, styling
+          - `high contrast` - High contrast mode
+          - `accessibility` - Accessibility features, screen readers
+          - `keyboardnav` - Keyboard navigation
+          
+          **Quality:**
+          - `reliability` - Crashes, stability issues
+          - `browser compat` - Browser-specific issues
+          - `performance` - Performance, speed, memory
+          
+          **Content:**
+          - `documentation` - Docs in docs/ folder
+          - `HoAI` - Hour of Code content
+          
+          ### MakeCode-Specific Code Search Hints
+          
+          When searching for code, consider these common file patterns:
+          
+          **Arcade-specific files (pxt-arcade repo):**
+          - `pxtarget.json` - Target configuration (released version)
+          - `targetconfig.json` - Live configuration (served between releases)
+          - `libs/*/` - Arcade-specific library extensions
+          - `docs/` - Arcade documentation
+          - `editor/` - Editor customizations
+          - `theme/` - Arcade themes
+          
+          **Core framework files (pxt repo):**
+          - `webapp/`, `pxteditor/` - Web app and editor
+          - `pxtcompiler/` - Language services, compiler
+          - `libs/base/`, `libs/core/` - Core TypeScript APIs
+          - `gulpfile.js`, `Makefile` - Build system
+          
+          **Game engine files (pxt-common-packages repo):**
+          - `libs/game/` - Game engine (sprites, physics)
+          - `libs/controller/` - Input handling
+          - `libs/screen/` - Display APIs
+          - `sim/` - Shared simulator
+          
+          ### MakeCode-Specific Considerations
+          
+          **Block Annotations:**
+          - Prefer `$variable` format over deprecated `%variable` format in block annotations
+          - Shadow values should be configured separately for better localization
+          
+          **Multi-Repository Workspace:**
+          - Changes may require coordination across repositories
+          - File paths should specify which repository they're in
+          - Development setup uses `setup.cmd` scripts for linking repos
+          
+          **Development Environment:**
+          - Uses npm link for repository dependencies
+          - Daily workflow: `gulp watch` in pxt + `npm run serve` in pxt-arcade
+          - Compilation: `npm run build` or gulp tasks
+          
           ---
+          
+          Execute the triage workflow from the imported agent, applying the MakeCode Arcade-specific context above.
           
           PROMPT_EOF
       - name: Append XPIA security instructions to prompt
@@ -3105,7 +3202,7 @@ jobs:
         run: |
           set -o pipefail
           sudo -E awf --env-all --container-workdir "${GITHUB_WORKSPACE}" --mount /tmp:/tmp:rw --mount "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}:rw" --mount /usr/bin/gh:/usr/bin/gh:ro --allow-domains api.enterprise.githubcopilot.com,api.github.com,github.com,raw.githubusercontent.com,registry.npmjs.org --log-level info --proxy-logs-dir /tmp/gh-aw/sandbox/firewall/logs \
-            -- npx -y @github/copilot@0.0.366 --add-dir /tmp/gh-aw/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --add-dir "${GITHUB_WORKSPACE}" --disable-builtin-mcps --allow-all-tools --add-dir /tmp/gh-aw/cache-memory/ --prompt "$(cat /tmp/gh-aw/aw-prompts/prompt.txt)" \
+            -- npx -y @github/copilot@0.0.366 --add-dir /tmp/gh-aw/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --add-dir "${GITHUB_WORKSPACE}" --disable-builtin-mcps --agent triage.agent --allow-all-tools --add-dir /tmp/gh-aw/cache-memory/ --prompt "$(cat /tmp/gh-aw/aw-prompts/prompt.txt)" \
             2>&1 | tee /tmp/gh-aw/agent-stdio.log
         env:
           COPILOT_AGENT_RUNNER_TYPE: STANDALONE
@@ -5457,7 +5554,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
-          name: firewall-logs-pxt-arcade-issue-triage-assistant
+          name: firewall-logs-triage
           path: /tmp/gh-aw/sandbox/firewall/logs/
           if-no-files-found: ignore
       - name: Parse firewall logs for step summary
@@ -6057,7 +6154,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
           GH_AW_NOOP_MAX: 1
-          GH_AW_WORKFLOW_NAME: "pxt-arcade Issue Triage Assistant"
+          GH_AW_WORKFLOW_NAME: "Triage"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -6149,7 +6246,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "pxt-arcade Issue Triage Assistant"
+          GH_AW_WORKFLOW_NAME: "Triage"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -6262,7 +6359,7 @@ jobs:
           GH_AW_COMMENT_ID: ${{ needs.activation.outputs.comment_id }}
           GH_AW_COMMENT_REPO: ${{ needs.activation.outputs.comment_repo }}
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          GH_AW_WORKFLOW_NAME: "pxt-arcade Issue Triage Assistant"
+          GH_AW_WORKFLOW_NAME: "Triage"
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -6516,7 +6613,7 @@ jobs:
       - name: Setup threat detection
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          WORKFLOW_NAME: "pxt-arcade Issue Triage Assistant"
+          WORKFLOW_NAME: "Triage"
           WORKFLOW_DESCRIPTION: "No description provided"
         with:
           script: |
