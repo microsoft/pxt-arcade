@@ -393,6 +393,13 @@
             "imageUrl": "/static/hardware/kitronik-shield.png",
             "url": "https://kitronik.co.uk/56116",
             "variant": "hw---n3"
+        },        
+        {
+            "name": "GameKit for Calliope mini 3",
+            "description": "Use the Calliope mini with an expansion board from TINY SUPER LAB",
+            "imageUrl": "/static/hardware/gamekit-calliope-mini-3.jpg",
+            "url": "https://tinysuperlab.com/produkte/gamekit",
+            "variant": "hw---n3"
         }
     ],
     "galleries": {
