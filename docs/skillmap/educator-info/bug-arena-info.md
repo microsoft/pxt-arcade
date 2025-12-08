@@ -19,6 +19,23 @@ There are 3 learning paths available for students to choose from.  At the end of
 
 Note - duration is approximate based on time to follow instructions as written. Providing extra time for creativity, debugging and game play is encouraged!
 
+## AI Skills Acquisition
+
+The Bug Arena skillmap teaches AI in the _classical_ sense. The earliest AI systems were built as algorithms that learned to solve problems like navigating mazes and competing in simple games. In Bug Arena, students do exactly that by designing strategies and iterating on them through observation and experimentation.
+ 
+As a type of video game, Bug Arena does not use Generative AI or Machine Learning AI - rather, it focuses more on [Game AI](https://en.wikipedia.org/wiki/Artificial_intelligence_in_video_games) to simulate strategic decision making by non-player characters.
+
+The learning objective of the Bug Arena lesson is to build AI literacy. This means that students must analyze how their opponent’s algorithm behaves, infer how it is "thinking", and adapt their own strategy in response. These are the same critical skills used today to evaluate real AI systems understanding behavior, identifying bias, and reasoning about how models make decisions.
+
+Some historical references can provide a background in these classical AI systems and strategies:
+
+| Early AI System | Skill in Bug Arena | Earliest AI System (Link) |
+|-|-|-|
+| Maze-solving mice	| Path strategy	| [Theseus (1950–1951)](https://historyof.ai/shannon) |
+| Checkers AI | Opponent prediction	| [Arthur Samuel’s Checkers Program (1952)](https://en.wikipedia.org/wiki/Arthur_Samuel_%28computer_scientist%29) and [IBM's Deep Blue (1995)](https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)) |
+|Search algorithms | Best-move selection | [Depth/Breadth-First Search (1950s)](https://en.wikipedia.org/wiki/Breadth-first_search) |
+| Shakey robot | Planning before acting | [Shakey the Robot (1966–1972)](https://en.wikipedia.org/wiki/Shakey_the_robot) |
+
 ## Learning Objectives
 
 This activity was designed to align with the [AI Literacy Framework](https://ailiteracyframework.org) empowering students to engage and create with AI in positive, meaningful ways that further their technical skills and understanding in order to thrive in a world influenced by AI.
