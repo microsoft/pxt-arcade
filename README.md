@@ -105,6 +105,7 @@ as you need to clone and link 3 repos.
 
 * install [Node.js 8+](https://nodejs.org/en/download/) (you might need to restart afterwards so all your environment variables are applied correctly)
 * (optional) install [Visual Studio Code](https://code.visualstudio.com/)
+* (optional) install [GitHub agentic workflows (gh aw)](https://githubnext.github.io/gh-aw/setup/quick-start/) for AI-assisted development
 
 ### Automated setup
 * Download [setup.cmd](https://github.com/microsoft/pxt-arcade/blob/master/setup.cmd) to your local machine and place it on the folder you'd like to do your development work
