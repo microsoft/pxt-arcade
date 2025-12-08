@@ -4,112 +4,105 @@ Check out the winners of the 10th Official Microsoft MakeCode Game Jam, featurin
 ## Games
 
 ### ~ codecard
-* name: Rhythm Code!
-* description: Try to get the best grade possible in this collection of rhythm minigames!
-* author: InvalidProject
-* url: https://arcade.makecode.com/40921-79622-15624-16091
+* name: The Safe Cracker
+* description: Juggle multiple challenges as you hack through a vault's security in this stylish adventure!
+* author: Teddy B.
+* url: https://arcade.makecode.com/50932-20209-20218-60886
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/40921-79622-15624-16091/thumb
+* imageUrl: https://cdn.makecode.com/api/50932-20209-20218-60886/thumb
 ---
-* name: The Forest Campfire
-* description: Complete quests to help out campers in this cozy adventure game!
-* author: Freast & Toast
-* url: https://arcade.makecode.com/50763-65106-55406-25942
+* name: Under Surveillance
+* description: Steal loot! Buy upgrades! Combine skills! And most of all, get paid in this fast paced heist game! This game uses mouse controls.
+* author: Bilangus
+* url: https://arcade.makecode.com/52784-59082-24354-89134
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/50763-65106-55406-25942/thumb
+* imageUrl: https://cdn.makecode.com/api/52784-59082-24354-89134/thumb
 ---
-* name: The Joy of Pixels
-* description: Create a masterpiece in this painting simulator! How happy a tree can YOU paint?
-* author: Jedi
-* url: https://arcade.makecode.com/08245-57951-20701-25721
+* name: Nine Cores
+* description: Blast your way through enemies and doors to steal a core and power up your character in this twin-stick shooter! This game uses mouse controls.
+* author: Rune
+* url: https://arcade.makecode.com/24442-87185-99963-39751
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/08245-57951-20701-25721/thumb
+* imageUrl: https://cdn.makecode.com/api/24442-87185-99963-39751/thumb
 ---
-* name: The Picnic Basket
-* description: Get into some DEEP topics in this conversation simulator! Will you pay for your own coffee? Only you can decide!
-* author: ChimbroDaPro
-* url: https://arcade.makecode.com/68895-89163-57463-64807
+* name: Katandra: Hollow Heist
+* description: Battle oni and dodge obstacles in this stylish platformer!
+* author: CopySprite
+* url: https://arcade.makecode.com/99904-43074-40676-04519
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/68895-89163-57463-64807/thumb
+* imageUrl: https://cdn.makecode.com/api/99904-43074-40676-04519/thumb
 ---
-* name: Ripple Nursery
-* description: Create a peaceful aquatic nursery in this beautiful game featuring procedurally generated fish!
-* author: BLADEr
-* url: https://arcade.makecode.com/90079-87753-76853-40585
+* name: Robber Frog
+* description: Navigate the halls and don't get caught by the fuzz in this clever puzzle game! ...Or do get caught because the game over screen is adorable.
+* author: MunchCoder
+* url: https://arcade.makecode.com/43278-23164-73495-84250
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/90079-87753-76853-40585/thumb
+* imageUrl: https://cdn.makecode.com/api/43278-23164-73495-84250/thumb
 ---
-* name: FISHE
-* description: Catch some, uh, strange fish by the fire in this fishing game! Can you find Richard's cat?
-* author: Jupiter_Dev
-* url: https://arcade.makecode.com/99558-01822-14292-68050
+* name: Ink-Fueled
+* description: Fight eggs, earn upgrades, and find keys in this squid-themed platformer. How can the eggs move? Who knows!
+* author: M1ntPhoen1x
+* url: https://arcade.makecode.com/92023-96607-03413-15819
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/99558-01822-14292-68050/thumb
+* imageUrl: https://cdn.makecode.com/api/92023-96607-03413-15819/thumb
 ---
-* name: Games by the Fire
-* description: A collection of classic games to play on a rainy (or snowy) day!
-* author: WoofWoof
-* url: https://arcade.makecode.com/19750-75550-52030-37293
+* name: Robin Banks Grand Heist
+* description: He he he... The protagonist is named 'Robin Banks'! Get it? Why aren't you laughing!?
+* author: Christian
+* url: https://arcade.makecode.com/47270-14101-68336-49721
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/19750-75550-52030-37293/thumb
+* imageUrl: https://cdn.makecode.com/api/47270-14101-68336-49721/thumb
 ---
-* name: Duck House: Quake
-* description: If you're only going to play one psychological mystery game with a cast of anthropomorphized rubber ducks this year, make it this one!
-* author: Randomuser
-* url: https://arcade.makecode.com/46419-07177-12626-56728
-* cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/46419-07177-12626-56728/thumb
----
-* name: Cat diary
-* description: Play as an abandoned kitten who is taken in to a new home on a cold winter day!
-* author: Me-loo0
-* url: https://arcade.makecode.com/26252-49898-29454-33844
-* cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/26252-49898-29454-33844/thumb
----
-* name: Quest for the lost water bucket: Game Jam Edition
-* description: A hilarious journey to find a lost water bucket with a cast straight out of the crisper!
+* name: Stealthy Stealer Game Jam Edition
+* description: Avoid security and work with your team to pull off a heist! Also, you can hide in a cardboard box!
 * author: Awesomefreez
-* url: https://arcade.makecode.com/88693-92934-73193-47840
+* url: https://arcade.makecode.com/76852-65586-36414-51779
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/88693-92934-73193-47840/thumb
+* imageUrl: https://cdn.makecode.com/api/76852-65586-36414-51779/thumb
 ---
-* name: THE ULTIMATE QUEST FOR A SINGLE SLICE OF DELICIOUS PIZZA
-* description: A self-described "very silly game" by Jack!
-* author: Jack
-* url: https://arcade.makecode.com/49179-56090-52439-38721
+* name: AFTER HEIST
+* description: Sure heists are exciting, but what about life after you get caught? Life in prison is no joke, so you gotta get outta there by any means necessary!
+* author: TA NORIZAM
+* url: https://arcade.makecode.com/06025-25657-85378-75246
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/49179-56090-52439-38721/thumb
+* imageUrl: https://cdn.makecode.com/api/06025-25657-85378-75246/thumb
 ---
-* name: Christmas Cozy Game Jam 
-* description: A classic match 3 game with a Christmas theme!
-* author: Anonymous
-* url: https://arcade.makecode.com/83199-79196-58883-28051
+* name: Button Wars MMA
+* description: Battle against your friends and try to steal each other's flags in this multiplayer arena game!
+* author: Jacob P.
+* url: https://arcade.makecode.com/71481-55242-53762-36753
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/83199-79196-58883-28051/thumb
+* imageUrl: https://cdn.makecode.com/api/71481-55242-53762-36753/thumb
 ---
-* name: Paint!
-* description: Try to fill in all the tiles with paint in this relaxing puzzler!
-* author: Thomas The Stickman and The Orange Cube
-* url: https://arcade.makecode.com/05661-46127-05850-78858
+* name: Investigators Alligators
+* description: In this game you play as a real investi-gator! Ha ha ha I crack myself up.
+* author: shezowww
+* url: https://arcade.makecode.com/10871-50236-97324-01900
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/05661-46127-05850-78858/thumb
+* imageUrl: https://cdn.makecode.com/api/10871-50236-97324-01900/thumb
 ---
-* name: Cozy Cooking
-* description: Make some soup! Everyone loves soup! Hey, let's all have soup!
-* author: dimpp
-* url: https://arcade.makecode.com/96880-50867-52168-13292
+* name: The Fey Caper (Aka, the cursed heist)
+* description: Find clues, avoid lasers, solve riddles! And also you can play as Richard or Joey, which is very flattering!
+* author: Bass.Games
+* url: https://arcade.makecode.com/93477-98814-31846-89744
 * cardType: sharedExample
-* imageUrl: https://cdn.makecode.com/api/96880-50867-52168-13292/thumb
+* imageUrl: https://cdn.makecode.com/api/93477-98814-31846-89744/thumb
+---
+* name: Duck House: Robbed of Sleep
+* description: Keep the ducks in the air to prevent a pleasant dream from becoming a nightmare that robs you of your sleep! As someone who cannot sleep in the best of times, I really relate to this one. This game uses mouse controls.
+* author: randomuser
+* url: https://arcade.makecode.com/40322-55561-10091-49751
+* cardType: sharedExample
+* imageUrl: https://cdn.makecode.com/api/40322-55561-10091-49751/thumb
 ---
 * name: See more...
 * description: Check out all the entries on the official game jam page!
 * cardType: link
 * directOpen: true
-* url: https://arcade.makecode.com/gamejam/cozy
+* url: https://arcade.makecode.com/gamejam/heist
 
 ### ~
 
 ## See Also
 
-[Game Jam Page](https://arcade.makecode.com/gamejam/cozy)
+[Game Jam Page](https://arcade.makecode.com/gamejam/heist)
