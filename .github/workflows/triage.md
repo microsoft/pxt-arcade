@@ -44,7 +44,4 @@ imports:
 timeout-minutes: 10
 ---
 
-
----
-
 Execute the triage workflow from the imported agent, applying the MakeCode Arcade-specific context above.
