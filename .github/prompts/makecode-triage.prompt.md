@@ -51,6 +51,7 @@ When classifying issues, use these component labels:
 - `high contrast` - High contrast mode
 - `accessibility` - Accessibility features, screen readers
 - `keyboardnav` - Keyboard navigation
+- `editor` - Editor UI, layout, controls
 
 **Quality:**
 - `reliability` - Crashes, stability issues
