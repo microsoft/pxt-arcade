@@ -1,4 +1,5 @@
 # Bug Arena Introduction
+### @hideReplaceMyCode true
 
 ## ✨ AI Challenge Accepted! @showdialog
 
@@ -6,7 +7,7 @@ Welcome to the 👾 **Bug Arena** 👾 where the smartest bugs battle for glory!
 
 ![Bug Arena Gameplay](/static/skillmap/bug-arena/game.gif "animation of game")
 
-Get ready to code your own super-smart bug using **Artificial Intelligence (AI)** and challenge other AI bugs to see who rules the arena!
+This first tutorial will introduce you to the mechanics of the Bug Arena game. You won't be doing any coding, but you'll get ready to create your own super-smart bug using **Artificial Intelligence (AI)** and challenge other AI bugs to see who rules the arena!
 
 Your mission: splash your bug's paint 🎨 all over the screen and out-color 🖌️ your rivals. The more you cover, the closer you are to victory!
 
@@ -14,9 +15,13 @@ Your mission: splash your bug's paint 🎨 all over the screen and out-color �
 
 Go to the Game Window 🖼️ (bottom right corner) and click on the **Practice** button.
 
-You can pick **No Opponent** or select from various different challengers 💪 to train your bug's AI.
+![Practice Button](/static/skillmap/bug-arena/practice-button.png "practice button")
 
-Then click to select a **Timed Match** or **Infinite** to play without a clock. 🕓
+You can pick No Opponent or select from various different challengers 💪 to train your bug's AI. To unlock more opponents, battle them in the Tower.
+
+Click on **Waftsworth** as your practice opponent.
+
+Then click to select a **Timed Match**. Infinite mode allows you to play without a clock.
 
 Click **Next** below for more information about the game screen.
 
@@ -30,7 +35,7 @@ At the top of the screen you'll see graphs showing you the percentage of the scr
 
 If you selected a Timed Match, you will also see a clock timer 🕓 at the top. In Practice mode, there is no time limit.
 
-Speed things up or slow them down using the ⚡ Speed slider at the bottom of the screen.
+Speed things up or slow them down using the **SPEED** slider at the bottom of the screen.
 
 Watch them zoom around! The bugs move on their own, thanks to their smart ✨ AI brains.
 
@@ -40,7 +45,7 @@ In the Game Window 🖼️, click on the **Menu** button to return to the main m
 
 ![Menu button](/static/skillmap/bug-arena/menu-button.png "menu button")
 
-Now click on the **Tower** button. When you have finished training your AI bug, you can battle other bugs and climb the Tower for ultimate Bug Arena glory! 🏆
+When you have finished training your AI bug, clicking on the **Tower** button will allow you to battle other bugs and climb the Tower for ultimate Bug Arena glory! 🏆
 
 You will learn more about the Tower in the last Bug Arena tutorial.
 
@@ -81,10 +86,6 @@ hint~
 ## Types of Algorithms
 
 ![Example Algorithms](/static/skillmap/bug-arena/algorithms.gif "animation of 3 types of algorithms")
-
-- Scribble
-- Squares
-- Back and forth
 
 After you click Done ✅, select your next tutorial based on the type of coloring algorithm you want to use for your bug.
 

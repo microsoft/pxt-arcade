@@ -638,13 +638,19 @@
         "saveInMenu": false,
         "debugger": true,
         "importExtensionFiles": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {}
+        },
+        "supportedExperiences": [
+            "code-eval"
+        ],
         "experiments": [
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList",
             "identity",
             "accessibleBlocks",
             "palettePicker"
@@ -704,7 +710,8 @@
         "teachertool=1": {
             "appTheme": {
                 "hideMenuBar": true,
-                "workspaceSearch": true
+                "workspaceSearch": true,
+                "noReloadOnUpdate": true
             }
         },
         "ninja=1": {

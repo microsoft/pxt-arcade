@@ -77,7 +77,7 @@ randint(-80, 80)
 in to replace **0** as the  **vx** value inside<br/>
 ```block
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, 0, 50)
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, 0, 50)
 ```
 
 
@@ -108,7 +108,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), 50)
 })
 ```
 
@@ -122,7 +122,7 @@ randint(-50, -100)
 in to replace **-50** as the  **vy** value inside<br/>
 ```block
     //@highlight
-    let projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), -50)
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), -50)
 ```
 
 
@@ -153,7 +153,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.changeScoreBy(1)
     audience.setImage(assets.image`clap1`)
     //@highlight
-    projectile = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
+    let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 ```
 

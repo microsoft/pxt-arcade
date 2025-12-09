@@ -1,0 +1,50 @@
+{
+    "criteria": [
+        {
+            "id": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "use": "ai_question",
+            "template": "Ask AI: ${question}",
+            "description": "Experimental: AI outputs may not be accurate. Use with caution and always review responses.",
+            "docPath": "/teachertool",
+            "maxCount": 10,
+            "tags": ["General"],
+            "requestFeedback": true,
+            "params": [
+                {
+                    "name": "question",
+                    "type": "longString",
+                    "maxCharacters": 1000,
+                    "paths": ["checks[0].question"],
+                    "options": [
+                        {
+                            "id": "describeGoal",
+                            "value": "You're reviewing a MakeCode Arcade project. Describe the main goal of the game so a brand-new player knows what to do."
+                        },
+                        {
+                            "id": "explainMechanics",
+                            "value": "Review the MakeCode Arcade project and explain how the student implemented the core gameplay mechanics using code blocks or JavaScript."
+                        },
+                        {
+                            "id": "suggestImprovement",
+                            "value": "After examining this MakeCode Arcade project, suggest one change that could make the game more engaging for players."
+                        },
+                        {
+                            "id": "findBug",
+                            "value": "Inspect the MakeCode Arcade project for bugs. Describe one concrete issue you find and explain how to fix it."
+                        },
+                        {
+                            "id": "codeOrganization",
+                            "value": "Evaluate how well the student organized their MakeCode Arcade code. Suggest one specific refinement that would improve clarity or maintainability."
+                        }
+                    ]
+                },
+                {
+                    "name": "shareid",
+                    "type": "system",
+                    "key": "SHARE_ID",
+                    "paths": ["checks[0].shareId"]
+                }
+            ]
+        }
+    ]
+}

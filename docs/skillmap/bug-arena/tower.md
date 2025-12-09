@@ -1,4 +1,5 @@
 # Bug Arena Tower
+### @hideReplaceMyCode true
 
 ## Let the battle begin! @showdialog
 
@@ -14,9 +15,9 @@ Battle other AI bugs in the Tower 🏰 and level up with every win! Can you reac
 
 In the Game Window 🖼️ in the bottom right corner, click on the **Tower** button to start the game.
 
-At each level, you will be introduced to your 👾 bug opponents and will challenge them to a bug paint 🎨 splash duel!
+At each level, you will be introduced to your 👾 bug opponents and will challenge them to a bug paint 🎨 splash duel! Click and hold down the **A** or **B** buttons to skip the animated scenes.
 
-Each duel lasts 5 minutes, so feel free to move the ⚡️ Speed slider to the right ➡️ to speed things up.
+Each duel lasts 5 minutes, so feel free to move the **SPEED** slider to the right ➡️ to speed things up.
 
 If you win the match 🏆, you'll move up a level in the Tower to challenge your next opponent.
 
@@ -25,6 +26,30 @@ If you lose ❌, you'll have an option to go back to the Practice grounds refine
 ![Continue or New](/static/skillmap/bug-arena/continue-new.png "Continue or New")
 
 Good luck! 🍀 Click **Done** below to claim your certificate and badge. 🏅
+
+```hiddennamespaces
+paths
+angleutil
+sprites
+controller
+game
+music
+scene
+info
+loops
+fancyText
+transitions
+screenTransitions
+animation
+animations
+sound
+browserEvents
+images
+arrays
+console
+functions
+function
+```
 
 ```package
 hourOfAi=github:riknoll/bug-arena
