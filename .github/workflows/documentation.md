@@ -12,8 +12,11 @@ tools:
   github:
     read-only: true
     allowed:
-      - get_pull_request
-      - list_pull_request_files
+      - pull_request_read
+      - get_commit
+      - list_commits
+      - search_code
+      - semantic_code_search
 safe-outputs:
   add-comment:
     target: 'triggering'
@@ -34,6 +37,7 @@ First, get the PR details and changed files:
 
 - PR number: `${{ needs.activation.outputs.pr_number }}`
 - Use the `github` tool to fetch PR information and file changes
+- **IMPORTANT**: You must analyze ALL changes in the PR, not just the last commit. Use `git diff origin/master...HEAD` or `git diff origin/master..HEAD` to get all changes from the base branch to the PR head
 
 ### Step 2: Identify Documentation Needs
 
