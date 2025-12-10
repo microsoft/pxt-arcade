@@ -522,15 +522,7 @@
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
-        "keymap": true,
-        "messageSimulators": {
-            "jacdac": {
-                "url": "https://microsoft.github.io/jacdac-docs/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
-                "localHostUrl": "http://localhost:8000/tools/makecode-sim?webusb=0&parentOrigin=$PARENT_ORIGIN$",
-                "aspectRatio": "0.89",
-                "permanent": true
-            }
-        }
+        "keymap": true
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
@@ -646,13 +638,19 @@
         "saveInMenu": false,
         "debugger": true,
         "importExtensionFiles": true,
+        "enabledFeatures": {
+            "blocksErrorList": {},
+            "aiErrorHelp": {}
+        },
+        "supportedExperiences": [
+            "code-eval"
+        ],
         "experiments": [
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
             "recipes",
             "tutorialBlocksDiff",
-            "blocksErrorList",
             "identity",
             "accessibleBlocks",
             "palettePicker"
@@ -712,7 +710,8 @@
         "teachertool=1": {
             "appTheme": {
                 "hideMenuBar": true,
-                "workspaceSearch": true
+                "workspaceSearch": true,
+                "noReloadOnUpdate": true
             }
         },
         "ninja=1": {

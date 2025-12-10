@@ -47,18 +47,6 @@ characters[0].flipX()
 hint~
 
 
-```blocks
-let characters: Image[] = []
-
-characters = [
-newpizzaassets.red,
-newpizzaassets.blue,
-newpizzaassets.orange,
-newpizzaassets.green
-]
-```
-
-
 #### ~ tutorialhint
 
 ```blocks

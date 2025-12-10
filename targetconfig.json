@@ -16,6 +16,7 @@
             "microsoft/pxt-tilemaps",
             "microsoft/pxt-skillmap-sample",
             "microsoft/pxt-jacdac",
+            "jacdac/pxt-jacdac",
             "mr-coxall/turtle-logo",
             "microsoft/arcade-storytelling",
             "microsoft/arcade-background-scroll",
@@ -71,7 +72,7 @@
             "microsoft/arcade-sprite-data": {
                 "preferred": true,
                 "tags": [ "Utility" ],
-                "upgrades": "min:v0.0.6"
+                "upgrades": [ "min:v0.0.6" ]
             },
             "microsoft/arcade-grid": {
                 "preferred": true,
@@ -95,7 +96,15 @@
             },
             "microsoft/pxt-skillmap-sample": {},
             "microsoft/pxt-jacdac": {
-                "tags": [ "Hardware" ]
+                "tags": [ "Hardware" ],
+                "upgrades": [ "move:jacdac/pxt-jacdac" ],
+                "hidden": true
+            },
+            "jacdac/pxt-jacdac": {
+                "simx": {
+                    "sha": "9a567f397293aa27a06eab91910838f62a100753",
+                    "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
+                }
             },
             "microsoft/arcade-storytelling": {
                 "preferred": true,
@@ -223,6 +232,7 @@
         "defaultPath": "docs:/skillmap/intermediate-skillmap",
         "pathAliases": {
             "beginner": "docs:/skillmap/beginner-skillmap",
+            "bug": "docs:/skillmap/bug-arena",
             "zoo": "docs:/skillmap/zoo",
             "space": "docs:/skillmap/space",
             "platformer": "docs:/skillmap/platformer",
@@ -258,10 +268,10 @@
                 "image": "/static/multiplayer/galga.png"
             },
             {
-                "shareId": "_FdYfDwixRTAw",
-                "title": "Painting Together",
+                "shareId": "_Ka770J6Laeva",
+                "title": "Paint Party",
                 "subtitle": "1-4 player",
-                "image": "/static/multiplayer/painting.png"
+                "image": "/static/multiplayer/paint-party.png"
             },
             {
                 "shareId": "_1DogpPTpb8fK",
@@ -409,6 +419,9 @@
     },
     "electronManifest": {
         "latest": "v2.0.56"
+    },
+    "teachertool": {
+        "showSharePageEvalButton": true
     },
     "kiosk": {
         "games": [
