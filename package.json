@@ -40,6 +40,6 @@
     "scripts": {
         "serve": "node node_modules/pxt-core/built/pxt.js serve",
         "copy-sim": "node ./scripts/copyArcadeSim.js",
-        "compile-triage-workflow": "gh aw compile triage.md --strict"
+        "compile-aw": "gh aw compile --strict"
     }
 }
