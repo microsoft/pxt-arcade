@@ -14,18 +14,25 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---stm32f401"
     },
     {
-        "name": "BrainPad Arcade",
-        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
-        "imageUrl": "/static/hardware/ghiarcade.jpg",
-        "url": "https://brainpad.com/arcade",
+        "name": "Retro Arcade for Education",
+        "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
+        "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
+        "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
         "variant": "hw---stm32f401"
     },
     {
         "name": "TinkerGen GameGo",
         "description": "A fun-sized console to play the games you code.",
         "imageUrl": "/static/hardware/gamego.jpg",
-        "url": "https://www.tinkergen.com/gamego",
+        "url": "https://www.seeedstudio.com/GameGo-p-4847.html",
         "variant": "hw---stm32f401"
+    },
+    {
+        "name": "Kitronik ARCADE",
+        "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
+        "imageUrl": "/static/hardware/kitronik.jpg",
+        "url": "https://www.kitronik.co.uk/arcade",
+        "variant": "hw---samd51"
     },
     {
         "name": "MRT Game Maker Kit",
@@ -42,17 +49,17 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---samd51"
     },
     {
+        "name": "BrainPad Arcade",
+        "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
+        "imageUrl": "/static/hardware/ghiarcade.jpg",
+        "url": "https://brainpad.com/arcade",
+        "variant": "hw---stm32f401"
+    },
+    {
         "name": "Adafruit PyGamer",
         "description": "The upgraded PyBadge",
         "imageUrl": "/static/hardware/pygamer.jpg",
         "url": "https://www.adafruit.com/product/4242",
-        "variant": "hw---samd51"
-    },
-    {
-        "name": "Kitronik ARCADE",
-        "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
-        "imageUrl": "/static/hardware/kitronik.jpg",
-        "url": "https://www.kitronik.co.uk/arcade",
         "variant": "hw---samd51"
     },
     {
@@ -63,13 +70,6 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---stm32f401"
     },
     {
-        "name": "Retro Arcade for Education",
-        "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
-        "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
-        "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
-        "variant": "hw---stm32f401"
-    },
-    {
         "name": "Adafruit EdgeBadge",
         "description": "It's the PyBadge with a zest of Machine learning",
         "imageUrl": "/static/hardware/edgebadge.jpg",
@@ -77,17 +77,17 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---samd51"
     },
     {
-        "name": "Adafruit M4",
-        "description": "Learn how to run your games on micro-controllers from Adafruit",
-        "imageUrl": "/static/hardware/adafruitm4.jpg",
-        "url": "https://learn.adafruit.com/makecode-arcade-m4",
-        "variant": "hw---samd51"
-    },
-    {
         "name": "Kitronik ARCADE Max",
         "description": "Program fun and educational games with the Kitronik ARCADE Max",
         "imageUrl": "/static/hardware/kitronik-arcade-max.png",
         "url": "https://kitronik.co.uk/5357",
+        "variant": "hw---samd51"
+    },
+    {
+        "name": "Adafruit M4",
+        "description": "Learn how to run your games on micro-controllers from Adafruit",
+        "imageUrl": "/static/hardware/adafruitm4.jpg",
+        "url": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
     }
 ]
@@ -101,16 +101,16 @@ Shields are based on our guidelines, adhere to open source hardware reference de
 ```codecard
 [
     {
-        "name": "micro:bit Newbit Shield",
-        "description": "Use the micro:bit with an expansion board from Kittenbot",
-        "imageUrl": "/static/hardware/newbit.png",
-        "url": "https://www.kittenbot.cc/products/newbit-arcade-shield"
-    },
-    {
         "name": "micro:bit Retro Shield",
         "description": "Use the micro:bit with an expansion board from Elecfreaks",
         "imageUrl": "/static/hardware/retro-shield.jpg",
         "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade"
+    },
+    {
+        "name": "micro:bit Newbit Shield",
+        "description": "Use the micro:bit with an expansion board from Kittenbot",
+        "imageUrl": "/static/hardware/newbit.png",
+        "url": "https://www.kittenbot.cc/products/newbit-arcade-shield"
     },
     {
         "name": "micro:bit Game:Bit Shield",
