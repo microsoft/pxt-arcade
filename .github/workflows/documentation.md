@@ -70,6 +70,8 @@ Create a structured comment with your findings. Use this format:
 <details>
 <summary>📋 View Detailed Findings</summary>
 
+**If documentation updates are needed:**
+
 ### Documentation Needed
 [For each item that needs documentation:]
 
@@ -92,6 +94,8 @@ Create a structured comment with your findings. Use this format:
 @[PR_AUTHOR] To apply these documentation recommendations, please reply to this comment and ask:
 > @copilot please apply these documentation suggestions
 
+**If no documentation updates are needed:**
+This PR is good to go from a documentation perspective!
 ```
 
 ### Step 5: Post the Comment
