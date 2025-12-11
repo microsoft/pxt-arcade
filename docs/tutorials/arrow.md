@@ -632,6 +632,7 @@ namespace bundles{
     */
     //% block="create player 1"  weight=300
     //% handlerStatement=1
+    //% help=reference/tutorials/tutorial-bundles
     export function wrap1(handler: () => void) {
         handler();
     }
@@ -641,6 +642,7 @@ namespace bundles{
     */
     //% block="create player 2"  weight=200
     //% handlerStatement=1
+    //% help=reference/tutorials/tutorial-bundles
     export function wrap2(handler: () => void) {
         handler();
     }
@@ -650,6 +652,7 @@ namespace bundles{
     */
     //% block="create arrow"  weight=100
     //% handlerStatement=1
+    //% help=reference/tutorials/tutorial-bundles
     export function wrap3(handler: () => void) {
         handler();
     }
@@ -659,6 +662,7 @@ namespace bundles{
     */
     //% block="finishing touches"
     //% handlerStatement=1
+    //% help=reference/tutorials/tutorial-bundles
     export function wrap4(handler: () => void) {
         handler();
     }
