@@ -39,6 +39,7 @@
     },
     "scripts": {
         "serve": "node node_modules/pxt-core/built/pxt.js serve",
-        "copy-sim": "node ./scripts/copyArcadeSim.js"
+        "copy-sim": "node ./scripts/copyArcadeSim.js",
+        "compile-aw": "gh aw compile --strict"
     }
 }
