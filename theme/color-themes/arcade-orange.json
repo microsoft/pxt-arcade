@@ -109,9 +109,9 @@
         "pxt-colors-teal-foreground": "#FFFFFF",
         "pxt-colors-teal-hover": "#015e69",
         "pxt-colors-teal-alpha10": "#028b9b19",
-        "pxt-colors-yellow-background": "#c0a000",
-        "pxt-colors-yellow-foreground": "#FFFFFF",
-        "pxt-colors-yellow-hover": "rgb(153, 132, 0)",
-        "pxt-colors-yellow-alpha10": "#c0a00019"
+        "pxt-colors-yellow-background": "#f1c40f",
+        "pxt-colors-yellow-foreground": "#000000",
+        "pxt-colors-yellow-hover": "#c29d0b",
+        "pxt-colors-yellow-alpha10": "#f1c40f19"
     }
 }
