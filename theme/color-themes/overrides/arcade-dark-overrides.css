@@ -63,17 +63,9 @@ button.common-button.inverted:hover:not(.teaching-bubble-button) {
     background-color: var(--pxt-neutral-background2-hover) !important;
 }
 
-/* Fix for Monaco editor Problems panel hover visibility in dark theme */
-.monaco-list .monaco-list-row:hover,
-.monaco-list .monaco-list-row.focused {
+/* Fix for Problems panel hover visibility in dark theme */
+.errorList .errorListInner .ui.selection.list .item:focus,
+.errorList .errorListInner .ui.selection.list .item:hover {
     /* Ensure text remains visible when hovering over error messages in Problems panel */
-    color: var(--pxt-neutral-foreground1) !important;
-}
-
-.monaco-list .monaco-list-row:hover .label-name,
-.monaco-list .monaco-list-row:hover .monaco-icon-label-description-container,
-.monaco-list .monaco-list-row.focused .label-name,
-.monaco-list .monaco-list-row.focused .monaco-icon-label-description-container {
-    /* Better contrast for error message text on hover */
     color: var(--pxt-neutral-foreground1) !important;
 }
