@@ -469,7 +469,7 @@ namespace bundles{
     */
     //% block="create player 1"  weight=300
     //% handlerStatement=1
-    //% help=tutorials/tutorial-bundles
+    //% help=tutorial-only
     export function wrap1(handler: () => void) {
         handler();
     }
@@ -479,7 +479,7 @@ namespace bundles{
     */
     //% block="create player 2"  weight=200
     //% handlerStatement=1
-    //% help=tutorials/tutorial-bundles
+    //% help=tutorial-only
     export function wrap2(handler: () => void) {
         handler();
     }

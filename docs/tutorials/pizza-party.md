@@ -922,7 +922,7 @@ namespace bundles{
     */
     //% block="check if A button pressed"  weight=300
     //% handlerStatement=1
-    //% help=tutorials/tutorial-bundles
+    //% help=tutorial-only
     export function wrap1(handler: () => void) {
         handler();
     }
@@ -932,7 +932,7 @@ namespace bundles{
     */
     //% block="create finish line"  weight=300
     //% handlerStatement=1
-    //% help=tutorials/tutorial-bundles
+    //% help=tutorial-only
     export function wrap2(handler: () => void) {
         handler();
     }
@@ -942,7 +942,7 @@ namespace bundles{
     */
     //% block="create players"  weight=300
     //% handlerStatement=1
-    //% help=tutorials/tutorial-bundles
+    //% help=tutorial-only
     export function wrap3(handler: () => void) {
         handler();
     }
