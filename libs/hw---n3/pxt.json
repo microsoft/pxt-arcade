@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "core---nrf52": "file:../core---nrf52",
-        "screen---st7735": "file:../screen---st7735",
+        "screen---n3": "file:../screen---n3",
         "mixer---nrf52": "file:../mixer---nrf52",
         "game": "file:../game"
     },
@@ -31,8 +31,11 @@
             "DEVICE_JACDAC_DEBUG": 1
         },
         "config": {
+            "DMESG_SERIAL_DEBUG": 1,
+            "DEVICE_DMESG_BUFFER_SIZE": 1024,
+            "DEVICE_BLE": 0,
             "DEVICE_USB": 0,
-            "DEVICE_WEBUSB": 0
+            "DEVICE_WEBUSB": 1
         }
     },
     "dalDTS": {
