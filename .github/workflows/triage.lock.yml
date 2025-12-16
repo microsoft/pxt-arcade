@@ -331,19 +331,23 @@
 #
 # ### Repository Routing Rules
 #
-# **TRIAGE NORMALLY in pxt-arcade (these issues belong here):**
+# **IN-SCOPE FOR THIS TRIAGE (ALWAYS OK TO FILE IN microsoft/pxt-arcade):**
 # - microsoft/pxt-arcade - Arcade-specific features, target config, arcade blocks/APIs, arcade hardware, arcade documentation
 # - **microsoft/pxt** (pxt-core) - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
 # - **microsoft/pxt-common-packages** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
 # - **microsoft/pxt-arcade-sim** - Simulator implementation for Arcade
-# - Any issues affecting the Arcade target implementation or development environment
+# - Any issue affecting the Arcade target implementation or development environment
 #
-# ⚠️ **CRITICAL**: Issues affecting pxt-core or pxt-common-packages ARE ALLOWED HERE - these repositories form the MakeCode Arcade development workspace.
+# ⚠️ **HARD RULE (DO NOT VIOLATE)**: If an issue appears to belong to **microsoft/pxt**, **microsoft/pxt-common-packages**, or **microsoft/pxt-arcade-sim**, it is STILL **IN-SCOPE HERE**. Do **NOT** recommend “wrong repo”, do **NOT** ask the reporter to re-file elsewhere, and do **NOT** close/deflect for repo-choice reasons. Instead, triage it here and clearly state **Likely fix location: <repo/path>**.
 #
-# **REDIRECT to other repositories (ONLY these):**
+# **REDIRECT OUT OF THIS WORKSPACE (ONLY these cases):**
 # - **microsoft/pxt-minecraft** - Issues specific to MakeCode for Minecraft blocks, Minecraft gameplay, Minecraft-specific features
 # - **microsoft/pxt-microbit** - Issues specific to MakeCode for micro:bit, BBC micro:bit hardware/sensors
 # - Third-party extensions not maintained in the Arcade workspace
+#
+# **When you suspect a different repo:**
+# - If it’s one of the IN-SCOPE workspace repos above: keep triage in this repo and add “Likely fix location: …”.
+# - If it’s one of the REDIRECT OUT OF THIS WORKSPACE repos above: recommend redirecting.
 #
 # ### Component Taxonomy
 #
@@ -3147,19 +3151,23 @@ jobs:
           
           ### Repository Routing Rules
           
-          **TRIAGE NORMALLY in pxt-arcade (these issues belong here):**
+          **IN-SCOPE FOR THIS TRIAGE (ALWAYS OK TO FILE IN microsoft/pxt-arcade):**
           - microsoft/pxt-arcade - Arcade-specific features, target config, arcade blocks/APIs, arcade hardware, arcade documentation
           - **microsoft/pxt** (pxt-core) - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
           - **microsoft/pxt-common-packages** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
           - **microsoft/pxt-arcade-sim** - Simulator implementation for Arcade
-          - Any issues affecting the Arcade target implementation or development environment
+          - Any issue affecting the Arcade target implementation or development environment
           
-          ⚠️ **CRITICAL**: Issues affecting pxt-core or pxt-common-packages ARE ALLOWED HERE - these repositories form the MakeCode Arcade development workspace.
+          ⚠️ **HARD RULE (DO NOT VIOLATE)**: If an issue appears to belong to **microsoft/pxt**, **microsoft/pxt-common-packages**, or **microsoft/pxt-arcade-sim**, it is STILL **IN-SCOPE HERE**. Do **NOT** recommend “wrong repo”, do **NOT** ask the reporter to re-file elsewhere, and do **NOT** close/deflect for repo-choice reasons. Instead, triage it here and clearly state **Likely fix location: <repo/path>**.
           
-          **REDIRECT to other repositories (ONLY these):**
+          **REDIRECT OUT OF THIS WORKSPACE (ONLY these cases):**
           - **microsoft/pxt-minecraft** - Issues specific to MakeCode for Minecraft blocks, Minecraft gameplay, Minecraft-specific features
           - **microsoft/pxt-microbit** - Issues specific to MakeCode for micro:bit, BBC micro:bit hardware/sensors
           - Third-party extensions not maintained in the Arcade workspace
+          
+          **When you suspect a different repo:**
+          - If it’s one of the IN-SCOPE workspace repos above: keep triage in this repo and add “Likely fix location: …”.
+          - If it’s one of the REDIRECT OUT OF THIS WORKSPACE repos above: recommend redirecting.
           
           ### Component Taxonomy
           
