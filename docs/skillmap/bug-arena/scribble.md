@@ -21,7 +21,7 @@ In this tutorial we'll code our bug's AI algorithm ✨ to move in random pattern
 
 Let's have our bug turn a different direction every 5 seconds.  To do this, we'll use a time interval block. 🕓
 
-From the ``||bug-arena:Bug AI||`` toolbox category, drag an ``||bug-arena:every 5000 ms||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` toolbox category, drag an ``||hourOfAi:every 5000 ms||`` block out onto the Workspace - you can put it anywhere.
 
 ![Drag and drop blocks](/static/skillmap/bug-arena/dragdrop.gif "animation of dragging and dropping blocks")
 
@@ -29,7 +29,7 @@ From the ``||bug-arena:Bug AI||`` toolbox category, drag an ``||bug-arena:every 
 
 ---
 
-The ``||bug-arena:every 5000 ms||`` block will run the code you put inside of it on a specified millisecond (ms) 🕓 time interval, in this case every 5000 ms or 5 seconds.
+The ``||hourOfAi:every 5000 ms||`` block will run the code you put inside of it on a specified millisecond (ms) 🕓 time interval, in this case every 5000 ms or 5 seconds.
 
 hint~
 
@@ -50,7 +50,7 @@ hourOfAi.every(5000, function () {
 
 ## Turn your bug!
 
-From the ``||bug-arena:Bug AI||`` category, drag a ``||bug-arena:turn 90||`` block out and drop into the ``||bug-arena:every 5000 ms||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||hourOfAi:every 5000 ms||`` block.
 <br/>
 <br/>
 
@@ -82,7 +82,7 @@ hourOfAi.every(5000, function () {
 
 Every 5 seconds, we want our bug to turn in a different random direction.
 
-From the ``||Math:Math||`` Toolbox drawer, drag a ``||Math:pick random||`` block and drop in the ``||bug-arena:turn||`` block, replacing the **90**.
+From the ``||Math:Math||`` Toolbox drawer, drag a ``||Math:pick random||`` block and drop in the ``||hourOfAi:turn||`` block, replacing the **90**.
 <br/>
 <br/>
 
@@ -129,9 +129,9 @@ randint(-180, 180)
 
 Let's add some code to make our bug turn ↩️ when it hits a wall.
 
-From the ``||bug-arena:Bug AI||`` category, drag an ``||bug-arena:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
 
-Now drag another ``||bug-arena:turn 90||`` block and drop it into the ``||bug-arena:on bump wall||`` block.
+Now drag another ``||hourOfAi:turn 90||`` block and drop it into the ``||hourOfAi:on bump wall||`` block.
 
 ```blockconfig.local
 hourOfAi.every(5000, function () {
@@ -150,7 +150,7 @@ hourOfAi.onBumpWall(function () {
 
 Again, we want our bug to turn in a random direction, so let's use the 🎲 Pick Random function again.
 
-From the ``||Math:Math||`` Toolbox drawer, drag another ``||Math:pick random||`` block and drop in the ``||bug-arena:turn||`` block, replacing the **90**.
+From the ``||Math:Math||`` Toolbox drawer, drag another ``||Math:pick random||`` block and drop in the ``||hourOfAi:turn||`` block, replacing the **90**.
 
 ```blockconfig.local
 hourOfAi.every(5000, function () {
@@ -199,5 +199,5 @@ hourOfAi.onStart(function () {
 ```
 
 ```package
-bug-arena=github:riknoll/bug-arena
+hourOfAi=github:riknoll/bug-arena
 ```
