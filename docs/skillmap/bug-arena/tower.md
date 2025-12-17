@@ -52,5 +52,5 @@ function
 ```
 
 ```package
-bug-arena=github:riknoll/bug-arena
+hourOfAi=github:riknoll/bug-arena
 ```
