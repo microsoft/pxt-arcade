@@ -141,8 +141,9 @@ void JDDisplay::handleIncoming(jd_packet_t *pkt) {
                 controlsEndServiceNum = servIdx;
                 VLOG("JDA: found controls, serv=%d", servIdx);
             } else if (service_class == JD_SERVICE_CLASS_ARCADE_SOUND) {
-                soundServiceNum = servIdx;
-                VLOG("JDA: found sound, serv=%d", servIdx);
+                // let's see if turning off this option helps with stability
+                //soundServiceNum = servIdx;
+                // VLOG("JDA: found sound, serv=%d", servIdx);
             } else {
                 VLOG("JDA: unknown service: %x", service_class);
             }
@@ -150,7 +151,7 @@ void JDDisplay::handleIncoming(jd_packet_t *pkt) {
     } else if (pkt->service_number == JD_SERVICE_NUMBER_CTRL &&
                pkt->service_command == JD_CMD_CTRL_NOOP) {
         // do nothing
-    } else if (pkt->service_number == soundServiceNum) {
+    } else if (soundServiceNum && pkt->service_number == soundServiceNum) {
         switch (pkt->service_command) {
         case JD_GET(JD_ARCADE_SOUND_REG_BUFFER_PENDING):
             soundBufferPending = *(uint32_t *)pkt->data;
