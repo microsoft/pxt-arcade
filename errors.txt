@@ -1,0 +1,9 @@
+error: pxt_modules/base/control.ts(167,56): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/game/controllerbutton.ts(93,21): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/game/systemmenu.ts(340,13): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/mixer---nrf52/melody.ts(54,9): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/screen---n3/targetoverrides.ts(45,34): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/screen---n3/targetoverrides.ts(45,55): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/screen---n3/targetoverrides.ts(46,9): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/screen---n3/targetoverrides.ts(49,9): error TS9200: !!proc || !bin.finalPass
+error: pxt_modules/screen---n3/targetoverrides.ts(55,13): error TS9200: !!proc || !bin.finalPass
