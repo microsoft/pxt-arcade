@@ -131,7 +131,7 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
         "imageUrl": "/static/hardware/gamekit.png",
         "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit"
-    },
+    }
 ]
 ```
 ## Other ways to play Arcade
