@@ -199,5 +199,5 @@ hourOfAi.onStart(function () {
 ```
 
 ```package
-hourOfAi=github:riknoll/bug-arena
+bug-arena=github:riknoll/bug-arena
 ```
