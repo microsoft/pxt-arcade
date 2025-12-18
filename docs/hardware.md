@@ -92,7 +92,7 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
     }
 ]
 ```
-##  Shields for Arcade
+##  Arcade Shields (for micro:bit V2 and Calliope mini 3)
 
 You can use the micro:bit V2 with an accessory shield to play MakeCode Arcade games as well! Connecting the new micro:bit to a MakeCode Arcade compatible shield allows the micro:bit to become its own retro gaming handheld. The micro:bit acts like a game cartridge that contains all of your game code; the shield enhances the micro:bit with a full colour LCD, additional buttons for game input. In addition to these awesome new features, micro:bit accessory manufacturers can augment their shields with their own custom Arcade shield designs and unique capabilities.
 
