@@ -84,13 +84,6 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---samd51"
     },
     {
-        "name": "Calliope GameKit Shield",
-        "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
-        "imageUrl": "/static/hardware/gamekit.png",
-        "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit",
-        "variant": "hw---n3"
-    },
-    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
@@ -99,9 +92,11 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
     }
 ]
 ```
-##  micro:bit shields for Arcade
+##  Shields for Arcade
 
-You can use micro:bit V2 with an accessory shield to play MakeCode Arcade games as well! Connecting the new micro:bit to a MakeCode Arcade compatible shield allows the micro:bit to become its own retro gaming handheld. The micro:bit acts like a game cartridge that contains all of your game code, all the shield does is enhance the micro:bit with a full colour LCD, additional buttons for game input. In addition to these awesome new features, micro:bit accessory manufacturers can augment their shields with their own custom Arcade shield designs and unique capabilities.
+You can use the micro:bit V2 with an accessory shield to play MakeCode Arcade games as well! Connecting the new micro:bit to a MakeCode Arcade compatible shield allows the micro:bit to become its own retro gaming handheld. The micro:bit acts like a game cartridge that contains all of your game code; the shield enhances the micro:bit with a full colour LCD, additional buttons for game input. In addition to these awesome new features, micro:bit accessory manufacturers can augment their shields with their own custom Arcade shield designs and unique capabilities.
+
+There also is now an Arcade shield for the Calliope mini 3 device.
 
 Shields are based on our guidelines, adhere to open source hardware reference designs, and have been user tested.  However, each hardware manufacturer is responsible for ensuring the compatibility, reliability, safety and compliance of their products. Microsoft provides no representations or warranties on these products and disclaims liability for any risks associated with their use.
 
@@ -130,7 +125,13 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "description": "Use the micro:bit with an expansion board from Kitronik",
         "imageUrl": "/static/hardware/kitronik-shield.png",
         "url": "http://www.kitronik.co.uk/56116"
-    }
+    },
+    {
+        "name": "Calliope GameKit Shield",
+        "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
+        "imageUrl": "/static/hardware/gamekit.png",
+        "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit"
+    },
 ]
 ```
 ## Other ways to play Arcade
