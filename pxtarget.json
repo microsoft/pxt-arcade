@@ -359,9 +359,11 @@
                 "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
                 "webUSB": false,
                 "useUF2": false,
-                "flashEnd": 524288,
                 "deployDrives": ".*",
-                "deployFileMarker": "DETAILS.TXT"
+                "deployFileMarker": "DETAILS.TXT",
+                "flashCodeAlign": 4096,
+                "flashUsableEnd": 471040,
+                "flashEnd": 524288
             },
             "compileService": {
                 "buildEngine": "codal",
