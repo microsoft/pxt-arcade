@@ -112,6 +112,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "variant": "hw---n3"
     },
     {
+        "name": "Calliope GameKit Shield",
+        "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
+        "imageUrl": "/static/hardware/gamekit.png",
+        "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit",
+        "variant": "hw---n3"
+    },
+    {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
         "imageUrl": "/static/hardware/adafruitm4.jpg",
