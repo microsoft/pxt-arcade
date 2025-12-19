@@ -1,54 +1,37 @@
-## Heist Jam
+## Heist Jam Winners!
 
-The theme for this jam is "Heists". In other words, we're looking for games about thievery, rogues, and crime!
+## First Place: The Safe Cracker
+| |
+| -- |
+| [!["The Safe Cracker" game screenshot](https://cdn.makecode.com/api/50932-20209-20218-60886/thumb)](https://arcade.makecode.com/50932-20209-20218-60886) |
+| &nbsp; |
 
-Does that mean your game has to be about robbing banks? Not at all! Your game could be about metaphorically stealing something (like hearts or minds), or it could simply have a plot that is set in motion by a heist that happened before the game even started. Feel free to get creative!
+[The Safe Cracker](https://arcade.makecode.com/50932-20209-20218-60886) by **Teddy B.** is a masterclass in making you really stressed out which is exactly what I assume it's like to actually participate in a real heist! You need to juggle three simultaneous challenges all while a relentless timer just keeps ticking and ticking and ticking and oh my god it never stops and I just lost all of my progress and WHAT AM I GOING TO D-
 
-Some good interpretations of this theme:
+Ahem... Our judges loved this *gem* of a game because of its clever premise, killer music, and overall stylishness. The opening cutscene and UI are full of little touches that are a delight to discover. Like all Teddy B. games, this one is well worth your time!
 
-* A game where you control a rabbit stealing crops from a curmudgeonly farmer
-* A fantasy game where you have to recover a kingdom's stolen amulet
-* A dating game where you have to steal the hearts of suitors
-* ...and of course a game where you rob a bank
+## Second Place: Under Surveillance
+| |
+| -- |
+| [!["Under Surveillance" game screenshot](https://cdn.makecode.com/api/52784-59082-24354-89134/thumb)](https://arcade.makecode.com/52784-59082-24354-89134) |
+| &nbsp; |
 
+[Under Surveillance](https://arcade.makecode.com/52784-59082-24354-89134) by **Bilangus** has one of the most addictive loops of any of the submissions we received for this jam. You play as a thief who is committing a series of robberies; each time you return from a heist you can invest your ill-gotten gains to unlock new skills or improve your thief's stats. And boy there are a lot of skills! Our judges loved mixing and matching the different skill options to find the best combo for their playstyle (luckily, the actual missions in this game are so quick to complete that you can quickly generate the funds to try out all of the available options).
 
-DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
--- | --
-![](/static/gamejam/jams/heist/assets/heist-demo-1.gif) | ![](/static/gamejam/jams/heist/assets/heist-demo-2.gif) | ![](/static/gamejam/jams/heist/assets/heist-demo-3.gif)
+This game is also jam-packed with all sorts of heist-y details: you can climb through vents, use smoke screens, avoid security cameras, and each of the missions has a distinct environment and objectives to steal. Plus, there's no penalty for messing up so it totally convinced us that being a thief is super fun with no downsides whatsoever.
 
+## Third Place (tie): Nine Cores
+| |
+| -- |
+| [!["Nine Cores" game screenshot](https://cdn.makecode.com/api/24442-87185-99963-39751/thumb)](https://arcade.makecode.com/24442-87185-99963-39751) |
+| &nbsp; |
 
-You can interpret "heists" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation. If you're worried we won't *get* it, then put it in the game title or description when you submit!
+[Nine Cores](https://arcade.makecode.com/24442-87185-99963-39751) by **Rune** is one of the best "twin stick shooter" type games that we've seen in MakeCode Arcade! The combat feels really good... *really, really* good. And the minimal graphics give the game a great streamlined feel. Combine that with the awesome music and addictive upgrade cycle and you've got yourself a recipe for a game with lots of replay value! Just be aware, the timing is *tight* on the getaway for this heist.
 
-## Don't stress! You've got plenty of time
-The game jam will run from **October 1, 2025** to **November 15, 2025**
+## Third Place (tie): Katandra: Hollow Heist
+| |
+| -- |
+| [!["Katandra: Hollow Heist" game screenshot](https://cdn.makecode.com/api/99904-43074-40676-04519/thumb)](https://arcade.makecode.com/99904-43074-40676-04519) |
+| &nbsp; |
 
-For you procrastinators out there, we will accept submissions until 11:59 PM PDT on November 15th!
-
-## Getting started
-
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [beginner skillmaps](https://arcade.makecode.com/--skillmap#dino) to learn the basics of making a game!
-
-## Rules
-
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
-3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
-
-## Join our crew
-
-This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team. You can hang out with the MakeCode team there too!
-
-## Tips and tricks
-
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our][traffic-jam] [past][garden-jam] [jams][ocean-jam]!
-
-[traffic-jam]: https://arcade.makecode.com/gamejam/traffic
-[ocean-jam]: https://arcade.makecode.com/gamejam/ocean
-[garden-jam]: https://arcade.makecode.com/gamejam/garden
+[Katandra: Hollow Heist](https://arcade.makecode.com/99904-43074-40676-04519) by **CopySprite** is a stylish platformer where you slash enemies and avoid obstacles in your quest to steal the mysterious "Void Amulet". What really set this game apart was the visuals, which all of our judges loved, and the multiple weapons and enemy types that you encounter along the way. We've also been assured by CopySprite that there are a number of secrets to discover in the game, so make sure you keep your eyes peeled as you're fighting off hordes of oni!

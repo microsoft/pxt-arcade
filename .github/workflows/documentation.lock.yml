@@ -20,55 +20,29 @@
 #
 # Original Frontmatter:
 # ```yaml
+# name: AI Documentation Check
 # on:
-#   issues:
+#   pull_request:
 #     types: [labeled]
-#     names: [ai-triage]
+#     names: [ai-doc-check]
 #
-# permissions:
-#   contents: read
-#   issues: read
-#   pull-requests: read
-#   discussions: read
-#   actions: read
-#   repository-projects: read
-#   security-events: read
-#
-# safe-outputs:
-#   add-comment:
-#     max: 1
-#     target: "triggering"
-#
-# engine:
-#   id: copilot
-#
+# permissions: read-all
+# engine: copilot
 # tools:
-#   cache-memory: true
 #   bash: true
 #   github:
 #     read-only: true
-#     toolsets: ['all']
 #     allowed:
+#       - pull_request_read
+#       - get_commit
+#       - list_commits
 #       - search_code
-#       - semantic_issues_search
-#       - semantic_issue_similarity_search
-#       - issue_read
-#       - list_issues
-#       - search_issues
-#       - get_file_contents
-#       - search_pull_requests
-#
-# imports:
-#   - ../agents/triage.agent.md
-#   - ../prompts/makecode-triage.prompt.md
-#
-# timeout-minutes: 10
+#       - semantic_code_search
+# safe-outputs:
+#   add-comment:
+#     target: 'triggering'
+#     max: 1
 # ```
-#
-# Resolved workflow manifest:
-#   Imports:
-#     - ../agents/triage.agent.md
-#     - ../prompts/makecode-triage.prompt.md
 #
 # Job Dependency Graph:
 # ```mermaid
@@ -79,354 +53,112 @@
 #   conclusion["conclusion"]
 #   detection["detection"]
 #   pre_activation["pre_activation"]
-#   update_cache_memory["update_cache_memory"]
 #   activation --> agent
 #   activation --> conclusion
 #   add_comment --> conclusion
 #   agent --> add_comment
 #   agent --> conclusion
 #   agent --> detection
-#   agent --> update_cache_memory
 #   detection --> add_comment
 #   detection --> conclusion
-#   detection --> update_cache_memory
 #   pre_activation --> activation
-#   update_cache_memory --> conclusion
 # ```
 #
 # Original Prompt:
 # ```markdown
-# # Generic Issue Triage Specialist
+# # Documentation Review Agent
 #
-# You are a triage specialist for GitHub issues. Your role is to analyze issues systematically and provide comprehensive recommendations for human reviewers.
+# You are a documentation quality reviewer for the MakeCode Arcade project. Your job is to analyze pull request changes and identify documentation gaps.
 #
-# ## Your Role & Constraints
+# ## Your Task
 #
-# - **Add ONE comment** with your complete triage analysis
-# - **Do NOT modify the issue** (no adding labels, changing state, editing title/body, or assigning)
-# - **All recommendations go in your comment** for humans to review and apply
-# - **Your role is advisory only** - humans make final decisions
+# When a PR is labeled with `ai-doc-check`, review the changes to determine if documentation is missing or needs updates.
 #
-# ## Triage Workflow
+# ### Step 1: Analyze the PR
 #
-# ### 1. Fetch Issue Details
+# First, get the PR details and changed files:
 #
-# Use `github/issue_read` with method `get` to retrieve full details of the issue being triaged.
+# - PR number: `${{ needs.activation.outputs.pr_number }}`
+# - Use the `github` tool to fetch PR information and file changes
+# - **IMPORTANT**: You must analyze ALL changes in the PR, not just the last commit. Use `git diff origin/master...HEAD` or `git diff origin/master..HEAD` to get all changes from the base branch to the PR head
 #
-# Extract:
-# - Title and body/description
-# - Current labels (if any)
-# - Author and creation date
-# - State (open/closed)
-# - Number of comments
-# - Any existing discussion
+# ### Step 2: Identify Documentation Needs
 #
-# ### 2. Search for Duplicates and Related Issues
+# Review the code changes and determine:
 #
-# **Always check for duplicates first** to avoid redundant work:
+# 1. **New Features**: Are there new APIs, blocks, functions, classes, or user-facing features that need documentation?
+# 2. **Changed Features**: Have existing APIs, blocks, or features been modified in ways that affect how users interact with them?
 #
-# Use `github/semantic_issue_similarity_search` to find semantically similar issues.
+# **Important Guidelines:**
 #
-# If semantic search doesn't yield results, supplement with `github/search_issues` using key terms from the issue.
+# - **Only flag documentation gaps for consumer-facing changes** (APIs, blocks, user features, behavior changes)
+# - **Do NOT flag** internal implementation changes, refactoring, or code cleanup that doesn't affect end users
+# - **Do NOT recommend documentation** for private functions, internal helpers, or implementation details
+# - **Focus on the `docs/` folder** and JSDoc comments (`//% block`, `//% help`, standard JSDoc)
+# - **Avoid verbose documentation** - only recommend what's truly necessary for users
 #
-# Identify:
-# - Exact duplicates (close this issue and link to original)
-# - Near duplicates (may need merging or linking)
-# - Related issues that provide context or workarounds
-# - Historical patterns (recurring problems)
+# ### Step 3: Check Existing Documentation
 #
-# Only mention duplicates and related issues that were either open or if closed recent (within the last 100 issues)
+# For each identified change that needs documentation:
 #
-# ### 3. Determine Correct Repository
+# 1. Search the `docs/` folder for existing related documentation
+# 2. Check if the changed code files have JSDoc comments or block annotations
+# 3. Determine if documentation exists, is outdated, or is missing
 #
-# Based on the issue description and repository-specific context provided by the importing workflow:
+# ### Step 4: Generate Findings
 #
-# **If the issue clearly belongs in a different repository:**
-# - Skip detailed classification (steps 4-5)
-# - Use the simplified "Wrong Repository" output format
-# - Provide brief explanation of why it belongs in the other repository
+# Create a structured comment with your findings. Use this format:
 #
-# **Otherwise:**
-# - **PROCEED WITH FULL TRIAGE** - the issue belongs in this repository
-# - Continue to steps 4 and 5
+# ```markdown
+# ## 📚 Documentation Review Results
 #
-# ### 4. Search Relevant Code
-#
-# **Use local tools first** (faster), then GitHub tools if needed:
-#
-# **Local search (preferred)**:
-# - Use `grep` for file or code patterns
-#
-# **GitHub search (when needed)**:
-# - Use `github/search_code` for repository-wide searches
-#
-# Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
-#
-# ### 5. Classify the Issue
-#
-# Analyze and determine:
-#
-# **Issue Type** (choose ONE primary type):
-# - `bug` - Defect in existing functionality causing incorrect behavior
-# - `feature` - Request for new functionality or enhancement
-# - `task` - Work item for improvements, maintenance, or other tasks
-#
-# **Information Status**:
-# - `info-complete` - Has all necessary details (repro steps, expected/actual behavior, environment)
-# - `info-needed` - Missing critical information (specify what's missing)
-#
-# **Components Affected** (based on repository-specific component taxonomy provided by importing workflow)
-#
-# **Complexity Assessment**:
-# - `low` - Single file, isolated change, clear fix (good for contributors/automation)
-# - `medium` - Multiple files, requires investigation, non-trivial logic
-# - `high` - Architectural changes, cross-cutting concerns, core systems
-# - `unknown` - Cannot determine without more investigation
-#
-# **Priority Suggestion** (based on impact):
-# - `p1` - Critical: blocks basic functionality, data loss, security, major regression
-# - `p2` - High: significant impairment, painful workaround, accessibility blocker
-# - `P3` - Medium: minor functionality issues, cosmetic with some impact
-# - `unknown` - Cannot determine without human in the loop. (Specify why)
-#
-# ## Output Format
-#
-# ### Format A: Wrong Repository Issue
-#
-# **Use this format ONLY when the issue clearly belongs in a different repository:**
-#
-# ---
-#
-# ## Recommendation for Triage
-#
-# **This issue might be better filed in a different repository.**
-#
-# **Correct Repository**: [repository name]
-#
-# **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+# **Summary**: [Brief 1-2 sentence overview of findings - e.g., "Found 3 new APIs that need documentation and 1 feature change requiring doc updates" or "All changes are well documented" or "No user-facing changes detected"]
 #
 # <details>
-# <summary>Recommendations for Assignee</summary>
+# <summary>📋 View Detailed Findings</summary>
 #
-# **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+# **If documentation updates are needed:**
+#
+# ### Documentation Needed
+# [For each item that needs documentation:]
+#
+# #### [Feature/API Name]
+# - **Type**: New Feature | Changed Feature
+# - **Location**: `path/to/file.ts` (lines X-Y)
+# - **Current State**: Missing documentation | Documentation needs update
+# - **Impact**: Brief description of what changed and why it affects users
+# - **Suggested Documentation**:
+#   - [ ] Add/Update docs in `docs/[relevant-section]`
+#   - [ ] Add/Update JSDoc comments in the code
+#   - [ ] Specific details about what should be documented
 #
 # </details>
 #
 # ---
 #
-# ### Format B: Standard Triage
+# ### 📝 Next Steps
 #
-# **Use this format when the issue belongs in this repository OR when you're uncertain:**
+# @[PR_AUTHOR] To apply these documentation recommendations, please reply to this comment and ask:
+# > @copilot please apply these documentation suggestions
 #
-# Create a triage comment with this structure:
+# **If no documentation updates are needed:**
+# This PR is good to go from a documentation perspective!
+# ```
 #
-# ---
+# ### Step 5: Post the Comment
 #
-# ## Recommendation for Triage
+# Use the `add-comment` safe output to post your findings to the PR.
 #
-# **Issue Type**: [bug | feature | task]
+# ## Important Notes
 #
-# **Status**: [info-complete | info-needed]
-#
-# **Label(s)**: [list of component labels separated by commas]
-#
-# **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
-#
-# **Likely Related**: [list of related issues if any. Else "No related issue found"]
-#
-# **Suggested Priority**: [p1 | p2 | P3]
-#
-# **Complexity**: [low | medium | high | unknown]
-#
-# **Copilot Agent Ready**: [✅ Yes | ⚠️ Needs clarification | ❌ No]
-#
-# <details>
-# <summary>Recommendations for Assignee</summary>
-#
-# ### Analysis
-#
-# [2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you assign this issue type, priority, and complexity?]
-#
-# ---
-#
-# ### Duplicate & Related Issues
-#
-# **Duplicates**:
-# - [If found: Link to #123 (exact duplicate), #456 (very similar)]
-# - [If none: No duplicates found via semantic search]
-#
-# **Related Issues**:
-# - [If found: #234 (similar problem in different area), #567 (potential workaround)]
-# - [If none: No closely related issues found]
-#
-# ---
-#
-# ### Location Hints
-#
-# [Provide specific file paths where this issue likely exists, based on code search. Format as:
-# - `path/to/file.ts` - Brief description of what this file handles
-# - `another/file.tsx` - Why this file is relevant
-#
-# If you couldn't find specific files, explain what you searched for.]
-#
-# ---
-#
-# ### Next Steps
-#
-# **Copilot Coding Agent Assessment**:
-#
-# **Can assign to Copilot Coding Agent**: [✅ Yes, ready as-is | ⚠️ Yes, after clarification | ❌ No, human needed | 🤔 Cannot assess yet]
-#
-# **Reasoning**: [2-3 sentences explaining the assessment]
-#
-# </details>
-#
-# ---
-#
-# ## Best Practices & Tips
-#
-# ### Effective Searching
-#
-# **For duplicate detection:**
-# - Always run `semantic_issue_similarity_search` first (it's faster and more accurate)
-# - Use threshold 0.75-0.85 for broad matches, 0.85+ for close duplicates
-# - Search by issue number, not just title/description
-#
-# **For code search:**
-# - Start with local `grep` (faster access to workspace)
-# - Search for error messages in quotes: "specific error text"
-# - Search for component names as provided by repository context
-# - Look for recent changes if it's a regression: check git history patterns
-#
-# ### Special Situations
-#
-# **If it's a duplicate:**
-# - Link to the original issue clearly
-# - Note if this has additional information worth merging
-# - Suggest closing with "Duplicate of #XXX"
-#
-# **If multiple issues in one report:**
-# - Note that it contains multiple distinct issues
-# - Suggest splitting into separate issues for better tracking
-# - List the distinct issues you identified
-#
-# **If caused by external factors:**
-# - Identify the external cause (browser bug, OS issue, third-party extension)
-# - Provide evidence/links if possible
-# - Suggest workarounds or when fix might be available
-#
-# **Remember**: Keep the report focused, actionable, and helpful. Use the search tools to provide specific evidence rather than guesses.
-#
-# # MakeCode Arcade Issue Triage
-#
-# Perform comprehensive triage for issue #${{ github.event.issue.number }} in the **microsoft/pxt-arcade** repository using the imported generic triage agent.
-#
-# ## MakeCode Arcade Context
-#
-# You are triaging issues for **Microsoft MakeCode Arcade**, a multi-repository development workspace consisting of:
-# - **pxt-arcade**: Arcade-specific target configuration, extensions, and documentation
-# - **pxt** (pxt-core): Core MakeCode framework (editor, build system, compiler)
-# - **pxt-common-packages**: Cross-target game engine APIs (sprites, physics, controller)
-# - **pxt-arcade-sim** - Arcade's simulator implementation
-#
-# ### Repository Routing Rules
-#
-# **IN-SCOPE FOR THIS TRIAGE (ALWAYS OK TO FILE IN microsoft/pxt-arcade):**
-# - microsoft/pxt-arcade - Arcade-specific features, target config, arcade blocks/APIs, arcade hardware, arcade documentation
-# - **microsoft/pxt** (pxt-core) - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
-# - **microsoft/pxt-common-packages** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
-# - **microsoft/pxt-arcade-sim** - Simulator implementation for Arcade
-# - Any issue affecting the Arcade target implementation or development environment
-#
-# ⚠️ **HARD RULE (DO NOT VIOLATE)**: If an issue appears to belong to **microsoft/pxt**, **microsoft/pxt-common-packages**, or **microsoft/pxt-arcade-sim**, it is STILL **IN-SCOPE HERE**. Do **NOT** recommend “wrong repo”, do **NOT** ask the reporter to re-file elsewhere, and do **NOT** close/deflect for repo-choice reasons. Instead, triage it here and clearly state **Likely fix location: <repo/path>**.
-#
-# **REDIRECT OUT OF THIS WORKSPACE (ONLY these cases):**
-# - **microsoft/pxt-minecraft** - Issues specific to MakeCode for Minecraft blocks, Minecraft gameplay, Minecraft-specific features
-# - **microsoft/pxt-microbit** - Issues specific to MakeCode for micro:bit, BBC micro:bit hardware/sensors
-# - Third-party extensions not maintained in the Arcade workspace
-#
-# **When you suspect a different repo:**
-# - If it’s one of the IN-SCOPE workspace repos above: keep triage in this repo and add “Likely fix location: …”.
-# - If it’s one of the REDIRECT OUT OF THIS WORKSPACE repos above: recommend redirecting.
-#
-# ### Component Taxonomy
-#
-# When classifying issues, use these component labels:
-#
-# **Core Components:**
-# - `blocks` - Block editor, blockly integration, block definitions
-# - `toolbox` - Block toolbox, category organization, search
-# - `simulator` - Game simulator, rendering, display
-# - `assets` - Asset editor, sprites, images, tiles
-# - `monaco` - Text/TypeScript editor, IntelliSense
-#
-# **Features:**
-# - `tutorial` - In-editor tutorials, tutorial engine
-# - `extension` - Extensions, package management
-# - `multiplayer` - Multiplayer features, networking
-# - `hardware` - Hardware devices, arcade cabinets
-# - `github-integration` - GitHub import/export, sharing
-#
-# **UI/UX:**
-# - `homescreen` - Home screen, project gallery
-# - `sidedocs` - Documentation panel, help
-# - `Theme` - Visual themes, styling
-# - `high contrast` - High contrast mode
-# - `accessibility` - Accessibility features, screen readers
-# - `keyboardnav` - Keyboard navigation
-# - `editor` - Editor UI, layout, controls
-#
-# **Quality:**
-# - `reliability` - Crashes, stability issues
-# - `browser compat` - Browser-specific issues
-# - `performance` - Performance, speed, memory
-#
-# **Content:**
-# - `documentation` - Docs in docs/ folder
-# - `HoAI` - Hour of Code content
-#
-# ### MakeCode-Specific Code Search Hints
-#
-# When searching for code, consider these common file patterns:
-#
-# **Arcade-specific files (pxt-arcade repo):**
-# - `pxtarget.json` - Target configuration (released version)
-# - `targetconfig.json` - Live configuration (served between releases)
-# - `libs/*/` - Arcade-specific library extensions
-# - `docs/` - Arcade documentation
-# - `editor/` - Editor customizations
-# - `theme/` - Arcade themes
-#
-# **Core framework files (pxt repo):**
-# - `webapp/`, `pxteditor/` - Web app and editor
-# - `pxtcompiler/` - Language services, compiler
-# - `libs/base/`, `libs/core/` - Core TypeScript APIs
-# - `gulpfile.js`, `Makefile` - Build system
-#
-# **Game engine files (pxt-common-packages repo):**
-# - `libs/game/` - Game engine (sprites, physics)
-# - `libs/controller/` - Input handling
-# - `libs/screen/` - Display APIs
-# - `sim/` - Shared simulator
-#
-# ### MakeCode-Specific Considerations
-#
-# **Block Annotations:**
-# - Prefer `$variable` format over deprecated `%variable` format in block annotations
-# - Shadow values should be configured separately for better localization
-#
-# **Multi-Repository Workspace:**
-# - Changes may require coordination across repositories
-# - File paths should specify which repository they're in
-#
-# Execute the triage workflow from the imported agent, applying the MakeCode Arcade-specific context above.
+# - Be specific about what documentation is needed and where
+# - Distinguish between truly necessary documentation and nice-to-have
+# - Focus on user impact, not implementation details
+# - Keep recommendations actionable and clear
+# - Only analyze changes in this PR, not the entire codebase
 # ```
 #
 # Pinned GitHub Actions:
-#   - actions/cache/restore@v4 (0057852bfaa89a56745cba8c7296529d2fc39830)
-#     https://github.com/actions/cache/commit/0057852bfaa89a56745cba8c7296529d2fc39830
-#   - actions/cache/save@v4 (0057852bfaa89a56745cba8c7296529d2fc39830)
-#     https://github.com/actions/cache/commit/0057852bfaa89a56745cba8c7296529d2fc39830
 #   - actions/checkout@v5 (93cb6efe18208431cddfb8368fd83d5badbf9bfd)
 #     https://github.com/actions/checkout/commit/93cb6efe18208431cddfb8368fd83d5badbf9bfd
 #   - actions/download-artifact@v6 (018cc2cf5baa6db3ef3c5f8a56943fffe632ef53)
@@ -438,34 +170,28 @@
 #   - actions/upload-artifact@v5 (330a01c490aca151604b8cf639adc76d48f6c5d4)
 #     https://github.com/actions/upload-artifact/commit/330a01c490aca151604b8cf639adc76d48f6c5d4
 
-name: "Triage"
+name: "AI Documentation Check"
 "on":
-  issues:
+  pull_request:
     # names: # Label filtering applied via job conditions
-    # - ai-triage # Label filtering applied via job conditions
+    # - ai-doc-check # Label filtering applied via job conditions
     types:
     - labeled
 
-permissions:
-  actions: read
-  contents: read
-  discussions: read
-  issues: read
-  pull-requests: read
-  repository-projects: read
-  security-events: read
+permissions: read-all
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}-${{ github.event.issue.number }}"
+  group: "gh-aw-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}"
+  cancel-in-progress: true
 
-run-name: "Triage"
+run-name: "AI Documentation Check"
 
 jobs:
   activation:
     needs: pre_activation
     if: >
-      (needs.pre_activation.outputs.activated == 'true') && ((github.event_name != 'issues') || ((github.event.action != 'labeled') ||
-      (github.event.label.name == 'ai-triage')))
+      (needs.pre_activation.outputs.activated == 'true') && (((github.event_name != 'pull_request') || (github.event.pull_request.head.repo.id == github.repository_id)) &&
+      ((github.event_name != 'pull_request') || ((github.event.action != 'labeled') || (github.event.label.name == 'ai-doc-check'))))
     runs-on: ubuntu-slim
     permissions:
       contents: read
@@ -476,7 +202,7 @@ jobs:
       - name: Check workflow file timestamps
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          GH_AW_WORKFLOW_FILE: "triage.lock.yml"
+          GH_AW_WORKFLOW_FILE: "documentation.lock.yml"
         with:
           script: |
             async function main() {
@@ -603,7 +329,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
           GH_AW_COMMENT_TARGET: "triggering"
-          GH_AW_WORKFLOW_NAME: "Triage"
+          GH_AW_WORKFLOW_NAME: "AI Documentation Check"
           GH_AW_ENGINE_ID: "copilot"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_MCP_SERVER_TOKEN || secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
@@ -1155,14 +881,7 @@ jobs:
   agent:
     needs: activation
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      discussions: read
-      issues: read
-      pull-requests: read
-      repository-projects: read
-      security-events: read
+    permissions: read-all
     env:
       GH_AW_MCP_LOG_DIR: /tmp/gh-aw/mcp-logs/safeoutputs
       GH_AW_SAFE_OUTPUTS: /tmp/gh-aw/safeoutputs/outputs.jsonl
@@ -1183,21 +902,6 @@ jobs:
           mkdir -p /tmp/gh-aw/agent
           mkdir -p /tmp/gh-aw/sandbox/agent/logs
           echo "Created /tmp/gh-aw/agent directory for agentic workflow temporary files"
-      # Cache memory file share configuration from frontmatter processed below
-      - name: Create cache-memory directory
-        run: |
-          mkdir -p /tmp/gh-aw/cache-memory
-          echo "Cache memory directory created at /tmp/gh-aw/cache-memory"
-          echo "This folder provides persistent file storage across workflow runs"
-          echo "LLMs and agentic tools can freely read and write files in this directory"
-      - name: Restore cache memory file share data
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
-        with:
-          key: memory-${{ github.workflow }}-${{ github.run_id }}
-          path: /tmp/gh-aw/cache-memory
-          restore-keys: |
-            memory-${{ github.workflow }}-
-            memory-
       - name: Configure Git credentials
         env:
           REPO_NAME: ${{ github.repository }}
@@ -2777,18 +2481,15 @@ jobs:
                   "-e",
                   "GITHUB_READ_ONLY=1",
                   "-e",
-                  "GITHUB_TOOLSETS=all",
+                  "GITHUB_TOOLSETS=context,repos,issues,pull_requests",
                   "ghcr.io/github/github-mcp-server:v0.24.1"
                 ],
                 "tools": [
+                  "pull_request_read",
+                  "get_commit",
+                  "list_commits",
                   "search_code",
-                  "semantic_issues_search",
-                  "semantic_issue_similarity_search",
-                  "issue_read",
-                  "list_issues",
-                  "search_issues",
-                  "get_file_contents",
-                  "search_pull_requests"
+                  "semantic_code_search"
                 ],
                 "env": {
                   "GITHUB_PERSONAL_ACCESS_TOKEN": "\${GITHUB_MCP_SERVER_TOKEN}"
@@ -2837,7 +2538,7 @@ jobs:
               model: process.env.GH_AW_MODEL_AGENT_COPILOT || "",
               version: "",
               agent_version: "0.0.367",
-              workflow_name: "Triage",
+              workflow_name: "AI Documentation Check",
               experimental: false,
               supports_tools_allowlist: true,
               supports_http_transport: true,
@@ -2911,342 +2612,108 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_SAFE_OUTPUTS: ${{ env.GH_AW_SAFE_OUTPUTS }}
-          GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_AW_NEEDS_ACTIVATION_OUTPUTS_PR_NUMBER: ${{ needs.activation.outputs.pr_number }}
         run: |
           PROMPT_DIR="$(dirname "$GH_AW_PROMPT")"
           mkdir -p "$PROMPT_DIR"
           cat << 'PROMPT_EOF' > "$GH_AW_PROMPT"
-          # Generic Issue Triage Specialist
+          # Documentation Review Agent
           
-          You are a triage specialist for GitHub issues. Your role is to analyze issues systematically and provide comprehensive recommendations for human reviewers.
+          You are a documentation quality reviewer for the MakeCode Arcade project. Your job is to analyze pull request changes and identify documentation gaps.
           
-          ## Your Role & Constraints
+          ## Your Task
           
-          - **Add ONE comment** with your complete triage analysis
-          - **Do NOT modify the issue** (no adding labels, changing state, editing title/body, or assigning)
-          - **All recommendations go in your comment** for humans to review and apply
-          - **Your role is advisory only** - humans make final decisions
+          When a PR is labeled with `ai-doc-check`, review the changes to determine if documentation is missing or needs updates.
           
-          ## Triage Workflow
+          ### Step 1: Analyze the PR
           
-          ### 1. Fetch Issue Details
+          First, get the PR details and changed files:
           
-          Use `github/issue_read` with method `get` to retrieve full details of the issue being triaged.
+          - PR number: `__GH_AW_NEEDS_ACTIVATION_OUTPUTS_PR_NUMBER__`
+          - Use the `github` tool to fetch PR information and file changes
+          - **IMPORTANT**: You must analyze ALL changes in the PR, not just the last commit. Use `git diff origin/master...HEAD` or `git diff origin/master..HEAD` to get all changes from the base branch to the PR head
           
-          Extract:
-          - Title and body/description
-          - Current labels (if any)
-          - Author and creation date
-          - State (open/closed)
-          - Number of comments
-          - Any existing discussion
+          ### Step 2: Identify Documentation Needs
           
-          ### 2. Search for Duplicates and Related Issues
+          Review the code changes and determine:
           
-          **Always check for duplicates first** to avoid redundant work:
+          1. **New Features**: Are there new APIs, blocks, functions, classes, or user-facing features that need documentation?
+          2. **Changed Features**: Have existing APIs, blocks, or features been modified in ways that affect how users interact with them?
           
-          Use `github/semantic_issue_similarity_search` to find semantically similar issues.
+          **Important Guidelines:**
           
-          If semantic search doesn't yield results, supplement with `github/search_issues` using key terms from the issue.
+          - **Only flag documentation gaps for consumer-facing changes** (APIs, blocks, user features, behavior changes)
+          - **Do NOT flag** internal implementation changes, refactoring, or code cleanup that doesn't affect end users
+          - **Do NOT recommend documentation** for private functions, internal helpers, or implementation details
+          - **Focus on the `docs/` folder** and JSDoc comments (`//% block`, `//% help`, standard JSDoc)
+          - **Avoid verbose documentation** - only recommend what's truly necessary for users
           
-          Identify:
-          - Exact duplicates (close this issue and link to original)
-          - Near duplicates (may need merging or linking)
-          - Related issues that provide context or workarounds
-          - Historical patterns (recurring problems)
+          ### Step 3: Check Existing Documentation
           
-          Only mention duplicates and related issues that were either open or if closed recent (within the last 100 issues)
+          For each identified change that needs documentation:
           
-          ### 3. Determine Correct Repository
+          1. Search the `docs/` folder for existing related documentation
+          2. Check if the changed code files have JSDoc comments or block annotations
+          3. Determine if documentation exists, is outdated, or is missing
           
-          Based on the issue description and repository-specific context provided by the importing workflow:
+          ### Step 4: Generate Findings
           
-          **If the issue clearly belongs in a different repository:**
-          - Skip detailed classification (steps 4-5)
-          - Use the simplified "Wrong Repository" output format
-          - Provide brief explanation of why it belongs in the other repository
+          Create a structured comment with your findings. Use this format:
           
-          **Otherwise:**
-          - **PROCEED WITH FULL TRIAGE** - the issue belongs in this repository
-          - Continue to steps 4 and 5
+          ```markdown
+          ## 📚 Documentation Review Results
           
-          ### 4. Search Relevant Code
-          
-          **Use local tools first** (faster), then GitHub tools if needed:
-          
-          **Local search (preferred)**:
-          - Use `grep` for file or code patterns
-          
-          **GitHub search (when needed)**:
-          - Use `github/search_code` for repository-wide searches
-          
-          Provide **specific file paths** in your analysis, not guesses. If no relevant code is found, provide nothing.
-          
-          ### 5. Classify the Issue
-          
-          Analyze and determine:
-          
-          **Issue Type** (choose ONE primary type):
-          - `bug` - Defect in existing functionality causing incorrect behavior
-          - `feature` - Request for new functionality or enhancement
-          - `task` - Work item for improvements, maintenance, or other tasks
-          
-          **Information Status**:
-          - `info-complete` - Has all necessary details (repro steps, expected/actual behavior, environment)
-          - `info-needed` - Missing critical information (specify what's missing)
-          
-          **Components Affected** (based on repository-specific component taxonomy provided by importing workflow)
-          
-          **Complexity Assessment**:
-          - `low` - Single file, isolated change, clear fix (good for contributors/automation)
-          - `medium` - Multiple files, requires investigation, non-trivial logic
-          - `high` - Architectural changes, cross-cutting concerns, core systems
-          - `unknown` - Cannot determine without more investigation
-          
-          **Priority Suggestion** (based on impact):
-          - `p1` - Critical: blocks basic functionality, data loss, security, major regression
-          - `p2` - High: significant impairment, painful workaround, accessibility blocker
-          - `P3` - Medium: minor functionality issues, cosmetic with some impact
-          - `unknown` - Cannot determine without human in the loop. (Specify why)
-          
-          ## Output Format
-          
-          ### Format A: Wrong Repository Issue
-          
-          **Use this format ONLY when the issue clearly belongs in a different repository:**
-          
-          ---
-          
-          ## Recommendation for Triage
-          
-          **This issue might be better filed in a different repository.**
-          
-          **Correct Repository**: [repository name]
-          
-          **Reasoning**: [2-3 sentences explaining why this issue belongs in the other repository. Reference specific components or functionality that are maintained there.]
+          **Summary**: [Brief 1-2 sentence overview of findings - e.g., "Found 3 new APIs that need documentation and 1 feature change requiring doc updates" or "All changes are well documented" or "No user-facing changes detected"]
           
           <details>
-          <summary>Recommendations for Assignee</summary>
+          <summary>📋 View Detailed Findings</summary>
           
-          **Recommendation**: This issue should be filed in [repository name]. [If helpful: suggest they check if a similar issue already exists there, or provide guidance on what information to include when filing.]
+          **If documentation updates are needed:**
+          
+          ### Documentation Needed
+          [For each item that needs documentation:]
+          
+          #### [Feature/API Name]
+          - **Type**: New Feature | Changed Feature
+          - **Location**: `path/to/file.ts` (lines X-Y)
+          - **Current State**: Missing documentation | Documentation needs update
+          - **Impact**: Brief description of what changed and why it affects users
+          - **Suggested Documentation**:
+            - [ ] Add/Update docs in `docs/[relevant-section]`
+            - [ ] Add/Update JSDoc comments in the code
+            - [ ] Specific details about what should be documented
           
           </details>
           
           ---
           
-          ### Format B: Standard Triage
+          ### 📝 Next Steps
           
-          **Use this format when the issue belongs in this repository OR when you're uncertain:**
+          @[PR_AUTHOR] To apply these documentation recommendations, please reply to this comment and ask:
+          > @copilot please apply these documentation suggestions
           
-          Create a triage comment with this structure:
+          **If no documentation updates are needed:**
+          This PR is good to go from a documentation perspective!
+          ```
           
-          ---
+          ### Step 5: Post the Comment
           
-          ## Recommendation for Triage
+          Use the `add-comment` safe output to post your findings to the PR.
           
-          **Issue Type**: [bug | feature | task]
+          ## Important Notes
           
-          **Status**: [info-complete | info-needed]
-          
-          **Label(s)**: [list of component labels separated by commas]
-          
-          **Duplicate Issue(s)**: [list of duplicate issues if any. Else "No duplicate issue found"]
-          
-          **Likely Related**: [list of related issues if any. Else "No related issue found"]
-          
-          **Suggested Priority**: [p1 | p2 | P3]
-          
-          **Complexity**: [low | medium | high | unknown]
-          
-          **Copilot Agent Ready**: [✅ Yes | ⚠️ Needs clarification | ❌ No]
-          
-          <details>
-          <summary>Recommendations for Assignee</summary>
-          
-          ### Analysis
-          
-          [2-4 sentences explaining your classification rationale. What is the core issue? What component is affected? Why did you assign this issue type, priority, and complexity?]
-          
-          ---
-          
-          ### Duplicate & Related Issues
-          
-          **Duplicates**:
-          - [If found: Link to #123 (exact duplicate), #456 (very similar)]
-          - [If none: No duplicates found via semantic search]
-          
-          **Related Issues**:
-          - [If found: #234 (similar problem in different area), #567 (potential workaround)]
-          - [If none: No closely related issues found]
-          
-          ---
-          
-          ### Location Hints
-          
-          [Provide specific file paths where this issue likely exists, based on code search. Format as:
-          - `path/to/file.ts` - Brief description of what this file handles
-          - `another/file.tsx` - Why this file is relevant
-          
-          If you couldn't find specific files, explain what you searched for.]
-          
-          ---
-          
-          ### Next Steps
-          
-          **Copilot Coding Agent Assessment**:
-          
-          **Can assign to Copilot Coding Agent**: [✅ Yes, ready as-is | ⚠️ Yes, after clarification | ❌ No, human needed | 🤔 Cannot assess yet]
-          
-          **Reasoning**: [2-3 sentences explaining the assessment]
-          
-          </details>
-          
-          ---
-          
-          ## Best Practices & Tips
-          
-          ### Effective Searching
-          
-          **For duplicate detection:**
-          - Always run `semantic_issue_similarity_search` first (it's faster and more accurate)
-          - Use threshold 0.75-0.85 for broad matches, 0.85+ for close duplicates
-          - Search by issue number, not just title/description
-          
-          **For code search:**
-          - Start with local `grep` (faster access to workspace)
-          - Search for error messages in quotes: "specific error text"
-          - Search for component names as provided by repository context
-          - Look for recent changes if it's a regression: check git history patterns
-          
-          ### Special Situations
-          
-          **If it's a duplicate:**
-          - Link to the original issue clearly
-          - Note if this has additional information worth merging
-          - Suggest closing with "Duplicate of #XXX"
-          
-          **If multiple issues in one report:**
-          - Note that it contains multiple distinct issues
-          - Suggest splitting into separate issues for better tracking
-          - List the distinct issues you identified
-          
-          **If caused by external factors:**
-          - Identify the external cause (browser bug, OS issue, third-party extension)
-          - Provide evidence/links if possible
-          - Suggest workarounds or when fix might be available
-          
-          **Remember**: Keep the report focused, actionable, and helpful. Use the search tools to provide specific evidence rather than guesses.
-          
-          # MakeCode Arcade Issue Triage
-          
-          Perform comprehensive triage for issue #__GH_AW_GITHUB_EVENT_ISSUE_NUMBER__ in the **microsoft/pxt-arcade** repository using the imported generic triage agent.
-          
-          ## MakeCode Arcade Context
-          
-          You are triaging issues for **Microsoft MakeCode Arcade**, a multi-repository development workspace consisting of:
-          - **pxt-arcade**: Arcade-specific target configuration, extensions, and documentation
-          - **pxt** (pxt-core): Core MakeCode framework (editor, build system, compiler)
-          - **pxt-common-packages**: Cross-target game engine APIs (sprites, physics, controller)
-          - **pxt-arcade-sim** - Arcade's simulator implementation
-          
-          ### Repository Routing Rules
-          
-          **IN-SCOPE FOR THIS TRIAGE (ALWAYS OK TO FILE IN microsoft/pxt-arcade):**
-          - microsoft/pxt-arcade - Arcade-specific features, target config, arcade blocks/APIs, arcade hardware, arcade documentation
-          - **microsoft/pxt** (pxt-core) - Core editor functionality, build system, Monaco/block editor, package management, language services, compilation pipeline, web app infrastructure
-          - **microsoft/pxt-common-packages** - Cross-target game engine (sprites, physics, controller), hardware abstraction, shared simulator functionality
-          - **microsoft/pxt-arcade-sim** - Simulator implementation for Arcade
-          - Any issue affecting the Arcade target implementation or development environment
-          
-          ⚠️ **HARD RULE (DO NOT VIOLATE)**: If an issue appears to belong to **microsoft/pxt**, **microsoft/pxt-common-packages**, or **microsoft/pxt-arcade-sim**, it is STILL **IN-SCOPE HERE**. Do **NOT** recommend “wrong repo”, do **NOT** ask the reporter to re-file elsewhere, and do **NOT** close/deflect for repo-choice reasons. Instead, triage it here and clearly state **Likely fix location: <repo/path>**.
-          
-          **REDIRECT OUT OF THIS WORKSPACE (ONLY these cases):**
-          - **microsoft/pxt-minecraft** - Issues specific to MakeCode for Minecraft blocks, Minecraft gameplay, Minecraft-specific features
-          - **microsoft/pxt-microbit** - Issues specific to MakeCode for micro:bit, BBC micro:bit hardware/sensors
-          - Third-party extensions not maintained in the Arcade workspace
-          
-          **When you suspect a different repo:**
-          - If it’s one of the IN-SCOPE workspace repos above: keep triage in this repo and add “Likely fix location: …”.
-          - If it’s one of the REDIRECT OUT OF THIS WORKSPACE repos above: recommend redirecting.
-          
-          ### Component Taxonomy
-          
-          When classifying issues, use these component labels:
-          
-          **Core Components:**
-          - `blocks` - Block editor, blockly integration, block definitions
-          - `toolbox` - Block toolbox, category organization, search
-          - `simulator` - Game simulator, rendering, display
-          - `assets` - Asset editor, sprites, images, tiles
-          - `monaco` - Text/TypeScript editor, IntelliSense
-          
-          **Features:**
-          - `tutorial` - In-editor tutorials, tutorial engine
-          - `extension` - Extensions, package management
-          - `multiplayer` - Multiplayer features, networking
-          - `hardware` - Hardware devices, arcade cabinets
-          - `github-integration` - GitHub import/export, sharing
-          
-          **UI/UX:**
-          - `homescreen` - Home screen, project gallery
-          - `sidedocs` - Documentation panel, help
-          - `Theme` - Visual themes, styling
-          - `high contrast` - High contrast mode
-          - `accessibility` - Accessibility features, screen readers
-          - `keyboardnav` - Keyboard navigation
-          - `editor` - Editor UI, layout, controls
-          
-          **Quality:**
-          - `reliability` - Crashes, stability issues
-          - `browser compat` - Browser-specific issues
-          - `performance` - Performance, speed, memory
-          
-          **Content:**
-          - `documentation` - Docs in docs/ folder
-          - `HoAI` - Hour of Code content
-          
-          ### MakeCode-Specific Code Search Hints
-          
-          When searching for code, consider these common file patterns:
-          
-          **Arcade-specific files (pxt-arcade repo):**
-          - `pxtarget.json` - Target configuration (released version)
-          - `targetconfig.json` - Live configuration (served between releases)
-          - `libs/*/` - Arcade-specific library extensions
-          - `docs/` - Arcade documentation
-          - `editor/` - Editor customizations
-          - `theme/` - Arcade themes
-          
-          **Core framework files (pxt repo):**
-          - `webapp/`, `pxteditor/` - Web app and editor
-          - `pxtcompiler/` - Language services, compiler
-          - `libs/base/`, `libs/core/` - Core TypeScript APIs
-          - `gulpfile.js`, `Makefile` - Build system
-          
-          **Game engine files (pxt-common-packages repo):**
-          - `libs/game/` - Game engine (sprites, physics)
-          - `libs/controller/` - Input handling
-          - `libs/screen/` - Display APIs
-          - `sim/` - Shared simulator
-          
-          ### MakeCode-Specific Considerations
-          
-          **Block Annotations:**
-          - Prefer `$variable` format over deprecated `%variable` format in block annotations
-          - Shadow values should be configured separately for better localization
-          
-          **Multi-Repository Workspace:**
-          - Changes may require coordination across repositories
-          - File paths should specify which repository they're in
-          
-          Execute the triage workflow from the imported agent, applying the MakeCode Arcade-specific context above.
+          - Be specific about what documentation is needed and where
+          - Distinguish between truly necessary documentation and nice-to-have
+          - Focus on user impact, not implementation details
+          - Keep recommendations actionable and clear
+          - Only analyze changes in this PR, not the entire codebase
           
           PROMPT_EOF
       - name: Substitute placeholders
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
-          GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_AW_NEEDS_ACTIVATION_OUTPUTS_PR_NUMBER: ${{ needs.activation.outputs.pr_number }}
         with:
           script: |
             /**
@@ -3304,7 +2771,7 @@ jobs:
             return await substitutePlaceholders({
               file: process.env.GH_AW_PROMPT,
               substitutions: {
-                GH_AW_GITHUB_EVENT_ISSUE_NUMBER: process.env.GH_AW_GITHUB_EVENT_ISSUE_NUMBER
+                GH_AW_NEEDS_ACTIVATION_OUTPUTS_PR_NUMBER: process.env.GH_AW_NEEDS_ACTIVATION_OUTPUTS_PR_NUMBER
               }
             });
       - name: Append XPIA security instructions to prompt
@@ -3339,31 +2806,6 @@ jobs:
           <instruction>When you need to create temporary files or directories during your work, always use the /tmp/gh-aw/agent/ directory that has been pre-created for you. Do NOT use the root /tmp/ directory directly.</instruction>
           </temporary-files>
           
-          PROMPT_EOF
-      - name: Append cache memory instructions to prompt
-        env:
-          GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
-        run: |
-          cat << 'PROMPT_EOF' >> "$GH_AW_PROMPT"
-          
-          ---
-          
-          ## Cache Folder Available
-          
-          You have access to a persistent cache folder at `/tmp/gh-aw/cache-memory/` where you can read and write files to create memories and store information.
-          
-          - **Read/Write Access**: You can freely read from and write to any files in this folder
-          - **Persistence**: Files in this folder persist across workflow runs via GitHub Actions cache
-          - **Last Write Wins**: If multiple processes write to the same file, the last write will be preserved
-          - **File Share**: Use this as a simple file share - organize files as you see fit
-          
-          Examples of what you can store:
-          - `/tmp/gh-aw/cache-memory/notes.txt` - general notes and observations
-          - `/tmp/gh-aw/cache-memory/preferences.json` - user preferences and settings
-          - `/tmp/gh-aw/cache-memory/history.log` - activity history and logs
-          - `/tmp/gh-aw/cache-memory/state/` - organized state files in subdirectories
-          
-          Feel free to create, read, update, and organize files in this folder as needed for your tasks.
           PROMPT_EOF
       - name: Append safe outputs instructions to prompt
         env:
@@ -3509,7 +2951,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
-          GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_AW_NEEDS_ACTIVATION_OUTPUTS_PR_NUMBER: ${{ needs.activation.outputs.pr_number }}
         with:
           script: |
             const fs = require("fs");
@@ -3611,11 +3053,11 @@ jobs:
       - name: Execute GitHub Copilot CLI
         id: agentic_execution
         # Copilot CLI tool arguments (sorted):
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: |
           set -o pipefail
           sudo -E awf --env-all --container-workdir "${GITHUB_WORKSPACE}" --mount /tmp:/tmp:rw --mount "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}:rw" --mount /usr/bin/date:/usr/bin/date:ro --mount /usr/bin/gh:/usr/bin/gh:ro --mount /usr/bin/yq:/usr/bin/yq:ro --allow-domains api.business.githubcopilot.com,api.enterprise.githubcopilot.com,api.github.com,api.individual.githubcopilot.com,github.com,host.docker.internal,raw.githubusercontent.com,registry.npmjs.org --log-level info --proxy-logs-dir /tmp/gh-aw/sandbox/firewall/logs \
-            -- npx -y @github/copilot@0.0.367 --add-dir /tmp/gh-aw/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --add-dir "${GITHUB_WORKSPACE}" --disable-builtin-mcps --agent triage --allow-all-tools --add-dir /tmp/gh-aw/cache-memory/ --prompt "$(cat /tmp/gh-aw/aw-prompts/prompt.txt)"${GH_AW_MODEL_AGENT_COPILOT:+ --model "$GH_AW_MODEL_AGENT_COPILOT"} \
+            -- npx -y @github/copilot@0.0.367 --add-dir /tmp/gh-aw/ --log-level all --log-dir /tmp/gh-aw/sandbox/agent/logs/ --add-dir "${GITHUB_WORKSPACE}" --disable-builtin-mcps --allow-all-tools --prompt "$(cat /tmp/gh-aw/aw-prompts/prompt.txt)"${GH_AW_MODEL_AGENT_COPILOT:+ --model "$GH_AW_MODEL_AGENT_COPILOT"} \
             2>&1 | tee /tmp/gh-aw/agent-stdio.log
         env:
           COPILOT_AGENT_RUNNER_TYPE: STANDALONE
@@ -6036,7 +5478,7 @@ jobs:
         continue-on-error: true
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
-          name: firewall-logs-triage
+          name: firewall-logs-ai-documentation-check
           path: /tmp/gh-aw/sandbox/firewall/logs/
           if-no-files-found: ignore
       - name: Parse firewall logs for step summary
@@ -6339,12 +5781,6 @@ jobs:
           name: agent-stdio.log
           path: /tmp/gh-aw/agent-stdio.log
           if-no-files-found: warn
-      - name: Upload cache-memory data as artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
-        if: always()
-        with:
-          name: cache-memory
-          path: /tmp/gh-aw/cache-memory
       - name: Validate agent logs for errors
         if: always()
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
@@ -6587,7 +6023,6 @@ jobs:
       - add_comment
       - agent
       - detection
-      - update_cache_memory
     if: ((always()) && (needs.agent.result != 'skipped')) && (!(needs.add_comment.outputs.comment_id))
     runs-on: ubuntu-slim
     permissions:
@@ -6628,7 +6063,7 @@ jobs:
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
           GH_AW_NOOP_MAX: 1
-          GH_AW_WORKFLOW_NAME: "Triage"
+          GH_AW_WORKFLOW_NAME: "AI Documentation Check"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_MCP_SERVER_TOKEN || secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -6720,7 +6155,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_WORKFLOW_NAME: "Triage"
+          GH_AW_WORKFLOW_NAME: "AI Documentation Check"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_MCP_SERVER_TOKEN || secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
@@ -6833,7 +6268,7 @@ jobs:
           GH_AW_COMMENT_ID: ${{ needs.activation.outputs.comment_id }}
           GH_AW_COMMENT_REPO: ${{ needs.activation.outputs.comment_repo }}
           GH_AW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          GH_AW_WORKFLOW_NAME: "Triage"
+          GH_AW_WORKFLOW_NAME: "AI Documentation Check"
           GH_AW_AGENT_CONCLUSION: ${{ needs.agent.result }}
           GH_AW_DETECTION_CONCLUSION: ${{ needs.detection.result }}
           GH_AW_SAFE_OUTPUT_JOBS: "{\"add_comment\":\"comment_url\"}"
@@ -7127,7 +6562,7 @@ jobs:
       - name: Setup threat detection
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
-          WORKFLOW_NAME: "Triage"
+          WORKFLOW_NAME: "AI Documentation Check"
           WORKFLOW_DESCRIPTION: "No description provided"
         with:
           script: |
@@ -7340,7 +6775,9 @@ jobs:
           if-no-files-found: ignore
 
   pre_activation:
-    if: (github.event_name != 'issues') || ((github.event.action != 'labeled') || (github.event.label.name == 'ai-triage'))
+    if: >
+      ((github.event_name != 'pull_request') || (github.event.pull_request.head.repo.id == github.repository_id)) &&
+      ((github.event_name != 'pull_request') || ((github.event.action != 'labeled') || (github.event.label.name == 'ai-doc-check')))
     runs-on: ubuntu-slim
     outputs:
       activated: ${{ steps.check_membership.outputs.is_team_member == 'true' }}
@@ -7490,24 +6927,4 @@ jobs:
               }
             }
             await main();
-
-  update_cache_memory:
-    needs:
-      - agent
-      - detection
-    if: always() && needs.detection.outputs.success == 'true'
-    runs-on: ubuntu-latest
-    permissions: {}
-    steps:
-      - name: Download cache-memory artifact (default)
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6
-        continue-on-error: true
-        with:
-          name: cache-memory
-          path: /tmp/gh-aw/cache-memory
-      - name: Save cache-memory to cache (default)
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
-        with:
-          key: memory-${{ github.workflow }}-${{ github.run_id }}
-          path: /tmp/gh-aw/cache-memory
 
