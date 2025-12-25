@@ -1,0 +1,19 @@
+{
+    "*": {
+        "namespace": "sprites.jungle",
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64"
+    },
+    "crate": {
+        "data": "hwQQABAAAAD//////////7/du93d3b37v9273d3dvfvf7t3v7u7e/d/r3b6729v937vd7u7d2/3fu92+293e/d+73e7d7d7937vd3t3u3v3fu93b7bvb/d+73dvu7t793+vd67672/3f7t3v7u7e/b/du93d3b37v9273d3dvfv//////////w==",
+        "tilemapTile": true
+    },
+    "crate2": {
+        "data": "hwQQABAAAAD//////////y/dRFVVVUX0L91EVVVVRfTf7lXv7u5e9d/rVe5b7lT137tV7lteVPXfu1W+W1VU9d+7VVRVRV7137tVVBFFXvXfu1W+G1VU9d+7Ve5bXlT13+tV7lvuVPXf7lXv7u5e9S/dRFVVVUX0L91EVVVVRfT//////////w==",
+        "tilemapTile": true
+    },
+    "leafBlock": {
+        "data": "hwQQABAAAACAiP//iIj/AIh2d/dmdvgPaIZ294h3aPZoiHeGeGeP9vhohoh294/2/3dn+Hdohv9vd3f3j3Z3//hodnePaHb3+Gh2d49odvdvd3f3j3Z3//93Z/h3aIb/+GiGiHb3j/ZoiHeGeGeP9miGdveId2j2iHZ392Z2+A+AiP//iIj/AA==",
+        "tilemapTile": true
+    }
+}
