@@ -131,6 +131,12 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
         "imageUrl": "/static/hardware/gamekit.png",
         "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit"
+    },
+    { 
+        "name": "Forward Education CodeCTRL",
+        "description": "Code, play, and explore with this handheld micro:bit controller.",
+        "imageUrl": "/static/hardware/codectrl.png",
+        "url": "https://forwardedu.com/pages/codectrl-for-micro-bit",
     }
 ]
 ```
