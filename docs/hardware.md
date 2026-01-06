@@ -136,7 +136,7 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "name": "Forward Education CodeCTRL",
         "description": "Code, play, and explore with this handheld micro:bit controller.",
         "imageUrl": "/static/hardware/codectrl.png",
-        "url": "https://forwardedu.com/pages/codectrl-for-micro-bit",
+        "url": "https://forwardedu.com/pages/codectrl-for-micro-bit"
     }
 ]
 ```
