@@ -131,6 +131,18 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
         "imageUrl": "/static/hardware/gamekit.png",
         "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit"
+    },
+    { 
+        "name": "Forward Education CodeCTRL",
+        "description": "Code, play, and explore with this handheld micro:bit controller.",
+        "imageUrl": "/static/hardware/codectrl.png",
+        "url": "https://forwardedu.com/pages/codectrl-for-micro-bit"
+    },
+    { 
+        "name": "micro:bit Arcade Pro",
+        "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
+        "imageUrl": "/static/hardware/arcade-pro-ef.png",
+        "url": "https://shop.elecfreaks.com/products/elecfreaks-microsoft-makecode-micro-bit-arcade-pro"
     }
 ]
 ```
