@@ -671,7 +671,8 @@
                 "property": "assetPack",
                 "type": "checkbox"
             }
-        ]
+        ],
+        "shareHomepageContent": true
     },
     "queryVariants": {
         "skillmap=1": {
