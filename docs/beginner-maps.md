@@ -18,6 +18,14 @@
   "directOpen": true
 },
 {
+  "name": "AI Bug Arena",
+  "cardType": "link",
+  "description": "Code your own bug to think for itself using Artificial Intelligence (AI) and challenge other AI bugs in the Arena!",
+  "imageUrl": "/static/skillmap/bug-arena/bug-bg.gif",
+  "url": "https://arcade.makecode.com/--skillmap#bug",
+  "directOpen": true
+},
+{
   "name": "Whack the Mole",
   "cardType": "link",
   "description": "Create your own mole whacking carnival game.",
