@@ -45,6 +45,14 @@ Games submitted by the MakeCode community.
         "videoUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.mp4"
     },
     {
+        "name": "JetChamp",
+        "description": "Fly through the puzzle-scape with your jetpack and win the challenge.",
+        "author": "EthansGuild",
+        "cardType": "sharedExample",
+        "url": "https://arcade.makecode.com/#pub:github:EthansGuild/jetchamp",
+        "imageUrl": "/static/community/jet-champ/jet-champ.png"
+    },
+    {
         "name": "Pixel Smash",
         "description": "Battle your friends in this fighting game with forum-submitted characters, by PixelDoodle",
         "cardType": "forumUrl",
