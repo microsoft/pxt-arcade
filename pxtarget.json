@@ -402,7 +402,11 @@
                 "gittag": "v0.2.13",
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
-                "yottaConfigCompatibility": true
+                "yottaConfigCompatibility": true,
+                "yottaConfig": {
+                    "DEVICE_BLE": 0,
+                    "DMESG_SERIAL_DEBUG": 1
+                }
             }
         },
         "rp2040": {
