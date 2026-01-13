@@ -18,6 +18,7 @@ declare namespace pxt.runner {
 (window as any).initScriptPage = function init(info: PubInfo) {
     const editorEmbedURL = `/${info.versionSuffix}#sandbox:${info.projectId}`;
     const showCodeButton = document.getElementById("show-code-button");
+    const showCodeButtonIcon = showCodeButton.getElementsByTagName("i").item(0);
     const showCodeButtonOverflow = document.getElementById("show-code-button-overflow");
     const editCodeButton = document.getElementById("editCodeButton");
     const editCodeButtonOverflow = document.getElementById("editCodeButton-overflow");
@@ -63,12 +64,14 @@ declare namespace pxt.runner {
         if (isGame) {
             pxtTickEvent('share.showcode', { target: "arcade" });
             embedContainer.appendChild(createIFrame(editorEmbedURL));
-            showCodeButton.textContent = "Show Game";
+            showCodeButton.title = "Show Game";
+            showCodeButtonIcon.className = "fas fa-gamepad";
             showCodeButtonOverflow.textContent = "Show Game";
         }
         else {
             pxtTickEvent('share.showgame', { target: "arcade" });
-            showCodeButton.textContent = "Show Code";
+            showCodeButton.title = "Show Code";
+            showCodeButtonIcon.className = "fas fa-code";
             showCodeButtonOverflow.textContent = "Show Code";
             runSimulator(embedContainer);
         }

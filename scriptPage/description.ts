@@ -8,6 +8,7 @@ function initDescriptionButton(info: PubInfo) {
     }
     const descriptionModalOk = document.getElementById("description-modal-ok");
     const descriptionModal = document.getElementById("description-modal");
+    const descriptionDimmer = document.getElementById("description-modal-dimmer");
 
     let isVisible = false;
 
@@ -29,10 +30,12 @@ function initDescriptionButton(info: PubInfo) {
         isVisible = visible;
 
         if (visible) {
+            descriptionDimmer.style.display = "block";
             document.addEventListener("keydown", focusTrap);
             descriptionModalOk.focus();
         }
         else {
+            descriptionDimmer.style.display = "none";
             document.removeEventListener("keydown", focusTrap);
         }
     };
@@ -48,4 +51,9 @@ function initDescriptionButton(info: PubInfo) {
         showDescriptionButton.focus();
     });
     descriptionModalOk.addEventListener("keydown", fireClickOnEnter);
+
+    descriptionDimmer.addEventListener("click", function () {
+        setDescriptionVisible(false);
+        showDescriptionButton.focus();
+    });
 }
