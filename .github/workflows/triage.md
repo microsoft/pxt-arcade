@@ -8,10 +8,6 @@ permissions:
   contents: read
   issues: read
   pull-requests: read
-  discussions: read
-  actions: read
-  repository-projects: read
-  security-events: read
 
 safe-outputs:
   add-comment:
@@ -26,11 +22,10 @@ tools:
   bash: true
   github:
     read-only: true
-    toolsets: ['all']
+    toolsets: [default]
     allowed:
       - search_code
-      - semantic_issues_search
-      - semantic_issue_similarity_search
+      - semantic_code_search
       - issue_read
       - list_issues
       - search_issues
