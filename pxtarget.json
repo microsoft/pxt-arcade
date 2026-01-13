@@ -698,7 +698,8 @@
                 "type": "checkbox"
             }
         ],
-        "showProjectDescription": true
+        "showProjectDescription": true,
+        "shareHomepageContent": true
     },
     "queryVariants": {
         "skillmap=1": {

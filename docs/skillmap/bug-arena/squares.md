@@ -21,13 +21,13 @@ Let's code your bug to move around the screen coloring the arena in a square pat
 
 Our bug moves on its own, but it's important to make sure that it starts out moving in the right direction! 🗺️
 
-From the ``||bug-arena:Bug AI||`` Toolbox category, drag the ``||bug-arena:face towards 0||`` block out and drop into the ``||bug-arena:on start||`` block.
+From the ``||hourOfAi:Bug AI||`` Toolbox category, drag the ``||hourOfAi:face towards 0||`` block out and drop into the ``||hourOfAi:on start||`` block.
 
 ~hint What does this do?
 
 ---
 
-``||bug-arena:Face towards||`` will turn your bug to face a specific angle in degrees where:
+``||hourOfAi:Face towards||`` will turn your bug to face a specific angle in degrees where:
 - 0 = right
 - 90 = down
 - 180 = left
@@ -66,7 +66,7 @@ Uh-oh!  It gets stuck! 🔄
 
 Let's code in some behavior for when it hits a wall. 🧱
 
-From the ``||bug-arena:Bug AI||`` category, drag an ``||bug-arena:on bump wall||`` block out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag an ``||hourOfAi:on bump wall||`` block out onto the Workspace - you can put it anywhere.
 
 ```blockconfig.local
 hourOfAi.every(500, function () {
@@ -84,7 +84,7 @@ hourOfAi.onBumpWall(function () {
 
 ## Turn 90 degrees
 
-From the ``||bug-arena:Bug AI||`` category, drag a ``||bug-arena:turn 90||`` block, and drop it into the ``||bug-arena:on bump wall||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block, and drop it into the ``||hourOfAi:on bump wall||`` block.
 <br/>
 <br/>
 
@@ -145,13 +145,13 @@ hourOfAi.every(500, function () {
 
 We need to have our bug check to make sure it's not on a part of the screen that's already covered with its own paint color 🎨 before turning.
 
-From the ``||bug-arena:Bug AI||`` category, drag the ``||bug-arena:every 500 ms||`` group of blocks out onto the Workspace - you can put it anywhere.
+From the ``||hourOfAi:Bug AI||`` category, drag the ``||hourOfAi:every 500 ms||`` group of blocks out onto the Workspace - you can put it anywhere.
 
 ~hint What does this do?
 
 ---
 
-The ``||bug-arena:every 500 ms||`` block will run the code you put inside of it on a specified time interval ⏱️, in this case every 500 milliseconds (ms), or half a second.  The ``||bug-arena:distance to my color||`` block will return the distance in pixels from the front of our bug to its own paint color 🎨. If the distance equals 0, then our bug is standing on it's own paint!
+The ``||hourOfAi:every 500 ms||`` block will run the code you put inside of it on a specified time interval ⏱️, in this case every 500 milliseconds (ms), or half a second.  The ``||hourOfAi:distance to my color||`` block will return the distance in pixels from the front of our bug to its own paint color 🎨. If the distance equals 0, then our bug is standing on it's own paint!
 
 hint~
 
@@ -175,7 +175,7 @@ hourOfAi.every(500, function () {
 
 When the distance from our bug to its own paint color is 0, then we should make a right turn. ↩️
 
-From the ``||bug-arena:Bug AI||`` category, drag a ``||bug-arena:turn 90||`` block out and drop into the ``||Logic:if then||`` block.
+From the ``||hourOfAi:Bug AI||`` category, drag a ``||hourOfAi:turn 90||`` block out and drop into the ``||Logic:if then||`` block.
 
 ```blockconfig.local
 hourOfAi.every(500, function () {
