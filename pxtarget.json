@@ -678,6 +678,7 @@
         "errorList": true,
         "workspaceSearch": true,
         "extendEditor": true,
+        "extendScriptPage": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
         "simScreenshotMaxUriLength": 300000,
@@ -716,6 +717,7 @@
                 "type": "checkbox"
             }
         ],
+        "showProjectDescription": true,
         "shareHomepageContent": true
     },
     "queryVariants": {
