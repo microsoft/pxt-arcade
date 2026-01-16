@@ -94,7 +94,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           repository: microsoft/pxt-arcade-sim
-          ref: v0.12.1
+          ref: v0.12.3
           ssh-key: ${{ secrets.SIM_DEPLOY_KEY }}
           path: node_modules/pxt-arcade-sim
 
