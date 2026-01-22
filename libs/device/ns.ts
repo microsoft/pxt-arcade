@@ -14,18 +14,7 @@ namespace game {
 
 //% color="#4b6584"
 namespace scene {
-    /**
-     * Stop the camera from following any sprite.
-     * This is equivalent to calling scene.cameraFollowSprite(null).
-     */
-    //% blockId=scene_camera_unfollow_sprite
-    //% block="camera stop following sprite"
-    //% group="Camera"
-    //% weight=90
-    //% help=scene/camera-unfollow-sprite
-    export function cameraUnfollowSprite() {
-        scene.cameraFollowSprite(null);
-    }
+
 }
 
 //% color="#cf6a87"
