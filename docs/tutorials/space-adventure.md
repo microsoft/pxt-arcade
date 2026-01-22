@@ -7,8 +7,6 @@ Welcome, Space Captain! 🚀
 
 In this tutorial, you'll create an exciting space adventure game where you pilot a spaceship, dodge asteroids, collect power-ups, and try to survive as long as possible!
 
-![Space Adventure Game](/static/tutorials/chase-the-pizza/chasing.gif)
-
 ## {Step 1}
 
 **Let's start with the background**
@@ -699,7 +697,7 @@ hint~
 ```blocks
 game.onUpdateInterval(5000, function () {
     // @highlight
-    game.setGameOverScoringType(game.ScoringType.HighScore)
+    game.changeGameSpeedBy(5)
 })
 ```
 
@@ -849,6 +847,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 
 game.onUpdateInterval(5000, function () {
-    game.setGameOverScoringType(game.ScoringType.HighScore)
+    game.changeGameSpeedBy(5)
 })
 ```
