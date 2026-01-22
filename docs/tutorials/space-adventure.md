@@ -5,7 +5,7 @@
 
 Welcome, Space Captain! 🚀
 
-In this tutorial, you'll create an exciting space adventure game where you pilot a spaceship, dodge asteroids, collect power-ups, and try to survive as long as possible!
+In this tutorial, you'll create an exciting space adventure game where you pilot a spaceship, dodge asteroids, collect stars for points, and try to survive as long as possible!
 
 ## {Step 1}
 
@@ -178,8 +178,6 @@ mySprite.setStayInScreen(true)
 - :binoculars: Look at the game window in the bottom right corner.
 
 Try moving your spaceship around with the arrow keys or controller. Does it move smoothly? Does it stay on the screen?
-
-![Look for the game window](/static/tutorials/chase-the-pizza/game.png)
 
 ## {Step 6}
 
