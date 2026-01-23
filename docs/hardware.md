@@ -103,9 +103,9 @@ Shields are based on our guidelines, adhere to open source hardware reference de
 ```codecard
 [
     {
-        "name": "micro:bit Retro Shield",
+        "name": "micro:bit Arcade Shield",
         "description": "Use the micro:bit with an expansion board from Elecfreaks",
-        "imageUrl": "/static/hardware/retro-shield.jpg",
+        "imageUrl": "/static/hardware/arcade-shield.png",
         "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade"
     },
     {
