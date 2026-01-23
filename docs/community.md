@@ -49,7 +49,7 @@ Games submitted by the MakeCode community.
         "description": "Fly through the puzzlescape with your jetpack and win the challenge.",
         "author": "EthansGuild",
         "cardType": "sharedExample",
-        "url": "https://arcade.makecode.com/#pub:github:EthansGuild/jetchamp",
+        "url": "https://github.com/EthansGuild/jetchamp",
         "imageUrl": "/static/community/jet-champ/jet-champ.png"
     },
     {
