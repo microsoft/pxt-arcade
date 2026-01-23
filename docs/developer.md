@@ -35,7 +35,7 @@ Documentation on how to create music and sound effects is [here](/developer/soun
 
 ## Controller Buttons
 
-Use the [button tester](/developer/button-tester) to verify the proper button assignents on your controller.
+Use the [button tester](/developer/button-tester) to verify the proper button assignments on your controller.
 
 ## Getting Help
 
