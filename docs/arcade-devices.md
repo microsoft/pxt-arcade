@@ -22,7 +22,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     },
     {
         "name": "micro:bit Arcade Shield",
-        "description": "Use the micro:bit with an expansion board from Elecfreaks",
+        "description": "ELECFREAKS micro:bit expansion board for MakeCode Arcade, DIY Programmable Game Console, and STEM Education Kit.",
         "imageUrl": "/static/hardware/arcade-shield.jpg",
         "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
         "variant": "hw---n3"
