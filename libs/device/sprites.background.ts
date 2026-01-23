@@ -22,6 +22,12 @@ namespace sprites.background {
     export const fossils = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="background"
+    export const jungle1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="background"
+    export const jungle2 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._image
+    //% tags="background"
     export const lanterns = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._image
     //% tags="background"
