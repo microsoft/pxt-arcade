@@ -65,6 +65,12 @@
                 "preferred": true,
                 "tags": [ "Sprites" ]
             },
+            "jwunderl/arcade-sprite-util": {
+                "tags": [ "Sprites", "Utility" ]
+            },
+            "jwunderl/pxt-scaling": {
+                "tags": [ "Utility" ]
+            },
             "microsoft/pxt-settings-blocks": {
                 "preferred": true,
                 "tags": [ "Utility" ]
