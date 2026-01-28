@@ -404,7 +404,8 @@
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true,
                 "yottaConfig": {
-                    "DEVICE_BLE": 0
+                    "DEVICE_BLE": 0,
+                    "MICROBIT_CODAL": 1
                 }
             }
         },
