@@ -104,18 +104,18 @@ When you're finished, click **Done** to finish the skillmap and share your game 
 ```template
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`finish2`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.vy = -200
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`hurdle`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`branches`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 
@@ -127,7 +127,7 @@ scene.cameraFollowSprite(mySprite)
 
 ```ghost
 scene.onOverlapTile(SpriteKind.Player, assets.tile`flag`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
@@ -143,7 +143,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vx = speed
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`road0`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 let mySprite: Sprite = null
 let speed = 0

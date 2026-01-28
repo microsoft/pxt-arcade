@@ -101,7 +101,7 @@ In this path, students will use event containers, sprites, and projectiles to cr
 | Activity | Clicker Game (10 min) |
 |---|---|
 | ![Clicker Game thumbnail](/static/skillmap/map-info/clicker-game.png) | Create a game that adds points for each click. |
-| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
+| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.gameOver(true)]``|
 | Solution option | [Clicker Game Project](https://arcade.makecode.com/12273-78408-58405-09625) |
 
 #### 2. Button Clicker

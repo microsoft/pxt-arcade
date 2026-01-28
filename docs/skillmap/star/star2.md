@@ -202,8 +202,9 @@ It also tells you that **you've lost** when time runs out. Let's change that.
 
 - :id card: From ``||info:Info||``, grab
 ```block
-info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+info.onCountdownEnd(function () {    
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 ```
 and drop it into **an empty area** of the workspace.
@@ -212,7 +213,8 @@ and drop it into **an empty area** of the workspace.
 
 ```blockconfig.local
 info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     audience.setImage(img`.`)
@@ -223,7 +225,8 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 ```
 
@@ -268,7 +271,8 @@ return to the main page where you can keep going and find out how to throw stars
 
 
 ```blockconfig.global
-game.over(true, effects.confetti)
+game.setGameOverEffect(true, effects.confetti)
+game.gameOver(true)
 let audience = sprites.create(img`.`, SpriteKind.Player)
 audience.setImage(img`.`)
 audience.bottom = 120

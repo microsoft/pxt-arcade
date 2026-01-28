@@ -261,7 +261,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
 })
 
 statusbars.onZero(StatusBarKind.Energy, function (status) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 

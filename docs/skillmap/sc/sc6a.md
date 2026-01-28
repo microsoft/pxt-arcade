@@ -179,10 +179,10 @@ namespace SpriteKind {
     export const Ring = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`pit`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
     tiles.setTileAt(location, assets.tile`transparency16`)

@@ -194,7 +194,8 @@ collect your badge and share your final game with family and friends.
 
 
 ```blockconfig.global
-game.over(true, effects.confetti)
+game.setGameOverEffect(true, effects.confetti)
+game.gameOver(true)
 let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.setImage(assets.image`clap2`)
 audience.bottom = 120
@@ -210,7 +211,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     let star = sprites.createProjectileFromSprite(assets.image`star`, audience, randint(-80, 80), randint(-50, -100))
 })
 info.onCountdownEnd(function () {
-    game.over(true, effects.hearts)
+    game.setGameOverEffect(true, effects.hearts)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     audience.setImage(assets.image`clap1`)

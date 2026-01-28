@@ -48,7 +48,7 @@ pxt-forest-special=github:kiki-lee/forest-special/
 | Activity | Over and Under (8 min) |
 |---|---|
 | ![Over and Under thumbnail](https://makecode.com/api/_FYseeH2FhhHR/thumb) | Add the ability to jump, win, and lose.  |
-| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.over(true)]`` |
+| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.gameOver(true)]`` |
 | Solution option | [Over and Under Project](https://makecode.com/_FYseeH2FhhHR) |
 
 #### 3. Going Further

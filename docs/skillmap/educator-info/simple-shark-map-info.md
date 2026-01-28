@@ -68,7 +68,7 @@ Specifically, they will experience the following topics:
 | Activity | Eat Up! (8 min) |
 |---|---|
 | ![Eat Up! thumbnail](/static/skillmap/shark/shark3.gif) | This game builds off the last level. Animate and gamify your shark's consumption of fish. |
-| Blocks used | ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy(effects.disintegrate,)]``<br/>``[info.changeScoreBy()]``<br/>``[info.startCountdown()]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
+| Blocks used | ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {})]``<br/>``[let otherSprite: Sprite = null; otherSprite.destroy(effects.disintegrate,)]``<br/>``[info.changeScoreBy()]``<br/>``[info.startCountdown()]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.gameOver(true)]``|
 | Solution option | [Eat Up! Project](https://makecode.com/_WM31H3Uur331) |
 
 #### 4. Under the Sea

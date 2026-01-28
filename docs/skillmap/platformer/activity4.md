@@ -78,10 +78,10 @@ for (let value of sprites.allOfKind(SpriteKind.Enemy)) {
 
 ```template
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -200
@@ -633,7 +633,7 @@ function startNextLevel () {
     }
     else {
     // @highlight
-        game.over(true)
+        game.gameOver(true)
     }
     tiles.placeOnRandomTile(mySprite, myTiles.tile3)
     for (let value of tiles.getTilesByType(myTiles.tile5)) {
@@ -702,7 +702,7 @@ let currentLevel = 0
 
     }
     else {
-        game.over(true)
+        game.gameOver(true)
     }
 
 
@@ -768,7 +768,7 @@ function startNextLevel () {
         tiles.setTilemap(tilemap`level`)
     }
     else {
-        game.over(true)
+        game.gameOver(true)
     }
     tiles.placeOnRandomTile(mySprite, myTiles.tile3)
     for (let value of tiles.getTilesByType(myTiles.tile5)) {
@@ -834,7 +834,7 @@ function startNextLevel () {
         tiles.setTilemap(tilemap`level`)
     }
     else {
-        game.over(true)
+        game.gameOver(true)
     }
     tiles.placeOnRandomTile(mySprite, myTiles.tile3)
     for (let value of tiles.getTilesByType(myTiles.tile5)) {

@@ -77,12 +77,12 @@ function quest3 () {
     if (controller.A.isPressed()) {
         adventure.addToTextlog("That was a really bad idea.")
         adventure.addToTextlog("The dragon meets your gaze and sweeps down to grab you.")
-        game.over(true)
+        game.gameOver(true)
 
     } else {
         adventure.addToTextlog("You hide behind a large tree with a cavern in the trunk.")
         adventure.addToTextlog("Inside, you see something glimmer.  It's a treasure chest!")
-        game.over(false)
+        game.gameOver(false)
 
     }
 }
@@ -131,12 +131,12 @@ function quest3 () {
     if (controller.A.isPressed()) {
         adventure.addToTextlog("That was a really bad idea.")
         adventure.addToTextlog("The dragon meets your gaze and sweeps down to grab you.")
-        game.over(true)
+        game.gameOver(true)
 
     } else {
         adventure.addToTextlog("You hide behind a large tree with a cavern in the trunk.")
         adventure.addToTextlog("Inside, you see something glimmer.  It's a treasure chest!")
-        game.over(false)
+        game.gameOver(false)
 
     }
 }
@@ -178,7 +178,7 @@ right below <br/>
 
 ```blockconfig.local
 info.onLifeZero(function () {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -239,7 +239,7 @@ so you know exactly how many possibilities you want to create._
 
 ```blockconfig.local
 info.onLifeZero(function () {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -259,7 +259,7 @@ Now, when the player runs out of lives, the game will end as a loss.
 
 ```blockconfig.local
 info.onLifeZero(function () {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -268,7 +268,7 @@ info.onLifeZero(function () {
 ```blocks
 //@highlight
 info.onLifeZero(function () {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -396,7 +396,7 @@ where you can share your final game with family and friends.
 ```blockconfig.global
 
 info.onLifeZero(function () {
-    game.over(false)
+    game.gameOver(false)
 })
 
 info.onScore(20, function () {
@@ -431,7 +431,7 @@ function quest1 () {
         quest2()
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 }
 function quest2 () {
@@ -445,11 +445,11 @@ function quest2 () {
         adventure.addToTextlog("You only get a few steps before you hear a loud BOOM")
         adventure.addToTextlog("Shards of wood fly toward the shore from an explosion aboard the ship")
         adventure.addToTextlog("You run back toward the forest, so glad to be alive.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("The crew of the ship surrounds you with weapons drawn.")
         adventure.addToTextlog("You immediately regret your choice.")
-        game.over(false)
+        game.gameOver(false)
     }
 }
 quest1()
@@ -487,7 +487,7 @@ function quest1 () {
         quest2()
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 }
 function quest2 () {
@@ -505,7 +505,7 @@ function quest2 () {
     } else {
         adventure.addToTextlog("The crew of the ship surrounds you with weapons drawn.")
         adventure.addToTextlog("You immediately regret your choice.")
-        game.over(false)
+        game.gameOver(false)
     }
 }
 info.onLifeZero(function () {

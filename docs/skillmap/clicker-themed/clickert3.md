@@ -141,7 +141,7 @@ get a link to share with family and friends!
 ```template
 
 info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+    game.gameOver(true, effects.confetti)
 })
 
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
@@ -174,7 +174,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+    game.gameOver(true, effects.confetti)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     aButton.setImage(assets.image`A static`)

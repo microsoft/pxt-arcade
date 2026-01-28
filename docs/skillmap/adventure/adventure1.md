@@ -347,7 +347,7 @@ if (controller.A.isPressed()) {
     //@highlight
     adventure.addToTextlog("Your adventure is over before it has even begun." )
     //@highlight
-    game.over(false)
+    game.gameOver(false)
 }
 
 ```
