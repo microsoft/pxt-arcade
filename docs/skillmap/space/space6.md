@@ -191,7 +191,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
     statusbar.value = 100
 })
 statusbars.onZero(StatusBarKind.Energy, function (status) {
-    game.over(false)
+    game.gameOver(false)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy(effects.fire, 100)
@@ -266,7 +266,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gas, function (sprite, otherSpri
     statusbar.value = 100
 })
 statusbars.onZero(StatusBarKind.Energy, function (status) {
-    game.over(false)
+    game.gameOver(false)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy(effects.fire, 100)

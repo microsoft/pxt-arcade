@@ -284,7 +284,7 @@ game.onUpdateInterval(3000, function () {
 })
 game.onUpdate(function() {
     if (sprites.allOfKind(SpriteKind.Quail).length == 0 && sprites.allOfKind(SpriteKind.Egg).length == 0) {
-        game.over(true)
+        game.gameOver(true)
     }
 })
 ```

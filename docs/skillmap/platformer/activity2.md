@@ -223,7 +223,7 @@ into the workspace.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -245,7 +245,7 @@ the &lt;LOSE&gt; switch to &lt;WIN&gt;!
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 

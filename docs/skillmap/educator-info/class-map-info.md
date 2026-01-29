@@ -47,7 +47,7 @@ pxt-tilemaps=github:microsoft/pxt-tilemaps/
 | Activity | Gather Your Gear (8 min) |
 |---|---|
 | ![Gather Your Gear thumbnail](/static/skillmap/rockstar/rockstar2.gif) | Give your rockstar the ability to collect points while grabbing instruments and a way to finish the game. |
-| Blocks used | ``[scene.onOverlapTile()]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]``<br/>``[info.changeScoreBy(1)]``<br/>``[game.over(true)]`` |
+| Blocks used | ``[scene.onOverlapTile()]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]``<br/>``[info.changeScoreBy(1)]``<br/>``[game.gameOver(true)]`` |
 | Solution option | [Gather Your Gear Project](https://makecode.com/_aE3eYm23wad3) |
 
 #### 3. Avoid the Fans!

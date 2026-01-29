@@ -48,7 +48,7 @@ Specifically, they will experience the following topics:
 | Activity | Welcome to the Show (15 min) |
 |---|---|
 | ![Welcome to the Show thumbnail](/static/skillmap/star/star1.gif) | Create a game using talented animals and add points for each click. |
-| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.over(true)]``|
+| Blocks used | ``[info.startCountdown(10)]``<br/>``[info.changeScoreBy(1)]``<br/>``[info.onCountdownEnd(function () {})]``<br/>``[game.gameOver(true)]``|
 | Solution option | [Welcome to the Show Project](https://makecode.com/_d6TdD8VYPX1U) |
 
 #### 2. Join the Audience

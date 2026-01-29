@@ -36,7 +36,7 @@ When the sprite overlaps the _pit_ tile, let's trigger a "GAME OVER" message.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`pit`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -67,7 +67,7 @@ container into the workspace.
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`door1`, function (sprite, location) {
     //@highlight
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -168,7 +168,7 @@ namespace SpriteKind {
     export const Ring = SpriteKind.create()
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`ring`, function (sprite, location) {
     tiles.setTileAt(location, assets.tile`transparency16`)
