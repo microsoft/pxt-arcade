@@ -1,6 +1,6 @@
 {
     "name": "pxt-arcade",
-    "version": "2.1.31",
+    "version": "2.1.32",
     "description": "Small arcade editor for MakeCode",
     "keywords": [
         "JavaScript",
@@ -31,7 +31,7 @@
         "typescript": "4.8.3"
     },
     "dependencies": {
-        "pxt-common-packages": "13.1.9",
+        "pxt-common-packages": "13.1.10",
         "pxt-core": "12.2.21"
     },
     "optionalDependencies": {
