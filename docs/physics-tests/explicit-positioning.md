@@ -211,7 +211,8 @@ scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
         level += 1
         setLevel(level, mySprite)
     } else {
-        game.gameOver(true, effects.confetti)
+        game.setGameOverEffect(true, effects.confetti)
+        game.gameOver(true)
     }
 })
 function intitPlayer () {
