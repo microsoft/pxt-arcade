@@ -880,7 +880,8 @@ function setupFrames () {
     `]
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Obstacle, function (sprite, otherSprite) {
-    game.over(false, effects.melt)
+    game.setGameOverEffect(false, effects.melt)
+    game.gameOver(false)
 })
 let grass: Sprite = null
 let projectile: Sprite = null

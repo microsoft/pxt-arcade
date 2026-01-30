@@ -450,7 +450,7 @@ namespace status {
             info.setLife(3);
             info.changeScoreBy(-50);
         } else {
-            game.over();
+            game.gameOver(false);
         }
     });
 

@@ -3,7 +3,7 @@
 
 ```ghost
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)

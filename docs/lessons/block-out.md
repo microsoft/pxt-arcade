@@ -328,19 +328,21 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.block, function (sprite, oth
 
 ## Part Seven: Ending the Game
 
-From ``||loops:Loops||`` drag out a ``||loops:forever block||`` and place it anywhere in the workspace. From ``||logic:Logic||`` drag out an ``||logic:if then||`` block and place it in the ``||loops:forever||`` loop. From ``||logic:Logic||`` drag out a ``||logic:0 > 0||`` block and place it in the ``||logic:if||`` statement. Set the second field to **119**. Then from ``||sprites:Sprites||`` drag out a ``||sprites:mySprite x||`` and place it in the first field. Set the ``mySprite`` to ``projectile`` and the ``x`` to ``bottom``. Inside the ``||logic:if||`` statement drag in a ``||game:game over lose||`` block from ``||game:Game||``. Click the **(+)** symbol and set the effect to ``slash``.
+From ``||loops:Loops||`` drag out a ``||loops:forever block||`` and place it anywhere in the workspace. From ``||logic:Logic||`` drag out an ``||logic:if then||`` block and place it in the ``||loops:forever||`` loop. From ``||logic:Logic||`` drag out a ``||logic:0 > 0||`` block and place it in the ``||logic:if||`` statement. Set the second field to **119**. Then from ``||sprites:Sprites||`` drag out a ``||sprites:mySprite x||`` and place it in the first field. Set the ``mySprite`` to ``projectile`` and the ``x`` to ``bottom``. Inside the ``|logic:if||`` statement drag in a ``||game:use effect||`` and set the toggle to `LOSE` Then, click the **(+)** symbol to set the effect to ``slash``. Get a ``||game:game over win||`` block from ``||game:Game||``. Set the toggle to `LOSE`.
 
-Then from ``||logic:Logic||``, drag out an ``||logic:if then||`` block and place it in the ``||loops:forever||`` loop. From ``||logic:Logic||`` drag out a ``||logic:0 = 0||`` block and place it in the ``||logic:if||`` statement. Set the second field to **30**. For the first field, drag in ``||info:score||`` from ``||info:Info||``. Inside the ``|logic:if||`` statement drag in a ``||game:game over lose||`` block from ``||game:Game||``. Switch the toggle to **WIN** and then click the **(+)** symbol set the effect to ``brighten``.
+Then, from ``||logic:Logic||``, drag out an ``||logic:if then||`` block and place it in the ``||loops:forever||`` loop. From ``||logic:Logic||`` drag out a ``||logic:0 = 0||`` block and place it in the ``||logic:if||`` statement. Set the second field to **30**. For the first field, drag in ``||info:score||`` from ``||info:Info||``. Inside the ``|logic:if||`` statement, drag in a ``||game:use effect||`` and click the **(+)** symbol to set the effect to ``confetti``. Get a ``||game:game over||`` block from ``||game:Game||``.
 
 ```blocks
 info.setScore(1)
 let projectile: Sprite = null
 forever(function () {
     if (projectile.bottom > 119) {
-        game.over(false, effects.slash)
+        game.setGameOverEffect(false, effects.slash)
+        game.gameOver(false)
     }
     if (info.score() == 2) {
-        game.over(true, effects.confetti)
+        game.setGameOverEffect(true, effects.confetti)
+        game.gameOver(true)
     }
 })
 ```
@@ -507,10 +509,12 @@ scene.setBackgroundColor(13)
 direction = 1
 forever(function () {
     if (projectile.bottom > 119) {
-        game.over(false, effects.slash)
+        game.setGameOverEffect(false, effects.slash)
+        game.gameOver(false)
     }
     if (info.score() == 30) {
-        game.over(true, effects.bubbles)
+        game.setGameOverEffect(true, effects.bubbles)
+        game.gameOver(true)
     }
 })
 ```

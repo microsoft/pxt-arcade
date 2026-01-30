@@ -25,7 +25,7 @@ use ``||sprites:sprite.setImage||`` to **change** the ``||images:image||`` of th
 ``Treasure`` ``||sprites:sprite||`` to a treasure chest.
 After changing the ``||images:image||``,
 ``||loops:pause||`` for one second,
-and then end the game with ``||game:game.over(true)||``.
+and then end the game with ``||game:game.gameOver(true)||``.
 
 ## Problem #2: Dodge Ball
 
@@ -46,7 +46,7 @@ to represent the player getting hit by the ball.
 
 In the ``||sprites:overlap||`` event,
 ``||game:splash||`` "ouch!" to the screen,
-and then ends the game with ``||game:game.over(false)||``
+and then ends the game with ``||game:game.gameOver(false)||``
 
 ## Problem #3: Stay Out of the Fire
 

@@ -973,7 +973,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 animation.runImageAnimation(harry, [img`.`], 100, true)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})
 let harry = sprites.create(img`,`, SpriteKind.Player)
-game.over(true)
+game.gameOver(true)
 controller.moveOnlyOnscreenWithArrows(harry, controller.Speeds.Fast)
 scroller.scrollBackgroundWithSpeed(-90, 0)
 info.startCountdown(30)

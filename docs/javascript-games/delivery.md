@@ -9,7 +9,8 @@ namespace SpriteKind {
 // Game over when you reach the end of the
 // neighborhood
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     car.setImage(img`

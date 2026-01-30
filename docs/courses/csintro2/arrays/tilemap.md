@@ -115,7 +115,7 @@ The ``||scene:on top of myTile place mySprite||`` allows for sprites to be place
 
 ```blocks
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.setTileMap(img`
     1 1 1 1 1 1 1 1 1 1
@@ -209,7 +209,7 @@ let pizza: Sprite = null
 let tile_list: tiles.Tile[] = []
 let mySprite: Sprite = null
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.setTileMap(img`
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -341,7 +341,7 @@ scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
 })
 function buildLevel() {
     if (nextLevel == levels.length) {
-        game.over(true)
+        game.gameOver(true)
     }
     scene.setTileMap(levels[nextLevel])
     for (let value of scene.getTilesByType(4)) {

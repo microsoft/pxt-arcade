@@ -16,7 +16,7 @@ When the countdown timer reaches zero you might want to switch to a new level or
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(false, effects.melt)
+    game.gameOver(false, effects.melt)
 })
 ```
 
@@ -36,7 +36,7 @@ In this example, the countdown timer is set to `30` seconds and it stops when th
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(false, effects.melt)
+    game.gameOver(false, effects.melt)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
     info.stopCountdown()
