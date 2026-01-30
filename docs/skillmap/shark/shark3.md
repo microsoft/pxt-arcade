@@ -130,7 +130,7 @@ Right now, when the timer runs out, the player loses.  Let's change that.
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -171,7 +171,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
 })
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 

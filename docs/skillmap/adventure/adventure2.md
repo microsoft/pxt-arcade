@@ -43,10 +43,10 @@ container already in the workspace.
     pauseUntil(() => controller.anyButton.isPressed())
     if (controller.A.isPressed()) {
         adventure.addToTextlog("Great choice! Enjoy your adventure.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 ```
 
@@ -86,10 +86,10 @@ music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.InBackgroun
     pauseUntil(() => controller.anyButton.isPressed())
     if (controller.A.isPressed()) {
         adventure.addToTextlog("Great choice! Enjoy your adventure.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 
 ```
@@ -190,10 +190,10 @@ function quest1() {
     pauseUntil(() => controller.anyButton.isPressed())
     if (controller.A.isPressed()) {
         adventure.addToTextlog("Great choice! Enjoy your adventure.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 
 }
@@ -259,10 +259,10 @@ function quest2() {
     pauseUntil(() => controller.anyButton.isPressed())
     if (controller.A.isPressed()) {
         adventure.addToTextlog("Great choice! Enjoy your adventure.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 
 }
@@ -324,7 +324,7 @@ function quest1() {
         quest2()
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun." )
-        game.over(false)
+        game.gameOver(false)
     }
 
 }
@@ -393,10 +393,10 @@ adventure_imgs=github:kiki-lee/adventure_imgs
     pauseUntil(() => controller.anyButton.isPressed())
     if (controller.A.isPressed()) {
         adventure.addToTextlog("Great choice! Enjoy your adventure.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 
 
@@ -417,7 +417,7 @@ function quest1 () {
         quest2()
     } else {
         adventure.addToTextlog("Your adventure is over before it has even begun.")
-        game.over(false)
+        game.gameOver(false)
     }
 }
 function quest2 () {
@@ -431,11 +431,11 @@ function quest2 () {
         adventure.addToTextlog("You only get a few steps before you hear a loud BOOM")
         adventure.addToTextlog("Shards of wood fly toward the shore from an explosion aboard the ship")
         adventure.addToTextlog("You run back toward the forest, so glad to be alive.")
-        game.over(true)
+        game.gameOver(true)
     } else {
         adventure.addToTextlog("The crew of the ship surrounds you with weapons drawn.")
         adventure.addToTextlog("You immediately regret your choice.")
-        game.over(false)
+        game.gameOver(false)
     }
 }
 quest1()

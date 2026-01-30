@@ -57,7 +57,7 @@ scene.cameraFollowSprite(__camera)
 scene.onOverlapTile(SpriteKind.Penguin, assets.tile`tile`, function (sprite, location) {
     control.runInBackground(() => {
         pause(1000)
-        game.over(true)
+        game.gameOver(true)
     })
 })
 

@@ -133,7 +133,7 @@ Snap it inside the empty **on countdown end** container.
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -154,7 +154,8 @@ and choose a new option from the dropdown.
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 ```
 
@@ -196,7 +197,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onCountdownEnd(function () {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     aButton.setImage(assets.image`A static`)

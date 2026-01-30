@@ -65,7 +65,7 @@ to a jump _master_ who rescues fellow birds for points.
 | Activity | Win or Lose (5 min) |
 |---|---|
 | ![Win or Lose thumbnail](/static/skillmap/turkey/turkey3.gif) | Add win and loss conditions. |
-| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.over(true)]``<br/>``[info.onCountdownEnd()]`` <br/>``[info.startCountdown(120)]`` |
+| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.gameOver(true)]``<br/>``[info.onCountdownEnd()]`` <br/>``[info.startCountdown(120)]`` |
 | Solution option | [Win or Lose Project](https://makecode.com/_3a81pJ6t1dHX) |
 
 

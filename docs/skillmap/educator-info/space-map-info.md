@@ -97,7 +97,7 @@ During this session, students will amp up their game by building in additional g
 | Activity | Fuel Up! (12 min) |
 |---|---|
 | ![Fuel Up! thumbnail](/static/skillmap/space/spacet4.gif) | Add a fuel gauge to your ship and set fuel drops in your game. |
-| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval()]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.value += -1]``<br/>``[sprites.onOverlap()]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.value = 100]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status){})]``<br/>``[game.over(false)]``|
+| Blocks used | ``[let statusbar: StatusBarSprite = null; statusbar = statusbars.create(20, 4, StatusBarKind.Energy)]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.attachToSprite(mySprite, -30, 0)]``<br/>``[game.onUpdateInterval()]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.value += -1]``<br/>``[sprites.onOverlap()]``<br/>``[let statusbar: StatusBarSprite = null; statusbar.value = 100]``<br/>``[let otherSprite: Sprite=null; otherSprite.destroy()]``<br/>``[statusbars.onZero(StatusBarKind.Energy, function (status){})]``<br/>``[game.gameOver(false)]``|
 | Solution option | [Fuel Up! Project](https://makecode.com/_gsYg8Pdwa2oC) |
 
 #### 2. Level Up!

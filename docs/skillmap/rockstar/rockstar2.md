@@ -152,7 +152,7 @@ block into the new container.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -197,7 +197,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
     info.changeScoreBy(1)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`door`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, location) {
     tiles.setTileAt(location, assets.tile`transparency16`)

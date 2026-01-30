@@ -215,7 +215,7 @@ let mamaDino = sprites.create(img`.`, SpriteKind.Player)
 let tourist = sprites.createProjectileFromSide(img`.`, -90, 0)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 info.startCountdown(15)
-game.over(true)
+game.gameOver(true)
 tourist.y = randint(15, 115)
 tourist.destroy()
 tourist.setKind(SpriteKind.Enemy)
@@ -224,7 +224,7 @@ animation.runImageAnimation(mamaDino, [img`.`], 100, true)
 
 ```template
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -260,7 +260,7 @@ forever(function () {
 
 ```ghost
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()

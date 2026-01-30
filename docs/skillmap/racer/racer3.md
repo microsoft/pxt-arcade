@@ -181,15 +181,15 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 
 let truck = sprites.create(assets.image`truck1`, SpriteKind.Player)
@@ -201,18 +201,18 @@ scene.cameraFollowSprite(truck)
 
 ```ghost
 scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     truck.vy = -200
     music.play(music.melodyPlayable(music.knock), music.PlaybackMode.InBackground)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
     music.play(music.createSoundEffect(WaveShape.Noise, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
-    game.over(false)
+    game.gameOver(false)
 })
 let truck: Sprite = null
 music.setVolume(20)

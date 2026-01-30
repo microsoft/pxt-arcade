@@ -55,7 +55,7 @@ Specifically, they will experience the following topics:
 | Activity | Burst Your Balloon (15 min) |
 |---|---|
 | ![Burst Your Balloon thumbnail](/static/skillmap/balloon/balloon2.gif) | Add a balloon that inflates as you click! You'll be shocked to see how full it gets before time runs out. |
-| Blocks used | ``[scene.setBackgroundColor(1)]`` <br/> ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> `` [let myMouse: Sprite = null; myMouse.setPosition(50, 93)]`` <br/> ``[scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {})]`` <br/> ``[game.over(true)]`` |
+| Blocks used | ``[scene.setBackgroundColor(1)]`` <br/> ``[let mySprite = sprites.create(img`.`, SpriteKind.Player)]`` <br/> `` [let myMouse: Sprite = null; myMouse.setPosition(50, 93)]`` <br/> ``[scaling.scaleByPixels(mySprite, 1, ScaleDirection.Uniformly, ScaleAnchor.Bottom)]`` <br/> ``[sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {})]`` <br/> ``[game.gameOver(true)]`` |
 | Solution option | [Burst Your Balloon Project](https://makecode.com/_LTehszFPdDsm) |
 
 #### 3. Pump it Up
