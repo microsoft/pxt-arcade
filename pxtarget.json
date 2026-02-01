@@ -402,10 +402,7 @@
                 "gittag": "v0.2.13",
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
-                "yottaConfigCompatibility": true,
-                "yottaConfig": {
-                    "DEVICE_BLE": 0,
-                    "ARCADE_MBIT_CODAL": 1
+                "yottaConfigCompatibility": true
                 }
             }
         },
