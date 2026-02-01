@@ -284,7 +284,7 @@ container into the workspace.
 
 ```blocks
 statusbars.onZero(StatusBarKind.Energy, function (status) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 

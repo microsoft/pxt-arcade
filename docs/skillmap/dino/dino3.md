@@ -185,7 +185,7 @@ let tourist = sprites.createProjectileFromSide(assets.image`Tourist`, -90, 0)
 let mamaDino = sprites.create(assets.image`Mama`, SpriteKind.Player)
 scroller.scrollBackgroundWithSpeed(-50, 0)
 info.startCountdown(15)
-game.over(true)
+game.gameOver(true)
 tourist.y = randint(15, 115)
 tourist.destroy()
 tourist.setKind(SpriteKind.Enemy)
@@ -193,7 +193,7 @@ tourist.setKind(SpriteKind.Enemy)
 
 ```template
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -218,7 +218,7 @@ forever(function () {
 
 ```ghost
 info.onCountdownEnd(function () {
-    game.over(true)
+    game..gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)

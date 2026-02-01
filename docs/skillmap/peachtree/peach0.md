@@ -120,18 +120,18 @@ open the finished product in the project editor where you can see the code that 
 ```template
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`finish2`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.vy = -200
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`branches`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`hurdle`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 tiles.setTilemap(tilemap`level1`)

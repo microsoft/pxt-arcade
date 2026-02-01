@@ -197,7 +197,8 @@ keep going to add roses to your project!
 
 
 ```blockconfig.global
-game.over(true, effects.confetti)
+game.setGameOverEffect(true, effects.hearts)
+game.gameOver(true)
 let audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
 audience.setImage(assets.image`clap2`)
 audience.bottom = 120
@@ -211,7 +212,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     audience.setImage(assets.image`clap2`)
 })
 info.onCountdownEnd(function () {
-    game.over(true, effects.hearts)
+    game.setGameOverEffect(true, effects.hearts)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
     audience.setImage(assets.image`clap1`)

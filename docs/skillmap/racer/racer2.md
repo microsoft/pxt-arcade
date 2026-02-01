@@ -73,7 +73,7 @@ bundle into an **empty area** of the workspace.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -101,7 +101,7 @@ _💡 Need a little help figuring out what this step should look like? Click the
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`spikes`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -138,7 +138,7 @@ _💡 Need a little help figuring out what this step should look like? Click the
 
 ```blockconfig.local
 scene.onOverlapTile(SpriteKind.Player, img`.`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -146,7 +146,7 @@ scene.onOverlapTile(SpriteKind.Player, img`.`, function (sprite, location) {
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`empty cave`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -178,7 +178,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     truck.vy = -200
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`acid`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 

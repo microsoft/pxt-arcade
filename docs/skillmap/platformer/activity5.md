@@ -72,7 +72,7 @@
 
 ```template
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
     startNextLevel()
@@ -92,7 +92,7 @@ function startNextLevel () {
         scene.setBackgroundColor(9)
         tiles.setTilemap(tilemap`level`)
     } else {
-        game.over(true)
+        game.gameOver(true)
     }
     tiles.placeOnRandomTile(mySprite, myTiles.tile3)
     for (let value of tiles.getTilesByType(myTiles.tile5)) {

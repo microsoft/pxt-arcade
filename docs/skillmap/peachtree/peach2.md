@@ -82,7 +82,7 @@ block into the new container.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`hurdle`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -105,7 +105,7 @@ _💡 Need a little help figuring out what this step should look like? Click the
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`branches`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -141,7 +141,7 @@ a **finish** tile as you did for the **hurdle** tile.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`finish2`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 

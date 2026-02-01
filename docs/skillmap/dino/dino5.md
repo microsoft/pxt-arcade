@@ -5,7 +5,7 @@
 ```template
 
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)
@@ -158,7 +158,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     destroyer.setBounceOnWall(true)
 })
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)

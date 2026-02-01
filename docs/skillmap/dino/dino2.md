@@ -162,7 +162,7 @@ Right now, when time runs out, you lose the game. We can change that!
 - :id card:  From ``||info:Info||``,  grab
 ```block
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 and drop it into a blank area of the workspace.
@@ -179,7 +179,7 @@ hint~
 
 ```blockconfig.local
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -187,7 +187,7 @@ info.onCountdownEnd(function () {
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -230,7 +230,7 @@ scroller.scrollBackgroundWithSpeed(-50, 0)
 babyDino.y = 0
 babyDino.destroy()
 info.startCountdown(15)
-game.over(true)
+game.gameOver(true)
 controller.moveOnlyOnscreenWithArrows(mamaDino, controller.Speeds.Fast)
 ```
 
@@ -252,7 +252,7 @@ forever(function () {
 
 ```ghost
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)
