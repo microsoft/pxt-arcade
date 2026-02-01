@@ -34,7 +34,8 @@
             "DEVICE_USB": 0,
             "DEVICE_WEBUSB": 0,
             "DEVICE_BLE": 0,
-            "ARCADE_MBIT_CODAL": 1
+            "ARCADE_MBIT_CODAL": 1,
+            "MICROBIT_CODAL": 0
         }
     },
     "dalDTS": {
