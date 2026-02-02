@@ -403,7 +403,6 @@
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
-                }
             }
         },
         "rp2040": {
