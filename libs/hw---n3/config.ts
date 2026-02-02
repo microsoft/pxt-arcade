@@ -1,5 +1,7 @@
-// there's no UF2 bootloader for 52833 yet, so we specify example configuration here
+// there's no UF2 bootloader for 52833 yet, so we specify configuration here
 namespace config {
+    export const SETTINGS_SIZE = (8*1024)
+
     export const PIN_BTNMX_LATCH = DAL.P0_9
     export const PIN_BTNMX_CLOCK = DAL.P1_0
     export const PIN_BTNMX_DATA = DAL.P0_1
