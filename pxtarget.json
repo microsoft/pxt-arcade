@@ -393,8 +393,8 @@
                 "buildEngine": "codal",
                 "codalTarget": {
                     "name": "codal-microbit-v2",
-                    "url": "https://github.com/lancaster-university/codal-microbit-v2",
-                    "branch": "v0.3.0",
+                    "url": "https://github.com/thomasjball/codal-microbit-v2",
+                    "branch": "13a0d323b3a9c18a59e3120535d78654b6c8a566",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",
@@ -402,10 +402,7 @@
                 "gittag": "v0.2.13",
                 "serviceId": "mbcodal2",
                 "dockerImage": "pext/yotta:latest",
-                "yottaConfigCompatibility": true,
-                "yottaConfig": {
-                    "DEVICE_BLE": 0
-                }
+                "yottaConfigCompatibility": true
             }
         },
         "rp2040": {
