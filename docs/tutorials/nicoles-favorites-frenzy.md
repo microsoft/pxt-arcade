@@ -293,7 +293,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile61, function (sprite, location) {
     game.setGameOverDialogWinText("You Win!!!")
-    game.over(true)
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile50, function (sprite, location) {
     tiles.setTileAt(location, myTiles.transparency16)
@@ -302,7 +302,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile50, function (sprite, locatio
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile27, function (sprite, location) {
     game.setGameOverDialogLoseText("Bummer.. try again :(")
-    game.over(false)
+    game.gameOver(false)
 })
 let Nicole: Sprite = null
 scene.setBackgroundImage(img`

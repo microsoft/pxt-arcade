@@ -121,7 +121,7 @@ info.onLifeZero(function () {
     if (game.ask("Do you want to continue?")) {
         info.setLife(5);
     } else {
-        game.over();
+        game.gameOver(false);
     }
 });
 ```
@@ -240,7 +240,7 @@ namespace status {
             info.setLife(3);
             info.changeScoreBy(-50);
         } else {
-            game.over();
+            game.gameOver(false);
         }
     });
 }

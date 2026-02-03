@@ -198,7 +198,7 @@ block.
 ```blocks
 //@highlight
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 let myCorg = corgio.create(SpriteKind.Player)
 myCorg.horizontalMovement()

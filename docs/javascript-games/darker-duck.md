@@ -192,7 +192,7 @@ controller.anyButton.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.setAction(mySprite, ActionKind.Jumping)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over()
+    game.gameOver(false)
 })
 scene.setBackgroundColor(9)
 effects.blizzard.startScreenEffect()
@@ -351,7 +351,7 @@ game.onUpdate(function () {
         animation.setAction(mySprite, ActionKind.Idle)
     }
     if (mySprite.bottom > 120 || mySprite.top < 0) {
-        game.over()
+        game.gameOver(false)
     }
 })
 
