@@ -2,7 +2,9 @@
     "id": "arcade-orange",
     "name": "Orange",
     "weight": 20,
-    "overrideFiles": [],
+    "overrideFiles": [
+        "/overrides/arcade-orange-overrides.css"
+    ],
     "colors": {
         "pxt-header-background": "#F76820",
         "pxt-header-foreground": "#FFFFFF",

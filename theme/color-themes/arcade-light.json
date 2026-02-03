@@ -3,7 +3,8 @@
     "name": "Light",
     "weight": 40,
     "overrideFiles": [
-        "/overrides/arcade-light-overrides.css"],
+        "/overrides/arcade-light-overrides.css"
+    ],
     "colors": {
         "pxt-header-background": "#116E79",
         "pxt-header-foreground": "#FFFFFF",
