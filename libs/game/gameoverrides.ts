@@ -16,3 +16,23 @@ namespace basic {
         game.forever(a);
     }
 }
+
+namespace sprites {
+    /**
+     * Places a sprite at a random position on the screen
+     * @param sprite the sprite to place at a random position
+     */
+    //% blockId=spriteRandomPosition 
+    //% block="place $sprite at random position"
+    //% sprite.shadow="variables_get"
+    //% sprite.defl="mySprite"
+    //% weight=10
+    //% blockNamespace="sprites"
+    //% group="Effects"
+    //% help=sprites/place-randomly
+    export function placeRandomly(sprite: Sprite): void {
+        if (!sprite) return;
+        sprite.x = Math.randomRange(0, screen.width);
+        sprite.y = Math.randomRange(0, screen.height);
+    }
+}
