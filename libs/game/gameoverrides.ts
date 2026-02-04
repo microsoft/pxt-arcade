@@ -34,7 +34,16 @@ namespace sprites {
         if (!sprite) return;
         const halfWidth = sprite.width >> 1;
         const halfHeight = sprite.height >> 1;
-        sprite.x = Math.randomRange(halfWidth, screen.width - halfWidth);
-        sprite.y = Math.randomRange(halfHeight, screen.height - halfHeight);
+        // If sprite is larger than screen, place at center
+        if (sprite.width >= screen.width) {
+            sprite.x = screen.width >> 1;
+        } else {
+            sprite.x = Math.randomRange(halfWidth, screen.width - halfWidth);
+        }
+        if (sprite.height >= screen.height) {
+            sprite.y = screen.height >> 1;
+        } else {
+            sprite.y = Math.randomRange(halfHeight, screen.height - halfHeight);
+        }
     }
 }
