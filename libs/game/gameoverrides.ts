@@ -32,7 +32,9 @@ namespace sprites {
     //% help=sprites/place-randomly
     export function placeRandomly(sprite: Sprite): void {
         if (!sprite) return;
-        sprite.x = Math.randomRange(0, screen.width);
-        sprite.y = Math.randomRange(0, screen.height);
+        const halfWidth = sprite.width >> 1;
+        const halfHeight = sprite.height >> 1;
+        sprite.x = Math.randomRange(halfWidth, screen.width - halfWidth);
+        sprite.y = Math.randomRange(halfHeight, screen.height - halfHeight);
     }
 }
