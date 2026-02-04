@@ -16,34 +16,3 @@ namespace basic {
         game.forever(a);
     }
 }
-
-namespace sprites {
-    /**
-     * Places a sprite at a random position on the screen
-     * @param sprite the sprite to place at a random position
-     */
-    //% blockId=spriteRandomPosition 
-    //% block="place $sprite at random position"
-    //% sprite.shadow="variables_get"
-    //% sprite.defl="mySprite"
-    //% weight=10
-    //% blockNamespace="sprites"
-    //% group="Effects"
-    //% help=sprites/place-randomly
-    export function placeRandomly(sprite: Sprite): void {
-        if (!sprite) return;
-        const halfWidth = sprite.width >> 1;
-        const halfHeight = sprite.height >> 1;
-        // If sprite is larger than screen, place at center
-        if (sprite.width >= screen.width) {
-            sprite.x = screen.width >> 1;
-        } else {
-            sprite.x = Math.randomRange(halfWidth, screen.width - halfWidth);
-        }
-        if (sprite.height >= screen.height) {
-            sprite.y = screen.height >> 1;
-        } else {
-            sprite.y = Math.randomRange(halfHeight, screen.height - halfHeight);
-        }
-    }
-}
