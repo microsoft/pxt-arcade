@@ -286,7 +286,7 @@ This will cause the game to end when the ``||sprites:princess||`` touches the ``
 let pizza: Sprite = null
 let princess: Sprite = null
 sprites.onOverlap(SpriteKind.Food, SpriteKind.Player, function (sprite, otherSprite) {
-    game.over(false)
+    game.gameOver(false)
 })
 princess = sprites.create(img`
 . . . . . f f 4 4 f f . . . . .

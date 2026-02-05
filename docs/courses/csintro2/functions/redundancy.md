@@ -186,7 +186,7 @@ pause(500)
 music.playTone(262, music.beat(BeatFraction.Half))
 pause(500)
 pause(2000)
-game.over(false)
+game.gameOver(false)
 ```
 
 ## Student Task #2: Events

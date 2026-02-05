@@ -805,7 +805,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
         game.splash("Next level unlocked!")
         setLevelTileMap(currentLevel)
     } else {
-        game.over(true, effects.confetti)
+        game.setGameOverEffect(true, effects.confetti)
+        game.gameOver(true)
     }
 })
 function hasNextLevel () {

@@ -211,7 +211,8 @@ scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
         level += 1
         setLevel(level, mySprite)
     } else {
-        game.over(true, effects.confetti)
+        game.setGameOverEffect(true, effects.confetti)
+        game.gameOver(true)
     }
 })
 function intitPlayer () {
@@ -507,7 +508,7 @@ scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
     if (game.ask("Continue?")) {
         setLevel(level, mySprite)
     } else {
-        game.over(false)
+        game.gameOver(false)
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

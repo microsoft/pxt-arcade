@@ -138,7 +138,7 @@ game.onUpdateInterval(1000, function () {
 });
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
-    game.over();
+    game.gameOver(false);
 });
 
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite: Sprite, otherSprite: Sprite) {
@@ -192,7 +192,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 });
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-    game.over();
+    game.gameOver(false);
 });
 ```
 
