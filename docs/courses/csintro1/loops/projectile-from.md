@@ -282,7 +282,7 @@ sprites.onDestroyed(SpriteKind.Projectile, function (sprite: Sprite) {
 })
 
 sprites.onDestroyed(SpriteKind.Cloud, function (sprite: Sprite) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 

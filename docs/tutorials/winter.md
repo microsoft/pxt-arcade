@@ -263,7 +263,7 @@ sprites.onOverlap(SpriteKind.Active, SpriteKind.Projectile, function (sprite, ot
     info.changeScoreBy(1)
 })
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.onHitWall(SpriteKind.Active, function (sprite, location) {
     sprite.vy = 0

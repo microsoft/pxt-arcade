@@ -32,6 +32,8 @@
         "sprites.swamp.jres",
         "sprites.skillmap.ts",
         "sprites.skillmap.jres",
+        "sprites.jewels.ts",
+        "sprites.jewels.jres",
         "storySprites.ts",
         "storySprites.jres",
         "tilemaps/gallery.ts",

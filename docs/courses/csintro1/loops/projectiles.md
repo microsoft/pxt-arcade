@@ -138,7 +138,7 @@ This example randomly places the projectiles on the screen with no velocity.
 let projectile: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
+    game.gameOver(false)
 })
 mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . .

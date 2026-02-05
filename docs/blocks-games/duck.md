@@ -31,7 +31,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Gap, function (sprite, otherSpri
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.setBackgroundColor(9)
 info.setScore(0)
@@ -541,7 +541,7 @@ game.onUpdate(function () {
         animation.setAction(mySprite, ActionKind.Idle)
     }
     if (mySprite.bottom > 120 || mySprite.top < 0) {
-        game.over(false)
+        game.gameOver(false)
     }
 })
 ```

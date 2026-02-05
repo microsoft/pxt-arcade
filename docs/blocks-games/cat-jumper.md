@@ -13,7 +13,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
     startLevel()
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
-    game.over(false, effects.melt)
+    game.setGameOverEffect(false, effects.melt)
+    game.gameOver(false)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Coin, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -99,7 +100,7 @@ function startLevel () {
     } else if (current_level == 2) {
         tiles.setTilemap(tilemap`level_1`)
     } else {
-        game.over(true)
+        game.gameOver(true)
     }
     tiles.placeOnRandomTile(Hops_and_Paw, myTiles.tile6)
     for (let value of tiles.getTilesByType(myTiles.tile6)) {

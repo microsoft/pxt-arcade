@@ -2227,11 +2227,11 @@ namespace _conch {
             Conch.setPosition(randint(50, 160), 112)
             info.changeScoreBy(1)
             if (info.score() >= 5) {
-                game.over(true)
+                game.gameOver(true)
             }
         })
         info.onCountdownEnd(function () {
-            game.over(false)
+            game.gameOver(false)
         })
         info.setScore(0)
         // The debug loop block will automatically loop the
@@ -5216,7 +5216,7 @@ namespace _sunrun {
             `)
         })
         sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
-            game.over(false)
+            game.gameOver(false)
         })
         sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
             gamejam.win(true)
