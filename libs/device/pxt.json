@@ -36,6 +36,8 @@
         "sprites.jewels.jres",
         "storySprites.ts",
         "storySprites.jres",
+        "tilemaps/gallery.ts",
+        "tilemaps/tilemap.jres",
         "startup.ts",
         "pxtsnippets.json"
     ],
