@@ -24,7 +24,7 @@
                         {
                             "id": "inspectForBugs",
                             "category": "Examine",
-                            "value": "Inspect this MakeCode Arcade program for bugs.  If any issues are found, describe the problems and give suggestions for how to fix them."
+                            "value": "Inspect this MakeCode Arcade program for bugs. If any issues are found, describe the problems and give suggestions for how to fix them."
                         },
                         {
                             "id": "describeGame",
