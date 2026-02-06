@@ -17,29 +17,39 @@
                     "paths": ["checks[0].question"],
                     "options": [
                         {
-                            "id": "describeGoal",
+                            "id": "reviewAndExplain",
                             "category": "Examine",
-                            "value": "You're reviewing a MakeCode Arcade project. Describe the main goal of the game so a brand-new player knows what to do."
+                            "value": "Review this MakeCode Arcade project and explain the different parts of the program."
                         },
                         {
-                            "id": "explainMechanics",
+                            "id": "inspectForBugs",
                             "category": "Examine",
-                            "value": "Review the MakeCode Arcade project and explain how the student implemented the core gameplay mechanics using code blocks or JavaScript."
+                            "value": "Inspect this MakeCode Arcade program for bugs.  If any issues are found, describe the problems and give suggestions for how to fix them."
                         },
                         {
-                            "id": "suggestImprovement",
+                            "id": "describeGame",
+                            "category": "Examine",
+                            "value": "Describe what this MakeCode Arcade game is about, and how to play the game to a brand-new player."
+                        },
+                        {
+                            "id": "evaluateCodeQuality",
+                            "category": "Assess",
+                            "value": "Evaluate the quality of the code in this MakeCode Arcade program.  List out demonstrated good programming practices, as well as areas for improvement."
+                        },
+                        {
+                            "id": "checkNaming",
+                            "category": "Assess",
+                            "value": "Does this program include meaningful variable or function names?"
+                        },
+                        {
+                            "id": "suggestCodeImprovements",
                             "category": "Suggest",
-                            "value": "After examining this MakeCode Arcade project, suggest one change that could make the game more engaging for players."
+                            "value": "After examining this MakeCode Arcade project, suggest some improvements to the program for better code readability, efficiency, or reliability."
                         },
                         {
-                            "id": "findBug",
-                            "category": "Assess",
-                            "value": "Inspect the MakeCode Arcade project for bugs. Describe one concrete issue you find and explain how to fix it."
-                        },
-                        {
-                            "id": "codeOrganization",
-                            "category": "Assess",
-                            "value": "Evaluate how well the student organized their MakeCode Arcade code. Suggest one specific refinement that would improve clarity or maintainability."
+                            "id": "suggestGameEnhancements",
+                            "category": "Suggest",
+                            "value": "After examining this MakeCode Arcade project, suggest some enhancements to the game to make it more engaging for players."
                         }
                     ]
                 },
