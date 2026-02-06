@@ -221,7 +221,7 @@ tiles.placeOnRandomTile(bigTurkey, assets.tile`start`)
 ```ghost
 
 info.onCountdownEnd(function () {
-    game.over(false)
+    game.gameOver(false)
 })
 
 namespace SpriteKind {
@@ -238,7 +238,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (spri
     info.changeScoreBy(1)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile16, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 let freeTurkeys: Sprite = null
 let bigTurkey: Sprite = null

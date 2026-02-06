@@ -150,7 +150,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`orange bauble`, function (spr
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest2`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
@@ -166,7 +166,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, lo
 })
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`poison pit`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {

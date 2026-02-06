@@ -300,7 +300,7 @@ bundle into an empty area of the workspace.
 
 ```blockconfig.local
 scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -308,7 +308,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, loca
 #### ~ tutorialhint
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -456,7 +456,7 @@ let rockscout = sprites.create(assets.image`Rockscout`, SpriteKind.Player)
 controller.moveSprite(rockscout)
 scene.cameraFollowSprite(rockscout)
 tiles.placeOnRandomTile(rockscout, assets.tile`stage`)
-game.over(true)
+game.gameOver(true)
 info.startCountdown(30)
 ```
 
@@ -482,7 +482,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument4`, function (sprit
     info.changeScoreBy(1)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`exit`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 
 
@@ -505,7 +505,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`instrument1`, function (sprit
     info.changeScoreBy(1)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`door`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`fan1`, function (sprite, location) {
     tiles.setTileAt(location, assets.tile`transparency16`)

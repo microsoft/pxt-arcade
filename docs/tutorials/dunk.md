@@ -891,7 +891,7 @@ When you're ready, click **Done** to share your game!
 animation.runImageAnimation(player, [img`.`], 100, true)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {})
 let player = sprites.create(img`.`, SpriteKind.Player)
-game.over(true)
+game.gameOver(true)
 controller.moveOnlyOnscreenWithArrows(player, controller.Speeds.Fast)
 scroller.scrollBackgroundWithSpeed(-90, 0)
 info.startCountdown(30)

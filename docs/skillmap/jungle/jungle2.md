@@ -41,7 +41,7 @@ block into the new container.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`poison pit`, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -77,7 +77,7 @@ the **`<LOSE>`** switch to **`<WIN>`**!
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
     //@highlight
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -186,7 +186,7 @@ scene.onOverlapTile(SpriteKind.Projectile, assets.tile`poison pit`, function (sp
     tiles.setTileAt(location, assets.tile`transparency16`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`chest1`, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 

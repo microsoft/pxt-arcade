@@ -335,7 +335,7 @@ let fly: Sprite = null
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (frog.overlapsWith(fly)) {
         //@highlight
-        game.over(true)
+        game.gameOver(true)
     } else {
         //@highlight
         info.changeLifeBy(-1)
@@ -433,7 +433,7 @@ scene.setBackgroundImage(flies_imgs.background)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () { })
 frog.overlapsWith(fly)
 if (false) { } else { }
-game.over(true)
+game.gameOver(true)
 
 let list = sprites.allOfKind(SpriteKind.Food)
 list.pop().destroy()
@@ -453,7 +453,7 @@ flies_imgs=github:kiki-lee/flies_imgs#v0.0.3
 ```ghost
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (frog.overlapsWith(fly)) {
-        game.over(true)
+        game.gameOver(true)
     } else {
         info.changeLifeBy(-1)
     }

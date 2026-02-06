@@ -91,10 +91,10 @@ In the second ``||scene:on sprite of kind overlaps tile||`` Finish Line block, t
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenOuterEast0, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 

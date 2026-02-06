@@ -402,7 +402,7 @@ namespace smurfy {
             sprites.setDataSprite(otherSprite, "smurf on top of me", sprite)
             explode_smurfs()
             pause(1000)
-            game.over(false)
+            game.gameOver(false)
         } else {
             top_smurf = sprite
             scene.cameraFollowSprite(sprite)
@@ -442,6 +442,7 @@ namespace smurfy {
     * Sets Smurf falling
     */
     //% blockId=drop_smurf 
+    //% help=tutorial-only
     //% block="drop Smurf"
     export function drop_smurf() {
         moving_smurf.ay = 300
@@ -454,6 +455,7 @@ namespace smurfy {
     * Places first Smurf on ground
     */
     //% blockId=first_smurf 
+    //% help=tutorial-only
     //% block="set first Smurf $myImage"
     //% myImage.shadow=screen_image_picker
     //% myImage.defl=assets.image`jump`
@@ -473,6 +475,7 @@ namespace smurfy {
     * Loads next Smurf into the air
     */
     //% blockId=add_smurf 
+    //% help=tutorial-only
     //% block="new floating Smurf"
     export function add_floating_smurf() {
         speed = 60 + (info.score() * 3)
@@ -506,7 +509,7 @@ namespace smurfy {
     }
     scene.onHitWall(SpriteKind.Smurf, function (sprite, location) {
         if (sprite.isHittingTile(CollisionDirection.Bottom)) {
-            game.over(false)
+            game.gameOver(false)
         }
     })
 }

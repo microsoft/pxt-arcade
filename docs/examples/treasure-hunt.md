@@ -182,7 +182,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EndGame, function (sprite, other
     music.playSound(music.sounds(Sounds.PowerUp))
     if (parseInt(game.askForString("")) == 42) {
         game.splash("Congratulations! You Win!!!")
-        game.over(true)
+        game.gameOver(true)
     } else {
         pause(500)
     }

@@ -190,7 +190,7 @@ block and snap it into the empty **on countdown end** container.
 
 ```blocks
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 ```
 
@@ -229,7 +229,7 @@ forever(function () {
 
 ```ghost
 info.onCountdownEnd(function () {
-    game.over(true)
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy(effects.rings, 200)

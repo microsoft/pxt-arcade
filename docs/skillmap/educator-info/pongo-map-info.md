@@ -44,7 +44,7 @@ As students progress through these projects, they will progressively build a gam
 | Activity | Hit the Wall (8 min) |
 |---|---|
 | ![Hit the Wall thumbnail](/static/skillmap/rockstar/rockstar2.gif) | Description... |
-| Blocks used | ``[scene.onOverlapTile()]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]``<br/>``[info.changeScoreBy(1)]``<br/>``[game.over(true)]`` |
+| Blocks used | ``[scene.onOverlapTile()]``<br/>``[tiles.setTileAt(location, assets.tile`transparency16`)]``<br/>``[info.changeScoreBy(1)]``<br/>``[game.gameOver(true)]`` |
 | Solution option | [Hit the Wall Project](https://makecode.com/_aE3eYm23wad3) |
 
 #### 3. Multiplayer

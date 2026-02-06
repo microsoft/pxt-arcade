@@ -67,7 +67,7 @@ As students progress through these projects, they will progressively build their
 | Activity | Game Over (8 min) |
 |---|---|
 | ![Game Over thumbnail](/static/skillmap/jungle/jungle2.gif) | Add winning, losing, and point-collecting functionality to your game. |
-| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.over(true)]``<br/>``[info.changeScoreBy()]`` |
+| Blocks used | ``[scene.onOverlapTile()]``<br/>``[game.gameOver(true)]``<br/>``[info.changeScoreBy()]`` |
 | Solution option | [Game Over Project](https://makecode.com/_TPD1cCdtVD6i) |
 
 #### 3. Leaps and Bounds

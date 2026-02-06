@@ -71,10 +71,10 @@
 
 ```template
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    game.over(false)
+    game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.vy = -200

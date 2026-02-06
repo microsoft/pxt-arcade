@@ -25,7 +25,7 @@ while (guess != value) {
     guess = parseInt(game.askForString("What's your guess"))
 }
 game.splash("Correct!")
-game.over(true)
+game.gameOver(true)
 ```
 
 This game requires the player to guess a number that the game has chosen. The game generates a random number, and then prompts the player to guess until they get it right.

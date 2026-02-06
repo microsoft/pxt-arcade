@@ -234,7 +234,7 @@ Our final step is to end the game if a barrel touches the sprite player. Drag an
 
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
+    game.gameOver(false)
 })
 ```
 
@@ -249,7 +249,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
+    game.gameOver(false)
 })
 let mySprite = sprites.create(img`
     . . . . . . 5 . 5 . . . . . . .

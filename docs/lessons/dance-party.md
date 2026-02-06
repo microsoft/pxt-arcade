@@ -273,11 +273,12 @@ info.setScore(0)
 info.setLife(5)
 ```
 
-When the player runs out of lives the game should end and the player's score should be displayed. To do this, go to ``||info:Info||``, grab ``||info:on life zero||``, and drag it into your workspace. Then go to ``||game:game||`` and grab ``||game:game over lose||``. Drag it into ``||info:on life zero||``. Click on the ``lose`` button so it switches to ``win`` and then click the **(+)** symbol. When you click the **(+)** you should have the option to select an effect. Select the ``confetti`` effect.
+When the player runs out of lives the game should end and the player's score should be displayed. To do this, go to ``||info:Info||``, grab ``||info:on life zero||``, and drag it into your workspace. Then go to ``||game:game||`` and grab ``||game:use effect||``. Drag it into ``||info:on life zero||``. Click the **(+)** symbol. When you click the **(+)** you should have the option to select an effect. Select the ``confetti`` effect. Now get a ``||game:game over win||`` and put it at the end of ``||info:on life zero||``.
 
 ```blocks
 info.onLifeZero(function () {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 ```
 
@@ -327,7 +328,8 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     steve.setPosition(30, 100)
 })
 info.onLifeZero(function () {
-    game.over(true, effects.confetti)
+    game.setGameOverEffect(true, effects.confetti)
+    game.gameOver(true)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     steve.setPosition(130, 100)
