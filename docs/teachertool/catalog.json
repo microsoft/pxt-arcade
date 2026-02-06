@@ -34,7 +34,7 @@
                         {
                             "id": "evaluateCodeQuality",
                             "category": "Assess",
-                            "value": "Evaluate the quality of the code in this MakeCode Arcade program.  List out demonstrated good programming practices, as well as areas for improvement."
+                            "value": "Evaluate the quality of the code in this MakeCode Arcade program. List out demonstrated good programming practices, as well as areas for improvement."
                         },
                         {
                             "id": "checkNaming",
