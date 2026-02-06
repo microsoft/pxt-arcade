@@ -212,7 +212,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 8 @fullscreen}
 
-When the sprite hits the lunar surface it gets destroyed. So from ``||scene:Scene||`` grab a ``||scene: on sprite of kind Player overlaps at location||`` and place it in the workspace. Make sure the image is the same as the obstacles. From ``||sprites:Sprite||`` grab a ``||sprites:destroy sprite||``. Change the sprite to ``||variables(noclick):lander||`` and click on the **(+)** symbol. Set the effect to ``fire`` and the time to ``500`` ms. From ``||game:Game||`` grab a ``||game:game over lose||`` and click the **(+)** symbol and set the effect to ``dissolve``.
+When the sprite hits the lunar surface it gets destroyed. So from ``||scene:Scene||`` grab a ``||scene: on sprite of kind Player overlaps at location||`` and place it in the workspace. Make sure the image is the same as the obstacles. From ``||sprites:Sprite||`` grab a ``||sprites:destroy sprite||``. Change the sprite to ``||variables(noclick):lander||`` and click on the **(+)** symbol. Set the effect to ``fire`` and the time to ``500`` ms. From ``||game:Game||`` grab a ``||game:use effect||``, set the toggle to `LOSE` and and click the **(+)** symbol to set the effect to ``dissolve``. Then, get a ``||game:game over||`` and set the toggle to `WIN`.
 
 ```blocks
 namespace myTiles {
@@ -296,7 +296,8 @@ namespace myTiles {
 let lander: Sprite = null
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
     lander.destroy(effects.fire, 500)
-    game.over(false, effects.dissolve)
+    game.setGameOverEffect(false, effects.dissolve)
+    game.gameOver(false)
 })
 ```
 
@@ -479,10 +480,12 @@ let lander: Sprite = null
 let angle: string = null;
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
     if (angle == "straight") {
-        game.over(true, effects.starField)
+        game.setGameOverEffect(true, effects.starfield)
+        game.gameOver(true)
     } else {
         lander.destroy(effects.fire, 500)
-        game.over(false, effects.dissolve)
+        game.setGameOverEffect(false, effects.dissolve)
+        game.gameOver(false)
     }
 })
 ```

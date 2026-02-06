@@ -487,10 +487,10 @@ function dayEnd() {
         info.changeScoreBy(-initialInvestment);
         if (info.score() >= 0) {
             game.splash("Congrats! You made $" + (info.score()));
-            game.over(true);
+            game.gameOver(true);
         } else {
             game.splash("Oh no! You lost $" + (-info.score()));
-            game.over(false);
+            game.gameOver(false);
         }
     }
 }
@@ -506,7 +506,7 @@ function displayDayEndScreen() {
 function newDay() {
     if (info.score() <= 60) {
         game.splash("Oh no! You don't have enough money to sell lemonade!");
-        game.over(false);
+        game.gameOver(false);
     }
     time = 0;
     dayNumber++;

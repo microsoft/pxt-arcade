@@ -285,9 +285,11 @@ game.onUpdateInterval(4000, function () {
 })
 forever(function () {
     if (info.score() >= 20) {
-        game.over(true, effects.confetti)
+        game.setGameOverEffect(true, effects.confetti)
+        game.gameOver(true)
     } else if (info.score() < 0) {
-        game.over(false, effects.melt)
+        game.setGameOverEffect(false, effects.melt)
+        game.gameOver(false)
     }
 })
 game.onUpdateInterval(10000, function () {

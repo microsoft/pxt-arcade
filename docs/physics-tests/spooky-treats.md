@@ -32,7 +32,7 @@ scene.onHitTile(SpriteKind.Food, 14, function (sprite) {
 })
 info.onLifeZero(function () {
     music.wawawawaa.play()
-    game.over(false)
+    game.gameOver(false)
 })
 let Lolipop: Sprite = null
 let Candy: Sprite = null

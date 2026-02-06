@@ -67,7 +67,7 @@ let timeout = 500;
 forever(function () {
     if (caterpillarHead.left < 0 || caterpillarHead.right > screen.width
         || caterpillarHead.top < 0 || caterpillarHead.bottom > screen.height) {
-        game.over(false);
+        game.gameOver(false);
     }
 
     if (!enqueued && game.runtime() - lastIteration < timeout) {
@@ -151,7 +151,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite: Sprite, 
 });
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Tail, function (sprite: Sprite, otherSprite: Sprite) {
-    game.over(false);
+    game.gameOver(false);
 });
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {

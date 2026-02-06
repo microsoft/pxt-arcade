@@ -257,7 +257,7 @@ This will make it so the player wins when they touch the exit.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
@@ -289,7 +289,7 @@ Find ``||info:start countdown 10 (s)||`` in ``||info:Info||``, and drag it into 
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
@@ -325,7 +325,7 @@ so they can't move through them.
 
 ```blocks
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
-    game.over(true)
+    game.gameOver(true)
 })
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .

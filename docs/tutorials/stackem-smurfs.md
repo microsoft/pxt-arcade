@@ -402,7 +402,7 @@ namespace smurfy {
             sprites.setDataSprite(otherSprite, "smurf on top of me", sprite)
             explode_smurfs()
             pause(1000)
-            game.over(false)
+            game.gameOver(false)
         } else {
             top_smurf = sprite
             scene.cameraFollowSprite(sprite)
@@ -509,7 +509,7 @@ namespace smurfy {
     }
     scene.onHitWall(SpriteKind.Smurf, function (sprite, location) {
         if (sprite.isHittingTile(CollisionDirection.Bottom)) {
-            game.over(false)
+            game.gameOver(false)
         }
     })
 }

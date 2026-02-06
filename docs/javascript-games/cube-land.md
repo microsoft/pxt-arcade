@@ -574,7 +574,7 @@ sprites.onOverlap(SpriteKind.Girl, SpriteKind.Boy, function (mainSprite, hitSpri
     music.stopAllSounds();
     game.showLongText("Your time to complete was: " + game.runtime() + "ms. Thanks for playing!", DialogLayout.Center);
     info.changeScoreBy(1800000 /* 30 minutes */ - game.runtime());
-    game.over(true);
+    game.gameOver(true);
 })
 
 image.setPalette(palettes.palettehex);
