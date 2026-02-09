@@ -138,6 +138,8 @@
                 "tags": [ "Hardware" ]
             },
             "microsoft/arcade-carnival": {},
+            "riknoll/arcade-tile-scanner": {},
+            "riknoll/arcade-mini-menu": {},
             "code-ninjas-home-office/game-building-session-tutorials": {
                 "tutorial" : true
             },
