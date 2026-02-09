@@ -104,8 +104,8 @@ Shields are based on our guidelines, adhere to open source hardware reference de
 [
     {
         "name": "micro:bit Arcade Shield",
-        "description": "Use the micro:bit with an expansion board from Elecfreaks",
-        "imageUrl": "/static/hardware/arcade-shield.png",
+        "description": "ELECFREAKS micro:bit expansion board for MakeCode Arcade, DIY Programmable Game Console, and STEM Education Kit.",
+        "imageUrl": "/static/hardware/arcade-shield.jpg",
         "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade"
     },
     {
