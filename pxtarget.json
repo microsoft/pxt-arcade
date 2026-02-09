@@ -588,12 +588,12 @@
         "hasAudio": true,
         "allowPackageExtensions": true,
         "homeScreenHero": {
-            "imageUrl": "/static/hero-gallery/multiplayer-banner.png",
-            "name": "Multiplayer Games!",
-            "url": "/--multiplayer",
-            "buttonLabel": "Try Now",
-            "description": "Multiplayer Games!",
-            "cardType": "link"
+            "imageUrl": "/static/hero-gallery/skillmap.png",
+            "name": "Start Coding",
+            "url": "/tutorials/intro",
+            "buttonLabel": "Start Coding",
+            "description": "New? Start here!",
+            "cardType": "tutorial"
         },
         "homeScreenHeroGallery": "/hero-banner",
         "socialOptions": {
