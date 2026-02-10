@@ -363,7 +363,8 @@
     <script type="text/javascript" src="/@versionsuff@---embed"></script>
     <!-- <script type="text/javascript" src="/embed.js"></script> -->
     <script>
-            const scriptPageSrc = pxtConfig ? pxtConfig.blobCdnUrl + "scriptPage.js" : "/blb/scriptPage.js";
+            const config = window.pxtConfig || window.pxtWebConfig || (window.pxt && window.pxt.webConfig);
+            const scriptPageSrc = config ? config.blobCdnUrl + "scriptPage.js" : "/blb/scriptPage.js";
             const scriptEl = document.createElement("script");
             scriptEl.type = "text/javascript";
             scriptEl.src = scriptPageSrc;
