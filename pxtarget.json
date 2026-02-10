@@ -636,6 +636,7 @@
         "scriptManager": true,
         "saveInMenu": false,
         "debugger": true,
+        "showProjectSettings": true,
         "importExtensionFiles": true,
         "enabledFeatures": {
             "blocksErrorList": {},
