@@ -360,18 +360,24 @@
         @body@
     </div>
 
-    <script type="text/javascript" src="/---embed"></script>
-    <script type="text/javascript" src="/blb/scriptPage.js"></script>
+    <script type="text/javascript" src="/@versionsuff@---embed"></script>
     <!-- <script type="text/javascript" src="/embed.js"></script> -->
     <script>
-            (function () {
+            const scriptPageSrc = pxtConfig ? pxtConfig.blobCdnUrl + "scriptPage.js" : "/blb/scriptPage.js";
+            const scriptEl = document.createElement("script");
+            scriptEl.type = "text/javascript";
+            scriptEl.src = scriptPageSrc;
+
+            scriptEl.onload = () => {
                 const pubInfo = {
                     projectId: "@id@",
                     versionSuffix: "@versionsuff@",
                     description: document.getElementById("description-modal-content").innerText
                 }
                 window.initScriptPage(pubInfo);
-            })();
+            };
+
+            document.head.appendChild(scriptEl);
     </script>
 
     <!-- @include tracking.html -->
