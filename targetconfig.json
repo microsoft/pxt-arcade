@@ -138,6 +138,9 @@
                 "tags": [ "Hardware" ]
             },
             "microsoft/arcade-carnival": {},
+            "riknoll/arcade-tile-scanner": {},
+            "riknoll/arcade-mini-menu": {},
+            "riknoll/arcade-fancy-text": {},
             "code-ninjas-home-office/game-building-session-tutorials": {
                 "tutorial" : true
             },
@@ -441,7 +444,6 @@
         "Game Design Concepts": "concepts",
         "Graphics and Math": "graphics-math",
         "Arts and Crafts": "arts-and-crafts",
-        "Lessons": "lessons",
         "Courses": "courses",
         "Arcade Compatible Devices": "arcade-devices",
         "DIY Hardware": "diy-hardware",
