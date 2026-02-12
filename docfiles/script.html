@@ -363,6 +363,7 @@
     <script type="text/javascript" src="/@versionsuff@---embed"></script>
     <!-- <script type="text/javascript" src="/embed.js"></script> -->
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
             const config = window.pxtConfig || window.pxtWebConfig || (window.pxt && window.pxt.webConfig);
             const scriptPageSrc = config ? config.blobCdnUrl + "scriptPage.js" : "/blb/scriptPage.js";
             const scriptEl = document.createElement("script");
@@ -379,6 +380,7 @@
             };
 
             document.head.appendChild(scriptEl);
+        });
     </script>
 
     <!-- @include tracking.html -->
