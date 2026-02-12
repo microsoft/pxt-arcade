@@ -5,26 +5,26 @@ Here are some cool activities to get you started!
 ## Intro Content
 
 ### ~ codecard
-* name: Start Coding
+* name: AI Bug Arena
 * buttonLabel: Start Coding
-* description: New? Start here!
-* imageUrl: /static/hero-gallery/skillmap.png
-* url: /tutorials/intro
-* cardType: tutorial
----
-* name: Arcade-Con 2025!
-* buttonLabel: View recordings
-* description: Arcade-Con 2025!
-* imageUrl: /static/courses/arcadecon/arcadecon-amc-banner.png
-* url: https://www.youtube.com/playlist?list=PLUgoavxKsVdW6HuW4SuHrpd4jdug59-OC
+* description: AI Bug Arena
+* imageUrl: /static/hero-gallery/bugarena.png
+* url: /--skillmap#bug
 * cardType: link
 ---
-* name: New Pizza Party!
-* buttonLabel: Code Now
-* description: New Pizza Party!
-* imageUrl: /static/hero-gallery/new-pizza-hero.jpg
-* url: /tutorials/new-pizza-party
-* cardType: tutorial
+* name: Multiplayer Games!
+* buttonLabel: Try Now
+* description: Multiplayer Games!
+* imageUrl: /static/hero-gallery/multiplayer-banner.png
+* url: /--multiplayer
+* cardType: link
+---
+* name: Teacher Tool
+* buttonLabel: Try Now
+* description: Teacher Tool
+* imageUrl: /static/hero-gallery/codeeval.png
+* url: /--eval
+* cardType: link
 ---
 * name: Educator Resources
 * buttonLabel: Visit
