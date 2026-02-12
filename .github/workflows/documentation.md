@@ -16,7 +16,6 @@ tools:
       - get_commit
       - list_commits
       - search_code
-      - semantic_code_search
 safe-outputs:
   add-comment:
     target: 'triggering'
