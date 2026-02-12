@@ -363,8 +363,10 @@
     <script type="text/javascript" src="/@versionsuff@---embed"></script>
     <!-- <script type="text/javascript" src="/embed.js"></script> -->
     <script>
+        window.ksRunnerReady(() => {
+            const url = "@cdnUrl@";
             const config = window.pxtConfig || window.pxtWebConfig || (window.pxt && window.pxt.webConfig);
-            const scriptPageSrc = config ? config.blobCdnUrl + "scriptPage.js" : "/blb/scriptPage.js";
+            const scriptPageSrc = config ? config.blobCdnUrl + "scriptPage.js" : ((url && url !== ("@" + "cdnUrl" + "@")) ? url + "scriptPage.js" : "/blb/scriptPage.js");
             const scriptEl = document.createElement("script");
             scriptEl.type = "text/javascript";
             scriptEl.src = scriptPageSrc;
@@ -379,6 +381,7 @@
             };
 
             document.head.appendChild(scriptEl);
+        });
     </script>
 
     <!-- @include tracking.html -->
