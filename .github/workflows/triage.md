@@ -25,7 +25,6 @@ tools:
     toolsets: [default]
     allowed:
       - search_code
-      - semantic_code_search
       - issue_read
       - list_issues
       - search_issues
