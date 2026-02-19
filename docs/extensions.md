@@ -1,6 +1,6 @@
 # @extends
 
-## Create you own extensions #custom
+## Create your own extensions #custom
 
 The [Build Your Own Extension](https://makecode.com/extensions/getting-started) manual is for advanced users who want to publish their own extension.
 
