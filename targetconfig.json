@@ -23,7 +23,8 @@
             "microsoft/arcade-character-animations",
             "microsoft/arcade-tile-util",
             "aqeeaqee/pxt-raycasting",
-            "joylabz/makeymakey-makecode-arcade-extension"
+            "joylabz/makeymakey-makecode-arcade-extension",
+            "King5232/pxt-pathfinding"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -42,7 +43,8 @@
             "microsoft/arcade-background-scroll",
             "microsoft/arcade-character-animations",
             "aqeeaqee/pxt-raycasting",
-            "joylabz/makeymakey-makecode-arcade-extension"
+            "joylabz/makeymakey-makecode-arcade-extension",
+            "King5232/pxt-pathfinding"
         ],
         "approvedRepoLib": {
             "adafruit/circuit-playground-character-icons": {
