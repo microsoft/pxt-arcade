@@ -23,7 +23,6 @@
             "microsoft/arcade-character-animations",
             "microsoft/arcade-tile-util",
             "aqeeaqee/pxt-raycasting",
-            "joylabz/makeymakey-makecode-arcade-extension",
             "KohanMathers/MakecodeSpriteFX"
         ],
         "preferredRepos": [
@@ -43,7 +42,6 @@
             "microsoft/arcade-background-scroll",
             "microsoft/arcade-character-animations",
             "aqeeaqee/pxt-raycasting",
-            "joylabz/makeymakey-makecode-arcade-extension",
             "KohanMathers/MakecodeSpriteFX"
         ],
         "approvedRepoLib": {
@@ -141,7 +139,7 @@
             },
             "kohanmathers/makecodespritefx": {
                 "preferred": true,
-                "tags": [ "Sprites", "Utility" ]
+                "tags": [ "Utility" ]
             },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
