@@ -24,7 +24,7 @@
             "microsoft/arcade-tile-util",
             "aqeeaqee/pxt-raycasting",
             "joylabz/makeymakey-makecode-arcade-extension",
-            "KohanMathers/MakecodeSpriteUtils"
+            "KohanMathers/MakecodeSpriteFX"
         ],
         "preferredRepos": [
             "adafruit/Circuit-Playground-Character-Icons",
@@ -44,7 +44,7 @@
             "microsoft/arcade-character-animations",
             "aqeeaqee/pxt-raycasting",
             "joylabz/makeymakey-makecode-arcade-extension",
-            "KohanMathers/MakecodeSpriteUtils"
+            "KohanMathers/MakecodeSpriteFX"
         ],
         "approvedRepoLib": {
             "adafruit/circuit-playground-character-icons": {
@@ -139,7 +139,7 @@
                 "preferred": true,
                 "tags": [ "Hardware" ]
             },
-            "kohanmathers/makecodespriteutils": {
+            "kohanmathers/makecodespritefx": {
                 "preferred": true,
                 "tags": [ "Sprites", "Utility" ]
             },
