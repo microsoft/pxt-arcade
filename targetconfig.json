@@ -139,7 +139,7 @@
             },
             "kohanmathers/makecodespritefx": {
                 "preferred": true,
-                "tags": [ "Utility" ]
+                "tags": [ "Sprites" ]
             },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
