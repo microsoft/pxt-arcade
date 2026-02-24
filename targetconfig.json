@@ -415,7 +415,17 @@
     },
     "teachertool": {
         "showSharePageEvalButton": true,
-        "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json"
+        "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
+        "carousels": [
+            {
+                "title": "Checklists for Tutorials",
+                "cardsUrl": "teachertool/carousels/checklists-for-tutorials/cards.json"
+            },
+            {
+                "title": "Checklists for Games",
+                "cardsUrl": "teachertool/carousels/checklists-for-games/cards.json"
+            }
+        ]
     },
     "kiosk": {
         "games": [
