@@ -296,6 +296,12 @@
     },
     "hardwareOptions": [
         {
+            "name": "Download to Drive",
+            "description": "Download a copy of your game file to your computer",
+            "imageUrl": "/static/hardware/laptop.png",
+            "variant": "hw---stm32f401"
+        },
+        {
             "name": "Meowbit",
             "description": "A retro game console for STEM education from Kittenbot team",
             "imageUrl": "/static/hardware/meowbit.png",
