@@ -93,6 +93,10 @@
                 "preferred": true,
                 "tags": [ "Hardware" ]
             },
+            "kohanmathers/makecodespritefx": {
+                "preferred": true,
+                "tags": [ "Sprites" ]
+            },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
             "riknoll/arcade-mini-menu": {},
