@@ -1,0 +1,28 @@
+{
+    "cards": [
+    {
+        "cardType": "checklist-resource",
+        "cardTitle": "Chase the Pizza",
+        "imageUrl": "/static/tutorials/chase-the-pizza.png",
+        "checklistUrl": "/teachertool/checklists/chase-the-pizza.json"
+    },
+    {
+        "cardType": "checklist-resource",
+        "cardTitle": "Collect the Clovers",
+        "imageUrl": "/static/tutorials/collect-the-clovers.png",
+        "checklistUrl": "/teachertool/checklists/collect-the-clovers.json"
+    },
+    {
+        "cardType": "checklist-resource",
+        "cardTitle": "Galga",
+        "imageUrl": "/static/tutorials/galga.png",
+        "checklistUrl": "/teachertool/checklists/galga.json"
+    },
+    {
+        "cardType": "checklist-resource",
+        "cardTitle": "Maze",
+        "imageUrl": "/static/tutorials/maze.png",
+        "checklistUrl": "/teachertool/checklists/maze.json"
+    }
+    ]
+}
