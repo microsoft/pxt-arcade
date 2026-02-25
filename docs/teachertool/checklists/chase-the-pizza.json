@@ -1,0 +1,117 @@
+{
+    "name": "Chase the Pizza Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "JFn2BWQjojClOnCfotjac",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gamesetbackgroundcolor"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "afO6x8vES3mBf7kL_u6du",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreate"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "9NnmUUJuXrM3NAGtLLgcZ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_control_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "c46JyCCSHlo_W0mgPnZiT",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesoverlap"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "jT4Ikrbbo6cWxizIoQIU3",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeScoreBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "FmOKJjQFtF0YzSnOhVkFt",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gamecountdown"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "m9JLm1GTaI8vtKEIuyFKu",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesetpos"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "E1LN08B2KBX-x1JmSWnD0",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
+}

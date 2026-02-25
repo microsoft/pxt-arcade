@@ -1,0 +1,171 @@
+{
+    "name": "Jumpy Platformer Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "7AE7EA2A-3AC8-42DC-89DB-65E3AE157156",
+            "instanceId": "pMSCa4dWcJUQTgYgd0TeJ",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "3pnPFxfH2JCZUbo6EhtGv",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "hS37N9EqHJ9VOMpLfmP3T",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameupdate"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "NyEfyC_qSeLPPnJrZYt0I",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "set_current_tilemap"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "2p-kpahz_IROIWBzjfuqg",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeScoreBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "nr0jeoIgDdsPoAEkWbIFo",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeLifeBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "-R1a6jXua9R7AA4yN4R_l",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameOver2"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "B8987394-1531-4C71-8661-BE4086CE0C6E",
+            "instanceId": "YblPIWtinTP5kQ57nXJ_C",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "79D5DAF7-FED3-473F-81E2-E004922E5F55",
+            "instanceId": "C6zYDck5dXolQFrTVTYFH",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "0DFA44C8-3CA5-4C77-946E-AF09F6C03879",
+            "instanceId": "YyBOio7yNnMWi4wF5mwrc",
+            "params": [
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "kD2qq1siJSgsPK-d4Ml_6",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this program demonstrate a good understanding of Functions?"
+                },
+                {
+                    "name": "shareid",
+                    "value": "53204-70917-99751-96858"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "xWbfQi1eP3wyi-t_uM6gb",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Inspect this MakeCode Arcade program for bugs. If any issues are found, describe the problems and give suggestions for how to fix them."
+                },
+                {
+                    "name": "shareid",
+                    "value": "53204-70917-99751-96858"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "6JDS4-PNKcvk7DNQgPj-o",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this program include meaningful variable or function names?"
+                },
+                {
+                    "name": "shareid",
+                    "value": "53204-70917-99751-96858"
+                }
+            ]
+        }
+    ]
+}
