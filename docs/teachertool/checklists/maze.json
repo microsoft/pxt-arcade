@@ -1,0 +1,145 @@
+{
+    "name": "Maze Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "nn4ciKwmpANH2_fLpzvUZ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "set_current_tilemap"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "6lGcWnAovpfVCS5rVefZ_",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreate"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "aHjEBI35pGwsZNO6sgl4b",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "mapplaceonrandomtile"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "7ZUtpCt-cXlXub_sCrXDr",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_control_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "_ClV4E489wZV3mMkMdbLg",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "camerafollow"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "DTlS75fnv0XF61uyBo98a",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gamecountdown"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "etW20lQdFQfujXdSpj1Vx",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spriteshittile"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "f3Cwy3TM2l9XmEbLLLo0_",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameOver2"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "3J7qyUizNZGQStY2-59G2",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "After examining this MakeCode Arcade project, suggest some enhancements to the game to make it more engaging for players."
+                },
+                {
+                    "name": "shareid",
+                    "value": "95306-50623-05560-59541"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "qVrXykpZza-YnrGvoEQtB",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Review this MakeCode Arcade project and explain the different parts of the program."
+                },
+                {
+                    "name": "shareid",
+                    "value": "95306-50623-05560-59541"
+                }
+            ]
+        }
+    ]
+}

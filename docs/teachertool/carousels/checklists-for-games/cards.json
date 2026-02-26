@@ -1,0 +1,28 @@
+{
+    "cards": [
+    {
+      "cardType": "checklist-resource",
+      "cardTitle": "Jumpy Platformer",
+      "imageUrl": "/static/blocks-games/jumpy-platformer.png",
+      "checklistUrl": "/teachertool/checklists/jumpy-platformer.json"
+    },
+    {
+      "cardType": "checklist-resource",
+      "cardTitle": "Falling Duck",
+      "imageUrl": "/static/blocks-games/duck.png",
+      "checklistUrl": "/teachertool/checklists/falling-duck.json"
+    },
+    {
+      "cardType": "checklist-resource",
+      "cardTitle": "Space Destroyer",
+      "imageUrl": "/static/blocks-games/space-destroyer.png",
+      "checklistUrl": "/teachertool/checklists/space-destroyer.json"
+    },
+    {
+      "cardType": "checklist-resource",
+      "cardTitle": "Hot Air Balloon",
+      "imageUrl": "/static/blocks-games/hot-air-balloon.png",
+      "checklistUrl": "/teachertool/checklists/hot-air-balloon.json"
+    }
+    ]
+}
