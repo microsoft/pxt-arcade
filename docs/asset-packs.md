@@ -64,6 +64,16 @@ Clicking on the card that appears will add it to your project. Now, if you open 
 
 ![Image gallery](/static/asset-packs/image-gallery.png)
 
+### ~ hint
+
+#### Create an asset pack and share
+
+Watch this video to see how to create and share an asset pack project:
+
+https://youtu.be/CjLYl5KJiSk
+
+### ~
+
 ## Sharing tilesets
 
 Just like other types of assets, you can also share tilesets for people to use in the tilemap editor. By default, if you share an asset pack with tiles then all your tiles will appear as a custom category in the Gallery dropdown of the tilemap editor tile palette.
