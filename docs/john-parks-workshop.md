@@ -40,6 +40,7 @@
         "name": "Playlist",
         "description": "More videos from John Park's Workshop",
         "url": "https://www.youtube.com/playlist?list=PLjF7R1fz_OOVvPjQU_KXsLPVB0pG_kdxW",
+        "youTubePlaylistId": "PLjF7R1fz_OOVvPjQU_KXsLPVB0pG_kdxW",
         "imageUrl": "/static/john-parks-workshop/makecode-minute.png"
     }
 ]
