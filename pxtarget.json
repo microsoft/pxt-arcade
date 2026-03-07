@@ -608,6 +608,9 @@
                 "length": 1,
                 "colour": "rgb(189, 195, 199)",
                 "snap": false
+            },
+            "zoom": {
+                "scaleSpeed": 1.05
             }
         },
         "blockColors": {
