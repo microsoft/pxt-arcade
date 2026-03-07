@@ -1,0 +1,159 @@
+{
+    "name": "Galga Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "sOmJLf_JfexEUnwJUsFtB",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreate"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Zx58zhOMuBqohPpedHMPK",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_control_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ulOdxUjt1aEz3Y7uPNBFL",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "keyonevent"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "JX9OGShetBUqJTckFBZBf",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreateprojectilefromsprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "MtoJ_KtklFqVQP3Lnn3R3",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameinterval"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "fRijtyJDgf6hmlnMGoJ_r",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesoverlap"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "VrBso249iDF3Z2y4rgbVh",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritedestroy2"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "7sSp6khb3kykt2NiuGbRy",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeScoreBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "2XYgREkKz1YqGemaNsXvB",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeLifeBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "zD8389DAtRm-cjrwxRfHc",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Is this program a good implementation of a space shooter game?"
+                },
+                {
+                    "name": "shareid",
+                    "value": "10737-11267-50600-62440"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "0WsiCj-ZDOt_BBHjtmM1M",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this program include meaningful variable or function names?"
+                },
+                {
+                    "name": "shareid",
+                    "value": "10737-11267-50600-62440"
+                }
+            ]
+        }
+    ]
+}

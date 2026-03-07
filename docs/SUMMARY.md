@@ -54,6 +54,7 @@
     * [Sign In](/identity/sign-in)
     * [Cloud Sync](/identity/cloud-sync)
     * [VS Code](/vscode)
+    * [Asset packs](/asset-packs)
 
 ## Hardware
 

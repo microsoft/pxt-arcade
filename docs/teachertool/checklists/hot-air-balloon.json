@@ -1,0 +1,123 @@
+{
+    "name": "Hot Air Baloon Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "3KcDe-zi9w5zpAb7oiaC-",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "lists_create_with"
+                },
+                {
+                    "name": "count",
+                    "value": "5"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "BR6MDyNQ3AtLgdm3TUqdf",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "keyonevent"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "A3hOmLaDAiLG_LDKFIkVW",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameinterval"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "MIKmY9vJ6NpCHeO-Al8ih",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesoverlap"
+                },
+                {
+                    "name": "count",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "B8987394-1531-4C71-8661-BE4086CE0C6E",
+            "instanceId": "5dDsf6T--0APZ1W1yssne",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "3"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "79D5DAF7-FED3-473F-81E2-E004922E5F55",
+            "instanceId": "-HvFycm67qHy-yl1fm6FP",
+            "params": [
+                {
+                    "name": "count",
+                    "value": "7"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "2VMsFtQp45XMHsw0gLUIU",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this program include meaningful variable or function names?"
+                },
+                {
+                    "name": "shareid",
+                    "value": "81027-00638-36337-87257"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "6dDCgPAnbt51l-v_jpLIT",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Evaluate the quality of the code in this MakeCode Arcade program. List out demonstrated good programming practices, as well as areas for improvement."
+                },
+                {
+                    "name": "shareid",
+                    "value": "81027-00638-36337-87257"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "N7FvOBkOwxtA3Qv-xB6TQ",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Describe what this MakeCode Arcade game is about, and how to play the game to a brand-new player."
+                },
+                {
+                    "name": "shareid",
+                    "value": "81027-00638-36337-87257"
+                }
+            ]
+        }
+    ]
+}

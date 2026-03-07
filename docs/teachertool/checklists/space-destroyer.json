@@ -1,0 +1,215 @@
+{
+    "name": "Space Destroyer Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "AoCERSh_t__YFi3RiPuc2",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "lists_create_with"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "y_DzIGxL_FQB-Ly_WStkj",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreate"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "VcU5prvY8yXCuWChRO2mR",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_control_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "uL8ls8RvEpSlfJ_uvEynZ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "keyonevent"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "o6hrcq0POp6HxNc-exG-v",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameinterval"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "YakGDCtSxnIQ9-hiSsUEZ",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreateprojectilefromside"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Vw3n8E6dNYfMUNSUf6EHH",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreateprojectilefromsprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "meYYnZxeU7u-Rgnfv0XR2",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "lists_index_get"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "lj1uelrmoODb5yR_S4j_p",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesoverlap"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "qwaCMO7oD4EKLGC6gGHb9",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeScoreBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "8L2GzJfvVgeziLYAmP-aH",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeLifeBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "nkLUkCR4tu3SKTn3tEkqC",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritedestroy2"
+                },
+                {
+                    "name": "count",
+                    "value": "3"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "InPhc5huhwFmJOz41G3lR",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Does this program include meaningful variable or function names?"
+                },
+                {
+                    "name": "shareid",
+                    "value": "36491-84082-67215-83176"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "VmcPP8AMAnJoju3Eo-8KT",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Describe what this MakeCode Arcade game is about, and how to play the game to a brand-new player."
+                },
+                {
+                    "name": "shareid",
+                    "value": "36491-84082-67215-83176"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "gYSarwIKofFGR4_Pp6m57",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "After examining this MakeCode Arcade project, suggest some improvements to the program for better code readability, efficiency, or reliability."
+                },
+                {
+                    "name": "shareid",
+                    "value": "36491-84082-67215-83176"
+                }
+            ]
+        }
+    ]
+}

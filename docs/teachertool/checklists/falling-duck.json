@@ -1,0 +1,145 @@
+{
+    "name": "Falling Duck Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Y43Ihnl5n9vJi4A03CYH1",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreate"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "urtIFTaGD7VvsI2ZylQUX",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "keyonevent"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "_68gMkVSqLzQ7kJK-qMwy",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameinterval"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "tpv8Gm-ymD8qUXVR5wQ6_",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "controls_if"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "ca1CxNp0ZxM8Ml42CuLEK",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesoverlap"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "a71fhPHl8qEr0mCWhz2II",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeScoreBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "Qh56Ch-W24aYY0XftNxgE",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreateprojectilefromside"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "hcWk4tQvGsUvgZoYO0F1-",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameOver2"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "lPerRmmemoFjJ2VezeMUU",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Review this MakeCode Arcade project and explain the different parts of the program."
+                },
+                {
+                    "name": "shareid",
+                    "value": "27358-43138-97805-87408"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "499F3572-E655-4DEE-953B-5F26BF0191D7",
+            "instanceId": "XNqAhumScpnZFOMg_c4Sq",
+            "params": [
+                {
+                    "name": "question",
+                    "value": "Evaluate the quality of the code in this MakeCode Arcade program. List out demonstrated good programming practices, as well as areas for improvement."
+                },
+                {
+                    "name": "shareid",
+                    "value": "27358-43138-97805-87408"
+                }
+            ]
+        }
+    ]
+}

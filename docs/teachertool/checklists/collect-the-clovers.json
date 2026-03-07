@@ -1,0 +1,173 @@
+{
+    "name": "Collect the Clovers Checklist",
+    "criteria": [
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "TjQXrTqN_0e5kPaDCmQ1D",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gamesetbackgroundimage"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "_Pj-o0e0x5qITiaPe07O3",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreate"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "lr06hiSixZtgyJRQkBxsP",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "game_control_sprite"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "SmXpaLwWTdLSmqVTqitws",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesetsetstayinscreen"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "fn7DN_NQkBorgkIThomLp",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "gameinterval"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "CabgwzyhYKDvSFbsnE002",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritescreateprojectilefromside"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "6E6Fy52aulPfRcvxdHR9U",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "device_random"
+                },
+                {
+                    "name": "count",
+                    "value": "4"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "CEqATBk508R_tf0D_YFrW",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesetkind"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "fJV856C-gCjXPZkGdrYSw",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritesoverlap"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "1hpYjN0O8v91_w-vkQqgB",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "spritedestroy2"
+                },
+                {
+                    "name": "count",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "1uyboW1FCRJME2TGyaymX",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeScoreBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "catalogCriteriaId": "59AAC5BA-B0B3-4389-AA90-1E767EFA8563",
+            "instanceId": "O8hxlfXgsXM_b9bBN1lx2",
+            "params": [
+                {
+                    "name": "block",
+                    "value": "hudChangeLifeBy"
+                },
+                {
+                    "name": "count",
+                    "value": 1
+                }
+            ]
+        }
+    ]
+}
