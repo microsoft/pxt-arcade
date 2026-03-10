@@ -6,7 +6,7 @@ Welcome to **3 in a Row**! 🟡🟢🟣
 
 In this skillmap, you'll create a fun 🧩 puzzle game where you swap tiles to match 3 or more of the same symbol in a row! 🩵🩵🩵
 
-![Match 3 game concept](/static/tutorials/match3.gif)
+![Match 3 game concept](/static/skillmap/3-in-a-row/match3.gif)
 
 Move a ☐ cursor around the game board, ↔️ swap tiles, and make matches to score points. ⚠️ But be careful — if your swap doesn't create a match, it's game over!
 
@@ -303,6 +303,9 @@ Now let's call our function to 📲 fill the board when the game starts!
 - :function: From the ``||functions:Functions||`` Toolbox category, drag a ``||functions:call fillEmptyTiles||`` block into the end of the ``||loops(noclick):on start||`` block
 
 ```blocks
+// @hide
+function fillEmptyTiles(){}
+
 scene.setBackgroundColor(13)
 let cursor = sprites.create(img`
     ffffffffffffffffffffffffffffffff
@@ -338,6 +341,9 @@ Let's start the score at 0. We'll add a point for each match we find.
 - :id card: From ``||info:Info||``, drag the ``||info:set score to 0||`` block into the end of the ``||loops(noclick):on start||`` container.
 
 ```blocks
+// @hide
+function fillEmptyTiles(){}
+
 scene.setBackgroundColor(13)
 let cursor = sprites.create(img`
     ffffffffffffffffffffffffffffffff
