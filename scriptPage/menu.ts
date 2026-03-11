@@ -7,6 +7,7 @@ function initOverflowMenu() {
         document.getElementById("show-code-button-overflow"),
         document.getElementById("editCodeButton-overflow"),
         document.getElementById("share-eval-button-overflow"),
+        document.getElementById("multiplayer-share-button-overflow"),
     ];
 
     const onBlur = (e: FocusEvent) => {
@@ -29,6 +30,8 @@ function initOverflowMenu() {
     let isExpanded = false;
 
     const documentKeydownListener = (e: KeyboardEvent) => {
+        const activeItems = menuItems.filter(item => item.style.display !== "none");
+
         if (e.key === "Escape" || e.key === "Esc") {
             setExpanded(false);
             menuButton.focus();
@@ -37,17 +40,17 @@ function initOverflowMenu() {
             e.preventDefault();
             e.stopPropagation();
             const currentlyFocusedElement = document.activeElement;
-            const currentIndex = menuItems.indexOf(currentlyFocusedElement as HTMLElement);
-            const nextIndex = (currentIndex + 1) % menuItems.length;
-            menuItems[nextIndex].focus();
+            const currentIndex = activeItems.indexOf(currentlyFocusedElement as HTMLElement);
+            const nextIndex = (currentIndex + 1) % activeItems.length;
+            activeItems[nextIndex].focus();
         }
         else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
             e.preventDefault();
             e.stopPropagation();
             const currentlyFocusedElement = document.activeElement;
-            const currentIndex = menuItems.indexOf(currentlyFocusedElement as HTMLElement);
-            const nextIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
-            menuItems[nextIndex].focus();
+            const currentIndex = activeItems.indexOf(currentlyFocusedElement as HTMLElement);
+            const nextIndex = (currentIndex - 1 + activeItems.length) % activeItems.length;
+            activeItems[nextIndex].focus();
         }
     };
 
