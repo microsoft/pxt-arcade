@@ -411,7 +411,7 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v2.0.56"
+        "latest": "v4.0.11"
     },
     "teachertool": {
         "showSharePageEvalButton": true,
