@@ -138,7 +138,7 @@ Now let's create the 𖣯 game board using a tilemap!
 
 ---
 
-A 📱 tilemap is a grid where each cell holds a tile that contains a 16x16 pixel image. It's perfect for puzzle games like this one!
+A 📱 tilemap is a grid where each cell can hold a 16x16 pixel tile image. It's perfect for puzzle games like this one!
 
 Our game board will be 10 tiles wide × 7 tiles tall.
 
@@ -171,7 +171,7 @@ tiles.setCurrentTilemap(tilemap`level1`)
 
 ## 💎 Create an array of gems
 
-Let's add an array of 🟩🟠🔷 symbols as shiny gems to populate our game board.
+Let's add an array of 🟩🟠🔷 symbols or shiny gems to populate our game board.
 
 - :arrays: Under the **Advanced** section of the Toolbox, open the ``||arrays:Arrays||`` category and drag a ``||variables:set symbols to array of||`` block and drop it at the end of the ``||loops(noclick):on start||`` block
 
@@ -376,7 +376,7 @@ You should see:
 
 If something doesn't look right, go back and check your code!
 
-Click **Done** to move on to the next tutorial to learn how to 🕹️ move your cursor around the screen and ↔️ swap tiles.
+Click **Done** to move on to the next tutorials to learn how to 🕹️ move your cursor around the screen and ↔️ swap tiles.
 
 ```blocks
 scene.setBackgroundColor(13)
