@@ -6,7 +6,7 @@ Welcome to **3 in a Row**! 🟡🟢🟣
 
 In this skillmap, you'll create a fun 🧩 puzzle game where you swap tiles to match 3 or more of the same symbol in a row! 🩵🩵🩵
 
-![Match 3 game concept](/static/tutorials/match3.gif)
+![Match 3 game concept](/static/skillmap/3-in-a-row/match3.gif)
 
 Move a ☐ cursor around the game board, ↔️ swap tiles, and make matches to score points. ⚠️ But be careful — if your swap doesn't create a match, it's game over!
 
