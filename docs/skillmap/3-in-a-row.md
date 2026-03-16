@@ -1,8 +1,8 @@
- # 3 in a Row
+# 3 in a Row
 
 * name: 3 in a Row
 * description: Create a puzzle game where you swap tiles to match 3 or more of the same symbol in a row!
-* infoUrl: skillmap/educator-info/3-in-a-row-info.md
+* infoUrl: skillmap/educator-info/3-in-a-row-info
 * bannerUrl: /static/skillmap/3-in-a-row/3-in-a-row.gif
 * backgroundurl: /static/skillmap/backgrounds/3-in-a-row.jpg
 * pixelatedbackground: true
