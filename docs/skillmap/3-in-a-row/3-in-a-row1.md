@@ -6,7 +6,7 @@ Welcome to **3 in a Row**! 🟡🟢🟣
 
 In this skillmap, you'll create a fun 🧩 puzzle game where you swap tiles to match 3 or more of the same symbol in a row! 🩵🩵🩵
 
-![Match 3 game concept](/static/tutorials/match3.gif)
+![Match 3 game concept](/static/skillmap/3-in-a-row/match3.gif)
 
 Move a ☐ cursor around the game board, ↔️ swap tiles, and make matches to score points. ⚠️ But be careful — if your swap doesn't create a match, it's game over!
 
@@ -138,7 +138,7 @@ Now let's create the 𖣯 game board using a tilemap!
 
 ---
 
-A 📱 tilemap is a grid where each cell holds a tile that contains a 16x16 pixel image. It's perfect for puzzle games like this one!
+A 📱 tilemap is a grid where each cell can hold a 16x16 pixel tile image. It's perfect for puzzle games like this one!
 
 Our game board will be 10 tiles wide × 7 tiles tall.
 
@@ -171,7 +171,7 @@ tiles.setCurrentTilemap(tilemap`level1`)
 
 ## 💎 Create an array of gems
 
-Let's add an array of 🟩🟠🔷 symbols as shiny gems to populate our game board.
+Let's add an array of 🟩🟠🔷 symbols or shiny gems to populate our game board.
 
 - :arrays: Under the **Advanced** section of the Toolbox, open the ``||arrays:Arrays||`` category and drag a ``||variables:set symbols to array of||`` block and drop it at the end of the ``||loops(noclick):on start||`` block
 
@@ -303,6 +303,9 @@ Now let's call our function to 📲 fill the board when the game starts!
 - :function: From the ``||functions:Functions||`` Toolbox category, drag a ``||functions:call fillEmptyTiles||`` block into the end of the ``||loops(noclick):on start||`` block
 
 ```blocks
+// @hide
+function fillEmptyTiles () {}
+
 scene.setBackgroundColor(13)
 let cursor = sprites.create(img`
     ffffffffffffffffffffffffffffffff
@@ -338,6 +341,9 @@ Let's start the score at 0. We'll add a point for each match we find.
 - :id card: From ``||info:Info||``, drag the ``||info:set score to 0||`` block into the end of the ``||loops(noclick):on start||`` container.
 
 ```blocks
+// @hide
+function fillEmptyTiles () {}
+
 scene.setBackgroundColor(13)
 let cursor = sprites.create(img`
     ffffffffffffffffffffffffffffffff
@@ -376,7 +382,7 @@ You should see:
 
 If something doesn't look right, go back and check your code!
 
-Click **Done** to move on to the next tutorial to learn how to 🕹️ move your cursor around the screen and ↔️ swap tiles.
+Click **Done** to move on to the next tutorials to learn how to 🕹️ move your cursor around the screen and ↔️ swap tiles.
 
 ```blocks
 scene.setBackgroundColor(13)
