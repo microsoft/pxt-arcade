@@ -21,7 +21,10 @@ store music, videos, and pictures on it. It also had a radio feature.
 Zune released three different versions between 2006 and 2011, and you can see
 the original version featured Guardians of the Galaxy Vol. 3.
 
-![Image of original Zunes](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Zune80and4.jpg/220px-Zune80and4.jpg)
+| Image of original Zune 80 and Zune 4 |
+|-|
+| ![Image of original Zunes](/static/tutorials/music/Zune80and4.jpg) |
+| _By Bkwparadox - Own work, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)_ |
 
 
 hint~
