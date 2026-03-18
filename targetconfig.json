@@ -97,6 +97,9 @@
                 "preferred": true,
                 "tags": [ "Sprites" ]
             },
+            "bladebaillio/image-mapping": {
+                "tags": [ "Visual Effects" ]
+            },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
             "riknoll/arcade-mini-menu": {},
