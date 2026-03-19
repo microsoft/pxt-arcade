@@ -29,7 +29,7 @@
 
 * name: 3 in a Row - Part 2
 * type: tutorial
-* description: Set up the tilemap game board and dynamically fill with symbols.
+* description: Move the cursor, find symbol tiles that are matching, and add some music.
 * url: /skillmap/3-in-a-row/3-in-a-row2
 * imageUrl: /static/skillmap/3-in-a-row/3-in-a-row2.gif
 * tags: puzzle, functions, tile scanner, intermediate
@@ -39,7 +39,7 @@
 
 * name: 3 in a Row - Part 3
 * type: tutorial
-* description: Set up the tilemap game board and dynamically fill with symbols.
+* description: Add the code for swapping symbol tiles to complete the game.
 * url: /skillmap/3-in-a-row/3-in-a-row3
 * imageUrl: /static/skillmap/3-in-a-row/3-in-a-row3.gif
 * tags: puzzle, functions, tile scanner, intermediate
