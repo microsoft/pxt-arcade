@@ -1,563 +1,1156 @@
-{
-    "packages": {
-        "approvedRepoLib": {
-            "adafruit/circuit-playground-character-icons": {
-                "preferred": true,
-                "tags": [ "Sprite Pack" ]
-            },
-            "adafruit/pxt-seesaw": {
-                "preferred": true,
-                "tags": [ "Hardware" ]
-            },
-            "jwunderl/pxt-button-combos": {
-                "preferred": true,
-                "tags": [ "Controller" ]
-            },
-            "jwunderl/pxt-color": {
-                "preferred": true,
-                "tags": [ "Visual Effects"]
-            },
-            "jwunderl/pxt-status-bar": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "jwunderl/arcade-sprite-util": {
-                "tags": [ "Sprites", "Utility" ]
-            },
-            "jwunderl/pxt-scaling": {
-                "tags": [ "Utility" ]
-            },
-            "microsoft/pxt-settings-blocks": {
-                "preferred": true,
-                "tags": [ "Utility" ]
-            },
-            "microsoft/arcade-sprite-data": {
-                "preferred": true,
-                "tags": [ "Utility" ],
-                "upgrades": [ "min:v0.0.6" ]
-            },
-            "microsoft/arcade-grid": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "microsoft/arcade-minimap": {
-                "preferred": true,
-                "tags": [ "Sprites", "Visual Effects" ]
-            },
-            "microsoft/arcade-timers": {
-                "preferred": true,
-                "tags": [ "Utility" ]
-            },
-            "microsoft/arcade-text": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "microsoft/pxt-tick-event": {},
-            "microsoft/pxt-tilemaps": {
-                "upgrades": [ "min:v1.8.1" ]
-            },
-            "microsoft/pxt-skillmap-sample": {},
-            "microsoft/pxt-jacdac": {
-                "tags": [ "Hardware" ],
-                "upgrades": [ "move:jacdac/pxt-jacdac" ],
-                "hidden": true
-            },
-            "jacdac/pxt-jacdac": {
-                "simx": {
-                    "sha": "9a567f397293aa27a06eab91910838f62a100753",
-                    "devUrl": "https://jacdac.github.io/jacdac-docs/tools/makecode-sim/"
+//% color="#5C2D91" weight=90 icon="\uf135" block="Platformer"
+//% groups=['Setup', 'Jumping', 'Ladder', 'Slopes', 'Wall Mechanics', 'Dash', 'Movement', 'Detection', 'Tweaks', 'Combat']
+namespace platformer {
+
+    // =========================================================================
+    // Enums
+    // =========================================================================
+
+    export const enum SlopeType {
+        //% block="rising right /"
+        RightRising,
+        //% block="rising left \\"
+        LeftRising,
+        //% block="gentle right low /"
+        GentleRightLow,
+        //% block="gentle right high /"
+        GentleRightHigh,
+        //% block="gentle left high \\"
+        GentleLeftHigh,
+        //% block="gentle left low \\"
+        GentleLeftLow
+    }
+
+    // =========================================================================
+    // Internal State
+    // =========================================================================
+
+    interface SlopeRegistration {
+        tile: Image
+        type: SlopeType
+    }
+
+    interface PlatformerState {
+        sprite: Sprite
+        gravity: number
+        jumpForce: number
+        maxJumps: number
+        jumpsLeft: number
+        isOnGround: boolean
+        coyoteTime: number
+        coyoteTimer: number
+        jumpBufferTime: number
+        jumpBufferTimer: number
+        wallSlide: boolean
+        wallJumpForce: number
+        dashSpeed: number
+        dashDuration: number
+        dashCooldown: number
+        dashTimer: number
+        dashCooldownTimer: number
+        isDashing: boolean
+        canDash: boolean
+        facingRight: boolean
+        maxFallSpeed: number
+        // Ladder
+        isClimbing: boolean
+        nearLadder: boolean
+        climbSpeed: number
+        ladderSnapX: boolean
+        ladderCenterX: number
+        dismountJumpForce: number
+        // Slopes
+        onSlope: boolean
+        slopeRegistrations: SlopeRegistration[]
+    }
+
+    const states: PlatformerState[] = []
+
+    function getState(sprite: Sprite): PlatformerState {
+        for (const s of states) {
+            if (s.sprite === sprite) return s
+        }
+        const ns: PlatformerState = {
+            sprite,
+            gravity: 600,
+            jumpForce: -300,
+            maxJumps: 1,
+            jumpsLeft: 1,
+            isOnGround: false,
+            coyoteTime: 100,
+            coyoteTimer: 0,
+            jumpBufferTime: 100,
+            jumpBufferTimer: 0,
+            wallSlide: false,
+            wallJumpForce: -280,
+            dashSpeed: 500,
+            dashDuration: 150,
+            dashCooldown: 800,
+            dashTimer: 0,
+            dashCooldownTimer: 0,
+            isDashing: false,
+            canDash: true,
+            facingRight: true,
+            maxFallSpeed: 600,
+            isClimbing: false,
+            nearLadder: false,
+            climbSpeed: 60,
+            ladderSnapX: true,
+            ladderCenterX: 0,
+            dismountJumpForce: -280,
+            onSlope: false,
+            slopeRegistrations: []
+        }
+        states.push(ns)
+        return ns
+    }
+
+    function executeJump(sprite: Sprite, st: PlatformerState): void {
+        sprite.vy = st.jumpForce
+        st.jumpsLeft--
+        st.jumpBufferTimer = 0
+        st.coyoteTimer = 0
+    }
+
+    // =========================================================================
+    // Slope Helpers
+    // =========================================================================
+
+    /**
+     * Calculate the surface Y of a slope tile given the tile's top-left
+     * position and how far into the tile the sprite's center X falls.
+     * All tiles are 16x16 pixels.
+     *
+     * Tile diagram (16px wide, 16px tall):
+     *
+     *  RightRising (/)          LeftRising (\)
+     *  ............####         ####............
+     *  ........########         ########........
+     *  ################         ################
+     *
+     *  GentleRightLow (/)       GentleRightHigh (/)
+     *  ................         ........########
+     *  ........########         ################
+     *  ################
+     *
+     *  GentleLeftHigh (\)       GentleLeftLow (\)
+     *  ########........         ................
+     *  ################         ########........
+     *                           ################
+     */
+    function getSlopeY(tileTop: number, xInTile: number, type: SlopeType): number {
+        switch (type) {
+            case SlopeType.RightRising:
+                // Surface goes from bottom-left to top-right (45°)
+                // x=0  → tileTop+15,  x=15 → tileTop+0
+                return tileTop + 15 - xInTile
+
+            case SlopeType.LeftRising:
+                // Surface goes from top-left to bottom-right (45°)
+                // x=0  → tileTop+0,   x=15 → tileTop+15
+                return tileTop + xInTile
+
+            case SlopeType.GentleRightLow:
+                // Lower-left tile of a 2:1 gentle / slope
+                // x=0  → tileTop+15,  x=15 → tileTop+8
+                return tileTop + 15 - Math.idiv(xInTile, 2)
+
+            case SlopeType.GentleRightHigh:
+                // Upper-right tile of a 2:1 gentle / slope
+                // x=0  → tileTop+7,   x=15 → tileTop+0
+                return tileTop + 7 - Math.idiv(xInTile, 2)
+
+            case SlopeType.GentleLeftHigh:
+                // Upper-left tile of a 2:1 gentle \ slope
+                // x=0  → tileTop+0,   x=15 → tileTop+7
+                return tileTop + Math.idiv(xInTile, 2)
+
+            case SlopeType.GentleLeftLow:
+                // Lower-right tile of a 2:1 gentle \ slope
+                // x=0  → tileTop+8,   x=15 → tileTop+15
+                return tileTop + 8 + Math.idiv(xInTile, 2)
+
+            default:
+                return tileTop
+        }
+    }
+
+    // =========================================================================
+    // Core Update
+    // =========================================================================
+
+    function update(sprite: Sprite, dt: number): void {
+        const st = getState(sprite)
+        if (!st) return
+
+        // ── Ground detection
+        // st.onSlope is set by slope overlap callbacks which fire before
+        // game.onUpdate in MakeCode Arcade's event loop, so it's already
+        // populated for this frame by the time we read it here.
+        const wasOnGround = st.isOnGround
+        const flatGround = sprite.isHittingTile(CollisionDirection.Bottom)
+        st.isOnGround = flatGround || st.onSlope
+
+        // Clear onSlope — overlap callbacks will re-set it next frame
+        st.onSlope = false
+
+        if (!wasOnGround && st.isOnGround) {
+            st.jumpsLeft = st.maxJumps
+            st.canDash = true
+            if (st.isClimbing) {
+                st.isClimbing = false
+                sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+            }
+        }
+
+        // ── Leave ladder if tile no longer overlapping
+        if (st.isClimbing && !st.nearLadder) {
+            st.isClimbing = false
+            sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+        }
+
+        // Reset nearLadder — ladder overlap callback re-sets it each frame
+        st.nearLadder = false
+
+        // ── Coyote time (not while climbing)
+        if (!st.isClimbing) {
+            if (wasOnGround && !st.isOnGround) {
+                st.coyoteTimer = st.coyoteTime
+            }
+            if (st.coyoteTimer > 0) st.coyoteTimer -= dt
+        }
+
+        // ── Jump buffer
+        if (st.jumpBufferTimer > 0) {
+            st.jumpBufferTimer -= dt
+            if (st.isOnGround || st.coyoteTimer > 0) {
+                executeJump(sprite, st)
+            }
+        }
+
+        // ── Climbing mode: gravity off, snap to ladder center
+        if (st.isClimbing) {
+            sprite.vy = 0
+            if (st.ladderSnapX) {
+                sprite.x += (st.ladderCenterX - sprite.x) * 0.3
+            }
+            return
+        }
+
+        // ── Gravity
+        if (!st.isDashing) {
+            // Don't accumulate downward velocity while grounded —
+            // this prevents vy buildup that causes jitter on slopes
+            if (st.isOnGround && sprite.vy > 0) {
+                sprite.vy = 0
+            } else {
+                sprite.vy += (st.gravity * dt) / 1000
+                if (sprite.vy > st.maxFallSpeed) sprite.vy = st.maxFallSpeed
+            }
+        }
+
+        // ── Wall slide
+        if (st.wallSlide && !st.isOnGround && sprite.vy > 0) {
+            if (
+                sprite.isHittingTile(CollisionDirection.Left) ||
+                sprite.isHittingTile(CollisionDirection.Right)
+            ) {
+                if (sprite.vy > 80) sprite.vy = 80
+            }
+        }
+
+        // ── Dash timer
+        if (st.isDashing) {
+            st.dashTimer -= dt
+            if (st.dashTimer <= 0) {
+                st.isDashing = false
+                sprite.vx = st.facingRight ? 150 : -150
+            }
+        }
+
+        // ── Dash cooldown
+        if (st.dashCooldownTimer > 0) st.dashCooldownTimer -= dt
+    }
+
+    // =========================================================================
+    // SECTION: Setup
+    // =========================================================================
+
+    /**
+     * Initialize platformer physics for a sprite.
+     * Call this once after creating your sprite.
+     * @param sprite the player sprite
+     * @param gravity downward acceleration in px/sec², eg: 600
+     * @param jumpForce upward velocity on jump (negative = up), eg: -300
+     */
+    //% group="Setup"
+    //% block="set up platformer for $sprite || gravity $gravity jump force $jumpForce"
+    //% sprite.shadow=variables_get
+    //% gravity.defl=600
+    //% jumpForce.defl=-300
+    //% weight=100
+    export function setup(
+        sprite: Sprite,
+        gravity: number = 600,
+        jumpForce: number = -300
+    ): void {
+        const st = getState(sprite)
+        st.gravity = gravity
+        st.jumpForce = jumpForce
+        sprite.setFlag(SpriteFlag.StayInScreen, false)
+        game.onUpdate(function () {
+            update(sprite, game.eventContext().deltaTimeMillis)
+        })
+    }
+
+    /**
+     * Set gravity for a sprite.
+     * @param sprite the player sprite
+     * @param gravity pixels per second squared, eg: 600
+     */
+    //% group="Setup"
+    //% block="set $sprite gravity to $gravity"
+    //% sprite.shadow=variables_get
+    //% gravity.defl=600
+    //% weight=95
+    export function setGravity(sprite: Sprite, gravity: number): void {
+        getState(sprite).gravity = gravity
+    }
+
+    /**
+     * Set maximum fall speed to prevent infinite acceleration.
+     * @param sprite the player sprite
+     * @param speed max downward velocity, eg: 600
+     */
+    //% group="Setup"
+    //% block="set $sprite max fall speed to $speed"
+    //% sprite.shadow=variables_get
+    //% speed.defl=600
+    //% weight=90
+    export function setMaxFallSpeed(sprite: Sprite, speed: number): void {
+        getState(sprite).maxFallSpeed = speed
+    }
+
+    // =========================================================================
+    // SECTION: Jumping
+    // =========================================================================
+
+    /**
+     * Make the sprite jump. Respects double-jump, coyote time, and jump
+     * buffering. If called while climbing a ladder the sprite dismounts
+     * and jumps.
+     * @param sprite the player sprite
+     */
+    //% group="Jumping"
+    //% block="jump $sprite"
+    //% sprite.shadow=variables_get
+    //% weight=100
+    export function jump(sprite: Sprite): void {
+        const st = getState(sprite)
+
+        // Dismount ladder
+        if (st.isClimbing) {
+            st.isClimbing = false
+            sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+            sprite.vy = st.dismountJumpForce
+            st.jumpsLeft = st.maxJumps - 1
+            return
+        }
+
+        const canJumpNow = st.isOnGround || st.coyoteTimer > 0 || st.jumpsLeft > 0
+        if (canJumpNow && st.jumpsLeft > 0) {
+            executeJump(sprite, st)
+        } else if (!st.isOnGround && st.jumpsLeft <= 0) {
+            st.jumpBufferTimer = st.jumpBufferTime
+        }
+    }
+
+    /**
+     * Cut jump height early — call when the jump button is released
+     * for variable-height jumps.
+     * @param sprite the player sprite
+     * @param cutFactor how much to reduce upward speed (0.0–1.0), eg: 0.5
+     */
+    //% group="Jumping"
+    //% block="cut jump height for $sprite by $cutFactor"
+    //% sprite.shadow=variables_get
+    //% cutFactor.defl=0.5
+    //% weight=95
+    export function cutJump(sprite: Sprite, cutFactor: number = 0.5): void {
+        if (sprite.vy < 0) sprite.vy *= cutFactor
+    }
+
+    /**
+     * Set the maximum number of jumps allowed per ground contact.
+     * 1 = normal, 2 = double jump, etc.
+     * @param sprite the player sprite
+     * @param count number of jumps, eg: 2
+     */
+    //% group="Jumping"
+    //% block="set $sprite max jumps to $count"
+    //% sprite.shadow=variables_get
+    //% count.defl=2
+    //% weight=90
+    export function setMaxJumps(sprite: Sprite, count: number): void {
+        const st = getState(sprite)
+        st.maxJumps = count
+        st.jumpsLeft = count
+    }
+
+    /**
+     * Set coyote time — grace period after walking off a ledge or slope
+     * where the player can still jump.
+     * @param sprite the player sprite
+     * @param ms milliseconds, eg: 100
+     */
+    //% group="Jumping"
+    //% block="set $sprite coyote time to $ms ms"
+    //% sprite.shadow=variables_get
+    //% ms.defl=100
+    //% weight=85
+    export function setCoyoteTime(sprite: Sprite, ms: number): void {
+        getState(sprite).coyoteTime = ms
+    }
+
+    /**
+     * Set jump buffer — pressing jump this many ms before landing
+     * still triggers a jump on touchdown.
+     * @param sprite the player sprite
+     * @param ms milliseconds, eg: 100
+     */
+    //% group="Jumping"
+    //% block="set $sprite jump buffer to $ms ms"
+    //% sprite.shadow=variables_get
+    //% ms.defl=100
+    //% weight=80
+    export function setJumpBuffer(sprite: Sprite, ms: number): void {
+        getState(sprite).jumpBufferTime = ms
+    }
+
+    // =========================================================================
+    // SECTION: Ladder
+    // =========================================================================
+
+    /**
+     * Register a tile image as a climbable ladder for a sprite.
+     * Call once during setup. The tile must be a non-wall tile in the
+     * tilemap editor — the extension handles collision manually.
+     * @param sprite the player sprite
+     * @param tile the ladder tile from your tilemap
+     */
+    //% group="Ladder"
+    //% block="register ladder tile $tile for $sprite"
+    //% sprite.shadow=variables_get
+    //% tile.shadow=tileset_tile_picker
+    //% weight=100
+    export function registerLadderTile(sprite: Sprite, tile: Image): void {
+        scene.onOverlapTile(sprite.kind(), tile, function (s: Sprite, location: tiles.Location) {
+            if (s !== sprite) return
+            const st = getState(sprite)
+            st.nearLadder = true
+            st.ladderCenterX = location.column * 16 + 8
+        })
+    }
+
+    /**
+     * Grab the ladder — the sprite enters climbing mode.
+     * Call when the player presses Up or Down while near a ladder.
+     * Does nothing if the sprite is not near a ladder tile.
+     * @param sprite the player sprite
+     */
+    //% group="Ladder"
+    //% block="grab ladder $sprite"
+    //% sprite.shadow=variables_get
+    //% weight=95
+    export function grabLadder(sprite: Sprite): void {
+        const st = getState(sprite)
+        if (!st.nearLadder || st.isClimbing) return
+        st.isClimbing = true
+        sprite.vy = 0
+        sprite.vx = 0
+        sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+    }
+
+    /**
+     * Release the ladder — the sprite falls normally again.
+     * @param sprite the player sprite
+     */
+    //% group="Ladder"
+    //% block="release ladder $sprite"
+    //% sprite.shadow=variables_get
+    //% weight=92
+    export function releaseLadder(sprite: Sprite): void {
+        const st = getState(sprite)
+        st.isClimbing = false
+        sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+    }
+
+    /**
+     * Climb up or down the ladder. Call every frame while Up or Down
+     * is held. Negative speed = climb up, positive = climb down.
+     * Automatically grabs the ladder if near one.
+     * @param sprite the player sprite
+     * @param speed climb velocity — negative = up, positive = down, eg: -60
+     */
+    //% group="Ladder"
+    //% block="climb $sprite at speed $speed"
+    //% sprite.shadow=variables_get
+    //% speed.defl=-60
+    //% weight=90
+    export function climbLadder(sprite: Sprite, speed: number): void {
+        const st = getState(sprite)
+        if (!st.nearLadder) return
+        if (!st.isClimbing) grabLadder(sprite)
+        sprite.vy = speed
+    }
+
+    /**
+     * Set the default climb speed reference value.
+     * @param sprite the player sprite
+     * @param speed pixels per second, eg: 60
+     */
+    //% group="Ladder"
+    //% block="set $sprite climb speed to $speed"
+    //% sprite.shadow=variables_get
+    //% speed.defl=60
+    //% weight=88
+    export function setClimbSpeed(sprite: Sprite, speed: number): void {
+        getState(sprite).climbSpeed = speed
+    }
+
+    /**
+     * Set the jump force when jumping off a ladder.
+     * @param sprite the player sprite
+     * @param force upward force (negative = up), eg: -280
+     */
+    //% group="Ladder"
+    //% block="set $sprite ladder dismount jump force $force"
+    //% sprite.shadow=variables_get
+    //% force.defl=-280
+    //% weight=85
+    export function setDismountJumpForce(sprite: Sprite, force: number): void {
+        getState(sprite).dismountJumpForce = force
+    }
+
+    /**
+     * Enable or disable snapping the sprite to the horizontal center
+     * of the ladder tile while climbing.
+     * @param sprite the player sprite
+     * @param enabled true to snap to center
+     */
+    //% group="Ladder"
+    //% block="set $sprite ladder snap to center $enabled"
+    //% sprite.shadow=variables_get
+    //% enabled.shadow=toggleOnOff
+    //% weight=82
+    export function setLadderSnap(sprite: Sprite, enabled: boolean): void {
+        getState(sprite).ladderSnapX = enabled
+    }
+
+    /**
+     * Returns true if the sprite is currently climbing a ladder.
+     * @param sprite the player sprite
+     */
+    //% group="Ladder"
+    //% block="$sprite is climbing"
+    //% sprite.shadow=variables_get
+    //% weight=78
+    export function isClimbing(sprite: Sprite): boolean {
+        return getState(sprite).isClimbing
+    }
+
+    /**
+     * Returns true if the sprite is touching a ladder tile this frame.
+     * @param sprite the player sprite
+     */
+    //% group="Ladder"
+    //% block="$sprite is near ladder"
+    //% sprite.shadow=variables_get
+    //% weight=75
+    export function isNearLadder(sprite: Sprite): boolean {
+        return getState(sprite).nearLadder
+    }
+
+    // =========================================================================
+    // SECTION: Slopes
+    // =========================================================================
+
+    /**
+     * Register a tile as a slope for a sprite.
+     * The tile MUST be a non-wall tile in the tilemap editor —
+     * the extension handles the surface collision manually.
+     *
+     * Slope tile layout guide (each tile is 16×16 px):
+     *
+     *   RightRising (/)    — full 45° uphill going right
+     *   LeftRising  (\)    — full 45° uphill going left
+     *
+     *   Gentle / pair  (2 tiles wide, half angle going right):
+     *     GentleRightLow  = the LEFT  tile (lower portion)
+     *     GentleRightHigh = the RIGHT tile (upper portion)
+     *
+     *   Gentle \ pair  (2 tiles wide, half angle going left):
+     *     GentleLeftHigh  = the LEFT  tile (upper portion)
+     *     GentleLeftLow   = the RIGHT tile (lower portion)
+     *
+     * @param sprite the player sprite
+     * @param tile the slope tile from your tilemap
+     * @param type the slope direction and steepness
+     */
+    //% group="Slopes"
+    //% block="register slope tile $tile type $type for $sprite"
+    //% sprite.shadow=variables_get
+    //% tile.shadow=tileset_tile_picker
+    //% weight=100
+    export function registerSlopeTile(sprite: Sprite, tile: Image, type: SlopeType): void {
+        const st = getState(sprite)
+        st.slopeRegistrations.push({ tile, type })
+
+        scene.onOverlapTile(sprite.kind(), tile, function (s: Sprite, location: tiles.Location) {
+            if (s !== sprite) return
+
+            const tileSize = 16
+            const tileLeft = location.column * tileSize
+            const tileTop = location.row * tileSize
+
+            // Clamp sprite center X to within the tile's horizontal span
+            const xInTile = Math.max(0, Math.min(tileSize - 1, Math.round(s.x) - tileLeft))
+
+            // Get the slope surface Y at this horizontal position
+            const surfaceY = getSlopeY(tileTop, xInTile, type)
+            const spriteFeetY = Math.round(s.y) + s.height / 2
+
+            // Apply correction if:
+            //   (a) sprite feet are at or past the surface (inside/below slope)
+            //   (b) sprite is not in the middle of a jump (vy not strongly negative)
+            // The -4 threshold handles walking up a slope where feet approach
+            // from slightly above before the overlap fires.
+            if (spriteFeetY >= surfaceY - 4 && s.vy > -200) {
+                // Push sprite up to sit exactly on the surface
+                s.y = surfaceY - s.height / 2
+
+                // Kill downward velocity — sprite is grounded on slope
+                if (s.vy > 0) s.vy = 0
+
+                const state = getState(s)
+                state.onSlope = true
+                state.isOnGround = true
+
+                if (!state.isClimbing) {
+                    state.jumpsLeft = state.maxJumps
+                    state.canDash = true
+                    // Refresh coyote timer while on slope so walking off gives grace
+                    state.coyoteTimer = state.coyoteTime
                 }
-            },
-            "microsoft/arcade-storytelling": {
-                "preferred": true,
-                "tags": [ "Utility" ]
-            },
-            "microsoft/arcade-background-scroll": {
-                "preferred": true,
-                "tags": [ "Visual Effects" ]
-            },
-            "microsoft/arcade-character-animations": {
-                "preferred": true,
-                "tags": [ "Visual Effects", "Utility", "Sprites" ]
-            },
-            "microsoft/arcade-tile-util": {
-                "preferred": true,
-                "tags": [ "Utility" ]
-            },
-            "mr-coxall/turtle-logo": {},
-            "aqeeaqee/pxt-raycasting": {
-                "preferred": true,
-                "tags": [ "Visual Effects" ]
-            },
-            "joylabz/makeymakey-makecode-arcade-extension": {
-                "preferred": true,
-                "tags": [ "Hardware" ]
-            },
-            "kohanmathers/makecodespritefx": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "bladebaillio/image-mapping": {
-                "tags": [ "Visual Effects" ]
-            },
-            "microsoft/arcade-carnival": {},
-            "riknoll/arcade-tile-scanner": {},
-            "riknoll/arcade-mini-menu": {},
-            "riknoll/arcade-fancy-text": {},
-            "code-ninjas-home-office/game-building-session-tutorials": {
-                "tutorial" : true
-            },
-            "code-ninjas-home-office/code-ninjas-tutorials": {
-                "tutorial" : true
-            },
-            "code-ninjas-home-office/arctic-code-quest": {
-                "tutorial" : true
-            },
-            "code-ninjas-home-office/game-building-session-tutorials-2024": {
-                "tutorial" : true
-            },
-            "code-ninjas-home-office/game-building-session-yb-ob": {
-                "tutorial" : true
-            },
-            "code-ninjas-home-office/scott-kelly-games": {
-                "tutorial" : true
-            },
-            "code-ninjas-home-office/camps": {
-                "tutorial" : true
             }
-        },
-        "builtinExtensionsLib": {
-            "controller": {
-                "preferred": true,
-                "tags": [ "Utility", "Controller" ]
-            },
-            "animation": {
-                "preferred": true,
-                "tags": [ "Sprites", "Visual Effects" ]
-            },
-            "multiplayer": {
-                "preferred": true,
-                "tags": [ "Utility", "Controller", "Sprites" ]
-            },
-            "sprite-scaling": {
-                "preferred": true,
-                "tags": [ "Sprites", "Visual Effects" ]
-            },
-            "corgio": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "darts": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "edge-connector": {
-                "preferred": true,
-                "tags": [ "Hardware" ]
-            },
-            "light": {
-                "preferred": true,
-                "tags": [ "Hardware" ]
-            },
-            "radio-broadcast": {
-                "preferred": true,
-                "tags": [ "Utility"]
-            },
-            "servo": {
-                "preferred": true,
-                "tags": [ "Hardware" ]
-            },
-            "sevenseg": {
-                "preferred": true,
-                "tags": [ "Utility" ]
-            },
-            "feather": {
-                "preferred": true,
-                "tags": [ "Hardware", "Controller" ]
-            },
-            "browser-events": {
-                "preferred": true,
-                "tags": [ "Utility", "Controller" ]
-            }
-        },
-        "upgrades": {
-            "microsoft/pxt-tilemaps": "min:v1.8.1",
-            "microsoft/arcade-sprite-data": "min:v0.0.6"
-        },
-        "approvedEditorExtensionUrls": [
-            "https://microsoft.github.io/jacdac-docs/tools/makecode-editor-extension"
-        ]
-    },
-    "shareLinks": {
-        "approved": [
-            "53897-77132-13809-57062",
-            "07573-63879-62644-28924",
-            "S07439-34681-01269-56955",
-            "S83499-96784-35479-44416",
-            "S20979-80747-10645-55772",
-            "S42791-93051-00250-80367",
-            "_1DogpPTpb8fK",
-            "_bz3CCuWFiepH",
-            "_C71PmfFaYDm2",
-            "_dCP7f8c3q5PJ",
-            "_cvxPm1WesYyi",
-            "_FdYfDwixRTAw"
-        ]
-    },
-    "skillMap": {
-        "defaultPath": "docs:/skillmap/intermediate-skillmap",
-        "pathAliases": {
-            "beginner": "docs:/skillmap/beginner-skillmap",
-            "bug": "docs:/skillmap/bug-arena",
-            "zoo": "docs:/skillmap/zoo",
-            "space": "docs:/skillmap/space",
-            "platformer": "docs:/skillmap/platformer",
-            "sc": "docs:/skillmap/sc",
-            "shark": "docs:/skillmap/shark",
-            "jungle": "docs:/skillmap/jungle",
-            "racer": "docs:/skillmap/racer",
-            "rockstar": "docs:/skillmap/rockstar",
-            "forest": "docs:/skillmap/forest",
-            "turkey": "docs:/skillmap/turkey",
-            "star": "docs:/skillmap/star",
-            "mole": "docs:/skillmap/mole",
-            "balloon": "docs:/skillmap/balloon",
-            "adventure": "docs:/skillmap/adventure",
-            "story": "docs:/skillmap/story",
-            "dino": "docs:/skillmap/dino",
-            "galaxy": "docs:/skillmap/galaxy",
-            "sparks": "docs:/skillmap/sparks"
+        })
+    }
+
+    /**
+     * Remove all slope tile registrations for a sprite.
+     * Useful when transitioning to a different tilemap scene.
+     * Note: the underlying tile overlap handlers remain active
+     * but will no longer affect the sprite's physics.
+     * @param sprite the player sprite
+     */
+    //% group="Slopes"
+    //% block="clear $sprite slope registrations"
+    //% sprite.shadow=variables_get
+    //% weight=88
+    export function clearSlopeRegistrations(sprite: Sprite): void {
+        getState(sprite).slopeRegistrations = []
+    }
+
+    /**
+     * Returns true if the sprite is currently standing on a slope tile.
+     * @param sprite the player sprite
+     */
+    //% group="Slopes"
+    //% block="$sprite is on slope"
+    //% sprite.shadow=variables_get
+    //% weight=85
+    export function isOnSlope(sprite: Sprite): boolean {
+        // onSlope is set by the overlap callback and cleared in update().
+        // Query it before update() runs (e.g. in a game.onUpdate registered
+        // before setup()) or rely on the isOnGround block for general use.
+        return getState(sprite).onSlope
+    }
+
+    // =========================================================================
+    // SECTION: Wall Mechanics
+    // =========================================================================
+
+    /**
+     * Enable or disable wall sliding for a sprite.
+     * @param sprite the player sprite
+     * @param enabled true to allow wall sliding
+     */
+    //% group="Wall Mechanics"
+    //% block="set wall slide for $sprite $enabled"
+    //% sprite.shadow=variables_get
+    //% enabled.shadow=toggleOnOff
+    //% weight=100
+    export function setWallSlide(sprite: Sprite, enabled: boolean): void {
+        getState(sprite).wallSlide = enabled
+    }
+
+    /**
+     * Perform a wall jump — pushes the sprite away from the wall and upward.
+     * @param sprite the player sprite
+     */
+    //% group="Wall Mechanics"
+    //% block="wall jump $sprite"
+    //% sprite.shadow=variables_get
+    //% weight=95
+    export function wallJump(sprite: Sprite): void {
+        const st = getState(sprite)
+        const touchLeft = sprite.isHittingTile(CollisionDirection.Left)
+        const touchRight = sprite.isHittingTile(CollisionDirection.Right)
+        if (touchLeft) {
+            sprite.vx = 200
+            sprite.vy = st.wallJumpForce
+            st.jumpsLeft = st.maxJumps - 1
+        } else if (touchRight) {
+            sprite.vx = -200
+            sprite.vy = st.wallJumpForce
+            st.jumpsLeft = st.maxJumps - 1
         }
-    },
-    "multiplayer": {
-        "games": [
-            {
-                "shareId": "_bz3CCuWFiepH",
-                "title": "Perfect Fit",
-                "subtitle": "4 player",
-                "image": "/static/multiplayer/perfect-fit.png"
-            },
-            {
-                "shareId": "_C71PmfFaYDm2",
-                "title": "Galga",
-                "subtitle": "4 player",
-                "image": "/static/multiplayer/galga.png"
-            },
-            {
-                "shareId": "_Ka770J6Laeva",
-                "title": "Paint Party",
-                "subtitle": "1-4 player",
-                "image": "/static/multiplayer/paint-party.png"
-            },
-            {
-                "shareId": "_1DogpPTpb8fK",
-                "title": "Horse Race",
-                "subtitle": "4 player",
-                "image": "/static/multiplayer/horse-race.png"
-            }
-        ]
-    },
-    "hardwareOptions": [
-        {
-            "name": "Meowbit",
-            "description": "A retro game console for STEM education from Kittenbot team",
-            "imageUrl": "/static/hardware/meowbit.png",
-            "url": "https://www.kittenbot.cc/collections/frontpage/products/meowbit-codable-console-for-microsoft-makecode-arcade",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "Retro Arcade for Education",
-            "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
-            "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
-            "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "micro:bit Arcade Shield",
-            "description": "ELECFREAKS micro:bit expansion board for MakeCode Arcade, DIY Programmable Game Console, and STEM Education Kit.",
-            "imageUrl": "/static/hardware/arcade-shield.jpg",
-            "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "TinkerGen GameGo",
-            "description": "A fun-sized console to play the games you code.",
-            "imageUrl": "/static/hardware/gamego.jpg",
-            "url": "https://www.seeedstudio.com/GameGo-p-4847.html",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "Kitronik ARCADE",
-            "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
-            "imageUrl": "/static/hardware/kitronik.jpg",
-            "url": "https://www.kitronik.co.uk/arcade",
-            "variant": "hw---samd51"
-        },
-        {
-            "name": "MRT Game Maker Kit",
-            "description": " Sleek hand-held game device with a hard case and a USB-C port.",
-            "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
-            "url": "https://www.myrobottime.co.kr/gamemakerkit",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "Kitronik Arcade for micro:bit",
-            "description": "Use the micro:bit with an expansion board from Kitronik",
-            "imageUrl": "/static/hardware/kitronik-shield.png",
-            "url": "https://kitronik.co.uk/56116",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "Adafruit PyBadge",
-            "description": "It's a badge, it's an arcade, it's a PyBadge",
-            "imageUrl": "/static/hardware/pybadge.jpg",
-            "url": "https://www.adafruit.com/product/4200",
-            "variant": "hw---samd51"
-        },
-        {
-            "name": "BrainPad Arcade",
-            "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
-            "imageUrl": "/static/hardware/ghiarcade.jpg",
-            "url": "https://brainpad.com/arcade",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "Adafruit PyGamer",
-            "description": "The upgraded PyBadge",
-            "imageUrl": "/static/hardware/pygamer.jpg",
-            "url": "https://www.adafruit.com/product/4242",
-            "variant": "hw---samd51"
-        },
-        {
-            "name": "Ovobot Xtron Pro",
-            "description": "A programmable modular console to create games, design wearables and make creative projects.",
-            "imageUrl": "/static/hardware/xtronpro.png",
-            "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
-            "variant": "hw---stm32f401"
-        },
-        {
-            "name": "Adafruit EdgeBadge",
-            "description": "It's the PyBadge with a zest of Machine learning",
-            "imageUrl": "/static/hardware/edgebadge.jpg",
-            "url": "https://www.adafruit.com/product/4400",
-            "variant": "hw---samd51"
-        },
-        {
-            "name": "Kitronik ARCADE Max",
-            "description": "Program fun and educational games with the Kitronik ARCADE Max",
-            "imageUrl": "/static/hardware/kitronik-arcade-max.png",
-            "url": "https://kitronik.co.uk/5357",
-            "variant": "hw---samd51"
-        },
-        {
-            "name": "Newbit Arcade Shield",
-            "description": "Use the micro:bit with an expansion board from KittenBot",
-            "imageUrl": "/static/hardware/newbit.png",
-            "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "micro:bit Game:Bit Shield",
-            "description": "Use the micro:bit with an expansion board from iCShop",
-            "imageUrl": "/static/hardware/bit-shield.png",
-            "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "Calliope GameKit Shield",
-            "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
-            "imageUrl": "/static/hardware/gamekit.png",
-            "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "Forward Education CodeCTRL",
-            "description": "Code, play, and explore with this handheld micro:bit controller.",
-            "imageUrl": "/static/hardware/codectrl.png",
-            "url": "https://forwardedu.com/pages/codectrl-for-micro-bit",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "micro:bit Arcade Pro",
-            "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
-            "imageUrl": "/static/hardware/arcade-pro-ef.png",
-            "url": "https://shop.elecfreaks.com/products/elecfreaks-microsoft-makecode-micro-bit-arcade-pro",
-            "variant": "hw---n3"
-        },
-        {
-            "name": "Adafruit M4",
-            "description": "Learn how to run your games on micro-controllers from Adafruit",
-            "imageUrl": "/static/hardware/adafruitm4.jpg",
-            "url": "https://learn.adafruit.com/makecode-arcade-m4",
-            "variant": "hw---samd51"
+    }
+
+    /**
+     * Set the upward force applied during a wall jump.
+     * @param sprite the player sprite
+     * @param force upward velocity (negative = up), eg: -280
+     */
+    //% group="Wall Mechanics"
+    //% block="set $sprite wall jump force to $force"
+    //% sprite.shadow=variables_get
+    //% force.defl=-280
+    //% weight=90
+    export function setWallJumpForce(sprite: Sprite, force: number): void {
+        getState(sprite).wallJumpForce = force
+    }
+
+    /**
+     * Returns true if the sprite is touching a wall on either side.
+     * @param sprite the player sprite
+     */
+    //% group="Wall Mechanics"
+    //% block="$sprite is on wall"
+    //% sprite.shadow=variables_get
+    //% weight=85
+    export function isOnWall(sprite: Sprite): boolean {
+        return sprite.isHittingTile(CollisionDirection.Left) ||
+            sprite.isHittingTile(CollisionDirection.Right)
+    }
+
+    /**
+     * Returns true if the sprite is touching a wall on the left.
+     * @param sprite the player sprite
+     */
+    //% group="Wall Mechanics"
+    //% block="$sprite is on left wall"
+    //% sprite.shadow=variables_get
+    //% weight=82
+    export function isOnLeftWall(sprite: Sprite): boolean {
+        return sprite.isHittingTile(CollisionDirection.Left)
+    }
+
+    /**
+     * Returns true if the sprite is touching a wall on the right.
+     * @param sprite the player sprite
+     */
+    //% group="Wall Mechanics"
+    //% block="$sprite is on right wall"
+    //% sprite.shadow=variables_get
+    //% weight=80
+    export function isOnRightWall(sprite: Sprite): boolean {
+        return sprite.isHittingTile(CollisionDirection.Right)
+    }
+
+    // =========================================================================
+    // SECTION: Dash
+    // =========================================================================
+
+    /**
+     * Dash in the direction the sprite is currently facing.
+     * Gravity is disabled during the dash. One dash per air trip.
+     * Cannot dash while climbing a ladder.
+     * @param sprite the player sprite
+     */
+    //% group="Dash"
+    //% block="dash $sprite"
+    //% sprite.shadow=variables_get
+    //% weight=100
+    export function dash(sprite: Sprite): void {
+        const st = getState(sprite)
+        if (!st.canDash || st.isDashing || st.dashCooldownTimer > 0) return
+        if (st.isClimbing) return
+        st.isDashing = true
+        st.canDash = false
+        st.dashTimer = st.dashDuration
+        st.dashCooldownTimer = st.dashCooldown
+        sprite.vy = 0
+        sprite.vx = st.facingRight ? st.dashSpeed : -st.dashSpeed
+    }
+
+    /**
+     * Configure all dash properties at once.
+     * @param sprite the player sprite
+     * @param speed dash speed in px/sec, eg: 500
+     * @param durationMs how long the dash lasts in ms, eg: 150
+     * @param cooldownMs cooldown between dashes in ms, eg: 800
+     */
+    //% group="Dash"
+    //% block="set $sprite dash speed $speed duration $durationMs ms cooldown $cooldownMs ms"
+    //% sprite.shadow=variables_get
+    //% speed.defl=500
+    //% durationMs.defl=150
+    //% cooldownMs.defl=800
+    //% weight=95
+    export function setDash(
+        sprite: Sprite,
+        speed: number,
+        durationMs: number,
+        cooldownMs: number
+    ): void {
+        const st = getState(sprite)
+        st.dashSpeed = speed
+        st.dashDuration = durationMs
+        st.dashCooldown = cooldownMs
+    }
+
+    /**
+     * Set dash speed separately.
+     * @param sprite the player sprite
+     * @param speed pixels per second, eg: 500
+     */
+    //% group="Dash"
+    //% block="set $sprite dash speed to $speed"
+    //% sprite.shadow=variables_get
+    //% speed.defl=500
+    //% weight=90
+    export function setDashSpeed(sprite: Sprite, speed: number): void {
+        getState(sprite).dashSpeed = speed
+    }
+
+    /**
+     * Set how long a dash lasts.
+     * @param sprite the player sprite
+     * @param ms duration in milliseconds, eg: 150
+     */
+    //% group="Dash"
+    //% block="set $sprite dash duration to $ms ms"
+    //% sprite.shadow=variables_get
+    //% ms.defl=150
+    //% weight=88
+    export function setDashDuration(sprite: Sprite, ms: number): void {
+        getState(sprite).dashDuration = ms
+    }
+
+    /**
+     * Set the cooldown between dashes.
+     * @param sprite the player sprite
+     * @param ms cooldown in milliseconds, eg: 800
+     */
+    //% group="Dash"
+    //% block="set $sprite dash cooldown to $ms ms"
+    //% sprite.shadow=variables_get
+    //% ms.defl=800
+    //% weight=86
+    export function setDashCooldown(sprite: Sprite, ms: number): void {
+        getState(sprite).dashCooldown = ms
+    }
+
+    // =========================================================================
+    // SECTION: Movement
+    // =========================================================================
+
+    /**
+     * Move the sprite left or right. Tracks facing direction for dash.
+     * Skips during a dash. Reduces speed while climbing a ladder.
+     * @param sprite the player sprite
+     * @param speed positive = right, negative = left, eg: 150
+     */
+    //% group="Movement"
+    //% block="move $sprite horizontally at speed $speed"
+    //% sprite.shadow=variables_get
+    //% speed.defl=150
+    //% weight=100
+    export function moveHorizontal(sprite: Sprite, speed: number): void {
+        const st = getState(sprite)
+        if (st.isDashing) return
+        if (st.isClimbing) {
+            sprite.vx = speed * 0.3
+            return
         }
-    ],
-    "galleries": {
-        "Beginner Skillmaps": "beginner-maps",
-        "Next Level Skillmaps": "inter-maps",
-        "Tutorials": "tutorials",
-        "Multiplayer Tutorials": "multiplayer-tutorials",
-        "Multiplayer Games": "multiplayer-games",
-        "Live Coding": "live-coding",
-        "Blocks Games": "blocks-games",
-        "JavaScript Games": "javascript-games",
-        "Game Jam": "game-jam",
-        "Advanced Livestream": "advanced-stream",
-        "Community Games": "community",
-        "Game Design Concepts": "concepts",
-        "Graphics and Math": "graphics-math",
-        "Arts and Crafts": "arts-and-crafts",
-        "Courses": "courses",
-        "Arcade Compatible Devices": "arcade-devices",
-        "DIY Hardware": "diy-hardware",
-        "How to Make a Game Videos": "how-to-make-a-game",
-        "John Park's Workshop": "john-parks-workshop"
-    },
-    "electronManifest": {
-        "latest": "v4.0.11"
-    },
-    "teachertool": {
-        "showSharePageEvalButton": true,
-        "defaultChecklistUrl": "teachertool/checklists/general-code-quality.json",
-        "carousels": [
-            {
-                "title": "Checklists for Tutorials",
-                "cardsUrl": "teachertool/carousels/checklists-for-tutorials/cards.json"
-            },
-            {
-                "title": "Checklists for Games",
-                "cardsUrl": "teachertool/carousels/checklists-for-games/cards.json"
-            }
-        ]
-    },
-    "kiosk": {
-        "games": [
-            {
-                "id": "25572-25731-72869-29244",
-                "name": "Space Destroyer",
-                "description": "Use the lasers on your spaceship to shoot falling asteroids!",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "84490-94874-87123-99597",
-                "name": "Bunny Hop!",
-                "description": "Help your bunny hop over obstacles as they run through the forest",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "60307-91678-81892-80686",
-                "name": "Pigeon: Deliverance",
-                "description": "Fly through the dangerous rooftops and ledges of New York City delivering messages!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "12407-17885-37645-48510",
-                "name": "Rhombus Rush!",
-                "description": "Test your skills in this fast-paced game of reflexes and timing! Levels designed by members of the MakeCode Forum!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "16040-59904-05312-47571",
-                "name": "NINJA",
-                "description": "Try to slice all the logs as quickly and evenly as you can! Press Left/Right to change direction and A to slice!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "48013-80771-51585-68674",
-                "name": "Falling Duck",
-                "description": "Fly through the sky avoiding obstacles",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "13636-04540-17933-74746",
-                "name": "Best Nest",
-                "description": "Try to clean your side of the nest! Clear the leaves and collect acorns while messing up your opponent's side! (requires 2 players)",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "57893-82458-42686-66689",
-                "name": "Joey's Pool Sharks",
-                "description": "Challenge your friend to a game of pool! Be sure to check out the (very silly) alternate rule sets! (requires two players)",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "58561-90881-11172-52149",
-                "name": "BUG PRESIDENT: THE GAME",
-                "description": "Lead your constituents to find food and carry it back to the nest as fast as you can!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "57061-57423-51986-84463",
-                "name": "MakeCode Racers",
-                "description": "Top-down racing game for 1-4 players. Press Left and Right to steer, A to use picked up item.",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "45517-18731-77014-82186",
-                "name": "Auto and Ollie",
-                "description": "Control both cats and use their unique strengths to solve puzzles! Press A to swap between characters. Up is jump and B triggers Ollie's tackle attack. (1-2 players)",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "07573-63879-62644-28924",
-                "name": "Asphodel follows directions",
-                "description": "Place arrows along the path to help Asphodel the witch find their way",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "95233-64905-79615-48176",
-                "name": "Galga",
-                "description": "Controlling a starship, both players will destroy the Galga forces, while avoiding enemies. Each player has 3 lives, game ends once a player runs out of lives.",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "13412-17300-80986-88577",
-                "name": "TicTacTwo!",
-                "description": "Ultimate battle between cats and dogs! The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner as the best pet.",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "69052-09321-39220-20264",
-                "name": "Blocky Boss Battle",
-                "description": "A test of reflexes! Avoid the blue stingers while sending fireballs at the boss!",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "03442-50539-08276-81984",
-                "name": "Hot Air Balloon",
-                "description": "Navigate your hot air balloon through the mountains avoiding birds and spaceships",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "91782-54072-13194-99228",
-                "name": "Caterpillar",
-                "description": "Eat the leaves to grow, but watch out for walls!",
-                "highScoreMode": "SingleAscending"
-            },
-            {
-                "id": "14111-27578-89085-17056",
-                "name": "Jewel Raider",
-                "description": "Adventure through levels collecting jewels and avoiding obstacles!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "21784-44427-92956-37509",
-                "name": "Mouse Adventure",
-                "description": "Go on a mouse adventure in a haunted castle, battling bad guys, avoiding obstacles and collecting keys!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "31127-78143-64325-24445",
-                "name": "Stack the Goats",
-                "description": "Build a tower of goats!",
-                "highScoreMode": "None"
-            },
-            {
-                "id": "00865-64360-23737-26211",
-                "name": "Dino Zoo",
-                "description": "Use your knowledge of the cycle of life to stack plants and dinosaurs!",
-                "highScoreMode": "None"
-            }
-        ]
+        sprite.vx = speed
+        if (speed > 0) st.facingRight = true
+        if (speed < 0) st.facingRight = false
+    }
+
+    /**
+     * Manually set the facing direction used by dash.
+     * @param sprite the player sprite
+     * @param facingRight true = facing right, false = facing left
+     */
+    //% group="Movement"
+    //% block="set $sprite facing right $facingRight"
+    //% sprite.shadow=variables_get
+    //% facingRight.shadow=toggleOnOff
+    //% weight=90
+    export function setFacing(sprite: Sprite, facingRight: boolean): void {
+        getState(sprite).facingRight = facingRight
+    }
+
+    /**
+     * Returns true if the sprite is currently facing right.
+     * @param sprite the player sprite
+     */
+    //% group="Movement"
+    //% block="$sprite is facing right"
+    //% sprite.shadow=variables_get
+    //% weight=85
+    export function isFacingRight(sprite: Sprite): boolean {
+        return getState(sprite).facingRight
+    }
+
+    // =========================================================================
+    // SECTION: Detection
+    // =========================================================================
+
+    /**
+     * Returns true if the sprite is standing on the ground
+     * (flat tile OR slope tile).
+     * @param sprite the player sprite
+     */
+    //% group="Detection"
+    //% block="$sprite is on ground"
+    //% sprite.shadow=variables_get
+    //% weight=100
+    export function isOnGround(sprite: Sprite): boolean {
+        return getState(sprite).isOnGround
+    }
+
+    /**
+     * Returns true if the sprite is standing on a slope tile specifically.
+     * @param sprite the player sprite
+     */
+    //% group="Detection"
+    //% block="$sprite is on slope"
+    //% sprite.shadow=variables_get
+    //% weight=97
+    export function isOnSlopeGround(sprite: Sprite): boolean {
+        // Re-exposed here for the Detection section alongside the other ground checks.
+        // The Slopes section version is the same function.
+        return getState(sprite).onSlope
+    }
+
+    /**
+     * Returns true if the sprite is falling downward and not on the ground.
+     * @param sprite the player sprite
+     */
+    //% group="Detection"
+    //% block="$sprite is falling"
+    //% sprite.shadow=variables_get
+    //% weight=95
+    export function isFalling(sprite: Sprite): boolean {
+        return sprite.vy > 0 && !getState(sprite).isOnGround
+    }
+
+    /**
+     * Returns true if the sprite is moving upward after a jump.
+     * @param sprite the player sprite
+     */
+    //% group="Detection"
+    //% block="$sprite is rising"
+    //% sprite.shadow=variables_get
+    //% weight=90
+    export function isRising(sprite: Sprite): boolean {
+        return sprite.vy < 0
+    }
+
+    /**
+     * Returns true if the sprite is currently dashing.
+     * @param sprite the player sprite
+     */
+    //% group="Detection"
+    //% block="$sprite is dashing"
+    //% sprite.shadow=variables_get
+    //% weight=85
+    export function isDashing(sprite: Sprite): boolean {
+        return getState(sprite).isDashing
+    }
+
+    /**
+     * Returns how many jumps the sprite has remaining.
+     * @param sprite the player sprite
+     */
+    //% group="Detection"
+    //% block="$sprite jumps remaining"
+    //% sprite.shadow=variables_get
+    //% weight=80
+    export function jumpsRemaining(sprite: Sprite): number {
+        return getState(sprite).jumpsLeft
+    }
+
+    // =========================================================================
+    // SECTION: Tweaks
+    // =========================================================================
+
+    /**
+     * Set horizontal velocity directly. Skips during a dash.
+     * @param sprite the player sprite
+     * @param vx horizontal velocity, eg: 200
+     */
+    //% group="Tweaks"
+    //% block="set $sprite horizontal velocity to $vx"
+    //% sprite.shadow=variables_get
+    //% vx.defl=200
+    //% weight=100
+    export function setVx(sprite: Sprite, vx: number): void {
+        if (!getState(sprite).isDashing) sprite.vx = vx
+    }
+
+    /**
+     * Set vertical velocity directly.
+     * @param sprite the player sprite
+     * @param vy vertical velocity (negative = up), eg: -400
+     */
+    //% group="Tweaks"
+    //% block="set $sprite vertical velocity to $vy"
+    //% sprite.shadow=variables_get
+    //% vy.defl=-400
+    //% weight=95
+    export function setVy(sprite: Sprite, vy: number): void {
+        sprite.vy = vy
+    }
+
+    /**
+     * Add an impulse to the sprite. Useful for bouncy platforms
+     * and explosion blasts.
+     * @param sprite the player sprite
+     * @param vx horizontal impulse, eg: 0
+     * @param vy vertical impulse (negative = up), eg: -200
+     */
+    //% group="Tweaks"
+    //% block="add impulse to $sprite vx $vx vy $vy"
+    //% sprite.shadow=variables_get
+    //% vx.defl=0
+    //% vy.defl=-200
+    //% weight=90
+    export function addImpulse(sprite: Sprite, vx: number, vy: number): void {
+        sprite.vx += vx
+        sprite.vy += vy
+    }
+
+    /**
+     * Restore the sprite's dash before landing (for mid-air dash pickups).
+     * @param sprite the player sprite
+     */
+    //% group="Tweaks"
+    //% block="restore $sprite dash"
+    //% sprite.shadow=variables_get
+    //% weight=85
+    export function restoreDash(sprite: Sprite): void {
+        const st = getState(sprite)
+        st.canDash = true
+        st.dashCooldownTimer = 0
+    }
+
+    /**
+     * Restore all jumps immediately (for jump-refill pickups).
+     * @param sprite the player sprite
+     */
+    //% group="Tweaks"
+    //% block="restore $sprite jumps"
+    //% sprite.shadow=variables_get
+    //% weight=80
+    export function restoreJumps(sprite: Sprite): void {
+        getState(sprite).jumpsLeft = getState(sprite).maxJumps
+    }
+
+    // =========================================================================
+    // SECTION: Combat
+    // =========================================================================
+
+    /**
+     * Knock the sprite back — direction is reversed from current facing.
+     * Cancels climbing and slope grounding.
+     * @param sprite the player sprite
+     * @param forceX horizontal knockback speed, eg: 200
+     * @param forceY vertical knockback (negative = up), eg: -150
+     */
+    //% group="Combat"
+    //% block="knock back $sprite vx $forceX vy $forceY"
+    //% sprite.shadow=variables_get
+    //% forceX.defl=200
+    //% forceY.defl=-150
+    //% weight=100
+    export function knockback(sprite: Sprite, forceX: number, forceY: number): void {
+        const st = getState(sprite)
+        if (st.isClimbing) {
+            st.isClimbing = false
+            sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+        }
+        st.onSlope = false
+        sprite.vx = st.facingRight ? -Math.abs(forceX) : Math.abs(forceX)
+        sprite.vy = forceY
+    }
+
+    /**
+     * Knock the sprite away from a source position.
+     * Cancels climbing and slope grounding.
+     * @param sprite the player sprite
+     * @param sourceX X of the damage source, eg: 0
+     * @param sourceY Y of the damage source, eg: 0
+     * @param force push strength, eg: 250
+     */
+    //% group="Combat"
+    //% block="knock $sprite away from x $sourceX y $sourceY with force $force"
+    //% sprite.shadow=variables_get
+    //% sourceX.defl=0
+    //% sourceY.defl=0
+    //% force.defl=250
+    //% weight=95
+    export function knockbackFromPoint(
+        sprite: Sprite,
+        sourceX: number,
+        sourceY: number,
+        force: number
+    ): void {
+        const st = getState(sprite)
+        if (st.isClimbing) {
+            st.isClimbing = false
+            sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+        }
+        st.onSlope = false
+        const dx = sprite.x - sourceX
+        const dy = sprite.y - sourceY
+        const len = Math.sqrt(dx * dx + dy * dy) || 1
+        sprite.vx = (dx / len) * force
+        sprite.vy = (dy / len) * force
+    }
+
+    /**
+     * Launch the sprite upward — for bounce pads or stomp bounces.
+     * Cancels climbing and slope grounding.
+     * @param sprite the player sprite
+     * @param force upward launch speed (positive, direction auto-applied), eg: 350
+     */
+    //% group="Combat"
+    //% block="launch $sprite upward with force $force"
+    //% sprite.shadow=variables_get
+    //% force.defl=350
+    //% weight=90
+    export function launch(sprite: Sprite, force: number): void {
+        const st = getState(sprite)
+        if (st.isClimbing) {
+            st.isClimbing = false
+            sprite.setFlag(SpriteFlag.GhostThroughWalls, false)
+        }
+        st.onSlope = false
+        sprite.vy = -Math.abs(force)
+        st.jumpsLeft = st.maxJumps
     }
 }
