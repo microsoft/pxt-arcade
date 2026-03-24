@@ -97,6 +97,9 @@
                 "preferred": true,
                 "tags": [ "Sprites" ]
             },
+            "bladebaillio/image-mapping": {
+                "tags": [ "Visual Effects" ]
+            },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
             "riknoll/arcade-mini-menu": {},
@@ -411,7 +414,7 @@
         "John Park's Workshop": "john-parks-workshop"
     },
     "electronManifest": {
-        "latest": "v2.0.56"
+        "latest": "v4.0.11"
     },
     "teachertool": {
         "showSharePageEvalButton": true,

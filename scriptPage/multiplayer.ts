@@ -1,8 +1,10 @@
-let multiplayerInitialized = false;
+if (!(window as any).multiplayerInitialized) {
+    (window as any).multiplayerInitialized = false;
+}
 
 function enableMultiplayerUI(info: PubInfo) {
-    if (multiplayerInitialized) return;
-    multiplayerInitialized = true;
+    if ((window as any).multiplayerInitialized) return;
+    (window as any).multiplayerInitialized = true;
 
     pxtTickEvent('share.isMultiplayerGame', { target: "arcade" });
 
@@ -12,17 +14,33 @@ function enableMultiplayerUI(info: PubInfo) {
         presenceBar.style.display = "block";
     }
 
+    const onClick = function () {
+        pxtTickEvent('share.multiplayerShareClick', { target: "arcade" });
+        const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://localhost:3000" : "";
+        const multiplayerHostUrl = `${domain}${pxt.webConfig.relprefix}multiplayer?host=${info.projectId}`;
+
+        window.open(multiplayerHostUrl, "_blank");
+    }
+
+    // icon button
     const shareButton = document.getElementById("multiplayer-share-button");
     if (shareButton) {
-        shareButton.addEventListener("click", function () {
-            pxtTickEvent('share.multiplayerShareClick', { target: "arcade" });
-            const domain = pxt.BrowserUtils.isLocalHostDev() ? "http://localhost:3000" : "";
-            const multiplayerHostUrl = `${domain}${pxt.webConfig.relprefix}multiplayer?host=${info.projectId}`;
-
-            window.open(multiplayerHostUrl, "_blank");
-        });
-        shareButton.style.display = "block";
+        shareButton.addEventListener("click", onClick);
+        shareButton.style.display = "flex";
     }
+
+    // overflow menu button
+    const overflowButton = document.getElementById("multiplayer-share-button-overflow");
+    if (overflowButton) {
+        overflowButton.addEventListener("click", onClick);
+        overflowButton.style.display = "block";
+    }
+
+    // fix the aria-setsize for the overflow menu items since we're adding an additional item
+    const overflowItems = document.querySelectorAll(".common-menu-dropdown [aria-setsize]");
+    overflowItems.forEach(item => {
+        item.setAttribute("aria-setsize", "4");
+    });
 
     window.addEventListener('message', function (ev) {
         if (ev.data && ev.data.type === "status" && ev.data.state === "running") {
