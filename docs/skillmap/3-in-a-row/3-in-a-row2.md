@@ -124,7 +124,7 @@ We need to check for matches of each 🟩🟠🔷 symbol separately.
 
 - :loops: From ``||loops:Loops||``, drag a ``||loops:for element value of list||`` block into the ``||functions(noclick):clearMatches||`` function and after the  ``||variables(noclick):set cleared||`` block.
 
-- :mouse pointer: In the ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):emptyTile||`` drop down and select **New variable...** 
+- :mouse pointer: In the ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):value||`` drop down and select **Rename variable...** 
 
 - :mouse pointer: Type in **_gem_** as the variable name and then click Ok
 
@@ -149,7 +149,7 @@ Now we'll use a special extension called 🔎 **Tile Scanner** to find 3-in-a-ro
 
 - :loops: From ``||loops:Loops||``, drag another ``||loops:for element value of list||`` block and place it inside the existing ``||loops(noclick):for element||`` loop.
 
-- :mouse pointer: In this ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):emptyTile||`` drop down and select **New variable...** 
+- :mouse pointer: In this ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):value||`` drop down and select **Rename variable...** 
 
 - :mouse pointer: Type in **_location_** as the variable name and then click Ok
 
@@ -216,6 +216,12 @@ Inside the inner ``||loops(noclick):for||`` loop add the following blocks:
 
 - :headphones: From ``||music:Music||``, drag a ``||music:play sound||`` block out and drop after the ``||sprites(noclick):start effect||`` block
 
+```blockconfig.local
+let cursor: Sprite = null
+cursor.startEffect(effects.confetti)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+```
+
 ```blocks
 let symbols: Image[] = []
 let cleared = false
@@ -240,9 +246,9 @@ Now that we've found a match, we should change the **cleared** boolean variable 
 
 ---
 
-- :variables: From the ``||variables:Variables||`` Toolbox drawer, drag a ``||variables:set variable||`` block out and drop after the ``||music(noclick):play sound||`` block
+- :variables: From the ``||variables:Variables||`` Toolbox drawer, drag a ``||variables:set||`` block out and drop after the ``||music(noclick):play sound||`` block
 
-- :mouse pointer: In the ``||variables(noclick):set variable||`` block, click on the variable drop down and select the ``||variables(noclick):cleared||`` variable
+- :mouse pointer: In the ``||variables(noclick):set||`` block, click on the variable drop down and select the ``||variables(noclick):cleared||`` variable
 
 - :random: From ``||logic:Logic||``, drag a ``||logic:<true>||`` block into the ``||variables(noclick):set cleared||`` block replacing the **0**
 
@@ -298,7 +304,7 @@ function clearMatches () {
 
 ## ❌ Game over if no matches
 
-After going through the 🪺 nested loop to scan for matches for each 🔷 gem, if we haven't cleared any tiles, then we lose the game. 😞
+After going through the nested loop to scan for matches for each 🔷 gem, if we haven't cleared any tiles, then we lose the game. 😞
 
 ---
 
@@ -344,7 +350,7 @@ function clearMatches () {
 
 ## 🤩 Great Job!
 
-👏 Good progress on your game so far! 👏
+👏 Good progress on your game so far!
 
 Click **Done** to move on to the final part of the skillmap where you will code the logic to ↔️ swap tiles.
 
