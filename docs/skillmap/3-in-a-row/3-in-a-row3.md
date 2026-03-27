@@ -107,6 +107,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     locationRight = cursor.tilemapLocation()
     // @highlight
     locationLeft = locationRight.getNeighboringLocation(CollisionDirection.Left)
+    swapImage = 0
 })
 ```
 
@@ -205,6 +206,8 @@ After each swap, this is where we call our **clearMatches** function to check if
 - :function: From ``||functions:Functions||``, drag a ``||functions:call clearMatches||`` block to the end of the ``||controller(noclick):on A button pressed||`` event
 
 ```blocks
+// @hide
+function clearMatches () {}
 let cursor: Sprite = null
 let locationRight: tiles.Location = null
 let locationLeft: tiles.Location = null
