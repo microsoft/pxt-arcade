@@ -218,7 +218,7 @@ Inside the inner ``||loops(noclick):for||`` loop add the following blocks:
 
 ```blockconfig.local
 let cursor: Sprite = null
-cursor.startEffect(effects.confetti)
+cursor.startEffect(effects.confetti, 500)
 music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
 ```
 
