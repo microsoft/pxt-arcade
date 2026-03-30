@@ -12,9 +12,11 @@ Take a moment to review what this code does before moving on to the next step.
 
 If your code isn't working, you can select **Replace my code** below to use some default starter code.
 
-## 🕹️ Move the cursor sprite
+## Move the cursor up and down
 
 Now that we have our board set up, let's make the rectangle cursor move around the screen with the joystick or arrow keys!
+
+First, let's move it up and down.
 
 ---
 
@@ -22,17 +24,44 @@ Now that we have our board set up, let's make the rectangle cursor move around t
 
 💡 _Each tile is 16x16 pixels, so we move 16 pixels at a time. Moving ⬆️ UP means subtracting from the **y** (or vertical) axis_
 
-- :game: From ``||controller:Controller||``, drag three more ``||controller:on up button pressed||`` group of blocks onto the Workspace. You may notice they turn grey and disabled. We'll fix this next!
+- :game: From ``||controller:Controller||``, drag another ``||controller:on up button pressed||`` group of blocks onto the Workspace. You may notice they turn grey and disabled. We'll fix this next!
 
-- :mouse pointer: For each of these groups of blocks, change the direction from up to **down**, **right**, and **left**
+- :mouse pointer: Click on the **up** drop-down menu field on the block and change the direction to **down**
 
 - :mouse pointer: In the ``||controller:on down button pressed||`` block change the **y** value to positive **16**
 
+```blocks
+let cursor: Sprite = null
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    cursor.y += -16
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    cursor.y += 16
+})
+```
+
+```blockconfig.local
+let cursor: Sprite = null
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    cursor.y += -16
+})
+```
+
+## Move the cursor left and right
+
+Next, let's move the cursor left and right on the game board.
+
+---
+
+- :game: From the ``||controller:Controller||`` Toolbox drawer, drag the ``||controller:on left button pressed||`` group of blocks into an empty area of the Workspace
+
+- :game: From ``||controller:Controller||``, drag another ``||controller:on left button pressed||`` group of blocks onto the Workspace
+
+- :mouse pointer: In this second group of blocks click on the **left** drop-down field on the block and change the direction to **right**
+
 💡 _Moving ↔️ Right and Left means changing the value of the **x** (or horizontal) axis_
 
-- :mouse pointer: In the ``||controller:on right button pressed||`` block change the **y** to **x** and the value to positive **16**
-
-- :mouse pointer: In the ``||controller:on left button pressed||`` block change the **y** to **x** and leave the value at -16
+- :mouse pointer: In the ``||controller:on right button pressed||`` block change the x value to positive **16**
 
 ~hint Confused about x and y? 💡
 
@@ -49,15 +78,16 @@ hint~
 
 ```blocks
 let cursor: Sprite = null
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    cursor.y += -16
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    cursor.y += 16
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    cursor.x += -16
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     cursor.x += 16
 })
+```
+
+```blockconfig.local
+let cursor: Sprite = null
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     cursor.x += -16
 })
@@ -87,7 +117,7 @@ function clearMatches () {
 
 ## Track if matches were found
 
-We need to know if any matches were cleared, so to do this we'll use a ✅❌ boolean variable.
+We need to know if any matches were cleared, so to do this we'll use a boolean variable.
 
 ---
 
@@ -124,7 +154,7 @@ We need to check for matches of each 🟩🟠🔷 symbol separately.
 
 - :loops: From ``||loops:Loops||``, drag a ``||loops:for element value of list||`` block into the ``||functions(noclick):clearMatches||`` function and after the  ``||variables(noclick):set cleared||`` block.
 
-- :mouse pointer: In the ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):emptyTile||`` drop down and select **New variable...** 
+- :mouse pointer: In the ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):value||`` drop down and select **Rename variable...** 
 
 - :mouse pointer: Type in **_gem_** as the variable name and then click Ok
 
@@ -141,7 +171,7 @@ function clearMatches () {
 }
 ```
 
-## 🔎 Use the Tile Scanner to find matches
+## Use the Tile Scanner to find matches
 
 Now we'll use a special extension called 🔎 **Tile Scanner** to find 3-in-a-row matches!
 
@@ -149,13 +179,13 @@ Now we'll use a special extension called 🔎 **Tile Scanner** to find 3-in-a-ro
 
 - :loops: From ``||loops:Loops||``, drag another ``||loops:for element value of list||`` block and place it inside the existing ``||loops(noclick):for element||`` loop.
 
-- :mouse pointer: In this ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):emptyTile||`` drop down and select **New variable...** 
+- :mouse pointer: In this ``||loops(noclick):for element||`` block, click on the ``||variables(noclick):gem||`` drop down and select **New variable...** 
 
 - :mouse pointer: Type in **_location_** as the variable name and then click Ok
 
 💡 _Loops inside other loops are called 🪺 "Nested Loops"_
 
-- :binoculars: From the ``||tileScanner:Tile Scanner||`` Toolbox category, drag the ``||tileScanner:scan for horizontal or vertical lines that match tile||`` block into the ``||loops(noclick):for element location||`` block replacing the ``||variables(noclick):list||`` variable
+- :binoculars: From the ``||tileScanner:Tile Scanner||`` Toolbox category, drag the ``||tileScanner:scan for horizontal or vertical lines that match tile||`` block to replace the ``||variables(noclick):list||`` variable in the ``||loops(noclick):for element location||`` block
 
 ~hint What does this do? 💡
 
@@ -178,15 +208,15 @@ function clearMatches () {
 }
 ```
 
-## 🚫 Clear the matched tiles
+## Clear the matched tiles
 
 When we find a match, let's clear those tiles!
 
 ---
 
-- :tile scanner: From ``||tileScanner:Tile Scanner||``, drag a ``||tileScanner:set tile at myLocations||`` block out and drop into the inner ``||loops(noclick):for element||`` loop
+- :binoculars: From ``||tileScanner:Tile Scanner||``, drag a ``||tileScanner:set tile at myLocations||`` block out and drop into the inner ``||loops(noclick):for element||`` loop
 
-- :mouse pointer: Drag out the ``||variables(noclick):location||`` variable from the ``||loops(noclick):for element||`` block and drop in the ``||tileScanner(noclick):set tile||`` block replacing ``||variables(noclick):myLocations||``
+- :mouse pointer: Drag out the ``||variables(noclick):location||`` variable from the ``||loops(noclick):for element||`` block and drop it in the ``||tileScanner(noclick):set tile||`` block replacing ``||variables(noclick):myLocations||``
 
 This erases the matched tiles! ⛔⛔⛔
 
@@ -234,15 +264,21 @@ function clearMatches () {
 }
 ```
 
+```blockconfig.local
+let cursor: Sprite = null
+cursor.startEffect(effects.confetti, 500)
+music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+```
+
 ## 🥇 Set cleared to true and add a point
 
 Now that we've found a match, we should change the **cleared** boolean variable to ✅ true and add a point to our 📝 score.
 
 ---
 
-- :variables: From the ``||variables:Variables||`` Toolbox drawer, drag a ``||variables:set variable||`` block out and drop after the ``||music(noclick):play sound||`` block
+- :variables: From the ``||variables:Variables||`` Toolbox drawer, drag a ``||variables:set||`` block out and drop after the ``||music(noclick):play sound||`` block
 
-- :mouse pointer: In the ``||variables(noclick):set variable||`` block, click on the variable drop down and select the ``||variables(noclick):cleared||`` variable
+- :mouse pointer: In the ``||variables(noclick):set||`` block, click on the variable name drop down and select the ``||variables(noclick):cleared||`` variable
 
 - :random: From ``||logic:Logic||``, drag a ``||logic:<true>||`` block into the ``||variables(noclick):set cleared||`` block replacing the **0**
 
@@ -268,7 +304,7 @@ function clearMatches () {
 }
 ```
 
-## 🫗 Refill empty tiles after clearing
+## Refill empty tiles after clearing
 
 After clearing the matches, we need to fill the empty spaces with new 🟩🟠🔷 symbols - luckily we already have a function for that!
 
@@ -280,6 +316,8 @@ After clearing the matches, we need to fill the empty spaces with new 🟩🟠�
 let cursor: Sprite = null
 let symbols: Image[] = []
 let cleared = false
+// @hide
+function fillEmptyTiles () {}
 function clearMatches () {
     cleared = false
     for (let gem of symbols) {
@@ -298,7 +336,7 @@ function clearMatches () {
 
 ## ❌ Game over if no matches
 
-After going through the 🪺 nested loop to scan for matches for each 🔷 gem, if we haven't cleared any tiles, then we lose the game. 😞
+After going through the nested loop to scan for matches for each 🔷 gem, if we haven't cleared any tiles, then we lose the game. 😞
 
 ---
 
@@ -344,7 +382,7 @@ function clearMatches () {
 
 ## 🤩 Great Job!
 
-👏 Good progress on your game so far! 👏
+👏 Good progress on your game so far!
 
 Click **Done** to move on to the final part of the skillmap where you will code the logic to ↔️ swap tiles.
 
@@ -381,11 +419,7 @@ function fillEmptyTiles () {
 ```
 
 ```blockconfig.global
-let cursor: Sprite = null
 function fillEmptyTiles () {}
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    cursor.y += -16
-})
 let gem: Image = null
 tileScanner.scanForLines(tileScanner.LineType.HorizontalOrVertical, tileScanner.tileIs(gem), 3)
 ```
