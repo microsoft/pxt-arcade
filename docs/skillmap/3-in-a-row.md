@@ -19,7 +19,7 @@
 
 * name: 3 in a Row - Part 1
 * type: tutorial
-* description: Set up the game board and fill with colored symbols!
+* description: Set up the game board and fill it with colored symbols!
 * url: /skillmap/3-in-a-row/3-in-a-row1
 * imageUrl: /static/skillmap/3-in-a-row/3-in-a-row1.gif
 * tags: puzzle, tilemap, intermediate
