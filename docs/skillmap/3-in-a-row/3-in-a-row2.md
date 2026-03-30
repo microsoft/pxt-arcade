@@ -360,6 +360,8 @@ hint~
 let symbols: Image[] = []
 let cleared = false
 let cursor: Sprite = null
+// @hide
+function fillEmptyTiles () {}
 function clearMatches () {
     cleared = false
     for (let gem of symbols) {
