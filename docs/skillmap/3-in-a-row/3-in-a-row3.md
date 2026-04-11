@@ -41,13 +41,13 @@ We need to create a few different 🔤 variables to keep track of the tiles we'r
 
 ---
 
-- :variables: In the ``||variables:Variables||`` Toolbox, click the **Make a Variable...** button three times to create 3 different variables named: **locationRight**, **locationLeft**, and **swapImage**.
+- :variables: In the ``||variables:Variables||`` Toolbox, use the **Make a Variable...** button to create 3 different variables named: **locationRight**, **locationLeft**, and **swapImage**.
 
 ``||variables(noclick):locationRight||`` - will hold the right tile in the cursor<br/>
 ``||variables(noclick):locationLeft||`` - will hold the left tile in the cursor<br/>
 ``||variables(noclick):swapImage||`` - is temporary storage for swapping tile images
 
-- :variables: And now from the ``||variables:Variables||`` Toolbox, drag three of these ``||variables:set variable||`` blocks out into the ``||controller(noclick):on A button pressed||`` block, making sure to select the variable names as **locationRight**, **locationLeft** and **swapImage**
+- :variables: And now from the ``||variables:Variables||`` Toolbox, drag three of these ``||variables:set||`` blocks out into the ``||controller(noclick):on A button pressed||`` block, making sure to select the variable names as **locationRight**, **locationLeft** and **swapImage**
 
 ```blocks
 let locationRight: tiles.Location = null
@@ -62,7 +62,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Get the cursor's 👉 right tile location
 
-The tile that is under the center of a sprite is considered the sprite’s tilemap 📍 location. In this case, the cursor's location is going to be on the right tile.
+The tile that is under the center of a sprite is considered the sprite’s tilemap 📍 location. Due to the position of the cursor, the location is actually going to be on the right tile.
 
 ---
 
@@ -107,6 +107,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     locationRight = cursor.tilemapLocation()
     // @highlight
     locationLeft = locationRight.getNeighboringLocation(CollisionDirection.Left)
+    swapImage = 0
 })
 ```
 
@@ -205,6 +206,8 @@ After each swap, this is where we call our **clearMatches** function to check if
 - :function: From ``||functions:Functions||``, drag a ``||functions:call clearMatches||`` block to the end of the ``||controller(noclick):on A button pressed||`` event
 
 ```blocks
+// @hide
+function clearMatches () {}
 let cursor: Sprite = null
 let locationRight: tiles.Location = null
 let locationLeft: tiles.Location = null
@@ -222,15 +225,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## 🎉 Congratulations!
 
-You've created a **3 in a Row** puzzle game!
+You've created a 3 in a Row puzzle game! 🟡🟢🟣  
+Take a moment to play your game. What's the highest score you can get?
 
 ---
 
-**How to play:**
+**Reminder on how to play:**
 - ➡️ Use the **arrow keys** or **joystick** to move your cursor around the grid
 - 🟢 Press **A** to swap the tiles under the cursor
 - 3️⃣ Create matches of 3 or more identical symbols in a row (horizontally or vertically)
 - ❌ If your swap doesn't create a match, the game ends
+
+## Go further
+
+Think about some ways you might want to take your game to the next level.
+
+---
 
 **Challenge ideas:**
 - ⏱️ Add a timer for extra pressure

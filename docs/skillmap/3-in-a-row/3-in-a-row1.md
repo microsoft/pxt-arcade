@@ -27,7 +27,7 @@ scene.setBackgroundColor(13)
 
 ## Create a selector sprite
 
-Now we need to create a 👾 sprite that acts as a cursor to show which tiles are ☑️ selected on the grid.
+Now we need to create a 👾 sprite that acts as a cursor to show which tiles are selected on the grid.
 
 ---
 
@@ -131,6 +131,8 @@ Now let's create the 𖣯 game board using a tilemap!
 - :mouse pointer: Click the grey box to open the **Tilemap Editor**
 
 - :mouse pointer: In the bottom left corner, set the tilemap size to **10 columns** wide by **7 rows** tall and then click **Done**
+
+![canvas size](/static/skillmap/3-in-a-row/canvasSize.png "canvas size")
 
 - :lightbulb: **Don't draw anything** on the tilemap yet — we'll fill it with code!
 
@@ -253,7 +255,7 @@ Now let's add code to find all the ⬜ empty spaces on the game board.
 
 - :mouse pointer: Type in **_emptyTile_** as the variable name and then click Ok
 
-- :tree: From the ``||scene:Scene||`` Toolbox category, drag an ``||scene:array of all [tile] locations||`` block and drop it in the ``||loops(noclick):for element||`` block replacing the ``||variables(noclick):list||`` variable
+- :tree: From the ``||scene:Scene||`` Toolbox category, drag an ``||scene:array of all [tile] locations||`` block and drop it to replace the ``||variables(noclick):list||`` variable in the ``||loops(noclick):for element||`` block
 
 ~hint What does this do? 💡
 
@@ -294,9 +296,9 @@ function fillEmptyTiles () {
 }
 ```
 
-## 📢 Call the fill function
+## Call the fill function
 
-Now let's call our function to 📲 fill the board when the game starts!
+Now let's 📢 call our function to fill the board when the game starts!
 
 ---
 

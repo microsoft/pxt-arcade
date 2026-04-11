@@ -10,6 +10,12 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
 
 ```codecard
 [   {
+        "name": "Heist Jam",
+        "description": "Games about thievery, rogues, and crime!",
+        "url": "/gamejam/heist",
+        "imageUrl": "/static/gamejam/jams/heist/assets/preview.gif"
+    },
+    {
         "name": "Cozy Jam",
         "description": "Games that create a 'cozy,' or, maybe, relaxing atmosphere rather than a stressful one.",
         "url": "/gamejam/cozy",
