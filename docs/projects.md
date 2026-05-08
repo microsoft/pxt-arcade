@@ -68,6 +68,11 @@
         "videoUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.mp4"
     },
     {
+        "name": "Game Jam Hall of Fame",
+        "url": "/game-jam-hall-of-fame",
+        "imageUrl": "https://makecode.com/api/39697-95718-82872-45842/thumb"
+    },
+    {
         "name": "Game Design Concepts",
         "url": "/concepts",
         "imageUrl": "/static/concepts/walking-hero.png",
@@ -127,6 +132,7 @@
 [Game Jam](/game-jam),
 [Advanced Livestream](/advanced-stream),
 [Community Games](/community),
+[Game Jam Hall of Fame](/game-jam-hall-of-fame),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Arts and Crafts](/arts-and-crafts),
