@@ -21,9 +21,9 @@ DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
 You can interpret "sports" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation. If you're worried we won't *get* it, then put it in the game title or description when you submit!
 
 ## Don't stress! You've got plenty of time
-The game jam will run from **April 1, 2026** to **May 15, 2026**
+The game jam will run from **April 1, 2026** to **May 17, 2026**
 
-For you procrastinators out there, we will accept submissions until 11:59 PM PDT on May 15th!
+For you procrastinators out there, we will accept submissions until 11:59 PM PDT on May 17th!
 
 ## Getting started
 
