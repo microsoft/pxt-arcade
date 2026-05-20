@@ -62,3 +62,9 @@
 
 * [Command Line Interface](/cli)
 * Learn about [extensions](/extensions)
+
+## Other Documentation
+
+* [MakeCode](https://www.makecode.com/docs)
+* [Minecraft](https://minecraft.makecode.com/docs)
+* [Maker](https://maker.makecode.com/docs)
