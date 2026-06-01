@@ -155,7 +155,7 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "name": "TomatoCube Display Shield",
         "description": "micro:bit display shield for MakeCode Arcade",
         "imageUrl": "/static/hardware/tomatocube-display-shield.png",
-        "url": "https://tomatocube.com/product/makecode-arcade-display-shield-for-microbit",
+        "url": "https://tomatocube.com/product/makecode-arcade-display-shield-for-microbit"
     }
 ]
 ```
