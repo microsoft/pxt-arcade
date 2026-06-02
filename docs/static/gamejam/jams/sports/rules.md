@@ -1,55 +1,42 @@
-## Sports Jam
+## Sports Jam Winners!
 
-The theme for this jam is **Sports**. In other words, we're looking for games that prominently feature sports or games, both real and imagined!
+## First Place: Super Soccer Frog
+| |
+| -- |
+| [!["Super Soccer Frog" game screenshot](https://cdn.makecode.com/api/89699-84766-18852-49944/thumb)](https://arcade.makecode.com/89699-84766-18852-49944) |
+| &nbsp; |
 
-Does that mean we're asking you to make a game that perfectly simulates an existing sport like basketball or football? Not at all! You could make a game about a sport that doesn't exist, or make a game where you have to intentionally play a sport the wrong way, or make a game that simply exists in the "world" of sports. Even if you aren't a sports person (I know I'm not) there are lots of things that go into making sports "happen" that are just waiting to be gamified!
+[Super Soccer Frog](https://arcade.makecode.com/89699-84766-18852-49944) by **Bilangus** is a perfect example of how to take some simple mechanics and make them interlock in a super satisfying way. Your player is a frog that navigates platformer levels using a soccer ball. You can kick the soccer ball in various directions to hit switches, break rocks, and score goals. Simple enough, right? Well, leaving it at that would be a disservice to this gem of a game! The controls in this game are *tight*. For example, let's talk about jumping.
 
-Some good interpretations of this theme:
+You can jump in this game with or without your ball. As you might expect, not carrying the ball means you jump higher (no ball to weigh you down). So, do you have a platform that you can't quite reach while carrying the ball? Well, you can kick the ball into the air, jump up with your higher unburdened jump strength, and catch it before landing. Need even more height? Try kicking the ball into the air, jumping up to catch it, and then kicking the ball downwards *while still in midair* to get an extra boost of height!
 
-* A game where you compete in a sport that can only be played if you have at least eight arms
-* A game where you work as a groundskeeper in a baseball diamond
-* A game where you simulate the economics of running a local bowling league that is deeply in debt
-* A game where you have to edit clips from a game for instant replays on a sports network
-* ...and of course a game where you just play baseball or do the olympics or something
-
-
-DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
--- | --
-![](/static/gamejam/jams/sports/assets/sports-demo-1.gif) | ![](/static/gamejam/jams/sports/assets/sports-demo-2.gif) | ![](/static/gamejam/jams/sports/assets/sports-demo-3.gif)
+And that's just one example! There are lots of other subtle behaviors in this game that give you options for how to execute things: toss the ball while running to get it up on a ledge, kick it through gaps where the player can't fit, throw it into a spring loaded jump pad to send it flying off screen... This game is a puzzle platformer fan's dream and we can only hope that Bilangus will make some sort of level creator so that people can build all sorts of devious challenges.
 
 
-You can interpret "sports" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation. If you're worried we won't *get* it, then put it in the game title or description when you submit!
+## Second Place: DOMAIN: BASKETBALL
+| |
+| -- |
+| [!["DOMAIN: BASKETBALL" game screenshot](https://cdn.makecode.com/api/84418-55014-67976-79899/thumb)](https://arcade.makecode.com/84418-55014-67976-79899) |
+| &nbsp; |
 
-## Don't stress! You've got plenty of time
-The game jam will run from **April 1, 2026** to **May 17, 2026**
+[DOMAIN: BASKETBALL](https://arcade.makecode.com/84418-55014-67976-79899) has all the hallmarks of an **Invalidproject** game: the music is amazing, the art is beautiful, and the vibe is, let's say, ominous. You play as a lone basketball player in a mysterious arena who needs to land as many shots as possible. You progress by grabbing the ball and taking it to the free throw line in your terrifying baskeball themed liminal-space prison.
 
-For you procrastinators out there, we will accept submissions until 11:59 PM PDT on May 17th!
+What our judges loved most about this game is how it builds: every segment of the game brings more music, more visual elements, and more mechanics. It all combines into one glorious, stressful, crescendo that will leave you white knuckled as you try to score hoops while clinging to your remaining lives. But no worries if you can't hack it the first time around (this game is *hard*), that just means you get the joy of playing through one more time!
 
-## Getting started
+## Third Place (tie): Floorit
+| |
+| -- |
+| [!["Floorit" game screenshot](https://cdn.makecode.com/api/62390-38081-86902-97975/thumb)](https://arcade.makecode.com/62390-38081-86902-97975) |
+| &nbsp; |
 
-Never programmed in Microsoft MakeCode Arcade before? No problem! Check out our [beginner skillmaps](https://arcade.makecode.com/--skillmap#dino) to learn the basics of making a game!
+[Floorit](https://arcade.makecode.com/62390-38081-86902-97975) by **Octodemon** is an ode to racing (just watch the intro). Specifically, the kind of racing where you have F's and 1's with Europeans going ludicrously fast around a track with more than one left turn. What this game really nails down is the attention to detail: you'll need to monitor your car's tire health, body damage, and fuel during the race. Each circuit will have you deciding whether it's time to hit the pits or if you can eke out *just one more lap* before going in for repairs.. You'll likely burst into flames a few times when you choose foolishly.
 
-## Rules
+But that's just the tip of the iceberg. There are also multiple tracks, different driving conditions (who thought driving at night was a good idea!?), and tons of cars to unlock with your race winnings. This is a game that really rewards spending some time with it! We're told that Octodemon has also been making more updates on the forum, so make sure to check those out!
 
-1. Games should be built in MakeCode Arcade
-2. Your game must relate to the jam theme. Someone playing your game should be able to see how it relates to the theme without extra explanation.
-3. Keep the games PG: no NSFW, offensive, or excessively violent content.
-4. You must be at least 9 years old to participate.
-5. All games must be submitted by someone who is at least 13 years old. Younger students are welcome to participate, but it must be in partnership with an adult and with parent permission.
+## Third Place (tie): Hyper Speed
+| |
+| -- |
+| [!["Hyper Speed" game screenshot](https://cdn.makecode.com/api/85811-51210-23895-60311/thumb)](https://arcade.makecode.com/85811-51210-23895-60311) |
+| &nbsp; |
 
-## Join our team
-
-This game jam is designed to be an easy introduction to making games, even for folks without prior programming experience! We highly encourage parents and educators to work with interested students to bring their games to life.
-
-Join our [forums](https://forum.makecode.com) to chat with other coders, brainstorm ideas, or form a game jam team. You can hang out with the MakeCode team there too!
-
-## Tips and tricks
-
-* When designing your game, keep in mind that Arcade is restricted to a 160x120 16-color screen
-* See [these instructions](https://arcade.makecode.com/developer/images) for information on importing images and color palettes into Arcade.
-* Check out the [developer documentation](https://arcade.makecode.com/developer) for more advanced tips to use in Arcade.
-* Also make sure you check out the winners of [our][traffic-jam] [past][garden-jam] [jams][ocean-jam]!
-
-[traffic-jam]: https://arcade.makecode.com/gamejam/traffic
-[ocean-jam]: https://arcade.makecode.com/gamejam/ocean
-[garden-jam]: https://arcade.makecode.com/gamejam/garden
+We have a lot of racing games submitted for this jam, but none of them live up to their name more so than [Hyper Speed](https://arcade.makecode.com/85811-51210-23895-60311) by **Rune**. This one is *fast*; you're going to need some quick reflexes if you want to make it through a race without falling way behind the competition. But don't lose hope! The controls of this game are so precise that you can and will improve with practice. And that practice is worth it! Nothing feels much better than hugging a tight corner or hitting all the boost pads in a straightaway during a race. Once you wrap your head around it, this is one of the most addicting racing games we've had the pleasure of playing in MakeCode Arcade!

@@ -16,7 +16,8 @@
         {
             "id": "_d0AWy1Ksu13V",
             "title": "Makecode Football",
-            "author": "@Unique/Jayden"
+            "author": "@Unique/Jayden",
+            "description": "Choose your favorite football team and run plays to score touchdowns in this football simulation game!"
         },
         {
             "id": "_a06P62frDhXa",
@@ -36,7 +37,8 @@
         {
             "id": "_4t668VATfCHs",
             "title": "Tag!",
-            "author": "BitBot"
+            "author": "BitBot",
+            "description": "A good ol' fashioned game of 3 person tag! Just like the real thing, except you play in a huge arena and there is way more platforming and underground tunnels than I remember!"
         },
         {
             "id": "_cWR4g0aRhVjv",
@@ -79,9 +81,10 @@
             "author": "Lil' Torlet"
         },
         {
-            "id": "_i4hC14daxRJW",
+            "id": "04809-31955-37770-29859",
             "title": "Fistful of Aces",
-            "author": "Solek (Luke)"
+            "author": "Solek (Luke)",
+            "description": "Punch, kick, and uppercut your way to victory in this retro fighting game! Be sure to check out the other games in the Aces franchise on the forum!"
         },
         {
             "id": "_A7sFJ05XHhXx",
@@ -126,7 +129,8 @@
         {
             "id": "_01gCWyUuWdJJ",
             "title": "Throttlemonger",
-            "author": "RizeUpDev"
+            "author": "RizeUpDev",
+            "description": "You think you've got a lead foot? Can you turn on a dime? How about a nickel? Put your driving skills to the test in this multiplayer top-down racing game!"
         },
         {
             "id": "_Pxc3KTCwy9bj",
@@ -171,7 +175,8 @@
         {
             "id": "_Hayhu880Ui2E",
             "title": "Saw Core Training",
-            "author": "Christian G."
+            "author": "Christian G.",
+            "description": "You play as a disgraced soccer player who has been sentenced to scoring 100 goals before you can return to your team. It won't be that easy though, as you'll have to overcome all the real challenges that professional soccer players face like teleporters and tar pits!"
         },
         {
             "id": "_TPaeEodVdAf0",
@@ -196,7 +201,8 @@
         {
             "id": "_68UMavdCcMms",
             "title": "Zenith Smash",
-            "author": "CopySprite"
+            "author": "CopySprite",
+            "description": "Choose a familiar-looking character and battle it out in this \"smashing\" forum-inspired fighting game! Make sure you check the forum for more game updates!"
         },
         {
             "id": "_L4qY3eJ7x5f5",
@@ -226,7 +232,8 @@
         {
             "id": "_0EDVjE2xHCPX",
             "title": "Tidal Games",
-            "author": "Michael Caplan and classes"
+            "author": "Michael Caplan and classes",
+            "description": "A collection of minigames inspired by weight training! Get fit! Test your reflexes! Play as a giant anthropomorphic dog!"
         },
         {
             "id": "_V4e1E2P7Y3fo",
@@ -246,12 +253,14 @@
         {
             "id": "_DK97srhWDgR1",
             "title": "Octo Volley",
-            "author": "BLADEr (blade is fine)"
+            "author": "BLADEr",
+            "description": "A totally normal volleyball game where two disembodied tentacles compete. Be sure to check out the animations on this one!"
         },
         {
             "id": "_Dsr27a09PRmY",
             "title": "Bocce",
-            "author": "Cyrus Y."
+            "author": "Cyrus Y.",
+            "description": "A clever take on the classic game of bocce where you play as some sort of magic seer who can predict where the ball will land! Oh, if only I possessed this power! I'd make all my bocce rivals pay! Mwahaha!"
         }
     ],
     "start": "2026-4-1 00:00:01 GMT-0700",

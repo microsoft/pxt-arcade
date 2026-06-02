@@ -53,7 +53,7 @@
     {
         "name": "Game Jam",
         "url": "/game-jam",
-        "imageUrl": "https://cdn.makecode.com/api/50932-20209-20218-60886/thumb"
+        "imageUrl": "https://cdn.makecode.com/api/89699-84766-18852-49944/thumb"
     },
     {
         "name": "Advanced Livestream",
