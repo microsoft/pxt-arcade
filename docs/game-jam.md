@@ -12,7 +12,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * imageUrl: https://cdn.makecode.com/api/89699-84766-18852-49944/thumb
 ---
 * name: DOMAIN: BASKETBALL
-* description: Who wouldn't love to shoot hoops to escape from some sort of liminal-space basketball horror prison? Okay, but what if I told you that you'd get to listen to a killer soundtrack while you do it? That's what I thought. By InvalidProject
+* description: Who wouldn't love to shoot hoops to escape from some sort of liminal space basketball horror prison? Okay, but what if I told you that you'd get to listen to a killer soundtrack while you do it? That's what I thought. By Invalid Project
 * author: InvalidProject
 * url: https://arcade.makecode.com/84418-55014-67976-79899
 * cardType: sharedExample
@@ -26,7 +26,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * imageUrl: https://cdn.makecode.com/api/62390-38081-86902-97975/thumb
 ---
 * name: Hyper Speed
-* description: Make hairpin turns as you zoom around a track in this ultra-precise racer! Also you get to shoot green orbs at each other! By Rune
+* description: Make hairpin turns as you zoom around a track in this ultra precise racer! Also you get to shoot green orbs at each other! By Rune
 * author: Rune
 * url: https://arcade.makecode.com/85811-51210-23895-60311
 * cardType: sharedExample
