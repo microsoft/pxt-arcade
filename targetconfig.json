@@ -343,6 +343,13 @@
             "variant": "hw---samd51"
         },
         {
+            "name": "TomatoCube Arcade Console",
+            "description": "RP2040-based game console",
+            "imageUrl": "/static/hardware/tomatocube-arcade-console.png",
+            "url": "https://tomatocube.com/product/makecode-arcade-console-v2/",
+            "variant": "hw---rp2040"
+        },
+        {
             "name": "Kitronik ARCADE Max",
             "description": "Program fun and educational games with the Kitronik ARCADE Max",
             "imageUrl": "/static/hardware/kitronik-arcade-max.png",
@@ -385,6 +392,13 @@
             "variant": "hw---n3"
         },
         {
+            "name": "TomatoCube Display Shield",
+            "description": "micro:bit display shield for MakeCode Arcade",
+            "imageUrl": "/static/hardware/tomatocube-display-shield.png",
+            "url": "https://tomatocube.com/product/makecode-arcade-display-shield-for-microbit",
+            "variant": "hw---n3"
+        },
+        {
             "name": "Adafruit M4",
             "description": "Learn how to run your games on micro-controllers from Adafruit",
             "imageUrl": "/static/hardware/adafruitm4.jpg",
@@ -404,6 +418,7 @@
         "Game Jam": "game-jam",
         "Advanced Livestream": "advanced-stream",
         "Community Games": "community",
+        "Game Jam Hall of Fame": "game-jam-hall-of-fame",
         "Game Design Concepts": "concepts",
         "Graphics and Math": "graphics-math",
         "Arts and Crafts": "arts-and-crafts",

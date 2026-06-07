@@ -77,6 +77,13 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "variant": "hw---samd51"
     },
     {
+        "name": "TomatoCube Arcade Console",
+        "description": "RP2040-based game console",
+        "imageUrl": "/static/hardware/tomatocube-arcade-console.png",
+        "url": "https://tomatocube.com/product/makecode-arcade-console-v2/",
+        "variant": "hw---rp2040"
+    },
+    {
         "name": "Kitronik ARCADE Max",
         "description": "Program fun and educational games with the Kitronik ARCADE Max",
         "imageUrl": "/static/hardware/kitronik-arcade-max.png",
@@ -143,6 +150,12 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
         "imageUrl": "/static/hardware/arcade-pro-ef.png",
         "url": "https://shop.elecfreaks.com/products/elecfreaks-microsoft-makecode-micro-bit-arcade-pro"
+    },
+    {
+        "name": "TomatoCube Display Shield",
+        "description": "micro:bit display shield for MakeCode Arcade",
+        "imageUrl": "/static/hardware/tomatocube-display-shield.png",
+        "url": "https://tomatocube.com/product/makecode-arcade-display-shield-for-microbit"
     }
 ]
 ```

@@ -53,7 +53,7 @@
     {
         "name": "Game Jam",
         "url": "/game-jam",
-        "imageUrl": "https://cdn.makecode.com/api/50932-20209-20218-60886/thumb"
+        "imageUrl": "https://cdn.makecode.com/api/89699-84766-18852-49944/thumb"
     },
     {
         "name": "Advanced Livestream",
@@ -66,6 +66,11 @@
         "imageUrl": "/static/discourse/76895-38185-68305-99984.png",
         "largeImageUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.gif",
         "videoUrl": "/static/community/blocky-boss-battle/blocky-boss-battle.mp4"
+    },
+    {
+        "name": "Game Jam Hall of Fame",
+        "url": "/game-jam-hall-of-fame",
+        "imageUrl": "https://makecode.com/api/39697-95718-82872-45842/thumb"
     },
     {
         "name": "Game Design Concepts",
@@ -127,6 +132,7 @@
 [Game Jam](/game-jam),
 [Advanced Livestream](/advanced-stream),
 [Community Games](/community),
+[Game Jam Hall of Fame](/game-jam-hall-of-fame),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Arts and Crafts](/arts-and-crafts),
