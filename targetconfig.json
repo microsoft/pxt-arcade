@@ -124,6 +124,9 @@
             },
             "code-ninjas-home-office/camps": {
                 "tutorial" : true
+            },
+            "code-ninjas-home-office/belt-assessment-tutorials-2026": {
+                "tutorial" : true
             }
         },
         "builtinExtensionsLib": {
