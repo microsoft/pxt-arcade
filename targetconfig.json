@@ -100,6 +100,9 @@
             "bladebaillio/image-mapping": {
                 "tags": [ "Visual Effects" ]
             },
+            "rizeupdev/arcade-platformer-blocks": {
+                "tags": [ "Sprite Pack" ]
+            },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
             "riknoll/arcade-mini-menu": {},
