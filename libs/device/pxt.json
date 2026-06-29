@@ -10,6 +10,7 @@
         "smallFood.ts",
         "bigFood.jres",
         "bigFood.ts",
+        "radio.d.ts",
         "sprites.duck.jres",
         "sprites.duck.ts",
         "sprites.castle.jres",
