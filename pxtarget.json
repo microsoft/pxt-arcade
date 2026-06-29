@@ -80,6 +80,7 @@
         "libs/hw---n3",
         "libs/hw---n4",
         "libs/hw---rpi",
+        "libs/hw---rpi-raw-elf",
         "libs/hw---samd51",
         "libs/hw---stm32f401",
         "libs/hw---rp2040",
@@ -434,6 +435,24 @@
                 "flashCodeAlign": 256,
                 "webUSB": false,
                 "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockermake",
+                "dockerImage": "pext/rpi:alsa",
+                "serviceId": "rpi"
+            }
+        },
+        "rpi-raw-elf": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "runtimeIsARM": true,
+                "flashCodeAlign": 256,
+                "webUSB": false,
+                "stackAlign": 2,
+                "switches": {
+                    "rawELF": true
+                }
             },
             "compileService": {
                 "buildEngine": "dockermake",
