@@ -1,0 +1,47 @@
+{
+    "name": "hw---gdk",
+    "description": "Game Designer's Kit — micro:bit V2 handheld with ST7735 display and arcade buttons",
+    "files": [
+        "config.ts",
+        "init.ts",
+        "batteryled.ts",
+        "device.d.ts",
+        "shims.d.ts",
+        "analog.cpp"
+    ],
+    "card": {
+        "name": "Game Designer's Kit",
+        "description": "Build and play handheld games on micro:bit V2 with a color screen and arcade buttons.",
+        "learnMoreUrl": "https://github.com/Deltabotixpvt/Game-Designer-s-Kit",
+        "cardType": "hw",
+        "imageUrl": "/static/hardware/game-designers-kit.jpg"
+    },
+    "compileServiceVariant": "nrf52833",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer"
+    },
+    "dependencies": {
+        "core---nrf52": "file:../core---nrf52",
+        "screen---st7735": "file:../screen---st7735",
+        "mixer---nrf52": "file:../mixer---nrf52",
+        "game": "file:../game"
+    },
+    "public": true,
+    "skipLocalization": true,
+    "additionalFilePath": "../hw",
+    "yotta": {
+        "optionalConfig": {
+            "DEVICE_JACDAC_DEBUG": 1
+        },
+        "config": {
+            "DEVICE_USB": 0,
+            "DEVICE_WEBUSB": 0,
+            "DEVICE_BLE": 0,
+            "ARCADE_MBIT_CODAL": 1,
+            "MICROBIT_CODAL": 0
+        }
+    },
+    "dalDTS": {
+        "corePackage": "../core---nrf52"
+    }
+}

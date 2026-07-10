@@ -134,6 +134,12 @@ Shields are based on our guidelines, adhere to open source hardware reference de
         "url": "http://www.kitronik.co.uk/56116"
     },
     {
+        "name": "Game Designer's Kit",
+        "description": "micro:bit V2 shield with 1.8\" ST7735 color display and GPIO arcade buttons",
+        "imageUrl": "/static/hardware/game-designers-kit.jpg",
+        "url": "https://github.com/Deltabotixpvt/Game-Designer-s-Kit"
+    },
+    {
         "name": "Calliope GameKit Shield",
         "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
         "imageUrl": "/static/hardware/gamekit.png",
