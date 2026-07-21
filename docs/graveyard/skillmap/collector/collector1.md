@@ -108,7 +108,7 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-► From the ``||contoller:Controller||`` category, grab a
+► From the ``||controller:Controller||`` category, grab a
 ``||controller:move [mySprite] with buttons ⊕||``
 block and snap it into the bottom of the **on start** container.
 

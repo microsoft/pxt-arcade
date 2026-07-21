@@ -1794,7 +1794,7 @@ scene.onHitTile(SpriteKind.Projectile, 3, (sprite: Sprite) => {
     }
 });
 
-// coefficient of restituion for grass
+// coefficient of restitution for grass
 const grassSurfaceCOR = 0.5;
 
 function collision(sprite: Sprite) {

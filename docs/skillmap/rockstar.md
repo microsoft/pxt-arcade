@@ -38,7 +38,7 @@
 ### rockstar3
 * name: Avoid the Fans!
 * type: tutorial
-* description: Code some crazed fans who will steal points as souveniers unless the rockstar can avoid them!
+* description: Code some crazed fans who will steal points as souvenirs unless the rockstar can avoid them!
 * url: /skillmap/rockstar/rockstar3
 * tags: easy, enemies, overlap, lives
 * imageUrl: /static/skillmap/rockstar/rockstar3.gif

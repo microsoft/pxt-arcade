@@ -151,6 +151,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Complete @fullscreen}
 
-That's it! Now keep moving the lemon and try not lose too much juice. Everytime a strawberry hits your lemon, it leaks some juice and the strawberry team gets points. See if you can keep the juice points down during the `30` seconds of play.
+That's it! Now keep moving the lemon and try not lose too much juice. Every time a strawberry hits your lemon, it leaks some juice and the strawberry team gets points. See if you can keep the juice points down during the `30` seconds of play.
 
 ![Playing Lemon Leak](/static/tutorials/lemon-leak/play-lemon-leak.jpg)

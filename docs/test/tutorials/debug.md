@@ -8,7 +8,7 @@ Let's walk through this game to see if we can figure out what's going wrong.
 
 
 
-## {2. Look Aroud}
+## {2. Look Around}
 
 **Ready to start coding?**
 

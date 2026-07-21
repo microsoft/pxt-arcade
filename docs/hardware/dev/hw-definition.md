@@ -6,7 +6,7 @@ Arcade hardware targets are supported by their _hardware definition_ which is pr
 
 ## Extension `pxt.json`
 
-The components of the extension are source files which specify device mappings and control behaviors that are specific to the hardware target. The files and dependancies are all declared in a ``pxt.json`` file just like all MakeCode [extensions](https://makecode.com/extensions).
+The components of the extension are source files which specify device mappings and control behaviors that are specific to the hardware target. The files and dependencies are all declared in a ``pxt.json`` file just like all MakeCode [extensions](https://makecode.com/extensions).
 
 ```
 {
@@ -156,4 +156,4 @@ declare namespace input {
 
 ### Extension layout
 
-The extnension files are just ``pxt.json``, ``config.ts``, and ``device.d.ts``. The folder that contains the extension files is named with a prefix of ``hw---`` followed by the board name used in the ``pxt.json`` file. For the GizmoQ example, it's hardware definition extension is named ``hw---gizmoq``.
+The extension files are just ``pxt.json``, ``config.ts``, and ``device.d.ts``. The folder that contains the extension files is named with a prefix of ``hw---`` followed by the board name used in the ``pxt.json`` file. For the GizmoQ example, it's hardware definition extension is named ``hw---gizmoq``.

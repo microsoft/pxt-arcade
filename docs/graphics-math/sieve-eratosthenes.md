@@ -6,7 +6,7 @@ The Sieve of Eratosthenes is a iterative method of discovering primes in the seq
 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15...
 ```
 
-Starting with `2`, every sucessive **second** number is eliminated leaving:
+Starting with `2`, every successive **second** number is eliminated leaving:
 
 ```
 2, 3, _, 5, _, 7, _, 9, __, 11, __, 13, __, 15...
@@ -18,11 +18,11 @@ Next, starting with `3`, every **third** number is eliminated leaving:
 2, 3, _, 5, _, 7, _, _, __, 11, __, 13, __, __...
 ```
 
-This continues on until you've eliminated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers frome the sequence of numbers you scanned.
+This continues on until you've eliminated all multiples of each number and then reach the limit of the numbers your testing, like `15` in the case of this example. The numbers that remain are the prime numbers from the sequence of numbers you scanned.
 
 Once the very first pass using `2` is complete, you don't need to test any factors that are ``even`` numbers because they're already eliminated.
 
-## Seive game
+## Sieve game
 
 ```typescript
 enum SieveSteps {

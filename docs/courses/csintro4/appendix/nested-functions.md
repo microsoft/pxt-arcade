@@ -158,7 +158,7 @@ The benefit of nested functions is more apparent when the functions are signific
 often dozens of lines long, or more. In smaller cases like the ones shown here,
 it is unlikely to be particularly helpful -
 these are being used solely as examples of how nested functions work,
-not as a demontration of how short functions should be written.
+not as a demonstration of how short functions should be written.
 
 ### ~
 

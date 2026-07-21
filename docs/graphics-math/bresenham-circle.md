@@ -29,7 +29,7 @@ You can see in the picture below that a pixel on the left is plotted and there a
 
 The goal is to choose the pixel that is closest to the edge of the real circle. To decide which of the two choices is best for the next pixel location, something called a _decision parameter_ is created. You see that the lengths of the blue and red lines are different than the length of the radius line. These lengths compared to the circle radius to give a radius error for the two pixel choices. The decision parameter is the combination of the two radius errors and becomes either a negative or positive number. If it's negative, the blue pixel chosen. If positive, the red pixel is used.
 
-To note the location of the current pixel we use the letter ``i`` added to the cooridinate names of ``(X, Y)`` so that they look like ``(Xi, Yi)``. To name the next pixel location we use the letter ``j`` with the coordinate. 
+To note the location of the current pixel we use the letter ``i`` added to the coordinate names of ``(X, Y)`` so that they look like ``(Xi, Yi)``. To name the next pixel location we use the letter ``j`` with the coordinate. 
 
 If the current pixel is at ``(Xi, Yi)`` then the blue pixel is at ``(Xi + 1, Yi)``. The red pixel then, is at ``(Xi + 1, Yi - 1)``. So, for these pixels, we know that ``Xj = Xi + 1`` for both blue and red pixels, ``Yj = Yi`` for the blue pixel, and ``Yj = Yi - 1`` for the red pixel.
 
@@ -40,7 +40,7 @@ Using this error expression, the blue and red pixel errors are:
 * Blue pixel error: ``(Xi + 1)^2 + Yi^2 - radius^2``
 * Red pixel error: ``(Xi + 1)^2 + (Yi - 1)^2 - radius^2``
 
-We name our decision parameter with the letter ``D``. Just like with the names of the  cooridates, the current ``D`` is ``Di`` and the next value is named ``Dj``.
+We name our decision parameter with the letter ``D``. Just like with the names of the coordinates, the current ``D`` is ``Di`` and the next value is named ``Dj``.
 
 When the blue pixel error is added to the red pixel error, combining all the terms, the value for ``Di`` becomes:
 
@@ -52,7 +52,7 @@ So, this is the value of the decision parameter for the current pixel choice. To
 
 ### Decision evaluation
 
-When the blue pixel is closest to the actual circle edge we know that the decision parameter will be negative because the positive distance above the circle is less then the negative distance of the red pixel below. In the opposite case, the red pixel is closest to the circle when the decision paramter is positive. This is because the negative distance from the circle is less than the positive distance of the blue pixel above.
+When the blue pixel is closest to the actual circle edge we know that the decision parameter will be negative because the positive distance above the circle is less then the negative distance of the red pixel below. In the opposite case, the red pixel is closest to the circle when the decision parameter is positive. This is because the negative distance from the circle is less than the positive distance of the blue pixel above.
 
 ![](/static/graphics-math/bresenham-circle/error-spans.jpg)
 
@@ -80,7 +80,7 @@ The program draws new circles with either an increasing or decreasing radius. Th
 
 ![](/static/graphics-math/bresenham-circle/octants.jpg)
 
-The decision parameter is set to an inital value where ``Xi = 0`` and ``Yi = radius``. Using these values in the equation for ``Di`` gives us: ``Di = 3 - 2 * radius``. Both the pixel choice and the ``Dj`` calculation occur in the conditionals for ``Di <= 0`` or ``Di > 0``.
+The decision parameter is set to an initial value where ``Xi = 0`` and ``Yi = radius``. Using these values in the equation for ``Di`` gives us: ``Di = 3 - 2 * radius``. Both the pixel choice and the ``Dj`` calculation occur in the conditionals for ``Di <= 0`` or ``Di > 0``.
 
 ```blocks
 let x = 0

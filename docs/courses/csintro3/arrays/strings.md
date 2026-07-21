@@ -178,7 +178,7 @@ Include at least 4 short greetings (for example, "hello friend!")
 ``||sprites:say||`` a ``||math:random||`` string from ``||variables:greetings||``
 for 500 ms
 5. Use the ``||sprites:Ghost||`` ``||sprites:SpriteFlag||`` to prevent the
-``||sprites:overlap||`` event from triggerring for 1000 ms
+``||sprites:overlap||`` event from triggering for 1000 ms
 
 ### ~hint
 

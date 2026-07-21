@@ -124,7 +124,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 ---
 
 You can now use the direction buttons to move your space plane and
-press **Ⓐ** to lauch projectiles!
+press **Ⓐ** to launch projectiles!
 
 Play your game on the game screen, then click **Done** to return to the main skillmap where you can carry on to find out how to add enemies to your project!
 

@@ -2,7 +2,7 @@
 
 ![An Arcade control panel made of cardboard](/static/hardware/raspberry-pi/cardboard-control-panel/pisetup.jpg)
 
-## Firwmare setup
+## Firmware setup
 
 ### Install the firmware
 

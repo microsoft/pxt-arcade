@@ -2,7 +2,7 @@
 
 Give your project a little something extra with screen effects.
 
-Screen effects add partical elements across your project screen. To use screen effects, add the block to your project and select the effect you want from your dropdown.
+Screen effects add particle elements across your project screen. To use screen effects, add the block to your project and select the effect you want from your dropdown.
 
 
 ### Example Code

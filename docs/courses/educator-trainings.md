@@ -99,7 +99,7 @@ _(Click tile to register for free)_
 [
     {
         "name": "Intro to MakeCode for CSEd Week 2024",
-        "description": "Trimmed down from our engaging 50-minute webinar, we exolored the best MakeCode Hour of Code activities, perfect for Computer Science Education Week!",
+        "description": "Trimmed down from our engaging 50-minute webinar, we explored the best MakeCode Hour of Code activities, perfect for Computer Science Education Week!",
         "label": "View the Recording",
         "labelClass": "purple ribbon large",
         "url":"https://youtu.be/sT5o01rIQZw",

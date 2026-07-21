@@ -32,7 +32,7 @@ The positions where you can display the text are:
 If the message is too long for the display area, pressing the **A** button will scroll in the remaining text. After viewing the message, pressing button **A** will close the text display and continue with gameplay.
 
 ```blocks
-game.showLongText("Did you see the UFO enter land to your left? Turn on your shields and arm the phasors", DialogLayout.Bottom)
+game.showLongText("Did you see the UFO enter land to your left? Turn on your shields and arm the phasers", DialogLayout.Bottom)
 ```
 
 ### Example

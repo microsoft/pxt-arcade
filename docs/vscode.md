@@ -4,7 +4,7 @@ A VS Code extension for making retro-style video games with [Microsoft MakeCode 
 
 ## Install the MakeCode extension in VS Code
 
-If you're using the VS Code app instead of vscode.dev, make sure the **Microsoft MakeCode Arcade** extension is installed. Check by going to the **View** menu and chose **Extensions** (View > Extenstions). If you don't see the extension in the installed list, search for it by typing "makecode" in the search box. When it appears in the results list, click the Install button.
+If you're using the VS Code app instead of vscode.dev, make sure the **Microsoft MakeCode Arcade** extension is installed. Check by going to the **View** menu and chose **Extensions** (View > Extensions). If you don't see the extension in the installed list, search for it by typing "makecode" in the search box. When it appears in the results list, click the Install button.
 
 ![Screenshot of the VS code extensions search and selection for Microsoft MakeCode Arcade with install button](/static/vscode/add-extension.png)
 

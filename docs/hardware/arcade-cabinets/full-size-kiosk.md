@@ -10,7 +10,7 @@ _Note: This project is meant to be run via a standard internet enabled laptop, p
 
 #### WARNING: Power Tools required
 
-To complete this project as written, you will need access to power tools and a CNC machine. If you don't have a CNC machine available, you can take the SVG files to a local printhouse to have full-size vinyl patterns made.
+To complete this project as written, you will need access to power tools and a CNC machine. If you don't have a CNC machine available, you can take the SVG files to a local printing house to have full-size vinyl patterns made.
 
 Make sure to follow all safety procedures or ask a professional for help.
 

@@ -182,7 +182,7 @@ container.
 
 - :mouse pointer:   Change the effect from ``||sprites:spray||`` to ``||sprites:fire||``.
 
-- :mouse pointer:   Make sure the effects attatch to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the <br/>
+- :mouse pointer:   Make sure the effects attach to the correct sprite by dragging the ``||variables:sprite||`` value block out of the top of the <br/>
 ``||sprites:on created [sprite] of kind [Fire]||`` <br/>
 container to replace <br/>
 ``||variables:mySprite||``.

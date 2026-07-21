@@ -361,7 +361,7 @@ if (controller.A.isPressed()) {
 
 - :binoculars: Look at your project in the game window and choose a path!
 
-You should win the adventure if you press the (A) buttonn and lose the adventure if you press the (B) button.
+You should win the adventure if you press the (A) button and lose the adventure if you press the (B) button.
 
 💡 _You can also use the **space bar** on your keyboard instead of the (A) button and the **enter key** instead of the (B) button!_
 

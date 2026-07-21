@@ -40,7 +40,7 @@ hint~
 
 ## {3. Letting them know}
 
-Let's make the level changes from the last tutorial more noticable.
+Let's make the level changes from the last tutorial more noticeable.
 
 ---
 

@@ -164,7 +164,7 @@ There's more to teaching computer science than content. In some ways, teaching C
         "imageUrl": "https://img.youtube.com/vi/<numberhere>/0.jpg"
     }, {
         "name": "Finger-Tracing, Journaling, and Debugging",
-        "description": "Some skills are essential to computer science, even if they're not prescribed as part of a curriclum.",
+        "description": "Some skills are essential to computer science, even if they're not prescribed as part of a curriculum.",
         "url":"https://youtu.be/<numberhere>",
         "imageUrl": "https://img.youtube.com/vi/<numberhere>/0.jpg"
     }, {
@@ -280,11 +280,11 @@ The second semester spirals upon the knowledge build in the first. While the con
 
 ## ◯ Part 8. Take Survey, Join a Cohort, and Become a Mentor
 
-Now that you've learned everything there is to know about Introduction to Computer Science with Microsoft MakeCode Arcade, we can connect you with a group of other educators so you can keep eachother motivated and inspired. Then, keep your skills sharp by helping students in the forum. After you've responded to 20 posts, you can submit to become a Certified MakeCode Arcade Mentor.
+Now that you've learned everything there is to know about Introduction to Computer Science with Microsoft MakeCode Arcade, we can connect you with a group of other educators so you can keep each other motivated and inspired. Then, keep your skills sharp by helping students in the forum. After you've responded to 20 posts, you can submit to become a Certified MakeCode Arcade Mentor.
 
 - Take Post-Training Survey
 - Sign up for a cohort
-- Answer questionson on the forum
+- Answer questions on the forum
 - Submit this form to become a Certified MakeCode Arcade Mentor
 
 

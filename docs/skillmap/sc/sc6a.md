@@ -3,7 +3,7 @@
 
 ## Welcome @showdialog
 
-This activity will help you add consequenses when assassins overlap your sprite!
+This activity will help you add consequences when assassins overlap your sprite!
 
 ![assassins colliding with the hero](/static/skillmap/sc/sc6a.gif "Watch out for the assassins!")
 

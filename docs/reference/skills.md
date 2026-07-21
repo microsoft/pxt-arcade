@@ -16,7 +16,7 @@ Reference topics for game development and programming skills in @boardname@.
 * [Using text](/reference/skills/using-text)
 * [Customizing a dialog](/reference/skills/customize-dialog)
 
-## Plaformer
+## Platformer
 
 * [Adding a background](/reference/skills/add-background)
 * [Playing a melody](/reference/skills/play-melody)

@@ -59,7 +59,7 @@ Specifically, they will experience the following topics:
 
 | Activity | Food not Friends (7 min) |
 |---|---|
-| ![Food not Friends thumbnail](/static/skillmap/shark/shark2.gif) | Back to an enemy-free ocean, this tutorial will go over spawing some food for your shark. |
+| ![Food not Friends thumbnail](/static/skillmap/shark/shark2.gif) | Back to an enemy-free ocean, this tutorial will go over spawning some food for your shark. |
 | Blocks used | ``[game.onUpdateInterval()]``<br/>``[myFood = sprites.create(img`.`, SpriteKind.Food)]``<br/>``[let myFood: Sprite = null; let mySprite: Sprite = null; myFood.setPosition(0 + mySprite.x, randint())]``<br/>``[let myFood: Sprite = null; myFood.vx = 0]``|
 | Solution option | [Food not Friends Project](https://makecode.com/_dLJHiifhR2ev) |
 

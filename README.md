@@ -93,7 +93,7 @@ a package of images.
    left to right. For a sample file see [here](https://github.com/microsoft/pxt-arcade/blob/master/libs/device/smallFood/small.json)
 1. From the root of your package, run the command `pxt buildsprites SUBDIR`
    where `SUBDIR` is the name of the directory containing the assets.
-1. Two files will be generated in the package root, one with the extenstion `.ts`
+1. Two files will be generated in the package root, one with the extension `.ts`
    and one with the extension `.jres`. Add both to the package's `pxt.json`
 1. You're done! The images will show up in the Image category when the package
    is added to a project
@@ -172,7 +172,7 @@ Install gulp:
 npm install -g gulp
 ```
 
-and in a seperate terminal from `pxt serve` and in the pxt/ folder, run:
+and in a separate terminal from `pxt serve` and in the pxt/ folder, run:
 
 ```
 gulp watch

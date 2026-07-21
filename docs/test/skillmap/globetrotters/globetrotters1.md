@@ -151,7 +151,7 @@ let mySprite = sprites.create(img`.`, SpriteKind.Player)
 Now, let’s rename the variable to the
 Harlem Globetrotter you plan to
 choose. You can choose **Torch**,
-**Whan**, **TNT**, **Cheese**, **Het**, or **Hotshot**.
+**WHAM**, **TNT**, **Cheese**, **JET**, or **Hot Shot**.
 
 - :paper plane: Click on the variable name in the sprite block. Choose "Rename variable" and name your
 Sprite after the Harlem Globetrotter you plan to use, from the list above.

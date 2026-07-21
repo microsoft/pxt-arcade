@@ -133,7 +133,7 @@ Use the image editor for ``||variables(noclick):pizza||`` and then select the **
 
 ## {Step 7 @resetDiff}
 
-Add a ``||sprites:on overlap||`` event to your code. Set the ``||sprites:sprite kind||`` that cooresponds to
+Add a ``||sprites:on overlap||`` event to your code. Set the ``||sprites:sprite kind||`` that corresponds to
 ``otherSprite`` as ``||sprites:Food||``.
 
 ```spy
@@ -155,7 +155,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 ## {Step 9}
 
 Let’s set the position for ``||variables(noclick):pizza||`` to random locations around the screen. We use
-``otherSprite`` and ``||sprites:set its position||``. Righy now, just use `0` for both `x` and `y`.
+``otherSprite`` and ``||sprites:set its position||``. Right now, just use `0` for both `x` and `y`.
 
 ```spy
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {

@@ -209,7 +209,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 🎆 **Congratulations** 🎆
 
 You can now use the direction buttons to move your space plane and
-the **Ⓐ** button to lauch projectiles!
+the **Ⓐ** button to launch projectiles!
 
 Play your game in the game screen, then click **Done** to return to the main page where you can share your game
 with family and friends!

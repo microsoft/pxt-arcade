@@ -29,7 +29,7 @@ When you edit your code in the JavaScript or Python workspaces, the musical note
 
 ## Music staff
 
-Notes of a song are placed on the music **staff** which is a set of horizontal lines arranged from low to high. The notes are placed at **grid** positions from left to right. The grid divides a **measure** to determine how may notes the measure contains. A grid of **1/8** has **8** note positons per measure. If a note position has no notes in it, that position is a rest (no sound). Placing notes higher or lower on the staff, of course, sets the pitch of the note.
+Notes of a song are placed on the music **staff** which is a set of horizontal lines arranged from low to high. The notes are placed at **grid** positions from left to right. The grid divides a **measure** to determine how may notes the measure contains. A grid of **1/8** has **8** note positions per measure. If a note position has no notes in it, that position is a rest (no sound). Placing notes higher or lower on the staff, of course, sets the pitch of the note.
 
 ![Song editor window](/static/reference/music/staff-and-notes.png)
 
@@ -90,7 +90,7 @@ You can play notes for several different **instruments**. You select an instrume
 
 ![Song editor window](/static/reference/music/instrument-bar.png)
 
-The instruments are represented by various character symbols and make different sounds for the same notes. These are MakeCode intruments and don't exaclty have the same sound as typical instruments like a violin, cello, drums, or guitar.
+The instruments are represented by various character symbols and make different sounds for the same notes. These are MakeCode instruments and don't exactly have the same sound as typical instruments like a violin, cello, drums, or guitar.
 
 ![Song editor window](/static/reference/music/several-instruments.png)
 
