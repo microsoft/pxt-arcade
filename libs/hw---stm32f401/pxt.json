@@ -37,6 +37,7 @@
             "PXT_DEFAULT_ACCELEROMETER": "ACCELEROMETER_TYPE_MMA8453"
         }
     },
+            "hidden": true,
     "dalDTS": {
         "corePackage": "../core---stm32"
     }
