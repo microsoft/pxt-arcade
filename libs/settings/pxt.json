@@ -1,3 +1,4 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/settings"
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/settings",
+    "hidden": true
 }

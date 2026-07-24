@@ -1,5 +1,6 @@
 {
     "name": "hw---rpi",
+    "hidden": true,
     "description": "Raspberry Pi",
     "files": [
         "keys.cpp",

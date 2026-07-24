@@ -36,6 +36,7 @@
             "DEVICE_WEBUSB": 0
         }
     },
+    "hidden": true,
     "dalDTS": {
         "corePackage": "../core---nrf52"
     }
