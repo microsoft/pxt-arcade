@@ -35,7 +35,7 @@
             "DEVICE_WEBUSB": 1
         }
     },
-            "hidden": true,
+    "hidden": true,
     "dalDTS": {
         "corePackage": "../core---rp2040"
     }

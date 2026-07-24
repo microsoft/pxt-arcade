@@ -38,7 +38,7 @@
             "MICROBIT_CODAL": 0
         }
     },
-            "hidden": true,
+    "hidden": true,
     "dalDTS": {
         "corePackage": "../core---nrf52"
     }
