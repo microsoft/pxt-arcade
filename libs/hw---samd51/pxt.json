@@ -33,6 +33,7 @@
             "DEVICE_WEBUSB": 1
         }
     },
+    "hidden": true,
     "additionalFilePath": "../hw",
     "public": true,
     "skipLocalization": true,
