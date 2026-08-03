@@ -55,11 +55,14 @@ jobs:
 
       - name: Checkout pxt-arcade-sim
         uses: actions/checkout@v5
+        if: env.SIM_DEPLOY_KEY
         with:
           repository: microsoft/pxt-arcade-sim
           ref: v0.12.3
           ssh-key: ${{ secrets.SIM_DEPLOY_KEY }}
           path: node_modules/pxt-arcade-sim
+        env:
+          SIM_DEPLOY_KEY: ${{ secrets.SIM_DEPLOY_KEY }}
 
       - name: pxt ci (without publish capability)
         run: |
@@ -97,14 +100,11 @@ jobs:
 
       - name: Checkout pxt-arcade-sim
         uses: actions/checkout@v5
-        if: env.SIM_DEPLOY_KEY
         with:
           repository: microsoft/pxt-arcade-sim
           ref: v0.12.3
           ssh-key: ${{ secrets.SIM_DEPLOY_KEY }}
           path: node_modules/pxt-arcade-sim
-        env:
-          SIM_DEPLOY_KEY: ${{ secrets.SIM_DEPLOY_KEY }}
 
       - name: pxt ci (with publish capability)
         run: |
