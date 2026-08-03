@@ -1,3 +1,4 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/screen---st7735"
+    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/screen---st7735",
+    "hidden": true
 }
