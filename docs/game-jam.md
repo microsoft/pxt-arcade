@@ -100,6 +100,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * cardType: link
 * directOpen: true
 * url: https://arcade.makecode.com/gamejam/sports
+* imageUrl: /static/gamejam/jams/sports/assets/sports-jam-logo.png
 
 ### ~
 
