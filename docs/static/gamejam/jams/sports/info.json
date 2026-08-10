@@ -2,7 +2,267 @@
     "rules": {
         "path": "/static/gamejam/jams/sports/rules.md"
     },
-    "featured": [],
+    "featured": [
+        {
+            "id": "_PwzivKEaLRac",
+            "title": "swimming game",
+            "author": "10-Mbiter"
+        },
+        {
+            "id": "_aUg7bWAJxWU8",
+            "title": "A Horizontal Rain of Fire",
+            "author": "Phantom_999"
+        },
+        {
+            "id": "_d0AWy1Ksu13V",
+            "title": "Makecode Football",
+            "author": "@Unique/Jayden",
+            "description": "Choose your favorite football team and run plays to score touchdowns in this football simulation game!"
+        },
+        {
+            "id": "_a06P62frDhXa",
+            "title": "yeeting duckies 2.0",
+            "author": "Mr.Deenasaur"
+        },
+        {
+            "id": "_hkDE4wMupYta",
+            "title": "Planet Pong",
+            "author": "PeanutsYmc"
+        },
+        {
+            "id": "_K2jUbjUpRYyJ",
+            "title": "catch the ball",
+            "author": "kingtech"
+        },
+        {
+            "id": "_4t668VATfCHs",
+            "title": "Tag!",
+            "author": "BitBot",
+            "description": "A good ol' fashioned game of 3 person tag! Just like the real thing, except you play in a huge arena and there is way more platforming and underground tunnels than I remember!"
+        },
+        {
+            "id": "_cWR4g0aRhVjv",
+            "title": "catch the food",
+            "author": "eli g."
+        },
+        {
+            "id": "_KfHaoFHxsV1y",
+            "title": "Epic basketball (1 v 1 v 1 v 1) (Rules in description)",
+            "author": "RGBH"
+        },
+        {
+            "id": "_4aritxAAYYKT",
+            "title": "DodgeBall Sport Game Jam",
+            "author": "Risk_Of_Reign"
+        },
+        {
+            "id": "_deb1Xu2TEWRV",
+            "title": "Dodge the Cones",
+            "author": "nc_lab"
+        },
+        {
+            "id": "_e0gY19fRV64r",
+            "title": "Chaos Cup",
+            "author": "ChaosCupChampion"
+        },
+        {
+            "id": "_1pqbfL8gCVXo",
+            "title": "Pixelbots",
+            "author": "Rhea"
+        },
+        {
+            "id": "_TaFiPFabVfh3",
+            "title": "Baseball Master!",
+            "author": "ItzAstra"
+        },
+        {
+            "id": "_UhAWWiPJge7J",
+            "title": "Simple archery",
+            "author": "Lil' Torlet"
+        },
+        {
+            "id": "04809-31955-37770-29859",
+            "title": "Fistful of Aces",
+            "author": "Solek (Luke)",
+            "description": "Punch, kick, and uppercut your way to victory in this retro fighting game! Be sure to check out the other games in the Aces franchise on the forum!"
+        },
+        {
+            "id": "_A7sFJ05XHhXx",
+            "title": "leave the trap",
+            "author": "Ruma"
+        },
+        {
+            "id": "_06DMo5CRXAV7",
+            "title": "Pixel Pistons! - Demo",
+            "author": "OrigamiArtist1010"
+        },
+        {
+            "id": "_fxHLJM5Xr4xk",
+            "title": "🐈🐈🐈🐈🐈🐈🐈",
+            "author": "CatLovr3000"
+        },
+        {
+            "id": "_W7e9gy6dF6a5",
+            "title": "Bird Run: Football Calamity!",
+            "author": "RoboVacDev"
+        },
+        {
+            "id": "_1McTKFTak0qe",
+            "title": "Sport Game Jam",
+            "author": "Yonathan"
+        },
+        {
+            "id": "_AoAKr7dkTPur",
+            "title": "soccerr",
+            "author": "anonymous"
+        },
+        {
+            "id": "_MJYFztDR44D2",
+            "title": "Pogo Man - Adventure of Pogoland!",
+            "author": "teaeat100"
+        },
+        {
+            "id": "_2zHP9vHrJEpL",
+            "title": "Unpixel Tournament 2026",
+            "author": "Gamesmakerx"
+        },
+        {
+            "id": "_01gCWyUuWdJJ",
+            "title": "Throttlemonger",
+            "author": "RizeUpDev",
+            "description": "You think you've got a lead foot? Can you turn on a dime? How about a nickel? Put your driving skills to the test in this multiplayer top-down racing game!"
+        },
+        {
+            "id": "_Pxc3KTCwy9bj",
+            "title": "Tungball",
+            "author": "Matt P."
+        },
+        {
+            "id": "_f8zdL66yaLVV",
+            "title": "Super Soccer Frog",
+            "author": "Bilangus"
+        },
+        {
+            "id": "_JKhRpH77p25K",
+            "title": "Soccer Game",
+            "author": "A.S."
+        },
+        {
+            "id": "_dkCLwq8rYTHr",
+            "title": "Hyper Speed",
+            "author": "Rune"
+        },
+        {
+            "id": "_CX0YWXbfPdaz",
+            "title": "Shark Attack In The Sky",
+            "author": "Ari"
+        },
+        {
+            "id": "_cLzKwM4JDis9",
+            "title": "Chaotic World",
+            "author": "Longlinh"
+        },
+        {
+            "id": "_dCTPKyW7DbaY",
+            "title": "DOMAIN: BASKETBALL",
+            "author": "InvalidProject"
+        },
+        {
+            "id": "_2fCaW2cq54Hw",
+            "title": "Doge ball",
+            "author": "Catherine B."
+        },
+        {
+            "id": "_Hayhu880Ui2E",
+            "title": "Saw Core Training",
+            "author": "Christian G.",
+            "description": "You play as a disgraced soccer player who has been sentenced to scoring 100 goals before you can return to your team. It won't be that easy though, as you'll have to overcome all the real challenges that professional soccer players face like teleporters and tar pits!"
+        },
+        {
+            "id": "_TPaeEodVdAf0",
+            "title": "Dribble Massacre",
+            "author": "02lover"
+        },
+        {
+            "id": "_6ipDKYM7YPx5",
+            "title": "Shoot the Basketball",
+            "author": "anonymous"
+        },
+        {
+            "id": "_M6UUpu4jiH3C",
+            "title": "Last Run",
+            "author": "Marcos S."
+        },
+        {
+            "id": "_hR61p4VTF6kT",
+            "title": "Space Jam",
+            "author": "C.C."
+        },
+        {
+            "id": "_68UMavdCcMms",
+            "title": "Zenith Smash",
+            "author": "CopySprite",
+            "description": "Choose a familiar-looking character and battle it out in this \"smashing\" forum-inspired fighting game! Make sure you check the forum for more game updates!"
+        },
+        {
+            "id": "_L4qY3eJ7x5f5",
+            "title": "Shooting Practice Soccer",
+            "author": "Loke"
+        },
+        {
+            "id": "_KtAfWY3huA2a",
+            "title": "I dont know",
+            "author": "anonymous"
+        },
+        {
+            "id": "_YEMcPW2051Uc",
+            "title": "Collect the Balls",
+            "author": "Shu"
+        },
+        {
+            "id": "_YVUiyuHzEd2E",
+            "title": "Retro Ping Pong",
+            "author": "Kevin L."
+        },
+        {
+            "id": "_MsMfsMLk0PEx",
+            "title": "Ping-Pong",
+            "author": "anonymous"
+        },
+        {
+            "id": "_0EDVjE2xHCPX",
+            "title": "Tidal Games",
+            "author": "Michael Caplan and classes",
+            "description": "A collection of minigames inspired by weight training! Get fit! Test your reflexes! Play as a giant anthropomorphic dog!"
+        },
+        {
+            "id": "_V4e1E2P7Y3fo",
+            "title": "Badminton Bros",
+            "author": "Tjayy67"
+        },
+        {
+            "id": "_U3qF4Ke7AiD7",
+            "title": "Floorit",
+            "author": "Octodemon"
+        },
+        {
+            "id": "_XKAbWLXAD9Hr",
+            "title": "Duck House: Pyramid",
+            "author": "randomuser"
+        },
+        {
+            "id": "_DK97srhWDgR1",
+            "title": "Octo Volley",
+            "author": "BLADEr",
+            "description": "A totally normal volleyball game where two disembodied tentacles compete. Be sure to check out the animations on this one!"
+        },
+        {
+            "id": "_Dsr27a09PRmY",
+            "title": "Bocce",
+            "author": "Cyrus Y.",
+            "description": "A clever take on the classic game of bocce where you play as some sort of magic seer who can predict where the ball will land! Oh, if only I possessed this power! I'd make all my bocce rivals pay! Mwahaha!"
+        }
+    ],
     "start": "2026-4-1 00:00:01 GMT-0700",
-    "end": "2026-5-15 23:59:59 GMT-0700"
+    "end": "2026-5-17 23:59:59 GMT-0700"
 }

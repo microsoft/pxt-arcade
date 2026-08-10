@@ -21,7 +21,20 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
 ## Previous Game Jams
 
 ```codecard
-[   {
+[
+    {
+        "name": "Sports Jam",
+        "description": "Games that feature sports or game contests, both real and imagined!",
+        "url": "/gamejam/sports",
+        "imageUrl": "/static/gamejam/jams/sports/assets/football-background-thumb.png"
+    },
+    {
+        "name": "Heist Jam",
+        "description": "Games about thievery, rogues, and crime!",
+        "url": "/gamejam/heist",
+        "imageUrl": "/static/gamejam/jams/heist/assets/preview.gif"
+    },
+    {
         "name": "Cozy Jam",
         "description": "Games that create a 'cozy,' or, maybe, relaxing atmosphere rather than a stressful one.",
         "url": "/gamejam/cozy",

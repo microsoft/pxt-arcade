@@ -7,7 +7,7 @@ We're thrilled to announce the winners of the fifth MakeCode Arcade game jam: Ti
 | -- |
 | &nbsp; |
 
-Polished and imaginative, Web_Headed_Games's [Glitch](https://arcade.makecode.com/04978-92601-05637-89537), is a game where you can slow down time and modify the terrain of the world itself to survive each level. Try speedrunning this game and see if you cant beat your high score while enjoying the beautiful minimalist graphics!
+Polished and imaginative, Web_Headed_Games's [Glitch](https://arcade.makecode.com/39697-95718-82872-45842), is a game where you can slow down time and modify the terrain of the world itself to survive each level. Try speedrunning this game and see if you cant beat your high score while enjoying the beautiful minimalist graphics!
 
 ## Second Place: The Last 30 Seconds of the Universe
 | [![The Last 30 Seconds of the Universe screenshot](/static/gamejam/jams/time/assets/loopfighter.png)](https://arcade.makecode.com/84204-53947-81636-40195) |
