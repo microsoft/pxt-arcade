@@ -26,14 +26,11 @@ Less runtime memory is needed using this method instead of using ``||images:clon
 * **Leave it behind**: if an object won't be used anymore, get rid of it!
 This is often easier done in JavaScript than in blocks,
 but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed when they're no longer needed.
-Setting the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step
+Setting the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step.
 as it will get rid of the ``||sprites:sprite||`` when it goes off screen.
 * **Minimize sprites** - keep the number of sprites low (below 100). Use projectiles for sprites that move off screen and auto-destroy if they aren't used again.
+* **Show Stats**: show your game stats in the Game Window rather than using sprites to show text.
 
 ## Busy threads
 
 * **Stuck in loops**: avoid Forever loops, use Game Update interval loops where possible.
-
-## What is this category???
-
-* **Show Stats**: show your game stats in the Game Window rather than...???
