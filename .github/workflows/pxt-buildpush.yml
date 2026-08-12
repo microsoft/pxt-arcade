@@ -54,7 +54,7 @@ jobs:
           npm install
 
       - name: Checkout pxt-arcade-sim
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         if: env.SIM_DEPLOY_KEY
         with:
           repository: microsoft/pxt-arcade-sim
@@ -99,7 +99,7 @@ jobs:
           npm install
 
       - name: Checkout pxt-arcade-sim
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           repository: microsoft/pxt-arcade-sim
           ref: v0.12.3
