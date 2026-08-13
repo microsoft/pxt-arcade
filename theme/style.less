@@ -35,6 +35,16 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+/*
+ * In the card view of "My Projects", semantic's `.ui.cards > .card > .content`
+ * rule resets the margin that keeps the project name clear of the file icon
+ * (it has the same specificity as `.ui.card.file .content`, but comes later).
+ * Restore it so the name doesn't render on top of the icon.
+ */
+.ui.modal.scriptmanager .ui.card.file .content {
+    margin-left: 4rem;
+}
+
 #simulators .ui.embed .icon.xicon::after {
     border-radius: 12px;
 }
@@ -111,6 +121,10 @@ span.blocklyTreeLabel {
 
 /* Mobile */
 @media only screen and (max-width: @largestMobileScreen) {
+    // The file icon is smaller on mobile, so the project name needs less of an offset
+    .ui.modal.scriptmanager .ui.card.file .content {
+        margin-left: 3rem;
+    }
 }
 
 /* Tablet */
