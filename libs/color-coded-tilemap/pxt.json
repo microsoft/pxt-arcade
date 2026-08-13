@@ -1,4 +1,5 @@
 {
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/color-coded-tilemap",
+    "searchOnly": true,
     "weight": 10
 }

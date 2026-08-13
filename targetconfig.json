@@ -2,11 +2,9 @@
     "packages": {
         "approvedRepoLib": {
             "adafruit/circuit-playground-character-icons": {
-                "preferred": true,
                 "tags": [ "Sprite Pack" ]
             },
             "adafruit/pxt-seesaw": {
-                "preferred": true,
                 "tags": [ "Hardware" ]
             },
             "jwunderl/pxt-button-combos": {
@@ -22,6 +20,7 @@
                 "tags": [ "Sprites" ]
             },
             "jwunderl/arcade-sprite-util": {
+                "preferred": true,
                 "tags": [ "Sprites", "Utility" ]
             },
             "jwunderl/pxt-scaling": {
@@ -36,14 +35,8 @@
                 "tags": [ "Utility" ],
                 "upgrades": [ "min:v0.0.6" ]
             },
-            "microsoft/arcade-grid": {
-                "preferred": true,
-                "tags": [ "Sprites" ]
-            },
-            "microsoft/arcade-minimap": {
-                "preferred": true,
-                "tags": [ "Sprites", "Visual Effects" ]
-            },
+            "microsoft/arcade-grid": {},
+            "microsoft/arcade-minimap": {},
             "microsoft/arcade-timers": {
                 "preferred": true,
                 "tags": [ "Utility" ]
@@ -90,7 +83,6 @@
                 "tags": [ "Visual Effects" ]
             },
             "joylabz/makeymakey-makecode-arcade-extension": {
-                "preferred": true,
                 "tags": [ "Hardware" ]
             },
             "kohanmathers/makecodespritefx": {
@@ -102,8 +94,14 @@
             },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
-            "riknoll/arcade-mini-menu": {},
-            "riknoll/arcade-fancy-text": {},
+            "riknoll/arcade-mini-menu": {
+                "preferred": true,
+                "tags": [ "Utility", "Sprites" ]
+            },
+            "riknoll/arcade-fancy-text": {
+                "preferred": true,
+                "tags": [ "Sprites", "Visual Effects" ]
+            },
             "code-ninjas-home-office/game-building-session-tutorials": {
                 "tutorial" : true
             },
@@ -147,35 +145,27 @@
                 "tags": [ "Sprites", "Visual Effects" ]
             },
             "corgio": {
-                "preferred": true,
                 "tags": [ "Sprites" ]
             },
             "darts": {
-                "preferred": true,
                 "tags": [ "Sprites" ]
             },
             "edge-connector": {
-                "preferred": true,
                 "tags": [ "Hardware" ]
             },
             "light": {
-                "preferred": true,
                 "tags": [ "Hardware" ]
             },
             "radio-broadcast": {
-                "preferred": true,
                 "tags": [ "Utility"]
             },
             "servo": {
-                "preferred": true,
                 "tags": [ "Hardware" ]
             },
             "sevenseg": {
-                "preferred": true,
                 "tags": [ "Utility" ]
             },
             "feather": {
-                "preferred": true,
                 "tags": [ "Hardware", "Controller" ]
             },
             "browser-events": {
