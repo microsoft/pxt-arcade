@@ -125,14 +125,14 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
         "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit",
         "variant": "hw---n3"
     },
-    { 
+    {
         "name": "Forward Education CodeCTRL",
         "description": "Code, play, and explore with this handheld micro:bit controller.",
         "imageUrl": "/static/hardware/codectrl.png",
         "url": "https://forwardedu.com/pages/codectrl-for-micro-bit",
         "variant": "hw---n3"
     },
-    { 
+    {
         "name": "micro:bit Arcade Pro",
         "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
         "imageUrl": "/static/hardware/arcade-pro-ef.png",

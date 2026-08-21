@@ -151,25 +151,7 @@ as well as what exactly is taking up too much memory.
 Often, this will be due to the creation of too many ``||sprites:sprites||``
 or ``||images:images||`` at any one time.
 
-There are a few general guidelines to minimize the memory footprint of your games:
-
-* **Compute is cheap**: you might have the choice to store a value created in your program
-or recomputing it as needed.
-You should consider how long it takes to recreate the values you store (and test it!) -
-processors on the devices are often powerful enough to recreate these images fairly quickly.
-That could easily save 10% of the device's entire memory per image with no noticeable performance penalty.
-* **Prefer pre-drawn images**: if you draw the image in the image editor
-rather than modifying it when the game is running,
-the image will be stored with the code in flash memory
-and won't take up as much space at runtime. For example,
-if you want the image in the player sprite to switch from green to red,
-consider changing the color in the image editor and storing it as a separate image.
-Less runtime memory is needed using this method instead of using ``||images:clone||`` and ``||images:change color in picture from .. to ..||``.
-* **Leave it behind**: if an object won't be used anymore, get rid of it!
-This is often easier done in JavaScript than in blocks,
-but the easiest thing to do is make sure ``||sprites:sprites||`` are destroyed when they're no longer needed.
-Setting the ``||sprites:auto destroy||`` ``||sprites:SpriteFlag||`` can be a good first step
-as it will get rid of the ``||sprites:sprite||`` when it goes off screen.
+See the [Coding for performance](/hardware/perf-coding) page for some guidelines to help you minimize the memory footprint of your games.
 
 ## 981: Failed cast on undefined #981
 
@@ -211,6 +193,8 @@ In the example above, the ``||game:on update||`` event is created in an infinite
 this will create more and more ``||game:on update||`` events until you run out of memory.
 
 ### ~hint
+
+#### Common errors
 
 This section only lists examples of some of the most common errors seen in MakeCode @boardname@.
 For a full list, see the [internal error codes page](https://makecode.com/js/errorcodes).

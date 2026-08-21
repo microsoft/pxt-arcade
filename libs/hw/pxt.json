@@ -12,5 +12,6 @@
         "game": "file:../game"
     },
     "public": true,
-    "skipLocalization": true
+    "skipLocalization": true,
+    "hidden": true
 }

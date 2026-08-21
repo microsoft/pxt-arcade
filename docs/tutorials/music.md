@@ -553,13 +553,10 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## {Step 17}
 
-- :binoculars: Test your final music player.
-
-
-- The arrows should load a song
-- The (A) button should play the loaded song
-- The (B) button should stop all songs
-
+- :binoculars: Test your final music player.<br/>
+**•** The arrows should load a song<br/>
+**•** The (A) button should play the loaded song</br>
+**•** The (B) button should stop all songs
 
 
 ```blockconfig.local
