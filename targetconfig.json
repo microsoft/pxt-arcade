@@ -100,6 +100,10 @@
             "bladebaillio/image-mapping": {
                 "tags": [ "Visual Effects" ]
             },
+            "b9oo/multiplayer-chat-support": {
+                "preferred": true,
+                "tags": [ "Utility", "Controller", "Sprites" ]
+            },
             "microsoft/arcade-carnival": {},
             "riknoll/arcade-tile-scanner": {},
             "riknoll/arcade-mini-menu": {},
