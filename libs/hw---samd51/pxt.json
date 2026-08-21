@@ -30,7 +30,8 @@
         },
         "config": {
             "DEVICE_USB": 1,
-            "DEVICE_WEBUSB": 1
+            "DEVICE_WEBUSB": 1,
+            "USE_RGB444": 1
         }
     },
     "hidden": true,
