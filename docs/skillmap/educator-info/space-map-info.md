@@ -24,7 +24,7 @@ Designed for students between the ages of 13 & 16, this experience contains a to
 
 ### Objectives 
 
-As students go through Design a Space Explorer, they will build a galactic environment in which they can fire projectiles at enemy ships, level up the difficulty of the game, and customize projectile design, all while being cautious about their own health bars and refeuling needs. Throughout these experiences, they will be using various computer science and game design concepts.
+As students go through Design a Space Explorer, they will build a galactic environment in which they can fire projectiles at enemy ships, level up the difficulty of the game, and customize projectile design, all while being cautious about their own health bars and refueling needs. Throughout these experiences, they will be using various computer science and game design concepts.
 
 Specifically, they will experience the following topics:
 

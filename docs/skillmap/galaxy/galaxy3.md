@@ -54,7 +54,7 @@ asteroid (**Enemy**) overlaps the ship (**Player**).
 bundle into **an empty area** of the workspace.
 
 This bundle detects when an asteroid overlaps the player's ship,
-then it destroys the asteriod and subtracts a life.
+then it destroys the asteroid and subtracts a life.
 
 
 ```blocks
@@ -107,7 +107,7 @@ bundle already in the workspace and click the plus (+) to the right of the <br/>
 ``||sprites(noclick):destroy [sprites] + ||`` <br/>
 block.
 
-- :mouse pointer: Choose an effect for your asteroid. Try having it **disintigrate** or disappear in **fire**.
+- :mouse pointer: Choose an effect for your asteroid. Try having it **disintegrate** or disappear in **fire**.
 
 - :mouse pointer: Change the effect time to **100** to keep it short and sweet.
 

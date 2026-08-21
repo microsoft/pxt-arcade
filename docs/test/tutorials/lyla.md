@@ -425,7 +425,7 @@ mp.onScore(20, function (thisPlayer) { })
 ---
 
 <br/>
-This block signals that the game should immediatedly end in a win.
+This block signals that the game should immediately end in a win.
 
 ```block
     game.gameOver(true)
@@ -693,7 +693,7 @@ container already in the workspace.
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Click the empty rectagle in the<br/>
+- :mouse pointer: Click the empty rectangle in the<br/>
 ``||music(noclick):play song...||`` block and switch to **My Assets** to choose the **countdown**.
 
 

@@ -125,7 +125,7 @@ function getNeighbours() {
     let curTraverseY = curY;
     let currentType = board[curX][curY];
     neighbours2.push([curTraverseX, curTraverseY]);
-    // tranverse left
+    // traverse left
     curTraverseX--;
     while (curTraverseX >= 0 && board[curTraverseX][curTraverseY] == currentType) {
         neighbours2.push([curTraverseX, curTraverseY]);

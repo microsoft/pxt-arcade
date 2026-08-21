@@ -163,7 +163,7 @@ change between clicks.
 ► Click the **⊕** icon to the right of the ``||sprites: [mySprite] start [spray] effect ⊕||``
 block (the one already inside the **on A button pressed** container.)
 
-► Shorten the number of miliseconds (ms) that the effect runs by entering
+► Shorten the number of milliseconds (ms) that the effect runs by entering
 **100** in the text box.
 
 ```blocks

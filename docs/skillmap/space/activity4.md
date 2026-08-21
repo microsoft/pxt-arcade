@@ -33,7 +33,7 @@ Drag one to the end of the ``||loops:on start||`` container.
 ---
 
 **Tip:** The ``||statusbars:Status Bars||`` category is an
-[__extension__](#extendo "a category that provides extended capabilites to MakeCode").
+[__extension__](#extendo "a category that provides extended capabilities to MakeCode").
 To see what else you can do using extensions, open a game in your gallery,
 click ``||statusbars:˅ Advanced||`` and choose ``||extension:Extensions||``.
 

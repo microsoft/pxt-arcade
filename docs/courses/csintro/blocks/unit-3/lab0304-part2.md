@@ -41,7 +41,7 @@ block.
 the following conditional statement: <br/>
 ``||logic:if < [score] [>] ([highScore] get value at [index]) >||``<br/>
 
-💡 _Remember to drag the ``||varibles(noclick):index||``
+💡 _Remember to drag the ``||variables(noclick):index||``
     variable from the top of your ``||loops(noclick):for||`` loop._
 
 💡💡 _If the editor changes the index variable to something 

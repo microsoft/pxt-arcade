@@ -63,7 +63,7 @@ in the comment on each line.
 /**
  * Prints all the words in the given array, separated by the given separator, to the console
  * @param words an array of words to print
- * @param seperator the separator placed in between the different elements of the array
+ * @param separator the separator placed in between the different elements of the array
  */
 function printArray(words: string[], separator: string) {
     // Add your code here

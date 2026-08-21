@@ -212,7 +212,7 @@ There are lots of ways you can add text to your project.
     let mySprite: Sprite = null
     mySprite.sayText("What's a punchline?")
 ```
-This the best way to make it look like your character is speaking. Use this block to have text appear as a bubble coming from the sprite.
+This is the best way to make it look like your character is speaking. Use this block to have text appear as a bubble coming from the sprite.
 
 
 ---

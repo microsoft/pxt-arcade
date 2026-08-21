@@ -10,7 +10,7 @@ Hey, let's make a game where wild strawberries are out to attack our lemon playe
 
 ## {Step 1  @fullscreen}
 
-First, ``||scene:set background color||`` to ``purple``. Create a new sprite called ``||variables(noclick):mySprite||``. Click on the image editor icon, go to the image galler, and select the lemon. Put in code to ``||controller:move mySprite||`` with the controller.
+First, ``||scene:set background color||`` to ``purple``. Create a new sprite called ``||variables(noclick):mySprite||``. Click on the image editor icon, go to the image gallery, and select the lemon. Put in code to ``||controller:move mySprite||`` with the controller.
 
 ![Pick the lemon image](/static/tutorials/lemon-leak/pick-a-lemon-js.gif)
 
@@ -144,6 +144,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## {Complete @fullscreen}
 
-That's it! Now keep moving the lemon and try not lose too much juice. Everytime a strawberry hits your lemon, it leaks some juice and the strawberry team gets points. See if you can keep the juice points down during the `30` seconds of play.
+That's it! Now keep moving the lemon and try not lose too much juice. Every time a strawberry hits your lemon, it leaks some juice and the strawberry team gets points. See if you can keep the juice points down during the `30` seconds of play.
 
 ![Playing Lemon Leak](/static/tutorials/lemon-leak/play-lemon-leak.jpg)

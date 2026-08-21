@@ -10,7 +10,7 @@ See https://careers.microsoft.com/v2/global/en/discoveryprogram for more details
 
 * name: No One Like Pistol Shrimps!
 * type: sharedExample
-* description: Dont run, but don't stop! You are the strongest shrimp!
+* description: Don't run, but don't stop! You are the strongest shrimp!
 * url: https://arcade.makecode.com/S75989-00553-05347-20213
 * imageUrl: https://arcade.makecode.com/api/S75989-00553-05347-20213/thumb
 

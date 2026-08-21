@@ -4,7 +4,7 @@
 
 An _asset pack_ is a MakeCode Arcade project or extension that adds assets to the gallery section of one of the asset editors (e.g. tilemaps, tiles, images, animations, songs, etc.).
 
-Unlike traditional MakeCode Arcade projects (or extensions) which add extra blocks or code, these just add assets. Also, unlike traditional projecgs, making an asset pack requires no coding experience! Any project can be transformed into an asset pack and you don’t event have to switch to the JavaScript editor to edit configuration info!
+Unlike traditional MakeCode Arcade projects (or extensions) which add extra blocks or code, these just add assets. Also, unlike traditional projects, making an asset pack requires no coding experience! Any project can be transformed into an asset pack and you don’t event have to switch to the JavaScript editor to edit configuration info!
 
 Also, it isn't necessary to use GitHub (though it might be a good idea, more on extensions later).
 
@@ -38,7 +38,7 @@ After you turn that setting on, go ahead and click the **Go Back** button to ret
 
 The final step is just to share your project! To create a share link, click the **Share** button in the top-right of the editor:
 
-![Share Project buttonm](/static/asset-packs/share-project-button.png)
+![Share Project button](/static/asset-packs/share-project-button.png)
 
 Make sure you give your project a unique and descriptive name. People will also see your description when they add your asset pack to their project, so write something useful!
 
@@ -136,4 +136,4 @@ Once you have it in a GitHub repo, make sure you do the following things:
 Is your asset pack amazing? So amazing that you think it deserves to appear in the recommended extension list for anyone to use? If so, you can submit a request to have it added!
 
 To get on the recommended list, open a Pull Request (PR) on the [microsoft/pxt-arcade](https://github.com/microsoft/pxt-arcade) repository to add your extension to the list! You’ll want to add an entry to the `"approvedRepoLib"` property of `targetConfig.json` in that repo. 
-Someone from the MakeCode team will take a look at your PR and let you know if any further changes are neeeded.
+Someone from the MakeCode team will take a look at your PR and let you know if any further changes are needed.

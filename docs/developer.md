@@ -1,7 +1,7 @@
 # Developer Tips and Tricks
 
 If you want to customize and extend the Arcade game experience, or just code you games for better performance,
-this page directs you to several topics with helpul tips and guidance.
+this page directs you to several topics with helpful tips and guidance.
 
 ## Finding examples and documentation
 
@@ -45,7 +45,7 @@ You can set a project as an asset pack for sharing by going to the **Settings** 
 
 ## Controller Buttons
 
-Use the [button tester](/developer/button-tester) to verify the proper button assignents on your controller.
+Use the [button tester](/developer/button-tester) to verify the proper button assignments on your controller.
 
 ## Getting Help
 

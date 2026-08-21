@@ -488,7 +488,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 You should be able to move your hero around with the joypad or arrow keys.
 
-When your hero overlaps a clover, the clover shoud disappear.
+When your hero overlaps a clover, the clover should disappear.
 
 
 ## {Step 17 - Add Effect @fullscreen}

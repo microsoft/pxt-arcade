@@ -54,14 +54,14 @@ Set up:
 
 First Iteration:
 
->1. Run ``check``. The expresssion ``0 < 5`` is ``||logic:true||``,
+>1. Run ``check``. The expression ``0 < 5`` is ``||logic:true||``,
 so the loop will continue.
 >2. Log "hello number 0" to the console.
 >3. Run ``update``. ``||variables:i||`` is now assigned the value 1.
 
 Second Iteration:
 
->1. Run ``check``. The expresssion ``1 < 5`` is ``||logic:true||``,
+>1. Run ``check``. The expression ``1 < 5`` is ``||logic:true||``,
 so the loop will continue.
 >2. Log "hello number 1" to the console.
 >3. Run ``update``. ``||variables:i||`` is now assigned the value 2.

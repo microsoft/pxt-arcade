@@ -14,7 +14,7 @@ Let's create a spray of stars that fly toward the stage as we click.
 ## {Step 2}
 
 It's fun to watch the points increase...but let's add
-star **projectiles** for more exitement.
+star **projectiles** for more excitement.
 
 ~hint What are projectiles?💡
 

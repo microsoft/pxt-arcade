@@ -69,7 +69,7 @@ and glue.
 ![Splitting the cable](/docs/static/hardware/dbg/breakout-0.jpg)
 
 Cut the IDC cable in half.
-You will the half with the notch facing outside (also see the picture of assambled cable above).
+You will the half with the notch facing outside (also see the picture of assembled cable above).
 Separate the first 5 wires, counting from the red write number 1.
 
 ![Removing insulation](/docs/static/hardware/dbg/breakout-1.jpg)

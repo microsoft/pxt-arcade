@@ -634,7 +634,7 @@ for (let index = 0; index <= 10; index++) {
 
 ## {Update sprite x-position}
 
-From ``||math:Math||``, drag the ``||math:0 x 0||`` block in as the ``||sprites:x||`` value of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables(noclick):index||`` block for the second number. Continue adding decorations until you are satisifed with your scene!
+From ``||math:Math||``, drag the ``||math:0 x 0||`` block in as the ``||sprites:x||`` value of ``||sprites:set mySprite position||``. Change the first number to `16`, and drag the ``||variables(noclick):index||`` block for the second number. Continue adding decorations until you are satisfied with your scene!
 
 ```blocks
 scene.setBackgroundImage(img`

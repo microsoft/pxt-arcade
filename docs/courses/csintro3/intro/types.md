@@ -114,7 +114,7 @@ console.logValue(7, "is the number!");
 
 ## Concept: Benefits of Explicit Typing
 
-Explictly adding types to variables can make understanding complex code much easier.
+Explicitly adding types to variables can make understanding complex code much easier.
 One situation where it can be particular important is a fairly common one in JavaScript:
 when a variable is defined without immediately assigning it a value.
 

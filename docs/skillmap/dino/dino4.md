@@ -58,7 +58,7 @@ animation.runImageAnimation(mamaDino, [img`.`], 100, true)
 
 - :paint brush:  To select an animation, click the empty box in<br/>
 ``||animation(noclick):animate [mamaDino]||``<br/>
- and swith to **My Assets**.
+ and switch to **My Assets**.
 
 - :mouse pointer:  Select **Mama Moving** and click **Done**.
 

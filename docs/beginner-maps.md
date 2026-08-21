@@ -44,7 +44,7 @@
 {
   "name": "Save the Dinos",
   "cardType": "link",
-  "description": "Create a collector-style game starring a dinosuar that's determined to save her babies!",
+  "description": "Create a collector-style game starring a dinosaur that's determined to save her babies!",
   "imageUrl":  "/static/skillmap/backgrounds/dino-map.png",
   "url": "https://arcade.makecode.com/--skillmap#dino",
   "directOpen": true

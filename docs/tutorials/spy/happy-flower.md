@@ -304,7 +304,7 @@ Congratulations, your happy flower is complete! It will now send back joyful lit
 
 ## {Step 9}
 
-Let's setup a condition to change the image of the bee when it flys off toward the left.
+Let's setup a condition to change the image of the bee when it flies off toward the left.
 Put in a conditional that checks ``||logic:if||`` the ``vx`` value for ``||variables(noclick):projectile||`` is
 less than `0`.
 

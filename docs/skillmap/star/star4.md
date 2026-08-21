@@ -6,7 +6,7 @@
 
 Let's add some variety!  Show your love with roses.
 
-![Click away](/static/skillmap/star/star4.gif "Evrything's coming up roses!" )
+![Click away](/static/skillmap/star/star4.gif "Everything's coming up roses!" )
 
 
 ## {Step 2}

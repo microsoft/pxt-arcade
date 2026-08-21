@@ -177,7 +177,7 @@ To do that, we need to create a variable.
 ---
 
 You'll find that many programming languages have special words.  
-Short words like time, score, date, (etc.) often already have special meanings attatched to them. 
+Short words like time, score, date, (etc.) often already have special meanings attached to them. 
 
 For this reason, whenever you're thinking of a variable for a common word (sprite, age, name, etc.)
 it's best to add a modifier to make sure it's special. That's why we default to variables like

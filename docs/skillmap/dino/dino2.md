@@ -172,7 +172,7 @@ and drop it into a blank area of the workspace.
 
 ---
 
-![Add the counntdown end](/static/skillmap/dino/dino2-7.gif )
+![Add the countdown end](/static/skillmap/dino/dino2-7.gif )
 
 hint~
 

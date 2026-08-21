@@ -126,7 +126,7 @@ and set each duck to have a ``||sprites:y position||`` that is
 
 In the loop,
 set the ``||sprites:BounceOnWall||`` ``||sprites:SpriteFlag||`` to ``||logic:true||``,
-so that the ducks will move back and forther across the screen.
+so that the ducks will move back and forth across the screen.
 
 To make the ducks bounce (rather than just move back and forth),
 give each duck a ``||sprites:y acceleration||`` of **50**.

@@ -41,7 +41,7 @@ We put the text inside curly braces so that the title isn't displayed to users
 Our main character is called a sprite. Let's create a student sprite and get them moving before we do anything else.
 
 
-<!-- This is how you format a "clue" in accordian form -->
+<!-- This is how you format a "clue" in accordion form -->
 ~hint What's a sprite? 💡
 
 ---

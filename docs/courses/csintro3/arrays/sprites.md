@@ -14,7 +14,7 @@ This allows the sprites to be interacted with in the same way no matter how many
 2. Identify the differences between the two snippets
 3. In the second snippet, identify what sprites will be contained within
 the ``||variables:enemies||`` array
-4. In the second snippet, ientify how the sprites in ``||variables:enemies||`` are used
+4. In the second snippet, identify how the sprites in ``||variables:enemies||`` are used
 
 ### Example #1a: No Arrays
 

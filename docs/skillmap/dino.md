@@ -1,6 +1,6 @@
 # Save the Baby Dinos
 * name: Beginner's Guide to Arcade Games
-* description: Learn to create a collector-style game starring a dinosuar that's determined to save dino babies!
+* description: Learn to create a collector-style game starring a dinosaur that's determined to save dino babies!
 * infoUrl: skillmap/educator-info/dino-map-info
 * bannerUrl: /static/skillmap/dino/dino4.gif
 * backgroundurl: /static/skillmap/backgrounds/dino-comp.png

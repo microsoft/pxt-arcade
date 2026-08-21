@@ -18,7 +18,7 @@ You will need the resulting message to locate Agent Whiskers, so write it down i
 ## {2. Getting Started}
 
 **Agent:** 
-To get started, you will need to build a decryptor and decypher the encoded transmission. 
+To get started, you will need to build a decryptor and decipher the encoded transmission. 
 
 ---
 

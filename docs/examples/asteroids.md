@@ -72,7 +72,7 @@ game.onUpdate(function () {
     spaceship.x += controller.dx(70)
     spaceship.x = Math.clamp(10, 118, spaceship.x)
 
-    // metero
+    // meteor
     if (Math.random() < 0.05) {
         let m = sprites.createProjectile(meteor, 0, randint(30, 80), 0)
         m.x = randint(10, 140)
