@@ -693,7 +693,7 @@ container already in the workspace.
 ``||loops(noclick): on start||`` <br/>
 container already in the workspace.
 
-- :mouse pointer: Click the empty rectagle in the<br/>
+- :mouse pointer: Click the empty rectangle in the<br/>
 ``||music(noclick):play song...||`` block and switch to **My Assets** to choose the **countdown**.
 
 
