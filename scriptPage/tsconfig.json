@@ -8,6 +8,8 @@
         "rootDir": ".",
         "newLine": "LF",
         "types": [],
-        "sourceMap": false
+        "sourceMap": false,
+        "strictPropertyInitialization": false,
+        "strictNullChecks": false
     }
 }
