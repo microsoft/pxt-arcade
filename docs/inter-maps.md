@@ -24,6 +24,14 @@
   "directOpen": true
 },
 {
+  "name": "3-in-a-row",
+  "cardType": "link",
+  "description": "Create a puzzle game where you swap tiles to match 3 or more of the same symbol in a row!.",
+  "imageUrl": "/static/skillmap/backgrounds/3-in-a-row-thumb.png",
+  "url": "https://arcade.makecode.com/--skillmap#3-in-a-row",
+  "directOpen": true
+},
+{
   "name": "Code an Adventure",
   "cardType": "link",
   "description": "Code a text-based adventure game using your own images, storyline, and music score!",
