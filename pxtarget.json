@@ -537,6 +537,17 @@
                 }
             },
             {
+                "id": "high-contrast",
+                "name": "High Contrast",
+                "theme": {
+                    "background-color": "#000000",
+                    "button-stroke": "#FFFFFF",
+                    "text-color": "#FFFFFF",
+                    "button-fill": "#000000",
+                    "dpad-fill": "#000000"
+                }
+            },
+            {
                 "id": "red",
                 "name": "Red",
                 "theme": {
