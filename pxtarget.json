@@ -523,7 +523,133 @@
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
-        "keymap": true
+        "keymap": true,
+        "themePresets": [
+            {
+                "id": "default",
+                "name": "Default",
+                "theme": {
+                    "background-color": "#249CA3",
+                    "button-stroke": "#397382",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#397382"
+                }
+            },
+            {
+                "id": "red",
+                "name": "Red",
+                "theme": {
+                    "background-color": "#ED3636",
+                    "button-stroke": "#8D2525",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#8D2525"
+                }
+            },
+            {
+                "id": "blue",
+                "name": "Blue",
+                "theme": {
+                    "background-color": "#4E4EE9",
+                    "button-stroke": "#3333A1",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#3333A1"
+                }
+            },
+            {
+                "id": "orange",
+                "name": "Orange",
+                "theme": {
+                    "background-color": "#FF9A14",
+                    "button-stroke": "#B0701A",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#B0701A"
+                }
+            },
+            {
+                "id": "green",
+                "name": "Green",
+                "theme": {
+                    "background-color": "#4EB94E",
+                    "button-stroke": "#245D24",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#245D24"
+                }
+            },
+            {
+                "id": "brown",
+                "name": "Brown",
+                "theme": {
+                    "background-color": "#8B4513",
+                    "button-stroke": "#68320C",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#68320C"
+                }
+            },
+            {
+                "id": "bubblegum",
+                "name": "Bubblegum",
+                "theme": {
+                    "background-color": "#F7ABB9",
+                    "button-stroke": "#71C1C9",
+                    "text-color": "#4E4E4E",
+                    "button-fill": "#92F5FF",
+                    "dpad-fill": "#F7ABB9",
+                    "skin": "bubblegum"
+                }
+            },
+            {
+                "id": "purple",
+                "name": "Purple",
+                "theme": {
+                    "background-color": "#660FC7",
+                    "button-stroke": "#4C0B95",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#4C0B95"
+                }
+            },
+            {
+                "id": "microcode",
+                "name": "MicroCode",
+                "theme": {
+                    "background-color": "#3F3F3F",
+                    "button-stroke": "#212121",
+                    "text-color": "#D9D9D9",
+                    "button-fill": "#2D2D2D",
+                    "dpad-fill": "#212121"
+                }
+            },
+            {
+                "id": "zune",
+                "name": "Zune",
+                "theme": {
+                    "background-color": "#564131",
+                    "button-stroke": "#524F4E",
+                    "text-color": "#E7E7E7",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#524F4E",
+                    "skin": "zune"
+                }
+            },
+            {
+                "id": "junior",
+                "name": "Junior",
+                "theme": {
+                    "background-color": "#EB4444",
+                    "button-stroke": "#670C0C",
+                    "text-color": "#FFFFFF",
+                    "button-fill": "#D54322",
+                    "dpad-fill": "#670C0C",
+                    "skin": "junior"
+                }
+            }
+        ]
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
