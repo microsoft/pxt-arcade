@@ -74,7 +74,8 @@
                 "tags": [ "Sprites" ]
             },
             "microsoft/arcade-piano-roll": {
-                "preferred": true
+                "preferred": true,
+                "tags": [ "Music" ]
             },
             "mr-coxall/turtle-logo": {
                 "tags": [ "Graphics" ]
