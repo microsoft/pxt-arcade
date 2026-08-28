@@ -1,0 +1,8 @@
+#mainmenu .help-dropdown-menuitem > button.common-button,
+#mainmenu .settings-menuitem > button.common-button {
+    color: var(--pxt-header-foreground);
+}
+
+.fullscreen.extensions-browser > .common-modal > .common-modal-header .common-button.menu-button {
+    color: var(--pxt-header-foreground);
+}
