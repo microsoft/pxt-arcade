@@ -38,6 +38,8 @@
         "storySprites.jres",
         "tilemaps/gallery.ts",
         "tilemaps/tilemap.jres",
+        "music.jres",
+        "music.ts",
         "startup.ts",
         "pxtsnippets.json"
     ],

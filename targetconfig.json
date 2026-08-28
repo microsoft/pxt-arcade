@@ -229,7 +229,8 @@
             "story": "docs:/skillmap/story",
             "dino": "docs:/skillmap/dino",
             "galaxy": "docs:/skillmap/galaxy",
-            "sparks": "docs:/skillmap/sparks"
+            "sparks": "docs:/skillmap/sparks",
+            "3-in-a-row": "docs:/skillmap/3-in-a-row"
         }
     },
     "multiplayer": {
