@@ -544,7 +544,8 @@
                     "button-stroke": "#FFFFFF",
                     "text-color": "#FFFFFF",
                     "button-fill": "#000000",
-                    "dpad-fill": "#000000"
+                    "dpad-fill": "#000000",
+                    "skin": "high-contrast"
                 }
             },
             {
