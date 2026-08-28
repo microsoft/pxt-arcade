@@ -82,6 +82,7 @@
         "libs/hw---n4",
         "libs/hw---rpi",
         "libs/hw---samd51",
+        "libs/hw---samd51adafruit",
         "libs/hw---stm32f401",
         "libs/hw---rp2040",
         "libs/hw---vm",
@@ -132,6 +133,7 @@
             "libs/hw---gdk",
             "libs/hw---n4",
             "libs/hw---samd51",
+            "libs/hw---samd51adafruit",
             "libs/hw---stm32f401",
             "libs/hw---rp2040"
         ],
