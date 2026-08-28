@@ -84,6 +84,9 @@
                 "preferred": true,
                 "tags": [ "Utility" ]
             },
+            "microsoft/arcade-piano-roll": {
+                "preferred": true
+            },
             "mr-coxall/turtle-logo": {},
             "aqeeaqee/pxt-raycasting": {
                 "preferred": true,
