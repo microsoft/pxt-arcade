@@ -660,6 +660,18 @@
                     "dpad-fill": "#670C0C",
                     "skin": "junior"
                 }
+            },
+            {
+                "id": "teal",
+                "name": "Teal",
+                "theme": {
+                    "background-color": "#249CA3",
+                    "button-stroke": "#397382",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#397382",
+                    "skin": "teal"
+                }
             }
         ]
     },
