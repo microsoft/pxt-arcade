@@ -524,6 +524,28 @@
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
         "keymap": true,
+        "themeSkins": [
+            {
+                "id": "retro",
+                "name": "Retro"
+            },
+            {
+                "id": "high-contrast",
+                "name": "High Contrast"
+            },
+            {
+                "id": "bubblegum",
+                "name": "Bubblegum"
+            },
+            {
+                "id": "zune",
+                "name": "Zune"
+            },
+            {
+                "id": "junior",
+                "name": "Junior"
+            }
+        ],
         "themePresets": [
             {
                 "id": "default",
@@ -659,6 +681,18 @@
                     "button-fill": "#D54322",
                     "dpad-fill": "#670C0C",
                     "skin": "junior"
+                }
+            },
+            {
+                "id": "retro",
+                "name": "Retro",
+                "theme": {
+                    "background-color": "#FCF7E4",
+                    "button-stroke": "#5C406C",
+                    "text-color": "#5C406C",
+                    "button-fill": "#A3809C",
+                    "dpad-fill": "#A3809C",
+                    "skin": "retro"
                 }
             },
             {
