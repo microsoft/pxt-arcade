@@ -524,7 +524,7 @@
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
         "keymap": true,
-        "themeSkins": [
+        "themeLayouts": [
             {
                 "id": "retro",
                 "name": "Retro"
@@ -532,10 +532,6 @@
             {
                 "id": "high-contrast",
                 "name": "High Contrast"
-            },
-            {
-                "id": "bubblegum",
-                "name": "Bubblegum"
             },
             {
                 "id": "zune",
@@ -555,7 +551,9 @@
                     "button-stroke": "#397382",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#397382"
+                    "dpad-fill": "#397382",
+                    "joystick-handle-stroke": "#999999",
+                    "layout": "default"
                 }
             },
             {
@@ -567,7 +565,8 @@
                     "text-color": "#FFFFFF",
                     "button-fill": "#000000",
                     "dpad-fill": "#000000",
-                    "skin": "high-contrast"
+                    "joystick-handle-stroke": "#FFFFFF",
+                    "layout": "high-contrast"
                 }
             },
             {
@@ -578,7 +577,9 @@
                     "button-stroke": "#8D2525",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#8D2525"
+                    "dpad-fill": "#8D2525",
+                    "joystick-handle-stroke": "#8D2525",
+                    "layout": "default"
                 }
             },
             {
@@ -589,7 +590,9 @@
                     "button-stroke": "#3333A1",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#3333A1"
+                    "dpad-fill": "#3333A1",
+                    "joystick-handle-stroke": "#3333A1",
+                    "layout": "default"
                 }
             },
             {
@@ -600,7 +603,9 @@
                     "button-stroke": "#B0701A",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#B0701A"
+                    "dpad-fill": "#B0701A",
+                    "joystick-handle-stroke": "#B0701A",
+                    "layout": "default"
                 }
             },
             {
@@ -611,7 +616,9 @@
                     "button-stroke": "#245D24",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#245D24"
+                    "dpad-fill": "#245D24",
+                    "joystick-handle-stroke": "#245D24",
+                    "layout": "default"
                 }
             },
             {
@@ -622,7 +629,9 @@
                     "button-stroke": "#68320C",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#68320C"
+                    "dpad-fill": "#68320C",
+                    "joystick-handle-stroke": "#68320C",
+                    "layout": "default"
                 }
             },
             {
@@ -634,7 +643,8 @@
                     "text-color": "#4E4E4E",
                     "button-fill": "#92F5FF",
                     "dpad-fill": "#F7ABB9",
-                    "skin": "bubblegum"
+                    "joystick-handle-stroke": "#71C1C9",
+                    "layout": "default"
                 }
             },
             {
@@ -645,7 +655,9 @@
                     "button-stroke": "#4C0B95",
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
-                    "dpad-fill": "#4C0B95"
+                    "dpad-fill": "#4C0B95",
+                    "joystick-handle-stroke": "#4C0B95",
+                    "layout": "default"
                 }
             },
             {
@@ -656,7 +668,9 @@
                     "button-stroke": "#212121",
                     "text-color": "#D9D9D9",
                     "button-fill": "#2D2D2D",
-                    "dpad-fill": "#212121"
+                    "dpad-fill": "#212121",
+                    "joystick-handle-stroke": "#212121",
+                    "layout": "default"
                 }
             },
             {
@@ -668,7 +682,8 @@
                     "text-color": "#E7E7E7",
                     "button-fill": "#333333",
                     "dpad-fill": "#524F4E",
-                    "skin": "zune"
+                    "joystick-handle-stroke": "#524F4E",
+                    "layout": "zune"
                 }
             },
             {
@@ -680,7 +695,8 @@
                     "text-color": "#FFFFFF",
                     "button-fill": "#D54322",
                     "dpad-fill": "#670C0C",
-                    "skin": "junior"
+                    "joystick-handle-stroke": "#670C0C",
+                    "layout": "junior"
                 }
             },
             {
@@ -692,7 +708,8 @@
                     "text-color": "#5C406C",
                     "button-fill": "#A3809C",
                     "dpad-fill": "#A3809C",
-                    "skin": "retro"
+                    "joystick-handle-stroke": "#5C406C",
+                    "layout": "retro"
                 }
             },
             {
@@ -704,7 +721,8 @@
                     "text-color": "#CECECE",
                     "button-fill": "#333333",
                     "dpad-fill": "#397382",
-                    "skin": "teal"
+                    "joystick-handle-stroke": "#999999",
+                    "layout": "default"
                 }
             }
         ]
