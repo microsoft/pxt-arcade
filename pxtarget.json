@@ -527,7 +527,49 @@
         "themeLayouts": [
             {
                 "id": "retro",
-                "name": "Retro"
+                "name": "Retro",
+                "colorFields": [
+                    {
+                        "property": "background-color",
+                        "label": "Console",
+                        "defaultValue": "#FCF7E4"
+                    },
+                    {
+                        "property": "button-stroke",
+                        "label": "Button outline",
+                        "defaultValue": "#5C406C"
+                    },
+                    {
+                        "property": "text-color",
+                        "label": "Button labels",
+                        "defaultValue": "#5C406C"
+                    },
+                    {
+                        "property": "button-fill",
+                        "label": "Buttons",
+                        "defaultValue": "#A3809C"
+                    },
+                    {
+                        "property": "dpad-fill",
+                        "label": "D-pad",
+                        "defaultValue": "#A3809C"
+                    },
+                    {
+                        "property": "console-border",
+                        "label": "Console border",
+                        "defaultValue": "#96266C"
+                    },
+                    {
+                        "property": "screen-side-border",
+                        "label": "Screen side border",
+                        "defaultValue": "#2F99A1"
+                    },
+                    {
+                        "property": "screen-top-bottom-border",
+                        "label": "Screen top and bottom border",
+                        "defaultValue": "#F290C1"
+                    }
+                ]
             },
             {
                 "id": "high-contrast",
@@ -539,7 +581,29 @@
             },
             {
                 "id": "junior",
-                "name": "Junior"
+                "name": "Junior",
+                "colorFields": [
+                    {
+                        "property": "background-color",
+                        "label": "Console",
+                        "defaultValue": "#EB4444"
+                    },
+                    {
+                        "property": "button-stroke",
+                        "label": "Button outline",
+                        "defaultValue": "#670C0C"
+                    },
+                    {
+                        "property": "text-color",
+                        "label": "Button labels",
+                        "defaultValue": "#FFFFFF"
+                    },
+                    {
+                        "property": "button-fill",
+                        "label": "Buttons",
+                        "defaultValue": "#D54322"
+                    }
+                ]
             }
         ],
         "themePresets": [
@@ -694,8 +758,6 @@
                     "button-stroke": "#670C0C",
                     "text-color": "#FFFFFF",
                     "button-fill": "#D54322",
-                    "dpad-fill": "#670C0C",
-                    "joystick-handle-stroke": "#670C0C",
                     "layout": "junior"
                 }
             },
@@ -708,7 +770,9 @@
                     "text-color": "#5C406C",
                     "button-fill": "#A3809C",
                     "dpad-fill": "#A3809C",
-                    "joystick-handle-stroke": "#5C406C",
+                    "console-border": "#96266C",
+                    "screen-side-border": "#2F99A1",
+                    "screen-top-bottom-border": "#F290C1",
                     "layout": "retro"
                 }
             },
