@@ -46,7 +46,7 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "description": "It's a badge, it's an arcade, it's a PyBadge",
         "imageUrl": "/static/hardware/pybadge.jpg",
         "url": "https://www.adafruit.com/product/4200",
-        "variant": "hw---samd51"
+        "variant": "hw---samd51adafruit"
     },
     {
         "name": "BrainPad Arcade",
@@ -60,7 +60,7 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "description": "The upgraded PyBadge",
         "imageUrl": "/static/hardware/pygamer.jpg",
         "url": "https://www.adafruit.com/product/4242",
-        "variant": "hw---samd51"
+        "variant": "hw---samd51adafruit"
     },
     {
         "name": "Ovobot Xtron Pro",
@@ -74,7 +74,7 @@ These boards run MakeCode Arcade games. They are based on our guidelines, adhere
         "description": "It's the PyBadge with a zest of Machine learning",
         "imageUrl": "/static/hardware/edgebadge.jpg",
         "url": "https://www.adafruit.com/product/4400",
-        "variant": "hw---samd51"
+        "variant": "hw---samd51adafruit"
     },
     {
         "name": "TomatoCube Arcade Console",
