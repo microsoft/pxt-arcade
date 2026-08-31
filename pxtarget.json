@@ -541,13 +541,18 @@
                     },
                     {
                         "property": "text-color",
-                        "label": "Button labels",
+                        "label": "Text",
                         "defaultValue": "#5C406C"
                     },
                     {
-                        "property": "button-fill",
-                        "label": "Buttons",
-                        "defaultValue": "#A3809C"
+                        "property": "button-a-fill",
+                        "label": "A button background",
+                        "defaultValue": "#FF8135"
+                    },
+                    {
+                        "property": "button-b-fill",
+                        "label": "B button background",
+                        "defaultValue": "#FF91C4"
                     },
                     {
                         "property": "dpad-fill",
@@ -768,7 +773,8 @@
                     "background-color": "#FCF7E4",
                     "button-stroke": "#5C406C",
                     "text-color": "#5C406C",
-                    "button-fill": "#A3809C",
+                    "button-a-fill": "#FF8135",
+                    "button-b-fill": "#FF91C4",
                     "dpad-fill": "#A3809C",
                     "console-border": "#96266C",
                     "screen-side-border": "#2F99A1",
