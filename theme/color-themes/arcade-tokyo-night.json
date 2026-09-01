@@ -2,6 +2,7 @@
     "id": "arcade-tokyo-night",
     "name": "Tokyo Night",
     "weight": 80,
+    "defaultSimulatorTheme": "purple",
     "monacoBaseTheme": "vs-dark",
     "overrideFiles": [
         "/overrides/arcade-dark-overrides.css",
