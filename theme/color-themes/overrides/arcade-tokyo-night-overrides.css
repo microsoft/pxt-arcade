@@ -7,6 +7,10 @@
     color: var(--pxt-header-foreground);
 }
 
+.common-menubar.header .common-button.menu-button {
+    color: var(--pxt-header-foreground);
+}
+
 .debugtoolbar .ui.menu .dbg-btn.dbg-step.disabled {
     color: var(--pxt-neutral-foreground1);
     opacity: 1;
