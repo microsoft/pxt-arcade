@@ -19,10 +19,9 @@
 
 .detailview .ui.grid.stackable .actions .card-action .button.approve {
     background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
 }
 
-.detailview .ui.grid.stackable .actions .card-action .button.approve,
-.detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:hover,
 .detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:focus,
 .detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:active,
 .detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:visited,
