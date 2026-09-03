@@ -907,7 +907,8 @@
             "image-editor",
             "tilemap-editor",
             "soundeffect-editor",
-            "music-editor"
+            "music-editor",
+            "piano-roll-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,
