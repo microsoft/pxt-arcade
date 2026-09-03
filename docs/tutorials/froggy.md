@@ -367,7 +367,7 @@ Add a sense of urgency by including a countdown timer.
 ---
 
 - :id card:  From ``||info:Info||``, grab<br/>
-``||info:start countown [10]s||``<br/>
+``||info:start countdown [10]s||``<br/>
 and drag it to the end of the<br/>
 ``||loops:on start||`` container.<br/>
 

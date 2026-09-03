@@ -261,7 +261,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 Next, there are [__*standard blocks*__](#sBlockIt "Single line blocks that make up the majority of most programs").
 
 Standard blocks are single-line blocks with notches at the top and bottom that
-allow them to attatch to other pieces. These blocks run in order from top
+allow them to attach to other pieces. These blocks run in order from top
 to bottom in the container where they're placed.
 
 Here is an example of a standard block:

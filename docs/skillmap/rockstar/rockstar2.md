@@ -5,7 +5,7 @@
 
 Jerry needs to gather all of the instruments before getting on the tour bus!
 
-![Collect the instuments](/static/skillmap/rockstar/rockstar2.gif "Look what we're about to do today!")
+![Collect the instruments](/static/skillmap/rockstar/rockstar2.gif "Look what we're about to do today!")
 
 
 

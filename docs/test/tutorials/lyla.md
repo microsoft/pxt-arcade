@@ -425,7 +425,7 @@ mp.onScore(20, function (thisPlayer) { })
 ---
 
 <br/>
-This block signals that the game should immediatedly end in a win.
+This block signals that the game should immediately end in a win.
 
 ```block
     game.gameOver(true)

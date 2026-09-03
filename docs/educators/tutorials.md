@@ -4,7 +4,7 @@ Looking to run a tutorial in your classroom? These resources will help get you p
 
 
 ## <a name="pizza">Chase the Pizza</a>
-Chase the pizza is one of our most popular tutorials. Providing a quick and simple introduction to MakeCode Arcade games, this is a gret way to provide entertaining results in a single class period.
+Chase the pizza is one of our most popular tutorials. Providing a quick and simple introduction to MakeCode Arcade games, this is a great way to provide entertaining results in a single class period.
 
 
 ```codecard
@@ -30,7 +30,7 @@ Chase the pizza is one of our most popular tutorials. Providing a quick and simp
 
 
 ## <a name="pizza">Chase the Pizza</a>
-Chase the pizza is one of our most popular tutorials. Providing a quick and simple introduction to MakeCode Arcade games, this is a gret way to provide entertaining results in a single class period.
+Chase the pizza is one of our most popular tutorials. Providing a quick and simple introduction to MakeCode Arcade games, this is a great way to provide entertaining results in a single class period.
 
 
 ```codecard

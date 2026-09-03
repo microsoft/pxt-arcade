@@ -77,7 +77,7 @@ Notice that there is a lot of *green* text in the tutorial tool. Those are comme
 ### Step 3. Make changes in the Tutorial Tool 
 
 
-To customize this tutorial, we'll start by changing **100** to **50** throughought the whole document using **find/replace**. Click "Run" again to see the updates.
+To customize this tutorial, we'll start by changing **100** to **50** throughout the whole document using **find/replace**. Click "Run" again to see the updates.
 
 ![Run the emulator each time you make an update](/static/courses/tutorial-tutorial/update-tut.gif "" )
 

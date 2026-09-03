@@ -417,7 +417,7 @@ game.onUpdateInterval(1000, function () {
 
 ## {Step 11}
 
-Go to the Toolbox and open the **Advanced** categories. In ``||images:Images||`` find the ``||images:flip picture horizontally||`` block. Pull it out and place it inside the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and drop it over the ``||variables(noclick):picture||`` variable to replace it in ``||images:flip picture horzontally||``. Change the ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``.
+Go to the Toolbox and open the **Advanced** categories. In ``||images:Images||`` find the ``||images:flip picture horizontally||`` block. Pull it out and place it inside the ``||logic:if then||``. Now, back in ``||sprites:Sprites||``, get a ``||sprites:mySprite image||`` and drop it over the ``||variables(noclick):picture||`` variable to replace it in ``||images:flip picture horizontally||``. Change the ``||variables(noclick):mySprite||`` to ``||variables(noclick):projectile||``.
 
 ![Flip image of the bee](/static/tutorials/happy-flower/bee-flip.gif)
 

@@ -119,7 +119,7 @@
 ### lab-02-06-part-4
 
 * name: Lab 2.6 Part 4 - Starting Difficulty
-* description: Allow your player to select a difficlty!
+* description: Allow your player to select a difficulty!
 * type: tutorial
 * next: lab-02-06-finish
 * url: /courses/csintro/blocks/unit-2/lab0206-part4

@@ -67,7 +67,7 @@ f c f . f 4 4 5 5 f e e . . . .
 
 ## Student Task #1: Refactoring
 
-Start with the code above. It has the same action described for when any of the arrow keys are pressed, but cannot use ``||controller:on any button pressed||`` because the player is not suppposed to teleport when ``||controller:A||`` or ``||controller:B||`` is pressed.
+Start with the code above. It has the same action described for when any of the arrow keys are pressed, but cannot use ``||controller:on any button pressed||`` because the player is not supposed to teleport when ``||controller:A||`` or ``||controller:B||`` is pressed.
 
 1. Create a function, ``||functions:teleport||``, and duplicate the code from the ``||controller:on left button pressed||`` event into that event
 2. Replace the blocks inside the ``||controller:on left button pressed||`` event with ``||functions:call function teleport||``

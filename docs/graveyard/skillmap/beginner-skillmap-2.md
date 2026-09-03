@@ -80,7 +80,7 @@
 * description: Add to your greeting card for a gift that keeps on giving!
 * tags: easy, card, gift, creative
 * next: story-activity3
-* reqired: 1 story
+* required: 1 story
 
 * url: /skillmap/story/story2 
 * imageUrl: /static/skillmap/story/story-activity2.png

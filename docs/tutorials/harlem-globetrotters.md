@@ -42,7 +42,7 @@ scene.setBackgroundImage(img`.`)
 
  ___
 
-- :mouse pointer: Cick the **empty gray box** inside the background block.
+- :mouse pointer: Click the **empty gray box** inside the background block.
 
 - :mouse pointer: Select the **Gallery**
 ![Toggle to Gallery](/static/skillmap/assets/gallery.png "Click the Gallery tab to choose a character")

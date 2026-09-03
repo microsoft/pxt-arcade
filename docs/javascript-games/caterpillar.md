@@ -1,6 +1,6 @@
 # Caterpillar
 
-Your caterpiller can grow by nibbling leaves for nourishment. Guide the caterpiller's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
+Your caterpillar can grow by nibbling leaves for nourishment. Guide the caterpillar's movement toward a leaf. Be careful though, if it touches the side of the screen it won't live to be a butterfly.
 
 ```typescript
 const NEXT_SECTION_KEY = "__child_node";

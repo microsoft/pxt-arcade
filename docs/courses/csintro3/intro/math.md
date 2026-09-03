@@ -67,7 +67,7 @@ let num: number = 15 + 8 / 3
 
 ## Concept: Order of Operations
 
-JavaScipt uses a **PEMDAS** structure to determine the order in which operations are evaluated.
+JavaScript uses a **PEMDAS** structure to determine the order in which operations are evaluated.
 This standards for **P**arentheses, **E**xponents,
 **M**ultiplication or **D**ivision, **A**ddition or **S**ubtraction.
 

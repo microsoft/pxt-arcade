@@ -183,7 +183,7 @@ Let's add code to let the user know what the number was.
 ---
 
 
-► Click on the **Advanced** cagegory to reveal the ``||text:Text||``
+► Click on the **Advanced** category to reveal the ``||text:Text||``
 option.
 
 ► Grab the ``||text:join ["Hello"] ["World"] ⊖ ⊕||`` block and use it to

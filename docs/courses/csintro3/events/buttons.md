@@ -148,7 +148,7 @@ two properties available on each button: ``repeatDelay`` and ``repeatInterval``.
 between when the button is first pressed,
 and when the button repeat should start to trigger.
 
-``repeatInterval`` is the delay between each occurence of the event.
+``repeatInterval`` is the delay between each occurrence of the event.
 
 In the snippet below, the ``repeatDelay`` is set so that the score won't be changed
 until after the button has been held for 1 full second,
@@ -199,7 +199,7 @@ so that the lasers get fired every 200ms.
 
 ### Limited Charge
 
-With lasers thare repeat as long as the button is held,
+With lasers that repeat as long as the button is held,
 the game becomes a bit too easy.
 Add a charge level that limits how many lasers can be fired at once.
 

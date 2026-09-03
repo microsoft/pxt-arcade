@@ -48,7 +48,7 @@ Let's get our sprite moving up and down with the controller.
 
 ---
 
-- :game:  From the ``||contoller:Controller||`` category, grab a
+- :game:  From the ``||controller:Controller||`` category, grab a
 ``||controller:move [mySprite] with buttons ⊕||``
 block and snap it into **the bottom** of the
 ``||loops:on start||`` container.

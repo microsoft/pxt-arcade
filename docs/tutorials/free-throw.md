@@ -171,7 +171,7 @@ In this game, your player will be moving back and forth.
 ---
 
 - :paper plane:  From ``||sprites:Sprites||``, drag<br/>
-``||sprites:set [athelete] velocity to vx [50] vy [0]||``<br/>
+``||sprites:set [athlete] velocity to vx [50] vy [0]||``<br/>
 to **the end** of the <br/>
 ``||loops(onclick):on start||`` container.
 
@@ -455,14 +455,14 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Goal, function (sprite, othe
 ``||info:change score by [1]||``  <br/>
 and snap it into **the empty**  <br/>
 ``||sprites(noclick):on [sprite] of kind [Projectile] overlaps...||``<br/>
-containter already in the workspace.
+container already in the workspace.
 
 
 - :paper plane: From ``||sprites:Sprites||``, grab <br/>
 ``||sprites:destroy [sprite]||`` <br/>
 and snap it into **the end** of the <br/>
 ``||sprites(noclick):on [sprite] of kind [Projectile] overlaps...||``<br/>
-containter in the workspace.
+container in the workspace.
 
 
 ~hint Why destroy "sprite"? 💡

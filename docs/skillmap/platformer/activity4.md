@@ -506,7 +506,7 @@ using our original tilemap.
 ► Find a ``||logic:[0] [=] [0]||`` block to replace **`<true>`**
  in the empty ``||logic:if <true> then||`` container.
 
-► Replace the first **0** in the logic arguement with  ``||variables(noclick):currentLevel||``.
+► Replace the first **0** in the logic argument with  ``||variables(noclick):currentLevel||``.
 
 ► Replace the second **0** of the logic argument with **1**.
 

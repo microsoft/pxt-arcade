@@ -46,7 +46,7 @@ Other optional elements include:
 * additional flash memory
 * status LEDs (see [LEDs](#leds))
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
-circuits (see [expansion coonnector](#pins))
+circuits (see [expansion connector](#pins))
 
 A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). 
 
@@ -207,7 +207,7 @@ headphone jack it must be clearly labelled with a 'headphone' symbol.
 ### USB connector #usb
 
 Arcade must have a micro USB socket for power and UF2 programming. We recommend a part with through-hole 
-mechanical solder-down tabs to provide more strength, especially for 'bare boards' whcih have no physical enclosure to
+mechanical solder-down tabs to provide more strength, especially for 'bare boards' which have no physical enclosure to
 add mechanical strength. We recommend adding ESD protection for the USB data lines and a zener diode
 to clamp the Vbus power line and thereby limit over-voltage transients during USB connection. 
 
@@ -277,7 +277,7 @@ touch the regulator, it must not get too hot to touch under any circumstances.
 An optional `BATTSENSE` can be connected to a voltage divider and to the battery.
 This is not yet supported in software.
 
-### Comissioning and debugging #debug
+### Commissioning and debugging #debug
 
 Provision must be made for commissioning boards following manufacture. Depending on the MCU it may
 be possible to flash and test the board over USB. However, to-date we have used a debug connector

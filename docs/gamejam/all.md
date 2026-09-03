@@ -72,7 +72,7 @@ The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode For
     },
     {
         "name": "Climate Jam",
-        "description": "Games focused on human inpact in the global climate crisis",
+        "description": "Games focused on human impact in the global climate crisis",
         "url": "/gamejam/global-2021",
         "imageUrl": "/static/gamejam/jams/global-2021/assets/preview.png"
     },

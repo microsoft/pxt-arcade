@@ -168,7 +168,7 @@ These are some games that didn't make the top three, but the judges loved! Give 
 
 ---
 
-* name: Save the enviroment by iCahnN
+* name: Save the environment by iCahnN
 * type: sharedExample
 * description: We clean up the neighborhood and try to decrease carbon emissions. WASD to move. #savetheplanet
 * url: https://arcade.makecode.com/S70901-20036-29774-14001

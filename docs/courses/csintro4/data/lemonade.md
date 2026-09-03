@@ -1,6 +1,6 @@
 # Lemonade Sales
 
-Below is a game called **Lemonade City**. THe object of the game is use data analysis to run a sucessful lemonade business.
+Below is a game called **Lemonade City**. THe object of the game is use data analysis to run a successful lemonade business.
 
 Each day, the player is told the weather forecast of the day. As expected the weather has large impact on the amount of lemonade sales. The hotter the day, the higher the demand for lemonade.
 

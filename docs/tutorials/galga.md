@@ -374,7 +374,7 @@ edge of the screen, and grab a ``||math:pick random [0] to [10]||`` block to
 replace the **y** value so enemies come from different heights each time.
 
 ► Edit your random block to go from **5** to **115** to use as much of the
-screen height as possible withough exiting the playable area.
+screen height as possible without exiting the playable area.
 
 
 
@@ -557,6 +557,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 You have completed your game!
 
 You can now use the direction buttons to move your space plane and
-the **Ⓐ** button to lauch darts!
+the **Ⓐ** button to launch darts!
 
 ![Space plane and attacking spacecraft](/static/tutorials/galga.gif)

@@ -53,7 +53,7 @@
 * allowcodecarryover: false
 * name: Penguins
 * type: tutorial
-* description: It's penguin pandimonium! Can you help contain the creatures before you carry on with your day?
+* description: It's penguin pandemonium! Can you help contain the creatures before you carry on with your day?
 * url: /skillmap/zoo/zoo3
 * imageurl: /static/skillmap/zoo/zoo3.gif
 * tags: easy, positioning, debugging

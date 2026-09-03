@@ -31,7 +31,7 @@ animation. Name your variable something like **frameList**.
      1.   Drag an <br/>
      ``||arrays:empty array||`` <br/>
      block in to replace the **0** for your
-     inititalization. This changes the variable into an array.
+     initialization. This changes the variable into an array.
      1.   Select the **(+)** sign to add an element to your array.<br/>
      (Notice that the new element is blank.)
      1.   Drag an empty image from the

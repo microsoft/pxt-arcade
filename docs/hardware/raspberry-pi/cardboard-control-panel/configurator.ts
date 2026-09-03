@@ -129,7 +129,7 @@ const bcmToPins: any = {
     20: 38,
     21: 40,
 }
-// ground pin indixes
+// ground pin indices
 const gnds = [6, 9, 14, 20, 25, 30, 34, 39];
 const srcs = [1, 17, 2, 4]
 

@@ -24,7 +24,7 @@ Use at least **four** of the following concepts from [structure](/courses/csintr
 
 Use at least **one** of the following concepts from [Functions](/courses/csintro3/functions)
 
-* [Function Paramerters](/courses/csintro3/functions/parameters)
+* [Function Parameters](/courses/csintro3/functions/parameters)
 * [Function Returns](/courses/csintro3/functions/returns)
 
 Use at least **three** of the following concepts from [Events](/courses/csintro3/events)

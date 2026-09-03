@@ -3,10 +3,10 @@
 When implementing powerups in the case study game,
 the same ``||sprites:Kind||`` was used to maintain the
 same behavior for all the different powerups.
-The PowerUp type was kept seperate, and obtained using the ``powerUps.getType``
+The PowerUp type was kept separate, and obtained using the ``powerUps.getType``
 function, which took in a sprite and returned the type of power up that it represented.
 
-This structure simplifed the behavior of the power ups -
+This structure simplified the behavior of the power ups -
 as they shared behavior outside of the bonus they gave the player -
 but required a long chain of ``||logic:if ... else if||`` checks in the event,
 with each ``||logic:if condition||`` simply checking the type returned by

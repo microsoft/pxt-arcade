@@ -228,7 +228,7 @@ pizza.setPosition(140, 100)
 
 Find ``||sprites:on sprite of kind Player overlaps otherSprite of kind Player||`` in ``||sprites:Sprites||``, and drag it into the workspace. Change the first ``||sprites:kind Player||`` to ``||sprites:kind Food||``.
 
-This event will occur whenever two ``||sprites:Sprites||`` of the given ``||sprites:kinds||`` are on top of eachother.
+This event will occur whenever two ``||sprites:Sprites||`` of the given ``||sprites:kinds||`` are on top of each other.
 
 ```blocks
 let pizza: Sprite = null

@@ -16,7 +16,7 @@ If you are editing a file in another version, and find that things are not worki
 
 ## Scene Game Loop
 
-The Scene game loop sequences all the actions and updates to the game scene based on physics set for and events occuring to the game objects. The loop frame interval is timed internally to provide frequent enough updates for smooth scene transitions. The loop yields long enough for servicing of other fibers related to the game.
+The Scene game loop sequences all the actions and updates to the game scene based on physics set for and events occurring to the game objects. The loop frame interval is timed internally to provide frequent enough updates for smooth scene transitions. The loop yields long enough for servicing of other fibers related to the game.
 
 In each frame, the following steps will occur (in order):
 
@@ -58,7 +58,7 @@ This keeps these ``||sprites:sprites||`` from moving through walls or missing ``
 Rendering elements to the screen is handled by drawing different elements depending on their ``z index``. Elements with lower ``z indices`` are drawn to the screen before elements with higher ``z indices``. A tie in ``z index`` equivalency is resolved by using creation order - newer elements are drawn on top of older elements when they are at the same ``z index``.
 
 1. The background is drawn to the screen, clearing anything else on the screen. This can be either a color or an image. This is always done first.
-    1. The `scene.Flag.SeeThrough` flag can be set on a scene to allow the scene below it to be renderered *below* the current scene as a background. This is currently used for text dialogs.
+    1. The `scene.Flag.SeeThrough` flag can be set on a scene to allow the scene below it to be rendered *below* the current scene as a background. This is currently used for text dialogs.
 2. ``z index -20``: ``on paint`` events are run and applied to the screen.
 3. ``z index -1``: the ``tilemap`` is rendered to the screen.
 4. ``z index 0``: sprites are rendered at this index by default, unless they are reassigned a new ``z index``.

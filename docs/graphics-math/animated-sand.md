@@ -97,7 +97,7 @@ game.onUpdate(function () {
     // visually integrates into something that somewhat resembles physics.
     // (I'd initially tried implementing this as a bunch of concurrent and
     // "realistic" elastic collisions among circular grains, but the
-    // calculations and volument of code quickly got out of hand for both
+    // calculations and volume of code quickly got out of hand for both
     // the tiny 8-bit AVR microcontroller and my tiny dinosaur brain.)
 
     for (let i = 0; i < N_GRAINS; i++) {

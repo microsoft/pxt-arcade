@@ -2,7 +2,7 @@
 
 **A page for Educators & Parents**
 
-The **Burstin' Balloons** skillmap introduces simple game design and computer science concepts through the creation of a competetive balloon bursting game.
+The **Burstin' Balloons** skillmap introduces simple game design and computer science concepts through the creation of a competitive balloon bursting game.
 
 In this set of activities, students will create a simple clicker with MakeCode Arcade.  This map is intended for students who are new to MakeCode with little previous coding experience.
 

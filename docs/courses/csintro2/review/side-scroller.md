@@ -29,7 +29,7 @@ color-coded-tilemap
 
 Create a project with the code below - the images for the trees and car are available in the Gallery.
 
-Make sure the tilemap you draw always has at least **two** clear tiles next to eachother in each column besides the beginning, so that the car can make it all the way through the forest.
+Make sure the tilemap you draw always has at least **two** clear tiles next to each other in each column besides the beginning, so that the car can make it all the way through the forest.
 
 ```blocks
 namespace SpriteKind {

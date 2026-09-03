@@ -69,5 +69,5 @@ music.stopAllSounds()
 [tempo](/reference/music/tempo),
 [change tempo by](/reference/music/change-tempo-by),
 [set tempo](/reference/music/set-tempo),
-[set voluime](/reference/music/set-volume),
+[set volume](/reference/music/set-volume),
 [stop All Sounds](reference/music/stop-all-sounds)

@@ -11,7 +11,7 @@ you will usually see a three-digit error code accompanied by a frowny face.
 
 ## 989: Failed cast on null #989
 
-This error typically occurs when trying to use something that is not yet created (non-existant object) -
+This error typically occurs when trying to use something that is not yet created (non-existent object) -
 for example, setting the position of a sprite that does not yet exist.
 
 ```blocks
@@ -176,7 +176,7 @@ because there is no ``||scene:tilemap||`` created to get a ``||scene:tile||`` fr
 ## 020: Out of memory: too many fibers #020
 
 This error occurs when the system runs out of memory for events or fibers.
-This is unlikely to occur in blocks, because the structure of blocks makes it unlikey that you'll create
+This is unlikely to occur in blocks, because the structure of blocks makes it unlikely that you'll create
 an increasing number of events. In JavaScript, however, you can nest events or create them in loops.
 
 ```typescript

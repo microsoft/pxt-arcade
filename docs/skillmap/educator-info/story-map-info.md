@@ -65,7 +65,7 @@ In this learning path, students will learn how to use background images, music, 
 
 | Activity | Joking Around (45 min) |
 |---|---|
-| ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring thier favorite jokes to life. |
+| ![Joking Around thumbnail](/static/skillmap/map-info/joking-around.png) | This activity introduces students to characters and dialog,<br/>as they bring their favorite jokes to life. |
 | Blocks used | ``[game.showLongText("", DialogLayout.Top)]`` <br/> ``[game.splash("")]`` <br/> ``[sprites.create(img`.`).setPosition(0, 0)]`` <br/> ``[effects.bubbles.startScreenEffect()]`` <br/> ``[sprites.create(img`.`).setImage(img`.`)]`` <br/> ``[scene.cameraShake(4, 500)]`` <br/> ``[animation.runImageAnimation()]``|
 | Solution option | [Joking Around Project](https://arcade.makecode.com/S05893-52939-88219-32873) |
 
