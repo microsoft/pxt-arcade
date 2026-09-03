@@ -25,7 +25,7 @@
 .detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:focus,
 .detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:active,
 .detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:visited,
-.detailview .ui.grid.stackable .actions .card-action .card-action-button-link .ui.text {
+.detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link .ui.text {
     color: var(--pxt-primary-foreground) !important;
 }
 
