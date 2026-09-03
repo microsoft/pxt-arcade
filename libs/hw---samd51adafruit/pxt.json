@@ -32,5 +32,6 @@
     "skipLocalization": true,
     "dalDTS": {
         "corePackage": "../core---samd"
-    }
+    },
+    "experimentalHw": true
 }
