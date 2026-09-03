@@ -1,0 +1,8 @@
+{
+    "id": "pxt-high-contrast",
+    "name": "High Contrast",
+    "weight": 100,
+    "defaultSimulatorTheme": "high-contrast",
+    "monacoBaseTheme": "hc-black",
+    "colors": {}
+}

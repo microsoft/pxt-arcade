@@ -1,0 +1,34 @@
+#mainmenu .help-dropdown-menuitem > button.common-button,
+#mainmenu .settings-menuitem > button.common-button {
+    color: var(--pxt-header-foreground);
+}
+
+.fullscreen.extensions-browser > .common-modal > .common-modal-header .common-button.menu-button {
+    color: var(--pxt-header-foreground);
+}
+
+.common-menubar.header .common-button.menu-button {
+    color: var(--pxt-header-foreground);
+}
+
+.debugtoolbar .ui.menu .dbg-btn.dbg-step.disabled,
+.debugtoolbar .ui.menu .dbg-btn.dbg-step.disabled:hover {
+    color: var(--pxt-neutral-foreground1) !important;
+    opacity: 1;
+}
+
+.detailview .ui.grid.stackable .actions .card-action .button.approve {
+    background-color: var(--pxt-primary-background);
+    color: var(--pxt-primary-foreground);
+}
+
+.detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:focus,
+.detailview .ui.grid.stackable .actions .card-action .card-action-button-link.common-link:active {
+    color: var(--pxt-primary-foreground) !important;
+}
+
+body.pxt-theme-root .ui.modal .actions a.ui.button.approve.secondary:focus,
+body.pxt-theme-root .ui.modal .actions a.ui.button.approve.secondary:active {
+    background-color: var(--pxt-secondary-background-hover);
+    color: var(--pxt-secondary-foreground-hover);
+}

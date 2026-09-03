@@ -38,6 +38,17 @@
             }
         }
 
+        .pxt-theme-root {
+            --pxt-header-background: #116E79;
+            --pxt-header-foreground: #ffffff;
+            --pxt-neutral-background1: #ffffff;
+            --pxt-neutral-foreground1: #000000;
+        }
+
+        body.pxt-theme-root a.common-button:hover {
+            color: var(--pxt-primary-foreground);
+        }
+
         .ui.item.logo img {
             object-fit: contain;
         }
@@ -67,11 +78,6 @@
             margin: 0 1rem;
         }
         header {
-            --pxt-header-background: #f76820;
-            --pxt-header-foreground: #ffffff;
-            --pxt-neutral-background1: #ffffff;
-            --pxt-neutral-foreground1: #000000;
-
             margin-bottom: 1rem;
         }
 
@@ -154,7 +160,7 @@
     </style>
 </head>
 
-<body id='root' class='root expandIt share-page'>
+<body id='root' class='root expandIt share-page pxt-theme-root'>
     <header>
         <div class="common-menubar header" role="menubar" aria-label="Header">
             <div class="header-left">

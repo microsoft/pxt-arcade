@@ -82,6 +82,7 @@
         "libs/hw---n4",
         "libs/hw---rpi",
         "libs/hw---samd51",
+        "libs/hw---samd51adafruit",
         "libs/hw---stm32f401",
         "libs/hw---rp2040",
         "libs/hw---vm",
@@ -132,6 +133,7 @@
             "libs/hw---gdk",
             "libs/hw---n4",
             "libs/hw---samd51",
+            "libs/hw---samd51adafruit",
             "libs/hw---stm32f401",
             "libs/hw---rp2040"
         ],
@@ -523,7 +525,279 @@
         "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
         "aspectRatio": 0.85,
         "dynamicBoardDefinition": true,
-        "keymap": true
+        "keymap": true,
+        "themeLayouts": [
+            {
+                "id": "retro",
+                "name": "Retro",
+                "colorFields": [
+                    {
+                        "property": "background-color",
+                        "label": "Console",
+                        "defaultValue": "#FCF7E4"
+                    },
+                    {
+                        "property": "button-stroke",
+                        "label": "Button outline",
+                        "defaultValue": "#5C406C"
+                    },
+                    {
+                        "property": "text-color",
+                        "label": "Text",
+                        "defaultValue": "#5C406C"
+                    },
+                    {
+                        "property": "button-a-fill",
+                        "label": "A button background",
+                        "defaultValue": "#FF8135"
+                    },
+                    {
+                        "property": "button-b-fill",
+                        "label": "B button background",
+                        "defaultValue": "#FF91C4"
+                    },
+                    {
+                        "property": "dpad-fill",
+                        "label": "D-pad",
+                        "defaultValue": "#A3809C"
+                    },
+                    {
+                        "property": "console-border",
+                        "label": "Console border",
+                        "defaultValue": "#96266C"
+                    },
+                    {
+                        "property": "screen-side-border",
+                        "label": "Screen side border",
+                        "defaultValue": "#2F99A1"
+                    },
+                    {
+                        "property": "screen-top-bottom-border",
+                        "label": "Screen top and bottom border",
+                        "defaultValue": "#F290C1"
+                    }
+                ]
+            },
+            {
+                "id": "high-contrast",
+                "name": "High Contrast"
+            },
+            {
+                "id": "zune",
+                "name": "Zune"
+            },
+            {
+                "id": "junior",
+                "name": "Junior",
+                "colorFields": [
+                    {
+                        "property": "background-color",
+                        "label": "Console",
+                        "defaultValue": "#EB4444"
+                    },
+                    {
+                        "property": "button-stroke",
+                        "label": "Button outline",
+                        "defaultValue": "#670C0C"
+                    },
+                    {
+                        "property": "text-color",
+                        "label": "Button labels",
+                        "defaultValue": "#FFFFFF"
+                    },
+                    {
+                        "property": "button-fill",
+                        "label": "Buttons",
+                        "defaultValue": "#D54322"
+                    }
+                ]
+            }
+        ],
+        "themePresets": [
+            {
+                "id": "default",
+                "name": "Default",
+                "theme": {
+                    "background-color": "#249CA3",
+                    "button-stroke": "#397382",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#397382",
+                    "joystick-handle-stroke": "#999999",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "high-contrast",
+                "name": "High Contrast",
+                "theme": {
+                    "background-color": "#000000",
+                    "button-stroke": "#FFFFFF",
+                    "text-color": "#FFFFFF",
+                    "button-fill": "#000000",
+                    "dpad-fill": "#000000",
+                    "joystick-handle-stroke": "#FFFFFF",
+                    "layout": "high-contrast"
+                }
+            },
+            {
+                "id": "red",
+                "name": "Red",
+                "theme": {
+                    "background-color": "#ED3636",
+                    "button-stroke": "#8D2525",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#8D2525",
+                    "joystick-handle-stroke": "#8D2525",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "blue",
+                "name": "Blue",
+                "theme": {
+                    "background-color": "#4E4EE9",
+                    "button-stroke": "#3333A1",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#3333A1",
+                    "joystick-handle-stroke": "#3333A1",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "orange",
+                "name": "Orange",
+                "theme": {
+                    "background-color": "#FF9A14",
+                    "button-stroke": "#B0701A",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#B0701A",
+                    "joystick-handle-stroke": "#B0701A",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "green",
+                "name": "Green",
+                "theme": {
+                    "background-color": "#4EB94E",
+                    "button-stroke": "#245D24",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#245D24",
+                    "joystick-handle-stroke": "#245D24",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "brown",
+                "name": "Brown",
+                "theme": {
+                    "background-color": "#8B4513",
+                    "button-stroke": "#68320C",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#68320C",
+                    "joystick-handle-stroke": "#68320C",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "bubblegum",
+                "name": "Bubblegum",
+                "theme": {
+                    "background-color": "#F7ABB9",
+                    "button-stroke": "#71C1C9",
+                    "text-color": "#4E4E4E",
+                    "button-fill": "#92F5FF",
+                    "dpad-fill": "#F7ABB9",
+                    "joystick-handle-stroke": "#71C1C9",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "purple",
+                "name": "Purple",
+                "theme": {
+                    "background-color": "#660FC7",
+                    "button-stroke": "#4C0B95",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#4C0B95",
+                    "joystick-handle-stroke": "#4C0B95",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "microcode",
+                "name": "MicroCode",
+                "theme": {
+                    "background-color": "#3F3F3F",
+                    "button-stroke": "#212121",
+                    "text-color": "#D9D9D9",
+                    "button-fill": "#2D2D2D",
+                    "dpad-fill": "#212121",
+                    "joystick-handle-stroke": "#212121",
+                    "layout": "default"
+                }
+            },
+            {
+                "id": "zune",
+                "name": "Zune",
+                "theme": {
+                    "background-color": "#564131",
+                    "button-stroke": "#524F4E",
+                    "text-color": "#E7E7E7",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#524F4E",
+                    "joystick-handle-stroke": "#524F4E",
+                    "layout": "zune"
+                }
+            },
+            {
+                "id": "junior",
+                "name": "Junior",
+                "theme": {
+                    "background-color": "#EB4444",
+                    "button-stroke": "#670C0C",
+                    "text-color": "#FFFFFF",
+                    "button-fill": "#D54322",
+                    "layout": "junior"
+                }
+            },
+            {
+                "id": "retro",
+                "name": "Retro",
+                "theme": {
+                    "background-color": "#FCF7E4",
+                    "button-stroke": "#5C406C",
+                    "text-color": "#5C406C",
+                    "button-a-fill": "#FF8135",
+                    "button-b-fill": "#FF91C4",
+                    "dpad-fill": "#A3809C",
+                    "console-border": "#96266C",
+                    "screen-side-border": "#2F99A1",
+                    "screen-top-bottom-border": "#F290C1",
+                    "layout": "retro"
+                }
+            },
+            {
+                "id": "teal",
+                "name": "Teal",
+                "theme": {
+                    "background-color": "#249CA3",
+                    "button-stroke": "#397382",
+                    "text-color": "#CECECE",
+                    "button-fill": "#333333",
+                    "dpad-fill": "#397382",
+                    "joystick-handle-stroke": "#999999",
+                    "layout": "default"
+                }
+            }
+        ]
     },
     "appTheme": {
         "logoUrl": "https://makecode.com/org",
@@ -633,7 +907,8 @@
             "image-editor",
             "tilemap-editor",
             "soundeffect-editor",
-            "music-editor"
+            "music-editor",
+            "piano-roll-editor"
         ],
         "scriptManager": true,
         "saveInMenu": false,

@@ -16,7 +16,7 @@ declare namespace pxt.runner {
 }
 
 (window as any).initScriptPage = function init(info: PubInfo) {
-    const editorEmbedURL = `/${info.versionSuffix}#sandbox:${info.projectId}`;
+    const editorEmbedURL = `/${info.versionSuffix}?hidelogos=1#sandbox:${info.projectId}`;
     const showCodeButton = document.getElementById("show-code-button");
     const showCodeButtonIcon = showCodeButton.getElementsByTagName("i").item(0);
     const showCodeButtonOverflow = document.getElementById("show-code-button-overflow");
@@ -118,6 +118,8 @@ declare namespace pxt.runner {
         iframe.src = src;
         return iframe;
     }
+
+    ThemeManager.getInstance().switchColorTheme(pxt.appTarget?.appTheme?.defaultColorTheme || "light");
 }
 
 function fireClickOnEnter(e: KeyboardEvent) {

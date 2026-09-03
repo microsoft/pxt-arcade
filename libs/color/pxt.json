@@ -1,4 +1,4 @@
 {
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/color",
-    "searchOnly": true
+    "hidden": true
 }

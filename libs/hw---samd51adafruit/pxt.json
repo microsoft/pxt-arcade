@@ -1,0 +1,37 @@
+{
+    "name": "hw---samd51adafruit",
+    "description": "SAMD51 adafruit boards",
+    "files": [
+        "config.ts",
+        "basepins.d.ts",
+        "device.d.ts"
+    ],
+    "compileServiceVariant": "samd51",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer",
+        "lightsensor": "file:../lightsensor"
+    },
+    "dependencies": {
+        "core---samd": "file:../core---samd",
+        "screen---st7735": "file:../screen---st7735",
+        "mixer---samd": "file:../mixer---samd",
+        "game": "file:../game"
+    },
+    "yotta": {
+        "optionalConfig": {
+            "DEVICE_JACDAC_DEBUG": 1
+        },
+        "config": {
+            "DEVICE_USB": 1,
+            "DEVICE_WEBUSB": 1,
+            "USE_RGB444": 1
+        }
+    },
+    "additionalFilePath": "../hw",
+    "public": true,
+    "skipLocalization": true,
+    "dalDTS": {
+        "corePackage": "../core---samd"
+    },
+    "experimentalHw": true
+}
