@@ -32,3 +32,8 @@ body.pxt-theme-root .ui.modal .actions a.ui.button.approve.secondary:active {
     background-color: var(--pxt-secondary-background-hover);
     color: var(--pxt-secondary-foreground-hover);
 }
+
+.monaco-editor.vs-dark .suggest-widget .monaco-list .monaco-list-row.focused .details-label {
+    color: var(--pxt-colors-blue-foreground) !important;
+    opacity: 1;
+}
