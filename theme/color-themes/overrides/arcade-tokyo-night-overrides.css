@@ -11,6 +11,10 @@
     color: var(--pxt-header-foreground);
 }
 
+.tutorial-controls > .ui.button {
+    color: var(--pxt-colors-blue-foreground);
+}
+
 .debugtoolbar .ui.menu .dbg-btn.dbg-step.disabled,
 .debugtoolbar .ui.menu .dbg-btn.dbg-step.disabled:hover {
     color: var(--pxt-neutral-foreground1) !important;
