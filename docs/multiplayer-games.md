@@ -13,6 +13,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/perfect-fit.gif
 * url: /--multiplayer?host=_bz3CCuWFiepH
 * cardType: link
+* tags: Community Games, Multiplayer, User Input, Sprites, Movement
 * otherAction: _bz3CCuWFiepH, , sharedExample
 ---
 * name: Paint Party
@@ -22,6 +23,7 @@ Try these multiplayer games with your friends!
 * imageUrl: /static/multiplayer/paint-party.png
 * url: /--multiplayer?host=_Ka770J6Laeva
 * cardType: link
+* tags: Community Games, Multiplayer, User Input, Art
 * otherAction: _Ka770J6Laeva, , sharedExample
 ---
 * name: Galga
@@ -32,6 +34,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/galga.gif
 * url: /--multiplayer?host=_C71PmfFaYDm2
 * cardType: link
+* tags: Community Games, Multiplayer, User Input, Sprites, Movement, Overlaps, Space
 * otherAction: _C71PmfFaYDm2, , sharedExample
 ---
 * name: Arrow Battle
@@ -42,6 +45,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/arrow-battle-large.gif
 * url: /--multiplayer?host=_dCP7f8c3q5PJ
 * cardType: link
+* tags: Community Games, Multiplayer, User Input, Controller
 * otherAction: _dCP7f8c3q5PJ, , sharedExample
 ---
 * name: Tag
@@ -52,6 +56,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/tag.gif
 * url: /--multiplayer?host=_cvxPm1WesYyi
 * cardType: link
+* tags: Community Games, Multiplayer, User Input, Sprites, Movement, Overlaps
 * otherAction: _cvxPm1WesYyi, , sharedExample
 ---
 * name: Horse Race
@@ -62,6 +67,7 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/horse-race.gif
 * url: /--multiplayer?host=_1DogpPTpb8fK
 * cardType: link
+* tags: Community Games, Multiplayer, Movement, Race, Racing
 * otherAction: _1DogpPTpb8fK, , sharedExample
 ---
 * name: Eat the Fruit
@@ -72,5 +78,6 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/eat-the-fruit.gif
 * url: /--multiplayer?host=29996-31415-91597-12788
 * cardType: link
+* tags: Community Games, Multiplayer, Sprites, Movement, Overlaps
 * otherAction: 29996-31415-91597-12788, , sharedExample
 ### ~

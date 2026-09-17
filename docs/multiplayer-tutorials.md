@@ -11,6 +11,7 @@
   "description": "Create a quick multiplayer game where you try to gather as much pizza as possible before your friends knock away your points!",
   "url": "/tutorials/new-pizza-party",
   "cardType": "tutorial",
+  "tags": ["Tutorial", "Blocks", "Beginner", "Arrays", "User Input", "Sprites", "Movement", "Multiplayer", "Extension"],
   "imageUrl": "/static/tutorials/pizza-party/playtime.png",
   "largeImageUrl": "/static/tutorials/pizza-party/playtime.png"
 },{
@@ -18,6 +19,7 @@
   "description": "This quick tutorial will help you create a multiplayer game where you test your reflexes to be the fastest to hit your arrow keys!",
   "url": "/tutorials/arrow",
   "cardType": "tutorial",
+  "tags": ["Tutorial", "Blocks", "Beginner", "User Input", "Sprites", "Movement", "Controller", "Multiplayer", "Assets"],
   "imageUrl": "/static/tutorials/arrows/arrows.png",
   "largeImageUrl": "/static/tutorials/arrows/battle.gif"
 },{
@@ -25,6 +27,7 @@
   "description": "Follow this set of steps to quickly create a carnival-style horse racing game!",
   "url": "/tutorials/horse",
   "cardType": "tutorial",
+  "tags": ["Tutorial", "Blocks", "Beginner", "Functions", "Arrays", "User Input", "Sprites", "Movement", "Controller", "Multiplayer", "Race", "Racing"],
   "imageUrl": "/static/tutorials/horse/horse.png",
   "largeImageUrl": "/static/tutorials/horse/race.gif"
 }, {
@@ -32,6 +35,7 @@
   "description": "Give yourself a present by creating a game to play with a friend! In this game, you'll move your presents to try to collect more bows than your opponent.",
   "url": "/tutorials/birthday",
   "cardType": "tutorial",
+  "tags": ["Tutorial", "Blocks", "Beginner", "User Input", "Sprites", "Movement", "Controller", "Overlaps", "Multiplayer", "Assets"],
   "imageUrl": "/static/tutorials/holiday/birthday.png",
   "largeImageUrl": "/static/tutorials/holiday/bbb.gif"
 },{
@@ -39,6 +43,7 @@
   "description": "Create a multiplayer game where you and your team must work together to dodge the fireballs in order to stay alive!",
   "url": "/tutorials/blazing",
   "cardType": "tutorial",
+  "tags": ["Tutorial", "Blocks", "Beginner", "Arrays", "Iteration", "Loops", "User Input", "Sprites", "Movement", "Controller", "Multiplayer"],
   "imageUrl": "/static/tutorials/blazing/blazing.png",
   "largeImageUrl": "/static/tutorials/blazing/blazing.png"
 }

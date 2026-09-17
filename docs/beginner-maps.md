@@ -13,6 +13,7 @@
   "description": "Bring coding to life with shareable greeting cards, jokes, and more!",
   "imageUrl":  "/static/skillmap/backgrounds/story-map.png",
   "url": "https://arcade.makecode.com/--skillmap#story",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Music", "Art", "Story"],
   "label": "New? Try This!",
   "labelClass": "orange ribbon large",
   "directOpen": true
@@ -23,6 +24,7 @@
   "description": "Code your own bug to think for itself using Artificial Intelligence (AI) and challenge other AI bugs in the Arena!",
   "imageUrl": "/static/skillmap/bug-arena/bug-bg.gif",
   "url": "https://arcade.makecode.com/--skillmap#bug",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "AI", "Iteration", "Loops", "Strategy"],
   "directOpen": true
 },
 {
@@ -31,6 +33,7 @@
   "description": "Create your own mole whacking carnival game.",
   "imageUrl": "/static/skillmap/backgrounds/mole.gif",
   "url": "https://arcade.makecode.com/--skillmap#mole",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Overlaps", "Animation", "Music", "Clicker"],
   "directOpen": true
 },
 {
@@ -39,6 +42,7 @@
   "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite performers.",
   "imageUrl": "/static/skillmap/backgrounds/star-map.png",
   "url": "https://arcade.makecode.com/--skillmap#star",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Animation", "Arrays", "Clicker"],
   "directOpen": true
 },
 {
@@ -47,6 +51,7 @@
   "description": "Create a collector-style game starring a dinosaur that's determined to save her babies!",
   "imageUrl":  "/static/skillmap/backgrounds/dino-map.png",
   "url": "https://arcade.makecode.com/--skillmap#dino",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement", "Overlaps", "Animation"],
   "directOpen": true
 },
 {
@@ -55,6 +60,7 @@
   "description": "Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.",
   "imageUrl": "/static/skillmap/backgrounds/mouse.gif",
   "url": "https://arcade.makecode.com/--skillmap#balloon",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Animation", "Multiplayer", "Clicker"],
   "directOpen": true
 },
 {
@@ -63,6 +69,7 @@
   "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
   "imageUrl": "/static/skillmap/backgrounds/turkey.gif",
   "url": "https://arcade.makecode.com/--skillmap#turkey",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement", "Overlaps", "Tilemap", "Platformer"],
   "directOpen": true
 },
 {
@@ -71,6 +78,7 @@
   "description": "Ever wonder what it takes to be a zookeeper? The answer may surprise you...",
   "imageUrl":  "/static/skillmap/backgrounds/zoo.png",
   "url": "https://arcade.makecode.com/--skillmap#zoo",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement", "Overlaps", "Coordinates", "Simulation"],
   "directOpen": true
 },
 {
@@ -79,6 +87,7 @@
   "description": "Learn to make exciting and shareable arcade games by following a few quick tutorials!",
   "imageUrl":  "/static/skillmap/backgrounds/beginner.png",
   "url": "https://arcade.makecode.com/--skillmap#beginner",
+  "tags": ["Skillmap", "Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement", "Overlaps", "Animation", "Art", "Story", "Clicker"],
   "directOpen": true
 }
 ]

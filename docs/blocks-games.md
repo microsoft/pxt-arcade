@@ -11,6 +11,7 @@ Here are some fun programs for your @boardname@!
         "description": "Avoid the trees and go for a high score!",
         "url":"/blocks-games/duck",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/blocks-games/duck.png",
         "largeImageUrl": "/static/blocks-games/duck.gif",
         "videoUrl": "/static/blocks-games/duck.mp4"
@@ -20,6 +21,7 @@ Here are some fun programs for your @boardname@!
         "description": "Destroy the Asteroids",
         "url":"/blocks-games/space-destroyer",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Arrays", "User Input", "Sprites", "Movement", "Space"],
         "imageUrl": "/static/blocks-games/space-destroyer.png",
         "largeImageUrl": "/static/blocks-games/space-destroyer.gif",
         "videoUrl": "/static/blocks-games/space-destroyer.mp4"
@@ -29,6 +31,7 @@ Here are some fun programs for your @boardname@!
         "description": "A short platformer game with tilemap levels",
         "url": "/blocks-games/jumpy-platformer",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Iteration", "Loops", "User Input", "Sprites", "Movement", "Tilemap", "Platformer"],
         "imageUrl": "/static/blocks-games/jumpy-platformer.png",
         "largeImageUrl": "/static/blocks-games/jumpy-platformer.gif",
         "videoUrl": "/static/blocks-games/jumpy-platformer.mp4"
@@ -38,6 +41,7 @@ Here are some fun programs for your @boardname@!
         "description": "Fly a hot air balloon past mountains and obstacles",
         "url": "/blocks-games/hot-air-balloon",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Arrays", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/blocks-games/hot-air-balloon.png",
         "largeImageUrl": "/static/blocks-games/hot-air-balloon.gif",
         "videoUrl": "/static/blocks-games/hot-air-balloon.mp4"
@@ -47,6 +51,7 @@ Here are some fun programs for your @boardname@!
         "description": "Help your bunny get through the forest by jumping over the trees and stumps",
         "url": "/blocks-games/bunny-hop",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Arrays", "User Input", "Sprites", "Movement", "Platformer"],
         "imageUrl": "/static/blocks-games/bunny-hop.png",
         "largeImageUrl": "/static/blocks-games/bunny-hop.gif",
         "videoUrl": "/static/blocks-games/bunny-hop.mp4"
@@ -56,6 +61,7 @@ Here are some fun programs for your @boardname@!
         "description": "Don't get hit by the flying junk food",
         "url":"/blocks-games/eat-the-fruit",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/blocks-games/eat-the-fruit.png",
         "largeImageUrl": "/static/blocks-games/eat-the-fruit.gif",
         "videoUrl": "/static/blocks-games/eat-the-fruit.mp4"
@@ -65,6 +71,7 @@ Here are some fun programs for your @boardname@!
         "description": "Make the cat leap to each level and collect all the coins",
         "url": "/blocks-games/cat-jumper",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Iteration", "Loops", "User Input", "Sprites", "Movement", "Tilemap", "Platformer", "Cats"],
         "imageUrl": "/static/blocks-games/cat-platformer.png",
         "largeImageUrl": "/static/blocks-games/cat-platformer.gif",
         "videoUrl": "/static/blocks-games/cat-platformer.mp4"
@@ -74,6 +81,7 @@ Here are some fun programs for your @boardname@!
         "description": "Eat your food to level up",
         "url":"/blocks-games/level-game",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Iteration", "Loops", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/blocks-games/level-game.png",
         "largeImageUrl": "/static/blocks-games/level-game.gif",
         "videoUrl": "/static/blocks-games/level-game.mp4"
@@ -83,6 +91,7 @@ Here are some fun programs for your @boardname@!
         "description": "How well can you remember the sequence?",
         "url":"/blocks-games/memory",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Arrays", "Iteration", "Loops", "Conditionals", "Functions", "User Input", "Puzzle"],
         "imageUrl": "/static/blocks-games/memory.png",
         "largeImageUrl": "/static/blocks-games/memory.gif",
         "videoUrl": "/static/blocks-games/memory.mp4"
@@ -92,6 +101,7 @@ Here are some fun programs for your @boardname@!
         "description": "Don't let the balls hit the floor",
         "url":"/blocks-games/catch",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/blocks-games/catch-game.png",
         "largeImageUrl": "/static/blocks-games/catch-game.gif",
         "videoUrl": "/static/blocks-games/catch-game.mp4"
@@ -101,6 +111,7 @@ Here are some fun programs for your @boardname@!
         "description": "Feed the princess",
         "url":"/blocks-games/eater-princess",
         "cardType": "example",
+        "tags": ["Example", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/blocks-games/eater-princess.png",
         "largeImageUrl": "/static/blocks-games/eater-princess.gif",
         "videoUrl": "/static/blocks-games/eater-princess.mp4"

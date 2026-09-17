@@ -11,24 +11,28 @@ into real world art! Please drop us a message if you know another tool to be add
         "name": "Pixel Art T-shirt",
         "description": "Convert any sprite into a high-definition image that can be used to print amazing T-shirts!",
         "url": "/arts-and-crafts/tshirt",
+        "tags": ["Art", "Assets", "Sprites"],
         "imageUrl": "/static/arts-and-crafts/tshirt.png"
     },
     {
         "name": "LEGO Bricks Murals",
         "description": "Convert any sprite into a mural of LEGO pieces!",
         "url": "/arts-and-crafts/lego-bricks-murals",
+        "tags": ["Art", "Assets", "Sprites"],
         "imageUrl": "/static/arts-and-crafts/lego-bricks-murals.jpg"
     },
     {
         "name": "Laser-cut Stencils",
         "description": "Cut out stencils from your sprites and paint them anywhere!",
         "url": "/arts-and-crafts/laser-cut-stencils",
+        "tags": ["Art", "Assets", "Sprites"],
         "imageUrl": "/static/arts-and-crafts/laser-cut-stencils.jpg"
     },
     {
         "name": "Perler Bead Sprites",
         "description": "Make Perler Bead images from the sprites in your games.",
         "url": "/arts-and-crafts/perler-bead-sprites",
+        "tags": ["Art", "Assets", "Sprites", "Example", "Blocks", "Events", "Overlaps", "Music"],
         "imageUrl": "/static/arts-and-crafts/perler-bead-sprites.jpg"
     }
 ]
