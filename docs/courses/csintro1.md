@@ -1,4 +1,4 @@
-# CS INTRO 1
+# CS Intro 1
 
 ### ~hint
 
