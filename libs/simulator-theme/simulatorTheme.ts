@@ -71,13 +71,26 @@ namespace simulatorTheme {
 
     /** Change one simulator color without changing the other colors or layout.
      * @param part color property without the --sim- prefix, eg: "background-color"
-     * @param color six-digit RGB color, eg: "#7f3fbf"
+      * @param color RGB number from the color picker, eg: 0x7f3fbf
      */
     //% blockId=simulator_theme_color block="set simulator $part color to $color"
     //% part.shadow=simulator_theme_part
-    //% color.defl="#7f3fbf" weight=90 help=simulator-theme
-    export function setColor(part: string, color: string): void {
-        _setColor(part, color);
+    //% color.shadow=simulator_theme_color_picker
+    //% weight=90 help=simulator-theme
+    export function setColor(part: string, color: number): void {
+        let hex = "#";
+        for (let shift = 20; shift >= 0; shift -= 4) {
+            hex += "0123456789abcdef".charAt((color >> shift) & 0xf);
+        }
+        _setColor(part, hex);
+    }
+
+    /** Choose a color using the built-in RGB, HSV, HSL, CMYK or HEX picker. */
+    //% block blockId=simulator_theme_color_picker builtinBlockId=makecode_color_picker
+    //% value.fieldOptions.format=hex value.defl=0x7f3fbf
+    //% color="#6554C0" weight=85
+    export function __colorPicker(value: number): number {
+        return value;
     }
 
     /** Restore the simulator theme selected when this run started. */
