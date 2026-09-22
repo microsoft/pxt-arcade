@@ -87,7 +87,7 @@ namespace simulatorTheme {
 
     /** Choose a color using the built-in RGB, HSV, HSL, CMYK or HEX picker. */
     //% block blockId=simulator_theme_color_picker builtinBlockId=makecode_color_picker
-    //% duplicateShadowOnDrag=true
+    //% blockHidden=true duplicateShadowOnDrag=true
     //% value.fieldOptions.format=hex value.defl=0x7f3fbf
     //% color="#6554C0" weight=85
     export function __colorPicker(value: number): number {
