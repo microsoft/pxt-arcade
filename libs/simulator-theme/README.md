@@ -15,6 +15,3 @@ has an editable dropdown including Retro's `button-a-fill`, `button-b-fill`,
 `console-border`, `screen-side-border` and `screen-top-bottom-border`. Type another
 part name or supply a string expression, without the `--sim-` prefix.
 `reset` restores the theme from the start of the run.
-These blocks do not change the game's palette, project settings or account
-preferences, and do nothing on hardware. Explicit simulator URL theme overrides
-take precedence. Requires an Arcade simulator build containing this extension's shim.
