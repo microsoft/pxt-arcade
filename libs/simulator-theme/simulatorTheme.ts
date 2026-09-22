@@ -71,7 +71,7 @@ namespace simulatorTheme {
 
     /** Change one simulator color without changing the other colors or layout.
      * @param part color property without the --sim- prefix, eg: "background-color"
-      * @param color RGB number from the color picker, eg: 0x7f3fbf
+     * @param color RGB number from the color picker
      */
     //% blockId=simulator_theme_color block="set simulator $part color to $color"
     //% part.shadow=simulator_theme_part
@@ -87,6 +87,7 @@ namespace simulatorTheme {
 
     /** Choose a color using the built-in RGB, HSV, HSL, CMYK or HEX picker. */
     //% block blockId=simulator_theme_color_picker builtinBlockId=makecode_color_picker
+    //% duplicateShadowOnDrag=true
     //% value.fieldOptions.format=hex value.defl=0x7f3fbf
     //% color="#6554C0" weight=85
     export function __colorPicker(value: number): number {
