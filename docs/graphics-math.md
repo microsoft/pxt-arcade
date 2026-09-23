@@ -11,7 +11,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "description": "Enjoy a variety of randomly generated fireworks",
         "url": "/graphics-math/fireworks",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Art"],
         "imageUrl": "/static/graphics-math/fireworks.png",
         "largeImageUrl": "/static/graphics-math/fireworks.gif",
         "videoUrl": "/static/graphics-math/fireworks.mp4"
@@ -20,7 +20,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "name": "Game of Life",
         "description": "Enjoy watching a rainbow variant of the famous zero-player game",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Arrays", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Arrays", "Art"],
         "url": "/graphics-math/game-of-life",
         "imageUrl": "/static/graphics-math/game-of-life.png",
         "largeImageUrl": "/static/graphics-math/game-of-life.gif",
@@ -30,7 +30,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "name": "Paint Brush",
         "description": "Generates random 'art' by drawing across the screen",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Art"],
         "url": "/graphics-math/paint-brush",
         "imageUrl": "/static/graphics-math/paint-brush.png",
         "largeImageUrl": "/static/graphics-math/paint-brush.gif",
@@ -40,7 +40,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "name": "Animated Sand",
         "description": "Sand dots sliding across the screen, ported from Adafruit Animated LED Sand",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Animation", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Animation", "Art"],
         "url": "/graphics-math/animated-sand",
         "imageUrl": "/static/graphics-math/animated-sand.png",
         "largeImageUrl": "/static/graphics-math/animated-sand.gif",
@@ -50,7 +50,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "name": "Bresenham Circles",
         "description": "Draw circles using the Bresenham algorithm",
         "url": "/graphics-math/bresenham-circle",
-        "tags": ["Example", "JavaScript", "Advanced", "Functions", "Iteration", "Loops", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Advanced", "Functions", "Iteration", "Loops", "Art"],
         "imageUrl": "/static/graphics-math/bresenham-circle.png",
         "largeImageUrl": "/static/graphics-math/bresenham-circle.gif",
         "videoUrl": "/static/graphics-math/bresenham-circle.mp4"
@@ -67,7 +67,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "description": "A visualization of different sorting algorithms",
   "url":"/graphics-math/sorting-algorithms",
   "cardType": "codeExample",
-  "tags": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions"],
+  "searchTerms": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions"],
   "imageUrl": "/static/graphics-math/sorting-algorithms.png",
   "largeImageUrl": "/static/graphics-math/sorting-algorithms.gif",
   "videoUrl": "/static/graphics-math/sorting-algorithms.mp4"
@@ -77,7 +77,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "description": "Approximate Pi with the Monte Carlo method",
   "url": "/graphics-math/pi-monte-carlo",
   "imageUrl": "/static/graphics-math/pi-monte-carlo.png",
-  "tags": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions"],
+  "searchTerms": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions"],
   "largeImageUrl": "/static/graphics-math/pi-monte-carlo.gif",
   "videoUrl": "/static/graphics-math/pi-monte-carlo.mp4"
 },
@@ -86,7 +86,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "description": "Tile the screen and draw a spiral with the Fibonacci numbers",
   "url": "/graphics-math/fibo-tile-spiral",
   "imageUrl": "/static/graphics-math/fibo-tile-spiral.png",
-  "tags": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions", "Art"],
+  "searchTerms": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions", "Art"],
   "largeImageUrl": "/static/graphics-math/fibo-tile-spiral.gif",
   "videoUrl": "/static/graphics-math/fibo-tile-spiral.mp4"
 },
@@ -95,7 +95,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "description": "Find prime numbers using the Sieve of Eratosthenes method",
   "url": "/graphics-math/sieve-eratosthenes",
   "imageUrl": "/static/graphics-math/sieve-eratosthenes.png",
-  "tags": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions"],
+  "searchTerms": ["Example", "JavaScript", "Intermediate", "Variables", "Iteration", "Loops", "Arrays", "Functions"],
   "largeImageUrl": "/static/graphics-math/sieve-eratosthenes.gif",
   "videoUrl": "/static/graphics-math/sieve-eratosthenes.mp4"
 }

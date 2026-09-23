@@ -11,7 +11,7 @@
   "description": "Follow step-by-step instructions to learn the basics of using MakeCode Arcade tutorials!",
   "url": "/tutorials/intro",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "User Input"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "User Input"],
   "imageUrl": "/static/tutorials/interface/info.png",
   "largeImageUrl": "/static/tutorials/interface/info.png",
   "label": "New? Try This!",
@@ -21,7 +21,7 @@
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
   "url": "/tutorials/chase-the-pizza",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Variables", "User Input", "Sprites", "Movement", "Overlaps"],
+  "searchTerms": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Variables", "User Input", "Sprites", "Movement", "Overlaps"],
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
   "largeImageUrl": "/static/tutorials/chase-the-pizza.gif",
   "videoUrl": "/static/tutorials/chase-the-pizza.mp4",
@@ -39,7 +39,7 @@
   "description": "Help Scott Kelly reach the Hubble!",
   "url": "https://forms.codeninjas.com/back-to-school-game-building-session/?utm-source=makecode&utm_medium=partner&utm_campaign=bts_gbs",
   "cardType": "link",
-  "tags": ["Tutorial", "Curriculum", "Beginner"],
+  "searchTerms": ["Tutorial", "Curriculum", "Beginner"],
   "imageUrl": "/static/tutorials/hubble/hubble_4x3.jpg",
   "largeImageUrl": "/static/tutorials/hubble/hubble_4x3.jpg"
 },{
@@ -47,7 +47,7 @@
   "description": "Create a bubble popping game complete with sounds and bonus points!",
   "url": "/tutorials/bubbles",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "Sprites", "Movement", "Music"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Sprites", "Movement", "Music"],
   "imageUrl": "/static/tutorials/bubbles/card.jpg",
   "largeImageUrl": "/static/tutorials/bubbles/card.jpg",
   "label": "Limited Time Branding!",
@@ -57,7 +57,7 @@
   "description": "Create a garden to collect 4-leaf clovers, avoid the bees!",
   "url": "/tutorials/collect-the-clovers",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "Sprites", "Overlaps", "Movement"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Sprites", "Overlaps", "Movement"],
   "imageUrl": "/static/tutorials/collect-the-clovers/clovers.png",
   "largeImageUrl": "/static/tutorials/collect-the-clovers/collect-clovers-sim.gif"
 },{
@@ -65,7 +65,7 @@
   "description": "Join the Zune prototyping crew and make your own music player with this tutorial from MakeCode Arcade!",
   "url": "/tutorials/music",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "User Input", "Music", "Assets"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "User Input", "Music", "Assets"],
   "imageUrl": "/static/tutorials/music/zune.png",
   "largeImageUrl": "/static/tutorials/music/zune.png"
 },{
@@ -73,7 +73,7 @@
   "description": "Capture the spirit of winter with this magical snowglobe tutorial!",
   "url": "/tutorials/snow",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Sprites", "Animation", "Art"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Sprites", "Animation", "Art"],
   "imageUrl": "/static/tutorials/snow/globe.jpg",
   "largeImageUrl": "/static/tutorials/snow/globe.jpg"
 },{
@@ -81,7 +81,7 @@
   "description": "Create animations to help your basketball superstar do tricks all the way to the hoop!",
   "url": "/tutorials/dunk",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Sprites", "Movement", "Animation", "Sports"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Sprites", "Movement", "Animation", "Sports"],
   "imageUrl": "/static/tutorials/hawk/dunk.png",
   "largeImageUrl": "/static/tutorials/hawk/dunk.png"
 },{
@@ -89,7 +89,7 @@
   "description": "Follow a video to learn how to launch a ball at moving targets!",
   "url": "/tutorials/target",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Video", "Blocks", "Beginner", "User Input", "Sprites", "Movement"],
+  "searchTerms": ["Tutorial", "Video", "Blocks", "Beginner", "User Input", "Sprites", "Movement"],
   "imageUrl": "/static/skillmap/backgrounds/target-comp.gif",
   "largeImageUrl": "/static/skillmap/backgrounds/target-comp.gif",
   "label": "Video tutorial",
@@ -99,7 +99,7 @@
   "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
   "url": "/tutorials/froggy",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "User Input", "Sprites", "Movement", "Overlaps"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "User Input", "Sprites", "Movement", "Overlaps"],
   "imageUrl": "/static/tutorials/froggy/card.png",
   "largeImageUrl": "/static/tutorials/froggy/frog.png"
 }, {
@@ -107,7 +107,7 @@
   "description": "Edit the code to make your own Valentine's game where your heart gets bigger and smaller as you go!",
   "url": "/tutorials/valentine",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "Overlaps", "Sprites", "Valentines Day"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "Overlaps", "Sprites", "Valentines Day"],
   "imageUrl": "/static/tutorials/valentine/valentine.png",
   "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
 }, {
@@ -115,7 +115,7 @@
   "description": "Stack the Smurfs as they appear from above, don't let anyone drop!",
   "url": "/tutorials/stackem-smurfs",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "User Input", "Music", "Sprites", "Movement"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "User Input", "Music", "Sprites", "Movement"],
   "imageUrl": "/static/tutorials/stackem-smurfs/stackem-smurfs.png",
   "largeImageUrl": "/static/tutorials/stackem-smurfs/stackem-smurfs.gif"
 }, {
@@ -123,7 +123,7 @@
   "description": "Create a flower that sends back happy bees",
   "url": "/tutorials/happy-flower",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Sprites", "Animation", "Art"],
+  "searchTerms": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Sprites", "Animation", "Art"],
   "imageUrl": "/static/tutorials/happy-flower.png",
   "largeImageUrl": "/static/tutorials/happy-flower.gif",
   "videoUrl": "/static/tutorials/happy-flower.mp4",
@@ -141,7 +141,7 @@
   "description": "Stay away from the wild strawberries or you'll lose your juice!",
   "url": "/tutorials/lemon-leak",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Sprites", "Overlaps", "Movement"],
+  "searchTerms": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Sprites", "Overlaps", "Movement"],
   "imageUrl": "/static/tutorials/lemon-leak.png",
   "largeImageUrl": "/static/tutorials/lemon-leak.gif",
   "videoUrl": "/static/tutorials/lemon-leak.mp4",
@@ -159,7 +159,7 @@
   "description": "Fly through the attacking spacecraft and fire darts at them, don't get hit!",
   "url": "/tutorials/galga",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "User Input", "Sprites", "Movement", "Space"],
+  "searchTerms": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "Events", "User Input", "Sprites", "Movement", "Space"],
   "imageUrl": "/static/tutorials/galga.png",
   "largeImageUrl": "/static/tutorials/galga.gif",
   "videoUrl": "/static/tutorials/galga.mp4",
@@ -177,7 +177,7 @@
   "description": "Help the snow people catch snowflakes!",
   "url": "/tutorials/winter",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "Sprites", "Movement", "Art"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Sprites", "Movement", "Art"],
   "imageUrl": "/static/tutorials/winter/winter.png",
   "largeImageUrl": "/static/tutorials/winter/winter.gif"
 }, {
@@ -185,7 +185,7 @@
   "description": "Take your best shot and slam dunk this Basketball free throw game!",
   "url": "/tutorials/free-throw",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Video", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement", "Sports"],
+  "searchTerms": ["Tutorial", "Video", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement", "Sports"],
   "imageUrl": "/static/tutorials/free-throw.png",
   "largeImageUrl": "/static/tutorials/free-throw.gif",
   "videoUrl": "/static/tutorials/free-throw.mp4"
@@ -194,14 +194,14 @@
   "description": "Jump and run to avoid the barrels",
   "url": "/tutorials/barrel-dodger",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "User Input", "Sprites", "Movement"],
   "imageUrl": "/static/lessons/barrel-dodger.png"
 }, {
   "name": "Paddle",
   "description": "A variation on the 2 player pong game",
   "url": "/tutorials/paddle",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "User Input", "Sprites", "Movement", "Overlaps", "Multiplayer", "Sports"],
+  "searchTerms": ["Tutorial", "Blocks", "JavaScript", "Python", "Beginner", "User Input", "Sprites", "Movement", "Overlaps", "Multiplayer", "Sports"],
   "imageUrl": "/static/tutorials/paddle.png",
   "largeImageUrl": "/static/tutorials/paddle.gif",
   "videoUrl": "/static/tutorials/paddge.mp4",
@@ -219,7 +219,7 @@
   "description": "A simple name tag with cool effects",
   "url": "/tutorials/name-tag",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Art", "Assets"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Art", "Assets"],
   "imageUrl": "/static/tutorials/name-tag.png",
   "largeImageUrl": "/static/tutorials/name-tag.gif",
   "videoUrl": "/static/tutorials/name-tag.mp4"
@@ -228,7 +228,7 @@
   "description": "Learn the basics of using extensions and create a platformer",
   "url": "/tutorials/simple-extensions",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "Sprites", "Movement", "Tilemap", "Extension", "Platformer"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "Sprites", "Movement", "Tilemap", "Extension", "Platformer"],
   "imageUrl": "/static/tutorials/simple-extensions.png",
   "largeImageUrl": "/static/tutorials/simple-extensions.gif",
   "videoUrl": "/static/tutorials/simple-extensions.mp4"
@@ -237,7 +237,7 @@
   "description": "Learn the basics of creating a maze",
   "url": "/tutorials/maze",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Blocks", "Beginner", "User Input", "Sprites", "Movement", "Tilemap", "Overlaps", "Puzzle"],
+  "searchTerms": ["Tutorial", "Blocks", "Beginner", "User Input", "Sprites", "Movement", "Tilemap", "Overlaps", "Puzzle"],
   "imageUrl": "/static/tutorials/maze.png",
   "largeImageUrl": "/static/tutorials/maze.gif",
   "videoUrl": "/static/tutorials/maze.mp4"
@@ -246,7 +246,7 @@
   "description": "Make a side-scrolling car racing game to jump over obstacles and win the race.",
   "url": "/recipes/side-scroller/01-background",
   "cardType": "tutorial",
-  "tags": ["Tutorial", "Video", "Blocks", "Beginner", "Sprites", "Movement", "Platformer", "Car", "Race", "Racing", "Side scroller"],
+  "searchTerms": ["Tutorial", "Video", "Blocks", "Beginner", "Sprites", "Movement", "Platformer", "Car", "Race", "Racing", "Side scroller"],
   "imageUrl": "/static/recipes/side-scroller/car-race.png",
   "largeImageUrl": "/static/recipes/side-scroller/car-race.gif",
   "videoUrl": "/static/recipes/side-scroller/car-race.mp4"

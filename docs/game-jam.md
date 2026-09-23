@@ -9,7 +9,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Bilangus
 * url: https://arcade.makecode.com/89699-84766-18852-49944
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Platformer, Puzzle, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Platformer, Puzzle, Sports
 * imageUrl: https://cdn.makecode.com/api/89699-84766-18852-49944/thumb
 ---
 * name: DOMAIN: BASKETBALL
@@ -17,7 +17,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: InvalidProject
 * url: https://arcade.makecode.com/84418-55014-67976-79899
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Music, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Music, Sports
 * imageUrl: https://cdn.makecode.com/api/84418-55014-67976-79899/thumb
 ---
 * name: Floorit
@@ -25,7 +25,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Octodemon
 * url: https://arcade.makecode.com/62390-38081-86902-97975
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Car, Race, Racing, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Car, Race, Racing, Sports
 * imageUrl: https://cdn.makecode.com/api/62390-38081-86902-97975/thumb
 ---
 * name: Hyper Speed
@@ -33,7 +33,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Rune
 * url: https://arcade.makecode.com/85811-51210-23895-60311
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Car, Race, Racing, Multiplayer, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Car, Race, Racing, Multiplayer, Sports
 * imageUrl: https://cdn.makecode.com/api/85811-51210-23895-60311/thumb
 ---
 * name: MakeCode Football
@@ -41,7 +41,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Unique/Jayden
 * url: https://arcade.makecode.com/83834-70201-48302-02884
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Simulation, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Simulation, Sports
 * imageUrl: https://cdn.makecode.com/api/83834-70201-48302-02884/thumb
 ---
 * name: Octo Volley
@@ -49,7 +49,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: BLADEr
 * url: https://arcade.makecode.com/33341-21259-95952-93029
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Animation, Multiplayer, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Animation, Multiplayer, Sports
 * imageUrl: https://cdn.makecode.com/api/33341-21259-95952-93029/thumb
 ---
 * name: Bocce
@@ -57,7 +57,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Cyrus Y.
 * url: https://arcade.makecode.com/34779-05800-00488-58839
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Strategy, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Strategy, Sports
 * imageUrl: https://cdn.makecode.com/api/34779-05800-00488-58839/thumb
 ---
 * name: Tidal Games
@@ -65,7 +65,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Michael Caplan and classes
 * url: https://arcade.makecode.com/00688-66833-07971-30810
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Simulation, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Simulation, Sports
 * imageUrl: https://cdn.makecode.com/api/00688-66833-07971-30810/thumb
 ---
 * name: Zenith Smash
@@ -73,7 +73,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: CopySprite
 * url: https://arcade.makecode.com/16663-52879-84426-53448
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Multiplayer, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Multiplayer, Sports
 * imageUrl: https://cdn.makecode.com/api/16663-52879-84426-53448/thumb
 ---
 * name: Tag!
@@ -81,7 +81,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: BitBot
 * url: https://arcade.makecode.com/13162-16664-28217-30568
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Multiplayer, Platformer, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Multiplayer, Platformer, Sports
 * imageUrl: https://cdn.makecode.com/api/13162-16664-28217-30568/thumb
 ---
 * name: Fistful of Aces
@@ -89,7 +89,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Solek (Luke)
 * url: https://arcade.makecode.com/04809-31955-37770-29859
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Sports
 * imageUrl: https://cdn.makecode.com/api/04809-31955-37770-29859/thumb
 ---
 * name: Throttlemonger
@@ -97,7 +97,7 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: RizeUpDev
 * url: https://arcade.makecode.com/00086-31094-64609-84672
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Car, Race, Racing, Multiplayer, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Car, Race, Racing, Multiplayer, Sports
 * imageUrl: https://cdn.makecode.com/api/00086-31094-64609-84672/thumb
 ---
 * name: Saw Core Training
@@ -105,13 +105,13 @@ Check out the winners of the 12th Official Microsoft MakeCode Game Jam, featurin
 * author: Christian G.
 * url: https://arcade.makecode.com/42066-97040-21655-97461
 * cardType: sharedExample
-* tags: Game Jam, Community Games, User Input, Sprites, Movement, Sports
+* searchTerms: Game Jam, Community Games, User Input, Sprites, Movement, Sports
 * imageUrl: https://cdn.makecode.com/api/42066-97040-21655-97461/thumb
 ---
 * name: See more...
 * description: Check out all the entries on the official game jam page!
 * cardType: link
-* tags: Game Jam
+* searchTerms: Game Jam
 * directOpen: true
 * url: https://arcade.makecode.com/gamejam/sports
 * imageUrl: /static/gamejam/jams/sports/assets/sports-jam-logo.png

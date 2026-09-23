@@ -11,7 +11,7 @@ Here are some fun programs for your @boardname@!
         "description": "Golf your way through the galaxy",
         "url":"/javascript-games/planet-putt-putt",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Functions", "Arrays", "User Input", "Sprites", "Movement", "Sports"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Functions", "Arrays", "User Input", "Sprites", "Movement", "Sports"],
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
         "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
@@ -21,7 +21,7 @@ Here are some fun programs for your @boardname@!
         "description": "A remix of Falling Duck with custom lighting effects",
         "url": "/javascript-games/darker-duck",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Advanced", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Conditionals", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Advanced", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Conditionals", "Art"],
         "imageUrl": "/static/javascript-games/darker-duck.png",
         "largeImageUrl": "/static/javascript-games/darker-duck.gif",
         "videoUrl": "/static/javascript-games/darker-duck.mp4"
@@ -31,7 +31,7 @@ Here are some fun programs for your @boardname@!
         "description": "Return the ball with the paddle in this 0-2 player game of ping-pong",
         "url": "/javascript-games/ping",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Functions", "Conditionals", "User Input", "Sprites", "Movement", "Multiplayer", "Sports"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Functions", "Conditionals", "User Input", "Sprites", "Movement", "Multiplayer", "Sports"],
         "imageUrl": "/static/javascript-games/ping.png",
         "largeImageUrl": "/static/javascript-games/ping.gif",
         "videoUrl": "/static/javascript-games/ping.mp4"
@@ -41,7 +41,7 @@ Here are some fun programs for your @boardname@!
         "description": "Get those packages to delivered but be quick or you'll miss the address!",
         "url": "/javascript-games/delivery",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Conditionals", "User Input", "Sprites", "Movement", "Tilemap"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Conditionals", "User Input", "Sprites", "Movement", "Tilemap"],
         "imageUrl": "/static/javascript-games/delivery.png",
         "largeImageUrl": "/static/javascript-games/delivery.gif",
         "videoUrl": "/static/javascript-games/delivery.mp4"
@@ -51,7 +51,7 @@ Here are some fun programs for your @boardname@!
         "description": "Collect leaves to feed the caterpillar",
         "url": "/javascript-games/caterpillar",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Functions", "Conditionals", "Sprites", "Movement"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Iteration", "Loops", "Functions", "Conditionals", "Sprites", "Movement"],
         "imageUrl": "/static/javascript-games/caterpillar.png",
         "largeImageUrl": "/static/javascript-games/caterpillar.gif",
         "videoUrl": "/static/javascript-games/caterpillar.mp4"
@@ -61,7 +61,7 @@ Here are some fun programs for your @boardname@!
         "description": "A collection of five second games created in the first MakeCode Arcade Game Jam",
         "url": "/javascript-games/five-second-games",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Advanced", "Events", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Conditionals", "User Input", "Sprites", "Movement", "Animation", "Game Jam"],
+        "searchTerms": ["Example", "JavaScript", "Advanced", "Events", "Variables", "Iteration", "Loops", "Functions", "Arrays", "Conditionals", "User Input", "Sprites", "Movement", "Animation", "Game Jam"],
         "imageUrl": "/static/javascript-games/five-second-games.png",
         "largeImageUrl": "/static/javascript-games/five-second-games.gif",
         "videoUrl": "/static/javascript-games/five-second-games.mp4"
@@ -71,7 +71,7 @@ Here are some fun programs for your @boardname@!
         "description": "Save the Cube Lad from the Cube Lord in Cube Land",
         "url":"/javascript-games/cube-land",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Functions", "Conditionals", "User Input", "Sprites", "Movement", "Adventure"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Functions", "Conditionals", "User Input", "Sprites", "Movement", "Adventure"],
         "imageUrl": "/static/javascript-games/cube-land.png"
     },
     {
@@ -79,7 +79,7 @@ Here are some fun programs for your @boardname@!
         "description": "A demonstration of ramped up particle effects",
         "url":"/javascript-games/particle-effects-demo",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Iteration", "Loops", "Functions", "Arrays", "User Input", "Art"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Iteration", "Loops", "Functions", "Arrays", "User Input", "Art"],
         "imageUrl": "/static/javascript-games/particle-effects-demo.png",
         "largeImageUrl": "/static/javascript-games/particle-effects-demo.gif",
         "videoUrl": "/static/javascript-games/particle-effects-demo.mp4"
@@ -89,7 +89,7 @@ Here are some fun programs for your @boardname@!
         "description": "Try and guess the letter",
         "url":"/javascript-games/guess-the-letter",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Beginner", "Variables", "Iteration", "Loops", "Conditionals", "Boolean", "User Input"],
+        "searchTerms": ["Example", "JavaScript", "Beginner", "Variables", "Iteration", "Loops", "Conditionals", "Boolean", "User Input"],
         "imageUrl": "/static/javascript-games/guess-the-letter.png"
     },
     {
@@ -97,7 +97,7 @@ Here are some fun programs for your @boardname@!
         "description": "Try to catch the bouncing balls in your bucket",
         "url":"/javascript-games/bouncer-bucket",
         "cardType": "codeExample",
-        "tags": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Arrays", "Conditionals", "User Input", "Sprites", "Movement"],
+        "searchTerms": ["Example", "JavaScript", "Intermediate", "Events", "Variables", "Arrays", "Conditionals", "User Input", "Sprites", "Movement"],
         "imageUrl": "/static/javascript-games/bouncer-bucket.png",
         "largeImageUrl": "/static/javascript-games/bouncer-bucket.gif",
         "videoUrl": "/static/javascript-games/bouncer-bucket.mp4"

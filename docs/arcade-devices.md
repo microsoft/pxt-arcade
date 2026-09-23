@@ -9,7 +9,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Meowbit",
         "description": "A retro game console for STEM education from Kittenbot team",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/meowbit.png",
         "url": "https://www.kittenbot.cc/collections/frontpage/products/meowbit-codable-console-for-microsoft-makecode-arcade",
         "variant": "hw---stm32f401"
@@ -17,7 +17,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Retro Arcade for Education",
         "description": "The Retro has a big screen, colorful protective case, d-pad and vibration motor",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/elecfreaksarcade.jpg",
         "url": "https://shop.elecfreaks.com/products/elecfreaks-retro-makecode-arcade-for-education",
         "variant": "hw---stm32f401"
@@ -25,7 +25,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "micro:bit Arcade Shield",
         "description": "ELECFREAKS micro:bit expansion board for MakeCode Arcade, DIY Programmable Game Console, and STEM Education Kit.",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/arcade-shield.jpg",
         "url": "https://shop.elecfreaks.com/products/micro-bit-retro-programming-arcade",
         "variant": "hw---n3"
@@ -33,7 +33,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "TinkerGen GameGo",
         "description": "A fun-sized console to play the games you code.",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/gamego.jpg",
         "url": "https://www.seeedstudio.com/GameGo-p-4847.html",
         "variant": "hw---stm32f401"
@@ -41,7 +41,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Kitronik ARCADE",
         "description": "ARCADE is a programmable gamepad for use with MakeCode Arcade.",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/kitronik.jpg",
         "url": "https://www.kitronik.co.uk/arcade",
         "variant": "hw---samd51"
@@ -49,7 +49,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "MRT Game Maker Kit",
         "description": " Sleek hand-held game device with a hard case and a USB-C port.",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/mrt-gamemaker-kit.png",
         "url": "https://www.myrobottime.co.kr/gamemakerkit",
         "variant": "hw---stm32f401"
@@ -57,7 +57,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Kitronik Arcade for micro:bit",
         "description": "Use the micro:bit with an expansion board from Kitronik",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/kitronik-shield.png",
         "url": "https://kitronik.co.uk/56116",
         "variant": "hw---n3"
@@ -65,7 +65,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Adafruit PyBadge",
         "description": "It's a badge, it's an arcade, it's a PyBadge",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/pybadge.jpg",
         "url": "https://www.adafruit.com/product/4200",
         "variant": "hw---samd51adafruit"
@@ -73,7 +73,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "BrainPad Arcade",
         "description": "Learn how BrainPad Arcade lets you run games on a small handheld console.",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/ghiarcade.jpg",
         "url": "https://brainpad.com/arcade",
         "variant": "hw---stm32f401"
@@ -81,7 +81,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Adafruit PyGamer",
         "description": "The upgraded PyBadge",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/pygamer.jpg",
         "url": "https://www.adafruit.com/product/4242",
         "variant": "hw---samd51adafruit"
@@ -89,7 +89,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Ovobot Xtron Pro",
         "description": "A programmable modular console to create games, design wearables and make creative projects.",
-        "tags": ["Hardware", "Art"],
+        "searchTerms": ["Hardware", "Art"],
         "imageUrl": "/static/hardware/xtronpro.png",
         "url": "https://www.ovobot.cc/en/product/detail/xtron-pro/",
         "variant": "hw---stm32f401"
@@ -97,7 +97,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Adafruit EdgeBadge",
         "description": "It's the PyBadge with a zest of Machine learning",
-        "tags": ["Hardware", "AI"],
+        "searchTerms": ["Hardware", "AI"],
         "imageUrl": "/static/hardware/edgebadge.jpg",
         "url": "https://www.adafruit.com/product/4400",
         "variant": "hw---samd51adafruit"
@@ -105,7 +105,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "TomatoCube Arcade Console",
         "description": "RP2040-based game console",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/tomatocube-arcade-console.png",
         "url": "https://tomatocube.com/product/makecode-arcade-console-v2/",
         "variant": "hw---rp2040"
@@ -113,7 +113,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Kitronik ARCADE Max",
         "description": "Program fun and educational games with the Kitronik ARCADE Max",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/kitronik-arcade-max.png",
         "url": "https://kitronik.co.uk/5357",
         "variant": "hw---samd51"
@@ -121,7 +121,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Newbit Arcade Shield",
         "description": "Use the micro:bit with an expansion board from KittenBot",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/newbit.png",
         "url": "https://www.kittenbot.cc/products/newbit-arcade-shield",
         "variant": "hw---n3"
@@ -129,7 +129,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "micro:bit Game:Bit Shield",
         "description": "Use the micro:bit with an expansion board from iCShop",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/bit-shield.png",
         "url": "https://www.icshop.com.tw/products/368112100137?locale=en",
         "variant": "hw---n3"
@@ -137,7 +137,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Calliope GameKit Shield",
         "description": "Use the Calliope mini with GameKit to bring your game ideas to life",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/gamekit.png",
         "url": "https://calliope.cc/en/calliope-mini/accessories/gamekit",
         "variant": "hw---n3"
@@ -145,7 +145,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Forward Education CodeCTRL",
         "description": "Code, play, and explore with this handheld micro:bit controller.",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/codectrl.png",
         "url": "https://forwardedu.com/pages/codectrl-for-micro-bit",
         "variant": "hw---n3"
@@ -153,7 +153,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "micro:bit Arcade Pro",
         "description": "Use the micro:bit with Arcade Pro with a big screen, d-pad and Jacdac support",
-        "tags": ["Hardware", "Controller"],
+        "searchTerms": ["Hardware", "Controller"],
         "imageUrl": "/static/hardware/arcade-pro-ef.png",
         "url": "https://shop.elecfreaks.com/products/elecfreaks-microsoft-makecode-micro-bit-arcade-pro",
         "variant": "hw---n3"
@@ -161,7 +161,7 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "TomatoCube Display Shield",
         "description": "micro:bit display shield for MakeCode Arcade",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/tomatocube-display-shield.png",
         "url": "https://tomatocube.com/product/makecode-arcade-display-shield-for-microbit",
         "variant": "hw---n3"
@@ -169,14 +169,14 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     {
         "name": "Adafruit M4",
         "description": "Learn how to run your games on micro-controllers from Adafruit",
-        "tags": ["Hardware"],
+        "searchTerms": ["Hardware"],
         "imageUrl": "/static/hardware/adafruitm4.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-m4",
         "variant": "hw---samd51"
     },
     {
         "name": "Add Board",
-        "tags": ["Hardware", "Tutorial"],
+        "searchTerms": ["Hardware", "Tutorial"],
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding",
         "imageUrl": "/static/hardware/minipcb.png"
