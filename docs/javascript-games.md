@@ -11,6 +11,9 @@ Here are some fun programs for your @boardname@!
         "description": "Golf your way through the galaxy",
         "url":"/javascript-games/planet-putt-putt",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/javascript-games/planet-putt-putt.png",
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif",
         "videoUrl": "/static/javascript-games/planet-putt-putt.mp4"
@@ -20,6 +23,9 @@ Here are some fun programs for your @boardname@!
         "description": "A remix of Falling Duck with custom lighting effects",
         "url": "/javascript-games/darker-duck",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/javascript-games/darker-duck.png",
         "largeImageUrl": "/static/javascript-games/darker-duck.gif",
         "videoUrl": "/static/javascript-games/darker-duck.mp4"
@@ -29,6 +35,9 @@ Here are some fun programs for your @boardname@!
         "description": "Return the ball with the paddle in this 0-2 player game of ping-pong",
         "url": "/javascript-games/ping",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/javascript-games/ping.png",
         "largeImageUrl": "/static/javascript-games/ping.gif",
         "videoUrl": "/static/javascript-games/ping.mp4"
@@ -38,6 +47,9 @@ Here are some fun programs for your @boardname@!
         "description": "Get those packages to delivered but be quick or you'll miss the address!",
         "url": "/javascript-games/delivery",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "imageUrl": "/static/javascript-games/delivery.png",
         "largeImageUrl": "/static/javascript-games/delivery.gif",
         "videoUrl": "/static/javascript-games/delivery.mp4"
@@ -47,6 +59,9 @@ Here are some fun programs for your @boardname@!
         "description": "Collect leaves to feed the caterpillar",
         "url": "/javascript-games/caterpillar",
         "cardType": "codeExample",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "imageUrl": "/static/javascript-games/caterpillar.png",
         "largeImageUrl": "/static/javascript-games/caterpillar.gif",
         "videoUrl": "/static/javascript-games/caterpillar.mp4"
@@ -56,6 +71,9 @@ Here are some fun programs for your @boardname@!
         "description": "A collection of five second games created in the first MakeCode Arcade Game Jam",
         "url": "/javascript-games/five-second-games",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "one-day",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/javascript-games/five-second-games.png",
         "largeImageUrl": "/static/javascript-games/five-second-games.gif",
         "videoUrl": "/static/javascript-games/five-second-games.mp4"
@@ -65,6 +83,9 @@ Here are some fun programs for your @boardname@!
         "description": "Save the Cube Lad from the Cube Lord in Cube Land",
         "url":"/javascript-games/cube-land",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/javascript-games/cube-land.png"
     },
     {
@@ -72,6 +93,9 @@ Here are some fun programs for your @boardname@!
         "description": "A demonstration of ramped up particle effects",
         "url":"/javascript-games/particle-effects-demo",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/javascript-games/particle-effects-demo.png",
         "largeImageUrl": "/static/javascript-games/particle-effects-demo.gif",
         "videoUrl": "/static/javascript-games/particle-effects-demo.mp4"
@@ -81,6 +105,9 @@ Here are some fun programs for your @boardname@!
         "description": "Try and guess the letter",
         "url":"/javascript-games/guess-the-letter",
         "cardType": "codeExample",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "imageUrl": "/static/javascript-games/guess-the-letter.png"
     },
     {
@@ -88,6 +115,9 @@ Here are some fun programs for your @boardname@!
         "description": "Try to catch the bouncing balls in your bucket",
         "url":"/javascript-games/bouncer-bucket",
         "cardType": "codeExample",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "imageUrl": "/static/javascript-games/bouncer-bucket.png",
         "largeImageUrl": "/static/javascript-games/bouncer-bucket.gif",
         "videoUrl": "/static/javascript-games/bouncer-bucket.mp4"

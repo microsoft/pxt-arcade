@@ -11,25 +11,37 @@ into real world art! Please drop us a message if you know another tool to be add
         "name": "Pixel Art T-shirt",
         "description": "Convert any sprite into a high-definition image that can be used to print amazing T-shirts!",
         "url": "/arts-and-crafts/tshirt",
-        "imageUrl": "/static/arts-and-crafts/tshirt.png"
+        "imageUrl": "/static/arts-and-crafts/tshirt.png",
+        "difficulty": "beginner",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18", "adult"]
     },
     {
         "name": "LEGO Bricks Murals",
         "description": "Convert any sprite into a mural of LEGO pieces!",
         "url": "/arts-and-crafts/lego-bricks-murals",
-        "imageUrl": "/static/arts-and-crafts/lego-bricks-murals.jpg"
+        "imageUrl": "/static/arts-and-crafts/lego-bricks-murals.jpg",
+        "difficulty": "beginner",
+        "duration": "60-minutes",
+        "targetAge": ["up-to-8", "9-12", "13-18", "adult"]
     },
     {
         "name": "Laser-cut Stencils",
         "description": "Cut out stencils from your sprites and paint them anywhere!",
         "url": "/arts-and-crafts/laser-cut-stencils",
-        "imageUrl": "/static/arts-and-crafts/laser-cut-stencils.jpg"
+        "imageUrl": "/static/arts-and-crafts/laser-cut-stencils.jpg",
+        "difficulty": "intermediate",
+        "duration": "one-day",
+        "targetAge": ["13-18", "adult"]
     },
     {
         "name": "Perler Bead Sprites",
         "description": "Make Perler Bead images from the sprites in your games.",
         "url": "/arts-and-crafts/perler-bead-sprites",
-        "imageUrl": "/static/arts-and-crafts/perler-bead-sprites.jpg"
+        "imageUrl": "/static/arts-and-crafts/perler-bead-sprites.jpg",
+        "difficulty": "beginner",
+        "duration": "60-minutes",
+        "targetAge": ["9-12", "13-18", "adult"]
     }
 ]
 ```

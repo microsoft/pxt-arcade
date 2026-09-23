@@ -19,6 +19,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Sophie’s Castle Adventure",
         "description": "Defend yourself against hordes of enemies while collecting powerups! By sylvancircle",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "sylvancircle",
         "url": "https://forum.makecode.com/t/sophies-castle-adventure-vampire-survivor-like-game/14500",
@@ -28,6 +31,9 @@ Games submitted by the MakeCode community.
     {
         "name": "red-line",
         "description": "Hack and slash your way through a world of red in this action game by danger_kitty! ",
+        "difficulty": "intermediate",
+        "duration": "15-minutes",
+        "targetAge": ["13-18"],
         "cardType": "forumUrl",
         "author": "danger_kitty",
         "url": "https://forum.makecode.com/t/red-line-beta/22830",
@@ -37,6 +43,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Blocky Boss Battle",
         "description": "Avoid enemy attacks while launching your own in this difficult boss battle, by henrym",
+        "difficulty": "intermediate",
+        "duration": "15-minutes",
+        "targetAge": ["13-18"],
         "author": "henrym",
         "url": "https://forum.makecode.com/t/blocky-boss-battle/421",
         "cardType": "forumUrl",
@@ -47,6 +56,9 @@ Games submitted by the MakeCode community.
     {
         "name": "JetChamp",
         "description": "Fly through the puzzlescape with your jetpack and win the challenge.",
+        "difficulty": "intermediate",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "author": "EthansGuild",
         "cardType": "sharedExample",
         "url": "https://github.com/EthansGuild/jetchamp",
@@ -55,6 +67,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Pixel Smash",
         "description": "Battle your friends in this fighting game with forum-submitted characters, by PixelDoodle",
+        "difficulty": "intermediate",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "PixelDoodle",
         "url": "https://forum.makecode.com/t/the-biggest-smash-bros-game/18456",
@@ -64,6 +79,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Deliverimania!",
         "description": "Deliver the right packages to the right places in this fast paced arcade game! By Sarge",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12"],
         "cardType": "forumUrl",
         "author": "Sarge",
         "url": "https://forum.makecode.com/t/deliverimania-a-fast-paced-infinite-runner-game/20309",
@@ -73,6 +91,9 @@ Games submitted by the MakeCode community.
     {
         "name": "3D Dinosaur Model",
         "description": "This project renders an actual moving 3D model in MakeCode Arcade! By Brohann",
+        "difficulty": "expert",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "cardType": "forumUrl",
         "author": "Brohann",
         "url": "https://forum.makecode.com/t/brohanns-3d-devlog/20917/15",
@@ -82,6 +103,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Space Rocks Revenge",
         "description": "Blast enemy ships and avoid asteroids in this 3D space game! By kwx",
+        "difficulty": "expert",
+        "duration": "30-minutes",
+        "targetAge": ["13-18"],
         "cardType": "forumUrl",
         "author": "kwx",
         "url": "https://forum.makecode.com/t/repost-space-rocks-revenge/31570",
@@ -91,6 +115,9 @@ Games submitted by the MakeCode community.
     {
         "name": "The MakeCode Forums",
         "description": "Help save the MakeCode forums in this visual novel game! By ChimbroDaPro",
+        "difficulty": "beginner",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "ChimbroDaPro",
         "url": "https://forum.makecode.com/t/the-makecode-forums-arcade-makecode-superheroes-in-my-community-game-jam-submission/24994",
@@ -100,6 +127,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Fossil Clicker",
         "description": "Build up ridiculously huge amounts of money in this prehistoric themed idle game! By UnsignedArduino",
+        "difficulty": "beginner",
+        "duration": "60-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "UnsignedArduino",
         "url": "https://forum.makecode.com/t/fossil-clicker-my-prehistoric-game-jam-submission/21524",
@@ -109,6 +139,9 @@ Games submitted by the MakeCode community.
     {
         "name": "GravityCube",
         "description": "Solve puzzles in this gravity warping game! By Sherbet_cookie",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "Sherbet_cookie",
         "url": "https://forum.makecode.com/t/gravitycube-fixed-v1-4/27907",
@@ -118,6 +151,9 @@ Games submitted by the MakeCode community.
     {
         "name": "ROLLER",
         "description": "Test your reflexes while flipping gravity in this fast paced game! By AbstractDesigner",
+        "difficulty": "intermediate",
+        "duration": "15-minutes",
+        "targetAge": ["13-18"],
         "cardType": "forumUrl",
         "author": "AbstractDesigner",
         "url": "https://forum.makecode.com/t/roller-abstractdesigner/21856",
@@ -127,6 +163,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Magnate",
         "description": "Battle mechs in this randomly generated RPG! By Octodemon",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18"],
         "cardType": "forumUrl",
         "author": "Octodemon",
         "url": "https://forum.makecode.com/t/magnate-by-octodemon/30030",
@@ -136,6 +175,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Diego The Spheroid: Illusions",
         "description": "Who needs hedgehogs? We know who's REALLY the fastest. And he's a sphere named Diego. By JTSpeedRun",
+        "difficulty": "intermediate",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "JtSpeedRun",
         "url": "https://forum.makecode.com/t/diego-the-spheroid-illusions-dev-log/25179",
@@ -145,6 +187,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Teeny Tiny Cat",
         "description": "Explore caves in this moody platformer by WoofWoof",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "WoofWoof",
         "url": "https://forum.makecode.com/t/teeny-tiny-cat-my-newest-platformer/24441",
@@ -154,6 +199,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Seabird Watching Simulator",
         "description": "Identify various seabirds in this bird watching simulator by Blobbey!",
+        "difficulty": "beginner",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "Blobbey",
         "url": "https://forum.makecode.com/t/seabird-watching-simulator-my-new-best-game-yet/28754",
@@ -163,6 +211,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Crate Dungeon",
         "description": "Push crates around to solve puzzles! By ADM_F",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "ADM_F",
         "url": "https://forum.makecode.com/t/crate-dungeons/36126",
@@ -172,6 +223,9 @@ Games submitted by the MakeCode community.
     {
         "name": "AI Fashion Frogs",
         "description": "Answer questions to train some AI frogs so that they can identify your favorite color! By randomuser",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "cardType": "forumUrl",
         "author": "randomuser",
         "url": "https://forum.makecode.com/t/help-me-choose-a-future-makecode-arcade-project/19234/46",
@@ -181,6 +235,9 @@ Games submitted by the MakeCode community.
     {
         "name": "Raptor Run",
         "description": "See how long your dinosaur can run across the ancient landscape, jump to avoid deadly obstacles along the way, by Adri314",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12"],
         "author": "Adri314",
         "url": "https://forum.makecode.com/t/raptor-run-microsoft-makecode/291",
         "cardType": "forumUrl",
@@ -194,6 +251,9 @@ Games submitted by the MakeCode community.
         "cardType": "forumUrl",
         "name": "Racquetball",
         "description": "",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12", "13-18"],
         "largeImageUrl": "/static/discourse/79706-92624-82126-48770.gif"
     },
     {
@@ -203,6 +263,9 @@ Games submitted by the MakeCode community.
         "cardType": "forumUrl",
         "name": "Tiny Soccer Cars",
         "description": "",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["9-12"],
         "largeImageUrl": "/static/discourse/32925-95037-89550-06105.gif"
     }
 ]
