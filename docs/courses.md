@@ -12,7 +12,7 @@ Structured courses for teaching computer science in the classroom.
         "name": "AP Computer Science Principles",
         "description": "AP endorsed introductory class for High School students. The course is designed to attract students of all backgrounds, experience levels, and interests",
         "cardType": "link",
-        "searchTerms": ["Curriculum", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Variables", "Iteration", "Loops", "Conditionals", "Boolean", "Functions", "Arrays", "User Input", "Coordinates", "Sprites", "Movement", "Controller", "Music", "Assets", "Tilemap", "Animation", "Art", "Hardware"],
+        "searchTerms": ["Curriculum","Blocks","JavaScript","Python","Events","Variables","Iteration","Loops","Conditionals","If Then","Boolean","Logic","Functions","Arrays","AI","User Input","Game Input","Coordinates","Sprites","Movement","Controller","Music","Projectiles","Assets","Tilemap","Multiplayer","Animation","Extension","Art","Story","Hardware","Dialogs"],
         "url": "https://makecode.com/csp",
         "imageUrl": "/static/courses/csp.png",
         "largeImageUrl": "/static/courses/csp.png",
@@ -22,7 +22,7 @@ Structured courses for teaching computer science in the classroom.
         "name": "Introduction to Computer Science with Microsoft MakeCode Arcade",
         "description": "A full academic year course designed to be taught for introductory programming classes in High School",
         "cardType": "link",
-        "searchTerms": ["Curriculum", "Blocks", "JavaScript", "Python", "Beginner", "Events", "Variables", "Iteration", "Loops", "Conditionals", "Boolean", "Functions", "Arrays", "User Input", "Coordinates", "Sprites", "Movement", "Controller", "Overlaps", "Music", "Assets", "Tilemap", "Animation", "Platformer", "Art"],
+        "searchTerms": ["Curriculum","Blocks","JavaScript","Python","Events","Variables","Iteration","Loops","Conditionals","If Then","Boolean","Logic","Functions","Arrays","User Input","Game Input","Coordinates","Sprites","Movement","Controller","Overlaps","Music","Assets","Tilemap","Animation","Platformer","Art","Dialogs"],
         "url": "/courses/introcs",
         "imageUrl": "/static/courses/teals-introcs.jpg",
         "largeImageUrl": "/static/courses/teals-introcs.jpg",
@@ -32,7 +32,7 @@ Structured courses for teaching computer science in the classroom.
         "name": "Code a Carnival",
         "description": "A modular and differentiated set of coding activities for students in grades 5-12",
         "cardType": "link",
-        "searchTerms": ["Skillmap", "Curriculum", "Blocks", "Beginner", "Events", "Variables", "User Input", "Sprites", "Movement", "Controller", "Overlaps", "Animation", "Art", "Hardware"],
+        "searchTerms": ["Skillmap","Curriculum","Tutorial","Video","Projects","Blocks","Events","Variables","User Input","Game Input","Sprites","Movement","Controller","Overlaps","Projectiles","Animation","Art","Clicker","Hardware","Dialogs"],
         "url": "/courses/carnival",
         "imageUrl": "/static/hour-of-code/2022/booth.png",
         "largeImageUrl": "/static/hour-of-code/2022/booth.png",
@@ -62,7 +62,7 @@ The games they make in the course can run on the GameGo device! Courses are free
         "imageUrl": "/static/courses/gamego-beginner.png",
         "largeImageUrl": "/static/courses/gamego-beginner.png",
         "cardType": "link",
-        "searchTerms": ["Curriculum", "Blocks", "Beginner", "User Input", "Sprites", "Movement", "Controller", "Hardware"],
+        "searchTerms": ["Curriculum","Tutorial","Blocks","User Input","Game Input","Sprites","Movement","Controller","Hardware","Dialogs"],
         "directOpen": true
     }, {
         "name": "GameGo Intermediate Programming Course",
@@ -71,7 +71,7 @@ The games they make in the course can run on the GameGo device! Courses are free
         "imageUrl": "/static/courses/gamego-intermediate.png",
         "largeImageUrl": "/static/courses/gamego-intermediate.png",
         "cardType": "link",
-        "searchTerms": ["Curriculum", "Blocks", "Intermediate", "Events", "User Input", "Sprites", "Movement", "Controller", "Animation", "Multiplayer", "Hardware"],
+        "searchTerms": ["Curriculum","Tutorial","Blocks","Events","User Input","Game Input","Sprites","Movement","Controller","Animation","Multiplayer","Hardware","Dialogs"],
         "directOpen": true
     }
 ]
@@ -87,21 +87,21 @@ Short lessons to get you started coding games.
   "name": "Cherry Pickr",
   "description": "Learn the basics of creating a game",
   "url": "/lessons/cherry-pickr",
-    "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Iteration", "Loops", "Sprites", "Movement", "Controller", "Tilemap", "Overlaps", "Coordinates"],
+    "searchTerms": ["Tutorial","Blocks","Events","Variables","User Input","Game Input","Dialogs","Coordinates","Sprites","Movement","Controller","Overlaps","Assets","Tilemap","Art"],
   "imageUrl": "/static/lessons/cherry-pickr.png"
 },
 {
   "name": "Dance Party",
   "description": "Create a basic dance collision game using sprite overlap events and controller buttons!",
   "url": "/lessons/dance-party",
-    "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Iteration", "Loops", "User Input", "Sprites", "Movement", "Controller", "Overlaps", "Tilemap"],
+    "searchTerms": ["Tutorial","Blocks","Events","Variables","Conditionals","If Then","Boolean","Logic","User Input","Game Input","Coordinates","Sprites","Movement","Controller","Overlaps","Assets","Tilemap","Projectiles","Art","Dialogs"],
   "imageUrl": "/static/lessons/dance-party.png"
 },
 {
   "name": "BlockOut",
   "description": "Create a projectile collision game",
   "url": "/lessons/block-out",
-    "searchTerms": ["Tutorial", "Blocks", "Beginner", "Events", "Variables", "Conditionals", "Functions", "Iteration", "Loops", "User Input", "Sprites", "Movement", "Controller", "Overlaps", "Sports"],
+    "searchTerms": ["Tutorial","Blocks","Events","Variables","Iteration","Loops","Conditionals","If Then","Boolean","Logic","Functions","User Input","Game Input","Coordinates","Sprites","Movement","Controller","Overlaps","Projectiles","Assets","Art","Sports","Dialogs"],
   "imageUrl": "/static/lessons/block-out.png"
 }
 ]

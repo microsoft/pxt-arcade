@@ -9,35 +9,35 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
     {
         "name": "Arcade cabinet",
         "description": "Full size Arcade cabinet powered by a Raspberry Pi.",
-        "searchTerms": ["Hardware", "Projects"],
+        "searchTerms": ["Hardware","Projects","Controller","Multiplayer","Art"],
         "imageUrl": "/static/hardware/raspberry-pi/wooden-cabinet/gallery.jpg",
         "url": "/hardware/cabinets"
     },
     {
         "name": "Shoebox Controller",
         "description": "Turn a shoebox into a USB game controller for a PC.",
-        "searchTerms": ["Hardware", "Projects", "Controller"],
+        "searchTerms": ["Hardware","Projects","Controller","Multiplayer","Art"],
         "imageUrl": "/static/hardware/shoebox.jpg",
         "url": "/hardware/shoebox-controller"
     },
     {
         "name": "Kiosk",
         "description": "Showcase games on your project Arcade in the Kiosk.",
-        "searchTerms": ["Hardware", "Projects"],
+        "searchTerms": ["Hardware","Projects","Controller","Multiplayer"],
         "imageUrl": "/static/hardware/kiosk/kiosk-thumb.png",
         "url": "/hardware/kiosk"
     },
     {
         "name": "Makey Makey",
         "description": "Turn your banana keyboard into an Arcade game controller.",
-        "searchTerms": ["Hardware", "Projects", "Controller"],
+        "searchTerms": ["Hardware","Projects","Controller"],
         "imageUrl": "/static/hardware/makey-makey.jpg",
         "url": "https://makeymakey.com/blogs/how-to-instructions/getting-started-with-microsoft-makecode-arcade"
     },
     {
         "name": "Adafruit Joy Bonnet",
         "description": "Learn how to run your games on Raspberry Pi Zero and Adafruit Joy Bonnet.",
-        "searchTerms": ["Hardware", "Projects", "Controller"],
+        "searchTerms": ["Hardware","Projects","Controller"],
         "imageUrl": "/static/hardware/adafruitjoybonnet.jpg",
         "url": "https://learn.adafruit.com/makecode-arcade-pi-zero",
         "variant": "hw---rpi"
@@ -45,7 +45,7 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
     {
         "name": "Cardboard Panel",
         "description": "Turn a cardboard box into a tabletop arcade.",
-        "searchTerms": ["Hardware", "Projects"],
+        "searchTerms": ["Hardware","Projects","Controller","Multiplayer"],
         "imageUrl": "/static/hardware/controlpanel.jpg",
         "url": "/hardware/raspberry-pi/cardboard-control-panel",
         "variant": "hw---rpi"
@@ -53,7 +53,7 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
     {
         "name": "Arcade table",
         "description": "Turn an IKEA FLISAT table into an arcade.",
-        "searchTerms": ["Hardware", "Projects"],
+        "searchTerms": ["Hardware","Projects","Controller","Multiplayer"],
         "imageUrl": "/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg",
         "url": "/hardware/raspberry-pi/ikea-flisat-table",
         "variant": "hw---rpi"
