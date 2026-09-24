@@ -13,6 +13,9 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/perfect-fit.gif
 * url: /--multiplayer?host=_bz3CCuWFiepH
 * cardType: link
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: 9-12, 13-18
 * otherAction: _bz3CCuWFiepH, , sharedExample
 ---
 * name: Paint Party
@@ -22,6 +25,9 @@ Try these multiplayer games with your friends!
 * imageUrl: /static/multiplayer/paint-party.png
 * url: /--multiplayer?host=_Ka770J6Laeva
 * cardType: link
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: up-to-8, 9-12
 * otherAction: _Ka770J6Laeva, , sharedExample
 ---
 * name: Galga
@@ -32,6 +38,9 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/galga.gif
 * url: /--multiplayer?host=_C71PmfFaYDm2
 * cardType: link
+* difficulty: intermediate
+* duration: 30-minutes
+* targetAge: 9-12, 13-18
 * otherAction: _C71PmfFaYDm2, , sharedExample
 ---
 * name: Arrow Battle
@@ -42,6 +51,9 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/arrow-battle-large.gif
 * url: /--multiplayer?host=_dCP7f8c3q5PJ
 * cardType: link
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: 9-12, 13-18
 * otherAction: _dCP7f8c3q5PJ, , sharedExample
 ---
 * name: Tag
@@ -52,6 +64,9 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/tag.gif
 * url: /--multiplayer?host=_cvxPm1WesYyi
 * cardType: link
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: 9-12, 13-18
 * otherAction: _cvxPm1WesYyi, , sharedExample
 ---
 * name: Horse Race
@@ -62,6 +77,9 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/horse-race.gif
 * url: /--multiplayer?host=_1DogpPTpb8fK
 * cardType: link
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: 9-12, 13-18
 * otherAction: _1DogpPTpb8fK, , sharedExample
 ---
 * name: Eat the Fruit
@@ -72,5 +90,8 @@ Try these multiplayer games with your friends!
 * largeImageUrl: /static/multiplayer/eat-the-fruit.gif
 * url: /--multiplayer?host=29996-31415-91597-12788
 * cardType: link
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: 9-12, 13-18
 * otherAction: 29996-31415-91597-12788, , sharedExample
 ### ~

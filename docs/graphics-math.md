@@ -11,6 +11,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "description": "Enjoy a variety of randomly generated fireworks",
         "url": "/graphics-math/fireworks",
         "cardType": "codeExample",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["up-to-8", "9-12", "13-18"],
         "imageUrl": "/static/graphics-math/fireworks.png",
         "largeImageUrl": "/static/graphics-math/fireworks.gif",
         "videoUrl": "/static/graphics-math/fireworks.mp4"
@@ -20,6 +23,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "description": "Enjoy watching a rainbow variant of the famous zero-player game",
         "cardType": "codeExample",
         "url": "/graphics-math/game-of-life",
+        "difficulty": "intermediate",
+        "duration": "30-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/graphics-math/game-of-life.png",
         "largeImageUrl": "/static/graphics-math/game-of-life.gif",
         "videoUrl": "/static/graphics-math/game-of-life.mp4"
@@ -29,6 +35,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "description": "Generates random 'art' by drawing across the screen",
         "cardType": "codeExample",
         "url": "/graphics-math/paint-brush",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["up-to-8", "9-12"],
         "imageUrl": "/static/graphics-math/paint-brush.png",
         "largeImageUrl": "/static/graphics-math/paint-brush.gif",
         "videoUrl": "/static/graphics-math/paint-brush.mp4"
@@ -38,6 +47,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "description": "Sand dots sliding across the screen, ported from Adafruit Animated LED Sand",
         "cardType": "codeExample",
         "url": "/graphics-math/animated-sand",
+        "difficulty": "beginner",
+        "duration": "15-minutes",
+        "targetAge": ["up-to-8", "9-12"],
         "imageUrl": "/static/graphics-math/animated-sand.png",
         "largeImageUrl": "/static/graphics-math/animated-sand.gif",
         "videoUrl": "/static/graphics-math/animated-sand.mp4"
@@ -46,6 +58,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
         "name": "Bresenham Circles",
         "description": "Draw circles using the Bresenham algorithm",
         "url": "/graphics-math/bresenham-circle",
+        "difficulty": "expert",
+        "duration": "60-minutes",
+        "targetAge": ["13-18", "adult"],
         "imageUrl": "/static/graphics-math/bresenham-circle.png",
         "largeImageUrl": "/static/graphics-math/bresenham-circle.gif",
         "videoUrl": "/static/graphics-math/bresenham-circle.mp4"
@@ -62,6 +77,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "description": "A visualization of different sorting algorithms",
   "url":"/graphics-math/sorting-algorithms",
   "cardType": "codeExample",
+  "difficulty": "expert",
+  "duration": "60-minutes",
+  "targetAge": ["13-18", "adult"],
   "imageUrl": "/static/graphics-math/sorting-algorithms.png",
   "largeImageUrl": "/static/graphics-math/sorting-algorithms.gif",
   "videoUrl": "/static/graphics-math/sorting-algorithms.mp4"
@@ -70,6 +88,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "name": "Pi Monte Carlo",
   "description": "Approximate Pi with the Monte Carlo method",
   "url": "/graphics-math/pi-monte-carlo",
+  "difficulty": "intermediate",
+  "duration": "30-minutes",
+  "targetAge": ["13-18", "adult"],
   "imageUrl": "/static/graphics-math/pi-monte-carlo.png",
   "largeImageUrl": "/static/graphics-math/pi-monte-carlo.gif",
   "videoUrl": "/static/graphics-math/pi-monte-carlo.mp4"
@@ -78,6 +99,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "name": "Fibonacci Tiles and Spiral",
   "description": "Tile the screen and draw a spiral with the Fibonacci numbers",
   "url": "/graphics-math/fibo-tile-spiral",
+  "difficulty": "intermediate",
+  "duration": "30-minutes",
+  "targetAge": ["13-18", "adult"],
   "imageUrl": "/static/graphics-math/fibo-tile-spiral.png",
   "largeImageUrl": "/static/graphics-math/fibo-tile-spiral.gif",
   "videoUrl": "/static/graphics-math/fibo-tile-spiral.mp4"
@@ -86,6 +110,9 @@ Try computer graphics methods and visual math concepts as Arcade games.
   "name": "Sieve of Eratosthenes",
   "description": "Find prime numbers using the Sieve of Eratosthenes method",
   "url": "/graphics-math/sieve-eratosthenes",
+  "difficulty": "expert",
+  "duration": "60-minutes",
+  "targetAge": ["13-18", "adult"],
   "imageUrl": "/static/graphics-math/sieve-eratosthenes.png",
   "largeImageUrl": "/static/graphics-math/sieve-eratosthenes.gif",
   "videoUrl": "/static/graphics-math/sieve-eratosthenes.mp4"

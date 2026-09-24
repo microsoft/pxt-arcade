@@ -7,6 +7,9 @@
 {
   "name": "Walking Hero",
   "description": "Make your own characters for games. Concepts: Creating sprites, Image editor, Moving sprites",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/walking-hero",
   "labelClass": "green ribbon huge",
   "cardType": "tutorial",
@@ -16,6 +19,9 @@
 {
   "name": "Picnic Food",
   "description": "Learn how coordinates work by placing food on the screen. Concepts: Coordinate system, Creating multiple sprites, Renaming variables",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/picnic-food",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/picnic-food.png",
@@ -24,6 +30,9 @@
 {
   "name": "Princess Pizza",
   "description": "Use overlap events to detect when sprites come together. Concepts: Sprite kinds, On overlap event, Game over",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/princess-pizza",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/princess-pizza.png",
@@ -32,6 +41,9 @@
 {
   "name": "Bouncing Burger",
   "description": "Create a sprite that will bounce around the screen. Concepts: Projectiles, Sprite motion, Bounce on Wall flag",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/bouncing-burger.png",
@@ -40,6 +52,9 @@
 {
   "name": "Star Field",
   "description": "Create a starry night for the next hit space game. Concepts: Star motion, Particles",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/star-field",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/star-field.png",
@@ -48,6 +63,9 @@
 {
   "name": "Throw a Bone",
   "description": "Learn about how projectiles and button events work by throwing a bone. New Concepts: Controller button events, projectiles",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/throw-a-bone",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/throw-a-bone.png",
@@ -56,6 +74,9 @@
 {
   "name": "Sunday Drive",
   "description": "Learn about how to make actions occur on an interval, and introducing randomness to games. New Concepts: On game update interval, Pick random, Screen height property",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/sunday-drive",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/sunday-drive.png",
@@ -64,6 +85,9 @@
 {
   "name": "Which Button?",
   "description": "Learn about how to use score, life, and countdown counters in your games. Concepts: Score, Life, Countdown",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/which-button",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/which-button.png",
@@ -72,6 +96,9 @@
 {
   "name": "Setting the Scene",
   "description": "Design tilemaps to create scenes and levels for players to explore. Concepts: Tilemaps, Tile Images, Walls",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/setting-the-scene",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/setting-the-scene.png",
@@ -80,6 +107,9 @@
 {
   "name": "Breadcrumb Trail",
   "description": "Use tilemaps to place sprites at different positions on the screen. Concepts: Tiles, Arrays, For Element Loops, Placing Sprites",
+  "difficulty": "intermediate",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/concepts/breadcrumb-trail",
   "cardType": "tutorial",
   "imageUrl": "/static/concepts/breadcrumb-trail.png",
@@ -88,6 +118,9 @@
 {
   "name": "Tale of Talagron",
   "description": "Introduce your game with story text and effects. Concepts: Text print, Scrolling, Star motion",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url":"/concepts/talagron",
   "cardType": "codeExample",
   "imageUrl": "/static/concepts/talagron.jpg",

@@ -16,7 +16,10 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "name": "Shoebox Controller",
         "description": "Turn a shoebox into a USB game controller for a PC.",
         "imageUrl": "/static/hardware/shoebox.jpg",
-        "url": "/hardware/shoebox-controller"
+        "url": "/hardware/shoebox-controller",
+        "difficulty": "intermediate",
+        "duration": "one-day",
+        "targetAge": ["13-18", "adult"]
     },
     {
         "name": "Kiosk",
@@ -28,7 +31,10 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "name": "Makey Makey",
         "description": "Turn your banana keyboard into an Arcade game controller.",
         "imageUrl": "/static/hardware/makey-makey.jpg",
-        "url": "https://makeymakey.com/blogs/how-to-instructions/getting-started-with-microsoft-makecode-arcade"
+        "url": "https://makeymakey.com/blogs/how-to-instructions/getting-started-with-microsoft-makecode-arcade",
+        "difficulty": "beginner",
+        "duration": "30-minutes",
+        "targetAge": ["9-12", "13-18"]
     },
     {
         "name": "Adafruit Joy Bonnet",
@@ -42,14 +48,20 @@ Choose one of these projects to create your own Arcade game console, cabinet, or
         "description": "Turn a cardboard box into a tabletop arcade.",
         "imageUrl": "/static/hardware/controlpanel.jpg",
         "url": "/hardware/raspberry-pi/cardboard-control-panel",
-        "variant": "hw---rpi"
+        "variant": "hw---rpi",
+        "difficulty": "intermediate",
+        "duration": "one-day",
+        "targetAge": ["13-18", "adult"]
     },
     {
         "name": "Arcade table",
         "description": "Turn an IKEA FLISAT table into an arcade.",
         "imageUrl": "/static/hardware/raspberry-pi/ikea-flisat-table/gallery.jpg",
         "url": "/hardware/raspberry-pi/ikea-flisat-table",
-        "variant": "hw---rpi"
+        "variant": "hw---rpi",
+        "difficulty": "expert",
+        "duration": "longer",
+        "targetAge": "adult"
     }
 ]
 ```

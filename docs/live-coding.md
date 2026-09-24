@@ -11,6 +11,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 7pBGS_tKfmU
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/7pBGS_tKfmU.jpg
+* difficulty: beginner
+* duration: 60-minutes
+* targetAge: 9-12, 13-18
+* editor: blocks
 
 ---
 
@@ -19,6 +23,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: sgeHKw437oE
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/sgeHKw437oE.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -27,6 +35,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 4m4XDiPD8XE
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/4m4XDiPD8XE.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -35,6 +47,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 2vjLXenKamE
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/2vjLXenKamE.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -43,6 +59,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: _sXUtLg7upA
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/_sXUtLg7upA.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -51,6 +71,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: NgoLRM4qbzA
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/NgoLRM4qbzA.jpg
+* difficulty: intermediate
+* duration: 30-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -59,6 +83,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: AyvYTKc15pw
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/AyvYTKc15pw.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 9-12, 13-18
+* editor: blocks
 
 ---
 
@@ -67,6 +95,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 7LdYMmicEgg
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/7LdYMmicEgg.jpg
+* difficulty: intermediate
+* duration: 30-minutes
+* targetAge: 9-12, 13-18
+* editor: blocks
 
 ---
 
@@ -75,6 +107,9 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 8gnqh1iSbHs
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/8gnqh1iSbHs.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
 
 ---
 
@@ -83,6 +118,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 47a2_3V9NH4
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/47a2_3V9NH4.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -91,6 +130,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 3nfx1BL1Buo
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/3nfx1BL1Buo.jpg
+* difficulty: intermediate
+* duration: 30-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -99,6 +142,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: JnlUrcXNMQY
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/JnlUrcXNMQY.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -107,6 +154,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: iyJDSaSyIGY
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/iyJDSaSyIGY.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -115,6 +166,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: V5WnlNRP_OI
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/V5WnlNRP_OI.jpg
+* difficulty: intermediate
+* duration: 30-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -123,6 +178,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: EBSyV7PKu3o
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/EBSyV7PKu3o.jpg
+* difficulty: beginner
+* duration: 15-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -131,6 +190,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: XUDdTPggLwc
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/XUDdTPggLwc.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 9-12, 13-18
+* editor: blocks
 
 ---
 
@@ -139,6 +202,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: yl5u5BHU9EA
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/yl5u5BHU9EA.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -147,6 +214,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 1S5qXW6tstM
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/1S5qXW6tstM.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -155,6 +226,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: MUW8c_T9Hpk
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/MUW8c_T9Hpk.jpg
+* difficulty: beginner
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -163,6 +238,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: ql_1yJulyC8
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/ql_1yJulyC8.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -171,6 +250,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: JpE9ku3-XHk
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/JpE9ku3-XHk.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -179,6 +262,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: vnWzu5QZs1w
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/vnWzu5QZs1w.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -187,6 +274,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: q-7uJfGar98
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/q-7uJfGar98.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -195,6 +286,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: XkKoEN7-2Pk
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/XkKoEN7-2Pk.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 9-12, 13-18
+* editor: blocks
 
 ---
 
@@ -203,6 +298,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: SRcQB1sPkBk
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/SRcQB1sPkBk.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 9-12, 13-18
+* editor: blocks
 
 ---
 
@@ -211,6 +310,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: vJbEfkM9158
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/vJbEfkM9158.jpg
+* difficulty: intermediate
+* duration: 30-minutes
+* targetAge: 9-12
+* editor: blocks
 
 ---
 
@@ -219,6 +322,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: m-SIWLuuzNI
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/m-SIWLuuzNI.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -227,6 +334,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: E0QgyHKYv8Y
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/E0QgyHKYv8Y.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -235,6 +346,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: Viv8bWMbKLU
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/Viv8bWMbKLU.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -243,6 +358,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 8wTYVDOyc_c
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/8wTYVDOyc_c.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -251,6 +370,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: oRZHdtxmcps
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/oRZHdtxmcps.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -259,6 +382,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: ZhrK3o-biHA
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/ZhrK3o-biHA.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -267,6 +394,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: VcwWa8bvs6I
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/VcwWa8bvs6I.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -275,6 +406,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: oAgKi8_MCLE
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/oAgKi8_MCLE.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -283,6 +418,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: LBcemZpq-DQ
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/LBcemZpq-DQ.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -291,6 +430,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: f0c1khxngNU
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/f0c1khxngNU.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -299,6 +442,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: q7wozPM3EKI
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/q7wozPM3EKI.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -307,6 +454,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: lJoUEKBWP_Y
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/lJoUEKBWP_Y.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -315,6 +466,10 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * youTubeId: 9CmRI-cplEg
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/9CmRI-cplEg.jpg
+* difficulty: intermediate
+* duration: 60-minutes
+* targetAge: 13-18
+* editor: blocks
 
 ---
 
@@ -323,6 +478,7 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 * url: https://www.youtube.com/playlist?list=PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * imageUrl: /static/live-coding/playlist.png
+* duration: longer
 
 ### ~
 

@@ -15,7 +15,10 @@ Structured courses for teaching computer science in the classroom.
         "url": "https://makecode.com/csp",
         "imageUrl": "/static/courses/csp.png",
         "largeImageUrl": "/static/courses/csp.png",
-        "directOpen": true
+        "directOpen": true,
+        "difficulty": "beginner",
+        "duration": "longer",
+        "targetAge": "13-18"
     },
     {
         "name": "Introduction to Computer Science with Microsoft MakeCode Arcade",
@@ -24,7 +27,10 @@ Structured courses for teaching computer science in the classroom.
         "url": "/courses/introcs",
         "imageUrl": "/static/courses/teals-introcs.jpg",
         "largeImageUrl": "/static/courses/teals-introcs.jpg",
-        "directOpen": true
+        "directOpen": true,
+        "difficulty": "beginner",
+        "duration": "longer",
+        "targetAge": "13-18"
     },
     {
         "name": "Code a Carnival",
@@ -35,7 +41,10 @@ Structured courses for teaching computer science in the classroom.
         "largeImageUrl": "/static/hour-of-code/2022/booth.png",
         "directOpen": true,
         "label": "No Verification Required!",
-        "labelClass": "orange ribbon large"
+        "labelClass": "orange ribbon large",
+        "difficulty": "beginner",
+        "duration": "longer",
+        "targetAge": ["9-12", "13-18"]
     }
 ]
 ```
@@ -59,7 +68,10 @@ The games they make in the course can run on the GameGo device! Courses are free
         "imageUrl": "/static/courses/gamego-beginner.png",
         "largeImageUrl": "/static/courses/gamego-beginner.png",
         "cardType": "link",
-        "directOpen": true
+        "directOpen": true,
+        "difficulty": "beginner",
+        "duration": "longer",
+        "targetAge": "9-12"
     }, {
         "name": "GameGo Intermediate Programming Course",
         "description": "TinkerGen's intermediate game development course covers more topics like animations and multiplayer. Games made in the course can run on the GameGo device! Course is free after log in.",
@@ -67,7 +79,10 @@ The games they make in the course can run on the GameGo device! Courses are free
         "imageUrl": "/static/courses/gamego-intermediate.png",
         "largeImageUrl": "/static/courses/gamego-intermediate.png",
         "cardType": "link",
-        "directOpen": true
+        "directOpen": true,
+        "difficulty": "intermediate",
+        "duration": "longer",
+        "targetAge": "9-12"
     }
 ]
 ```
@@ -82,19 +97,28 @@ Short lessons to get you started coding games.
   "name": "Cherry Pickr",
   "description": "Learn the basics of creating a game",
   "url": "/lessons/cherry-pickr",
-  "imageUrl": "/static/lessons/cherry-pickr.png"
+    "imageUrl": "/static/lessons/cherry-pickr.png",
+    "difficulty": "beginner",
+    "duration": "60-minutes",
+    "targetAge": "9-12"
 },
 {
   "name": "Dance Party",
   "description": "Create a basic dance collision game using sprite overlap events and controller buttons!",
   "url": "/lessons/dance-party",
-  "imageUrl": "/static/lessons/dance-party.png"
+    "imageUrl": "/static/lessons/dance-party.png",
+    "difficulty": "beginner",
+    "duration": "60-minutes",
+    "targetAge": "9-12"
 },
 {
   "name": "BlockOut",
   "description": "Create a projectile collision game",
   "url": "/lessons/block-out",
-  "imageUrl": "/static/lessons/block-out.png"
+    "imageUrl": "/static/lessons/block-out.png",
+    "difficulty": "intermediate",
+    "duration": "60-minutes",
+    "targetAge": "9-12"
 }
 ]
 ```
