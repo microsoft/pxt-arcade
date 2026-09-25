@@ -9,6 +9,7 @@ Check out the winners for all of our previous game jams!
 * author: Web_Headed_Games
 * url: https://arcade.makecode.com/39697-95718-82872-45842
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Puzzle, If Then
 * imageUrl: https://makecode.com/api/39697-95718-82872-45842/thumb
 ---
 * name: The Last 30 Seconds of the Universe
@@ -16,6 +17,7 @@ Check out the winners for all of our previous game jams!
 * author: felixtsu
 * url: https://arcade.makecode.com/84204-53947-81636-40195
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Space, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/84204-53947-81636-40195/thumb
 ---
 * name: True Love Time Machine
@@ -23,6 +25,7 @@ Check out the winners for all of our previous game jams!
 * author: Dylan James C. The 1st
 * url: https://arcade.makecode.com/18329-44039-92547-78466
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Variables, Conditionals, Functions, Arrays, User Input, Sprites, Assets, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/18329-44039-92547-78466/thumb
 ---
 * name: Flying Through Time
@@ -30,6 +33,7 @@ Check out the winners for all of our previous game jams!
 * author: danger_kitty
 * url: https://arcade.makecode.com/30418-01173-18811-61378
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Music, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/30418-01173-18811-61378/thumb
 
 
@@ -42,6 +46,7 @@ Check out the winners for all of our previous game jams!
 * author: danger_kitty
 * url: https://arcade.makecode.com/04978-92601-05637-89537
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, Multiplayer, Cats, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/04978-92601-05637-89537/thumb
 ---
 * name: The Jolly Dodger
@@ -49,6 +54,7 @@ Check out the winners for all of our previous game jams!
 * author: Andrew-ski
 * url: https://arcade.makecode.com/04007-23134-26251-74065
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Music, Strategy, Adventure, If Then
 * imageUrl: https://makecode.com/api/04007-23134-26251-74065/thumb
 ---
 * name: War Subs
@@ -56,6 +62,7 @@ Check out the winners for all of our previous game jams!
 * author: Rishi
 * url: https://arcade.makecode.com/05000-25084-90099-51924
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, Strategy, If Then
 * imageUrl: https://makecode.com/api/05000-25084-90099-51924/thumb
 
 
@@ -67,6 +74,7 @@ Check out the winners for all of our previous game jams!
 * author: donnadie
 * url: https://arcade.makecode.com/25787-41781-39930-98285
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Tilemap, Puzzle, Strategy, If Then
 * imageUrl: https://makecode.com/api/25787-41781-39930-98285/thumb
 ---
 * name: HONK!
@@ -74,6 +82,7 @@ Check out the winners for all of our previous game jams!
 * author: Unsigned_Arduino's
 * url: https://arcade.makecode.com/97928-66031-26500-83480
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Game Input, Dialogs, Assets, Car, Race, Racing, If Then
 * imageUrl: https://makecode.com/api/97928-66031-26500-83480/thumb
 ---
 * name: Traffic Panic
@@ -81,6 +90,7 @@ Check out the winners for all of our previous game jams!
 * author: I Am Penguin
 * url: https://arcade.makecode.com/09285-20655-41262-50777
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Tilemap, Puzzle, Strategy, Car, If Then, Race, Racing
 * imageUrl: https://makecode.com/api/09285-20655-41262-50777/thumb
 
 
@@ -92,6 +102,7 @@ Check out the winners for all of our previous game jams!
 * author: reyhanPanci256
 * url: https://arcade.makecode.com/42885-92487-13042-52240
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, Simulation, Strategy, If Then
 * imageUrl: https://makecode.com/api/42885-92487-13042-52240/thumb
 ---
 * name: Garden Crop Duster
@@ -99,6 +110,7 @@ Check out the winners for all of our previous game jams!
 * author: jacob_c
 * url: https://arcade.makecode.com/95927-10946-55487-19128
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Simulation, If Then
 * imageUrl: https://makecode.com/api/95927-10946-55487-19128/thumb
 ---
 * name: Snail Hike
@@ -106,6 +118,7 @@ Check out the winners for all of our previous game jams!
 * author: SPerkins25
 * url: https://arcade.makecode.com/17901-55867-81776-14236
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Puzzle, If Then
 * imageUrl: https://makecode.com/api/17901-55867-81776-14236/thumb
 
 
@@ -117,6 +130,7 @@ Check out the winners for all of our previous game jams!
 * author: InvalidProject
 * url: https://arcade.makecode.com/40921-79622-15624-16091
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, Rhythm, If Then
 * imageUrl: https://makecode.com/api/40921-79622-15624-16091/thumb
 ---
 * name: The Forest Campfire
@@ -124,6 +138,7 @@ Check out the winners for all of our previous game jams!
 * author: Freast & Toast
 * url: https://arcade.makecode.com/50763-65106-55406-25942
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/50763-65106-55406-25942/thumb
 ---
 * name: The Joy of Pixels
@@ -131,6 +146,7 @@ Check out the winners for all of our previous game jams!
 * author: Jedi
 * url: https://arcade.makecode.com/08245-57951-20701-25721
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Art, Sandbox, If Then
 * imageUrl: https://makecode.com/api/08245-57951-20701-25721/thumb
 
 
@@ -142,6 +158,7 @@ Check out the winners for all of our previous game jams!
 * author: Peppercorn Studios
 * url: https://arcade.makecode.com/98537-40423-47522-15861
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Music, Puzzle, Simulation, If Then
 * imageUrl: https://makecode.com/api/98537-40423-47522-15861/thumb
 ---
 * name: Lady Lovelace's Time Machine
@@ -149,6 +166,7 @@ Check out the winners for all of our previous game jams!
 * author: verisutha
 * url: https://arcade.makecode.com/58950-52861-22099-51073
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/58950-52861-22099-51073/thumb
 ---
 * name: The Adventures of Frances Perkins
@@ -156,6 +174,7 @@ Check out the winners for all of our previous game jams!
 * author: Brohann
 * url: https://arcade.makecode.com/24653-68670-93715-48748
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Music, Platformer, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/24653-68670-93715-48748/thumb
 ---
 * name: Grace Hopper's Hop-O-Matic
@@ -163,6 +182,7 @@ Check out the winners for all of our previous game jams!
 * author: rymc88
 * url: https://arcade.makecode.com/14599-75222-61879-27532
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, Simulation, If Then
 * imageUrl: https://makecode.com/api/14599-75222-61879-27532/thumb
 
 
@@ -174,6 +194,7 @@ Check out the winners for all of our previous game jams!
 * author: SylvanCircle
 * url: https://arcade.makecode.com/22414-21049-08990-36399
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Tilemap, Puzzle, Simulation, Strategy, If Then
 * imageUrl: https://makecode.com/api/22414-21049-08990-36399/thumb
 ---
 * name: Fossil Clicker
@@ -181,6 +202,7 @@ Check out the winners for all of our previous game jams!
 * author: UnsignedArduino
 * url: https://arcade.makecode.com/39392-36875-05086-87292
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Clicker, Strategy, If Then
 * imageUrl: https://makecode.com/api/39392-36875-05086-87292/thumb
 ---
 * name: Dino Blast
@@ -188,6 +210,7 @@ Check out the winners for all of our previous game jams!
 * author: InvalidProject99
 * url: https://arcade.makecode.com/48432-56072-58827-08148
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Music, Adventure, Story, If Then
 * imageUrl: https://makecode.com/api/48432-56072-58827-08148/thumb
 ---
 * name: Booga Bruh
@@ -195,6 +218,7 @@ Check out the winners for all of our previous game jams!
 * author: PixelDoodle
 * url: https://arcade.makecode.com/98099-33981-73376-80879
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Music, RPG, Adventure, Story, If Then
 * imageUrl: https://makecode.com/api/98099-33981-73376-80879/thumb
 
 
@@ -206,6 +230,7 @@ Check out the winners for all of our previous game jams!
 * author: ChimbroDaPro
 * url: https://arcade.makecode.com/32696-05327-02222-46404
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Story, Adventure, If Then
 * imageUrl: https://makecode.com/api/32696-05327-02222-46404/thumb
 ---
 * name: Fighting Fire
@@ -213,6 +238,7 @@ Check out the winners for all of our previous game jams!
 * author: Toolazyfurnames
 * url: https://arcade.makecode.com/30579-25956-44814-00995
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Music, Shooter, If Then
 * imageUrl: https://makecode.com/api/30579-25956-44814-00995/thumb
 ---
 * name: Community Heroes Game Jam
@@ -220,6 +246,7 @@ Check out the winners for all of our previous game jams!
 * author: Iam
 * url: https://arcade.makecode.com/08008-00125-42136-28163
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Platformer, If Then
 * imageUrl: https://makecode.com/api/08008-00125-42136-28163/thumb
 
 
@@ -231,6 +258,7 @@ Check out the winners for all of our previous game jams!
 * author: Teddy B.
 * url: https://arcade.makecode.com/50932-20209-20218-60886
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Puzzle, Adventure, If Then
 * imageUrl: https://makecode.com/api/50932-20209-20218-60886/thumb
 ---
 * name: Under Surveillance
@@ -238,6 +266,7 @@ Check out the winners for all of our previous game jams!
 * author: Bilangus
 * url: https://arcade.makecode.com/52784-59082-24354-89134
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Assets, Animation, Strategy, If Then
 * imageUrl: https://makecode.com/api/52784-59082-24354-89134/thumb
 ---
 * name: Nine Cores
@@ -245,6 +274,7 @@ Check out the winners for all of our previous game jams!
 * author: Nine Cores
 * url: https://arcade.makecode.com/24442-87185-99963-39751
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Music, Space, Shooter, If Then
 * imageUrl: https://makecode.com/api/24442-87185-99963-39751/thumb
 ---
 * name: Katandra: Hollow Heist
@@ -252,6 +282,7 @@ Check out the winners for all of our previous game jams!
 * author: CopySprite
 * url: https://arcade.makecode.com/99904-43074-40676-04519
 * cardType: sharedExample
+* searchTerms: Game Jam, Community Games, Events, Variables, Conditionals, Functions, Iteration, Loops, Arrays, User Input, Controller, Sprites, Movement, Assets, Animation, Music, Adventure, If Then
 * imageUrl: https://makecode.com/api/99904-43074-40676-04519/thumb
 
 ### ~
