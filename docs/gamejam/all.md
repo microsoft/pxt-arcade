@@ -6,6 +6,18 @@ You can host your own Game Jams using the materials from the [Game Jam in a Box]
 
 The MakeCode Team regularly hosts game jams – keep an eye on the [MakeCode Forum](https://forum.makecode.com/c/share-your-arcade-projects-here/5) for the next game jam announcement. Check out some of the previous MakeCode hosted game jams below.
 
+## Current Game Jam
+
+```codecard
+[   {
+        "name": "Sports Jam",
+        "description": "We're looking for games that prominently feature sports or games, both real and imagined!",
+        "url": "/gamejam/sports",
+        "imageUrl": "/static/gamejam/jams/sports/assets/preview.png"
+    }
+]
+```
+
 ## Previous Game Jams
 
 ```codecard
