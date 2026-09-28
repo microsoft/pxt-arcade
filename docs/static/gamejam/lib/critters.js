@@ -7,13 +7,12 @@
     var FRAME_DURATION = 1000 / 30;
     var MOVE_SPEED = 10;
     var AVOIDANCE_PADDING = 8;
-    var AVOIDANCE_TURN_RATE = 0.15;
-    var MIN_STEP_DISTANCE = 3.5;
-    var MAX_STEP_DISTANCE = 4.5;
-    var MIN_STEP_DURATION = 160;
-    var MAX_STEP_DURATION = 240;
-    var TURN_REPLANT_ANGLE = 0.35;
-    var MAX_LEG_STRETCH = 3;
+    var WANDER_TURN_RATE = 0.03;
+    var AVOIDANCE_TURN_RATE = 0.08;
+    var TARGET_TURN_RATE = 2;
+    var TURN_DETECTION_ANGLE = 0.1;
+    var TURN_MOVE_SPEED = 5;
+    var TURN_STEP_DISTANCE = 1.5;
     var SPAWN_CANDIDATE_COUNT = 20;
     var TWO_PI = Math.PI * 2;
     var PALETTE = [
@@ -157,18 +156,17 @@
         this.bodyRadius = 5;
         this.legLength = 10;
         this.legPositions = [];
-        this.turnRate = 4;
+        this.turnRate = TARGET_TURN_RATE;
         this.speed = MOVE_SPEED;
         this.bodyColor = 4;
         this.eyeColor = 15;
         this.legColor = 14;
         this.noseColor = 2;
-        this.stepDistance = MIN_STEP_DISTANCE +
-            Math.random() * (MAX_STEP_DISTANCE - MIN_STEP_DISTANCE);
-        this.stepDuration = randint(MIN_STEP_DURATION, MAX_STEP_DURATION);
+        this.stepDistance = 4;
         this.noseRadius = 2;
         this.data = {};
         this.heading = 0;
+        this.previousHeading = undefined;
         this.targetHeading = undefined;
         this.position = new Position(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 
@@ -218,34 +216,16 @@
                 teleport,
                 this.legPositions[offset + i],
                 positions[i],
-                this.stepDuration,
+                200,
                 currentTime
             );
         }
     };
 
-    Bug.prototype.legGroupIsMoving = function (left) {
-        var offset = left ? 0 : 3;
-
-        for (var i = offset; i < offset + 3; i++) {
-            if (this.legPositions[i].moveStart && this.legPositions[i].moveEnd) {
-                return true;
-            }
-        }
-
-        return false;
-    };
-
-    Bug.prototype.startStep = function (left, close, currentTime) {
-        if (this.legGroupIsMoving(left)) {
-            return false;
-        }
-
-        this.positionLegs(left, close, false, currentTime);
-        return true;
-    };
-
     Bug.prototype.update = function (timeStep, currentTime) {
+        var isTurning = this.previousHeading !== undefined &&
+            Math.abs(angleDifference(this.heading, this.previousHeading)) >
+            TURN_DETECTION_ANGLE;
         var isMoving = this.targetHeading === undefined;
         if (this.targetHeading !== undefined) {
             this.heading = clampRadians(turnAngleTowards(
@@ -261,8 +241,23 @@
         }
 
         if (isMoving) {
-            this.position.x += Math.cos(this.heading) * this.speed * timeStep;
-            this.position.y += Math.sin(this.heading) * this.speed * timeStep;
+            var moveSpeed = isTurning ? TURN_MOVE_SPEED : this.speed;
+            this.position.x += Math.cos(this.heading) * moveSpeed * timeStep;
+            this.position.y += Math.sin(this.heading) * moveSpeed * timeStep;
+            this.legsReset = false;
+        }
+        else if (Math.abs(angleDifference(this.heading, this.lastStepHeading)) > 0.5) {
+            this.lastStepHeading = this.heading;
+            this.lastStepLeft = !this.lastStepLeft;
+            this.positionLegs(this.lastStepLeft, true, false, currentTime);
+            this.legsReset = false;
+        }
+
+        var stepDistance = isTurning ? TURN_STEP_DISTANCE : this.stepDistance;
+        if (distanceBetween(this.lastStepPosition, this.position) > stepDistance) {
+            this.lastStepPosition = this.position.clone();
+            this.lastStepLeft = !this.lastStepLeft;
+            this.positionLegs(this.lastStepLeft, false, false, currentTime);
             this.legsReset = false;
         }
 
@@ -270,53 +265,7 @@
             this.legPositions[i].update(currentTime);
         }
 
-        var startedStep = false;
-        if (Math.abs(angleDifference(this.heading, this.lastStepHeading)) > TURN_REPLANT_ANGLE) {
-            var turnStepLeft = !this.lastStepLeft;
-            if (this.startStep(turnStepLeft, true, currentTime)) {
-                this.lastStepLeft = turnStepLeft;
-                this.lastStepHeading = this.heading;
-                this.legsReset = false;
-                startedStep = true;
-            }
-        }
-
-        if (!startedStep &&
-            distanceBetween(this.lastStepPosition, this.position) > this.stepDistance) {
-            var walkStepLeft = !this.lastStepLeft;
-            if (this.startStep(walkStepLeft, false, currentTime)) {
-                this.lastStepPosition = this.position.clone();
-                this.lastStepLeft = walkStepLeft;
-                this.legsReset = false;
-            }
-        }
-
-        var replantLeftLegs = false;
-        var replantRightLegs = false;
-
-        for (var i = 0; i < this.legPositions.length; i++) {
-            var leg = this.legPositions[i];
-            var dx = leg.position.x - this.position.x;
-            var dy = leg.position.y - this.position.y;
-            var distance = Math.sqrt(dx * dx + dy * dy);
-            var maximumReach = this.legLength + MAX_LEG_STRETCH;
-
-            if (distance > maximumReach && !leg.moveStart) {
-                if (i < 3) {
-                    replantLeftLegs = true;
-                }
-                else {
-                    replantRightLegs = true;
-                }
-            }
-        }
-
-        if (replantLeftLegs) {
-            this.startStep(true, true, currentTime);
-        }
-        if (replantRightLegs) {
-            this.startStep(false, true, currentTime);
-        }
+        this.previousHeading = this.heading;
     };
 
     function PixelScreen(context) {
@@ -511,7 +460,13 @@
         for (var i = 0; i < bug.legPositions.length; i++) {
             var leg = bug.legPositions[i];
             screen.fillCircle(leg.position.x, leg.position.y, 2, bug.legColor);
-            screen.drawLine(leg.position.x, leg.position.y, bug.position.x, bug.position.y, bug.legColor);
+            screen.drawLine(
+                leg.position.x,
+                leg.position.y,
+                bug.position.x,
+                bug.position.y,
+                bug.legColor
+            );
         }
 
         screen.fillCircle(
@@ -630,10 +585,6 @@
         bug.bodyColor = palette[0];
         bug.eyeColor = palette[1];
         bug.noseColor = palette[2];
-        bug.lastStepPosition = bug.position.project(
-            bug.heading + Math.PI,
-            Math.random() * bug.stepDistance
-        );
         bug.positionLegs(true, true, true, this.currentTime);
         bug.positionLegs(false, true, true, this.currentTime);
         this.bugs.push(bug);
@@ -749,7 +700,11 @@
                     bug.data.targetHeading = bug.heading + randint(-50, 50) * Math.PI / 180;
                 }
                 else if (bug.data.turning) {
-                    bug.heading = turnAngleTowards(bug.heading, bug.data.targetHeading, 0.05);
+                    bug.heading = turnAngleTowards(
+                        bug.heading,
+                        bug.data.targetHeading,
+                        WANDER_TURN_RATE
+                    );
                 }
             }
         }
