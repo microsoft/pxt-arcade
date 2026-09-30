@@ -9,6 +9,7 @@ into real world art! Please drop us a message if you know another tool to be add
 [
     {
         "name": "Pixel Art T-shirt",
+        "activityType": ["project", "resource"],
         "description": "Convert any sprite into a high-definition image that can be used to print amazing T-shirts!",
         "url": "/arts-and-crafts/tshirt",
         "imageUrl": "/static/arts-and-crafts/tshirt.png",
@@ -18,6 +19,7 @@ into real world art! Please drop us a message if you know another tool to be add
     },
     {
         "name": "LEGO Bricks Murals",
+        "activityType": ["project", "resource"],
         "description": "Convert any sprite into a mural of LEGO pieces!",
         "url": "/arts-and-crafts/lego-bricks-murals",
         "imageUrl": "/static/arts-and-crafts/lego-bricks-murals.jpg",
@@ -27,6 +29,7 @@ into real world art! Please drop us a message if you know another tool to be add
     },
     {
         "name": "Laser-cut Stencils",
+        "activityType": ["project", "resource"],
         "description": "Cut out stencils from your sprites and paint them anywhere!",
         "url": "/arts-and-crafts/laser-cut-stencils",
         "imageUrl": "/static/arts-and-crafts/laser-cut-stencils.jpg",
@@ -36,6 +39,7 @@ into real world art! Please drop us a message if you know another tool to be add
     },
     {
         "name": "Perler Bead Sprites",
+        "activityType": ["project", "resource"],
         "description": "Make Perler Bead images from the sprites in your games.",
         "url": "/arts-and-crafts/perler-bead-sprites",
         "imageUrl": "/static/arts-and-crafts/perler-bead-sprites.jpg",

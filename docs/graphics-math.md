@@ -8,6 +8,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
 [
     {
         "name": "Fireworks",
+        "language": "js",
         "description": "Enjoy a variety of randomly generated fireworks",
         "url": "/graphics-math/fireworks",
         "cardType": "codeExample",
@@ -20,6 +21,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
     },
     {
         "name": "Game of Life",
+        "language": "js",
         "description": "Enjoy watching a rainbow variant of the famous zero-player game",
         "cardType": "codeExample",
         "url": "/graphics-math/game-of-life",
@@ -32,6 +34,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
     },
     {
         "name": "Paint Brush",
+        "language": ["blocks", "js"],
         "description": "Generates random 'art' by drawing across the screen",
         "cardType": "codeExample",
         "url": "/graphics-math/paint-brush",
@@ -44,6 +47,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
     },
     {
         "name": "Animated Sand",
+        "language": "js",
         "description": "Sand dots sliding across the screen, ported from Adafruit Animated LED Sand",
         "cardType": "codeExample",
         "url": "/graphics-math/animated-sand",
@@ -56,6 +60,8 @@ Try computer graphics methods and visual math concepts as Arcade games.
     },
     {
         "name": "Bresenham Circles",
+        "language": "blocks",
+        "activityType": ["example", "resource"],
         "description": "Draw circles using the Bresenham algorithm",
         "url": "/graphics-math/bresenham-circle",
         "difficulty": "expert",
@@ -74,6 +80,7 @@ Try computer graphics methods and visual math concepts as Arcade games.
 [
 {
   "name": "Sorting Algorithms",
+  "language": "js",
   "description": "A visualization of different sorting algorithms",
   "url":"/graphics-math/sorting-algorithms",
   "cardType": "codeExample",
@@ -86,6 +93,8 @@ Try computer graphics methods and visual math concepts as Arcade games.
 },
 {
   "name": "Pi Monte Carlo",
+  "language": "blocks",
+  "activityType": ["example", "resource"],
   "description": "Approximate Pi with the Monte Carlo method",
   "url": "/graphics-math/pi-monte-carlo",
   "difficulty": "intermediate",
@@ -97,6 +106,8 @@ Try computer graphics methods and visual math concepts as Arcade games.
 },
 {
   "name": "Fibonacci Tiles and Spiral",
+  "language": "blocks",
+  "activityType": ["example", "resource"],
   "description": "Tile the screen and draw a spiral with the Fibonacci numbers",
   "url": "/graphics-math/fibo-tile-spiral",
   "difficulty": "intermediate",
@@ -108,6 +119,8 @@ Try computer graphics methods and visual math concepts as Arcade games.
 },
 {
   "name": "Sieve of Eratosthenes",
+  "language": "js",
+  "activityType": ["example", "resource"],
   "description": "Find prime numbers using the Sieve of Eratosthenes method",
   "url": "/graphics-math/sieve-eratosthenes",
   "difficulty": "expert",

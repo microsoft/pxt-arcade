@@ -6,6 +6,7 @@
 [
 {
   "name": "Walking Hero",
+  "language": "blocks",
   "description": "Make your own characters for games. Concepts: Creating sprites, Image editor, Moving sprites",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -18,6 +19,7 @@
 },
 {
   "name": "Picnic Food",
+  "language": "blocks",
   "description": "Learn how coordinates work by placing food on the screen. Concepts: Coordinate system, Creating multiple sprites, Renaming variables",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -29,6 +31,7 @@
 },
 {
   "name": "Princess Pizza",
+  "language": "blocks",
   "description": "Use overlap events to detect when sprites come together. Concepts: Sprite kinds, On overlap event, Game over",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -40,6 +43,7 @@
 },
 {
   "name": "Bouncing Burger",
+  "language": "blocks",
   "description": "Create a sprite that will bounce around the screen. Concepts: Projectiles, Sprite motion, Bounce on Wall flag",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -51,6 +55,7 @@
 },
 {
   "name": "Star Field",
+  "language": "blocks",
   "description": "Create a starry night for the next hit space game. Concepts: Star motion, Particles",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -62,6 +67,7 @@
 },
 {
   "name": "Throw a Bone",
+  "language": "blocks",
   "description": "Learn about how projectiles and button events work by throwing a bone. New Concepts: Controller button events, projectiles",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -73,6 +79,7 @@
 },
 {
   "name": "Sunday Drive",
+  "language": "blocks",
   "description": "Learn about how to make actions occur on an interval, and introducing randomness to games. New Concepts: On game update interval, Pick random, Screen height property",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -84,6 +91,7 @@
 },
 {
   "name": "Which Button?",
+  "language": "blocks",
   "description": "Learn about how to use score, life, and countdown counters in your games. Concepts: Score, Life, Countdown",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -95,6 +103,7 @@
 },
 {
   "name": "Setting the Scene",
+  "language": "blocks",
   "description": "Design tilemaps to create scenes and levels for players to explore. Concepts: Tilemaps, Tile Images, Walls",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -106,6 +115,7 @@
 },
 {
   "name": "Breadcrumb Trail",
+  "language": "blocks",
   "description": "Use tilemaps to place sprites at different positions on the screen. Concepts: Tiles, Arrays, For Element Loops, Placing Sprites",
   "difficulty": "intermediate",
   "duration": "15-minutes",
@@ -117,6 +127,7 @@
 },
 {
   "name": "Tale of Talagron",
+  "language": "js",
   "description": "Introduce your game with story text and effects. Concepts: Text print, Scrolling, Star motion",
   "difficulty": "beginner",
   "duration": "15-minutes",

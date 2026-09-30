@@ -8,6 +8,7 @@ Here are some fun programs for your @boardname@!
 [
     {
         "name": "Planet Putt Putt",
+        "language": "js",
         "description": "Golf your way through the galaxy",
         "url":"/javascript-games/planet-putt-putt",
         "cardType": "codeExample",
@@ -20,6 +21,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Darker Duck",
+        "language": "js",
         "description": "A remix of Falling Duck with custom lighting effects",
         "url": "/javascript-games/darker-duck",
         "cardType": "codeExample",
@@ -32,6 +34,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Ping!",
+        "language": "js",
         "description": "Return the ball with the paddle in this 0-2 player game of ping-pong",
         "url": "/javascript-games/ping",
         "cardType": "codeExample",
@@ -44,6 +47,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Delivery",
+        "language": "js",
         "description": "Get those packages to delivered but be quick or you'll miss the address!",
         "url": "/javascript-games/delivery",
         "cardType": "codeExample",
@@ -56,6 +60,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Caterpillar",
+        "language": "js",
         "description": "Collect leaves to feed the caterpillar",
         "url": "/javascript-games/caterpillar",
         "cardType": "codeExample",
@@ -68,6 +73,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Five Second Games",
+        "language": "js",
         "description": "A collection of five second games created in the first MakeCode Arcade Game Jam",
         "url": "/javascript-games/five-second-games",
         "cardType": "codeExample",
@@ -80,6 +86,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Cube Land",
+        "language": "js",
         "description": "Save the Cube Lad from the Cube Lord in Cube Land",
         "url":"/javascript-games/cube-land",
         "cardType": "codeExample",
@@ -90,6 +97,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Particle Effects Demo",
+        "language": "js",
         "description": "A demonstration of ramped up particle effects",
         "url":"/javascript-games/particle-effects-demo",
         "cardType": "codeExample",
@@ -102,6 +110,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Guess the Letter",
+        "language": "js",
         "description": "Try and guess the letter",
         "url":"/javascript-games/guess-the-letter",
         "cardType": "codeExample",
@@ -112,6 +121,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Bouncer Bucket",
+        "language": "js",
         "description": "Try to catch the bouncing balls in your bucket",
         "url":"/javascript-games/bouncer-bucket",
         "cardType": "codeExample",

@@ -8,6 +8,7 @@
 
 {
   "name": "Pizza Party",
+  "language": "blocks",
   "description": "Create a quick multiplayer game where you try to gather as much pizza as possible before your friends knock away your points!",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -18,6 +19,7 @@
   "largeImageUrl": "/static/tutorials/pizza-party/playtime.png"
 },{
   "name": "Arrow Battle",
+  "language": "blocks",
   "description": "This quick tutorial will help you create a multiplayer game where you test your reflexes to be the fastest to hit your arrow keys!",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -28,6 +30,7 @@
   "largeImageUrl": "/static/tutorials/arrows/battle.gif"
 },{
   "name": "Multiplayer Horse Race",
+  "language": "blocks",
   "description": "Follow this set of steps to quickly create a carnival-style horse racing game!",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -38,6 +41,7 @@
   "largeImageUrl": "/static/tutorials/horse/race.gif"
 }, {
   "name": "Birthday Bow Battle",
+  "language": "blocks",
   "description": "Give yourself a present by creating a game to play with a friend! In this game, you'll move your presents to try to collect more bows than your opponent.",
   "difficulty": "beginner",
   "duration": "15-minutes",
@@ -48,6 +52,7 @@
   "largeImageUrl": "/static/tutorials/holiday/bbb.gif"
 },{
   "name": "Blazing Glory",
+  "language": "blocks",
   "description": "Create a multiplayer game where you and your team must work together to dodge the fireballs in order to stay alive!",
   "difficulty": ["beginner", "intermediate"],
   "duration": "30-minutes",

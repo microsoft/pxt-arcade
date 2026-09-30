@@ -9,6 +9,7 @@
 
 {
   "name": "Full of Stories",
+  "language": "blocks",
   "cardType": "link",
   "description": "Bring coding to life with shareable greeting cards, jokes, and more!",
   "difficulty": "beginner",
@@ -22,6 +23,7 @@
 },
 {
   "name": "AI Bug Arena",
+  "language": "blocks",
   "cardType": "link",
   "description": "Code your own bug to think for itself using Artificial Intelligence (AI) and challenge other AI bugs in the Arena!",
   "difficulty": "beginner",
@@ -33,6 +35,7 @@
 },
 {
   "name": "Whack the Mole",
+  "language": "blocks",
   "cardType": "link",
   "description": "Create your own mole whacking carnival game.",
   "difficulty": "beginner",
@@ -44,6 +47,7 @@
 },
 {
   "name": "Talent Show",
+  "language": "blocks",
   "cardType": "link",
   "description": "Learn to create a clicker game and quickly rack up the points as you applaud your favorite performers.",
   "difficulty": "beginner",
@@ -55,6 +59,7 @@
 },
 {
   "name": "Save the Dinos",
+  "language": "blocks",
   "cardType": "link",
   "description": "Create a collector-style game starring a dinosaur that's determined to save her babies!",
   "difficulty": "beginner",
@@ -66,6 +71,7 @@
 },
 {
   "name": "Burstin' Balloons",
+  "language": "blocks",
   "cardType": "link",
   "description": "Create a simple carnival game where you click quickly to try to burst a balloon before time runs out.",
   "difficulty": "beginner",
@@ -77,6 +83,7 @@
 },
 {
   "name": "Turkey Day",
+  "language": "blocks",
   "cardType": "link",
   "description": "It's time to break out! Help your turkey free all of its friends and climb to freedom in this fast-paced vertical platformer.",
   "difficulty": "beginner",
@@ -88,6 +95,7 @@
 },
 {
   "name": "A Zookeeper's Adventure",
+  "language": "blocks",
   "cardType": "link",
   "description": "Ever wonder what it takes to be a zookeeper? The answer may surprise you...",
   "difficulty": "beginner",
@@ -99,6 +107,7 @@
 },
 {
   "name": "Beginner Skillmap",
+  "language": "blocks",
   "cardType": "link",
   "description": "Learn to make exciting and shareable arcade games by following a few quick tutorials!",
   "difficulty": "beginner",

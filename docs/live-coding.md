@@ -474,6 +474,7 @@ Live coding of tutorials for MakeCode Arcade on https://twitch.tv/msmakecode
 ---
 
 * name: PlayList
+* language: blocks
 * description: See entire playlist on YouTube
 * url: https://www.youtube.com/playlist?list=PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0
 * youTubePlaylistId: PLMMBk9hE-SepPgF7YE099S-VluvZmRkO0

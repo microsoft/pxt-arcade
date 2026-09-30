@@ -8,6 +8,7 @@ Here are some fun programs for your @boardname@!
 [
     {
         "name": "Falling Duck",
+        "language": "blocks",
         "description": "Avoid the trees and go for a high score!",
         "url":"/blocks-games/duck",
         "cardType": "example",
@@ -20,6 +21,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Space Destroyer",
+        "language": "blocks",
         "description": "Destroy the Asteroids",
         "url":"/blocks-games/space-destroyer",
         "cardType": "example",
@@ -32,6 +34,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Jumpy Platformer",
+        "language": "blocks",
         "description": "A short platformer game with tilemap levels",
         "url": "/blocks-games/jumpy-platformer",
         "cardType": "example",
@@ -44,6 +47,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Hot Air Balloon",
+        "language": "blocks",
         "description": "Fly a hot air balloon past mountains and obstacles",
         "url": "/blocks-games/hot-air-balloon",
         "cardType": "example",
@@ -56,6 +60,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Bunny Hop",
+        "language": "blocks",
         "description": "Help your bunny get through the forest by jumping over the trees and stumps",
         "url": "/blocks-games/bunny-hop",
         "cardType": "example",
@@ -68,6 +73,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Eat the Fruit",
+        "language": "blocks",
         "description": "Don't get hit by the flying junk food",
         "url":"/blocks-games/eat-the-fruit",
         "cardType": "example",
@@ -80,6 +86,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Cat Jumper",
+        "language": "blocks",
         "description": "Make the cat leap to each level and collect all the coins",
         "url": "/blocks-games/cat-jumper",
         "cardType": "example",
@@ -92,6 +99,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Level Up!",
+        "language": "blocks",
         "description": "Eat your food to level up",
         "url":"/blocks-games/level-game",
         "cardType": "example",
@@ -104,6 +112,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Memory",
+        "language": "blocks",
         "description": "How well can you remember the sequence?",
         "url":"/blocks-games/memory",
         "cardType": "example",
@@ -116,6 +125,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Catch",
+        "language": "blocks",
         "description": "Don't let the balls hit the floor",
         "url":"/blocks-games/catch",
         "cardType": "example",
@@ -128,6 +138,7 @@ Here are some fun programs for your @boardname@!
     },
     {
         "name": "Eater Princess",
+        "language": "blocks",
         "description": "Feed the princess",
         "url":"/blocks-games/eater-princess",
         "cardType": "example",

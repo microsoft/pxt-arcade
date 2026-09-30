@@ -7,6 +7,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ### ~ codecard
 
 * name: Boss Rush
+* language: blocks
+* activityType: video, community
 * description: Battle a series of boss fights in this boss rush style game! Can you defeat them all? You probably can't beat Daryl, he's pretty tough.
 * difficulty: intermediate
 * duration: 15-minutes
@@ -18,6 +20,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Tony Albatross: Pro Dolphin
+* language: blocks
+* activityType: video, community
 * description: The pro dolphin lifestyle is all about sick stunts and nobody does it better than Tony. Gain speed underwater to launch yourself into the air and press A or B to rack up points.
 * difficulty: beginner
 * duration: 15-minutes
@@ -29,6 +33,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Spinning Plates
+* language: blocks
+* activityType: video, community
 * description: Pack a dishwasher as efficiently as possible by rotating dishes in this hectic puzzle game. Try to fit as many as you can!
 * difficulty: intermediate
 * duration: 15-minutes
@@ -40,6 +46,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Hamlet
+* language: blocks
+* activityType: video, community
 * description: Y'know, it's Hamlet. With mice I guess? Seems pretty accurate to me. Oh and you control a spotlight so make sure you keep it on the actors.
 * difficulty: intermediate
 * duration: 15-minutes
@@ -51,6 +59,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: CATch some Fish!
+* language: blocks
+* activityType: video, community
 * description: Join one cat on their journey to get fish straight from the source. Press A to reel in your catch and aim for more expensive fish to increase your score.
 * difficulty: beginner
 * duration: 15-minutes
@@ -62,6 +72,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Fruit flies when you're having fun
+* language: blocks
+* activityType: video, community
 * description: Launch fruit flies to try and break the fruit on the screen. Okay so not all the plants are fruit but the pun was worth it.
 * difficulty: beginner
 * duration: 15-minutes
@@ -73,6 +85,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Golpher
+* language: blocks
+* activityType: video, community
 * description: Gophers are hiding in my garden! Try to click tiles to figure out where they are hiding without revealing them. You could say you are "sweeping" to save a garden that is "mine".
 * difficulty: beginner
 * duration: 15-minutes
@@ -84,6 +98,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Canned Fruit
+* language: blocks
+* activityType: video, community
 * description: Create some street art in this spray painting game! Then use the menu button to wash away all your hard work.
 * difficulty: beginner
 * duration: 15-minutes
@@ -95,6 +111,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Mount 'em gooooooooooooooats!
+* language: blocks
+* activityType: video, community
 * description: Goooooooooooooooooooooooooooooooooooooooooooats!
 * difficulty: beginner
 * duration: 15-minutes
@@ -106,6 +124,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Stable Table
+* language: blocks
+* activityType: video, community
 * description: Learn how easy it is to make a table!
 * difficulty: beginner
 * duration: 15-minutes
@@ -117,6 +137,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Bartholomew finds his way
+* language: blocks
+* activityType: video, community
 * description: Help Bartholomew figure out the password to a computer in this point and click game! Also, don't leave your password on a post-it.
 * difficulty: intermediate
 * duration: 15-minutes
@@ -128,6 +150,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Alexander's Library
+* language: blocks
+* activityType: video, community
 * description: Alexander is a mouse who is also a librarian. Use his power of shushing to prevent the cats from making a mess of things.
 * difficulty: beginner
 * duration: 15-minutes
@@ -139,6 +163,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Giraf-fight
+* language: blocks
+* activityType: video, community
 * description: Giraffes fight to defend their hats. This game is multiplayer, so grab a friend and use both sides of the keyboard!
 * difficulty: beginner
 * duration: 15-minutes
@@ -150,6 +176,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Haunted home ownership
+* language: blocks
+* activityType: video, community
 * description: Some ghosts are trying to deal with unfinished business. Others just care about lawn maintenance.
 * difficulty: intermediate
 * duration: 30-minutes
@@ -161,6 +189,8 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: Gacha jobs
+* language: blocks
+* activityType: video, community
 * description: Why does society focus on dogs with jobs? Other animals can have jobs too. Try and collect all the animals with jobs in the gachapon game!
 * difficulty: beginner
 * duration: 15-minutes
@@ -172,6 +202,7 @@ Join the MakeCode developers as we stream MakeCode Arcade live on twitch.tv/msma
 ---
 
 * name: PlayList
+* language: blocks
 * description: See entire playlist on YouTube
 * url: https://www.youtube.com/playlist?list=PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT
 * youTubePlaylistId: PLMMBk9hE-SeoHWvTpdezyL9JfF0tocJUT

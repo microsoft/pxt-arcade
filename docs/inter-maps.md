@@ -9,6 +9,7 @@
 
 {
   "name": "Save the Galaxy",
+  "language": "blocks",
   "cardType": "link",
   "description": "Make a Galaga-style game by following this short series of tutorials. You will create a rocket that transmits information to satellites, dodge asteroids, create amazing animations, and MORE!",
   "difficulty": "intermediate",
@@ -20,6 +21,7 @@
 },
 {
   "name": "Monster Truck Racer",
+  "language": "blocks",
   "cardType": "link",
   "description": "Create a side-scrolling monster truck racing game then jump obstacles to get your rig to the finish line.",
   "difficulty": ["beginner", "intermediate"],
@@ -31,6 +33,7 @@
 },
 {
   "name": "3-in-a-row",
+  "language": "blocks",
   "cardType": "link",
   "description": "Create a puzzle game where you swap tiles to match 3 or more of the same symbol in a row!.",
   "difficulty": "intermediate",
@@ -42,6 +45,7 @@
 },
 {
   "name": "Code an Adventure",
+  "language": "blocks",
   "cardType": "link",
   "description": "Code a text-based adventure game using your own images, storyline, and music score!",
   "difficulty": "intermediate",
@@ -53,6 +57,7 @@
 },
 {
   "name": "Sparks Flying",
+  "language": "blocks",
   "cardType": "link",
   "description": "Transport yourself back to prehistoric Israel at the turn of winter.  Follow these simple instructions to create a clicker game that sparks a fire for the win!",
   "difficulty": "beginner",
@@ -64,6 +69,7 @@
 },
 {
   "name": "Shark Splash",
+  "language": "blocks",
   "cardType": "link",
   "description": "The deep sea is a fascinating place! This skillmap will guide you through the ocean as a shark on a journey to find food!",
   "difficulty": "intermediate",
@@ -75,6 +81,7 @@
 },
 {
   "name": "Save the Forest",
+  "language": "blocks",
   "cardType": "link",
   "description": "Use blocks to code your airtanker and set up tech so your ground team can help you save the forest!",
   "difficulty": "intermediate",
@@ -86,6 +93,7 @@
 },
 {
   "name": "80s Rockstar Maze",
+  "language": "blocks",
   "cardType": "link",
   "description": "Code your rockstar to move through the crowded backstage area to collect all the gear before they're mobbed by fans!",
   "difficulty": ["beginner", "intermediate"],
@@ -97,6 +105,7 @@
 },
 {
   "name": "Jungle Jump Platformer",
+  "language": "blocks",
   "cardType": "link",
   "description": "Code your player, add magic platforms, toss explosives, and collect valuables through customizable level maps.",
   "difficulty": "intermediate",
@@ -108,6 +117,7 @@
 },
 {
   "name": "Game Maker Guide",
+  "language": "blocks",
   "cardType": "link",
   "description": "Level up your game making skills by following this series of tutorials!",
   "imageUrl":  "/static/tutorials/game-maker-guide.png",

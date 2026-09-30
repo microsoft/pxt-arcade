@@ -55,6 +55,7 @@ Games submitted by the MakeCode community.
     },
     {
         "name": "JetChamp",
+        "activityType": ["example", "community"],
         "description": "Fly through the puzzlescape with your jetpack and win the challenge.",
         "difficulty": "intermediate",
         "duration": "15-minutes",
