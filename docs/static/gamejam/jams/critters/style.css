@@ -6,8 +6,6 @@
     padding: 0.5rem;
 }
 .banner > img {
-    position: relative;
-    top: -10px;
     width: 100%;
     max-width: 54rem;
     max-height: 100%;

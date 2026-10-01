@@ -16,7 +16,7 @@ Some good interpretations of this theme:
 
 DEMO GIF 1 | DEMO GIF 2 | DEMO GIF 3
 -- | --
-![](/static/gamejam/jams/critters/assets/animals-with-jobs.gif) | ![](/static/gamejam/jams/critters/assets/hamlet.gif) | ![](/static/gamejam/jams/critters/assets/sports-demo-3.gif)
+![](/static/gamejam/jams/critters/assets/animals-with-jobs.gif) | ![](/static/gamejam/jams/critters/assets/hamlet.gif) | ![](/static/gamejam/jams/critters/assets/goats.gif)
 
 
 You can interpret "critters" however you want, but someone playing your game should be able to see how it relates to the theme without extra explanation. If you're worried we won't *get* it, then put it in the game title or description when you submit!
@@ -24,7 +24,7 @@ You can interpret "critters" however you want, but someone playing your game sho
 ## Don't stress! You've got plenty of time
 The game jam will run from **October 1, 2026** to **November 30, 2026**. That's two whole months to work on your game!
 
-For you procrastinators out there, we will accept submissions until 11:59 PM PDT on May 15th!
+For you procrastinators out there, we will accept submissions until 11:59 PM PDT on Nov 30th!
 
 ## Getting started
 

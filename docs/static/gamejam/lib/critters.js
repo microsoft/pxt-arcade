@@ -4,15 +4,16 @@
     var scriptElement = document.currentScript;
     var SCREEN_WIDTH = 320;
     var SCREEN_HEIGHT = 240;
-    var FRAME_DURATION = 1000 / 30;
+    var FRAME_DURATION = 1000 / 60;
     var MOVE_SPEED = 10;
-    var AVOIDANCE_PADDING = 8;
+    var AVOIDANCE_PADDING = 16;
     var WANDER_TURN_RATE = 0.03;
-    var AVOIDANCE_TURN_RATE = 0.08;
+    var AVOIDANCE_TURN_RATE = 0.05;
     var TARGET_TURN_RATE = 2;
     var TURN_DETECTION_ANGLE = 0.1;
     var TURN_MOVE_SPEED = 5;
     var TURN_STEP_DISTANCE = 1.5;
+    var PARALLAX_SCROLL_FACTOR = 0.1;
     var SPAWN_CANDIDATE_COUNT = 20;
     var TWO_PI = Math.PI * 2;
     var PALETTE = [
@@ -88,6 +89,54 @@
         var dx = pos2.x - pos1.x;
         var dy = pos2.y - pos1.y;
         return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function findScrollElement(canvas) {
+        var element = canvas.parentElement;
+
+        while (element &&
+            element !== document.body &&
+            element !== document.documentElement) {
+            if (window.getComputedStyle) {
+                var style = window.getComputedStyle(element);
+                var overflowY = style.overflowY;
+
+                if ((overflowY === "auto" ||
+                    overflowY === "scroll" ||
+                    overflowY === "overlay") &&
+                    element.scrollHeight > element.clientHeight) {
+                    return element;
+                }
+            }
+
+            element = element.parentElement;
+        }
+
+        return document.scrollingElement ||
+            document.documentElement ||
+            document.body ||
+            window;
+    }
+
+    function scrollElementY(element) {
+        if (element &&
+            element !== document.body &&
+            element !== document.documentElement &&
+            element !== document.scrollingElement &&
+            element !== window) {
+            return element.scrollTop || 0;
+        }
+
+        return Math.max(
+            window.scrollY || 0,
+            window.pageYOffset || 0,
+            document.documentElement
+                ? document.documentElement.scrollTop || 0
+                : 0,
+            document.body
+                ? document.body.scrollTop || 0
+                : 0
+        );
     }
 
     function Position(x, y) {
@@ -496,6 +545,8 @@
         this.currentTime = 0;
         this.accumulator = 0;
         this.lastTimestamp = 0;
+        this.scrollElement = findScrollElement(canvas);
+        this.lastPageScrollY = scrollElementY(this.scrollElement);
         this.running = true;
 
         canvas.width = SCREEN_WIDTH;
@@ -590,6 +641,48 @@
         this.bugs.push(bug);
     };
 
+    Critters.prototype.translateBugY = function (bug, amount) {
+        bug.position.y += amount;
+        bug.lastStepPosition.y += amount;
+
+        for (var i = 0; i < bug.legPositions.length; i++) {
+            var leg = bug.legPositions[i];
+            leg.position.y += amount;
+
+            if (leg.moveStart) {
+                leg.moveStart.y += amount;
+            }
+            if (leg.moveEnd) {
+                leg.moveEnd.y += amount;
+            }
+        }
+    };
+
+    Critters.prototype.applyPageScroll = function () {
+        var currentPageScrollY = scrollElementY(this.scrollElement);
+        var scrollDelta = currentPageScrollY - this.lastPageScrollY;
+        this.lastPageScrollY = currentPageScrollY;
+
+        if (!scrollDelta) {
+            return;
+        }
+
+        var worldShift = -scrollDelta * PARALLAX_SCROLL_FACTOR;
+        var verticalSpan = SCREEN_HEIGHT + 40;
+
+        for (var i = 0; i < this.bugs.length; i++) {
+            var bug = this.bugs[i];
+            this.translateBugY(bug, worldShift);
+
+            while (bug.position.y < -20) {
+                this.translateBugY(bug, verticalSpan);
+            }
+            while (bug.position.y > SCREEN_HEIGHT + 20) {
+                this.translateBugY(bug, -verticalSpan);
+            }
+        }
+    };
+
     Critters.prototype.avoidOtherBugs = function (bug, bugIndex) {
         var avoidanceX = 0;
         var avoidanceY = 0;
@@ -667,9 +760,10 @@
     };
 
     Critters.prototype.update = function () {
-        var timeStep = 1 / 30;
+        var timeStep = 1 / 45;
         this.currentTime += timeStep;
         this.screen.clear(6);
+        this.applyPageScroll();
 
         for (var i = 0; i < this.bugs.length; i++) {
             var bug = this.bugs[i];
