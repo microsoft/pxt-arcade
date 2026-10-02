@@ -8,7 +8,11 @@
 
 {
   "name": "Intro to MakeCode Arcade",
+  "language": "blocks",
   "description": "Follow step-by-step instructions to learn the basics of using MakeCode Arcade tutorials!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/intro",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/interface/info.png",
@@ -17,7 +21,11 @@
   "labelClass": "orange ribbon large"
 },{
   "name": "Chase the Pizza",
+  "language": ["blocks", "js", "py"],
   "description": "Get started creating a simple game to chase a pizza around the screen and collect as many points as possible before time runs out!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/chase-the-pizza",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/chase-the-pizza.png",
@@ -41,7 +49,11 @@
   "largeImageUrl": "/static/tutorials/hubble/hubble_4x3.jpg"
 },{
   "name": "Joy of Bubble Popping",
+  "language": "blocks",
   "description": "Create a bubble popping game complete with sounds and bonus points!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/bubbles",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/bubbles/card.jpg",
@@ -50,35 +62,56 @@
   "labelClass": "purple ribbon large"
 },{
   "name": "Collect the Clovers",
+  "language": "blocks",
   "description": "Create a garden to collect 4-leaf clovers, avoid the bees!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/collect-the-clovers",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/collect-the-clovers/clovers.png",
   "largeImageUrl": "/static/tutorials/collect-the-clovers/collect-clovers-sim.gif"
 },{
   "name": "Create a Music Player",
+  "language": "blocks",
   "description": "Join the Zune prototyping crew and make your own music player with this tutorial from MakeCode Arcade!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/music",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/music/zune.png",
   "largeImageUrl": "/static/tutorials/music/zune.png"
 },{
   "name": "Animated Snowglobe",
+  "language": "blocks",
   "description": "Capture the spirit of winter with this magical snowglobe tutorial!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/snow",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/snow/globe.jpg",
   "largeImageUrl": "/static/tutorials/snow/globe.jpg"
 },{
   "name": "Dunk",
+  "language": "blocks",
   "description": "Create animations to help your basketball superstar do tricks all the way to the hoop!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/dunk",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/hawk/dunk.png",
   "largeImageUrl": "/static/tutorials/hawk/dunk.png"
 },{
   "name": "Target Practice",
+  "language": "blocks",
+  "activityType": ["tutorial", "video"],
   "description": "Follow a video to learn how to launch a ball at moving targets!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/target",
   "cardType": "tutorial",
   "imageUrl": "/static/skillmap/backgrounds/target-comp.gif",
@@ -87,28 +120,44 @@
   "labelClass": "teal ribbon large"
 }, {
   "name": "Time Flies",
+  "language": "blocks",
   "description": "Help a frog catch a fly before the timer runs out in this game jam themed tutorial!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/froggy",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/froggy/card.png",
   "largeImageUrl": "/static/tutorials/froggy/frog.png"
 }, {
   "name": "Flee My Valentine",
+  "language": "blocks",
   "description": "Edit the code to make your own Valentine's game where your heart gets bigger and smaller as you go!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/valentine",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/valentine/valentine.png",
   "largeImageUrl": "/static/tutorials/valentine/valentine.gif"
 }, {
   "name": "Stack'em Smurfs",
+  "language": "blocks",
   "description": "Stack the Smurfs as they appear from above, don't let anyone drop!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12"],
   "url": "/tutorials/stackem-smurfs",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/stackem-smurfs/stackem-smurfs.png",
   "largeImageUrl": "/static/tutorials/stackem-smurfs/stackem-smurfs.gif"
 }, {
   "name": "Happy Flower",
+  "language": ["blocks", "js", "py"],
   "description": "Create a flower that sends back happy bees",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/happy-flower",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/happy-flower.png",
@@ -125,7 +174,11 @@
   }]
 }, {
   "name": "Lemon Leak",
+  "language": ["blocks", "js", "py"],
   "description": "Stay away from the wild strawberries or you'll lose your juice!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/lemon-leak",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/lemon-leak.png",
@@ -142,7 +195,11 @@
   }]
 }, {
   "name": "Galga",
+  "language": ["blocks", "js", "py"],
   "description": "Fly through the attacking spacecraft and fire darts at them, don't get hit!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/galga",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/galga.png",
@@ -159,14 +216,22 @@
   }]
 }, {
   "name": "Winter",
+  "language": "blocks",
   "description": "Help the snow people catch snowflakes!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/winter",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/winter/winter.png",
   "largeImageUrl": "/static/tutorials/winter/winter.gif"
 }, {
   "name": "Free Throw",
+  "language": "blocks",
   "description": "Take your best shot and slam dunk this Basketball free throw game!",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/free-throw",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/free-throw.png",
@@ -174,13 +239,21 @@
   "videoUrl": "/static/tutorials/free-throw.mp4"
 },  {
   "name": "Barrel Dodger",
+  "language": "blocks",
   "description": "Jump and run to avoid the barrels",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/barrel-dodger",
   "cardType": "tutorial",
   "imageUrl": "/static/lessons/barrel-dodger.png"
 }, {
   "name": "Paddle",
+  "language": ["blocks", "js", "py"],
   "description": "A variation on the 2 player pong game",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/paddle",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/paddle.png",
@@ -197,7 +270,11 @@
   }]
 }, {
   "name": "Name Tag",
+  "language": "blocks",
   "description": "A simple name tag with cool effects",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/name-tag",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/name-tag.png",
@@ -205,7 +282,11 @@
   "videoUrl": "/static/tutorials/name-tag.mp4"
 }, {
   "name": "Simple Extensions",
+  "language": "blocks",
   "description": "Learn the basics of using extensions and create a platformer",
+  "difficulty": ["beginner", "intermediate"],
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/simple-extensions",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/simple-extensions.png",
@@ -213,7 +294,11 @@
   "videoUrl": "/static/tutorials/simple-extensions.mp4"
 }, {
   "name": "Maze",
+  "language": "blocks",
   "description": "Learn the basics of creating a maze",
+  "difficulty": "beginner",
+  "duration": "15-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/tutorials/maze",
   "cardType": "tutorial",
   "imageUrl": "/static/tutorials/maze.png",
@@ -221,7 +306,11 @@
   "videoUrl": "/static/tutorials/maze.mp4"
 }, {
   "name": "Side Scroller",
+  "language": "blocks",
   "description": "Make a side-scrolling car racing game to jump over obstacles and win the race.",
+  "difficulty": "intermediate",
+  "duration": "30-minutes",
+  "targetAge": ["9-12", "13-18"],
   "url": "/recipes/side-scroller/01-background",
   "cardType": "tutorial",
   "imageUrl": "/static/recipes/side-scroller/car-race.png",
