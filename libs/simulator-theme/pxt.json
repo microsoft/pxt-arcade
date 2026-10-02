@@ -1,0 +1,17 @@
+{
+    "name": "simulator-theme",
+    "description": "Change the Arcade simulator's appearance while your game runs.",
+    "files": [
+        "README.md",
+        "simulatorTheme.ts",
+        "simulatorTheme.cpp",
+        "shims.d.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "dependencies": {
+        "core": "file:../core"
+    }
+}
