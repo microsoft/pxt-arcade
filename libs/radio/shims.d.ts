@@ -22,11 +22,12 @@ declare namespace radio {
     /**
      * Sends an event over radio to neigboring devices
      */
-    //% blockId=radioRaiseEvent block="radio raise event|from source %src=control_event_source_id|with value %value=control_event_value_id"
+    //% blockId=radioRaiseEvent block="radio raise event|from source %src|with value %value"
     //% blockExternalInputs=1
     //% advanced=true
     //% weight=1
-    //% help=radio/raise-event shim=radio::raiseEvent
+    //% help=radio/raise-event
+    //% blockHidden=1 shim=radio::raiseEvent
     function raiseEvent(src: int32, value: int32): void;
 
     /**
