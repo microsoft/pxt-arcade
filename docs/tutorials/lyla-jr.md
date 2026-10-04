@@ -371,7 +371,7 @@ namespace game {
     //% blockId=game_countdown
     //% block="`ICON.clock-white` $thisSec (s)"
     //% thisSec.defl = 30
-    //% help=github:docs/game_coundown
+    //% help=github:docs/game_countdown
     export function gameCountdown(thisSec: number) {
         info.startCountdown(thisSec)
     }
