@@ -165,7 +165,7 @@
     ],
     "compile": {
         "useUF2": true,
-        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD|RPI-RP2)",
+        "deployDrives": "(ARCADE|PY|FTHR840BOOT|ARCD|RPI-RP2|RP2350)",
         "deployFileMarker": "INFO_UF2.TXT",
         "driveName": "ARCADE",
         "floatingPoint": true,
@@ -427,6 +427,27 @@
                 "gittag": "v0.9.0",
                 "codalBinary": "PI-PICO",
                 "serviceId": "codal2pico",
+                "dockerImage": "pext/arm:gcc9"
+            }
+        },
+        "rp2350": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/rp2350.cfg]",
+                "flashChecksumAddr": 0,
+                "flashEnd": 16777216,
+                "uf2Family": "0xe48bff59"
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-pico2",
+                    "url": "https://github.com/lancaster-university/codal-pico2",
+                    "branch": "v0.0.1",
+                    "type": "git"
+                },
+                "gittag": "v0.9.0",
+                "codalBinary": "PICO2",
+                "serviceId": "codal2pico2",
                 "dockerImage": "pext/arm:gcc9"
             }
         },
