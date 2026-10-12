@@ -53,10 +53,16 @@ There is no **B** button on this board.
 | LCD DB0..DB7                 | 32..39    |
 | LCD backlight                | 26        |
 | Rear LEDs (4 zones)          | 0, 1, 2, 3 |
-| I2C SDA / SCL                | 4 / 5     |
+| Qw/ST I2C SDA / SCL          | 4 / 5     |
+| Internal I2C SDA / SCL       | 18 / 19   |
+| Accelerometer interrupt      | 20        |
+| Touch controller alert       | 13        |
+| IR TX / RX                   | 16 / 17   |
 | Peripheral power enable      | 41        |
 | VBUS detect                  | 12        |
 | Battery sense                | 40        |
 | Light sense                  | 43        |
 
-Source: [pimoroni/tufty2350 pins.csv](https://github.com/pimoroni/tufty2350/blob/main/board/pins.csv).
+The internal I2C bus hosts an ST LSM6DS-family accelerometer/gyroscope (address `0x6A`) and a Microchip CAP1208 8-channel capacitive touch controller (address `0x28`). The accelerometer is supported by the `accelerometer` extension. There is no speaker, so games run without sound.
+
+Sources: [pimoroni/tufty2350 pins.csv](https://github.com/pimoroni/tufty2350/blob/main/board/pins.csv) and the badge's MicroPython firmware.

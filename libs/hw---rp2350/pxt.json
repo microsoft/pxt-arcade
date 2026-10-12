@@ -21,7 +21,7 @@
     "dependencies": {
         "core---rp2040": "file:../core---rp2040",
         "screen---st7735": "file:../screen---st7735",
-        "mixer---rp2040": "file:../mixer---rp2040",
+        "mixer---none": "file:../mixer---none",
         "game": "file:../game"
     },
     "public": true,
@@ -34,7 +34,8 @@
         },
         "config": {
             "DEVICE_USB": 1,
-            "DEVICE_WEBUSB": 1
+            "DEVICE_WEBUSB": 1,
+            "PXT_SUPPORT_LSM6DS": 1
         }
     },
     "hidden": true,

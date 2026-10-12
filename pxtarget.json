@@ -448,7 +448,7 @@
                 "gittag": "v0.9.0",
                 "codalBinary": "PICO2",
                 "serviceId": "codal2pico2",
-                "dockerImage": "pext/arm:gcc9"
+                "dockerImage": "pext/arm:gcc13"
             }
         },
         "rpi": {
