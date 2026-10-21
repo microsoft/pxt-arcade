@@ -10,6 +10,7 @@
   "url": "/concepts/walking-hero",
   "labelClass": "green ribbon huge",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Variables","User Input","Sprites","Movement","Controller","Assets","Art"],
   "imageUrl": "/static/concepts/walking-hero.png",
   "largeImageUrl": "/static/concepts/walking-hero.gif"
 },
@@ -18,6 +19,7 @@
   "description": "Learn how coordinates work by placing food on the screen. Concepts: Coordinate system, Creating multiple sprites, Renaming variables",
   "url": "/concepts/picnic-food",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Variables","Coordinates","Sprites","Movement","Assets"],
   "imageUrl": "/static/concepts/picnic-food.png",
   "largeImageUrl": "/static/concepts/picnic-food.gif"
 },
@@ -26,6 +28,7 @@
   "description": "Use overlap events to detect when sprites come together. Concepts: Sprite kinds, On overlap event, Game over",
   "url": "/concepts/princess-pizza",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Events","Variables","User Input","Sprites","Movement","Controller","Overlaps","Assets"],
   "imageUrl": "/static/concepts/princess-pizza.png",
   "largeImageUrl": "/static/concepts/princess-pizza.gif"
 },
@@ -34,6 +37,7 @@
   "description": "Create a sprite that will bounce around the screen. Concepts: Projectiles, Sprite motion, Bounce on Wall flag",
   "url": "/concepts/bouncing-burger",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Variables","Boolean","Logic","Sprites","Movement","Projectiles","Assets"],
   "imageUrl": "/static/concepts/bouncing-burger.png",
   "largeImageUrl": "/static/concepts/bouncing-burger.gif"
 },
@@ -42,6 +46,7 @@
   "description": "Create a starry night for the next hit space game. Concepts: Star motion, Particles",
   "url": "/concepts/star-field",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Events","Variables","Conditionals","If Then","Boolean","Logic","Sprites","Movement","Projectiles","Assets","Animation","Space","Art"],
   "imageUrl": "/static/concepts/star-field.png",
   "largeImageUrl": "/static/concepts/star-field.gif"
 },
@@ -50,6 +55,7 @@
   "description": "Learn about how projectiles and button events work by throwing a bone. New Concepts: Controller button events, projectiles",
   "url": "/concepts/throw-a-bone",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Events","Variables","User Input","Sprites","Movement","Controller","Projectiles","Assets"],
   "imageUrl": "/static/concepts/throw-a-bone.png",
   "largeImageUrl": "/static/concepts/throw-a-bone.gif"
 },
@@ -58,6 +64,7 @@
   "description": "Learn about how to make actions occur on an interval, and introducing randomness to games. New Concepts: On game update interval, Pick random, Screen height property",
   "url": "/concepts/sunday-drive",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Events","Variables","Coordinates","Sprites","Movement","Projectiles","Assets","Car","Race","Racing"],
   "imageUrl": "/static/concepts/sunday-drive.png",
   "largeImageUrl": "/static/concepts/sunday-drive.gif"
 },
@@ -66,6 +73,7 @@
   "description": "Learn about how to use score, life, and countdown counters in your games. Concepts: Score, Life, Countdown",
   "url": "/concepts/which-button",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Events","User Input","Controller"],
   "imageUrl": "/static/concepts/which-button.png",
   "largeImageUrl": "/static/concepts/which-button.gif"
 },
@@ -74,6 +82,7 @@
   "description": "Design tilemaps to create scenes and levels for players to explore. Concepts: Tilemaps, Tile Images, Walls",
   "url": "/concepts/setting-the-scene",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Variables","User Input","Sprites","Movement","Controller","Assets","Tilemap","Art"],
   "imageUrl": "/static/concepts/setting-the-scene.png",
   "largeImageUrl": "/static/concepts/setting-the-scene.gif"
 },
@@ -82,6 +91,7 @@
   "description": "Use tilemaps to place sprites at different positions on the screen. Concepts: Tiles, Arrays, For Element Loops, Placing Sprites",
   "url": "/concepts/breadcrumb-trail",
   "cardType": "tutorial",
+  "searchTerms": ["Tutorial","Blocks","Variables","Iteration","Loops","Arrays","Coordinates","Sprites","Assets","Tilemap"],
   "imageUrl": "/static/concepts/breadcrumb-trail.png",
   "largeImageUrl": "/static/concepts/breadcrumb-trail.gif"
 },
@@ -90,6 +100,7 @@
   "description": "Introduce your game with story text and effects. Concepts: Text print, Scrolling, Star motion",
   "url":"/concepts/talagron",
   "cardType": "codeExample",
+  "searchTerms": ["Example","Blocks","Events","Variables","Iteration","Loops","Conditionals","If Then","Boolean","Logic","Arrays","User Input","Sprites","Movement","Controller","Game Input","Dialogs","Assets","Animation","Art","Space","Story"],
   "imageUrl": "/static/concepts/talagron.jpg",
   "largeImageUrl": "/static/concepts/talagron.gif"
 }
