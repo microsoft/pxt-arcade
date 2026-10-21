@@ -155,9 +155,13 @@ These boards run MakeCode Arcade games. Choose a board to find out more about it
     },
     {
         "name": "Add Board",
+        "activityType": ["hardware", "resource"],
         "description": "Are you looking to build your own hardware to run Arcade games? This in-depth guide provides the technical details and specifications to get started.",
         "url": "/hardware/adding",
-        "imageUrl": "/static/hardware/minipcb.png"
+        "imageUrl": "/static/hardware/minipcb.png",
+        "difficulty": "expert",
+        "duration": "longer",
+        "targetAge": "adult"
     }
 ]
 ```

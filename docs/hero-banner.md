@@ -6,6 +6,7 @@ Here are some cool activities to get you started!
 
 ### ~ codecard
 * name: AI Bug Arena
+* language: blocks
 * buttonLabel: Start Coding
 * description: AI Bug Arena
 * imageUrl: /static/hero-gallery/bugarena.png
@@ -13,6 +14,7 @@ Here are some cool activities to get you started!
 * cardType: link
 ---
 * name: Multiplayer Games!
+* activityType: example, resource
 * buttonLabel: Try Now
 * description: Multiplayer Games!
 * imageUrl: /static/hero-gallery/multiplayer-banner.png
