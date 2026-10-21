@@ -1,0 +1,10 @@
+simulatorTheme.setTheme(simulatorTheme.Preset.Retro);
+simulatorTheme.setLayout(simulatorTheme.Layout.Junior);
+simulatorTheme.setColor(simulatorTheme.partName("background-color"), colorHelpers.hex("#123456"));
+simulatorTheme.setColor("button-a-fill", 0xabcdef);
+simulatorTheme.setColor("custom-part", 0xfedcba);
+simulatorTheme.setColor("button-fill", colorHelpers.rgb(255, 128, 64));
+simulatorTheme.setColor("dpad-fill", colorHelpers.hsv(120, 100, 100));
+simulatorTheme.setColor("console-border", colorHelpers.hsl(270, 50, 50));
+simulatorTheme.setColor("button-a-fill", colorHelpers.hex("#00000f"));
+simulatorTheme.reset();
