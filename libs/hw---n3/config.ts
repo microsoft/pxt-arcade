@@ -47,3 +47,4 @@ namespace config {
     export const PIN_ACCELEROMETER_SCL = DAL.P0_26
     export const PIN_ACCELEROMETER_SDA = DAL.P0_27
 
+}
