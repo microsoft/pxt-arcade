@@ -42,9 +42,9 @@ namespace config {
     export const PIN_P0 = DAL.P0_2
     export const PIN_P1 = DAL.P0_3 
     export const PIN_P2 = DAL.P0_4
+
+    // internal I2C pins on the micro:bit for the accelerometer
+    export const PIN_ACCELEROMETER_SCL = DAL.P0_26
+    export const PIN_ACCELEROMETER_SDA = DAL.P0_27
+
 }
-
-
-
-
-
