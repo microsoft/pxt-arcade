@@ -44,7 +44,12 @@ namespace config {
     export const PIN_P2 = DAL.P0_4
 
     // internal I2C pins on the micro:bit for the accelerometer
-    export const PIN_ACCELEROMETER_SCL = DAL.P0_26
-    export const PIN_ACCELEROMETER_SDA = DAL.P0_27
+    // from MicrobitIO
+    // scl(ID_PIN_SCL, P0_08, PIN_CAPABILITY_AD),
+    // sda(ID_PIN_SDA, P0_16, PIN_CAPABILITY_AD),
+
+    // add these for the accelerometer I2C pins causes a hang
+    //export const PIN_ACCELEROMETER_SCL = DAL.P0_8
+    //export const PIN_ACCELEROMETER_SDA = DAL.P0_16
 
 }
