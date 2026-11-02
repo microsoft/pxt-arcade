@@ -4,15 +4,17 @@
 
 ## Ready, Set, Race! @showdialog
 
-Start your engines and get ready to race! <br/>
-Self-driving cars are on the road today, but can you teach a computer to win a race? <br/>
-You're in the driver's seat - your mission is to train an AI bot to drive with live racing data.
+Step into the world of racing and see how data drives decisions on the track! <br/>
+Join the Mercedes-AMG PETRONAS F1 Team to practice your driving skills while collecting data to train an AI machine learning model. <br/>
+Start your engines and get ready to race, Driven by STEM!
 
 ![AI Race Game](/static/tutorials/ai-race/image.png "AI Race Game")
 
-## 🎓 Driving school
+## 🎓 F1 driving school
 
-First, let's learn how to drive our race car 🏎️💨
+F1 cars can reach speeds up to 220 mph! <br/>
+But it’s important to balance speed with staying on the track. <br/>
+Let’s first learn how to drive our race car. 🏎️💨
 
 ---
 
@@ -238,12 +240,11 @@ racing.raceOnTrack(racing.Track.USA, 1, racing.RaceDriver.Player)
 
 Great race! Did you or your AI Bot make it to the winner's podium? 🥇
 
-🎉 Congratulations on training an AI racing bot!  What did your examples help it learn? What did it struggle with?
+🎉 Congratulations on training an AI racing bot!  What did your data samples help it learn? What did it struggle with?
 
-Try more racing experiments 🧪
-   - Continue training your AI to improve your sample data collection and tune your AI Bot's racing skills
-   - Race on different tracks - how does your AI perform on different circuits?  Why might an AI that does well on one track struggle somewhere else?
-   - Try training a second AI engine - Bot 2 to compete in the race
+Discover how science, technology, engineering, and math come to life on the track, in the factory, and beyond with the Microsoft Mercedes-AMG PETRONAS F1  [Driven by STEM full curriculum](https://www.drivenbystem.com).
+
+Click Done to share your game, or try more racing experiments.
 
 ```blockconfig.global
 racing.raceOnTrack(racing.Track.Italy, 1, racing.RaceDriver.AI)
