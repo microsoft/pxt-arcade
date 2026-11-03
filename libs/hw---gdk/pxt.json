@@ -4,9 +4,9 @@
     "files": [
         "config.ts",
         "init.ts",
+        "analog.ts",
         "batteryled.ts",
         "device.d.ts",
-        "shims.d.ts",
         "analog.cpp"
     ],
     "card": {
