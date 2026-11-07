@@ -10,14 +10,19 @@ if (fs.existsSync("node_modules")) {
 }
 
 shallowCopy(simSrc, simModule);
-shallowCopy(path.join(simSrc, "components"), path.join(simModule, "components"));
+shallowCopy(path.join(simSrc, "core"), path.join(simModule, "core"));
+shallowCopy(path.join(simSrc, "visuals"), path.join(simModule, "visuals"));
+shallowCopy(path.join(simSrc, "visuals", "components"), path.join(simModule, "visuals", "components"));
 shallowCopy(path.join(simSrc, "public"), path.join(simModule, "public"));
 
-const tsconfig = JSON.parse(fs.readFileSync(path.join(simModule, "tsconfig.json"), "utf8"));
+for (const configName of ["tsconfig.core.json", "tsconfig.json"]) {
+    const configPath = path.join(simModule, configName);
+    const tsconfig = JSON.parse(fs.readFileSync(configPath, "utf8"));
 
-tsconfig.include = tsconfig.include.filter(entry => entry.indexOf("node_modules") === -1);
+    tsconfig.include = tsconfig.include.filter(entry => entry.indexOf("node_modules") === -1);
 
-fs.writeFileSync(path.join(simModule, "tsconfig.json"), JSON.stringify(tsconfig), "utf8")
+    fs.writeFileSync(configPath, JSON.stringify(tsconfig), "utf8")
+}
 
 
 console.log("done")

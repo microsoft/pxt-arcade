@@ -84,6 +84,7 @@ declare interface DigitalInOutPin {
      */
     //% help=pins/digital-read weight=61
     //% blockId=device_get_digital_pin block="digital read|pin %name" blockGap=8
+    //% parts="slideswitch" trackArgs=0
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
@@ -97,6 +98,7 @@ declare interface DigitalInOutPin {
      */
     //% help=pins/digital-write weight=60
     //% blockId=device_set_digital_pin block="digital write|pin %name|to %value=toggleHighLow"
+    //% parts="led" trackArgs=0
     //% blockNamespace=pins
     //% name.fieldEditor="gridpicker"
     //% name.fieldOptions.width=220
@@ -109,6 +111,7 @@ declare interface DigitalInOutPin {
      */
     //% help=pins/on-pulsed weight=16 blockGap=8
     //% blockId=pins_on_pulsed block="on|pin %pin|pulsed %pulse"
+    //% parts="slideswitch" trackArgs=0
     //% blockNamespace=pins
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.width=220
@@ -121,6 +124,7 @@ declare interface DigitalInOutPin {
      */
     //% help=pins/on-event weight=20 blockGap=8
     //% blockId=pinsonevent block="on|pin %pin|%event"
+    //% parts="slideswitch" trackArgs=0
     //% blockNamespace=pins
     //% pin.fieldEditor="gridpicker"
     //% pin.fieldOptions.width=220

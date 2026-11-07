@@ -72,6 +72,13 @@ jobs:
           DISPLAY: :99.0
           CI: true
 
+      - name: pxt simtest
+        if: env.SIM_DEPLOY_KEY
+        run: |
+          pxt simtest --base libs/blocksprj tests/sim
+        env:
+          SIM_DEPLOY_KEY: ${{ secrets.SIM_DEPLOY_KEY }}
+
   buildvtag:
     # This job is a duplicate of pxt-buildvtag.yml's workflow
     name: buildvtag
