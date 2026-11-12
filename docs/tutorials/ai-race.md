@@ -3,17 +3,17 @@
 ### @explicitHints true
 
 ## Ready, Set, Race! @showdialog
+![](https://studio.code.org/api/hour/begin_readysetrace.png)
 
 Step into the world of racing and see how data drives decisions on the track! <br/>
-Join the [Mercedes-AMG PETRONAS F1](https://www.mercedesamgf1.com) Team to practice your driving skills while collecting data to train an AI machine learning model. <br/>
-Start your engines and get ready to race, Driven by STEM!
+Join the [Mercedes-AMG PETRONAS F1](https://www.mercedesamgf1.com) Team to practice your driving skills while collecting data to train an AI machine learning model.  Start your engines and get ready to race, Driven by STEM!
 
-![AI Race Game](/static/tutorials/ai-race/image.png "AI Race Game")
+![Driven by STEM](/static/tutorials/ai-race/drivenbystem.png "Driven by STEM")
 
-## 🎓 F1 driving school
+## 🎓 Driving school
 
-F1 cars can reach speeds up to 220 mph! <br/>
-But it’s important to balance speed with staying on the track. <br/>
+F1 cars can reach speeds up to 220 mph! But it’s important to balance speed with staying on the track.
+
 Let’s first learn how to drive our race car. 🏎️💨
 
 ---
@@ -25,21 +25,22 @@ From the Toolbox menu, drag a ``||racing: learn to drive||`` block into the ``||
 racing.learnToDrive()
 ```
 
-Follow the instructions in the Game Window to learn to drive.
+Then click ➡️**Next**
 
-![Game Window](/static/tutorials/ai-race/GameWindow.png "Game Window")
+## Learn to drive @simFullscreen
 
-💡 _Need a bigger view? Select the fullscreen button in the game window. Exit fullscreen to return to your blocks._
+Follow the instructions in the Game Window to learn to drive your Formula 1 race car.
 
-![Exit Fullscreen](/static/tutorials/ai-race/ExitFullscreen.png "Exit Fullscreen")
+Click ➡️**Next** when you're done.
 
 ##  📣 You're the coach! @showdialog
 
-**AI** stands for **Artificial Intelligence**: which refers to computers doing human-like tasks, learning and making choices.
+**AI** stands for **Artificial Intelligence**: which refers to computers doing human-like tasks, learning and making choices.  AI is good at looking through lots of data for patterns and examples that it can copy. This is called **imitation learning**: learning from expert demonstrations.
 
-AI is good at looking through lots of data for patterns and examples that it can copy. This is called **imitation learning**: learning from demonstrations.
+**_“I take one race at a time and just try to do the best I can. If I do things well, then the results will come."_** <br/>
+-- Andrea Kimi Antonelli, Mercedes F1 Driver
 
-In the next step, you'll demonstrate how to drive to your AI bot who will learn from your driving patterns.
+In the next step, take inspiration from Antonelli to demonstrate expert racing skills to your AI bot who will learn from your driving patterns.
 
 **Predict**: If you never use the brakes, what might your AI do at a tight corner?
 
@@ -60,14 +61,11 @@ Then drag a ``||racing: teach AI by driving one lap||`` block inside the ``||loo
 aiRacing.teachDriver(racing.TrainingTrack.TestTrack)
 ```
 
-In the Game Window 🖼️, follow the prompts to drive one lap around the race track. 
+## Teach the AI @simFullscreen
 
-_Use the Fullscreen buttons to make your Game Window bigger_
+Follow the prompts in the Game Window to drive one lap around the test track. Press **A** to start.
 
-![Full screen](/static/tutorials/ai-race/Fullscreen.png "Full Screen")
-![Exit full screen](/static/tutorials/ai-race/ExitFullscreen.png "Exit Full Screen")
-
-📌 And remember, you're showing your AI what to do so help it learn from good examples!
+📌 And remember, you're showing your AI what to do, so help it learn from good examples!
 
 ~hint What is training data? 💡
 
@@ -77,7 +75,9 @@ AI learns from examples. As you drive, the game records the driving situation an
 
 hint~
 
-## 📊 Look at the data
+Click ➡️**Next** after you complete a lap.
+
+## Review the training examples
 
 Delete the ``||racing: teach AI by driving one lap||`` block by dragging it back to the Toolbox.
 
@@ -87,6 +87,8 @@ Then drag a ``||racing: view memories||`` block inside the ``||loops(noclick):on
 // @highlight
 racing.viewMemories()
 ```
+
+## 📊 Analyze the data @simFullscreen
 
 The chart shows data along 2 axis:
 
@@ -124,16 +126,20 @@ Let's test our AI bot to see how well it drives 🚗
 
 Delete the ``||racing: view memories||`` block from the Workspace.
 
-Drag a ``||racing: race on Italy for 1 lap||`` block into the ``||loops(noclick): on start||`` block.
+Drag a ``||racing: race on Birmingham for 1 lap||`` block into the ``||loops(noclick): on start||`` block.
 
 ```blocks
 // @highlight
-racing.raceOnTrack(racing.Track.Italy, 1, racing.RaceDriver.AI)
+racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 ```
 
-🤔 Before it starts, predict: will your AI stay on the road at the corners?  How fast will it go?
+Click ➡️**Next** to watch the race.
 
-In the Game Window 🖼️, watch your bot drive. Does its behavior match your prediction? How did it do?
+## Watch your AI race @simFullscreen
+
+🤔 Before the race starts, predict: will your AI stay on the road at the corners?  How fast will it go?
+
+In the Game Window as you watch your bot drive, see if its behavior matches your prediction? How did it do?
 
 To improve your AI bot's performance, try training it again by dragging another ``||racing: teach AI by driving one lap||`` block inside the ``||loops(noclick):on start||`` block to do another training lap.
 
@@ -147,7 +153,7 @@ Collecting data, training an AI model and testing it is an iterative process.  T
 
 hint~
 
-## 🎨 Design your car
+## 🎨 Design your car and logo
 
 We've practiced our driving, trained our AI, now let's get ready to race! 
 
@@ -155,25 +161,59 @@ First thing we'll do is design our very own race car 🏎️
 
 ---
  
-Drag a ``||racing: set car logo||`` block into the top of the ``||loops(noclick): on start||`` block
+Drag a ``||racing: choose Mercedes car||`` block into the top of the ``||loops(noclick): on start||`` block
 
-Click on the grey box in the ``||racing(noclick): set car logo||`` block to open the image editor
+Then drag a ``||racing: set team logo||`` block and drop after the after ``||racing(noclick): choose car||`` block
 
-Design an 8-by-8 logo for the car you will drive.
+Click on the grey box in the ``||racing(noclick): set team logo||`` block to open the image editor and design your own team logo!
 
 ```blocks
 // @highlight
-racing.setCarLogo(img`
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    `)
-racing.raceOnTrack(racing.Track.Italy, 1, racing.RaceDriver.AI)
+racing.chooseCar(racing.CarStyle.MercedesCar, racing.CarTarget.Player)
+// @highlight
+racing.setTeamLogo(img`
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    `, racing.CarTarget.Player)
+racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 ```
 
 ## ♫ Add music
@@ -193,48 +233,114 @@ Choose instruments and place notes on the lines to make a melody.
 ```blocks
 // @highlight
 music.play(music.createSong(hex`000e010408020505001c000f0a006400f4010a0000040000000000000000000000000000000002240020002500012c2500290001312b002f0001333000350001363500390001383b003f00013d06001c00010a006400f401640000040000000000000000000000000000000002240000002e00042529312c300032000425292c3135003800042531292c3b003d00042531292c07001c00020a006400f401640000040000000000000000000000000000000003480000000500011905000b00011d0b001000012010001500012515001b0001201b002000011d20002500011925002b00011d2b003000012030003500012535003b0001203b004000011d08001c000e050046006603320000040a002d0000006400140001320002010002190000000b00020d9315001800010d1b001e00010d20003100010d09010e02026400000403780000040a000301000000640001c80000040100000000640001640000040100000000fa0004af00000401c80000040a00019600000414000501006400140005010000002c0104dc00000401fa0000040a0001c8000004140005d0076400140005d0070000c800029001f40105c201f4010a0005900114001400039001000005c201f4010500058403050032000584030000fa00049001000005c201f4010500058403c80032000584030500640005840300009001049001000005c201f4010500058403c80064000584030500c8000584030000f40105ac0d000404a00f00000a0004ac0d2003010004a00f0000280004ac0d9001010004a00f0000280002d00700040408070f0064000408070000c80003c800c8000e7d00c80019000e64000f0032000e78000000fa00032c01c8000ee100c80019000ec8000f0032000edc000000fa0003f401c8000ea901c80019000e90010f0032000ea4010000fa0001c8000004014b000000c800012c01000401c8000000c8000190010004012c010000c80002c800000404c8000f0064000496000000c80002c2010004045e010f006400042c010000640002c409000404c4096400960004f6090000f40102b80b000404b80b64002c0104f40b0000f401022003000004200300040a000420030000ea01029001000004900100040a000490010000900102d007000410d0076400960010d0070000c8001c0000000e00020307150017000203071b001d0002030720002f00020307057f7f7f7f7f7f063e3e3e3e07444444444444444444444444085656565609537f7f7f`), music.PlaybackMode.LoopingInBackground)
-racing.setCarLogo(img`
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    `)
-racing.raceOnTrack(racing.Track.Italy, 1, racing.RaceDriver.AI)
+racing.chooseCar(racing.CarStyle.MercedesCar, racing.CarTarget.Player)
+racing.setTeamLogo(img`
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    `, racing.CarTarget.Player)
+racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 ```
 
-## 🚦 Race!
+## Set the player to race
 
-Moment of truth! <br/>
-Let's get Ready, Set, Race! 🏁
+In the ``||racing: race on Birmingham for 1 lap||`` block, click on the ``||racing(noclick): AI||`` drop-down menu and select ``||racing(noclick): player||``
 
----
-
-In the ``||racing: race on Italy for 1 lap||`` block, click on the ``||racing(noclick): Italy||`` drop-down menu and select whichever track you'd like to race on
-
-Then click on the ``||racing(noclick): AI||`` drop-down menu and select ``||racing(noclick): player||``
-
-This will set you as the driver racing against your AI bot!<br/>
-Start racing as soon as the countdown completes.
+This will set you as the driver racing against your AI bot!
 
 ```blocks
 music.play(music.createSong(hex`000e010408020505001c000f0a006400f4010a0000040000000000000000000000000000000002240020002500012c2500290001312b002f0001333000350001363500390001383b003f00013d06001c00010a006400f401640000040000000000000000000000000000000002240000002e00042529312c300032000425292c3135003800042531292c3b003d00042531292c07001c00020a006400f401640000040000000000000000000000000000000003480000000500011905000b00011d0b001000012010001500012515001b0001201b002000011d20002500011925002b00011d2b003000012030003500012535003b0001203b004000011d08001c000e050046006603320000040a002d0000006400140001320002010002190000000b00020d9315001800010d1b001e00010d20003100010d09010e02026400000403780000040a000301000000640001c80000040100000000640001640000040100000000fa0004af00000401c80000040a00019600000414000501006400140005010000002c0104dc00000401fa0000040a0001c8000004140005d0076400140005d0070000c800029001f40105c201f4010a0005900114001400039001000005c201f4010500058403050032000584030000fa00049001000005c201f4010500058403c80032000584030500640005840300009001049001000005c201f4010500058403c80064000584030500c8000584030000f40105ac0d000404a00f00000a0004ac0d2003010004a00f0000280004ac0d9001010004a00f0000280002d00700040408070f0064000408070000c80003c800c8000e7d00c80019000e64000f0032000e78000000fa00032c01c8000ee100c80019000ec8000f0032000edc000000fa0003f401c8000ea901c80019000e90010f0032000ea4010000fa0001c8000004014b000000c800012c01000401c8000000c8000190010004012c010000c80002c800000404c8000f0064000496000000c80002c2010004045e010f006400042c010000640002c409000404c4096400960004f6090000f40102b80b000404b80b64002c0104f40b0000f401022003000004200300040a000420030000ea01029001000004900100040a000490010000900102d007000410d0076400960010d0070000c8001c0000000e00020307150017000203071b001d0002030720002f00020307057f7f7f7f7f7f063e3e3e3e07444444444444444444444444085656565609537f7f7f`), music.PlaybackMode.LoopingInBackground)
-racing.setCarLogo(img`
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    2 2 2 2 7 7 7 7 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    8 8 8 8 5 5 5 5 
-    `)
+racing.chooseCar(racing.CarStyle.MercedesCar, racing.CarTarget.Player)
+racing.setTeamLogo(img`
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    2222222222222222222277777777777777777777
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    8888888888888888888855555555555555555555
+    `, racing.CarTarget.Player)
 // @highlight
-racing.raceOnTrack(racing.Track.USA, 1, racing.RaceDriver.Player)
+racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.Player)
 ```
+
+Click ➡️**Next** to begin racing!
+
+## 🚦 Race! @simFullscreen
+
+In the Game Window, start your engines and let's get Ready, Set, Race!
+
+Click ➡️**Next** at the end of the race.
 
 ## 🚀 Go further @showdialog
 
@@ -244,12 +350,25 @@ Great race! Did you or your AI Bot make it to the winner's podium? 🥇
 
 Discover how science, technology, engineering, and math come to life on the track, in the factory, and beyond with the Microsoft Mercedes-AMG PETRONAS F1 [Driven by STEM full curriculum](https://www.drivenbystem.com).
 
-Click **Done** to share your game or try more racing experiments.
+![Winning Race](/static/tutorials/ai-race/driverwin.png "Winning the Race")
+
+## 🏎️ More racing
+
+Click **Done** to share a link to your racing game with friends and family.
+
+You can also continue experimenting with your Racing game using the different blocks of code in the ``||racing: Racing||`` Toolbox.
+
+- Change the design of your car
+- Race on different tracks
+- Continue training your AI bot
+
+🏁 The finish line is just the start. ✨ Keep coding and have fun racing!🏎️
 
 ```blockconfig.global
-racing.raceOnTrack(racing.Track.Italy, 1, racing.RaceDriver.AI)
+racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
+racing.chooseCar(racing.CarStyle.MercedesCar, racing.CarTarget.Player)
 ```
 
 ```package
-racing=github:riknoll/racing#v0.1.2
+racing=github:riknoll/racing#v0.1.3
 ```
