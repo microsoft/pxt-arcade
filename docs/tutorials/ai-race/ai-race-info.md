@@ -64,30 +64,37 @@ After completing the **Ready, Set, Race!** Hour of AI activity, a good next step
 
 #### Learn to drive
 Students will gain familiarity with the driving controls by following a short tutorial <br/>
+
 ![Learn to Drive](/static/tutorials/ai-race/learntodrive.png "Learn to Drive")
 
 #### Train an AI
 Students will drive around the race track collecting data points that will be used to train an AI bot <br/>
+
 ![Train AI](/static/tutorials/ai-race/teachai.png "Train AI")
 
 #### View data
 Students will analyze the data in the Memories chart <br/>
+
 ![View data](/static/tutorials/ai-race/viewdata.png "View data")
 
 #### Test AI
 Students will watch as their AI drives the car around the track using the data it was trained on. They have the option to go back and train again if they are not happy with their AI bot's performance. <br/>
+
 ![Test AI](/static/tutorials/ai-race/testai.png "Test AI")
 
 #### Pick your car and design your team logo
 Students can pick a car to race and design their team's logo <br/>
+
 ![Design](/static/tutorials/ai-race/carlogo.png "Design car and logo")
 
 #### Add Music
 Compose some background music for the race <br/>
+
 ![Music](/static/tutorials/ai-race/music.png "Music")
 
 #### Set Player to Race
 Set the player as the driver racing against AI <br/>
+
 ![Set Player](/static/tutorials/ai-race/setplayer.png "Set Player")
 
 ## Classroom Discussion Questions
@@ -112,15 +119,19 @@ Set the player as the driver racing against AI <br/>
 After completing the tutorial, students can continue experimenting with their racing game.
 
 They can change the design of their car using the **choose color** block <br/>
+
 ![Choose color](/static/tutorials/ai-race/choosecolor.png "Choose car color")
 
 They can try racing on different tracks <br/>
+
 ![Tracks](/static/tutorials/ai-race/tracks.png "Racing tracks")
 
 They can continue training their AI bot on different race tracks <br/>
+
 ![Continue training](/static/tutorials/ai-race/continuetraining.png "Continue training")
 
 To simply play the game, use the **start racing game** block <br/>
+
 ![Game](/static/tutorials/ai-race/playgame.png "Play game")
 
 When students are finished with **Ready, Set, Race!** consider using one of the other **[Driven by STEM](https://aka.ms/drivenbystem)** curriculum lessons, or encourage them to complete another MakeCode Arcade tutorial or skillmap on their own.
