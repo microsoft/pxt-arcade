@@ -370,5 +370,5 @@ racing.chooseCar(racing.CarStyle.MercedesCar, racing.CarTarget.Player)
 ```
 
 ```package
-racing=github:riknoll/racing#v0.1.3
+racing=github:riknoll/racing#v0.2.1
 ```
