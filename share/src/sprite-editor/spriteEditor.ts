@@ -154,6 +154,7 @@ export class SpriteEditor implements SideBarHost, SpriteHeaderHost {
             this.drawCursor(col, row);
             this.shiftAction()
             // this.bottomBar.updateCursor(col, row);
+            // lf("The painted surface has moved")
         });
 
         this.paintSurface.leave(() => {
