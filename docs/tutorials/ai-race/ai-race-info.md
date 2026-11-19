@@ -22,6 +22,7 @@ Note: this tutorial does not use generative AI and students will not be exposed 
 **Educator Materials:**
 - [Educator Guide download](https://1drv.ms/w/c/416406873cb120ab/IQATrQoyuJJHRaMPY8uZv7yWAShlClq24qtHlrjnCg2h4C4?e=b3lBdO)
 - [Educator Presentation](https://1drv.ms/p/c/416406873cb120ab/IQDYvFh_BPMrRax_e0XjA97GASQb5317sILWzzG-aWDK3FI?e=UeA5wl)
+- [Certificate](https://1drv.ms/b/c/416406873cb120ab/IQBWn0r9bzWAQbZZ3UBIchuwAfWQFNi0z791JgsGCjSx-sg?e=gv0OQX)
 
 ## Learning Outcomes
 
