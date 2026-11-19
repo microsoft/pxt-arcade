@@ -19,6 +19,10 @@ The **[Ready, Set, Race!](https://aka.ms/race)** tutorial introduces students to
 
 Note: this tutorial does not use generative AI and students will not be exposed to an AI chatbot through this experience.
 
+**Educator Materials:**
+- [Educator Guide download](https://1drv.ms/w/c/416406873cb120ab/IQATrQoyuJJHRaMPY8uZv7yWAShlClq24qtHlrjnCg2h4C4?e=b3lBdO)
+- [Educator Presentation](https://1drv.ms/p/c/416406873cb120ab/IQDYvFh_BPMrRax_e0XjA97GASQb5317sILWzzG-aWDK3FI?e=UeA5wl)
+
 ## Learning Outcomes
 
 By the end of this lesson, students will be able to:
