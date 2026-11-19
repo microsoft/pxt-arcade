@@ -2,7 +2,7 @@
 
 ![Banner](/static/tutorials/ai-race/racebanner.png "AI race")
 
-The **[Ready, Set, Race!](https://aka.ms/race)** tutorial introduces students to Artificial Intelligence (AI) through a fun game-based learning approach. Students will train an AI bot to drive a race car based on data from their own driving patterns. They can then compete against the AI bot in a race!
+The **[Ready, Set, Race!](https://aka.ms/ai-race)** tutorial introduces students to Artificial Intelligence (AI) through a fun game-based learning approach. Students will train an AI bot to drive a race car based on data from their own driving patterns. They can then compete against the AI bot in a race!
 
 ## Lesson overview
 
