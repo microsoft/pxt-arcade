@@ -102,6 +102,9 @@
                 "preferred": true,
                 "tags": [ "Game UI", "Graphics" ]
             },
+            "shalev2015/multiplayer-check": {
+                "tags": [ "Gameplay" ]
+            },
             "code-ninjas-home-office/game-building-session-tutorials": {
                 "tutorial" : true
             },
