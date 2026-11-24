@@ -1,0 +1,45 @@
+{
+    "name": "hw---rp2350",
+    "description": "RP2350 board (Pimoroni Badgeware Tufty 2350)",
+    "files": [
+        "config.ts",
+        "basepins.d.ts",
+        "device.d.ts"
+    ],
+    "card": {
+        "name": "Tufty 2350",
+        "description": "Pimoroni Badgeware Tufty 2350, based on Raspberry Pi RP2350",
+        "learnMoreUrl": "https://arcade.makecode.com/hardware/tufty2350",
+        "cardType": "hw",
+        "imageUrl": "/static/hardware/tufty2350.svg"
+    },
+    "compileServiceVariant": "rp2350",
+    "cppDependencies": {
+        "accelerometer": "file:../accelerometer",
+        "lightsensor": "file:../lightsensor"
+    },
+    "dependencies": {
+        "core---rp2040": "file:../core---rp2040",
+        "screen---st7735": "file:../screen---st7735",
+        "mixer---none": "file:../mixer---none",
+        "game": "file:../game"
+    },
+    "public": true,
+    "skipLocalization": true,
+    "additionalFilePath": "../hw",
+    "experimentalHw": true,
+    "yotta": {
+        "optionalConfig": {
+            "DEVICE_JACDAC_DEBUG": 1
+        },
+        "config": {
+            "DEVICE_USB": 1,
+            "DEVICE_WEBUSB": 1,
+            "PXT_SUPPORT_LSM6DS": 1
+        }
+    },
+    "hidden": true,
+    "dalDTS": {
+        "corePackage": "../core---rp2040"
+    }
+}
