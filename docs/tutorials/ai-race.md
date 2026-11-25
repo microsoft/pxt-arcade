@@ -302,7 +302,7 @@ racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 
 In the ``||racing: race on Birmingham for 1 lap||`` block, click on the ``||racing(noclick): AI||`` drop-down menu and select ``||racing(noclick): player||``
 
-![as player](/static/tutorials/ai-race/asplayer.gif "Race as player")
+![as player](/static/tutorials/ai-race/asplayer.png "Race as player")
 
 This will set you as the driver racing against your AI bot!
 
