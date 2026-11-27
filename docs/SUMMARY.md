@@ -4,16 +4,12 @@
 
 * [Lessons](/lessons)
     * [Cherry Pickr](/lessons/cherry-pickr)
-    * [Barrel Dodger](/lessons/barrel-dodger)
-    * [Dance Party](/lessons/dance-party)
-    * [BlockOut](/lessons/block-out)
-
+  
 ## Courses
 
 * [Courses](/courses)
     * [CS Intro 1](/courses/csintro1)
-    * [CS Intro 2](/courses/csintro2)
-    * [CS Intro 3](/courses/csintro3)
+ 
 
 ## Reference #reference
 
