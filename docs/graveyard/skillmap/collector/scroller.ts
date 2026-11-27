@@ -29,7 +29,7 @@ namespace collectorTutorial {
      */
     //% block="scroll background"
     //% blockNamespace=scene
-    //% blockId=collectorTutorial_scrollBackgroun
+    //% blockId=collectorTutorial_scrollBackground
     //% group="Scrolling"
     //% weight=2
     //% blockGap=8
