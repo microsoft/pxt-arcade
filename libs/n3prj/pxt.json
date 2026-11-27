@@ -1,0 +1,12 @@
+{
+    "name": "n3prj",
+    "files": [
+        "main.ts"
+    ],
+    "description": "",
+    "hidden": true,
+    "dependencies": {
+        "device": "file:../device",
+        "hw---n3": "file:../hw---n3"
+    }
+}
