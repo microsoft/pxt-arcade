@@ -126,6 +126,7 @@ declare namespace loops {
      */
     //% help=loops/pause weight=99 deprecated=true
     //% async block="pause %pause=timePicker|ms"
+    //% ms.label="value"
     //% blockId=device_pause_deprecated shim=loops::pause
     function pause(ms: int32): void;
 }
@@ -162,7 +163,8 @@ declare namespace control {
      * @param micros number of micro-seconds to wait. eg: 4
      */
     //% help=control/wait-micros weight=29 async
-    //% blockId="control_wait_us" block="wait (µs)%micros" shim=control::waitMicros
+    //% blockId="control_wait_us" block="wait (µs)%micros"
+    //% micros.label="microseconds" shim=control::waitMicros
     function waitMicros(micros: int32): void;
 
     /**
@@ -176,7 +178,8 @@ declare namespace control {
      * Blocks the calling thread until the specified event is raised.
      */
     //% help=control/wait-for-event async
-    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value" shim=control::waitForEvent
+    //% blockId=control_wait_for_event block="wait for event|from %src|with value %value"
+    //% src.label="source" value.label="value" shim=control::waitForEvent
     function waitForEvent(src: int32, value: int32): void;
 
     /**
