@@ -4,41 +4,58 @@
 
 ## Ready, Set, Race! @showdialog
 ![](https://studio.code.org/api/hour/begin_readysetrace.png)
-
-Step into the world of racing and see how data drives decisions on the track! <br/>
-Join the [Mercedes-AMG PETRONAS F1](https://www.mercedesamgf1.com) Team to practice your driving skills while collecting data to train an AI machine learning model.  Start your engines and get ready to race, Driven by STEM!
+Step into the world of racing and see how data drives decisions on the track! Join the [Mercedes-AMG PETRONAS F1](https://www.mercedesamgf1.com) Team to practice your driving skills while collecting data to train an AI machine learning model.  Start your engines and get ready to race, Driven by STEM!
 
 ![Driven by STEM](/static/tutorials/ai-race/drivenbystem.png "Driven by STEM")
 
 ## 🎓 Driving school
 
-F1 cars can reach speeds up to 220 mph! But it’s important to balance speed with staying on the track.
-
-Let’s first learn how to drive our race car. 🏎️💨
+Let’s learn how to drive our race car.
 
 ---
 
-From the Toolbox menu, drag a ``||racing: learn to drive||`` block into the ``||loops(noclick): on start||`` block on the Workspace.
+Drag a ``||racing: learn to drive||`` block into the ``||loops(noclick): on start||`` block.
 
 ```blocks
 // @highlight
 racing.learnToDrive()
 ```
 
+~hint Show me 👀
+
+---
+
+![Add block](/static/tutorials/ai-race/addblock.gif "Adding a block")
+
+hint~
+
 Then click ➡️**Next**
 
 ## Learn to drive @simFullscreen
 
-Follow the instructions in the Game Window to learn to drive your Formula 1 race car.
+Follow the instructions in the Game Window to learn to drive your race car.
+
+~hint Game controls 🎮
+
+---
+
+Moving forward:
+- Press button **A** on the screen (not on keyboard)
+- Or use the **spacebar** on the keyboard to move
+
+Turning:
+- Left and right are from the **driver's perspective** 👀
+- Use **arrow keys** on keyboard or **joystick** on screen
+
+hint~
 
 Click ➡️**Next** when you're done.
 
 ##  📣 You're the coach! @showdialog
 
-**AI** stands for **Artificial Intelligence**: which refers to computers doing human-like tasks, learning and making choices.  AI is good at looking through lots of data for patterns and examples that it can copy. This is called **imitation learning**: learning from expert demonstrations.
+Artificial Intelligence (AI) refers to computers doing human-like tasks, learning and making choices.  AI is good at looking through lots of data for patterns and examples that it can copy. This is called imitation learning.
 
-**_“I take one race at a time and just try to do the best I can. If I do things well, then the results will come."_** <br/>
--- Andrea Kimi Antonelli, Mercedes F1 Driver
+>> **_“I take one race at a time and just try to do the best I can. If I do things well, then the results will come."_** -- Andrea Kimi Antonelli, Mercedes-AMG PETRONAS F1 Driver
 
 In the next step, take inspiration from Antonelli to demonstrate expert racing skills to your AI bot who will learn from your driving patterns.
 
@@ -48,11 +65,13 @@ In the next step, take inspiration from Antonelli to demonstrate expert racing s
 
 ## 💪 Training session
 
-Let's train our AI bot 🤖 by recording our driving data.
+Let's teach our AI how to drive.
 
 ---
 
-Delete the ``||racing:learn to drive||`` block by dragging it back to the Toolbox.
+Delete the ``||racing:learn to drive||`` block.
+
+![Delete block](/static/tutorials/ai-race/deleteblock.gif "Deleting a block")
 
 Then drag a ``||racing: teach AI by driving one lap||`` block inside the ``||loops(noclick):on start||`` block.
 
@@ -63,7 +82,7 @@ aiRacing.teachDriver(racing.TrainingTrack.TestTrack)
 
 ## Teach the AI @simFullscreen
 
-Follow the prompts in the Game Window to drive one lap around the test track. Press **A** to start.
+Drive one lap around the test track. Press button **A** in the game window to start.
 
 📌 And remember, you're showing your AI what to do, so help it learn from good examples!
 
@@ -77,9 +96,9 @@ hint~
 
 Click ➡️**Next** after you complete a lap.
 
-## Review the training examples
+## Review AI memories
 
-Delete the ``||racing: teach AI by driving one lap||`` block by dragging it back to the Toolbox.
+Delete the ``||racing: teach AI by driving one lap||`` block.
 
 Then drag a ``||racing: view memories||`` block inside the ``||loops(noclick):on start||`` block.
 
@@ -120,11 +139,11 @@ Click to the **Right** ➡️ to see data on your acceleration:
 
 ## 🧪 Test your AI
 
-Let's test our AI bot to see how well it drives 🚗
+Let's test our AI to see how well it drives.
 
 ---
 
-Delete the ``||racing: view memories||`` block from the Workspace.
+Delete the ``||racing: view memories||`` block.
 
 Drag a ``||racing: race on Birmingham for 1 lap||`` block into the ``||loops(noclick): on start||`` block.
 
@@ -139,11 +158,17 @@ Click ➡️**Next** to watch the race.
 
 🤔 Before the race starts, predict: will your AI stay on the road at the corners?  How fast will it go?
 
-In the Game Window as you watch your bot drive, see if its behavior matches your prediction? How did it do?
+~hint Not happy with your AI? 😭
 
-To improve your AI bot's performance, try training it again by dragging another ``||racing: teach AI by driving one lap||`` block inside the ``||loops(noclick):on start||`` block to do another training lap.
+---
 
-When you're ready, move on to the next step.
+Go back a step and teach your AI again.
+
+![Train again](/static/tutorials/ai-race/trainagain.gif "Train AI again")
+
+When you're happy, remove the ``||racing: teach AI||`` block and move on to the next step.
+
+hint~
 
 ~hint Training and Testing 💡
 
@@ -153,19 +178,11 @@ Collecting data, training an AI model and testing it is an iterative process.  T
 
 hint~
 
-## 🎨 Design your car and logo
+## 🎨 Pick car and logo
 
 We've practiced our driving, trained our AI, now let's get ready to race! 
 
-First thing we'll do is design our very own race car 🏎️
-
 ---
- 
-Drag a ``||racing: choose Mercedes car||`` block into the top of the ``||loops(noclick): on start||`` block
-
-Then drag a ``||racing: set team logo||`` block and drop after the after ``||racing(noclick): choose car||`` block
-
-Click on the grey box in the ``||racing(noclick): set team logo||`` block to open the image editor and design your own team logo!
 
 ```blocks
 // @highlight
@@ -216,19 +233,21 @@ racing.setTeamLogo(img`
 racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 ```
 
+Drag a ``||racing: choose Mercedes car||`` block into the top of the ``||loops(noclick): on start||`` block
+
+Then drag a ``||racing: set team logo||`` block and drop after the after ``||racing(noclick): choose car||`` block
+
+Click on the grey box in the ``||racing(noclick): set team logo||`` block to open the image editor and design your own team logo!
+
 ## ♫ Add music
 
 No race is complete without some exciting background music!
 
 ---
 
-From the Toolbox, drag a ``||music: play song||`` block into the top of the ``||loops(noclick): on start||`` block
+Drag a ``||music: play song looping in background||`` block into the **top** of the ``||loops(noclick): on start||`` block
 
-Change ``||music(noclick): until done||`` to ``||music(noclick): looping in background||`` so the music keeps playing throughout the race
-
-In the ``||music(noclick): play song||`` block click on the grey **song** box to open the song composer
-
-Choose instruments and place notes on the lines to make a melody.
+Then click on the blank **song** box to open the song composer
 
 ```blocks
 // @highlight
@@ -283,7 +302,11 @@ racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 
 In the ``||racing: race on Birmingham for 1 lap||`` block, click on the ``||racing(noclick): AI||`` drop-down menu and select ``||racing(noclick): player||``
 
+![as player](/static/tutorials/ai-race/asplayer.png "Race as player")
+
 This will set you as the driver racing against your AI bot!
+
+Click ➡️**Next** to begin racing!
 
 ```blocks
 music.play(music.createSong(hex`000e010408020505001c000f0a006400f4010a0000040000000000000000000000000000000002240020002500012c2500290001312b002f0001333000350001363500390001383b003f00013d06001c00010a006400f401640000040000000000000000000000000000000002240000002e00042529312c300032000425292c3135003800042531292c3b003d00042531292c07001c00020a006400f401640000040000000000000000000000000000000003480000000500011905000b00011d0b001000012010001500012515001b0001201b002000011d20002500011925002b00011d2b003000012030003500012535003b0001203b004000011d08001c000e050046006603320000040a002d0000006400140001320002010002190000000b00020d9315001800010d1b001e00010d20003100010d09010e02026400000403780000040a000301000000640001c80000040100000000640001640000040100000000fa0004af00000401c80000040a00019600000414000501006400140005010000002c0104dc00000401fa0000040a0001c8000004140005d0076400140005d0070000c800029001f40105c201f4010a0005900114001400039001000005c201f4010500058403050032000584030000fa00049001000005c201f4010500058403c80032000584030500640005840300009001049001000005c201f4010500058403c80064000584030500c8000584030000f40105ac0d000404a00f00000a0004ac0d2003010004a00f0000280004ac0d9001010004a00f0000280002d00700040408070f0064000408070000c80003c800c8000e7d00c80019000e64000f0032000e78000000fa00032c01c8000ee100c80019000ec8000f0032000edc000000fa0003f401c8000ea901c80019000e90010f0032000ea4010000fa0001c8000004014b000000c800012c01000401c8000000c8000190010004012c010000c80002c800000404c8000f0064000496000000c80002c2010004045e010f006400042c010000640002c409000404c4096400960004f6090000f40102b80b000404b80b64002c0104f40b0000f401022003000004200300040a000420030000ea01029001000004900100040a000490010000900102d007000410d0076400960010d0070000c8001c0000000e00020307150017000203071b001d0002030720002f00020307057f7f7f7f7f7f063e3e3e3e07444444444444444444444444085656565609537f7f7f`), music.PlaybackMode.LoopingInBackground)
@@ -334,8 +357,6 @@ racing.setTeamLogo(img`
 racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.Player)
 ```
 
-Click ➡️**Next** to begin racing!
-
 ## 🚦 Race! @simFullscreen
 
 In the Game Window, start your engines and let's get Ready, Set, Race!
@@ -344,19 +365,17 @@ Click ➡️**Next** at the end of the race.
 
 ## 🚀 Go further @showdialog
 
-Great race! Did you or your AI Bot make it to the winner's podium? 🥇
+🎉 Great race! Did you or your AI Bot make it to the winner's podium? 🥇 Congratulations on training an AI racing bot! What did your data samples help it learn? What did it struggle with?
 
-🎉 Congratulations on training an AI racing bot! What did your data samples help it learn? What did it struggle with?
-
-Discover how science, technology, engineering, and math come to life on the track, in the factory, and beyond with the Microsoft Mercedes-AMG PETRONAS F1 [Driven by STEM full curriculum](https://www.drivenbystem.com).
+Discover how science, technology, engineering, and math come to life on the track, in the factory, and beyond with the [Driven by STEM full curriculum](https://www.drivenbystem.com).
 
 ![Winning Race](/static/tutorials/ai-race/driverwin.png "Winning the Race")
 
-## 🏎️ More racing
+## 🏎️💨 More racing
 
 Click **Done** to share a link to your racing game with friends and family.
 
-You can also continue experimenting with your Racing game using the different blocks of code in the ``||racing: Racing||`` Toolbox.
+You can also continue experimenting using the different blocks of code in the ``||racing: Racing||`` Toolbox.
 
 - Change the design of your car
 - Race on different tracks
@@ -367,6 +386,7 @@ You can also continue experimenting with your Racing game using the different bl
 ```blockconfig.global
 racing.raceOnTrack(racing.Track.Birmingham, 1, racing.RaceDriver.AI)
 racing.chooseCar(racing.CarStyle.MercedesCar, racing.CarTarget.Player)
+music.play(music.createSong(hex`00780004080200`), music.PlaybackMode.LoopingInBackground)
 ```
 
 ```package
